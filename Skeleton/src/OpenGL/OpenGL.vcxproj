@@ -134,7 +134,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="RndrSample.cpp" />
+    <ClCompile Include="IRndrBase.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RndrSample.h" />
+    <ClInclude Include="GLIncludeHeader.h" />
+    <ClInclude Include="IRndrBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

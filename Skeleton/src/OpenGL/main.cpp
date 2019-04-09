@@ -1,28 +1,39 @@
 #include <iostream>
-#include <freeglut.h>
+#include <cassert>
+#include "RndrSample.h"
 
-void MyDisplay()
+
+enum GL_RNDR_TYPE
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	GL_RNDR_SAMPLE = 0,
+	GL_RNDR_NUM
+};
 
-	glBegin(GL_POLYGON);
+IRndrBase* GetRndr(GL_RNDR_TYPE eType)
+{
+	IRndrBase* pRndr = nullptr;
+
+	switch (eType)
 	{
-		glVertex3f(-0.5, -0.5, 0.0);
-		glVertex3f(0.5, -0.5, 0.0);
-		glVertex3f(0.5, 0.5, 0.0);
-		glVertex3f(-0.5, 0.5, 0.0);
+	case GL_RNDR_SAMPLE: pRndr = new CRndrSample; break;
+	default:
+	{
+		assert(false);
+		pRndr = new CRndrSample;
 	}
-	glEnd();
-	glFlush();
+	break;
+	}
+
+	return pRndr;
 }
 
 int main(int argc, char **argv)
 {
-	char szWinName[] = "openGL";
+	GL_RNDR_TYPE eType = GL_RNDR_SAMPLE;
+	switch (eType)
+	{
+	case GL_RNDR_SAMPLE: { CRndrSample rndr; rndr.Run(); } break;
+	}
 
-	glutInit(&argc, argv);
-	glutCreateWindow(szWinName);
-	glutDisplayFunc(MyDisplay);
-	glutMainLoop();
 	return 0;
 }
