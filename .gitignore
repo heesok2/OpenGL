@@ -32,4 +32,6 @@
 *.app
 *.pdb
 *.ilk
+*.user
 temp
+.vs
