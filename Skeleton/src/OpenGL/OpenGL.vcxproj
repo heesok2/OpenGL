@@ -73,6 +73,10 @@
     <OutDir>../../bin/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/</OutDir>
     <IntDir>../../temp/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/</IntDir>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>../../bin/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/</OutDir>
+    <IntDir>../../temp/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -93,7 +97,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../../include/$(PlatformToolset);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <OutputFile>../../bin/$(PlatformToolset)/$(configuration)/$(PlatformTarget)/$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

@@ -1,0 +1,5 @@
+F:/cloud/glut_x86/CMakeFiles/freeglut.dir
+F:/cloud/glut_x86/CMakeFiles/INSTALL.dir
+F:/cloud/glut_x86/CMakeFiles/freeglut_static.dir
+F:/cloud/glut_x86/CMakeFiles/ALL_BUILD.dir
+F:/cloud/glut_x86/CMakeFiles/ZERO_CHECK.dir

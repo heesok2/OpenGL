@@ -1,0 +1,144 @@
+Determining if files unistd.h exist failed with the following output:
+Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_37f24.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+.NET Framework용 Microsoft (R) Build Engine 버전 15.9.21+g9802d43bc3
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  x86용 Microsoft (R) C/C++ 최적화 컴파일러 버전 19.16.27030.1
+  Copyright (c) Microsoft Corporation. All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_37f24.dir\Debug\\" /Fd"cmTC_37f24.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_UNISTD_H.c
+  HAVE_UNISTD_H.c
+  
+F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_UNISTD_H.c(2): fatal error C1083: 포함 파일을 열 수 없습니다. 'unistd.h': No such file or directory [F:\cloud\glut_x86\CMakeFiles\CMakeTmp\cmTC_37f24.vcxproj]
+
+Source:
+/* */
+#include <unistd.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/time.h exist failed with the following output:
+Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_772d0.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+.NET Framework용 Microsoft (R) Build Engine 버전 15.9.21+g9802d43bc3
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  x86용 Microsoft (R) C/C++ 최적화 컴파일러 버전 19.16.27030.1
+  Copyright (c) Microsoft Corporation. All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_772d0.dir\Debug\\" /Fd"cmTC_772d0.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_SYS_TIME_H.c
+  HAVE_SYS_TIME_H.c
+  
+F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_SYS_TIME_H.c(2): fatal error C1083: 포함 파일을 열 수 없습니다. 'sys/time.h': No such file or directory [F:\cloud\glut_x86\CMakeFiles\CMakeTmp\cmTC_772d0.vcxproj]
+
+Source:
+/* */
+#include <sys/time.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/param.h exist failed with the following output:
+Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_3c61c.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+.NET Framework용 Microsoft (R) Build Engine 버전 15.9.21+g9802d43bc3
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  x86용 Microsoft (R) C/C++ 최적화 컴파일러 버전 19.16.27030.1
+  Copyright (c) Microsoft Corporation. All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3c61c.dir\Debug\\" /Fd"cmTC_3c61c.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_SYS_PARAM_H.c
+  HAVE_SYS_PARAM_H.c
+  
+F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_SYS_PARAM_H.c(2): fatal error C1083: 포함 파일을 열 수 없습니다. 'sys/param.h': No such file or directory [F:\cloud\glut_x86\CMakeFiles\CMakeTmp\cmTC_3c61c.vcxproj]
+
+Source:
+/* */
+#include <sys/param.h>
+
+
+int main(void){return 0;}
+
+Determining if files sys/ioctl.h exist failed with the following output:
+Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_cc486.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+.NET Framework용 Microsoft (R) Build Engine 버전 15.9.21+g9802d43bc3
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  x86용 Microsoft (R) C/C++ 최적화 컴파일러 버전 19.16.27030.1
+  Copyright (c) Microsoft Corporation. All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cc486.dir\Debug\\" /Fd"cmTC_cc486.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_SYS_IOCTL_H.c
+  HAVE_SYS_IOCTL_H.c
+  
+F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_SYS_IOCTL_H.c(2): fatal error C1083: 포함 파일을 열 수 없습니다. 'sys/ioctl.h': No such file or directory [F:\cloud\glut_x86\CMakeFiles\CMakeTmp\cmTC_cc486.vcxproj]
+
+Source:
+/* */
+#include <sys/ioctl.h>
+
+
+int main(void){return 0;}
+
+Determining if files usbhid.h exist failed with the following output:
+Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_b58a2.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+.NET Framework용 Microsoft (R) Build Engine 버전 15.9.21+g9802d43bc3
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  x86용 Microsoft (R) C/C++ 최적화 컴파일러 버전 19.16.27030.1
+  Copyright (c) Microsoft Corporation. All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b58a2.dir\Debug\\" /Fd"cmTC_b58a2.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_USBHID_H.c
+  HAVE_USBHID_H.c
+  
+F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_USBHID_H.c(2): fatal error C1083: 포함 파일을 열 수 없습니다. 'usbhid.h': No such file or directory [F:\cloud\glut_x86\CMakeFiles\CMakeTmp\cmTC_b58a2.vcxproj]
+
+Source:
+/* */
+#include <usbhid.h>
+
+
+int main(void){return 0;}
+
+Determining if the function gettimeofday exists failed with the following output:
+Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_66df0.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+.NET Framework용 Microsoft (R) Build Engine 버전 15.9.21+g9802d43bc3
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  x86용 Microsoft (R) C/C++ 최적화 컴파일러 버전 19.16.27030.1
+  Copyright (c) Microsoft Corporation. All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=gettimeofday /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_66df0.dir\Debug\\" /Fd"cmTC_66df0.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.c"
+  CheckFunctionExists.c
+  
+CheckFunctionExists.obj : error LNK2019: _gettimeofday 외부 기호(참조 위치: _main 함수)에서 확인하지 못했습니다. [F:\cloud\glut_x86\CMakeFiles\CMakeTmp\cmTC_66df0.vcxproj]
+F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_66df0.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다. [F:\cloud\glut_x86\CMakeFiles\CMakeTmp\cmTC_66df0.vcxproj]
+
+
+Determining if the function XParseGeometry exists failed with the following output:
+Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_9c8a4.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+.NET Framework용 Microsoft (R) Build Engine 버전 15.9.21+g9802d43bc3
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  x86용 Microsoft (R) C/C++ 최적화 컴파일러 버전 19.16.27030.1
+  Copyright (c) Microsoft Corporation. All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=XParseGeometry /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9c8a4.dir\Debug\\" /Fd"cmTC_9c8a4.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.c"
+  CheckFunctionExists.c
+  
+CheckFunctionExists.obj : error LNK2019: _XParseGeometry 외부 기호(참조 위치: _main 함수)에서 확인하지 못했습니다. [F:\cloud\glut_x86\CMakeFiles\CMakeTmp\cmTC_9c8a4.vcxproj]
+F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_9c8a4.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다. [F:\cloud\glut_x86\CMakeFiles\CMakeTmp\cmTC_9c8a4.vcxproj]
+
+
