@@ -33,5 +33,5 @@
 *.pdb
 *.ilk
 *.user
-temp
 .vs
+temp
