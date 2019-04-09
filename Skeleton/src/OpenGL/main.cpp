@@ -1,4 +1,5 @@
 #include <iostream>
+#include <glut.h>
 
 int main(void)
 {
