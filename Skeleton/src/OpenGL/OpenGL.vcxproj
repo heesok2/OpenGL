@@ -88,7 +88,7 @@
     <Link>
       <OutputFile>../../bin/$(PlatformToolset)/$(configuration)/$(PlatformTarget)/$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;freeglutd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -102,7 +102,7 @@
     <Link>
       <OutputFile>../../bin/$(PlatformToolset)/$(configuration)/$(PlatformTarget)/$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;freeglutd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

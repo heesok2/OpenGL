@@ -1,5 +1,5 @@
 #include <iostream>
-#include <glut.h>
+#include <freeglut.h>
 
 void MyDisplay()
 {
@@ -16,9 +16,12 @@ void MyDisplay()
 	glFlush();
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
-	glutCreateWindow("OpenGL Drawing Example");
+	char szWinName[] = "openGL";
+
+	glutInit(&argc, argv);
+	glutCreateWindow(szWinName);
 	glutDisplayFunc(MyDisplay);
 	glutMainLoop();
 	return 0;
