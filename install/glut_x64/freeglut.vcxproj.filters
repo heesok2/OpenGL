@@ -1,167 +1,167 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_callbacks.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_callbacks.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_cursor.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_cursor.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_display.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_display.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_ext.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_ext.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_font_data.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_font_data.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_gamemode.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_gamemode.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_geometry.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_geometry.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_gl2.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_gl2.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_init.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_init.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_input_devices.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_input_devices.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_joystick.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_joystick.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_main.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_misc.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_misc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_overlay.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_overlay.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_spaceball.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_spaceball.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_state.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_state.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_stroke_mono_roman.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_stroke_mono_roman.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_stroke_roman.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_stroke_roman.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_structure.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_structure.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_teapot.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_teapot.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_videoresize.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_videoresize.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_window.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_window.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_font.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_font.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_menu.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_menu.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_cursor_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_cursor_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_display_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_display_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_ext_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_ext_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_gamemode_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_gamemode_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_init_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_init_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_input_devices_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_input_devices_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_joystick_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_joystick_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_main_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_main_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_menu_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_menu_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_spaceball_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_spaceball_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_state_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_state_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_structure_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_structure_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_window_mswin.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_window_mswin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\util\xparsegeometry_repl.c">
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\util\xparsegeometry_repl.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include\GL\freeglut.h">
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\include\GL\freeglut.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include\GL\freeglut_ext.h">
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\include\GL\freeglut_ext.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include\GL\freeglut_std.h">
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\include\GL\freeglut_std.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include\GL\glut.h">
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\include\GL\glut.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_gl2.h">
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_gl2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_init.h">
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_init.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_internal.h">
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_internal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_teapot_data.h">
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_teapot_data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_internal_mswin.h">
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_internal_mswin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\util\xparsegeometry_repl.h">
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\util\xparsegeometry_repl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\CMakeLists.txt" />
+    <CustomBuild Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="F:\cloud\glui_x64\freeglut.rc">
+    <ResourceCompile Include="F:\cloud\Git\openGL\install\GLUT_x64\freeglut.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{B7B1C2E3-B268-3747-A212-1F782992DE72}</UniqueIdentifier>
+      <UniqueIdentifier>{C3F34E1F-3CA3-32D0-A08D-8C5E7E34BD18}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{BC1890E8-ED64-3C49-9564-53D360C5F970}</UniqueIdentifier>
+      <UniqueIdentifier>{FAC985DD-E0D1-3AA4-AC0E-10EF269CA177}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

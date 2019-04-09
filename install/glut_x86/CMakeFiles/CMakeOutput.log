@@ -9,8 +9,8 @@ The output was:
 .NET Framework¿ë Microsoft (R) Build Engine ¹öÀü 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-ºôµå ½ÃÀÛ: 2019-04-09 ¿ÀÈÄ 1:52:26
-1 ³ëµåÀÇ "F:\cloud\glut_x86\CMakeFiles\3.14.1\CompilerIdC\CompilerIdC.vcxproj" ÇÁ·ÎÁ§Æ®(±âº» ´ë»ó)ÀÔ´Ï´Ù.
+ºôµå ½ÃÀÛ: 2019-04-09 ¿ÀÈÄ 2:07:56
+1 ³ëµåÀÇ "F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CompilerIdC\CompilerIdC.vcxproj" ÇÁ·ÎÁ§Æ®(±âº» ´ë»ó)ÀÔ´Ï´Ù.
 PrepareForBuild:
   "Debug\" µð·ºÅÍ¸®¸¦ ¸¸µé°í ÀÖ½À´Ï´Ù.
   "Debug\CompilerIdC.tlog\" µð·ºÅÍ¸®¸¦ ¸¸µé°í ÀÖ½À´Ï´Ù.
@@ -21,7 +21,7 @@ ClCompile:
   CMakeCCompilerId.c
 Link:
   C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCCompilerId.obj
-  CompilerIdC.vcxproj -> F:\cloud\glut_x86\CMakeFiles\3.14.1\CompilerIdC\.\CompilerIdC.exe
+  CompilerIdC.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CompilerIdC\.\CompilerIdC.exe
 PostBuildEvent:
   for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
   :VCEnd
@@ -29,20 +29,20 @@ PostBuildEvent:
 FinalizeBuildStatus:
   "Debug\CompilerIdC.tlog\unsuccessfulbuild" ÆÄÀÏÀ» »èÁ¦ÇÏ°í ÀÖ½À´Ï´Ù.
   "Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate"¿¡ ¿¬°á(touching)ÇÏ°í ÀÖ½À´Ï´Ù.
-"F:\cloud\glut_x86\CMakeFiles\3.14.1\CompilerIdC\CompilerIdC.vcxproj" ÇÁ·ÎÁ§Æ®¸¦ ºôµåÇß½À´Ï´Ù(±âº» ´ë»ó).
+"F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CompilerIdC\CompilerIdC.vcxproj" ÇÁ·ÎÁ§Æ®¸¦ ºôµåÇß½À´Ï´Ù(±âº» ´ë»ó).
 
 ºôµåÇß½À´Ï´Ù.
     °æ°í 0°³
     ¿À·ù 0°³
 
-°æ°ú ½Ã°£: 00:00:00.56
+°æ°ú ½Ã°£: 00:00:00.52
 
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
 
-The C compiler identification is MSVC, found in "F:/cloud/glut_x86/CMakeFiles/3.14.1/CompilerIdC/CompilerIdC.exe"
+The C compiler identification is MSVC, found in "F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/3.14.1/CompilerIdC/CompilerIdC.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler:  
@@ -54,8 +54,8 @@ The output was:
 .NET Framework¿ë Microsoft (R) Build Engine ¹öÀü 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-ºôµå ½ÃÀÛ: 2019-04-09 ¿ÀÈÄ 1:52:26
-1 ³ëµåÀÇ "F:\cloud\glut_x86\CMakeFiles\3.14.1\CompilerIdCXX\CompilerIdCXX.vcxproj" ÇÁ·ÎÁ§Æ®(±âº» ´ë»ó)ÀÔ´Ï´Ù.
+ºôµå ½ÃÀÛ: 2019-04-09 ¿ÀÈÄ 2:07:56
+1 ³ëµåÀÇ "F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CompilerIdCXX\CompilerIdCXX.vcxproj" ÇÁ·ÎÁ§Æ®(±âº» ´ë»ó)ÀÔ´Ï´Ù.
 PrepareForBuild:
   "Debug\" µð·ºÅÍ¸®¸¦ ¸¸µé°í ÀÖ½À´Ï´Ù.
   "Debug\CompilerIdCXX.tlog\" µð·ºÅÍ¸®¸¦ ¸¸µé°í ÀÖ½À´Ï´Ù.
@@ -66,7 +66,7 @@ ClCompile:
   CMakeCXXCompilerId.cpp
 Link:
   C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCXXCompilerId.obj
-  CompilerIdCXX.vcxproj -> F:\cloud\glut_x86\CMakeFiles\3.14.1\CompilerIdCXX\.\CompilerIdCXX.exe
+  CompilerIdCXX.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CompilerIdCXX\.\CompilerIdCXX.exe
 PostBuildEvent:
   for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
   :VCEnd
@@ -74,121 +74,121 @@ PostBuildEvent:
 FinalizeBuildStatus:
   "Debug\CompilerIdCXX.tlog\unsuccessfulbuild" ÆÄÀÏÀ» »èÁ¦ÇÏ°í ÀÖ½À´Ï´Ù.
   "Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate"¿¡ ¿¬°á(touching)ÇÏ°í ÀÖ½À´Ï´Ù.
-"F:\cloud\glut_x86\CMakeFiles\3.14.1\CompilerIdCXX\CompilerIdCXX.vcxproj" ÇÁ·ÎÁ§Æ®¸¦ ºôµåÇß½À´Ï´Ù(±âº» ´ë»ó).
+"F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CompilerIdCXX\CompilerIdCXX.vcxproj" ÇÁ·ÎÁ§Æ®¸¦ ºôµåÇß½À´Ï´Ù(±âº» ´ë»ó).
 
 ºôµåÇß½À´Ï´Ù.
     °æ°í 0°³
     ¿À·ù 0°³
 
-°æ°ú ½Ã°£: 00:00:00.47
+°æ°ú ½Ã°£: 00:00:00.42
 
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
 
-The CXX compiler identification is MSVC, found in "F:/cloud/glut_x86/CMakeFiles/3.14.1/CompilerIdCXX/CompilerIdCXX.exe"
+The CXX compiler identification is MSVC, found in "F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/3.14.1/CompilerIdCXX/CompilerIdCXX.exe"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+Change Dir: F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_8e0eb.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_e32bd.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
 .NET Frameworkìš© Microsoft (R) Build Engine ë²„ì „ 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   x86ìš© Microsoft (R) C/C++ ìµœì í™” ì»´íŒŒì¼ëŸ¬ ë²„ì „ 19.16.27030.1
   Copyright (c) Microsoft Corporation. All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8e0eb.dir\Debug\\" /Fd"cmTC_8e0eb.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\CMakeTmp\testCCompiler.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e32bd.dir\Debug\\" /Fd"cmTC_e32bd.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\testCCompiler.c
   testCCompiler.c
   
-  cmTC_8e0eb.vcxproj -> F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_8e0eb.exe
+  cmTC_e32bd.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\Debug\cmTC_e32bd.exe
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+Change Dir: F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_04e8d.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_3bc60.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
 .NET Frameworkìš© Microsoft (R) Build Engine ë²„ì „ 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   x86ìš© Microsoft (R) C/C++ ìµœì í™” ì»´íŒŒì¼ëŸ¬ ë²„ì „ 19.16.27030.1
   Copyright (c) Microsoft Corporation. All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_04e8d.dir\Debug\\" /Fd"cmTC_04e8d.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCCompilerABI.c"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3bc60.dir\Debug\\" /Fd"cmTC_3bc60.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCCompilerABI.c"
   CMakeCCompilerABI.c
   
-  cmTC_04e8d.vcxproj -> F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_04e8d.exe
+  cmTC_3bc60.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\Debug\cmTC_3bc60.exe
 
 
 
 
 Detecting C [] compiler features compiled with the following output:
-Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+Change Dir: F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_523a9.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_0b618.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
 .NET Frameworkìš© Microsoft (R) Build Engine ë²„ì „ 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   x86ìš© Microsoft (R) C/C++ ìµœì í™” ì»´íŒŒì¼ëŸ¬ ë²„ì „ 19.16.27030.1
   Copyright (c) Microsoft Corporation. All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_523a9.dir\Debug\\" /Fd"cmTC_523a9.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\feature_tests.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0b618.dir\Debug\\" /Fd"cmTC_0b618.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\feature_tests.c
   feature_tests.c
   
-  cmTC_523a9.vcxproj -> F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_523a9.exe
+  cmTC_0b618.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\Debug\cmTC_0b618.exe
 
 
     Feature record: C_FEATURE:1c_function_prototypes
     Feature record: C_FEATURE:1c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+Change Dir: F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_1b773.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_ec6c9.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
 .NET Frameworkìš© Microsoft (R) Build Engine ë²„ì „ 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   x86ìš© Microsoft (R) C/C++ ìµœì í™” ì»´íŒŒì¼ëŸ¬ ë²„ì „ 19.16.27030.1
   Copyright (c) Microsoft Corporation. All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_1b773.dir\Debug\\" /Fd"cmTC_1b773.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_ec6c9.dir\Debug\\" /Fd"cmTC_ec6c9.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
   testCXXCompiler.cxx
   
-  cmTC_1b773.vcxproj -> F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_1b773.exe
+  cmTC_ec6c9.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\Debug\cmTC_ec6c9.exe
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+Change Dir: F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_46da6.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_17559.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
 .NET Frameworkìš© Microsoft (R) Build Engine ë²„ì „ 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   x86ìš© Microsoft (R) C/C++ ìµœì í™” ì»´íŒŒì¼ëŸ¬ ë²„ì „ 19.16.27030.1
   Copyright (c) Microsoft Corporation. All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_46da6.dir\Debug\\" /Fd"cmTC_46da6.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_17559.dir\Debug\\" /Fd"cmTC_17559.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXCompilerABI.cpp"
   CMakeCXXCompilerABI.cpp
   
-  cmTC_46da6.vcxproj -> F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_46da6.exe
+  cmTC_17559.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\Debug\cmTC_17559.exe
 
 
 
 
 Detecting CXX [] compiler features compiled with the following output:
-Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+Change Dir: F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_b1fbe.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_1e3c9.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
 .NET Frameworkìš© Microsoft (R) Build Engine ë²„ì „ 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   x86ìš© Microsoft (R) C/C++ ìµœì í™” ì»´íŒŒì¼ëŸ¬ ë²„ì „ 19.16.27030.1
   Copyright (c) Microsoft Corporation. All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b1fbe.dir\Debug\\" /Fd"cmTC_b1fbe.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\feature_tests.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_1e3c9.dir\Debug\\" /Fd"cmTC_1e3c9.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\feature_tests.cxx
   feature_tests.cxx
   
-  cmTC_b1fbe.vcxproj -> F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_b1fbe.exe
+  cmTC_1e3c9.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\Debug\cmTC_1e3c9.exe
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -248,82 +248,82 @@ Copyright (C) Microsoft Corporation. All rights reserved.
     Feature record: CXX_FEATURE:1cxx_variadic_macros
     Feature record: CXX_FEATURE:1cxx_variadic_templates
 Determining if files sys/types.h exist passed with the following output:
-Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+Change Dir: F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_4b013.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_9501c.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
 .NET Frameworkìš© Microsoft (R) Build Engine ë²„ì „ 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   x86ìš© Microsoft (R) C/C++ ìµœì í™” ì»´íŒŒì¼ëŸ¬ ë²„ì „ 19.16.27030.1
   Copyright (c) Microsoft Corporation. All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4b013.dir\Debug\\" /Fd"cmTC_4b013.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_SYS_TYPES_H.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9501c.dir\Debug\\" /Fd"cmTC_9501c.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CheckIncludeFiles\HAVE_SYS_TYPES_H.c
   HAVE_SYS_TYPES_H.c
   
-  cmTC_4b013.vcxproj -> F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_4b013.exe
+  cmTC_9501c.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\Debug\cmTC_9501c.exe
 
 
 Determining if files stdbool.h exist passed with the following output:
-Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+Change Dir: F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_0de2f.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_95b4e.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
 .NET Frameworkìš© Microsoft (R) Build Engine ë²„ì „ 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   x86ìš© Microsoft (R) C/C++ ìµœì í™” ì»´íŒŒì¼ëŸ¬ ë²„ì „ 19.16.27030.1
   Copyright (c) Microsoft Corporation. All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0de2f.dir\Debug\\" /Fd"cmTC_0de2f.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_STDBOOL_H.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_95b4e.dir\Debug\\" /Fd"cmTC_95b4e.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CheckIncludeFiles\HAVE_STDBOOL_H.c
   HAVE_STDBOOL_H.c
   
-  cmTC_0de2f.vcxproj -> F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_0de2f.exe
+  cmTC_95b4e.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\Debug\cmTC_95b4e.exe
 
 
 Determining if files fcntl.h exist passed with the following output:
-Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+Change Dir: F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_a0f9a.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_1f63a.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
 .NET Frameworkìš© Microsoft (R) Build Engine ë²„ì „ 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   x86ìš© Microsoft (R) C/C++ ìµœì í™” ì»´íŒŒì¼ëŸ¬ ë²„ì „ 19.16.27030.1
   Copyright (c) Microsoft Corporation. All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a0f9a.dir\Debug\\" /Fd"cmTC_a0f9a.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_FCNTL_H.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1f63a.dir\Debug\\" /Fd"cmTC_1f63a.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CheckIncludeFiles\HAVE_FCNTL_H.c
   HAVE_FCNTL_H.c
   
-  cmTC_a0f9a.vcxproj -> F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_a0f9a.exe
+  cmTC_1f63a.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\Debug\cmTC_1f63a.exe
 
 
 Determining if files stdint.h exist passed with the following output:
-Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+Change Dir: F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_fe3bf.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_8d0a6.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
 .NET Frameworkìš© Microsoft (R) Build Engine ë²„ì „ 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   x86ìš© Microsoft (R) C/C++ ìµœì í™” ì»´íŒŒì¼ëŸ¬ ë²„ì „ 19.16.27030.1
   Copyright (c) Microsoft Corporation. All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fe3bf.dir\Debug\\" /Fd"cmTC_fe3bf.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_STDINT_H.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8d0a6.dir\Debug\\" /Fd"cmTC_8d0a6.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CheckIncludeFiles\HAVE_STDINT_H.c
   HAVE_STDINT_H.c
   
-  cmTC_fe3bf.vcxproj -> F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_fe3bf.exe
+  cmTC_8d0a6.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\Debug\cmTC_8d0a6.exe
 
 
 Determining if files inttypes.h exist passed with the following output:
-Change Dir: F:/cloud/glut_x86/CMakeFiles/CMakeTmp
+Change Dir: F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_77c94.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2017/Professional/MSBuild/15.0/Bin/MSBuild.exe cmTC_9c579.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=15.0 /v:m 
 .NET Frameworkìš© Microsoft (R) Build Engine ë²„ì „ 15.9.21+g9802d43bc3
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   x86ìš© Microsoft (R) C/C++ ìµœì í™” ì»´íŒŒì¼ëŸ¬ ë²„ì „ 19.16.27030.1
   Copyright (c) Microsoft Corporation. All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_77c94.dir\Debug\\" /Fd"cmTC_77c94.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\glut_x86\CMakeFiles\CheckIncludeFiles\HAVE_INTTYPES_H.c
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9c579.dir\Debug\\" /Fd"cmTC_9c579.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CheckIncludeFiles\HAVE_INTTYPES_H.c
   HAVE_INTTYPES_H.c
   
-  cmTC_77c94.vcxproj -> F:\cloud\glut_x86\CMakeFiles\CMakeTmp\Debug\cmTC_77c94.exe
+  cmTC_9c579.vcxproj -> F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\CMakeTmp\Debug\cmTC_9c579.exe
 
 

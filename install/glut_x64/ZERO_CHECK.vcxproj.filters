@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="F:\cloud\glui_x64\CMakeFiles\c805c9f0c8c0e48ce84ac4ab66914af4\generate.stamp.rule">
+    <CustomBuild Include="F:\cloud\Git\openGL\install\GLUT_x64\CMakeFiles\d5e182ec0dc1d8c94a031c52c833b7c7\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{68A83510-78D8-3301-B4D8-75E88DE08087}</UniqueIdentifier>
+      <UniqueIdentifier>{5EA699A5-D863-3DA2-ABE1-13B02F0E484B}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

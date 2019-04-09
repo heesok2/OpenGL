@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8D231B3A-87BF-3C6F-AEBB-5B48BC4403E4}</ProjectGuid>
+    <ProjectGuid>{AD8D0B1B-1C30-30DD-8757-B850ED4B8B03}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>Win32</Platform>
@@ -56,25 +56,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\cloud\glut_x86\bin\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\cloud\Git\openGL\install\GLUT_x86\bin\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">freeglut.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">freeglutd</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\cloud\glut_x86\bin\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\cloud\Git\openGL\install\GLUT_x86\bin\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">freeglut.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">freeglut</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\cloud\glut_x86\bin\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\cloud\Git\openGL\install\GLUT_x86\bin\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">freeglut.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">freeglut</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\cloud\glut_x86\bin\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\cloud\Git\openGL\install\GLUT_x86\bin\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">freeglut.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">freeglut</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.dll</TargetExt>
@@ -83,7 +83,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include;F:\cloud\glut_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\cloud\Git\openGL\install\freeglut-3.0.0\src;F:\cloud\Git\openGL\install\freeglut-3.0.0\include;F:\cloud\Git\openGL\install\GLUT_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsC</CompileAs>
@@ -101,10 +101,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;FREEGLUT_EXPORTS;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0500;WINVER=0x0500;HAVE_CONFIG_H;CMAKE_INTDIR=\"Debug\";freeglut_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include;F:\cloud\glut_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\cloud\Git\openGL\install\freeglut-3.0.0\src;F:\cloud\Git\openGL\install\freeglut-3.0.0\include;F:\cloud\Git\openGL\install\GLUT_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include;F:\cloud\glut_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\cloud\Git\openGL\install\freeglut-3.0.0\src;F:\cloud\Git\openGL\install\freeglut-3.0.0\include;F:\cloud\Git\openGL\install\GLUT_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -117,9 +117,9 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>F:/cloud/glut_x86/lib/Debug/freeglutd.lib</ImportLibrary>
-      <ModuleDefinitionFile>F:/cloud/glut_x86/freeglutdll.def</ModuleDefinitionFile>
-      <ProgramDataBaseFile>F:/cloud/glut_x86/bin/Debug/freeglutd.pdb</ProgramDataBaseFile>
+      <ImportLibrary>F:/cloud/Git/openGL/install/GLUT_x86/lib/Debug/freeglutd.lib</ImportLibrary>
+      <ModuleDefinitionFile>F:/cloud/Git/openGL/install/GLUT_x86/freeglutdll.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>F:/cloud/Git/openGL/install/GLUT_x86/bin/Debug/freeglutd.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include;F:\cloud\glut_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\cloud\Git\openGL\install\freeglut-3.0.0\src;F:\cloud\Git\openGL\install\freeglut-3.0.0\include;F:\cloud\Git\openGL\install\GLUT_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsC</CompileAs>
       <ExceptionHandling>
@@ -146,10 +146,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;FREEGLUT_EXPORTS;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0500;WINVER=0x0500;HAVE_CONFIG_H;CMAKE_INTDIR=\"Release\";freeglut_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include;F:\cloud\glut_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\cloud\Git\openGL\install\freeglut-3.0.0\src;F:\cloud\Git\openGL\install\freeglut-3.0.0\include;F:\cloud\Git\openGL\install\GLUT_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include;F:\cloud\glut_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\cloud\Git\openGL\install\freeglut-3.0.0\src;F:\cloud\Git\openGL\install\freeglut-3.0.0\include;F:\cloud\Git\openGL\install\GLUT_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -162,9 +162,9 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>F:/cloud/glut_x86/lib/Release/freeglut.lib</ImportLibrary>
-      <ModuleDefinitionFile>F:/cloud/glut_x86/freeglutdll.def</ModuleDefinitionFile>
-      <ProgramDataBaseFile>F:/cloud/glut_x86/bin/Release/freeglut.pdb</ProgramDataBaseFile>
+      <ImportLibrary>F:/cloud/Git/openGL/install/GLUT_x86/lib/Release/freeglut.lib</ImportLibrary>
+      <ModuleDefinitionFile>F:/cloud/Git/openGL/install/GLUT_x86/freeglutdll.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>F:/cloud/Git/openGL/install/GLUT_x86/bin/Release/freeglut.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -173,7 +173,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include;F:\cloud\glut_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\cloud\Git\openGL\install\freeglut-3.0.0\src;F:\cloud\Git\openGL\install\freeglut-3.0.0\include;F:\cloud\Git\openGL\install\GLUT_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
       <CompileAs>CompileAsC</CompileAs>
       <ExceptionHandling>
@@ -191,10 +191,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;FREEGLUT_EXPORTS;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0500;WINVER=0x0500;HAVE_CONFIG_H;CMAKE_INTDIR=\"MinSizeRel\";freeglut_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include;F:\cloud\glut_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\cloud\Git\openGL\install\freeglut-3.0.0\src;F:\cloud\Git\openGL\install\freeglut-3.0.0\include;F:\cloud\Git\openGL\install\GLUT_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include;F:\cloud\glut_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\cloud\Git\openGL\install\freeglut-3.0.0\src;F:\cloud\Git\openGL\install\freeglut-3.0.0\include;F:\cloud\Git\openGL\install\GLUT_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -207,9 +207,9 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>F:/cloud/glut_x86/lib/MinSizeRel/freeglut.lib</ImportLibrary>
-      <ModuleDefinitionFile>F:/cloud/glut_x86/freeglutdll.def</ModuleDefinitionFile>
-      <ProgramDataBaseFile>F:/cloud/glut_x86/bin/MinSizeRel/freeglut.pdb</ProgramDataBaseFile>
+      <ImportLibrary>F:/cloud/Git/openGL/install/GLUT_x86/lib/MinSizeRel/freeglut.lib</ImportLibrary>
+      <ModuleDefinitionFile>F:/cloud/Git/openGL/install/GLUT_x86/freeglutdll.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>F:/cloud/Git/openGL/install/GLUT_x86/bin/MinSizeRel/freeglut.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -218,7 +218,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include;F:\cloud\glut_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\cloud\Git\openGL\install\freeglut-3.0.0\src;F:\cloud\Git\openGL\install\freeglut-3.0.0\include;F:\cloud\Git\openGL\install\GLUT_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
       <CompileAs>CompileAsC</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -235,10 +235,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;FREEGLUT_EXPORTS;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0500;WINVER=0x0500;HAVE_CONFIG_H;CMAKE_INTDIR=\"RelWithDebInfo\";freeglut_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include;F:\cloud\glut_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\cloud\Git\openGL\install\freeglut-3.0.0\src;F:\cloud\Git\openGL\install\freeglut-3.0.0\include;F:\cloud\Git\openGL\install\GLUT_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include;F:\cloud\glut_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\cloud\Git\openGL\install\freeglut-3.0.0\src;F:\cloud\Git\openGL\install\freeglut-3.0.0\include;F:\cloud\Git\openGL\install\GLUT_x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -251,9 +251,9 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>F:/cloud/glut_x86/lib/RelWithDebInfo/freeglut.lib</ImportLibrary>
-      <ModuleDefinitionFile>F:/cloud/glut_x86/freeglutdll.def</ModuleDefinitionFile>
-      <ProgramDataBaseFile>F:/cloud/glut_x86/bin/RelWithDebInfo/freeglut.pdb</ProgramDataBaseFile>
+      <ImportLibrary>F:/cloud/Git/openGL/install/GLUT_x86/lib/RelWithDebInfo/freeglut.lib</ImportLibrary>
+      <ModuleDefinitionFile>F:/cloud/Git/openGL/install/GLUT_x86/freeglutdll.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>F:/cloud/Git/openGL/install/GLUT_x86/bin/RelWithDebInfo/freeglut.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -261,10 +261,10 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule F:/cloud/freeglut-3.0.0/freeglut-3.0.0/CMakeLists.txt</Message>
+    <CustomBuild Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule F:/cloud/Git/openGL/install/freeglut-3.0.0/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SF:/cloud/freeglut-3.0.0/freeglut-3.0.0 -BF:/cloud/glut_x86 --check-stamp-file F:/cloud/glut_x86/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/cloud/Git/openGL/install/freeglut-3.0.0 -BF:/cloud/Git/openGL/install/GLUT_x86 --check-stamp-file F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -272,12 +272,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/cloud/freeglut-3.0.0/freeglut-3.0.0/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\CMakeLists.txt;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\config.h.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\freeglut.pc.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\freeglut.rc.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_version.h.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\freeglutdll.def.in;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeCCompiler.cmake;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeCXXCompiler.cmake;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeRCCompiler.cmake;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeSystem.cmake;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\cloud\glut_x86\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/cloud/Git/openGL/install/freeglut-3.0.0/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeCCompiler.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeCXXCompiler.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeRCCompiler.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeSystem.cmake;F:\cloud\Git\openGL\install\freeglut-3.0.0\CMakeLists.txt;F:\cloud\Git\openGL\install\freeglut-3.0.0\config.h.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\freeglut.pc.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\freeglut.rc.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_version.h.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\src\freeglutdll.def.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule F:/cloud/freeglut-3.0.0/freeglut-3.0.0/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule F:/cloud/Git/openGL/install/freeglut-3.0.0/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SF:/cloud/freeglut-3.0.0/freeglut-3.0.0 -BF:/cloud/glut_x86 --check-stamp-file F:/cloud/glut_x86/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/cloud/Git/openGL/install/freeglut-3.0.0 -BF:/cloud/Git/openGL/install/GLUT_x86 --check-stamp-file F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -285,12 +285,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/cloud/freeglut-3.0.0/freeglut-3.0.0/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\CMakeLists.txt;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\config.h.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\freeglut.pc.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\freeglut.rc.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_version.h.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\freeglutdll.def.in;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeCCompiler.cmake;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeCXXCompiler.cmake;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeRCCompiler.cmake;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeSystem.cmake;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\cloud\glut_x86\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/cloud/Git/openGL/install/freeglut-3.0.0/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeCCompiler.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeCXXCompiler.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeRCCompiler.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeSystem.cmake;F:\cloud\Git\openGL\install\freeglut-3.0.0\CMakeLists.txt;F:\cloud\Git\openGL\install\freeglut-3.0.0\config.h.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\freeglut.pc.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\freeglut.rc.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_version.h.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\src\freeglutdll.def.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule F:/cloud/freeglut-3.0.0/freeglut-3.0.0/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule F:/cloud/Git/openGL/install/freeglut-3.0.0/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SF:/cloud/freeglut-3.0.0/freeglut-3.0.0 -BF:/cloud/glut_x86 --check-stamp-file F:/cloud/glut_x86/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/cloud/Git/openGL/install/freeglut-3.0.0 -BF:/cloud/Git/openGL/install/GLUT_x86 --check-stamp-file F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -298,12 +298,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/cloud/freeglut-3.0.0/freeglut-3.0.0/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\CMakeLists.txt;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\config.h.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\freeglut.pc.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\freeglut.rc.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_version.h.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\freeglutdll.def.in;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeCCompiler.cmake;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeCXXCompiler.cmake;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeRCCompiler.cmake;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeSystem.cmake;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\cloud\glut_x86\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/cloud/Git/openGL/install/freeglut-3.0.0/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeCCompiler.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeCXXCompiler.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeRCCompiler.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeSystem.cmake;F:\cloud\Git\openGL\install\freeglut-3.0.0\CMakeLists.txt;F:\cloud\Git\openGL\install\freeglut-3.0.0\config.h.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\freeglut.pc.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\freeglut.rc.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_version.h.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\src\freeglutdll.def.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule F:/cloud/freeglut-3.0.0/freeglut-3.0.0/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule F:/cloud/Git/openGL/install/freeglut-3.0.0/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SF:/cloud/freeglut-3.0.0/freeglut-3.0.0 -BF:/cloud/glut_x86 --check-stamp-file F:/cloud/glut_x86/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/cloud/Git/openGL/install/freeglut-3.0.0 -BF:/cloud/Git/openGL/install/GLUT_x86 --check-stamp-file F:/cloud/Git/openGL/install/GLUT_x86/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -311,66 +311,66 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/cloud/freeglut-3.0.0/freeglut-3.0.0/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\CMakeLists.txt;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\config.h.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\freeglut.pc.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\freeglut.rc.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_version.h.in;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\freeglutdll.def.in;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeCCompiler.cmake;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeCXXCompiler.cmake;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeRCCompiler.cmake;F:\cloud\glut_x86\CMakeFiles\3.14.1\CMakeSystem.cmake;F:\cloud\freeglut-3.0.0\freeglut-3.0.0\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\cloud\glut_x86\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/cloud/Git/openGL/install/freeglut-3.0.0/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeCCompiler.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeCXXCompiler.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeRCCompiler.cmake;F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\3.14.1\CMakeSystem.cmake;F:\cloud\Git\openGL\install\freeglut-3.0.0\CMakeLists.txt;F:\cloud\Git\openGL\install\freeglut-3.0.0\config.h.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\freeglut.pc.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\freeglut.rc.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_version.h.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\src\freeglutdll.def.in;F:\cloud\Git\openGL\install\freeglut-3.0.0\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\cloud\Git\openGL\install\GLUT_x86\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include\GL\freeglut.h" />
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include\GL\freeglut_ext.h" />
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include\GL\freeglut_std.h" />
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\include\GL\glut.h" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_callbacks.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_cursor.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_display.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_ext.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_font_data.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_gamemode.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_geometry.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_gl2.c" />
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_gl2.h" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_init.c" />
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_init.h" />
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_internal.h" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_input_devices.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_joystick.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_main.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_misc.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_overlay.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_spaceball.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_state.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_stroke_mono_roman.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_stroke_roman.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_structure.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_teapot.c" />
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_teapot_data.h" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_videoresize.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_window.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_font.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\fg_menu.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_cursor_mswin.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_display_mswin.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_ext_mswin.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_gamemode_mswin.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_init_mswin.c" />
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_internal_mswin.h" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_input_devices_mswin.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_joystick_mswin.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_main_mswin.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_menu_mswin.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_spaceball_mswin.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_state_mswin.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_structure_mswin.c" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\mswin\fg_window_mswin.c" />
-    <ResourceCompile Include="F:\cloud\glut_x86\freeglut.rc" />
-    <None Include="F:\cloud\glut_x86\freeglutdll.def" />
-    <ClCompile Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\util\xparsegeometry_repl.c" />
-    <ClInclude Include="F:\cloud\freeglut-3.0.0\freeglut-3.0.0\src\util\xparsegeometry_repl.h" />
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\include\GL\freeglut.h" />
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\include\GL\freeglut_ext.h" />
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\include\GL\freeglut_std.h" />
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\include\GL\glut.h" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_callbacks.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_cursor.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_display.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_ext.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_font_data.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_gamemode.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_geometry.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_gl2.c" />
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_gl2.h" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_init.c" />
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_init.h" />
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_internal.h" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_input_devices.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_joystick.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_main.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_misc.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_overlay.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_spaceball.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_state.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_stroke_mono_roman.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_stroke_roman.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_structure.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_teapot.c" />
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_teapot_data.h" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_videoresize.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_window.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_font.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\fg_menu.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_cursor_mswin.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_display_mswin.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_ext_mswin.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_gamemode_mswin.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_init_mswin.c" />
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_internal_mswin.h" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_input_devices_mswin.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_joystick_mswin.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_main_mswin.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_menu_mswin.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_spaceball_mswin.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_state_mswin.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_structure_mswin.c" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\mswin\fg_window_mswin.c" />
+    <ResourceCompile Include="F:\cloud\Git\openGL\install\GLUT_x86\freeglut.rc" />
+    <None Include="F:\cloud\Git\openGL\install\GLUT_x86\freeglutdll.def" />
+    <ClCompile Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\util\xparsegeometry_repl.c" />
+    <ClInclude Include="F:\cloud\Git\openGL\install\freeglut-3.0.0\src\util\xparsegeometry_repl.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="F:\cloud\glut_x86\ZERO_CHECK.vcxproj">
-      <Project>{744530C6-DE13-3E6C-86F6-B3AAD2710BB3}</Project>
+    <ProjectReference Include="F:\cloud\Git\openGL\install\GLUT_x86\ZERO_CHECK.vcxproj">
+      <Project>{E7B57C18-CF7A-3ACA-8BF4-D48D0DD50A03}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
