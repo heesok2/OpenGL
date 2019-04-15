@@ -14,7 +14,7 @@ enum E_MENU_MODE
 	E_MENU_NUM
 };
 
-int CRndrGlut::g_menu_mode = E_MENU_DISP_LIST;
+int CRndrGlut::g_menu_mode = E_MENU_POLYGON;
 
 int CRndrGlut::g_width = 300;
 int CRndrGlut::g_height = 300;
