@@ -19,13 +19,17 @@ private:
 	static void MyMouseFunc(int button, int status, int x, int y); // mouse button press 
 	static void MyMotionFunc(int x, int y); // mouse button press and drag
 	static void MyPassiveMotionFunc(int x, int y); // mouse drag
+	static void MyMainMenu(int entryID);
+	static void MySubMenu(int entryID);
+	static void MyIdleFunc();
 
 private:
+	static int g_menu_mode; // render mode
+
 	static int g_width; // window size
 	static int g_height; // window size
 	static int g_volumn; // view volumn
 
 	static float g_view_x; // mouse x
 	static float g_view_y; // mouse y
-
 };
