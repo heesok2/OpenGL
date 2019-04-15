@@ -1,15 +1,16 @@
-#include "RndrSample.h"
+#include "RndrGlut.h"
 #include "GLIncludeHeader.h"
 
-CRndrSample::CRndrSample()
+CRndrGlut::CRndrGlut()
 {
 }
 
-CRndrSample::~CRndrSample()
+
+CRndrGlut::~CRndrGlut()
 {
 }
 
-bool CRndrSample::Run()
+bool CRndrGlut::Run()
 {
 	int nArgc = 1;
 	glutInit(&nArgc, nullptr);
@@ -21,14 +22,16 @@ bool CRndrSample::Run()
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glOrtho(-200, 200, -200, 200, -200, 200);
-	glutDisplayFunc(MyDisplay);
-	//glutReshapeFunc(MyReShape);
+	glutDisplayFunc(MyDisplayFunc);
+	glutReshapeFunc(MyReshapeFunc);
+	glutKeyboardFunc(MyKeyboardFunc);
+	glutSpecialFunc(MySpecialFunc);
 	glutMainLoop();
 
 	return true;
 }
 
-void CRndrSample::MyDisplay()
+void CRndrGlut::MyDisplayFunc()
 {
 	enum DISP_MODE { DISP_POLYGON, DISP_WIRE_SPHERE, DISP_NUM };
 
@@ -61,17 +64,25 @@ void CRndrSample::MyDisplay()
 	glFlush();
 }
 
-void CRndrSample::MyReShape(int nWidth, int nHeight)
+void CRndrGlut::MyReshapeFunc(int width, int height)
 {
-	glClear(GL_COLOR_BUFFER_BIT); // COLOR BUFFER 초기화
-	glViewport(0, 0, 150, 150);
-	glBegin(GL_POLYGON); // POLYGON 그리기 모드 셋팅
+}
+
+void CRndrGlut::MyKeyboardFunc(unsigned char key, int x, int y)
+{
+	switch (key)
 	{
-		glVertex3f(-0.5, -0.5, 0.0);
-		glVertex3f(0.5, -0.5, 0.0);
-		glVertex3f(0.5, 0.5, 0.0);
-		glVertex3f(-0.5, 0.5, 0.0);
+	case 'q':
+	case 'Q':
+	{
+		exit(0);
 	}
-	glEnd();
-	glFlush();
+	break;
+	default:
+		break;
+	}
+}
+
+void CRndrGlut::MySpecialFunc(int key, int x, int y)
+{
 }

@@ -16,39 +16,48 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Main\Interface">
-      <UniqueIdentifier>{44219370-d820-4c65-8f28-28e80a39ecf9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Implementation">
       <UniqueIdentifier>{e0258861-f199-4860-a70e-fbdd92905176}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementation\00_Sample">
+    <Filter Include="Implementation\GLUT">
+      <UniqueIdentifier>{9e72b5a8-4e54-4630-989b-69c7fe4e2d49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation\__Sample__">
       <UniqueIdentifier>{ab134645-6f11-470e-b6e5-a321986f7187}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main\Include">
-      <UniqueIdentifier>{900a916d-6c33-46ec-ab5a-1bf63d5fe288}</UniqueIdentifier>
+    <Filter Include="Include">
+      <UniqueIdentifier>{1a398066-8bb0-47e5-83a9-11c6e7a60aa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{0ee047ef-abdf-406a-88f1-597b46907c61}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="IRndrBase.cpp">
-      <Filter>Main\Interface</Filter>
-    </ClCompile>
     <ClCompile Include="RndrSample.cpp">
-      <Filter>Implementation\00_Sample</Filter>
+      <Filter>Implementation\__Sample__</Filter>
+    </ClCompile>
+    <ClCompile Include="RndrGlut.cpp">
+      <Filter>Implementation\GLUT</Filter>
+    </ClCompile>
+    <ClCompile Include="IRndrBase.cpp">
+      <Filter>Interface</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IRndrBase.h">
-      <Filter>Main\Interface</Filter>
+    <ClInclude Include="RndrSample.h">
+      <Filter>Implementation\__Sample__</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrGlut.h">
+      <Filter>Implementation\GLUT</Filter>
     </ClInclude>
     <ClInclude Include="GLIncludeHeader.h">
-      <Filter>Main\Include</Filter>
+      <Filter>Include</Filter>
     </ClInclude>
-    <ClInclude Include="RndrSample.h">
-      <Filter>Implementation\00_Sample</Filter>
+    <ClInclude Include="IRndrBase.h">
+      <Filter>Interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

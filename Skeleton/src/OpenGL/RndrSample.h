@@ -13,6 +13,7 @@ public:
 
 private:
 	static void MyDisplay();
+	static void MyReShape(int nWidth, int nHeight);
 
 };
 
