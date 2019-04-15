@@ -22,6 +22,8 @@ private:
 	static void MyMainMenu(int entryID);
 	static void MySubMenu(int entryID);
 	static void MyIdleFunc();
+	static void MyTimeFunc(int value);
+	static void MyDispList();
 
 private:
 	static int g_menu_mode; // render mode
@@ -32,4 +34,6 @@ private:
 
 	static float g_view_x; // mouse x
 	static float g_view_y; // mouse y
+	
+	static int g_disp_id; // display list id
 };
