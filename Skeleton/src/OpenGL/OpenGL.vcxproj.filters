@@ -19,9 +19,6 @@
     <Filter Include="Implementation">
       <UniqueIdentifier>{e0258861-f199-4860-a70e-fbdd92905176}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementation\GLUT">
-      <UniqueIdentifier>{9e72b5a8-4e54-4630-989b-69c7fe4e2d49}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Implementation\__Sample__">
       <UniqueIdentifier>{ab134645-6f11-470e-b6e5-a321986f7187}</UniqueIdentifier>
     </Filter>
@@ -30,6 +27,12 @@
     </Filter>
     <Filter Include="Interface">
       <UniqueIdentifier>{0ee047ef-abdf-406a-88f1-597b46907c61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation\Modeling">
+      <UniqueIdentifier>{185feddf-27b1-4a44-b9e2-de55b99b65f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation\Glut">
+      <UniqueIdentifier>{9e72b5a8-4e54-4630-989b-69c7fe4e2d49}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,10 +43,13 @@
       <Filter>Implementation\__Sample__</Filter>
     </ClCompile>
     <ClCompile Include="RndrGlut.cpp">
-      <Filter>Implementation\GLUT</Filter>
+      <Filter>Implementation\Glut</Filter>
     </ClCompile>
     <ClCompile Include="IRndrBase.cpp">
       <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="RndrModeling.cpp">
+      <Filter>Implementation\Modeling</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -51,13 +57,16 @@
       <Filter>Implementation\__Sample__</Filter>
     </ClInclude>
     <ClInclude Include="RndrGlut.h">
-      <Filter>Implementation\GLUT</Filter>
+      <Filter>Implementation\Glut</Filter>
     </ClInclude>
     <ClInclude Include="GLIncludeHeader.h">
       <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="IRndrBase.h">
       <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrModeling.h">
+      <Filter>Implementation\Modeling</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

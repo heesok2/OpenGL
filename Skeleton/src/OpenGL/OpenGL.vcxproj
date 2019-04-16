@@ -135,12 +135,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="RndrGlut.cpp" />
+    <ClCompile Include="RndrModeling.cpp" />
     <ClCompile Include="RndrSample.cpp" />
     <ClCompile Include="IRndrBase.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RndrGlut.h" />
+    <ClInclude Include="RndrModeling.h" />
     <ClInclude Include="RndrSample.h" />
     <ClInclude Include="GLIncludeHeader.h" />
     <ClInclude Include="IRndrBase.h" />

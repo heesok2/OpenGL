@@ -35,3 +35,5 @@
 *.user
 .vs
 temp
+*.suo
+*.ncb
