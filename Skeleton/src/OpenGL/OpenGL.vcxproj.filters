@@ -34,6 +34,9 @@
     <Filter Include="Implementation\Glut">
       <UniqueIdentifier>{9e72b5a8-4e54-4630-989b-69c7fe4e2d49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Implementation\Projection">
+      <UniqueIdentifier>{b27bd406-9b6e-43d2-bd95-66688b7dc2ed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -51,6 +54,9 @@
     <ClCompile Include="RndrModeling.cpp">
       <Filter>Implementation\Modeling</Filter>
     </ClCompile>
+    <ClCompile Include="RndrProjection.cpp">
+      <Filter>Implementation\Projection</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RndrSample.h">
@@ -67,6 +73,9 @@
     </ClInclude>
     <ClInclude Include="RndrModeling.h">
       <Filter>Implementation\Modeling</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrProjection.h">
+      <Filter>Implementation\Projection</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

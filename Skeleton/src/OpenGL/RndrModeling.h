@@ -22,6 +22,8 @@ private:
 	static int g_width; // window size
 	static int g_height; // window size
 	static int g_volumn; // view volumn
+	static float  g_view_near;
+	static float  g_view_far;
 
 	static int g_hour;
 	static int g_day;
