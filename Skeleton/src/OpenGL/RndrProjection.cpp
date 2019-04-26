@@ -14,7 +14,7 @@ int CRndrProjection::g_width = 400;
 int CRndrProjection::g_height = 400;
 int CRndrProjection::g_volumn = 2;
 int CRndrProjection::g_near = 0;
-int CRndrProjection::g_far = 2;
+int CRndrProjection::g_far = 5;
 int CRndrProjection::g_angle = 0;
 
 CRndrProjection::CRndrProjection()
@@ -120,7 +120,8 @@ void CRndrProjection::DrawInit()
 	// view volumn
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glOrtho(-g_volumn, g_volumn, -g_volumn, g_volumn, g_near, g_far);
+	//glOrtho(-g_volumn, g_volumn, -g_volumn, g_volumn, g_near, g_far);
+	gluPerspective(100, 1, g_near, g_far);
 	// model-view
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
