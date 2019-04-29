@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cassert>
+
 #include "RndrSample.h"
 #include "RndrGlut.h"
 #include "RndrModeling.h"
