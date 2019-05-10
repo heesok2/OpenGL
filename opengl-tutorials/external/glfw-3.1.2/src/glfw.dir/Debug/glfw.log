@@ -1,15 +1,1 @@
-﻿  Building Custom Rule F:/cloud/Git/Tutorial/openGL/tutorial/external/glfw-3.1.2/src/CMakeLists.txt
-  CMake does not need to re-run because F:/cloud/Git/Tutorial/openGL/opengl-tutorials/external/glfw-3.1.2/src/CMakeFiles/generate.stamp is up-to-date.
-  context.c
-  init.c
-  input.c
-  monitor.c
-  window.c
-  win32_init.c
-  win32_monitor.c
-  win32_time.c
-  win32_tls.c
-  win32_window.c
-  winmm_joystick.c
-  wgl_context.c
-  glfw.vcxproj -> F:\cloud\Git\Tutorial\openGL\opengl-tutorials\external\glfw-3.1.2\src\Debug\glfw3.lib
+﻿
