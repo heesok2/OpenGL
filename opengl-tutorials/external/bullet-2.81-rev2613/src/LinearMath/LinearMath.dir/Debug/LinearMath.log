@@ -1,0 +1,16 @@
+﻿  Building Custom Rule F:/cloud/Git/Tutorial/openGL/tutorial/external/bullet-2.81-rev2613/src/LinearMath/CMakeLists.txt
+  CMake does not need to re-run because F:/cloud/Git/Tutorial/openGL/opengl-tutorials/external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/generate.stamp is up-to-date.
+  btAlignedAllocator.cpp
+  btConvexHull.cpp
+  btConvexHullComputer.cpp
+  btGeometryUtil.cpp
+  btPolarDecomposition.cpp
+  btQuickprof.cpp
+  btSerializer.cpp
+  btVector3.cpp
+F:\cloud\Git\Tutorial\openGL\tutorial\external\bullet-2.81-rev2613\src\LinearMath\btPolarDecomposition.cpp(63): warning C4244: '초기화 중': 'double'에서 'btScalar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\cloud\Git\Tutorial\openGL\tutorial\external\bullet-2.81-rev2613\src\LinearMath\btPolarDecomposition.cpp(63): warning C4244: '초기화 중': 'double'에서 'const btScalar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\cloud\Git\Tutorial\openGL\tutorial\external\bullet-2.81-rev2613\src\LinearMath\btPolarDecomposition.cpp(66): warning C4244: '인수': 'double'에서 'const btScalar'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\cloud\Git\Tutorial\openGL\tutorial\external\bullet-2.81-rev2613\src\LinearMath\btVector3.cpp(46): warning C4838: 'int'에서 'const unsigned char'(으)로의 변환에는 축소 변환이 필요합니다.
+F:\cloud\Git\Tutorial\openGL\tutorial\external\bullet-2.81-rev2613\src\LinearMath\btVector3.cpp(431): warning C4838: 'int'에서 'const unsigned char'(으)로의 변환에는 축소 변환이 필요합니다.
+  LinearMath.vcxproj -> F:\cloud\Git\Tutorial\openGL\opengl-tutorials\external\bullet-2.81-rev2613\src\LinearMath\Debug\LinearMath.lib

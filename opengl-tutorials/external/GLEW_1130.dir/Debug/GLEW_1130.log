@@ -1,0 +1,4 @@
+﻿  Building Custom Rule F:/cloud/Git/Tutorial/openGL/tutorial/external/CMakeLists.txt
+  CMake does not need to re-run because F:/cloud/Git/Tutorial/openGL/opengl-tutorials/external/CMakeFiles/generate.stamp is up-to-date.
+  glew.c
+  GLEW_1130.vcxproj -> F:\cloud\Git\Tutorial\openGL\opengl-tutorials\external\Debug\GLEW_1130.lib

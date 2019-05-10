@@ -1,0 +1,5 @@
+﻿  Building Custom Rule F:/cloud/Git/Tutorial/openGL/tutorial/CMakeLists.txt
+  CMake does not need to re-run because F:/cloud/Git/Tutorial/openGL/opengl-tutorials/CMakeFiles/generate.stamp is up-to-date.
+  tutorial02.cpp
+  shader.cpp
+  tutorial02_red_triangle.vcxproj -> F:\cloud\Git\Tutorial\openGL\opengl-tutorials\Debug\tutorial02_red_triangle.exe
