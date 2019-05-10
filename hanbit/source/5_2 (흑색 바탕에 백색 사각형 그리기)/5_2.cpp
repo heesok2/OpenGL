@@ -1,4 +1,4 @@
-#include <GL/glut.h>
+#include <GL/freeglut.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
 
@@ -14,6 +14,9 @@ void MyDisplay() {
 }
 
 int main() {
+
+	int nArgc = 1;
+	glutInit(&nArgc, nullptr);
     glutCreateWindow("OpenGL Drawing Example");
     glutDisplayFunc(MyDisplay);
     glutMainLoop();

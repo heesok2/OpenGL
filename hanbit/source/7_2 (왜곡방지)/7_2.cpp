@@ -21,6 +21,7 @@ void MyReshape(int w, int h) {
 }
 
 int main(int argc, char** argv) {
+	glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);
     glutInitWindowSize(500, 500);
     glutInitWindowPosition(0, 0);
