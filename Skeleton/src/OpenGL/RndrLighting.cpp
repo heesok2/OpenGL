@@ -67,7 +67,7 @@ void CRndrLighting::DrawLighting()
 
 	glShadeModel(GL_SMOOTH);
 
-	glEnable(GL_DEPTH);
+	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_LIGHTING);
 
 	// Light Source - 광원
@@ -76,10 +76,10 @@ void CRndrLighting::DrawLighting()
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, light0_diffuse); // 확산광
 	glLightfv(GL_LIGHT0, GL_SPECULAR, light0_specular); // 경면광
 
-	//glEnable(GL_LIGHT1);
-	//glLightfv(GL_LIGHT1, GL_AMBIENT, light1_ambient); // 주변광
-	//glLightfv(GL_LIGHT1, GL_AMBIENT, light1_diffuse); // 확산광
-	//glLightfv(GL_LIGHT1, GL_AMBIENT, light1_specular); // 경면광
+	glEnable(GL_LIGHT1);
+	glLightfv(GL_LIGHT1, GL_AMBIENT, light1_ambient); // 주변광
+	glLightfv(GL_LIGHT1, GL_AMBIENT, light1_diffuse); // 확산광
+	glLightfv(GL_LIGHT1, GL_AMBIENT, light1_specular); // 경면광
 
 	// Material - 재질
 	glMaterialfv(GL_FRONT, GL_AMBIENT, material_ambient);
@@ -112,16 +112,15 @@ void CRndrLighting::MyDisplayFunc()
 			glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 1.0);
 			glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.);
 			glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.);
-			
 			glTranslatef(0, 0, 2.);
 			glutSolidSphere(0.1, 10, 10);
 		}
 		glPopMatrix();
 		
-		//glLightfv(GL_LIGHT1, GL_POSITION, LightPosition1); // 스포트라이트 광원
-		//glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, LightDirection1); // 방향
-		//glLightfv(GL_LIGHT1, GL_SPOT_CUTOFF, SpotAngle1); // 각도
-		//glLightf(GL_LIGHT1, GL_SPOT_EXPONENT, 1.); // 코사인의 승수
+		glLightfv(GL_LIGHT1, GL_POSITION, LightPosition1); // 스포트라이트 광원
+		glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, LightDirection1); // 방향
+		glLightfv(GL_LIGHT1, GL_SPOT_CUTOFF, SpotAngle1); // 각도
+		glLightf(GL_LIGHT1, GL_SPOT_EXPONENT, 1.); // 코사인의 승수
 
 		glutSolidSphere(1, 200, 200);
 	}
