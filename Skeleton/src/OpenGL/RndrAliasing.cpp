@@ -61,7 +61,7 @@ bool CRndrAliasing::Run()
 {
 	int nArgc = 1;
 	glutInit(&nArgc, nullptr);
-	glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH | GLUT_DOUBLE);
+	glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
 	glutInitWindowSize(g_width, g_height);
 	glutInitWindowPosition(g_win_x, g_win_y);
 	g_win_command = glutCreateWindow("Anti-Aliasing"); // Main Window

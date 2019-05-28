@@ -40,6 +40,9 @@
     <Filter Include="Implementation\04. Aliasing">
       <UniqueIdentifier>{4a342e97-190f-4395-81dc-a126dadc48e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Implementation\05. Lighting">
+      <UniqueIdentifier>{ae8c6af5-5b99-4462-9385-07ed4baafb20}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -63,6 +66,9 @@
     <ClCompile Include="RndrAliasing.cpp">
       <Filter>Implementation\04. Aliasing</Filter>
     </ClCompile>
+    <ClCompile Include="RndrLighting.cpp">
+      <Filter>Implementation\05. Lighting</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RndrSample.h">
@@ -85,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="RndrAliasing.h">
       <Filter>Implementation\04. Aliasing</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrLighting.h">
+      <Filter>Implementation\05. Lighting</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

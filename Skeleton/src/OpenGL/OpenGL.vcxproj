@@ -135,6 +135,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="RndrAliasing.cpp" />
+    <ClCompile Include="RndrLighting.cpp" />
     <ClCompile Include="RndrProjection.cpp" />
     <ClCompile Include="RndrGlut.cpp" />
     <ClCompile Include="RndrModeling.cpp" />
@@ -144,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RndrAliasing.h" />
+    <ClInclude Include="RndrLighting.h" />
     <ClInclude Include="RndrProjection.h" />
     <ClInclude Include="RndrGlut.h" />
     <ClInclude Include="RndrModeling.h" />

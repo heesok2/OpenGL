@@ -35,7 +35,7 @@ bool CRndrModeling::Run()
 {
 	int nArgc = 1;
 	glutInit(&nArgc, nullptr);
-	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
+	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE);
 	glutInitWindowSize(g_width, g_height);
 	glutInitWindowPosition(10, 10);
 	glutCreateWindow("OpenGL Sample Display");
