@@ -41,3 +41,4 @@ temp
 *.log
 *.htm
 *.idb
+*.embed.manifest.res
