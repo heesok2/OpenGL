@@ -39,3 +39,5 @@ temp
 *.ncb
 *.tlog
 *.log
+*.htm
+*.idb
