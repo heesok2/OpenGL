@@ -42,3 +42,4 @@ temp
 *.htm
 *.idb
 *.embed.manifest.res
+/Backup/
