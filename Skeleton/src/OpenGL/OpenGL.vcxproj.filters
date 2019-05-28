@@ -19,23 +19,26 @@
     <Filter Include="Implementation">
       <UniqueIdentifier>{e0258861-f199-4860-a70e-fbdd92905176}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementation\__Sample__">
-      <UniqueIdentifier>{ab134645-6f11-470e-b6e5-a321986f7187}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Include">
       <UniqueIdentifier>{1a398066-8bb0-47e5-83a9-11c6e7a60aa6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Interface">
       <UniqueIdentifier>{0ee047ef-abdf-406a-88f1-597b46907c61}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementation\Modeling">
-      <UniqueIdentifier>{185feddf-27b1-4a44-b9e2-de55b99b65f5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Implementation\Glut">
+    <Filter Include="Implementation\01. Glut">
       <UniqueIdentifier>{9e72b5a8-4e54-4630-989b-69c7fe4e2d49}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementation\Projection">
+    <Filter Include="Implementation\02. Modeling">
+      <UniqueIdentifier>{185feddf-27b1-4a44-b9e2-de55b99b65f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation\00. __Sample__">
+      <UniqueIdentifier>{ab134645-6f11-470e-b6e5-a321986f7187}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation\03. Projection">
       <UniqueIdentifier>{b27bd406-9b6e-43d2-bd95-66688b7dc2ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation\04. Aliasing">
+      <UniqueIdentifier>{4a342e97-190f-4395-81dc-a126dadc48e2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -43,27 +46,30 @@
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="RndrSample.cpp">
-      <Filter>Implementation\__Sample__</Filter>
+      <Filter>Implementation\00. __Sample__</Filter>
     </ClCompile>
     <ClCompile Include="RndrGlut.cpp">
-      <Filter>Implementation\Glut</Filter>
+      <Filter>Implementation\01. Glut</Filter>
     </ClCompile>
     <ClCompile Include="IRndrBase.cpp">
       <Filter>Interface</Filter>
     </ClCompile>
     <ClCompile Include="RndrModeling.cpp">
-      <Filter>Implementation\Modeling</Filter>
+      <Filter>Implementation\02. Modeling</Filter>
     </ClCompile>
     <ClCompile Include="RndrProjection.cpp">
-      <Filter>Implementation\Projection</Filter>
+      <Filter>Implementation\03. Projection</Filter>
+    </ClCompile>
+    <ClCompile Include="RndrAliasing.cpp">
+      <Filter>Implementation\04. Aliasing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RndrSample.h">
-      <Filter>Implementation\__Sample__</Filter>
+      <Filter>Implementation\00. __Sample__</Filter>
     </ClInclude>
     <ClInclude Include="RndrGlut.h">
-      <Filter>Implementation\Glut</Filter>
+      <Filter>Implementation\01. Glut</Filter>
     </ClInclude>
     <ClInclude Include="GLIncludeHeader.h">
       <Filter>Include</Filter>
@@ -72,10 +78,13 @@
       <Filter>Interface</Filter>
     </ClInclude>
     <ClInclude Include="RndrModeling.h">
-      <Filter>Implementation\Modeling</Filter>
+      <Filter>Implementation\02. Modeling</Filter>
     </ClInclude>
     <ClInclude Include="RndrProjection.h">
-      <Filter>Implementation\Projection</Filter>
+      <Filter>Implementation\03. Projection</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrAliasing.h">
+      <Filter>Implementation\04. Aliasing</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
