@@ -7,6 +7,7 @@
 #include "RndrProjection.h"
 #include "RndrAliasing.h"
 #include "RndrLighting.h"
+#include "RndrTexture.h"
 
 enum GL_RNDR_TYPE
 {
@@ -16,12 +17,13 @@ enum GL_RNDR_TYPE
 	GL_RNDR_PROJECTION,
 	GL_RNDR_ALIASING,
 	GL_RNDR_LIGHTING,
+	GL_RNDR_TEXTURE,
 	GL_RNDR_NUM
 };
 
 int main(int argc, char **argv)
 {
-	GL_RNDR_TYPE eType = GL_RNDR_LIGHTING;
+	GL_RNDR_TYPE eType = GL_RNDR_TEXTURE;
 	switch (eType)
 	{
 	case GL_RNDR_SAMPLE: { CRndrSample rndr; rndr.Run(); } break;
@@ -30,6 +32,7 @@ int main(int argc, char **argv)
 	case GL_RNDR_PROJECTION: { CRndrProjection rndr; rndr.Run(); } break;
 	case GL_RNDR_ALIASING: { CRndrAliasing rndr; rndr.Run(); } break;
 	case GL_RNDR_LIGHTING: { CRndrLighting rndr; rndr.Run(); } break;
+	case GL_RNDR_TEXTURE: { CRndrTexture rndr; rndr.Run(); } break;
 	}
 
 	return 0;

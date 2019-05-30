@@ -11,7 +11,7 @@ int CRndrLighting::g_near = 0;
 int CRndrLighting::g_far = 2;
 
 int CRndrLighting::g_win_command = 0;
-int CRndrLighting::g_angle = 0.;
+int CRndrLighting::g_angle = 0;
 
 
 CRndrLighting::CRndrLighting()
@@ -49,20 +49,20 @@ void CRndrLighting::DrawInit()
 
 void CRndrLighting::DrawLighting()
 {
-	GLfloat global_ambient[] = { 0.1, 0.1, 0.1, 1.0 };     //전역 주변반사
+	GLfloat global_ambient[] = { 0.1f, 0.1f, 0.1f, 1.0f };     //전역 주변반사
 
-	GLfloat light0_ambient[] = { 0.5, 0.4, 0.3, 1.0 };     //0번 광원 특성
-	GLfloat light0_diffuse[] = { 0.5, 0.4, 0.3, 1.0 };
-	GLfloat light0_specular[] = { 1.0, 1.0, 1.0, 1.0 };
+	GLfloat light0_ambient[] = { 0.5f, 0.4f, 0.3f, 1.0f };     //0번 광원 특성
+	GLfloat light0_diffuse[] = { 0.5f, 0.4f, 0.3f, 1.0f };
+	GLfloat light0_specular[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 
-	GLfloat light1_ambient[] = { 0.0, 0.0, 0.0, 1.0 };     //1번 광원 특성
-	GLfloat light1_diffuse[] = { 0.5, 0.2, 0.3, 1.0 };
-	GLfloat light1_specular[] = { 0.0, 0.0, 0.0, 1.0 };
+	GLfloat light1_ambient[] = { 0.0f, 0.0f, 0.0f, 1.0f };     //1번 광원 특성
+	GLfloat light1_diffuse[] = { 0.5f, 0.2f, 0.3f, 1.0f };
+	GLfloat light1_specular[] = { 0.0f, 0.0f, 0.0f, 1.0f };
 
-	GLfloat material_ambient[] = { 0.3, 0.3, 0.3, 1.0 };  //물체 특성
-	GLfloat material_diffuse[] = { 0.8, 0.8, 0.8, 1.0 };
-	GLfloat material_specular[] = { 0.0, 0.0, 1.0, 1.0 };
-	GLfloat material_shininess[] = { 25.0 };
+	GLfloat material_ambient[] = { 0.3f, 0.3f, 0.3f, 1.0f };  //물체 특성
+	GLfloat material_diffuse[] = { 0.8f, 0.8f, 0.8f, 1.0f };
+	GLfloat material_specular[] = { 0.0f, 0.0f, 1.0f, 1.0f };
+	GLfloat material_shininess[] = { 25.0f };
 
 
 	glShadeModel(GL_SMOOTH);

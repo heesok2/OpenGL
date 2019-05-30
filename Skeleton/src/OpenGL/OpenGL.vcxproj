@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="RndrTexture.cpp" />
     <ClCompile Include="RndrAliasing.cpp" />
     <ClCompile Include="RndrLighting.cpp" />
     <ClCompile Include="RndrProjection.cpp" />
@@ -144,6 +145,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="RndrTexture.h" />
     <ClInclude Include="RndrAliasing.h" />
     <ClInclude Include="RndrLighting.h" />
     <ClInclude Include="RndrProjection.h" />
