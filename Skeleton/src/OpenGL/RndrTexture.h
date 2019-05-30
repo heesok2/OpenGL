@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "IRndrBase.h"
 class CRndrTexture : public IRndrBase
 {

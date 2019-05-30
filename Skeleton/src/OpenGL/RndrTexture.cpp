@@ -12,6 +12,10 @@ int CRndrTexture::g_far = 5;
 int CRndrTexture::g_win_command = 0;
 int CRndrTexture::g_angle = 30;
 
+#define TEX_WIDTH 4
+#define TEX_HEIGHT 4
+unsigned char g_texture_2d[TEX_WIDTH][TEX_HEIGHT][4] = { 0 };
+
 CRndrTexture::CRndrTexture()
 {
 }
@@ -30,7 +34,7 @@ bool CRndrTexture::Run()
 	g_win_command = glutCreateWindow("Texture");
 
 	DrawInit();
-	DrawLighting();
+	//DrawLighting();
 
 	glutDisplayFunc(MyDisplayFunc);
 	glutReshapeFunc(MyReshapeFunc);
@@ -41,7 +45,26 @@ bool CRndrTexture::Run()
 
 void CRndrTexture::DrawInit()
 {
+	for (auto s = 0; s < TEX_WIDTH; ++s)
+	{
+		for (auto t = 0; t < TEX_HEIGHT; ++t)
+		{
+			GLubyte color = ((s + t) % 2) * 255;
+			g_texture_2d[s][t][0] = color;
+			g_texture_2d[s][t][1] = color;
+			g_texture_2d[s][t][2] = color;
+			g_texture_2d[s][t][3] = 255;
+		}
+	}
+
 	glClearColor(0, 0, 0, 1);
+	glTexImage2D(GL_TEXTURE_2D, 0, 4, TEX_WIDTH, TEX_HEIGHT, 0, GL_RGBA, GL_UNSIGNED_BYTE, &g_texture_2d[0][0][0]);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
+	glEnable(GL_TEXTURE_2D);
 }
 
 void CRndrTexture::DrawLighting()
@@ -95,21 +118,30 @@ void CRndrTexture::MyDisplayFunc()
 	
 	gluLookAt(0, 0, g_volumn, 0, 0, -1, 0, 1, 0);
 
-	{
-		glPushMatrix();
-		{
-			//glRotatef(g_angle, 0, 1, 1);
-			//glTranslatef(1, 0, 0);
-			glLightfv(GL_LIGHT0, GL_POSITION, LightPosition0);
-			glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 1);
-			glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.);
-			glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.);
-		}
-		glPopMatrix();
+	//{
+	//	glPushMatrix();
+	//	{
+	//		//glRotatef(g_angle, 0, 1, 1);
+	//		//glTranslatef(1, 0, 0);
+	//		glLightfv(GL_LIGHT0, GL_POSITION, LightPosition0);
+	//		glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 1);
+	//		glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.);
+	//		glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.);
+	//	}
+	//	glPopMatrix();
 
-		glColor3f(0.2f, 0.2f, 0.2f);
-		glutSolidSphere(2, 200, 200);
+	//	glColor3f(0.2f, 0.2f, 0.2f);
+	//	glutSolidSphere(2, 200, 200);
+	//}
+
+	glBegin(GL_QUADS);
+	{
+		glTexCoord2f(0.0, 0.0); glVertex3f(-1.0, -1.0, 0.0);
+		glTexCoord2f(0.0, 3.0); glVertex3f(-1.0, 1.0, 0.0);
+		glTexCoord2f(3.0, 3.0); glVertex3f(1.0, 1.0, 0.0);
+		glTexCoord2f(3.0, 0.0); glVertex3f(1.0, -1.0, 0.0);
 	}
+	glEnd();
 
 	glutSwapBuffers();
 }
