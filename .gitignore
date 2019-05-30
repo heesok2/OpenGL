@@ -42,4 +42,5 @@ temp
 *.htm
 *.idb
 *.embed.manifest.res
-/Backup/
+hanbit/source/*/Debug/
+hanbit/source/*/packages/
