@@ -25,26 +25,35 @@
     <Filter Include="Interface">
       <UniqueIdentifier>{0ee047ef-abdf-406a-88f1-597b46907c61}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementation\01. Glut">
+    <Filter Include="Implementation\Glut">
+      <UniqueIdentifier>{698f9dd1-4b0d-48c7-9edb-916e1518f69f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation\Glut\06. Texture">
+      <UniqueIdentifier>{b0bac378-820e-42d8-ac8b-c3b832376084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation\Glut\01. Glut">
       <UniqueIdentifier>{9e72b5a8-4e54-4630-989b-69c7fe4e2d49}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementation\02. Modeling">
+    <Filter Include="Implementation\Glut\02. Modeling">
       <UniqueIdentifier>{185feddf-27b1-4a44-b9e2-de55b99b65f5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementation\00. __Sample__">
-      <UniqueIdentifier>{ab134645-6f11-470e-b6e5-a321986f7187}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Implementation\03. Projection">
+    <Filter Include="Implementation\Glut\03. Projection">
       <UniqueIdentifier>{b27bd406-9b6e-43d2-bd95-66688b7dc2ed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementation\04. Aliasing">
+    <Filter Include="Implementation\Glut\04. Aliasing">
       <UniqueIdentifier>{4a342e97-190f-4395-81dc-a126dadc48e2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementation\05. Lighting">
+    <Filter Include="Implementation\Glut\05. Lighting">
       <UniqueIdentifier>{ae8c6af5-5b99-4462-9385-07ed4baafb20}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementation\06. Texture">
-      <UniqueIdentifier>{b0bac378-820e-42d8-ac8b-c3b832376084}</UniqueIdentifier>
+    <Filter Include="Implementation\Glfw">
+      <UniqueIdentifier>{fb3ec018-b2dc-4c90-a5d8-dcc7ae76d161}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation\Glut\__Sample__">
+      <UniqueIdentifier>{ab134645-6f11-470e-b6e5-a321986f7187}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementation\Glfw\01. Glfw">
+      <UniqueIdentifier>{93dc8666-2183-4e43-814c-f94f7657564b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -52,36 +61,42 @@
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="RndrSample.cpp">
-      <Filter>Implementation\00. __Sample__</Filter>
+      <Filter>Implementation\Glut\__Sample__</Filter>
     </ClCompile>
     <ClCompile Include="RndrGlut.cpp">
-      <Filter>Implementation\01. Glut</Filter>
+      <Filter>Implementation\Glut\01. Glut</Filter>
     </ClCompile>
     <ClCompile Include="IRndrBase.cpp">
       <Filter>Interface</Filter>
     </ClCompile>
     <ClCompile Include="RndrModeling.cpp">
-      <Filter>Implementation\02. Modeling</Filter>
+      <Filter>Implementation\Glut\02. Modeling</Filter>
     </ClCompile>
     <ClCompile Include="RndrProjection.cpp">
-      <Filter>Implementation\03. Projection</Filter>
+      <Filter>Implementation\Glut\03. Projection</Filter>
     </ClCompile>
     <ClCompile Include="RndrAliasing.cpp">
-      <Filter>Implementation\04. Aliasing</Filter>
+      <Filter>Implementation\Glut\04. Aliasing</Filter>
     </ClCompile>
     <ClCompile Include="RndrLighting.cpp">
-      <Filter>Implementation\05. Lighting</Filter>
+      <Filter>Implementation\Glut\05. Lighting</Filter>
     </ClCompile>
     <ClCompile Include="RndrTexture.cpp">
-      <Filter>Implementation\06. Texture</Filter>
+      <Filter>Implementation\Glut\06. Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CRndrGlfw.cpp">
+      <Filter>Implementation\Glfw\01. Glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\include\v141\glad\glad.c">
+      <Filter>__General__</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RndrSample.h">
-      <Filter>Implementation\00. __Sample__</Filter>
+      <Filter>Implementation\Glut\__Sample__</Filter>
     </ClInclude>
     <ClInclude Include="RndrGlut.h">
-      <Filter>Implementation\01. Glut</Filter>
+      <Filter>Implementation\Glut\01. Glut</Filter>
     </ClInclude>
     <ClInclude Include="GLIncludeHeader.h">
       <Filter>Include</Filter>
@@ -90,19 +105,25 @@
       <Filter>Interface</Filter>
     </ClInclude>
     <ClInclude Include="RndrModeling.h">
-      <Filter>Implementation\02. Modeling</Filter>
+      <Filter>Implementation\Glut\02. Modeling</Filter>
     </ClInclude>
     <ClInclude Include="RndrProjection.h">
-      <Filter>Implementation\03. Projection</Filter>
+      <Filter>Implementation\Glut\03. Projection</Filter>
     </ClInclude>
     <ClInclude Include="RndrAliasing.h">
-      <Filter>Implementation\04. Aliasing</Filter>
+      <Filter>Implementation\Glut\04. Aliasing</Filter>
     </ClInclude>
     <ClInclude Include="RndrLighting.h">
-      <Filter>Implementation\05. Lighting</Filter>
+      <Filter>Implementation\Glut\05. Lighting</Filter>
     </ClInclude>
     <ClInclude Include="RndrTexture.h">
-      <Filter>Implementation\06. Texture</Filter>
+      <Filter>Implementation\Glut\06. Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="GlfwIncludeHeader.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="CRndrGlfw.h">
+      <Filter>Implementation\Glfw\01. Glfw</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,9 +8,11 @@
 #include "RndrAliasing.h"
 #include "RndrLighting.h"
 #include "RndrTexture.h"
+#include "CRndrGlfw.h"
 
 enum GL_RNDR_TYPE
 {
+	// GLUT
 	GL_RNDR_SAMPLE = 0,
 	GL_RNDR_GLUT,
 	GL_RNDR_MODELING,
@@ -18,12 +20,17 @@ enum GL_RNDR_TYPE
 	GL_RNDR_ALIASING,
 	GL_RNDR_LIGHTING,
 	GL_RNDR_TEXTURE,
+
+	// GLFW
+	GL_RNDR_GLFW,
+
+	// Max Num
 	GL_RNDR_NUM
 };
 
 int main(int argc, char **argv)
 {
-	GL_RNDR_TYPE eType = GL_RNDR_TEXTURE;
+	GL_RNDR_TYPE eType = GL_RNDR_GLFW;
 	switch (eType)
 	{
 	case GL_RNDR_SAMPLE: { CRndrSample rndr; rndr.Run(); } break;
@@ -33,6 +40,7 @@ int main(int argc, char **argv)
 	case GL_RNDR_ALIASING: { CRndrAliasing rndr; rndr.Run(); } break;
 	case GL_RNDR_LIGHTING: { CRndrLighting rndr; rndr.Run(); } break;
 	case GL_RNDR_TEXTURE: { CRndrTexture rndr; rndr.Run(); } break;
+	case GL_RNDR_GLFW: { CRndrGlfw rndr; rndr.Run(); } break;
 	}
 
 	return 0;
