@@ -19,9 +19,6 @@
     <Filter Include="Implementation">
       <UniqueIdentifier>{e0258861-f199-4860-a70e-fbdd92905176}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include">
-      <UniqueIdentifier>{1a398066-8bb0-47e5-83a9-11c6e7a60aa6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Interface">
       <UniqueIdentifier>{0ee047ef-abdf-406a-88f1-597b46907c61}</UniqueIdentifier>
     </Filter>
@@ -88,7 +85,7 @@
       <Filter>Implementation\Glfw\01. Glfw</Filter>
     </ClCompile>
     <ClCompile Include="..\..\include\$(PlatformToolset)\glad\glad.c">
-      <Filter>Include</Filter>
+      <Filter>__General__</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,9 +94,6 @@
     </ClInclude>
     <ClInclude Include="RndrGlut.h">
       <Filter>Implementation\Glut\01. Glut</Filter>
-    </ClInclude>
-    <ClInclude Include="GLIncludeHeader.h">
-      <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="IRndrBase.h">
       <Filter>Interface</Filter>
@@ -122,8 +116,11 @@
     <ClInclude Include="CRndrGlfw.h">
       <Filter>Implementation\Glfw\01. Glfw</Filter>
     </ClInclude>
+    <ClInclude Include="GLIncludeHeader.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
     <ClInclude Include="GlfwIncludeHeader.h">
-      <Filter>Include</Filter>
+      <Filter>__General__</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
