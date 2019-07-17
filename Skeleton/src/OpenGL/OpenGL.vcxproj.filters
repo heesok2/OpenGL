@@ -87,8 +87,8 @@
     <ClCompile Include="CRndrGlfw.cpp">
       <Filter>Implementation\Glfw\01. Glfw</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\include\v141\glad\glad.c">
-      <Filter>__General__</Filter>
+    <ClCompile Include="..\..\include\$(PlatformToolset)\glad\glad.c">
+      <Filter>Include</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -119,11 +119,11 @@
     <ClInclude Include="RndrTexture.h">
       <Filter>Implementation\Glut\06. Texture</Filter>
     </ClInclude>
-    <ClInclude Include="GlfwIncludeHeader.h">
-      <Filter>Include</Filter>
-    </ClInclude>
     <ClInclude Include="CRndrGlfw.h">
       <Filter>Implementation\Glfw\01. Glfw</Filter>
+    </ClInclude>
+    <ClInclude Include="GlfwIncludeHeader.h">
+      <Filter>Include</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
