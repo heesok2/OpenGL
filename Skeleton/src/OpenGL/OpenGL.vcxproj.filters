@@ -52,6 +52,9 @@
     <Filter Include="Implementation\Glfw\01. Glfw">
       <UniqueIdentifier>{93dc8666-2183-4e43-814c-f94f7657564b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{46f7338e-92fb-42d3-8ce8-8130e52ceffb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -86,6 +89,9 @@
     </ClCompile>
     <ClCompile Include="..\..\include\$(PlatformToolset)\glad\glad.c">
       <Filter>__General__</Filter>
+    </ClCompile>
+    <ClCompile Include="CShaderProgram.cpp">
+      <Filter>Shader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +131,12 @@
     <ClInclude Include="resource.h">
       <Filter>__General__</Filter>
     </ClInclude>
+    <ClInclude Include="CShaderProgram.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderDef.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="openGL.rc">
@@ -133,7 +145,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resource\shader_glfw_vert.glsl">
-      <Filter>__Resource__</Filter>
+      <Filter>__Resource File__</Filter>
+    </None>
+    <None Include="resource\shader_glfw_frag.glsl">
+      <Filter>__Resource File__</Filter>
     </None>
   </ItemGroup>
 </Project>
