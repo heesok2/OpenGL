@@ -164,8 +164,6 @@
     <ResourceCompile Include="openGL.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="glsl1.bin" />
-    <None Include="glsl2.bin" />
     <None Include="resource\shader_glfw_vert.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -132,12 +132,8 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="glsl1.bin">
+    <None Include="resource\shader_glfw_vert.glsl">
       <Filter>__Resource__</Filter>
     </None>
-    <None Include="glsl2.bin">
-      <Filter>__Resource__</Filter>
-    </None>
-    <None Include="resource\shader_glfw_vert.glsl" />
   </ItemGroup>
 </Project>

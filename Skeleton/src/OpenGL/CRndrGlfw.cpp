@@ -98,8 +98,25 @@ bool CRndrGlfw::GLInit()
 	auto hRes = FindResource(hMod, MAKEINTRESOURCE(IDR_SHADER_GLFW_VERT), "glsl");
 	auto dwSize = SizeofResource(hMod, hRes);
 	auto hResData = LoadResource(hMod, hRes);
-	LockResource(hResData);
+	auto lpData = reinterpret_cast<GLchar*>(LockResource(hResData));
+
+	GLchar* aShader = new GLchar[dwSize + 1];
+	std::copy(lpData, lpData + dwSize, aShader);
+	aShader[dwSize] = '\0';
+	glShaderSource(uiShaderVert, 1, &aShader, nullptr);
+	glCompileShader(uiShaderVert);
+
+	GLint error;
+	glGetShaderiv(uiShaderVert, GL_COMPILE_STATUS, &error);
+	if (!error)
+	{
+		GLchar msg[512];
+		glGetShaderInfoLog(uiShaderVert, sizeof(msg), nullptr, msg);
+		std::cout << "Error : " << msg << std::endl;
+	}
+
 	UnlockResource(hResData);
+	FreeResource(hResData);
 
 	return true;
 }
