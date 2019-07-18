@@ -122,5 +122,22 @@
     <ClInclude Include="GlfwIncludeHeader.h">
       <Filter>__General__</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>__General__</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="openGL.rc">
+      <Filter>__Resource__</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="glsl1.bin">
+      <Filter>__Resource__</Filter>
+    </None>
+    <None Include="glsl2.bin">
+      <Filter>__Resource__</Filter>
+    </None>
+    <None Include="resource\shader_glfw_vert.glsl" />
   </ItemGroup>
 </Project>

@@ -17,6 +17,7 @@ private:
 	static void CallbackKeyFunc(GLFWwindow* pWnd, int key, int scancode, int action, int mods);
 
 private:
-	void GLInit();
+	bool GLInit();
+	void GLDraw();
 };
 

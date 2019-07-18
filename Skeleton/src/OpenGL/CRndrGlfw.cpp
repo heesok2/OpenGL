@@ -1,5 +1,7 @@
 #include <iostream>
 #include "CRndrGlfw.h"
+#include "resource.h"
+#include <Windows.h>
 
 CRndrGlfw::CRndrGlfw()
 {
@@ -40,15 +42,17 @@ bool CRndrGlfw::Run()
 	glfwSetFramebufferSizeCallback(pWnd, CallbackSizeFunc);
 	glfwSetKeyCallback(pWnd, CallbackKeyFunc);
 
+	GLInit();
+
 	// 5. message loop
 	while (!glfwWindowShouldClose(pWnd))
 	{
-		GLInit();
+
+		GLDraw();
 
 
 
-
-		glfwSwapBuffers(pWnd); 
+		glfwSwapBuffers(pWnd);
 		glfwPollEvents(); // check event
 	}
 
@@ -67,8 +71,42 @@ void CRndrGlfw::CallbackKeyFunc(GLFWwindow * pWnd, int key, int scancode, int ac
 {
 }
 
-void CRndrGlfw::GLInit()
+bool CRndrGlfw::GLInit()
 {
 	glClearColor(0.2f, 0.3f, 0.3f, 1.f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+
+	// NDC(Normalized Device Coordinates)
+	GLfloat pVertices[] =
+	{
+		-0.5f, -0.5f, 0.f,
+		0.5f, -0.5f, 0.f,
+		0.f, 0.5f, 0.f
+	};
+
+	// VBO(Vertex Buffer Object)
+	GLuint uiGen = 0;
+	glGenBuffers(1, &uiGen);
+	glBindBuffer(GL_ARRAY_BUFFER, uiGen);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(pVertices), pVertices, GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+	GLuint uiShaderVert = glCreateShader(GL_VERTEX_SHADER);
+
+	auto hMod = GetModuleHandle(nullptr);
+	auto hRes = FindResource(hMod, MAKEINTRESOURCE(IDR_SHADER_GLFW_VERT), "glsl");
+	auto dwSize = SizeofResource(hMod, hRes);
+	auto hResData = LoadResource(hMod, hRes);
+	LockResource(hResData);
+	UnlockResource(hResData);
+
+	return true;
+}
+
+void CRndrGlfw::GLDraw()
+{
+	
+
+
 }
