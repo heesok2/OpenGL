@@ -1,10 +1,6 @@
 #include <iostream>
 #include "CRndrGlfw.h"
 #include "CShaderProgram.h"
-#include "ShaderDef.h"
-#include "resource.h"
-
-#include <Windows.h>
 
 int g_width = 500;
 int g_height = 500;
@@ -53,43 +49,48 @@ bool CRndrGlfw::Run()
 		return false;
 	}
 
-	// 4. shader 
+	// 4. initialize shader 
 	CShaderProgram shader;
-	auto nProgram = shader.GLCreate();
-	shader.GLLoadShader(E_SHADER_GLFW);
+	if (!shader.GLLoadShader(E_SHADER_GLFW))
+	{
+		std::cout << "Failed to initialize shader" << std::endl;
+		glfwTerminate();
+		return false;
+	}
 
 	// 5. VBO(Vertex Buffer Object)
 	GLuint uiVBO, uiVBA;
 	glGenBuffers(1, &uiVBO);
 	glGenVertexArrays(1, &uiVBA);
-	
+
 	// first vertex array bind, next vertex buffer bind
 	glBindVertexArray(uiVBA);
 	glBindBuffer(GL_ARRAY_BUFFER, uiVBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(aVertices), aVertices, GL_STATIC_DRAW);
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GL_FLOAT), nullptr);
-	
+
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
+	glViewport(0, 0, g_width, g_height);
+	glClearColor(0.2f, 0.3f, 0.3f, 1.f);
 
-	GLInit();
-
-	// 5. message loop
+	// 6. loop
 	while (!glfwWindowShouldClose(pWnd))
 	{
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		
-		glUseProgram(nProgram);
+
+		shader.GLBind();
 		glBindVertexArray(uiVBA);
 		glDrawArrays(GL_TRIANGLES, 0, 3);
+		shader.GLUnbind();
 
 		glfwSwapBuffers(pWnd);
 		glfwPollEvents(); // check event
 	}
 
-	// 6. destroy resource
+	// 7. destroy resource
 	glDeleteVertexArrays(1, &uiVBA);
 	glDeleteBuffers(1, &uiVBO);
 
@@ -108,18 +109,5 @@ void CRndrGlfw::CallbackSizeFunc(GLFWwindow * pWnd, int width, int height)
 
 void CRndrGlfw::CallbackKeyFunc(GLFWwindow * pWnd, int key, int scancode, int action, int mods)
 {
-}
-
-bool CRndrGlfw::GLInit()
-{
-	// 4. viewport
-	glViewport(0, 0, g_width, g_height);
-	glClearColor(0.2f, 0.3f, 0.3f, 1.f);
-
-	return true;
-}
-
-void CRndrGlfw::GLDraw()
-{
-
+	// Unknown
 }

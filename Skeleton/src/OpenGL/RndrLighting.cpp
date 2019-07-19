@@ -1,5 +1,5 @@
 #include "RndrLighting.h"
-#include "GLIncludeHeader.h"
+#include "GlutIncludeHeader.h"
 
 int CRndrLighting::g_win_x = 0;
 int CRndrLighting::g_win_y = 0;

@@ -1,5 +1,5 @@
 #include "RndrSample.h"
-#include "GLIncludeHeader.h"
+#include "GlutIncludeHeader.h"
 
 CRndrSample::CRndrSample()
 {

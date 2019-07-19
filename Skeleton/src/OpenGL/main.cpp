@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cassert>
 
 #include "RndrSample.h"
 #include "RndrGlut.h"
@@ -24,7 +23,7 @@ enum GL_RNDR_TYPE
 	// GLFW
 	GL_RNDR_GLFW,
 
-	// Max Num
+	// Num
 	GL_RNDR_NUM
 };
 

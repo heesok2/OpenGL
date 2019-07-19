@@ -15,9 +15,4 @@ public:
 private:
 	static void CallbackSizeFunc(GLFWwindow* pWnd, int width, int height);
 	static void CallbackKeyFunc(GLFWwindow* pWnd, int key, int scancode, int action, int mods);
-
-private:
-	bool GLInit();
-	void GLDraw();
 };
-

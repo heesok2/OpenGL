@@ -1,5 +1,5 @@
 #include "RndrGlut.h"
-#include "GLIncludeHeader.h"
+#include "GlutIncludeHeader.h"
 #include <cassert>
 
 enum E_MENU_MODE

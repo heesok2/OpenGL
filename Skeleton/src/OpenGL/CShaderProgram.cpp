@@ -1,6 +1,4 @@
 #include "CShaderProgram.h"
-#include "ShaderDef.h"
-
 #include <atltrace.h>
 
 CShaderProgram::CShaderProgram()
@@ -12,49 +10,33 @@ CShaderProgram::~CShaderProgram()
 {
 }
 
-GLint CShaderProgram::GLCreate()
+bool CShaderProgram::GLBind()
 {
-	ATLTRACE("program 积己");
-
-	if (m_nProgram)
+	if (!m_nProgram)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[warning] program 吝汗 积己");
-		return m_nProgram;
+		ATLTRACE("[error] not found program");
+		return false;
 	}
 
-	m_nProgram = glCreateProgram();
-	return m_nProgram;
+	glUseProgram(m_nProgram);
+	return true;
 }
 
-void CShaderProgram::GLDeleteShader()
+void CShaderProgram::GLUnbind()
 {
-	auto lambda_clear = [&](std::vector<GLint>& aShader)
+	glUseProgram(0);
+}
+
+bool CShaderProgram::GLLoadShader(unsigned int eShaderType)
+{
+	if (!GLCreateProgram())
 	{
-		for (auto itr : aShader)
-			glDeleteShader(itr);
+		ATLASSERT(false);
+		ATLTRACE("[error] Failed to GLCreateProgram");
+		return false;
+	}
 
-		aShader.clear();
-	};
-
-	lambda_clear(m_aShaderVertex);
-	lambda_clear(m_aShaderFragment);
-}
-
-void CShaderProgram::GLDetachShader()
-{
-	auto lambda_detach = [&](std::vector<GLint>& aShader)
-	{
-		for (auto itr : aShader)
-			glDetachShader(m_nProgram, itr);
-	};
-
-	lambda_detach(m_aShaderVertex);
-	lambda_detach(m_aShaderFragment);
-}
-
-void CShaderProgram::GLLoadShader(unsigned int eShaderType)
-{
 	auto hMod = GetModuleHandle(nullptr);
 	switch (eShaderType)
 	{
@@ -64,18 +46,16 @@ void CShaderProgram::GLLoadShader(unsigned int eShaderType)
 				!GLAttachShader(GL_FRAGMENT_SHADER, hMod, IDR_SHADER_GLFW_FRAG))
 			{
 				ATLASSERT(false);
-				ATLTRACE("[warning] failed GLAttachShader");
-
-				return;
+				ATLTRACE("[error] Failed to GLAttachShader");
+				return false;
 			}
 		}
 		break;
 	default:
 		{
 			ATLASSERT(false);
-			ATLTRACE("[warning] unknown type");
-
-			return;
+			ATLTRACE("[error] unknown type");
+			return false;
 		}
 		break;
 	}
@@ -83,28 +63,26 @@ void CShaderProgram::GLLoadShader(unsigned int eShaderType)
 	if (!GLLinkShader())
 	{
 		ATLASSERT(false);
-		ATLTRACE("[warning] failed GLLinkShader");
-	}
-}
-
-bool CShaderProgram::GLLinkShader()
-{
-	glLinkProgram(m_nProgram);
-
-	GLint nLinkStatus;
-	glGetProgramiv(m_nProgram, GL_LINK_STATUS, &nLinkStatus);
-	if (!nLinkStatus)
-	{
-		ATLASSERT(false);
-		ATLTRACE("[error] failed program Link");
-
+		ATLTRACE("[error] Failed to GLLinkShader");
 		return false;
 	}
 
-	GLDetachShader();
-	GLDeleteShader();
-
 	return true;
+}
+
+bool CShaderProgram::GLCreateProgram()
+{
+	ATLTRACE("create program");
+
+	if (m_nProgram)
+	{
+		ATLASSERT(false);
+		ATLTRACE("[error] duplicate program");
+		return false;
+	}
+
+	m_nProgram = glCreateProgram();
+	return m_nProgram > 0;
 }
 
 bool CShaderProgram::GLAttachShader(GLenum target, HMODULE hMod, const unsigned int uiResID)
@@ -112,16 +90,14 @@ bool CShaderProgram::GLAttachShader(GLenum target, HMODULE hMod, const unsigned 
 	if (!m_nProgram)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] do not created shader program");
-
+		ATLTRACE("[error] not found program");
 		return false;
 	}
 
 	if (hMod == nullptr)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] do not created module");
-
+		ATLTRACE("[error] not found module");
 		return false;
 	}
 
@@ -130,30 +106,27 @@ bool CShaderProgram::GLAttachShader(GLenum target, HMODULE hMod, const unsigned 
 	{
 		ATLASSERT(false);
 		ATLTRACE("[error] not found resource");
-
 		return false;
 	}
 
 	auto dwResSize = SizeofResource(hMod, hRes);
 	auto hResData = LoadResource(hMod, hRes);
-	if (hResData == nullptr)
+	if (dwResSize == 0 || hResData == nullptr)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] failed load");
-
+		ATLTRACE("[error] Failed to load");
 		return false;
 	}
 
-	auto aResData = reinterpret_cast<const GLchar*>(LockResource(hResData));
-
 	GLchar* aSource = new GLchar[dwResSize + 1];
+	auto aResData = reinterpret_cast<const GLchar*>(LockResource(hResData));
 	std::copy(aResData, aResData + dwResSize, aSource);
 	aSource[dwResSize] = '\0';
 
-	if (!GLAttachShaderSource(target, hMod, aSource))
+	if (!GLCreateShader(target, hMod, aSource))
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] failed GLAttachShaderSource");
+		ATLTRACE("[error] Failed to GLCreateShader");
 
 		return false;
 	}
@@ -165,18 +138,39 @@ bool CShaderProgram::GLAttachShader(GLenum target, HMODULE hMod, const unsigned 
 	return true;
 }
 
-bool CShaderProgram::GLAttachShaderSource(GLenum target, HMODULE hMod, const GLchar * aSource)
+bool CShaderProgram::GLCreateShader(GLenum target, HMODULE hMod, const GLchar * aSource)
 {
-	auto nShader = GLCompileShaderSource(target, aSource);
+	auto nShader = glCreateShader(target);
 	if (!nShader)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] failed GLCompileShaderSource");
+		ATLTRACE("[error] Failed to create shader");
+		return false;
+	}
+
+	glShaderSource(nShader, 1, &aSource, nullptr);
+	glCompileShader(nShader);
+
+	GLint nCompile = 0;
+	glGetShaderiv(nShader, GL_COMPILE_STATUS, &nCompile);
+	if (!nCompile)
+	{
+		ATLASSERT(false);
+		ATLTRACE("[error] Failed to compile shader");
+
+		GLint nLogLength = 0;
+		glGetShaderiv(nShader, GL_INFO_LOG_LENGTH, &nLogLength);
+		if (nLogLength > 0)
+		{
+			GLchar* aLog = new GLchar[nLogLength];
+			glGetShaderInfoLog(nShader, nLogLength, &nLogLength, aLog);
+			ATLTRACE("[error] Shader Info Log : %s", aLog);
+			delete[] aLog;
+		}
 
 		return false;
 	}
 
-	glAttachShader(m_nProgram, nShader);
 	switch (target)
 	{
 	case GL_VERTEX_SHADER:
@@ -192,47 +186,58 @@ bool CShaderProgram::GLAttachShaderSource(GLenum target, HMODULE hMod, const GLc
 	default:
 		{
 			ATLASSERT(false);
-			ATLTRACE("[warning] unknown type");
+			ATLTRACE("[error] unknown type");
+			return false;
 		}
 		break;
 	}
 
+	glAttachShader(m_nProgram, nShader);
+
 	return true;
 }
 
-GLint CShaderProgram::GLCompileShaderSource(GLenum target, const GLchar * aSource)
+bool CShaderProgram::GLLinkShader()
 {
-	auto nShader = glCreateShader(target);
-	if (!nShader)
+	glLinkProgram(m_nProgram);
+
+	GLint nLinkStatus;
+	glGetProgramiv(m_nProgram, GL_LINK_STATUS, &nLinkStatus);
+	if (!nLinkStatus)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] failed create shader");
-
-		return 0;
+		ATLTRACE("[error] Failed to program Link");
+		return false;
 	}
 
-	glShaderSource(nShader, 1, &aSource, nullptr);
-	glCompileShader(nShader);
+	GLDetachShader();
+	GLDeleteShader();
 
-	GLint nCompile = 0;
-	glGetShaderiv(nShader, GL_COMPILE_STATUS, &nCompile);
-	if (!nCompile)
+	return true;
+}
+
+void CShaderProgram::GLDetachShader()
+{
+	auto lambda_detach = [&](std::vector<GLint>& aShader)
 	{
-		ATLASSERT(false);
-		ATLTRACE("[error] failed compile shader");
+		for (auto itr : aShader)
+			glDetachShader(m_nProgram, itr);
+	};
 
-		GLint nLogLength = 0;
-		glGetShaderiv(nShader, GL_INFO_LOG_LENGTH, &nLogLength);
-		if (nLogLength > 0)
-		{
-			GLchar* aLog = new GLchar[nLogLength];
-			glGetShaderInfoLog(nShader, nLogLength, &nLogLength, aLog);
-			ATLTRACE("[error] Shader Info Log : %s", aLog);
-			delete[] aLog;
-		}
+	lambda_detach(m_aShaderVertex);
+	lambda_detach(m_aShaderFragment);
+}
 
-		return 0;
-	}
+void CShaderProgram::GLDeleteShader()
+{
+	auto lambda_clear = [&](std::vector<GLint>& aShader)
+	{
+		for (auto itr : aShader)
+			glDeleteShader(itr);
 
-	return nShader;
+		aShader.clear();
+	};
+
+	lambda_clear(m_aShaderVertex);
+	lambda_clear(m_aShaderFragment);
 }

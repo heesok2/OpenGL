@@ -1,7 +1,8 @@
 #pragma once
 
 #include "GlfwIncludeHeader.h"
-#include "resource.h"
+#include "ShaderDef.h"
+
 #include <vector>
 #include <Windows.h>
 
@@ -12,20 +13,20 @@ public:
 	virtual ~CShaderProgram();
 
 public:
-	GLint GLCreate();
-	void GLDeleteShader();
-	void GLDetachShader();
-	void GLLoadShader(unsigned int eShaderType);
+	bool GLBind();
+	void GLUnbind();
+	bool GLLoadShader(unsigned int eShaderType);	
 
 private:
-	bool GLLinkShader();
+	bool GLCreateProgram();
 	bool GLAttachShader(GLenum target, HMODULE hMod, const unsigned int uiResID);
-	bool GLAttachShaderSource(GLenum target, HMODULE hMod, const GLchar* aSource);
-	GLint GLCompileShaderSource(GLenum target, const GLchar* aSource);
+	bool GLCreateShader(GLenum target, HMODULE hMod, const GLchar* aSource);
+	bool GLLinkShader();
+	void GLDetachShader();
+	void GLDeleteShader();
 
 private:
 	GLint m_nProgram;
 	std::vector<GLint> m_aShaderVertex;
 	std::vector<GLint> m_aShaderFragment;
 };
-

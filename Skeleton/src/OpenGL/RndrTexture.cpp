@@ -1,5 +1,5 @@
 #include "RndrTexture.h"
-#include "GLIncludeHeader.h"
+#include "GlutIncludeHeader.h"
 
 int CRndrTexture::g_x = 0;
 int CRndrTexture::g_y = 0;

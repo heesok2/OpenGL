@@ -1,5 +1,5 @@
 #include "RndrAliasing.h"
-#include "GLIncludeHeader.h"
+#include "GlutIncludeHeader.h"
 
 GLint g_margin = 16;
 GLint g_mini_w_h = 128;

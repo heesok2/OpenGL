@@ -159,7 +159,7 @@
     <ClInclude Include="RndrGlut.h" />
     <ClInclude Include="RndrModeling.h" />
     <ClInclude Include="RndrSample.h" />
-    <ClInclude Include="GLIncludeHeader.h" />
+    <ClInclude Include="GlutIncludeHeader.h" />
     <ClInclude Include="IRndrBase.h" />
     <ClInclude Include="ShaderDef.h" />
   </ItemGroup>
