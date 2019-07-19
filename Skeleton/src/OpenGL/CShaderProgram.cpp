@@ -12,7 +12,7 @@ CShaderProgram::~CShaderProgram()
 {
 }
 
-bool CShaderProgram::GLCreate()
+GLint CShaderProgram::GLCreate()
 {
 	ATLTRACE("program »ý¼º");
 
@@ -27,7 +27,7 @@ bool CShaderProgram::GLCreate()
 	return m_nProgram;
 }
 
-void CShaderProgram::GLClearShader()
+void CShaderProgram::GLDeleteShader()
 {
 	auto lambda_clear = [&](std::vector<GLint>& aShader)
 	{
@@ -39,6 +39,18 @@ void CShaderProgram::GLClearShader()
 
 	lambda_clear(m_aShaderVertex);
 	lambda_clear(m_aShaderFragment);
+}
+
+void CShaderProgram::GLDetachShader()
+{
+	auto lambda_detach = [&](std::vector<GLint>& aShader)
+	{
+		for (auto itr : aShader)
+			glDetachShader(m_nProgram, itr);
+	};
+
+	lambda_detach(m_aShaderVertex);
+	lambda_detach(m_aShaderFragment);
 }
 
 void CShaderProgram::GLLoadShader(unsigned int eShaderType)
@@ -53,6 +65,8 @@ void CShaderProgram::GLLoadShader(unsigned int eShaderType)
 			{
 				ATLASSERT(false);
 				ATLTRACE("[warning] failed GLAttachShader");
+
+				return;
 			}
 		}
 		break;
@@ -60,9 +74,37 @@ void CShaderProgram::GLLoadShader(unsigned int eShaderType)
 		{
 			ATLASSERT(false);
 			ATLTRACE("[warning] unknown type");
+
+			return;
 		}
 		break;
 	}
+
+	if (!GLLinkShader())
+	{
+		ATLASSERT(false);
+		ATLTRACE("[warning] failed GLLinkShader");
+	}
+}
+
+bool CShaderProgram::GLLinkShader()
+{
+	glLinkProgram(m_nProgram);
+
+	GLint nLinkStatus;
+	glGetProgramiv(m_nProgram, GL_LINK_STATUS, &nLinkStatus);
+	if (!nLinkStatus)
+	{
+		ATLASSERT(false);
+		ATLTRACE("[error] failed program Link");
+
+		return false;
+	}
+
+	GLDetachShader();
+	GLDeleteShader();
+
+	return true;
 }
 
 bool CShaderProgram::GLAttachShader(GLenum target, HMODULE hMod, const unsigned int uiResID)
