@@ -9,7 +9,14 @@ GLfloat aVertices[] =
 {
 	-0.5f, -0.5f, 0.f,
 	0.5f, -0.5f, 0.f,
-	0.f, 0.5f, 0.f
+	0.5f, 0.5f, 0.f,
+	-0.5f, 0.5f, 0.f
+};
+
+GLuint aIndexs[] =
+{
+	0, 1, 3,
+	3, 1, 2
 };
 
 CRndrGlfw::CRndrGlfw()
@@ -58,23 +65,28 @@ bool CRndrGlfw::Run()
 		return false;
 	}
 
-	// 5. VBO(Vertex Buffer Object)
-	GLuint uiVBO, uiVBA;
+	// 5. VAO(Vertex Attribute Object: VBO, EBO »ç¿ë)
+	GLuint uiVAO, uiVBO, uiEBO;
+	glGenVertexArrays(1, &uiVAO);
 	glGenBuffers(1, &uiVBO);
-	glGenVertexArrays(1, &uiVBA);
+	glGenBuffers(1, &uiEBO);
 
-	// first vertex array bind, next vertex buffer bind
-	glBindVertexArray(uiVBA);
-	glBindBuffer(GL_ARRAY_BUFFER, uiVBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(aVertices), aVertices, GL_STATIC_DRAW);
+	glBindVertexArray(uiVAO);
+	{
+		glBindBuffer(GL_ARRAY_BUFFER, uiVBO);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(aVertices), aVertices, GL_STATIC_DRAW);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, uiEBO);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(aIndexs), aIndexs, GL_STATIC_DRAW);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GL_FLOAT), nullptr);
-
-	glEnableVertexAttribArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GL_FLOAT), nullptr);
+		glEnableVertexAttribArray(0);
+	}
+	glBindVertexArray(0);
 
 	glViewport(0, 0, g_width, g_height);
 	glClearColor(0.2f, 0.3f, 0.3f, 1.f);
+	// wireframe mode
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	// 6. loop
 	while (!glfwWindowShouldClose(pWnd))
@@ -82,8 +94,9 @@ bool CRndrGlfw::Run()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		shader.GLBind();
-		glBindVertexArray(uiVBA);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glBindVertexArray(uiVAO);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glBindVertexArray(0);
 		shader.GLUnbind();
 
 		glfwSwapBuffers(pWnd);
@@ -91,8 +104,9 @@ bool CRndrGlfw::Run()
 	}
 
 	// 7. destroy resource
-	glDeleteVertexArrays(1, &uiVBA);
+	glDeleteVertexArrays(1, &uiVAO);
 	glDeleteBuffers(1, &uiVBO);
+	glDeleteBuffers(1, &uiEBO);
 
 	glfwTerminate();
 
