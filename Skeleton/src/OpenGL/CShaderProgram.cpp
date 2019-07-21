@@ -210,7 +210,7 @@ bool CShaderProgram::GLLinkShader()
 		return false;
 	}
 
-	GLDetachShader();
+	//GLDetachShader();
 	GLDeleteShader();
 
 	return true;
