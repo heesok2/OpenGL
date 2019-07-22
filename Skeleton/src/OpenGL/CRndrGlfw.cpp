@@ -3,9 +3,6 @@
 #include "CHelperShader.h"
 #include "CHelperVBO.h"
 
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
-
 int g_width = 500;
 int g_height = 500;
 

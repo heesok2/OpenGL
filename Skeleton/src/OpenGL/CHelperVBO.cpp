@@ -1,6 +1,9 @@
 #include "CHelperVBO.h"
 #include <atltrace.h>
 
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
 GLfloat g_aVertices[] =
 {
 	// 0
@@ -70,8 +73,16 @@ bool CHelperVBO::GLLoad(unsigned int eShaderType)
 				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
 			}
+
+			int width, height, nrChannels;
+			auto data = stbi_load("Image/container.jpg", &width, &height, &nrChannels, 0);
+
+
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+			glGenerateMipmap(GL_TEXTURE_2D);
+
+
 
 
 
@@ -83,11 +94,15 @@ bool CHelperVBO::GLLoad(unsigned int eShaderType)
 				glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(g_aIndexs), g_aIndexs, GL_STATIC_DRAW);
 
 				// vertex, stride 6
-				glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GL_FLOAT), (void*)0);
+				glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (void*)0);
 				glEnableVertexAttribArray(0);
 
-				glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GL_FLOAT), (void*)(3 * sizeof(GLfloat)));
+				glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (void*)(3 * sizeof(GLfloat)));
 				glEnableVertexAttribArray(1);
+
+				glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GL_FLOAT), (void*)(6 * sizeof(GLfloat)));
+				glEnableVertexAttribArray(2);
+
 			}
 			glBindVertexArray(0);
 
