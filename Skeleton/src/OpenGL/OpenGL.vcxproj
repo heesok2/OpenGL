@@ -136,8 +136,8 @@
   <ItemGroup>
     <ClCompile Include="..\..\include\$(PlatformToolset)\glad\glad.c" />
     <ClCompile Include="CRndrGlfw.cpp" />
-    <ClCompile Include="CShaderProgram.cpp" />
-    <ClCompile Include="CShaderVBO.cpp" />
+    <ClCompile Include="CHelperShader.cpp" />
+    <ClCompile Include="CHelperVBO.cpp" />
     <ClCompile Include="RndrTexture.cpp" />
     <ClCompile Include="RndrAliasing.cpp" />
     <ClCompile Include="RndrLighting.cpp" />
@@ -150,8 +150,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CRndrGlfw.h" />
-    <ClInclude Include="CShaderProgram.h" />
-    <ClInclude Include="CShaderVBO.h" />
+    <ClInclude Include="CHelperShader.h" />
+    <ClInclude Include="CHelperVBO.h" />
     <ClInclude Include="GlfwIncludeHeader.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="RndrTexture.h" />

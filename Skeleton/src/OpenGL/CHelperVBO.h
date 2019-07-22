@@ -3,21 +3,23 @@
 #include "GlfwIncludeHeader.h"
 #include "ShaderDef.h"
 
-class CShaderVBO
+class CHelperVBO
 {
 public:
-	CShaderVBO();
-	virtual ~CShaderVBO();
+	CHelperVBO();
+	virtual ~CHelperVBO();
 
 public:
 	bool GLBind();
+	bool GLLoad(unsigned int eShaderType);
+	void GLDraw();
 	void GLUnbind();
-	bool GLLoadVBO(unsigned int eShaderType);
+	void GLDelete();
 
 private:
 	GLuint m_uiVAO;
 	GLuint m_uiVBO;
 	GLuint m_uiEBO;
-	
+
 };
 

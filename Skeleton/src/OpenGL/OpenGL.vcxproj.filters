@@ -96,14 +96,14 @@
     <ClCompile Include="..\..\include\$(PlatformToolset)\glad\glad.c">
       <Filter>__General__</Filter>
     </ClCompile>
-    <ClCompile Include="CShaderProgram.cpp">
-      <Filter>Graphic\Shader</Filter>
-    </ClCompile>
     <ClCompile Include="IRndrBase.cpp">
       <Filter>Graphic\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="CShaderVBO.cpp">
+    <ClCompile Include="CHelperVBO.cpp">
       <Filter>Graphic\VBO</Filter>
+    </ClCompile>
+    <ClCompile Include="CHelperShader.cpp">
+      <Filter>Graphic\Shader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,9 +134,6 @@
     <ClInclude Include="GlfwIncludeHeader.h">
       <Filter>__General__</Filter>
     </ClInclude>
-    <ClInclude Include="CShaderProgram.h">
-      <Filter>Graphic\Shader</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>__Resource__</Filter>
     </ClInclude>
@@ -149,11 +146,14 @@
     <ClInclude Include="stb_image.h">
       <Filter>__General__</Filter>
     </ClInclude>
-    <ClInclude Include="CShaderVBO.h">
-      <Filter>Graphic\VBO</Filter>
-    </ClInclude>
     <ClInclude Include="ShaderDef.h">
       <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="CHelperVBO.h">
+      <Filter>Graphic\VBO</Filter>
+    </ClInclude>
+    <ClInclude Include="CHelperShader.h">
+      <Filter>Graphic\Shader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

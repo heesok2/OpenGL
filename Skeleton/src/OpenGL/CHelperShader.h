@@ -6,16 +6,17 @@
 #include <vector>
 #include <Windows.h>
 
-class CShaderProgram
+class CHelperShader
 {
 public:
-	CShaderProgram();
-	virtual ~CShaderProgram();
+	CHelperShader();
+	virtual ~CHelperShader();
 
 public:
 	bool GLBind();
-	void GLUnbind();
-	bool GLLoadShader(unsigned int eShaderType);	
+	bool GLLoad(unsigned int eShaderType);
+	void GLUnbind();	
+	void GLDelete();
 
 private:
 	bool GLCreateProgram();

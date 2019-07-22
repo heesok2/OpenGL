@@ -1,16 +1,16 @@
-#include "CShaderProgram.h"
+#include "CHelperShader.h"
 #include <atltrace.h>
 
-CShaderProgram::CShaderProgram()
+CHelperShader::CHelperShader()
 	: m_uiProgram(0)
 {
 }
 
-CShaderProgram::~CShaderProgram()
+CHelperShader::~CHelperShader()
 {
 }
 
-bool CShaderProgram::GLBind()
+bool CHelperShader::GLBind()
 {
 	if (!m_uiProgram)
 	{
@@ -23,12 +23,7 @@ bool CShaderProgram::GLBind()
 	return true;
 }
 
-void CShaderProgram::GLUnbind()
-{
-	glUseProgram(0);
-}
-
-bool CShaderProgram::GLLoadShader(unsigned int eShaderType)
+bool CHelperShader::GLLoad(unsigned int eShaderType)
 {
 	if (!GLCreateProgram())
 	{
@@ -70,7 +65,17 @@ bool CShaderProgram::GLLoadShader(unsigned int eShaderType)
 	return true;
 }
 
-bool CShaderProgram::GLCreateProgram()
+void CHelperShader::GLUnbind()
+{
+	glUseProgram(0);
+}
+
+void CHelperShader::GLDelete()
+{
+	glDeleteProgram(m_uiProgram);
+}
+
+bool CHelperShader::GLCreateProgram()
 {
 	ATLTRACE("create program");
 
@@ -85,7 +90,7 @@ bool CShaderProgram::GLCreateProgram()
 	return m_uiProgram > 0;
 }
 
-bool CShaderProgram::GLAttachShader(GLenum target, HMODULE hMod, const unsigned int uiResID)
+bool CHelperShader::GLAttachShader(GLenum target, HMODULE hMod, const unsigned int uiResID)
 {
 	if (!m_uiProgram)
 	{
@@ -138,7 +143,7 @@ bool CShaderProgram::GLAttachShader(GLenum target, HMODULE hMod, const unsigned 
 	return true;
 }
 
-bool CShaderProgram::GLCreateShader(GLenum target, HMODULE hMod, const GLchar * aSource)
+bool CHelperShader::GLCreateShader(GLenum target, HMODULE hMod, const GLchar * aSource)
 {
 	auto nShader = glCreateShader(target);
 	if (!nShader)
@@ -197,7 +202,7 @@ bool CShaderProgram::GLCreateShader(GLenum target, HMODULE hMod, const GLchar * 
 	return true;
 }
 
-bool CShaderProgram::GLLinkShader()
+bool CHelperShader::GLLinkShader()
 {
 	glLinkProgram(m_uiProgram);
 
@@ -216,7 +221,7 @@ bool CShaderProgram::GLLinkShader()
 	return true;
 }
 
-void CShaderProgram::GLDetachShader()
+void CHelperShader::GLDetachShader()
 {
 	auto lambda_detach = [&](std::vector<GLint>& aShader)
 	{
@@ -228,7 +233,7 @@ void CShaderProgram::GLDetachShader()
 	lambda_detach(m_aShaderFragment);
 }
 
-void CShaderProgram::GLDeleteShader()
+void CHelperShader::GLDeleteShader()
 {
 	auto lambda_clear = [&](std::vector<GLint>& aShader)
 	{

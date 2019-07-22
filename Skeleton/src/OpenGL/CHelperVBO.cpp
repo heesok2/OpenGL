@@ -1,4 +1,4 @@
-#include "CShaderVBO.h"
+#include "CHelperVBO.h"
 #include <atltrace.h>
 
 GLfloat g_aVertices[] =
@@ -22,16 +22,16 @@ GLuint g_aIndexs[] =
 	0, 2, 3,
 };
 
-CShaderVBO::CShaderVBO()
+CHelperVBO::CHelperVBO()
 	: m_uiVAO(0), m_uiVBO(0), m_uiEBO(0)
 {
 }
 
-CShaderVBO::~CShaderVBO()
+CHelperVBO::~CHelperVBO()
 {
 }
 
-bool CShaderVBO::GLBind()
+bool CHelperVBO::GLBind()
 {
 	if (!m_uiVAO)
 	{
@@ -45,12 +45,7 @@ bool CShaderVBO::GLBind()
 	return true;
 }
 
-void CShaderVBO::GLUnbind()
-{
-	glBindVertexArray(0);
-}
-
-bool CShaderVBO::GLLoadVBO(unsigned int eShaderType)
+bool CHelperVBO::GLLoad(unsigned int eShaderType)
 {
 	switch (eShaderType)
 	{
@@ -75,6 +70,9 @@ bool CShaderVBO::GLLoadVBO(unsigned int eShaderType)
 				glEnableVertexAttribArray(1);
 			}
 			glBindVertexArray(0);
+
+			glDeleteBuffers(1, &m_uiVBO);
+			glDeleteBuffers(1, &m_uiEBO);
 		}
 		break;
 	default:
@@ -87,4 +85,19 @@ bool CShaderVBO::GLLoadVBO(unsigned int eShaderType)
 	}
 
 	return true;
+}
+
+void CHelperVBO::GLDraw()
+{
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)0);// (3 * sizeof(GLuint)));
+}
+
+void CHelperVBO::GLUnbind()
+{
+	glBindVertexArray(0);
+}
+
+void CHelperVBO::GLDelete()
+{
+	glDeleteVertexArrays(1, &m_uiVAO);
 }
