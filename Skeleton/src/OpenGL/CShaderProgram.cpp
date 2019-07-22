@@ -2,7 +2,7 @@
 #include <atltrace.h>
 
 CShaderProgram::CShaderProgram()
-	: m_nProgram(0)
+	: m_uiProgram(0)
 {
 }
 
@@ -12,14 +12,14 @@ CShaderProgram::~CShaderProgram()
 
 bool CShaderProgram::GLBind()
 {
-	if (!m_nProgram)
+	if (!m_uiProgram)
 	{
 		ATLASSERT(false);
 		ATLTRACE("[error] not found program");
 		return false;
 	}
 
-	glUseProgram(m_nProgram);
+	glUseProgram(m_uiProgram);
 	return true;
 }
 
@@ -74,20 +74,20 @@ bool CShaderProgram::GLCreateProgram()
 {
 	ATLTRACE("create program");
 
-	if (m_nProgram)
+	if (m_uiProgram)
 	{
 		ATLASSERT(false);
 		ATLTRACE("[error] duplicate program");
 		return false;
 	}
 
-	m_nProgram = glCreateProgram();
-	return m_nProgram > 0;
+	m_uiProgram = glCreateProgram();
+	return m_uiProgram > 0;
 }
 
 bool CShaderProgram::GLAttachShader(GLenum target, HMODULE hMod, const unsigned int uiResID)
 {
-	if (!m_nProgram)
+	if (!m_uiProgram)
 	{
 		ATLASSERT(false);
 		ATLTRACE("[error] not found program");
@@ -192,17 +192,17 @@ bool CShaderProgram::GLCreateShader(GLenum target, HMODULE hMod, const GLchar * 
 		break;
 	}
 
-	glAttachShader(m_nProgram, nShader);
+	glAttachShader(m_uiProgram, nShader);
 
 	return true;
 }
 
 bool CShaderProgram::GLLinkShader()
 {
-	glLinkProgram(m_nProgram);
+	glLinkProgram(m_uiProgram);
 
 	GLint nLinkStatus;
-	glGetProgramiv(m_nProgram, GL_LINK_STATUS, &nLinkStatus);
+	glGetProgramiv(m_uiProgram, GL_LINK_STATUS, &nLinkStatus);
 	if (!nLinkStatus)
 	{
 		ATLASSERT(false);
@@ -221,7 +221,7 @@ void CShaderProgram::GLDetachShader()
 	auto lambda_detach = [&](std::vector<GLint>& aShader)
 	{
 		for (auto itr : aShader)
-			glDetachShader(m_nProgram, itr);
+			glDetachShader(m_uiProgram, itr);
 	};
 
 	lambda_detach(m_aShaderVertex);

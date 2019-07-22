@@ -26,7 +26,7 @@ private:
 	void GLDeleteShader();
 
 private:
-	GLint m_nProgram;
+	GLuint m_uiProgram;
 	std::vector<GLint> m_aShaderVertex;
 	std::vector<GLint> m_aShaderFragment;
 };

@@ -2,6 +2,9 @@
 #include "CRndrGlfw.h"
 #include "CShaderProgram.h"
 
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+
 int g_width = 500;
 int g_height = 500;
 
@@ -120,7 +123,7 @@ bool CRndrGlfw::Run()
 	glDeleteBuffers(1, &uiEBO);
 
 	glfwTerminate();
-
+	
 	return true;
 }
 

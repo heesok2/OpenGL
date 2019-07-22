@@ -137,6 +137,7 @@
     <ClCompile Include="..\..\include\$(PlatformToolset)\glad\glad.c" />
     <ClCompile Include="CRndrGlfw.cpp" />
     <ClCompile Include="CShaderProgram.cpp" />
+    <ClCompile Include="CShaderVBO.cpp" />
     <ClCompile Include="RndrTexture.cpp" />
     <ClCompile Include="RndrAliasing.cpp" />
     <ClCompile Include="RndrLighting.cpp" />
@@ -150,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="CRndrGlfw.h" />
     <ClInclude Include="CShaderProgram.h" />
+    <ClInclude Include="CShaderVBO.h" />
     <ClInclude Include="GlfwIncludeHeader.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="RndrTexture.h" />
@@ -162,6 +164,7 @@
     <ClInclude Include="GlutIncludeHeader.h" />
     <ClInclude Include="IRndrBase.h" />
     <ClInclude Include="ShaderDef.h" />
+    <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="openGL.rc" />
@@ -169,6 +172,9 @@
   <ItemGroup>
     <None Include="resource\shader_glfw_frag.glsl" />
     <None Include="resource\shader_glfw_vert.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resource\container.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
