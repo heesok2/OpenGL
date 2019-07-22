@@ -75,9 +75,11 @@ bool CRndrGlfw::Run()
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		shader.GLBind();
-		vbo.GLBind();
-		vbo.GLDraw();
-		vbo.GLUnbind();
+		{
+			vbo.GLBind();
+			vbo.GLDraw();
+			vbo.GLUnbind();
+		}
 		shader.GLUnbind();
 
 		glfwSwapBuffers(pWnd);

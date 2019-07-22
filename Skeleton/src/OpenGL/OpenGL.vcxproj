@@ -173,9 +173,6 @@
     <None Include="resource\shader_glfw_frag.glsl" />
     <None Include="resource\shader_glfw_vert.glsl" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="resource\container.jpg" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

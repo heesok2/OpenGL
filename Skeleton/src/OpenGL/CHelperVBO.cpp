@@ -3,17 +3,25 @@
 
 GLfloat g_aVertices[] =
 {
-	-0.5f, -0.5f, 0.f, //0 
-	1.f, 0.f, 0.f, //
+	// 0
+	-0.5f, -0.5f, 0.f,	// vertex
+	1.f, 0.f, 0.f,		// color
+	0.f, 0.f,			// texture
 
-	0.5f, -0.5f, 0.f, //2
-	0.f, 1.f, 0.f, //
+	// 1
+	0.5f, -0.5f, 0.f,	// vertex 
+	0.f, 1.f, 0.f,		// color
+	1.f, 0.f,			// texture
 
-	0.5f, 0.5f, 0.f, //4
-	0.f, 0.f, 1.f, //
+	// 2
+	0.5f, 0.5f, 0.f,	// vertex
+	0.f, 0.f, 1.f,		// color
+	1.f, 1.f,			// texture
 
-	-0.5f, 0.5f, 0.f, //6
-	0.f, 1.f, 0.f, //		
+	// 3
+	-0.5f, 0.5f, 0.f,	// vertex
+	0.f, 1.f, 0.f,		// color
+	0.f, 1.f,			// texture
 };
 
 GLuint g_aIndexs[] =
@@ -23,7 +31,7 @@ GLuint g_aIndexs[] =
 };
 
 CHelperVBO::CHelperVBO()
-	: m_uiVAO(0), m_uiVBO(0), m_uiEBO(0)
+	: m_uiVAO(0), m_uiVBO(0), m_uiEBO(0), m_uiTex(0)
 {
 }
 
@@ -54,6 +62,18 @@ bool CHelperVBO::GLLoad(unsigned int eShaderType)
 			glGenVertexArrays(1, &m_uiVAO);
 			glGenBuffers(1, &m_uiVBO);
 			glGenBuffers(1, &m_uiEBO);
+
+			glGenTextures(1, &m_uiTex);
+			glBindTexture(GL_TEXTURE_2D, m_uiTex);
+			{
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+			}
+
+
 
 			glBindVertexArray(m_uiVAO);
 			{

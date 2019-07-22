@@ -58,11 +58,14 @@
     <Filter Include="Graphic\Interface">
       <UniqueIdentifier>{69c0fcc2-8f46-4efc-96b0-79b97ee902c0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic\Shader">
-      <UniqueIdentifier>{46f7338e-92fb-42d3-8ce8-8130e52ceffb}</UniqueIdentifier>
+    <Filter Include="Graphic\Helper">
+      <UniqueIdentifier>{8779233c-708f-4cf9-8689-0a903f5810ad}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic\VBO">
+    <Filter Include="Graphic\Helper\VBO">
       <UniqueIdentifier>{a983b1c2-be1c-47f4-a361-d829a6cadcc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\Helper\Shader">
+      <UniqueIdentifier>{46f7338e-92fb-42d3-8ce8-8130e52ceffb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -100,10 +103,10 @@
       <Filter>Graphic\Interface</Filter>
     </ClCompile>
     <ClCompile Include="CHelperVBO.cpp">
-      <Filter>Graphic\VBO</Filter>
+      <Filter>Graphic\Helper\VBO</Filter>
     </ClCompile>
     <ClCompile Include="CHelperShader.cpp">
-      <Filter>Graphic\Shader</Filter>
+      <Filter>Graphic\Helper\Shader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -150,10 +153,10 @@
       <Filter>Graphic</Filter>
     </ClInclude>
     <ClInclude Include="CHelperVBO.h">
-      <Filter>Graphic\VBO</Filter>
+      <Filter>Graphic\Helper\VBO</Filter>
     </ClInclude>
     <ClInclude Include="CHelperShader.h">
-      <Filter>Graphic\Shader</Filter>
+      <Filter>Graphic\Helper\Shader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -168,10 +171,5 @@
     <None Include="resource\shader_glfw_frag.glsl">
       <Filter>__Resource File__\Shader</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="resource\container.jpg">
-      <Filter>__Resource File__</Filter>
-    </Image>
   </ItemGroup>
 </Project>
