@@ -1,5 +1,6 @@
 #include "CHelperVBO.h"
 #include <atltrace.h>
+#include <string>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -44,6 +45,13 @@ CHelperVBO::~CHelperVBO()
 
 bool CHelperVBO::GLBind()
 {
+	if (!m_uiTex)
+	{
+		ATLASSERT(false);
+		ATLTRACE("[error] not found texture");
+		return false;
+	}
+
 	if (!m_uiVAO)
 	{
 		ATLASSERT(false);
@@ -52,6 +60,7 @@ bool CHelperVBO::GLBind()
 	}
 
 	glBindVertexArray(m_uiVAO);
+	glBindTexture(GL_TEXTURE_2D, m_uiTex);
 
 	return true;
 }
@@ -62,30 +71,48 @@ bool CHelperVBO::GLLoad(unsigned int eShaderType)
 	{
 	case E_SHADER_GLFW:
 		{
+
+			glGenTextures(1, &m_uiTex);
+			glBindTexture(GL_TEXTURE_2D, m_uiTex); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
+			// set the texture wrapping parameters
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+			// set texture filtering parameters
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			// load image, create texture and generate mipmaps
+			int width, height, nrChannels;
+			// The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
+
+			char aPath[MAX_PATH+1] = { 0 };
+			auto dwSize = GetModuleFileName(nullptr, aPath, MAX_PATH);
+			std::string strPath = aPath;
+			auto item = strPath.find_last_of("\\");
+			if (item != -1)
+			{
+				std::string strDir = strPath.substr(0, item);
+				strDir += "\\Image\\container.jpg";
+
+				unsigned char *data = stbi_load("..\\..\\bin\\v141\\debug\\x64\\Image\\container.jpg", &width, &height, &nrChannels, 0);
+				if (data != nullptr)
+				{
+					glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+					glGenerateMipmap(GL_TEXTURE_2D);
+				}
+				else
+				{
+					// failed load imag
+				}
+
+				stbi_image_free(data);
+			}
+			
+			/////////////////////////////////////////////////////////////////////////////////////////////////////
+
 			glGenVertexArrays(1, &m_uiVAO);
 			glGenBuffers(1, &m_uiVBO);
 			glGenBuffers(1, &m_uiEBO);
-
-			glGenTextures(1, &m_uiTex);
-			glBindTexture(GL_TEXTURE_2D, m_uiTex);
-			{
-				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-			}
-
-			int width, height, nrChannels;
-			auto data = stbi_load("Image/container.jpg", &width, &height, &nrChannels, 0);
-
-
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-			glGenerateMipmap(GL_TEXTURE_2D);
-
-
-
-
-
+			
 			glBindVertexArray(m_uiVAO);
 			{
 				glBindBuffer(GL_ARRAY_BUFFER, m_uiVBO);
@@ -129,10 +156,12 @@ void CHelperVBO::GLDraw()
 
 void CHelperVBO::GLUnbind()
 {
+	glBindTexture(GL_TEXTURE_2D, 0);
 	glBindVertexArray(0);
 }
 
 void CHelperVBO::GLDelete()
 {
 	glDeleteVertexArrays(1, &m_uiVAO);
+	glDeleteTextures(1, &m_uiTex);
 }

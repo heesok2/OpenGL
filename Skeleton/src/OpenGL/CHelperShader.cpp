@@ -15,7 +15,7 @@ bool CHelperShader::GLBind()
 	if (!m_uiProgram)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] not found program");
+		ATLTRACE("[error] not found program\n");
 		return false;
 	}
 
@@ -28,7 +28,7 @@ bool CHelperShader::GLLoad(unsigned int eShaderType)
 	if (!GLCreateProgram())
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] Failed to GLCreateProgram");
+		ATLTRACE("[error] Failed to GLCreateProgram\n");
 		return false;
 	}
 
@@ -41,7 +41,7 @@ bool CHelperShader::GLLoad(unsigned int eShaderType)
 				!GLAttachShader(GL_FRAGMENT_SHADER, hMod, IDR_SHADER_GLFW_FRAG))
 			{
 				ATLASSERT(false);
-				ATLTRACE("[error] Failed to GLAttachShader");
+				ATLTRACE("[error] Failed to GLAttachShader\n");
 				return false;
 			}
 		}
@@ -49,7 +49,7 @@ bool CHelperShader::GLLoad(unsigned int eShaderType)
 	default:
 		{
 			ATLASSERT(false);
-			ATLTRACE("[error] unknown type");
+			ATLTRACE("[error] unknown type\n");
 			return false;
 		}
 		break;
@@ -58,7 +58,7 @@ bool CHelperShader::GLLoad(unsigned int eShaderType)
 	if (!GLLinkShader())
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] Failed to GLLinkShader");
+		ATLTRACE("[error] Failed to GLLinkShader\n");
 		return false;
 	}
 
@@ -77,12 +77,12 @@ void CHelperShader::GLDelete()
 
 bool CHelperShader::GLCreateProgram()
 {
-	ATLTRACE("create program");
+	ATLTRACE("create program\n");
 
 	if (m_uiProgram)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] duplicate program");
+		ATLTRACE("[error] duplicate program\n");
 		return false;
 	}
 
@@ -95,14 +95,14 @@ bool CHelperShader::GLAttachShader(GLenum target, HMODULE hMod, const unsigned i
 	if (!m_uiProgram)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] not found program");
+		ATLTRACE("[error] not found program\n");
 		return false;
 	}
 
 	if (hMod == nullptr)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] not found module");
+		ATLTRACE("[error] not found module\n");
 		return false;
 	}
 
@@ -110,7 +110,7 @@ bool CHelperShader::GLAttachShader(GLenum target, HMODULE hMod, const unsigned i
 	if (hRes == nullptr)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] not found resource");
+		ATLTRACE("[error] not found resource\n");
 		return false;
 	}
 
@@ -119,7 +119,7 @@ bool CHelperShader::GLAttachShader(GLenum target, HMODULE hMod, const unsigned i
 	if (dwResSize == 0 || hResData == nullptr)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] Failed to load");
+		ATLTRACE("[error] Failed to load\n");
 		return false;
 	}
 
@@ -131,7 +131,7 @@ bool CHelperShader::GLAttachShader(GLenum target, HMODULE hMod, const unsigned i
 	if (!GLCreateShader(target, hMod, aSource))
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] Failed to GLCreateShader");
+		ATLTRACE("[error] Failed to GLCreateShader\n");
 
 		return false;
 	}
@@ -149,7 +149,7 @@ bool CHelperShader::GLCreateShader(GLenum target, HMODULE hMod, const GLchar * a
 	if (!nShader)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] Failed to create shader");
+		ATLTRACE("[error] Failed to create shader\n");
 		return false;
 	}
 
@@ -161,7 +161,7 @@ bool CHelperShader::GLCreateShader(GLenum target, HMODULE hMod, const GLchar * a
 	if (!nCompile)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] Failed to compile shader");
+		ATLTRACE("[error] Failed to compile shader\n");
 
 		GLint nLogLength = 0;
 		glGetShaderiv(nShader, GL_INFO_LOG_LENGTH, &nLogLength);
@@ -169,7 +169,7 @@ bool CHelperShader::GLCreateShader(GLenum target, HMODULE hMod, const GLchar * a
 		{
 			GLchar* aLog = new GLchar[nLogLength];
 			glGetShaderInfoLog(nShader, nLogLength, &nLogLength, aLog);
-			ATLTRACE("[error] Shader Info Log : %s", aLog);
+			ATLTRACE("[error] Shader Info Log : %s\n", aLog);
 			delete[] aLog;
 		}
 
@@ -191,7 +191,7 @@ bool CHelperShader::GLCreateShader(GLenum target, HMODULE hMod, const GLchar * a
 	default:
 		{
 			ATLASSERT(false);
-			ATLTRACE("[error] unknown type");
+			ATLTRACE("[error] unknown type\n");
 			return false;
 		}
 		break;
@@ -211,7 +211,7 @@ bool CHelperShader::GLLinkShader()
 	if (!nLinkStatus)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] Failed to program Link");
+		ATLTRACE("[error] Failed to program Link\n");
 		return false;
 	}
 
