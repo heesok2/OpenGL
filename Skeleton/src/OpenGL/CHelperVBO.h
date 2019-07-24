@@ -20,7 +20,7 @@ private:
 	GLuint m_uiVAO;
 	GLuint m_uiVBO;
 	GLuint m_uiEBO;
-	GLuint m_uiTex;
+	GLuint m_uiTex[2];
 
 };
 

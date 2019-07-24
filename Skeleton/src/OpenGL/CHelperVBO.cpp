@@ -35,8 +35,9 @@ GLuint g_aIndexs[] =
 };
 
 CHelperVBO::CHelperVBO()
-	: m_uiVAO(0), m_uiVBO(0), m_uiEBO(0), m_uiTex(0)
+	: m_uiVAO(0), m_uiVBO(0), m_uiEBO(0)
 {
+	m_uiTex[0] = m_uiTex[1] = 0;
 }
 
 CHelperVBO::~CHelperVBO()
@@ -59,9 +60,17 @@ bool CHelperVBO::GLBind()
 		return false;
 	}
 
-	glBindVertexArray(m_uiVAO);
-	glBindTexture(GL_TEXTURE_2D, m_uiTex);
+	GLint nProgram;
+	glGetIntegerv(GL_CURRENT_PROGRAM, &nProgram);
+	glUniform1i(glGetUniformLocation(nProgram, "ourTexture1"), 0);
+	glUniform1i(glGetUniformLocation(nProgram, "ourTexture2"), 1);
 
+	glBindVertexArray(m_uiVAO);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, m_uiTex[0]);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, m_uiTex[1]);
+	
 	return true;
 }
 
@@ -71,41 +80,84 @@ bool CHelperVBO::GLLoad(unsigned int eShaderType)
 	{
 	case E_SHADER_GLFW:
 		{
+			stbi_set_flip_vertically_on_load(true);
 
-			glGenTextures(1, &m_uiTex);
-			glBindTexture(GL_TEXTURE_2D, m_uiTex); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
-			// set the texture wrapping parameters
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-			// set texture filtering parameters
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-			// load image, create texture and generate mipmaps
-			int width, height, nrChannels;
-			// The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-
-			char aPath[MAX_PATH+1] = { 0 };
-			auto dwSize = GetModuleFileName(nullptr, aPath, MAX_PATH);
-			std::string strPath = aPath;
-			auto item = strPath.find_last_of("\\");
-			if (item != -1)
+			glGenTextures(2, m_uiTex);
+			glActiveTexture(GL_TEXTURE0);
+			glBindTexture(GL_TEXTURE_2D, m_uiTex[0]); // all upcoming GL_TEXTURE_2D operations now have effect on this texture object
 			{
-				std::string strDir = strPath.substr(0, item);
-				strDir += "\\Image\\container.jpg";
+				// set the texture wrapping parameters
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+				// set texture filtering parameters
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+				// load image, create texture and generate mipmaps
+				int width, height, nrChannels;
+				// The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
 
-				unsigned char *data = stbi_load("..\\..\\bin\\v141\\debug\\x64\\Image\\container.jpg", &width, &height, &nrChannels, 0);
-				if (data != nullptr)
+				char aPath[MAX_PATH+1] = { 0 };
+				auto dwSize = GetModuleFileName(nullptr, aPath, MAX_PATH);
+				std::string strPath = aPath;
+				auto item = strPath.find_last_of("\\");
+				if (item != -1)
 				{
-					glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-					glGenerateMipmap(GL_TEXTURE_2D);
-				}
-				else
-				{
-					// failed load imag
-				}
+					std::string strDir = strPath.substr(0, item);
+					strDir += "\\Image\\container.jpg";
 
-				stbi_image_free(data);
+					unsigned char *data = stbi_load(strDir.c_str(), &width, &height, &nrChannels, 0);
+					if (data != nullptr)
+					{
+						glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+						glGenerateMipmap(GL_TEXTURE_2D);
+					}
+					else
+					{
+						// failed load imag
+					}
+
+					stbi_image_free(data);
+				}
 			}
+			//glBindTexture(GL_TEXTURE_2D, 0);
+
+			glActiveTexture(GL_TEXTURE1);
+			glBindTexture(GL_TEXTURE_2D, m_uiTex[1]);
+			{
+				// set the texture wrapping parameters
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+				// set texture filtering parameters
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+				// load image, create texture and generate mipmaps
+				int width, height, nrChannels;
+				// The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
+
+				char aPath[MAX_PATH + 1] = { 0 };
+				auto dwSize = GetModuleFileName(nullptr, aPath, MAX_PATH);
+				std::string strPath = aPath;
+				auto item = strPath.find_last_of("\\");
+				if (item != -1)
+				{
+					std::string strDir = strPath.substr(0, item);
+					strDir += "\\Image\\awesomeface.png";
+
+					unsigned char *data = stbi_load(strDir.c_str(), &width, &height, &nrChannels, 0);
+					if (data != nullptr)
+					{
+						glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+						glGenerateMipmap(GL_TEXTURE_2D);
+					}
+					else
+					{
+						// failed load imag
+					}
+
+					stbi_image_free(data);
+				}
+			}
+			//glBindTexture(GL_TEXTURE_2D, 0);
 			
 			/////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -163,5 +215,5 @@ void CHelperVBO::GLUnbind()
 void CHelperVBO::GLDelete()
 {
 	glDeleteVertexArrays(1, &m_uiVAO);
-	glDeleteTextures(1, &m_uiTex);
+	glDeleteTextures(2, m_uiTex);
 }
