@@ -1,4 +1,5 @@
 #version 330 core
+// layout, uniform(global), in, out
 
 uniform sampler2D ourTexture1;
 uniform sampler2D ourTexture2;

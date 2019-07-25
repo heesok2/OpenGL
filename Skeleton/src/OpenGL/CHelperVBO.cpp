@@ -2,6 +2,10 @@
 #include <atltrace.h>
 #include <string>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
@@ -49,27 +53,32 @@ bool CHelperVBO::GLBind()
 	if (!m_uiTex)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] not found texture");
+		ATLTRACE("[error] not found texture\n");
 		return false;
 	}
 
 	if (!m_uiVAO)
 	{
 		ATLASSERT(false);
-		ATLTRACE("[error] not found vao");
+		ATLTRACE("[error] not found vao\n");
 		return false;
 	}
+
+	glm::mat4 trans(1.f);
+	trans = glm::rotate(trans, glm::radians(90.f), glm::vec3(0.f, 0.f, 1.f));
+	trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
 
 	GLint nProgram;
 	glGetIntegerv(GL_CURRENT_PROGRAM, &nProgram);
 	glUniform1i(glGetUniformLocation(nProgram, "ourTexture1"), 0);
 	glUniform1i(glGetUniformLocation(nProgram, "ourTexture2"), 1);
+	glUniformMatrix4fv(glGetUniformLocation(nProgram, "transform"), 1, false, glm::value_ptr(trans));
 
 	glBindVertexArray(m_uiVAO);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, m_uiTex[0]);
 	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, m_uiTex[1]);
+	glBindTexture(GL_TEXTURE_2D, m_uiTex[1]);	
 	
 	return true;
 }
@@ -119,7 +128,7 @@ bool CHelperVBO::GLLoad(unsigned int eShaderType)
 					stbi_image_free(data);
 				}
 			}
-			//glBindTexture(GL_TEXTURE_2D, 0);
+			glBindTexture(GL_TEXTURE_2D, 0);
 
 			glActiveTexture(GL_TEXTURE1);
 			glBindTexture(GL_TEXTURE_2D, m_uiTex[1]);
@@ -157,7 +166,7 @@ bool CHelperVBO::GLLoad(unsigned int eShaderType)
 					stbi_image_free(data);
 				}
 			}
-			//glBindTexture(GL_TEXTURE_2D, 0);
+			glBindTexture(GL_TEXTURE_2D, 0);
 			
 			/////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -192,7 +201,7 @@ bool CHelperVBO::GLLoad(unsigned int eShaderType)
 	default:
 		{
 			ATLASSERT(false);
-			ATLTRACE("[error] unknown type");
+			ATLTRACE("[error] unknown type\n");
 			return false;
 		}
 		break;
