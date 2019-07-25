@@ -64,8 +64,10 @@ bool CHelperVBO::GLBind()
 		return false;
 	}
 
+	;
 	glm::mat4 trans(1.f);
-	trans = glm::rotate(trans, glm::radians(90.f), glm::vec3(0.f, 0.f, 1.f));
+	trans = glm::translate(trans, glm::vec3(0.5f, 0.5f, 0.5f));
+	trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.f, 0.f, 1.f));
 	trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
 
 	GLint nProgram;
