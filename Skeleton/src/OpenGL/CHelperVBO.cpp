@@ -64,22 +64,22 @@ bool CHelperVBO::GLBind()
 		return false;
 	}
 
+	GLint nProgram;
+	glGetIntegerv(GL_CURRENT_PROGRAM, &nProgram);
+	glUniform1i(glGetUniformLocation(nProgram, "ourTexture1"), 0);
+	glUniform1i(glGetUniformLocation(nProgram, "ourTexture2"), 1);
+
 	glm::mat4 trans(1.f);
 	trans = glm::translate(trans, glm::vec3(0.5f, 0.5f, 0.5f));
 	trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.f, 0.f, 1.f));
 	trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
-
+	
 	GLint viewport[4];
 	glGetIntegerv(GL_VIEWPORT, viewport);
 	glm::mat4 model(1.f), view(1.f), proj(1.f);
 	model = glm::rotate(model, glm::radians(55.f), glm::vec3(1.f, 0.f, 0.f));
 	view = glm::translate(view, glm::vec3(0.f, 0.f, -2.f));
 	proj = glm::perspective(glm::radians(45.f), ((GLfloat)viewport[2] / (GLfloat)viewport[3]), 0.1f, 100.f);
-
-	GLint nProgram;
-	glGetIntegerv(GL_CURRENT_PROGRAM, &nProgram);
-	glUniform1i(glGetUniformLocation(nProgram, "ourTexture1"), 0);
-	glUniform1i(glGetUniformLocation(nProgram, "ourTexture2"), 1);
 	glUniformMatrix4fv(glGetUniformLocation(nProgram, "transform"), 1, false, glm::value_ptr(trans));
 	glUniformMatrix4fv(glGetUniformLocation(nProgram, "model"), 1, false, glm::value_ptr(model));
 	glUniformMatrix4fv(glGetUniformLocation(nProgram, "view"), 1, false, glm::value_ptr(view));
@@ -223,7 +223,111 @@ bool CHelperVBO::GLLoad(unsigned int eShaderType)
 
 void CHelperVBO::GLDraw()
 {
-	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)0);// (3 * sizeof(GLuint)));
+	GLint nProgram;
+	glGetIntegerv(GL_CURRENT_PROGRAM, &nProgram);
+
+	//GLint viewport[4];
+	//glGetIntegerv(GL_VIEWPORT, viewport);
+
+	glPushMatrix();
+	{
+		//glm::mat4 trans(1.f);
+		//glm::mat4 model(1.f), view(1.f), proj(1.f);
+		//trans = glm::translate(trans, glm::vec3(0.f, 0.f, 0.5f));
+		//view = glm::translate(view, glm::vec3(0.f, 0.f, -2.f));
+		//proj = glm::perspective(glm::radians(45.f), ((GLfloat)viewport[2] / (GLfloat)viewport[3]), 0.1f, 100.f);
+		//glUniformMatrix4fv(glGetUniformLocation(nProgram, "transform"), 1, false, glm::value_ptr(trans));
+		//glUniformMatrix4fv(glGetUniformLocation(nProgram, "model"), 1, false, glm::value_ptr(model));
+		//glUniformMatrix4fv(glGetUniformLocation(nProgram, "view"), 1, false, glm::value_ptr(view));
+		//glUniformMatrix4fv(glGetUniformLocation(nProgram, "proj"), 1, false, glm::value_ptr(proj));
+
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)0);// (3 * sizeof(GLuint)));
+	}
+	glPopMatrix();
+
+	//glPushMatrix();
+	//{
+	//	glm::mat4 trans(1.f);
+	//	glm::mat4 model(1.f), view(1.f), proj(1.f);
+	//	trans = glm::translate(trans, glm::vec3(0.f, 0.f, -0.5f));
+	//	view = glm::translate(view, glm::vec3(0.f, 0.f, -2.f));
+	//	proj = glm::perspective(glm::radians(45.f), ((GLfloat)viewport[2] / (GLfloat)viewport[3]), 0.1f, 100.f);
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "transform"), 1, false, glm::value_ptr(trans));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "model"), 1, false, glm::value_ptr(model));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "view"), 1, false, glm::value_ptr(view));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "proj"), 1, false, glm::value_ptr(proj));
+
+	//	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)0);// (3 * sizeof(GLuint)));
+	//}
+	//glPopMatrix();
+
+	//glPushMatrix();
+	//{
+	//	glm::mat4 trans(1.f);
+	//	glm::mat4 model(1.f), view(1.f), proj(1.f);
+	//	trans = glm::translate(trans, glm::vec3(0.f, 0.f, 0.5f));
+	//	trans = glm::rotate(trans, glm::radians(90.f), glm::vec3(0.f, 1.f, 0.f));
+	//	view = glm::translate(view, glm::vec3(0.f, 0.f, -2.f));
+	//	proj = glm::perspective(glm::radians(45.f), ((GLfloat)viewport[2] / (GLfloat)viewport[3]), 0.1f, 100.f);
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "transform"), 1, false, glm::value_ptr(trans));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "model"), 1, false, glm::value_ptr(model));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "view"), 1, false, glm::value_ptr(view));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "proj"), 1, false, glm::value_ptr(proj));
+
+	//	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)0);// (3 * sizeof(GLuint)));
+	//}
+	//glPopMatrix();
+
+	//glPushMatrix();
+	//{
+	//	glm::mat4 trans(1.f);
+	//	glm::mat4 model(1.f), view(1.f), proj(1.f);
+	//	trans = glm::translate(trans, glm::vec3(0.f, 0.f, -0.5f));
+	//	trans = glm::rotate(trans, glm::radians(90.f), glm::vec3(0.f, 1.f, 0.f));
+	//	view = glm::translate(view, glm::vec3(0.f, 0.f, -2.f));
+	//	proj = glm::perspective(glm::radians(45.f), ((GLfloat)viewport[2] / (GLfloat)viewport[3]), 0.1f, 100.f);
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "transform"), 1, false, glm::value_ptr(trans));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "model"), 1, false, glm::value_ptr(model));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "view"), 1, false, glm::value_ptr(view));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "proj"), 1, false, glm::value_ptr(proj));
+
+	//	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)0);// (3 * sizeof(GLuint)));
+	//}
+	//glPopMatrix();
+
+	//glPushMatrix();
+	//{
+	//	glm::mat4 trans(1.f);
+	//	glm::mat4 model(1.f), view(1.f), proj(1.f);
+	//	trans = glm::translate(trans, glm::vec3(0.f, 0.f, 0.5f));
+	//	trans = glm::rotate(trans, glm::radians(90.f), glm::vec3(1.f, 0.f, 0.f));
+	//	view = glm::translate(view, glm::vec3(0.f, 0.f, -2.f));
+	//	proj = glm::perspective(glm::radians(45.f), ((GLfloat)viewport[2] / (GLfloat)viewport[3]), 0.1f, 100.f);
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "transform"), 1, false, glm::value_ptr(trans));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "model"), 1, false, glm::value_ptr(model));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "view"), 1, false, glm::value_ptr(view));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "proj"), 1, false, glm::value_ptr(proj));
+
+	//	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)0);// (3 * sizeof(GLuint)));
+	//}
+	//glPopMatrix();
+
+	//glPushMatrix();
+	//{
+	//	glm::mat4 trans(1.f);
+	//	glm::mat4 model(1.f), view(1.f), proj(1.f);
+	//	trans = glm::translate(trans, glm::vec3(0.f, 0.f, 0.5f));
+	//	trans = glm::rotate(trans, glm::radians(90.f), glm::vec3(1.f, 0.f, 0.f));
+	//	view = glm::translate(view, glm::vec3(0.f, 0.f, -2.f));
+	//	proj = glm::perspective(glm::radians(45.f), ((GLfloat)viewport[2] / (GLfloat)viewport[3]), 0.1f, 100.f);
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "transform"), 1, false, glm::value_ptr(trans));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "model"), 1, false, glm::value_ptr(model));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "view"), 1, false, glm::value_ptr(view));
+	//	glUniformMatrix4fv(glGetUniformLocation(nProgram, "proj"), 1, false, glm::value_ptr(proj));
+
+	//	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)0);// (3 * sizeof(GLuint)));
+	//}
+	//glPopMatrix();
 }
 
 void CHelperVBO::GLUnbind()
