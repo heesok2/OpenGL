@@ -6,45 +6,48 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="_resource file_">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="_common_">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="_common_">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
     <Filter Include="_common_\Linker">
-      <UniqueIdentifier>{d866b534-6418-4f69-bb17-4e5aa8326108}</UniqueIdentifier>
+      <UniqueIdentifier>{89b1ef96-646f-4356-a8c8-f000dcef7da7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WBF_GPS.cpp">
-      <Filter>_common_</Filter>
-    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>_common_</Filter>
     </ClCompile>
+    <ClCompile Include="WBFC_GPS.cpp">
+      <Filter>_common_</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="WBF_GPS.def">
-      <Filter>_common_</Filter>
-    </None>
-    <None Include="res\WBF_GPS.rc2">
+    <None Include="res\WBFC_GPS.rc2">
       <Filter>_resource_</Filter>
     </None>
+    <None Include="WBFC_GPS.def">
+      <Filter>_common_</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WBF_GPS.h">
-      <Filter>_common_</Filter>
-    </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>_common_</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>_common_</Filter>
     </ClInclude>
+    <ClInclude Include="WBFC_GPS.h">
+      <Filter>_common_</Filter>
+    </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>_resource_</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFC_GPS_LINK.h">
+      <Filter>_common_\Linker</Filter>
     </ClInclude>
     <ClInclude Include="HeaderPre.h">
       <Filter>_common_\Linker</Filter>
@@ -52,12 +55,9 @@
     <ClInclude Include="HeaderPost.h">
       <Filter>_common_\Linker</Filter>
     </ClInclude>
-    <ClInclude Include="WBF_GPS_LINK.h">
-      <Filter>_common_\Linker</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="WBF_GPS.rc">
+    <ResourceCompile Include="WBFC_GPS.rc">
       <Filter>_resource_</Filter>
     </ResourceCompile>
   </ItemGroup>

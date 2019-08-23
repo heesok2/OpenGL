@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{C9BED572-7A47-408B-B63B-B535C2375A18}</ProjectGuid>
+    <ProjectGuid>{2699BC31-39BE-4202-A9CA-E9A40E3573B0}</ProjectGuid>
     <Keyword>MFCDLLProj</Keyword>
-    <RootNamespace>WBFGPS</RootNamespace>
+    <RootNamespace>WBFLIB</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -105,7 +105,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\WBF_GPS.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\WBF_LIB.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -130,7 +130,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>.\WBF_GPS.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\WBF_LIB.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -159,7 +159,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>.\WBF_GPS.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\WBF_LIB.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -188,7 +188,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>.\WBF_GPS.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>.\WBF_LIB.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -209,23 +209,24 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="WBF_GPS.cpp" />
+    <ClCompile Include="WBF_LIB.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\WBF_GPS.rc2" />
-    <None Include="WBF_GPS.def" />
+    <None Include="res\WBF_LIB.rc2" />
+    <None Include="WBF_LIB.def" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllProjectInclude.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="WBF_GPS.h" />
-    <ClInclude Include="WBF_GPS_LINK.h" />
+    <ClInclude Include="WBF_LIB.h" />
+    <ClInclude Include="WBF_LIB_LINK.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="WBF_GPS.rc" />
+    <ResourceCompile Include="WBF_LIB.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
