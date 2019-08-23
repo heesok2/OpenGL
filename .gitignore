@@ -44,3 +44,4 @@ temp
 *.embed.manifest.res
 hanbit/source/*/Debug/
 hanbit/source/*/packages/
+/WBF/bin/v141/Release/x64/*.ipdb

@@ -4,4 +4,6 @@
 
 #include "stdafx.h"
 
+#include "../WBF_LIB/WBF_LIB_LINK.h"
+#include "../WBF_GPS/WBF_GPS_LINK.h"
 
