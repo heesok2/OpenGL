@@ -16,6 +16,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="_common_\Linker">
+      <UniqueIdentifier>{5841765e-3c15-4884-865c-91ef509d67fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -44,6 +47,12 @@
     </ClInclude>
     <ClInclude Include="WBF.h">
       <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderPost.h">
+      <Filter>_common_\Linker</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderPre.h">
+      <Filter>_common_\Linker</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

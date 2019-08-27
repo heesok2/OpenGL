@@ -43,9 +43,12 @@
 
 #include <afxcontrolbars.h>     // MFC의 리본 및 컨트롤 막대 지원
 
-#define __WBF__
+#ifndef __WBF_MAIN__
+#define __WBF_MAIN__
+
 #include "..\WBF_LIB\AllProjectInclude.h"
 
+#endif
 
 
 #ifdef _UNICODE

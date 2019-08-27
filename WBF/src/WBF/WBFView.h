@@ -14,8 +14,9 @@
 
 #pragma once
 
+#include "../WBF_BASE/WBFViewBase.h"
 
-class CWBFView : public CView
+class CWBFView : public CWBFViewBase
 {
 protected: // serialization에서만 만들어집니다.
 	CWBFView() noexcept;

@@ -36,5 +36,9 @@
 #include <afxcmn.h>                     // Windows 공용 컨트롤에 대한 MFC 지원입니다.
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
+#ifndef __WBF_LIB__
 #define __WBF_LIB__
+
 #include "AllProjectInclude.h"
+
+#endif
