@@ -16,11 +16,11 @@
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{56fd0cfd-a2ed-4456-9fb0-652694eb5306}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Define">
-      <UniqueIdentifier>{e1666a9e-f13b-44d7-a05a-3330c3abe7d9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Base">
       <UniqueIdentifier>{da11dfd0-e1b5-42e7-b5dd-aa834dbd7c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{e1666a9e-f13b-44d7-a05a-3330c3abe7d9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -65,7 +65,7 @@
       <Filter>_common_\Linker</Filter>
     </ClInclude>
     <ClInclude Include="AllGraphicInclude.h">
-      <Filter>Define</Filter>
+      <Filter>Util</Filter>
     </ClInclude>
     <ClInclude Include="WBFViewBase.h">
       <Filter>Base</Filter>

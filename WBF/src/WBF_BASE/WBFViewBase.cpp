@@ -15,4 +15,6 @@ END_MESSAGE_MAP()
 
 void CWBFViewBase::OnDraw(CDC * pDC)
 {
+
+
 }

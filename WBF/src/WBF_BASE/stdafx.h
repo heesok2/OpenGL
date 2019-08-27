@@ -39,6 +39,7 @@
 #ifndef __WBF_BASE__
 #define __WBF_BASE__
 
+#include "AllGraphicInclude.h"
 #include "..\WBF_LIB\AllProjectInclude.h"
 
 #endif
