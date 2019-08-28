@@ -136,7 +136,7 @@
       <SubSystem>Windows</SubSystem>
       <OutputFile>../../bin/$(PlatformToolset)/$(configuration)/$(PlatformTarget)/$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>

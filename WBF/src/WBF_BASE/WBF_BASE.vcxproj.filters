@@ -33,6 +33,9 @@
     <ClCompile Include="WBFViewBase.cpp">
       <Filter>Base</Filter>
     </ClCompile>
+    <ClCompile Include="WBFViewGL.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="WBF_BASE.def">
@@ -68,6 +71,9 @@
       <Filter>Util</Filter>
     </ClInclude>
     <ClInclude Include="WBFViewBase.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFViewGL.h">
       <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>

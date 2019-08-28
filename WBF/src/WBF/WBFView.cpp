@@ -71,7 +71,23 @@ void CWBFView::OnDraw(CDC* pDC)
 	if (!pDoc)
 		return;
 
-	// TODO: 여기에 원시 데이터에 대한 그리기 코드를 추가합니다.
+	BeginwglCurrent();
+	{
+		glClearColor(1.f, 0.f, 0.f, 1.f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		glColor3f(0.f, 0.f, 0.f);
+		glBegin(GL_TRIANGLES);
+
+		glVertex3f(-0.5f, -0.5f, 0.f);
+		glVertex3f(0.5f, -0.5f, 0.f);
+		glVertex3f(0.f, 0.5f, 0.f);
+
+		glEnd();
+
+		SwapBuffers();
+	}
+	EndwglCurrent();
 }
 
 
