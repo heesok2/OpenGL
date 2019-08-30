@@ -36,7 +36,6 @@ int CWBFViewGL::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CView::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
-
 	PIXELFORMATDESCRIPTOR pfd =
 	{
 		sizeof(PIXELFORMATDESCRIPTOR),	// Size of this structure
@@ -88,7 +87,15 @@ void CWBFViewGL::OnSize(UINT nType, int cx, int cy)
 
 	BeginwglCurrent();
 
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
 	glViewport(0, 0, cx, cy);
+
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+
+	auto dRat = (double)cx / (double)cy;
+	glOrtho(-dRat, dRat, -1, 1, -1, 1);
 
 	EndwglCurrent();
 }

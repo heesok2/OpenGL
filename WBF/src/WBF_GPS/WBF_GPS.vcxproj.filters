@@ -16,6 +16,9 @@
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{d866b534-6418-4f69-bb17-4e5aa8326108}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{ea121fa2-4f47-4fe8-a015-73b1e8e43d38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_GPS.cpp">
@@ -54,6 +57,9 @@
     </ClInclude>
     <ClInclude Include="WBF_GPS_LINK.h">
       <Filter>_common_\Linker</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFRenderer.h">
+      <Filter>Interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

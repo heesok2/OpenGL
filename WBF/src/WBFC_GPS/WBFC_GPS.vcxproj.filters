@@ -16,6 +16,9 @@
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{89b1ef96-646f-4356-a8c8-f000dcef7da7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{57320bae-a434-497c-82d8-39a9b503285f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -23,6 +26,9 @@
     </ClCompile>
     <ClCompile Include="WBFC_GPS.cpp">
       <Filter>_common_</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFCRndrSample.cpp">
+      <Filter>_resource file_</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +60,9 @@
     </ClInclude>
     <ClInclude Include="HeaderPost.h">
       <Filter>_common_\Linker</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFCRndrSample.h">
+      <Filter>_common_</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
