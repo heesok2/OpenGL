@@ -5,7 +5,6 @@ CWBFViewBase::CWBFViewBase()
 {
 }
 
-
 CWBFViewBase::~CWBFViewBase()
 {
 }

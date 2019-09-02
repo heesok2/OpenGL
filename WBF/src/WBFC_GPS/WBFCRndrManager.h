@@ -7,13 +7,13 @@
 class __MY_EXT_CLASS__ CWBFCRndrManager : public IWBFRndrManager
 {
 public:
-	CWBFCRndrManager();
+	CWBFCRndrManager(CWBFShaderManager* pShaderMgr);
 	virtual ~CWBFCRndrManager();
 
 public:
-	virtual void CreateRndr(E_RNDR_D eType);
-	virtual void GLInit();
-	virtual void GLDraw();
+	virtual void GLCreate(E_RNDR_TYPE eType);
+
+protected:
 
 };
 

@@ -29,9 +29,9 @@
 
 // CWBFDoc
 
-IMPLEMENT_DYNCREATE(CWBFDoc, CDocument)
+IMPLEMENT_DYNCREATE(CWBFDoc, CWBFDocBase)
 
-BEGIN_MESSAGE_MAP(CWBFDoc, CDocument)
+BEGIN_MESSAGE_MAP(CWBFDoc, CWBFDocBase)
 END_MESSAGE_MAP()
 
 
@@ -49,7 +49,7 @@ CWBFDoc::~CWBFDoc()
 
 BOOL CWBFDoc::OnNewDocument()
 {
-	if (!CDocument::OnNewDocument())
+	if (!CWBFDocBase::OnNewDocument())
 		return FALSE;
 
 	// TODO: 여기에 재초기화 코드를 추가합니다.
@@ -134,12 +134,12 @@ void CWBFDoc::SetSearchContent(const CString& value)
 #ifdef _DEBUG
 void CWBFDoc::AssertValid() const
 {
-	CDocument::AssertValid();
+	CWBFDocBase::AssertValid();
 }
 
 void CWBFDoc::Dump(CDumpContext& dc) const
 {
-	CDocument::Dump(dc);
+	CWBFDocBase::Dump(dc);
 }
 #endif //_DEBUG
 

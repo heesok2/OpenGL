@@ -19,8 +19,11 @@
     <Filter Include="Base">
       <UniqueIdentifier>{da11dfd0-e1b5-42e7-b5dd-aa834dbd7c6e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Util">
-      <UniqueIdentifier>{e1666a9e-f13b-44d7-a05a-3330c3abe7d9}</UniqueIdentifier>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{eaff9ac0-ec0b-4613-bc68-a4fbd7db58d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_resource file_\GLSL">
+      <UniqueIdentifier>{9a062ac2-8026-45c1-b8c9-eb5700a48187}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -36,6 +39,15 @@
     <ClCompile Include="WBFViewGL.cpp">
       <Filter>Base</Filter>
     </ClCompile>
+    <ClCompile Include="WBFShaderManager.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFDocBase.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFShader.cpp">
+      <Filter>Shader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="WBF_BASE.def">
@@ -43,6 +55,12 @@
     </None>
     <None Include="res\WBF_BASE.rc2">
       <Filter>_resource_</Filter>
+    </None>
+    <None Include="res\GLSL\Sample_frag.glsl">
+      <Filter>_resource file_\GLSL</Filter>
+    </None>
+    <None Include="res\GLSL\Sample_vert.glsl">
+      <Filter>_resource file_\GLSL</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +90,15 @@
     </ClInclude>
     <ClInclude Include="WBFViewGL.h">
       <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFShaderManager.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFDocBase.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFShader.h">
+      <Filter>Shader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -2,9 +2,8 @@
 #include "WBFRndrManager.h"
 #include "WBFRndrBase.h"
 
-
-IWBFRndrManager::IWBFRndrManager() 
-	: m_pRndr(nullptr)
+IWBFRndrManager::IWBFRndrManager(CWBFShaderManager * pShaderMgr)
+	: m_pShaderMgr(pShaderMgr)
 {
 }
 
@@ -12,12 +11,13 @@ IWBFRndrManager::~IWBFRndrManager()
 {
 }
 
-void IWBFRndrManager::GLInit()
-{
-	m_pRndr->GLInit();
-}
-
 void IWBFRndrManager::GLDraw()
 {
-	m_pRndr->GLDraw();
+	for (auto pRenderer : m_vRenderer)
+	{
+		pRenderer->GLBind(m_pShaderMgr);
+		pRenderer->GLUseShader(m_pShaderMgr);
+		pRenderer->GLDraw();
+		pRenderer->GLUnBind(m_pShaderMgr);
+	}
 }
