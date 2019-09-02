@@ -67,9 +67,6 @@
     <ClInclude Include="WBF_BASE_LINK.h">
       <Filter>_common_\Linker</Filter>
     </ClInclude>
-    <ClInclude Include="AllGraphicInclude.h">
-      <Filter>Util</Filter>
-    </ClInclude>
     <ClInclude Include="WBFViewBase.h">
       <Filter>Base</Filter>
     </ClInclude>

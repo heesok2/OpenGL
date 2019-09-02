@@ -22,6 +22,8 @@
 #include "WBFDoc.h"
 #include "WBFView.h"
 
+#include "../WBFC_GPS/WBFCRndrManager.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -38,14 +40,15 @@ BEGIN_MESSAGE_MAP(CWBFView, CWBFViewBase)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CWBFView::OnFilePrintPreview)
 	ON_WM_CONTEXTMENU()
 	ON_WM_RBUTTONUP()
+	ON_WM_CREATE()
+	ON_WM_DESTROY()
 END_MESSAGE_MAP()
 
 // CWBFView 생성/소멸
 
 CWBFView::CWBFView() noexcept
 {
-	// TODO: 여기에 생성 코드를 추가합니다.
-
+	m_pRndrMgr = nullptr;
 }
 
 CWBFView::~CWBFView()
@@ -73,17 +76,7 @@ void CWBFView::OnDraw(CDC* pDC)
 
 	BeginwglCurrent();
 	{
-		glClearColor(1.f, 0.f, 0.f, 1.f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-		glColor3f(0.f, 0.f, 0.f);
-		glBegin(GL_TRIANGLES);
-
-		glVertex3f(-0.5f, -0.5f, 0.f);
-		glVertex3f(0.5f, -0.5f, 0.f);
-		glVertex3f(0.f, 0.5f, 0.f);
-
-		glEnd();
+		m_pRndrMgr->GLDraw();
 
 		SwapBuffers();
 	}
@@ -153,3 +146,29 @@ CWBFDoc* CWBFView::GetDocument() const // 디버그되지 않은 버전은 인�
 
 
 // CWBFView 메시지 처리기
+
+
+int CWBFView::OnCreate(LPCREATESTRUCT lpCreateStruct)
+{
+	if (CWBFViewBase::OnCreate(lpCreateStruct) == -1)
+		return -1;
+
+	m_pRndrMgr = new CWBFCRndrManager();
+	m_pRndrMgr->CreateRndr(IWBFRndrManager::E_RNDR_SAMPLE);
+
+	BeginwglCurrent();
+	{
+		m_pRndrMgr->GLInit();
+	}
+	EndwglCurrent();
+
+	return 0;
+}
+
+
+void CWBFView::OnDestroy()
+{
+	_SAFE_DELETE(m_pRndrMgr);
+
+	CWBFViewBase::OnDestroy();
+}

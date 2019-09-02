@@ -61,6 +61,12 @@
     <ClInclude Include="WBF_LIB_LINK.h">
       <Filter>_common_\Linker</Filter>
     </ClInclude>
+    <ClInclude Include="WBFGlobalDefine.h">
+      <Filter>Define</Filter>
+    </ClInclude>
+    <ClInclude Include="AllGraphicInclude.h">
+      <Filter>Define</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WBF_LIB.rc">

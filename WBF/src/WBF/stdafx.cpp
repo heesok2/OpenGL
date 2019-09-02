@@ -17,4 +17,5 @@
 
 #include "../WBF_LIB/WBF_LIB_LINK.h"
 #include "../WBF_BASE/WBF_BASE_LINK.h"
+#include "../WBF_GPS/WBF_GPS_LINK.h"
 #include "../WBFC_GPS/WBFC_GPS_LINK.h"

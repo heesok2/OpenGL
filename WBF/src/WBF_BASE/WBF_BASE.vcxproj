@@ -222,7 +222,6 @@
     <None Include="WBF_BASE.def" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AllGraphicInclude.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
     <ClInclude Include="Resource.h" />

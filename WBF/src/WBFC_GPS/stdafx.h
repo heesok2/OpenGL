@@ -40,5 +40,6 @@
 #define __WBFC_GPS__
 
 #include "..\WBF_LIB\AllProjectInclude.h"
+#include "..\WBF_LIB\AllGraphicInclude.h"
 
 #endif

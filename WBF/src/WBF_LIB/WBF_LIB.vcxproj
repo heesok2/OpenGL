@@ -216,12 +216,14 @@
     <None Include="WBF_LIB.def" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllGraphicInclude.h" />
     <ClInclude Include="AllProjectInclude.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="WBFGlobalDefine.h" />
     <ClInclude Include="WBF_LIB.h" />
     <ClInclude Include="WBF_LIB_LINK.h" />
   </ItemGroup>
