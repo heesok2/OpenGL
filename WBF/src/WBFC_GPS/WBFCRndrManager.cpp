@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "WBFCRndrManager.h"
 #include "WBFCRndrSample.h"
+#include "..\WBF_BASE\WBFShaderManager.h"
 
 CWBFCRndrManager::CWBFCRndrManager(CWBFShaderManager * pShaderMgr)
 	: IWBFRndrManager(pShaderMgr)
@@ -13,8 +14,10 @@ CWBFCRndrManager::~CWBFCRndrManager()
 
 void CWBFCRndrManager::GLCreate(E_RNDR_TYPE eType)
 {
-	IWBFRndrBase* pRenderer = nullptr;
+	m_pShaderMgr->GLShaderVersion();
 
+	IWBFRndrBase* pRenderer = nullptr;
+	
 	switch (eType)
 	{
 	case IWBFRndrManager::E_RNDR_SAMPLE:

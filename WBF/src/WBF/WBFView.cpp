@@ -114,6 +114,23 @@ void CWBFView::OnEndPrinting(CDC* /*pDC*/, CPrintInfo* /*pInfo*/)
 	// TODO: 인쇄 후 정리 작업을 추가합니다.
 }
 
+void CWBFView::OnInitialUpdate()
+{
+	CWBFViewBase::OnInitialUpdate();
+
+	auto pDoc = static_cast<CWBFDoc*>(GetDocument());
+	if (pDoc == nullptr) return;
+
+	BeginwglCurrent();
+	{
+		// Renderer 생성
+		auto pShaderMgr = pDoc->GetShaderManager();
+		m_pRndrMgr = new CWBFCRndrManager(pShaderMgr);
+		m_pRndrMgr->GLCreate(IWBFRndrManager::E_RNDR_SAMPLE);
+	}
+	EndwglCurrent();
+}
+
 void CWBFView::OnRButtonUp(UINT /* nFlags */, CPoint point)
 {
 	ClientToScreen(&point);
@@ -156,21 +173,6 @@ int CWBFView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
 	if (CWBFViewBase::OnCreate(lpCreateStruct) == -1)
 		return -1;
-
-	auto pDoc = static_cast<CWBFDoc*>(GetDocument());
-	if (pDoc == nullptr) return 0;
-
-	BeginwglCurrent();
-	{
-		// Renderer 생성
-		auto pShaderMgr = pDoc->GetShaderManager();
-		m_pRndrMgr = new CWBFCRndrManager(pShaderMgr);
-		m_pRndrMgr->GLCreate(IWBFRndrManager::E_RNDR_SAMPLE);
-
-		// Default 
-		glClearColor(1.f, 0.f, 0.f, 1.f);
-	}
-	EndwglCurrent();
 
 	return 0;
 }

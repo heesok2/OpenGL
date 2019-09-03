@@ -16,19 +16,7 @@ CWBFCRndrSample::~CWBFCRndrSample()
 
 void CWBFCRndrSample::GLInit(CWBFShaderManager* pShaderMgr)
 {
-	return;
 	pShaderMgr->GLCreateShader(CWBFShaderManager::E_SHADER_SAMPLE);
-	float aPos[] =
-	{
-		-0.5f, -0.5f, 0.f,
-		0.5f, -0.5f, 0.f,
-		0.f, 0.5f, 0.f
-	};
-
-	// vbo
-	glGenBuffers(GL_ARRAY_BUFFER, &m_nVBO);
-	glBindBuffer(GL_ARRAY_BUFFER, m_nVBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(aPos), aPos, GL_STATIC_DRAW);
 }
 
 void CWBFCRndrSample::GLDraw()

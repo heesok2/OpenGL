@@ -21,6 +21,7 @@ public:
 
 public:
 	void GLCreateShader(E_SHADER_TYPE eType);
+	void GLShaderVersion();
 
 protected:
 	std::map<unsigned int, CWBFShader> m_mBuildShader;
