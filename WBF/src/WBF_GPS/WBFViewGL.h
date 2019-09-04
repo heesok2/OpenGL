@@ -4,7 +4,7 @@
 
 class __MY_EXT_CLASS__ CWBFViewGL : public CView
 {
-protected:
+public:
 	CWBFViewGL();
 	virtual ~CWBFViewGL();
 	

@@ -16,8 +16,17 @@
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{d866b534-6418-4f69-bb17-4e5aa8326108}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Manager">
+    <Filter Include="Common">
       <UniqueIdentifier>{ea121fa2-4f47-4fe8-a015-73b1e8e43d38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_resource file_\GLSL">
+      <UniqueIdentifier>{b7ecbc98-8bf2-4463-8414-591eee42f869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Shader">
+      <UniqueIdentifier>{061f4a4c-1d73-4211-9e46-294f52a90935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Renderer">
+      <UniqueIdentifier>{5477b0e9-8d73-4f8c-aaaa-7393aa2f8f4e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,8 +36,17 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>_common_</Filter>
     </ClCompile>
+    <ClCompile Include="WBFViewGL.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFShader.cpp">
+      <Filter>Common\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFShaderManager.cpp">
+      <Filter>Common\Shader</Filter>
+    </ClCompile>
     <ClCompile Include="WBFRndrManager.cpp">
-      <Filter>Manager</Filter>
+      <Filter>Common\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +55,12 @@
     </None>
     <None Include="res\WBF_GPS.rc2">
       <Filter>_resource_</Filter>
+    </None>
+    <None Include="res\GLSL\Sample_frag.glsl">
+      <Filter>_resource file_\GLSL</Filter>
+    </None>
+    <None Include="res\GLSL\Sample_vert.glsl">
+      <Filter>_resource file_\GLSL</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -61,11 +85,20 @@
     <ClInclude Include="WBF_GPS_LINK.h">
       <Filter>_common_\Linker</Filter>
     </ClInclude>
+    <ClInclude Include="WBFViewGL.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFShader.h">
+      <Filter>Common\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFShaderManager.h">
+      <Filter>Common\Shader</Filter>
+    </ClInclude>
     <ClInclude Include="WBFRndrManager.h">
-      <Filter>Manager</Filter>
+      <Filter>Common\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="WBFRndrBase.h">
-      <Filter>Manager</Filter>
+      <Filter>Common\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

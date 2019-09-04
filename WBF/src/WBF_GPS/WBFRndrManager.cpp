@@ -2,16 +2,16 @@
 #include "WBFRndrManager.h"
 #include "WBFRndrBase.h"
 
-IWBFRndrManager::IWBFRndrManager(CWBFShaderManager * pShaderMgr)
-	: m_pShaderMgr(pShaderMgr)
+CWBFRndrManager::CWBFRndrManager()
+	: m_pShaderMgr(nullptr)
 {
 }
 
-IWBFRndrManager::~IWBFRndrManager()
+CWBFRndrManager::~CWBFRndrManager()
 {
 }
 
-void IWBFRndrManager::GLDraw()
+void CWBFRndrManager::GLDrawScen()
 {
 	for (auto pRenderer : m_vRenderer)
 	{

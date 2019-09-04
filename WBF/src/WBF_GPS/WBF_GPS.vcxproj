@@ -108,6 +108,7 @@
       <ModuleDefinitionFile>.\WBF_GPS.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -133,6 +134,7 @@
       <ModuleDefinitionFile>.\WBF_GPS.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -162,6 +164,7 @@
       <ModuleDefinitionFile>.\WBF_GPS.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -191,6 +194,7 @@
       <ModuleDefinitionFile>.\WBF_GPS.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -210,9 +214,14 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="WBFRndrManager.cpp" />
+    <ClCompile Include="WBFShader.cpp" />
+    <ClCompile Include="WBFShaderManager.cpp" />
+    <ClCompile Include="WBFViewGL.cpp" />
     <ClCompile Include="WBF_GPS.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\GLSL\Sample_frag.glsl" />
+    <None Include="res\GLSL\Sample_vert.glsl" />
     <None Include="res\WBF_GPS.rc2" />
     <None Include="WBF_GPS.def" />
   </ItemGroup>
@@ -224,6 +233,9 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="WBFRndrBase.h" />
     <ClInclude Include="WBFRndrManager.h" />
+    <ClInclude Include="WBFShader.h" />
+    <ClInclude Include="WBFShaderManager.h" />
+    <ClInclude Include="WBFViewGL.h" />
     <ClInclude Include="WBF_GPS.h" />
     <ClInclude Include="WBF_GPS_LINK.h" />
   </ItemGroup>

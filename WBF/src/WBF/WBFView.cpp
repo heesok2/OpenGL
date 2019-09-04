@@ -22,7 +22,7 @@
 #include "WBFDoc.h"
 #include "WBFView.h"
 
-#include "../WBFC_GPS/WBFCRndrManager.h"
+#include "..\WBF_GPS\WBFRndrManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -47,8 +47,8 @@ END_MESSAGE_MAP()
 // CWBFView 생성/소멸
 
 CWBFView::CWBFView() noexcept
+	: m_pRndrMgr(nullptr)
 {
-	m_pRndrMgr = nullptr;
 }
 
 CWBFView::~CWBFView()
@@ -79,7 +79,7 @@ void CWBFView::OnDraw(CDC* pDC)
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
-		m_pRndrMgr->GLDraw();
+		m_pRndrMgr->GLDrawScen();
 
 
 		SwapBuffers();
@@ -121,14 +121,8 @@ void CWBFView::OnInitialUpdate()
 	auto pDoc = static_cast<CWBFDoc*>(GetDocument());
 	if (pDoc == nullptr) return;
 
-	BeginwglCurrent();
-	{
-		// Renderer 생성
-		auto pShaderMgr = pDoc->GetShaderManager();
-		m_pRndrMgr = new CWBFCRndrManager(pShaderMgr);
-		m_pRndrMgr->GLCreate(IWBFRndrManager::E_RNDR_SAMPLE);
-	}
-	EndwglCurrent();
+	m_pRndrMgr = new CWBFRndrManager();
+	m_pRndrMgr->OnInitialUpdate();
 }
 
 void CWBFView::OnRButtonUp(UINT /* nFlags */, CPoint point)
@@ -180,7 +174,11 @@ int CWBFView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 void CWBFView::OnDestroy()
 {
-	_SAFE_DELETE(m_pRndrMgr);
+	if (m_pRndrMgr != nullptr)
+	{
+		m_pRndrMgr->OnDestroy();
+		_SAFE_DELETE(m_pRndrMgr);
+	}
 
 	CWBFViewBase::OnDestroy();
 }

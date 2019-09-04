@@ -108,7 +108,7 @@
       <ModuleDefinitionFile>.\WBF_BASE.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>glew32.lib;opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -134,7 +134,7 @@
       <ModuleDefinitionFile>.\WBF_BASE.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>glew32.lib;opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -164,7 +164,7 @@
       <ModuleDefinitionFile>.\WBF_BASE.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>glew32.lib;opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -194,7 +194,7 @@
       <ModuleDefinitionFile>.\WBF_BASE.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>glew32.lib;opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -214,15 +214,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="WBFDocBase.cpp" />
-    <ClCompile Include="WBFShader.cpp" />
-    <ClCompile Include="WBFShaderManager.cpp" />
     <ClCompile Include="WBFViewBase.cpp" />
-    <ClCompile Include="WBFViewGL.cpp" />
     <ClCompile Include="WBF_BASE.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\GLSL\Sample_frag.glsl" />
-    <None Include="res\GLSL\Sample_vert.glsl" />
     <None Include="res\WBF_BASE.rc2" />
     <None Include="WBF_BASE.def" />
   </ItemGroup>
@@ -233,10 +228,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="WBFDocBase.h" />
-    <ClInclude Include="WBFShader.h" />
-    <ClInclude Include="WBFShaderManager.h" />
     <ClInclude Include="WBFViewBase.h" />
-    <ClInclude Include="WBFViewGL.h" />
     <ClInclude Include="WBF_BASE.h" />
     <ClInclude Include="WBF_BASE_LINK.h" />
   </ItemGroup>

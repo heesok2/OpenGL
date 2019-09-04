@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "WBFCRndrSample.h"
 
-#include "..\WBF_BASE\WBFShaderManager.h"
+#include "..\WBF_GPS\WBFShaderManager.h"
 
 CWBFCRndrSample::CWBFCRndrSample()
 {

@@ -5,7 +5,7 @@
 
 class IWBFRndrBase;
 class CWBFShaderManager;
-class __MY_EXT_CLASS__ IWBFRndrManager
+class __MY_EXT_CLASS__ CWBFRndrManager
 {
 public:
 	enum E_RNDR_TYPE 
@@ -17,12 +17,14 @@ public:
 	};
 
 public:
-	IWBFRndrManager(CWBFShaderManager* pShaderMgr);
-	virtual ~IWBFRndrManager();
+	CWBFRndrManager();
+	virtual ~CWBFRndrManager();
 
 public:
-	virtual void GLCreate(E_RNDR_TYPE eType) {};
-	virtual void GLDraw();
+	void OnInitialUpdate() {}
+	void OnDestroy() {}
+
+	void GLDrawScen();
 
 protected:
 	CWBFShaderManager* m_pShaderMgr;

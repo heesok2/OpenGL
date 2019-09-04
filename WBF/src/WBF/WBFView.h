@@ -16,11 +16,13 @@
 
 #include "../WBF_BASE/WBFViewBase.h"
 
-class IWBFRndrManager;
+class CWBFRndrManager;
 class CWBFView : public CWBFViewBase
 {
-protected: // serialization에서만 만들어집니다.
+public: // serialization에서만 만들어집니다.
 	CWBFView() noexcept;
+	virtual ~CWBFView();
+
 	DECLARE_DYNCREATE(CWBFView)
 
 	// 특성입니다.
@@ -29,7 +31,6 @@ public:
 
 	// 구현입니다.
 public:
-	virtual ~CWBFView();
 #ifdef _DEBUG
 	virtual void AssertValid() const;
 	virtual void Dump(CDumpContext& dc) const;
@@ -56,7 +57,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 protected:
-	IWBFRndrManager* m_pRndrMgr;
+	CWBFRndrManager* m_pRndrMgr;
 
 };
 
