@@ -2,12 +2,12 @@
 #include "WBFRndrBase.h"
 
 
-IWBFRndrBase::IWBFRndrBase()
+CWBFRndrBase::CWBFRndrBase()
 {
 
 }
 
-IWBFRndrBase::~IWBFRndrBase()
+CWBFRndrBase::~CWBFRndrBase()
 {
 
 }

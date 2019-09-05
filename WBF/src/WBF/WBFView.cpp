@@ -21,6 +21,7 @@
 
 #include "WBFDoc.h"
 #include "WBFView.h"
+#include "WBFControlDlg.h"
 
 #include "..\WBFC_GPS\WBFCRndrManager.h"
 
@@ -38,6 +39,8 @@ BEGIN_MESSAGE_MAP(CWBFView, CWBFViewBase)
 	ON_COMMAND(ID_FILE_PRINT, &CWBFViewBase::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CWBFViewBase::OnFilePrint)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CWBFView::OnFilePrintPreview)
+	ON_COMMAND(ID_WBF_CAT_MAIN_BUTTON, OnClickedButton)
+	ON_UPDATE_COMMAND_UI_RANGE(ID_WBF_CAT_MAIN_BUTTON, ID_WBF_CAT_MAIN_BUTTON, OnCommandUI)
 	ON_WM_CONTEXTMENU()
 	ON_WM_RBUTTONUP()
 	ON_WM_CREATE()
@@ -136,6 +139,25 @@ void CWBFView::OnContextMenu(CWnd* /* pWnd */, CPoint point)
 #ifndef SHARED_HANDLERS
 	theApp.GetContextMenuManager()->ShowPopupMenu(IDR_POPUP_EDIT, point.x, point.y, this, TRUE);
 #endif
+}
+
+void CWBFView::OnClickedButton()
+{
+	CWBFControlDlg* pDlg = new CWBFControlDlg(this);
+	if (pDlg->Create(this))
+	{
+		pDlg->ShowWindow(SW_SHOW);
+		pDlg->SetActiveWindow();
+	}
+	else
+	{
+		delete pDlg;
+	}
+}
+
+void CWBFView::OnCommandUI(CCmdUI * pCmdUI)
+{
+	pCmdUI->Enable(TRUE);
 }
 
 

@@ -19,6 +19,15 @@
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{5841765e-3c15-4884-865c-91ef509d67fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{c9b8d1b8-843d-4a29-92e8-e74160018c6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\Category">
+      <UniqueIdentifier>{33f42c65-2b2a-4658-83c6-27bf2a3cbc37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog">
+      <UniqueIdentifier>{972be108-7f14-471d-828f-6892b29839ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -26,9 +35,6 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>_common_</Filter>
-    </ClInclude>
-    <ClInclude Include="calendarbar.h">
-      <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="ChildFrm.h">
       <Filter>Main</Filter>
@@ -54,6 +60,21 @@
     <ClInclude Include="HeaderPre.h">
       <Filter>_common_\Linker</Filter>
     </ClInclude>
+    <ClInclude Include="calendarbar.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFCategoryManager.h">
+      <Filter>Menu\Category</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFCategoryBase.h">
+      <Filter>Menu\Category</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFCategoryMain.h">
+      <Filter>Menu\Category</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFControlDlg.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF.cpp">
@@ -71,11 +92,23 @@
     <ClCompile Include="WBFView.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="calendarbar.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>_common_</Filter>
+    </ClCompile>
+    <ClCompile Include="calendarbar.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFCategoryManager.cpp">
+      <Filter>Menu\Category</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFCategoryBase.cpp">
+      <Filter>Menu\Category</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFCategoryMain.cpp">
+      <Filter>Menu\Category</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFControlDlg.cpp">
+      <Filter>Dialog</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

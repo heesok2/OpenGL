@@ -16,6 +16,7 @@
 #include "WBF.h"
 
 #include "MainFrm.h"
+#include "WBFCategoryManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -33,11 +34,13 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWndEx)
 	ON_COMMAND(ID_VIEW_CAPTION_BAR, &CMainFrame::OnViewCaptionBar)
 	ON_UPDATE_COMMAND_UI(ID_VIEW_CAPTION_BAR, &CMainFrame::OnUpdateViewCaptionBar)
 	ON_COMMAND(ID_TOOLS_OPTIONS, &CMainFrame::OnOptions)
+	ON_WM_DESTROY()
 END_MESSAGE_MAP()
 
 // CMainFrame 생성/소멸
 
 CMainFrame::CMainFrame() noexcept
+	: m_pCategoryMgr(nullptr)
 {
 	// TODO: 여기에 멤버 초기화 코드를 추가합니다.
 	theApp.m_nAppLook = theApp.GetInt(_T("ApplicationLook"), ID_VIEW_APPLOOK_OFF_2007_SILVER);
@@ -64,6 +67,9 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	m_wndRibbonBar.Create(this);
 	m_wndRibbonBar.LoadFromResource(IDR_RIBBON);
+
+	m_pCategoryMgr = new CWBFCategoryManager;
+	m_pCategoryMgr->OnInitialUpdate(&m_wndRibbonBar);
 
 	if (!m_wndStatusBar.Create(this))
 	{
@@ -340,3 +346,12 @@ void CMainFrame::OnOptions()
 	delete pOptionsDlg;
 }
 
+
+
+void CMainFrame::OnDestroy()
+{
+	_SAFE_DELETE(m_pCategoryMgr);
+
+	CMDIFrameWndEx::OnDestroy();
+	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
+}

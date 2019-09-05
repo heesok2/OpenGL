@@ -22,6 +22,7 @@ class COutlookBar : public CMFCOutlookBar
 	virtual void GetPaneName(CString& strName) const { BOOL bNameValid = strName.LoadString(IDS_OUTLOOKBAR); ASSERT(bNameValid); if (!bNameValid) strName.Empty(); }
 };
 
+class CWBFCategoryManager;
 class CMainFrame : public CMDIFrameWndEx
 {
 	DECLARE_DYNAMIC(CMainFrame)
@@ -65,6 +66,7 @@ protected:
 	afx_msg void OnViewCaptionBar();
 	afx_msg void OnUpdateViewCaptionBar(CCmdUI* pCmdUI);
 	afx_msg void OnOptions();
+	afx_msg void OnDestroy();
 	DECLARE_MESSAGE_MAP()
 
 	BOOL CreateOutlookBar(CMFCOutlookBar& bar, UINT uiID, CMFCShellTreeCtrl& tree, CCalendarBar& calendar, int nInitialWidth);
@@ -75,6 +77,9 @@ protected:
 	CMFCOutlookBarTabCtrl* FindOutlookParent(CWnd* pWnd);
 	CMFCOutlookBarTabCtrl* m_pCurrOutlookWnd;
 	CMFCOutlookBarPane*    m_pCurrOutlookPage;
+
+private:
+	CWBFCategoryManager* m_pCategoryMgr;
 };
 
 

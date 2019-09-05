@@ -53,6 +53,9 @@ protected:
 	afx_msg void OnFilePrintPreview();
 	afx_msg void OnRButtonUp(UINT nFlags, CPoint point);
 	afx_msg void OnContextMenu(CWnd* pWnd, CPoint point);
+	afx_msg void OnClickedButton();
+
+	afx_msg void OnCommandUI(CCmdUI* pCmdUI);
 
 	DECLARE_MESSAGE_MAP()
 

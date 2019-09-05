@@ -4,7 +4,7 @@
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CWBFCRndrSample : public IWBFRndrBase
+class __MY_EXT_CLASS__ CWBFCRndrSample : public CWBFRndrBase
 {
 	DECLARE_RENDERER(CWBFCRndrSample);
 

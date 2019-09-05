@@ -11,11 +11,11 @@ enum E_RNDR_TYPE
 };
 
 class CWBFShaderManager;
-class __MY_EXT_CLASS__ IWBFRndrBase : public CObject
+class __MY_EXT_CLASS__ CWBFRndrBase : public CObject
 {
 public:
-	IWBFRndrBase();
-	virtual ~IWBFRndrBase();
+	CWBFRndrBase();
+	virtual ~CWBFRndrBase();
 
 public:
 	virtual void GLInit(CWBFShaderManager* pShaderMgr) = 0;
@@ -28,5 +28,5 @@ public:
 DECLARE_DYNCREATE(class_name);
 
 #define IMPLEMENT_RENDERER(class_name, type)\
-IMPLEMENT_DYNCREATE(class_name, IWBFRndrBase);\
+IMPLEMENT_DYNCREATE(class_name, CWBFRndrBase);\
 BOOL bRegister = CWBFRndrFactory::GetInstance().RegisterObject(RUNTIME_CLASS(class_name), type);

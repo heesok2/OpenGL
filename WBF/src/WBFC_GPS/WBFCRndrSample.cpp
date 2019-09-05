@@ -5,7 +5,7 @@
 
 IMPLEMENT_RENDERER(CWBFCRndrSample, E_RNDR_SAMPLE);
 
-CWBFCRndrSample::CWBFCRndrSample() : IWBFRndrBase()
+CWBFCRndrSample::CWBFCRndrSample() : CWBFRndrBase()
 {
 }
 

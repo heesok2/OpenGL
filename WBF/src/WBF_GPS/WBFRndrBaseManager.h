@@ -3,7 +3,7 @@
 #include <vector>
 #include "HeaderPre.h"
 
-class IWBFRndrBase;
+class CWBFRndrBase;
 class CWBFShaderManager;
 class __MY_EXT_CLASS__ CWBFRndrBaseManager
 {
@@ -18,7 +18,7 @@ public:
 
 protected:
 	CWBFShaderManager* m_pShaderMgr;
-	std::vector<IWBFRndrBase*> m_vObject;
+	std::vector<CWBFRndrBase*> m_vObject;
 };
 
 #include "HeaderPost.h"
