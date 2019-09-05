@@ -45,7 +45,13 @@
     <ClCompile Include="WBFShaderManager.cpp">
       <Filter>Common\Shader</Filter>
     </ClCompile>
-    <ClCompile Include="WBFRndrManager.cpp">
+    <ClCompile Include="WBFRndrFactory.cpp">
+      <Filter>Common\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFRndrBaseManager.cpp">
+      <Filter>Common\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFRndrBase.cpp">
       <Filter>Common\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
@@ -94,7 +100,10 @@
     <ClInclude Include="WBFShaderManager.h">
       <Filter>Common\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="WBFRndrManager.h">
+    <ClInclude Include="WBFRndrFactory.h">
+      <Filter>Common\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFRndrBaseManager.h">
       <Filter>Common\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="WBFRndrBase.h">

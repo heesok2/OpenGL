@@ -3,11 +3,10 @@
 
 #include "..\WBF_GPS\WBFShaderManager.h"
 
-CWBFCRndrSample::CWBFCRndrSample()
+IMPLEMENT_RENDERER(CWBFCRndrSample, E_RNDR_SAMPLE);
+
+CWBFCRndrSample::CWBFCRndrSample() : IWBFRndrBase()
 {
-	m_nVBO = 0;
-	m_nVAO = 0;
-	m_nEBO = 0;
 }
 
 CWBFCRndrSample::~CWBFCRndrSample()
@@ -29,16 +28,4 @@ void CWBFCRndrSample::GLDraw()
 	glVertex3f(0.f, 0.5f, 0.f);
 
 	glEnd();
-}
-
-void CWBFCRndrSample::GLBind(CWBFShaderManager * pShaderMgr)
-{
-}
-
-void CWBFCRndrSample::GLUseShader(CWBFShaderManager * pShaderMgr)
-{
-}
-
-void CWBFCRndrSample::GLUnBind(CWBFShaderManager * pShaderMgr)
-{
 }

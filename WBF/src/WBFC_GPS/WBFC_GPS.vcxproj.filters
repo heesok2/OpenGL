@@ -16,14 +16,11 @@
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{89b1ef96-646f-4356-a8c8-f000dcef7da7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Render">
-      <UniqueIdentifier>{57320bae-a434-497c-82d8-39a9b503285f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Render\Study">
-      <UniqueIdentifier>{82943ae5-7d77-40c1-9f7d-7686c7e617f5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Manager">
       <UniqueIdentifier>{54a395dc-f400-4e40-941b-db9d1ef15d61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{57320bae-a434-497c-82d8-39a9b503285f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,7 +31,10 @@
       <Filter>_common_</Filter>
     </ClCompile>
     <ClCompile Include="WBFCRndrSample.cpp">
-      <Filter>Render\Study</Filter>
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFCRndrManager.cpp">
+      <Filter>Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,7 +68,10 @@
       <Filter>_common_\Linker</Filter>
     </ClInclude>
     <ClInclude Include="WBFCRndrSample.h">
-      <Filter>Render\Study</Filter>
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFCRndrManager.h">
+      <Filter>Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

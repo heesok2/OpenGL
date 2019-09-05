@@ -215,6 +215,7 @@
     </ClCompile>
     <ClCompile Include="WBFCRndrSample.cpp" />
     <ClCompile Include="WBFC_GPS.cpp" />
+    <ClCompile Include="WBFCRndrManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\WBFC_GPS.rc2" />
@@ -229,6 +230,7 @@
     <ClInclude Include="WBFCRndrSample.h" />
     <ClInclude Include="WBFC_GPS.h" />
     <ClInclude Include="WBFC_GPS_LINK.h" />
+    <ClInclude Include="WBFCRndrManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WBFC_GPS.rc" />

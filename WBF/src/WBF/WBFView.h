@@ -16,7 +16,7 @@
 
 #include "../WBF_BASE/WBFViewBase.h"
 
-class CWBFRndrManager;
+class CWBFCRndrManager;
 class CWBFView : public CWBFViewBase
 {
 public: // serialization에서만 만들어집니다.
@@ -57,7 +57,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 protected:
-	CWBFRndrManager* m_pRndrMgr;
+	CWBFCRndrManager* m_pRndrMgr;
 
 };
 

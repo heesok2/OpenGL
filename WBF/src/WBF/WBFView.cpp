@@ -22,7 +22,7 @@
 #include "WBFDoc.h"
 #include "WBFView.h"
 
-#include "..\WBF_GPS\WBFRndrManager.h"
+#include "..\WBFC_GPS\WBFCRndrManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -121,7 +121,7 @@ void CWBFView::OnInitialUpdate()
 	auto pDoc = static_cast<CWBFDoc*>(GetDocument());
 	if (pDoc == nullptr) return;
 
-	m_pRndrMgr = new CWBFRndrManager();
+	m_pRndrMgr = new CWBFCRndrManager();
 	m_pRndrMgr->OnInitialUpdate();
 }
 
