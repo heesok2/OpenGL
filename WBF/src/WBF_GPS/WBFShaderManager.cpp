@@ -17,28 +17,6 @@ CWBFShaderManager::~CWBFShaderManager()
 {
 }
 
-void CWBFShaderManager::GLCreateShader(UINT eType)
-{
-	CWBFShader sh;
-	sh.GLCreateProgram();
-
-	switch (eType)
-	{
-	case gps::E_GPS_SAMPLE:
-		{
-			sh.GLAttachShader(GL_VERTEX_SHADER, _T("res\\GLSL\\Sample_frag.glsl"));
-			sh.GLAttachShader(GL_FRAGMENT_SHADER, _T("res\\GLSL\\Sample_vert.glsl"));
-		}
-		break;
-	default:
-		break;
-	}
-
-	sh.GLLinkShader();
-
-	m_mBuildShader[eType] = sh;
-}
-
 void CWBFShaderManager::GLShaderVersion()
 {
 	char* strSLVersion = (char*)glGetString(GL_SHADING_LANGUAGE_VERSION);
@@ -46,9 +24,31 @@ void CWBFShaderManager::GLShaderVersion()
 	//아래와 같이 Shader Version을 호출하지 못한 경우가 생겨서 예외처리 추가
 	if (strSLVersion)
 	{
-		
+
 	}
 	else
 	{
 	}
+}
+
+void CWBFShaderManager::GLCreateShader(UINT uiType)
+{
+	CWBFShader shader;
+	shader.GLCreateProgram();
+
+	switch (uiType)
+	{
+	case gps::E_GPS_SAMPLE:
+		{
+			shader.GLAttachShader(GL_VERTEX_SHADER, _T("res\\GLSL\\Sample_frag.glsl"));
+			shader.GLAttachShader(GL_FRAGMENT_SHADER, _T("res\\GLSL\\Sample_vert.glsl"));
+		}
+		break;
+	default:
+		break;
+	}
+
+	shader.GLLinkShader();
+
+	m_mBuildShader[uiType] = shader;
 }

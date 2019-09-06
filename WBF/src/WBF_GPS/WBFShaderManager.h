@@ -11,12 +11,11 @@ public:
 	virtual ~CWBFShaderManager();
 
 public:
-	void GLCreateShader(UINT eType);
 	void GLShaderVersion();
+	void GLCreateShader(UINT uiType);	
 
 protected:
 	std::map<unsigned int, CWBFShader> m_mBuildShader;
 
 };
 #include "HeaderPost.h"
-

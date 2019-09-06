@@ -25,7 +25,9 @@ void CWBFCModelManager::OnInitialUpdate()
 	for (long indx = gps::E_GPS_SAMPLE; indx < gps::E_GPS_NUM; ++indx)
 	{
 		auto pObject = CWBFModelFactory::GetInstance().CreateObject(gps::E_GPS_SAMPLE);
-		if (pObject != nullptr) m_vObject.push_back(pObject);
+		if (pObject == nullptr) continue;
+		
+		m_vObject.push_back(pObject);
 	}
 }
 
@@ -51,7 +53,7 @@ void CWBFCModelManager::OnUpdateOnly(UINT uiType)
 {
 	for (auto pObject : m_vObject)
 	{
-		if (uiType)
+		if (pObject->GetType() == uiType)
 		{
 			pObject->CreateData();
 		}
@@ -70,7 +72,7 @@ void CWBFCModelManager::OnDeleteOnly(UINT uiType)
 {
 	for (auto pObject : m_vObject)
 	{
-		if (uiType)
+		if (pObject->GetType() == uiType)
 		{
 			pObject->InitialData();
 		}

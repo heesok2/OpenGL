@@ -19,7 +19,6 @@ public:
 
 protected:
 	CWBFViewBase* m_pView;
-	CWBFShaderManager* m_pShaderMgr;
 	std::vector<CWBFRndrBase*> m_vObject;
 };
 

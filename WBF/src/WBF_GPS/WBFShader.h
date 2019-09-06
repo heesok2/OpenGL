@@ -13,6 +13,9 @@ public:
 	void GLAttachShader(unsigned int nShaderType, CString strPath);
 	void GLLinkShader();
 
+	void GLBind();
+	void GLUnbind();
+
 protected:
 	unsigned int m_nProg;
 	std::vector<unsigned int> m_vShader;

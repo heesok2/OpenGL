@@ -16,14 +16,20 @@
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{d866b534-6418-4f69-bb17-4e5aa8326108}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Common">
-      <UniqueIdentifier>{ea121fa2-4f47-4fe8-a015-73b1e8e43d38}</UniqueIdentifier>
-    </Filter>
     <Filter Include="_resource file_\GLSL">
       <UniqueIdentifier>{b7ecbc98-8bf2-4463-8414-591eee42f869}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Common\Shader">
+    <Filter Include="Graphic">
+      <UniqueIdentifier>{ea121fa2-4f47-4fe8-a015-73b1e8e43d38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\Shader">
       <UniqueIdentifier>{061f4a4c-1d73-4211-9e46-294f52a90935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\VBO">
+      <UniqueIdentifier>{186d1eee-f61d-44c2-88a5-71a2458fc577}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\Manager">
+      <UniqueIdentifier>{0ffa0422-8b6a-429b-94e0-fe80ab91bcfe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,13 +40,22 @@
       <Filter>_common_</Filter>
     </ClCompile>
     <ClCompile Include="WBFShader.cpp">
-      <Filter>Common\Shader</Filter>
+      <Filter>Graphic\Shader</Filter>
     </ClCompile>
     <ClCompile Include="WBFShaderManager.cpp">
-      <Filter>Common\Shader</Filter>
+      <Filter>Graphic\Shader</Filter>
     </ClCompile>
     <ClCompile Include="GLView.cpp">
-      <Filter>Common</Filter>
+      <Filter>Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFVBOManager.cpp">
+      <Filter>Graphic\VBO</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFRndr.cpp">
+      <Filter>Graphic\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFModel.cpp">
+      <Filter>Graphic\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,13 +95,22 @@
       <Filter>_common_\Linker</Filter>
     </ClInclude>
     <ClInclude Include="WBFShader.h">
-      <Filter>Common\Shader</Filter>
+      <Filter>Graphic\Shader</Filter>
     </ClInclude>
     <ClInclude Include="WBFShaderManager.h">
-      <Filter>Common\Shader</Filter>
+      <Filter>Graphic\Shader</Filter>
     </ClInclude>
     <ClInclude Include="GLView.h">
-      <Filter>Common</Filter>
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFVBOManager.h">
+      <Filter>Graphic\VBO</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFRndr.h">
+      <Filter>Graphic\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFModel.h">
+      <Filter>Graphic\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

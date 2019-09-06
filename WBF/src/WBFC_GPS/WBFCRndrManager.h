@@ -15,6 +15,9 @@ public:
 	virtual void OnDestroy();
 	virtual void GLDrawScene();
 
+public:
+	CWBFShaderManager* m_pShaderMgr;
+
 };
 
 #include "HeaderPost.h"

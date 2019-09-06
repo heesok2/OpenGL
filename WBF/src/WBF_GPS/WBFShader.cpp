@@ -123,3 +123,13 @@ void CWBFShader::GLLinkShader()
 	for (auto sh : m_vShader)
 		glDeleteShader(sh);
 }
+
+void CWBFShader::GLBind()
+{
+	glUseProgram(m_nProg);
+}
+
+void CWBFShader::GLUnbind()
+{
+	glUseProgram(0);
+}

@@ -8,7 +8,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 CWBFRndrBaseManager::CWBFRndrBaseManager(CWBFViewBase* pView)
-	: m_pView(pView), m_pShaderMgr(nullptr)
+	: m_pView(pView)
 {
 }
 
