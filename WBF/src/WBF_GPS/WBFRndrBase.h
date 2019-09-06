@@ -3,13 +3,6 @@
 #include "..\WBF_GPS\WBFRndrFactory.h"
 #include "HeaderPre.h"
 
-enum E_RNDR_TYPE
-{
-	E_RNDR_UNKNOWN = 0,
-	E_RNDR_SAMPLE,
-	E_RNDR_NUM
-};
-
 class CWBFShaderManager;
 class __MY_EXT_CLASS__ CWBFRndrBase : public CObject
 {

@@ -20,6 +20,9 @@ protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnDestroy();
 	afx_msg void OnSize(UINT nType, int cx, int cy);
+	afx_msg BOOL OnQueryNewPalette();
+	afx_msg void OnPaletteChanged(CWnd* pFocusWnd);
+	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 
 	DECLARE_MESSAGE_MAP();
 
@@ -29,11 +32,6 @@ protected:
 	HGLRC m_hRC;
 
 	CPalette m_GLPalette;	// Logical Palette
-
-public:
-	afx_msg BOOL OnQueryNewPalette();
-	afx_msg void OnPaletteChanged(CWnd* pFocusWnd);
-	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 };
 
 #include "HeaderPost.h"

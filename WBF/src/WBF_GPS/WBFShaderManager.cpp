@@ -1,5 +1,12 @@
 #include "stdafx.h"
 #include "WBFShaderManager.h"
+#include "WBFGraphicDef.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
 
 CWBFShaderManager::CWBFShaderManager()
 {
@@ -10,14 +17,14 @@ CWBFShaderManager::~CWBFShaderManager()
 {
 }
 
-void CWBFShaderManager::GLCreateShader(E_SHADER_TYPE eType)
+void CWBFShaderManager::GLCreateShader(UINT eType)
 {
 	CWBFShader sh;
 	sh.GLCreateProgram();
 
 	switch (eType)
 	{
-	case CWBFShaderManager::E_SHADER_SAMPLE:
+	case gps::E_GPS_SAMPLE:
 		{
 			sh.GLAttachShader(GL_VERTEX_SHADER, _T("res\\GLSL\\Sample_frag.glsl"));
 			sh.GLAttachShader(GL_FRAGMENT_SHADER, _T("res\\GLSL\\Sample_vert.glsl"));

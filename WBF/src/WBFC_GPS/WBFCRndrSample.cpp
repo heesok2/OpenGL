@@ -1,9 +1,16 @@
 #include "stdafx.h"
 #include "WBFCRndrSample.h"
 
+#include "..\WBF_GPS\WBFGraphicDef.h"
 #include "..\WBF_GPS\WBFShaderManager.h"
 
-IMPLEMENT_RENDERER(CWBFCRndrSample, E_RNDR_SAMPLE);
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+IMPLEMENT_RENDERER(CWBFCRndrSample, gps::E_GPS_SAMPLE);
 
 CWBFCRndrSample::CWBFCRndrSample() : CWBFRndrBase()
 {
@@ -15,7 +22,7 @@ CWBFCRndrSample::~CWBFCRndrSample()
 
 void CWBFCRndrSample::GLInit(CWBFShaderManager* pShaderMgr)
 {
-	pShaderMgr->GLCreateShader(CWBFShaderManager::E_SHADER_SAMPLE);
+	pShaderMgr->GLCreateShader(gps::E_GPS_SAMPLE);
 }
 
 void CWBFCRndrSample::GLDraw()

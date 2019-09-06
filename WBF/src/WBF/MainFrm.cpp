@@ -18,9 +18,13 @@
 #include "MainFrm.h"
 #include "WBFCategoryManager.h"
 
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
 #endif
+
 
 // CMainFrame
 
@@ -151,7 +155,7 @@ BOOL CMainFrame::CreateOutlookBar(CMFCOutlookBar& bar, UINT uiID, CMFCShellTreeC
 
 	if (pOutlookBar == nullptr)
 	{
-		ASSERT(FALSE);
+		ASSERT(g_warning);
 		return FALSE;
 	}
 

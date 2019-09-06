@@ -16,6 +16,7 @@
 
 #include "../WBF_BASE/WBFViewBase.h"
 
+class CWBFDoc;
 class CWBFCRndrManager;
 class CWBFView : public CWBFViewBase
 {
@@ -46,7 +47,9 @@ protected:
 	virtual void OnBeginPrinting(CDC* pDC, CPrintInfo* pInfo);
 	virtual void OnEndPrinting(CDC* pDC, CPrintInfo* pInfo);
 	virtual void OnInitialUpdate(); // called first time after construct
-	// 생성된 메시지 맵 함수
+
+	virtual CWBFRndrBaseManager* GetRenderManager() { return (CWBFRndrBaseManager*)m_pRndrMgr; }
+
 protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnDestroy();
@@ -70,4 +73,3 @@ inline CWBFDoc* CWBFView::GetDocument() const
 	return reinterpret_cast<CWBFDoc*>(m_pDocument);
 }
 #endif
-

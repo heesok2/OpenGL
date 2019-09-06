@@ -13,7 +13,7 @@ public:
 public:
 	virtual void OnInitialUpdate();
 	virtual void OnDestroy();
-	virtual void GLDrawScen();
+	virtual void GLDrawScene();
 
 };
 

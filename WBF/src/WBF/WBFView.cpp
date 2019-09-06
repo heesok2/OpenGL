@@ -27,8 +27,9 @@
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
 #endif
-
 
 // CWBFView
 
@@ -82,7 +83,7 @@ void CWBFView::OnDraw(CDC* pDC)
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
-		m_pRndrMgr->GLDrawScen();
+		m_pRndrMgr->GLDrawScene();
 
 
 		SwapBuffers();
@@ -146,9 +147,6 @@ void CWBFView::OnClickedButton()
 	auto pDocBase = static_cast<CWBFDocBase*>(GetDocument());
 	auto pViewBase = this;
 
-	CWBFControlDlg dlg(pDocBase, pViewBase);
-	dlg.DoModal();
-
 	CWBFControlDlg* pDlg = new CWBFControlDlg(pDocBase, pViewBase);
 	if (pDlg->Create(this))
 	{
@@ -157,6 +155,7 @@ void CWBFView::OnClickedButton()
 	}
 	else
 	{
+		ASSERT(g_warning);
 		delete pDlg;
 	}
 }

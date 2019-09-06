@@ -1,6 +1,12 @@
 #include "stdafx.h"
 #include "WBFRndrFactory.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
 CWBFRndrFactory& CWBFRndrFactory::GetInstance()
 {
 	static CWBFRndrFactory obj;
@@ -20,7 +26,7 @@ CWBFRndrBase * CWBFRndrFactory::CreateObject(UINT uiType)
 	auto itr = m_mObject.find(uiType);
 	if (itr == m_mObject.end())
 	{
-		ASSERT(0);
+		ASSERT(g_warning);
 		return nullptr;
 	}
 
@@ -33,7 +39,7 @@ BOOL CWBFRndrFactory::RegisterObject(CRuntimeClass * pRuntime, UINT uiType)
 	auto itr = m_mObject.find(uiType);
 	if (itr != m_mObject.end())
 	{
-		ASSERT(0);
+		ASSERT(g_warning);
 		m_mObject.erase(itr);
 	}
 

@@ -17,6 +17,14 @@ public:
 private:
 	virtual void DoDataExchange(CDataExchange* pDX);
 	virtual BOOL OnInitDialog();
+	virtual void OnOK();
+	virtual void OnCancel();
+
+private:
+	void SetControl();
+	void Data2Dlg();
+	BOOL Dlg2Data();
+	BOOL CheckData();
 
 private:
 	afx_msg void OnDestroy();
@@ -25,7 +33,6 @@ private:
 
 private:
 	CWBFViewBase* m_pView;
+	CComboBox m_cobxType;
 
-public:
 };
-

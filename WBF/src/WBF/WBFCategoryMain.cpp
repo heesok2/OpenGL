@@ -2,6 +2,11 @@
 #include "WBFCategoryMain.h"
 #include "Resource.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
 
 CWBFCategoryMain::CWBFCategoryMain()
 	: m_pRibbonBar(nullptr), m_pCategory(nullptr), m_pPanel(nullptr), m_pButton(nullptr)

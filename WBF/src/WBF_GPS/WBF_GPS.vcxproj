@@ -213,6 +213,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="WBFModelBase.cpp" />
+    <ClCompile Include="WBFModelBaseManager.cpp" />
     <ClCompile Include="WBFRndrBase.cpp" />
     <ClCompile Include="WBFRndrFactory.cpp" />
     <ClCompile Include="WBFRndrBaseManager.cpp" />
@@ -233,6 +235,9 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="WBFGraphicDef.h" />
+    <ClInclude Include="WBFModelBase.h" />
+    <ClInclude Include="WBFModelBaseManager.h" />
     <ClInclude Include="WBFRndrBase.h" />
     <ClInclude Include="WBFRndrFactory.h" />
     <ClInclude Include="WBFRndrBaseManager.h" />

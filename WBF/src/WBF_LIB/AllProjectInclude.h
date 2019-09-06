@@ -1,6 +1,6 @@
 #pragma once
 
-#include "WBFGlobalDefine.h"
+#include "WBFGlobalDef.h"
 
 /*
 WBF_LIB : Library

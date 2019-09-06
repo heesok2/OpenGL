@@ -14,7 +14,7 @@ public:
 public:
 	virtual void OnInitialUpdate() = 0;
 	virtual void OnDestroy() = 0;
-	virtual void GLDrawScen() = 0;
+	virtual void GLDrawScene() = 0;
 
 protected:
 	CWBFShaderManager* m_pShaderMgr;

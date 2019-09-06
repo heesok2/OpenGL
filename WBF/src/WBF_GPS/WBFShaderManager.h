@@ -7,20 +7,11 @@
 class __MY_EXT_CLASS__ CWBFShaderManager
 {
 public:
-	enum E_SHADER_TYPE
-	{
-		E_SHADER_UNKNOWN = 0,
-		E_SHADER_SAMPLE,
-
-		E_SHADER_NUM
-	};
-
-public:
 	CWBFShaderManager();
 	virtual ~CWBFShaderManager();
 
 public:
-	void GLCreateShader(E_SHADER_TYPE eType);
+	void GLCreateShader(UINT eType);
 	void GLShaderVersion();
 
 protected:
