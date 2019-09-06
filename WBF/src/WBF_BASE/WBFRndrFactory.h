@@ -20,7 +20,6 @@ public:
 
 private:
 	std::map<UINT, CRuntimeClass*> m_mObject;
-
 };
 
 #include "HeaderPost.h"

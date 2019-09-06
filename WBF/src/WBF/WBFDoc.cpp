@@ -23,6 +23,8 @@
 
 #include <propkey.h>
 
+#include "..\WBFC_GPS\WBFCModelManager.h"
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -42,6 +44,7 @@ END_MESSAGE_MAP()
 // CWBFDoc 생성/소멸
 
 CWBFDoc::CWBFDoc() noexcept
+	: m_pModelMgr(nullptr)
 {
 	// TODO: 여기에 일회성 생성 코드를 추가합니다.
 
@@ -50,20 +53,6 @@ CWBFDoc::CWBFDoc() noexcept
 CWBFDoc::~CWBFDoc()
 {
 }
-
-BOOL CWBFDoc::OnNewDocument()
-{
-	if (!CWBFDocBase::OnNewDocument())
-		return FALSE;
-
-	// TODO: 여기에 재초기화 코드를 추가합니다.
-	// SDI 문서는 이 문서를 다시 사용합니다.
-
-	return TRUE;
-}
-
-
-
 
 // CWBFDoc serialization
 
@@ -145,7 +134,47 @@ void CWBFDoc::Dump(CDumpContext& dc) const
 {
 	CWBFDocBase::Dump(dc);
 }
+
 #endif //_DEBUG
 
+BOOL CWBFDoc::OnNewDocument()
+{
+	if (!CWBFDocBase::OnNewDocument())
+		return FALSE;
 
-// CWBFDoc 명령
+	OnInitialUpdate();
+
+	return TRUE;
+}
+
+BOOL CWBFDoc::OnOpenDocument(LPCTSTR lpszPathName)
+{
+	if (!CWBFDocBase::OnOpenDocument(lpszPathName))
+		return FALSE;
+
+	OnInitialUpdate();
+
+	return TRUE;
+}
+
+void CWBFDoc::OnCloseDocument()
+{
+	OnDestroy();
+
+	CWBFDocBase::OnCloseDocument();
+}
+
+void CWBFDoc::OnInitialUpdate()
+{
+	m_pModelMgr = new CWBFCModelManager(this);
+	m_pModelMgr->OnInitialUpdate();
+}
+
+void CWBFDoc::OnDestroy()
+{
+	if (m_pModelMgr != nullptr)
+	{
+		m_pModelMgr->OnDestroy();
+		_SAFE_DELETE(m_pModelMgr);
+	}
+}

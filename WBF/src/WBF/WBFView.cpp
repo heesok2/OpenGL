@@ -33,13 +33,13 @@ static char THIS_FILE[] = __FILE__;
 
 // CWBFView
 
-IMPLEMENT_DYNCREATE(CWBFView, CWBFViewBase)
+IMPLEMENT_DYNCREATE(CWBFView, CGPSView)
 
-BEGIN_MESSAGE_MAP(CWBFView, CWBFViewBase)
+BEGIN_MESSAGE_MAP(CWBFView, CGPSView)
 	// 표준 인쇄 명령입니다.
-	ON_COMMAND(ID_FILE_PRINT, &CWBFViewBase::OnFilePrint)
-	ON_COMMAND(ID_FILE_PRINT_DIRECT, &CWBFViewBase::OnFilePrint)
-	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CWBFView::OnFilePrintPreview)
+	ON_COMMAND(ID_FILE_PRINT, OnFilePrint)
+	ON_COMMAND(ID_FILE_PRINT_DIRECT, OnFilePrint)
+	ON_COMMAND(ID_FILE_PRINT_PREVIEW, OnFilePrintPreview)
 	ON_COMMAND(ID_WBF_CAT_MAIN_BUTTON, OnClickedButton)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_WBF_CAT_MAIN_BUTTON, ID_WBF_CAT_MAIN_BUTTON, OnCommandUI)
 	ON_WM_CONTEXTMENU()
@@ -64,14 +64,14 @@ BOOL CWBFView::PreCreateWindow(CREATESTRUCT& cs)
 	// TODO: CREATESTRUCT cs를 수정하여 여기에서
 	//  Window 클래스 또는 스타일을 수정합니다.
 
-	return CWBFViewBase::PreCreateWindow(cs);
+	return CGPSView::PreCreateWindow(cs);
 }
 
 // CWBFView 그리기
 
 void CWBFView::OnDraw(CDC* pDC)
 {
-	CWBFViewBase::OnDraw(pDC);
+	CGPSView::OnDraw(pDC);
 
 	CWBFDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
@@ -120,12 +120,12 @@ void CWBFView::OnEndPrinting(CDC* /*pDC*/, CPrintInfo* /*pInfo*/)
 
 void CWBFView::OnInitialUpdate()
 {
-	CWBFViewBase::OnInitialUpdate();
+	CGPSView::OnInitialUpdate();
 
 	auto pDoc = static_cast<CWBFDoc*>(GetDocument());
 	if (pDoc == nullptr) return;
 
-	m_pRndrMgr = new CWBFCRndrManager();
+	m_pRndrMgr = new CWBFCRndrManager(this);
 	m_pRndrMgr->OnInitialUpdate();
 }
 
@@ -171,12 +171,12 @@ void CWBFView::OnCommandUI(CCmdUI * pCmdUI)
 #ifdef _DEBUG
 void CWBFView::AssertValid() const
 {
-	CWBFViewBase::AssertValid();
+	CGPSView::AssertValid();
 }
 
 void CWBFView::Dump(CDumpContext& dc) const
 {
-	CWBFViewBase::Dump(dc);
+	CGPSView::Dump(dc);
 }
 
 CWBFDoc* CWBFView::GetDocument() const // 디버그되지 않은 버전은 인라인으로 지정됩니다.
@@ -192,7 +192,7 @@ CWBFDoc* CWBFView::GetDocument() const // 디버그되지 않은 버전은 인�
 
 int CWBFView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
-	if (CWBFViewBase::OnCreate(lpCreateStruct) == -1)
+	if (CGPSView::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
 	return 0;
@@ -207,5 +207,5 @@ void CWBFView::OnDestroy()
 		_SAFE_DELETE(m_pRndrMgr);
 	}
 
-	CWBFViewBase::OnDestroy();
+	CGPSView::OnDestroy();
 }

@@ -19,6 +19,7 @@ CWBFRndrFactory::CWBFRndrFactory()
 
 CWBFRndrFactory::~CWBFRndrFactory()
 {
+	UnRegisterObject();
 }
 
 CWBFRndrBase * CWBFRndrFactory::CreateObject(UINT uiType)

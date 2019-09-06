@@ -25,6 +25,15 @@
     <Filter Include="Dialog">
       <UniqueIdentifier>{ebbbc3f9-7c2d-43db-b75d-32d1b88d1180}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphic">
+      <UniqueIdentifier>{7fed498d-db6d-4ba9-b6ff-db21ccb9d9e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\Model">
+      <UniqueIdentifier>{29075dae-cf4a-4804-946c-d124cf2f2c93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\Renderer">
+      <UniqueIdentifier>{69012cf2-ed91-4075-96a3-bf2d0afd94b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_BASE.cpp">
@@ -41,6 +50,24 @@
     </ClCompile>
     <ClCompile Include="WBFDialog.cpp">
       <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFRndrBase.cpp">
+      <Filter>Graphic\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFRndrBaseManager.cpp">
+      <Filter>Graphic\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFRndrFactory.cpp">
+      <Filter>Graphic\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFModelBase.cpp">
+      <Filter>Graphic\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFModelBaseManager.cpp">
+      <Filter>Graphic\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFModelFactory.cpp">
+      <Filter>Graphic\Model</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +108,27 @@
     </ClInclude>
     <ClInclude Include="WBFDialog.h">
       <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFRndrBase.h">
+      <Filter>Graphic\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFRndrBaseManager.h">
+      <Filter>Graphic\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFRndrFactory.h">
+      <Filter>Graphic\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFModelBaseManager.h">
+      <Filter>Graphic\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFModelBase.h">
+      <Filter>Graphic\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFGraphicDef.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFModelFactory.h">
+      <Filter>Graphic\Model</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

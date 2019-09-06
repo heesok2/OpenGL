@@ -1,12 +1,14 @@
 #pragma once
 
+#include "..\WBF_BASE\WBFViewBase.h"
+
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CWBFViewGL : public CView
+class __MY_EXT_CLASS__ CGLView : public CWBFViewBase
 {
 public:
-	CWBFViewGL();
-	virtual ~CWBFViewGL();
+	CGLView();
+	virtual ~CGLView();
 	
 public:
 	void BeginwglCurrent();
@@ -25,7 +27,6 @@ protected:
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 
 	DECLARE_MESSAGE_MAP();
-
 
 protected:
 	HDC m_hDC;

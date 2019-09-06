@@ -7,8 +7,8 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFRndrBaseManager::CWBFRndrBaseManager()
-	: m_pShaderMgr(nullptr)
+CWBFRndrBaseManager::CWBFRndrBaseManager(CWBFViewBase* pView)
+	: m_pView(pView), m_pShaderMgr(nullptr)
 {
 }
 

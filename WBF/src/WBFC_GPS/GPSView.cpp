@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WBFViewBase.h"
+#include "GPSView.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -7,10 +7,11 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFViewBase::CWBFViewBase()
+CGPSView::CGPSView()
 {
 }
 
-CWBFViewBase::~CWBFViewBase()
+
+CGPSView::~CGPSView()
 {
 }

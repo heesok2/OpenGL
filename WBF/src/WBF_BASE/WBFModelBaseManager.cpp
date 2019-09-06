@@ -2,7 +2,8 @@
 #include "WBFModelBaseManager.h"
 
 
-CWBFModelBaseManager::CWBFModelBaseManager()
+CWBFModelBaseManager::CWBFModelBaseManager(CWBFDocBase* pDoc)
+	: m_pDoc(pDoc)
 {
 }
 

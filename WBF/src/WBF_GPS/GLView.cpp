@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WBFViewGL.h"
+#include "GLView.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -7,16 +7,16 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFViewGL::CWBFViewGL()
+CGLView::CGLView()
 {
 }
 
 
-CWBFViewGL::~CWBFViewGL()
+CGLView::~CGLView()
 {
 }
 
-BEGIN_MESSAGE_MAP(CWBFViewGL, CView)
+BEGIN_MESSAGE_MAP(CGLView, CWBFViewBase)
 	ON_WM_CREATE()
 	ON_WM_DESTROY()
 	ON_WM_SIZE()
@@ -25,22 +25,22 @@ BEGIN_MESSAGE_MAP(CWBFViewGL, CView)
 	ON_WM_ERASEBKGND()
 END_MESSAGE_MAP()
 
-void CWBFViewGL::BeginwglCurrent()
+void CGLView::BeginwglCurrent()
 {
 	VERIFY(wglMakeCurrent(m_hDC, m_hRC));
 }
 
-void CWBFViewGL::EndwglCurrent()
+void CGLView::EndwglCurrent()
 {
 	VERIFY(wglMakeCurrent(NULL, NULL));
 }
 
-void CWBFViewGL::SwapBuffers()
+void CGLView::SwapBuffers()
 {
 	::SwapBuffers(m_hDC);
 }
 
-void CWBFViewGL::InitializePalette()
+void CGLView::InitializePalette()
 {
 	PIXELFORMATDESCRIPTOR pfd;	// Pixel Format Descriptor
 	LOGPALETTE *pPal;			// Pointer to memory for logical palette
@@ -106,9 +106,9 @@ void CWBFViewGL::InitializePalette()
 	free(pPal);
 }
 
-int CWBFViewGL::OnCreate(LPCREATESTRUCT lpCreateStruct)
+int CGLView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
-	if (CView::OnCreate(lpCreateStruct) == -1)
+	if (CWBFViewBase::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
 	PIXELFORMATDESCRIPTOR pfd =
@@ -166,17 +166,17 @@ int CWBFViewGL::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	return 0;
 }
 
-void CWBFViewGL::OnDestroy()
+void CGLView::OnDestroy()
 {
 	wglDeleteContext(m_hRC);
 	::ReleaseDC(m_hWnd, m_hDC);
 
-	CView::OnDestroy();
+	CWBFViewBase::OnDestroy();
 }
 
-void CWBFViewGL::OnSize(UINT nType, int cx, int cy)
+void CGLView::OnSize(UINT nType, int cx, int cy)
 {
-	CView::OnSize(nType, cx, cy);
+	CWBFViewBase::OnSize(nType, cx, cy);
 
 	BeginwglCurrent();
 
@@ -193,7 +193,7 @@ void CWBFViewGL::OnSize(UINT nType, int cx, int cy)
 	EndwglCurrent();
 }
 
-BOOL CWBFViewGL::OnQueryNewPalette()
+BOOL CGLView::OnQueryNewPalette()
 {
 	// If the palette was created.
 	if ((HPALETTE)m_GLPalette)
@@ -214,11 +214,11 @@ BOOL CWBFViewGL::OnQueryNewPalette()
 		return nRet;
 	}
 
-	return CView::OnQueryNewPalette();
+	return CWBFViewBase::OnQueryNewPalette();
 }
 
 
-void CWBFViewGL::OnPaletteChanged(CWnd* pFocusWnd)
+void CGLView::OnPaletteChanged(CWnd* pFocusWnd)
 {
 	if (((HPALETTE)m_GLPalette != NULL) && (pFocusWnd != this))
 	{
@@ -233,13 +233,13 @@ void CWBFViewGL::OnPaletteChanged(CWnd* pFocusWnd)
 		return;
 	}
 
-	CView::OnPaletteChanged(pFocusWnd);
+	CWBFViewBase::OnPaletteChanged(pFocusWnd);
 }
 
 
-BOOL CWBFViewGL::OnEraseBkgnd(CDC* pDC)
+BOOL CGLView::OnEraseBkgnd(CDC* pDC)
 {
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
 	return TRUE;
-	//return CView::OnEraseBkgnd(pDC);
+	//return CWBFViewBase::OnEraseBkgnd(pDC);
 }

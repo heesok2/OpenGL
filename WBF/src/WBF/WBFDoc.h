@@ -17,43 +17,43 @@
 
 #include "..\WBF_BASE\WBFDocBase.h"
 
+class CWBFCModelManager;
 class CWBFDoc : public CWBFDocBase
 {
-protected: // serialization에서만 만들어집니다.
+public: // serialization에서만 만들어집니다.
 	CWBFDoc() noexcept;
+	virtual ~CWBFDoc();
+
 	DECLARE_DYNCREATE(CWBFDoc)
 
-// 특성입니다.
 public:
-
-// 작업입니다.
-public:
-
-// 재정의입니다.
-public:
-	virtual BOOL OnNewDocument();
-	virtual void Serialize(CArchive& ar);
 #ifdef SHARED_HANDLERS
 	virtual void InitializeSearchContent();
 	virtual void OnDrawThumbnail(CDC& dc, LPRECT lprcBounds);
+	// 검색 처리기에 대한 검색 콘텐츠를 설정하는 도우미 함수
+	void SetSearchContent(const CString& value);
 #endif // SHARED_HANDLERS
 
-// 구현입니다.
-public:
-	virtual ~CWBFDoc();
 #ifdef _DEBUG
 	virtual void AssertValid() const;
 	virtual void Dump(CDumpContext& dc) const;
 #endif
 
-protected:
+	virtual void Serialize(CArchive& ar);
+	virtual BOOL OnNewDocument();
+	virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
+	virtual void OnCloseDocument();
 
-// 생성된 메시지 맵 함수
+	virtual CWBFModelBaseManager* GetModelManager() { return (CWBFModelBaseManager*)m_pModelMgr; }
+
+protected:
+	void OnInitialUpdate();
+	void OnDestroy();
+
 protected:
 	DECLARE_MESSAGE_MAP()
 
-#ifdef SHARED_HANDLERS
-	// 검색 처리기에 대한 검색 콘텐츠를 설정하는 도우미 함수
-	void SetSearchContent(const CString& value);
-#endif // SHARED_HANDLERS
+protected:
+	CWBFCModelManager* m_pModelMgr;
+
 };

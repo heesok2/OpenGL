@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "WBFCRndrSample.h"
 
-#include "..\WBF_GPS\WBFGraphicDef.h"
 #include "..\WBF_GPS\WBFShaderManager.h"
 
 #ifdef _DEBUG

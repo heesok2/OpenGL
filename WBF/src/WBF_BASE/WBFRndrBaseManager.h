@@ -3,12 +3,13 @@
 #include <vector>
 #include "HeaderPre.h"
 
+class CWBFViewBase;
 class CWBFRndrBase;
 class CWBFShaderManager;
 class __MY_EXT_CLASS__ CWBFRndrBaseManager
 {
 public:
-	CWBFRndrBaseManager();
+	CWBFRndrBaseManager(CWBFViewBase* pView);
 	virtual ~CWBFRndrBaseManager();
 
 public:
@@ -17,6 +18,7 @@ public:
 	virtual void GLDrawScene() = 0;
 
 protected:
+	CWBFViewBase* m_pView;
 	CWBFShaderManager* m_pShaderMgr;
 	std::vector<CWBFRndrBase*> m_vObject;
 };

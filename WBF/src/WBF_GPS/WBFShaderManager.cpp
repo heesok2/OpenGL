@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "WBFShaderManager.h"
-#include "WBFGraphicDef.h"
+#include "..\WBF_BASE\WBFGraphicDef.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

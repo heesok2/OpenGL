@@ -14,11 +14,11 @@
 
 #pragma once
 
-#include "../WBF_BASE/WBFViewBase.h"
+#include "../WBFC_GPS/GPSView.h"
 
 class CWBFDoc;
 class CWBFCRndrManager;
-class CWBFView : public CWBFViewBase
+class CWBFView : public CGPSView
 {
 public: // serialization에서만 만들어집니다.
 	CWBFView() noexcept;
@@ -37,18 +37,19 @@ public:
 	virtual void Dump(CDumpContext& dc) const;
 #endif
 
+	virtual CWBFRndrBaseManager* GetRenderManager() { return (CWBFRndrBaseManager*)m_pRndrMgr; }
+
 	// 재정의입니다.
 public:
 	virtual void OnDraw(CDC* pDC);  // 이 뷰를 그리기 위해 재정의되었습니다.
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
+
 
 protected:
 	virtual BOOL OnPreparePrinting(CPrintInfo* pInfo);
 	virtual void OnBeginPrinting(CDC* pDC, CPrintInfo* pInfo);
 	virtual void OnEndPrinting(CDC* pDC, CPrintInfo* pInfo);
 	virtual void OnInitialUpdate(); // called first time after construct
-
-	virtual CWBFRndrBaseManager* GetRenderManager() { return (CWBFRndrBaseManager*)m_pRndrMgr; }
 
 protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);

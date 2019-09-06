@@ -1,13 +1,13 @@
 #pragma once
 
-#include "..\WBF_GPS\WBFRndrBaseManager.h"
+#include "..\WBF_BASE\WBFRndrBaseManager.h"
 
 #include "HeaderPre.h"
 
 class __MY_EXT_CLASS__ CWBFCRndrManager : public CWBFRndrBaseManager
 {
 public:
-	CWBFCRndrManager();
+	CWBFCRndrManager(CWBFViewBase* pView);
 	virtual ~CWBFCRndrManager();
 
 public:

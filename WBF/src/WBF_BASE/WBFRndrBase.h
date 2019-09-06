@@ -1,6 +1,7 @@
 #pragma once
 
-#include "..\WBF_GPS\WBFRndrFactory.h"
+#include "WBFGraphicDef.h"
+#include "WBFRndrFactory.h"
 #include "HeaderPre.h"
 
 class CWBFShaderManager;
@@ -22,4 +23,4 @@ DECLARE_DYNCREATE(class_name);
 
 #define IMPLEMENT_RENDERER(class_name, type)\
 IMPLEMENT_DYNCREATE(class_name, CWBFRndrBase);\
-BOOL bRegister = CWBFRndrFactory::GetInstance().RegisterObject(RUNTIME_CLASS(class_name), type);
+BOOL bRegRndr = CWBFRndrFactory::GetInstance().RegisterObject(RUNTIME_CLASS(class_name), type);

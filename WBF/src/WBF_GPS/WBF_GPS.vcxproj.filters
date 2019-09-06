@@ -25,12 +25,6 @@
     <Filter Include="Common\Shader">
       <UniqueIdentifier>{061f4a4c-1d73-4211-9e46-294f52a90935}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Common\Render">
-      <UniqueIdentifier>{5477b0e9-8d73-4f8c-aaaa-7393aa2f8f4e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Common\Model">
-      <UniqueIdentifier>{c1b0055c-5e95-45aa-8860-ea1d09e3cd96}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_GPS.cpp">
@@ -39,29 +33,14 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>_common_</Filter>
     </ClCompile>
-    <ClCompile Include="WBFViewGL.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
     <ClCompile Include="WBFShader.cpp">
       <Filter>Common\Shader</Filter>
     </ClCompile>
     <ClCompile Include="WBFShaderManager.cpp">
       <Filter>Common\Shader</Filter>
     </ClCompile>
-    <ClCompile Include="WBFRndrFactory.cpp">
-      <Filter>Common\Render</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFRndrBaseManager.cpp">
-      <Filter>Common\Render</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFRndrBase.cpp">
-      <Filter>Common\Render</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFModelBaseManager.cpp">
-      <Filter>Common\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFModelBase.cpp">
-      <Filter>Common\Model</Filter>
+    <ClCompile Include="GLView.cpp">
+      <Filter>Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -100,32 +79,14 @@
     <ClInclude Include="WBF_GPS_LINK.h">
       <Filter>_common_\Linker</Filter>
     </ClInclude>
-    <ClInclude Include="WBFViewGL.h">
-      <Filter>Common</Filter>
-    </ClInclude>
     <ClInclude Include="WBFShader.h">
       <Filter>Common\Shader</Filter>
     </ClInclude>
     <ClInclude Include="WBFShaderManager.h">
       <Filter>Common\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="WBFRndrFactory.h">
-      <Filter>Common\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFRndrBaseManager.h">
-      <Filter>Common\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFRndrBase.h">
-      <Filter>Common\Render</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFGraphicDef.h">
+    <ClInclude Include="GLView.h">
       <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFModelBase.h">
-      <Filter>Common\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFModelBaseManager.h">
-      <Filter>Common\Model</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

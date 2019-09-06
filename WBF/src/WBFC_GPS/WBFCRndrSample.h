@@ -1,6 +1,6 @@
 #pragma once
 
-#include "..\WBF_GPS\WBFRndrBase.h"
+#include "..\WBF_BASE\WBFRndrBase.h"
 
 #include "HeaderPre.h"
 

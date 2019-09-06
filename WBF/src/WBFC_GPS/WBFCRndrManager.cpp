@@ -1,9 +1,8 @@
 #include "stdafx.h"
 #include "WBFCRndrManager.h"
 
-#include "..\WBF_GPS\WBFGraphicDef.h"
-#include "..\WBF_GPS\WBFRndrBase.h"
-#include "..\WBF_GPS\WBFRndrFactory.h"
+#include "..\WBF_BASE\WBFRndrFactory.h"
+#include "..\WBF_BASE\WBFRndrBase.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -11,7 +10,8 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFCRndrManager::CWBFCRndrManager()
+CWBFCRndrManager::CWBFCRndrManager(CWBFViewBase* pView)
+	: CWBFRndrBaseManager(pView)
 {
 }
 

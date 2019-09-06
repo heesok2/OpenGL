@@ -1,9 +1,11 @@
 #include "stdafx.h"
 #include "resource.h"
 #include "WBFControlDlg.h"
+#include "WBFDoc.h"
 #include "WBFView.h"
 
-#include "..\WBF_GPS\WBFGraphicDef.h"
+#include "..\WBF_BASE\WBFGraphicDef.h"
+#include "..\WBF_BASE\WBFModelBaseManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -86,10 +88,12 @@ BOOL CWBFControlDlg::Dlg2Data()
 	if (!CheckData())
 		return FALSE;
 
-	auto pRndrMgr = m_pView->GetRenderManager();
+	auto pModelMgr = m_pMyDoc->GetModelManager();
 
-
-
+	auto item = m_cobxType.GetCurSel();
+	auto dwItemData = m_cobxType.GetItemData(item);
+	pModelMgr->OnUpdateOnly(dwItemData);
+	
 	return TRUE;
 }
 
