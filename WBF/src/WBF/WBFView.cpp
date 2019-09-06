@@ -143,7 +143,13 @@ void CWBFView::OnContextMenu(CWnd* /* pWnd */, CPoint point)
 
 void CWBFView::OnClickedButton()
 {
-	CWBFControlDlg* pDlg = new CWBFControlDlg(this);
+	auto pDocBase = static_cast<CWBFDocBase*>(GetDocument());
+	auto pViewBase = this;
+
+	CWBFControlDlg dlg(pDocBase, pViewBase);
+	dlg.DoModal();
+
+	CWBFControlDlg* pDlg = new CWBFControlDlg(pDocBase, pViewBase);
 	if (pDlg->Create(this))
 	{
 		pDlg->ShowWindow(SW_SHOW);
