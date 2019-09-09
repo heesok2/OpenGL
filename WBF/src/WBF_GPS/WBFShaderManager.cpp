@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "resource.h"
 #include "WBFShaderManager.h"
 #include "..\WBF_BASE\WBFGraphicDef.h"
 
@@ -58,8 +59,8 @@ void CWBFShaderManager::GLCreateShader(UINT uiType)
 	{
 	case gps::E_GPS_SAMPLE:
 	{
-		shader.GLAttachShader(GL_VERTEX_SHADER, std::string("res\\GLSL\\Sample_vert.glsl"));
-		shader.GLAttachShader(GL_FRAGMENT_SHADER, std::string("res\\GLSL\\Sample_frag.glsl"));
+		shader.GLAttachShader(GL_VERTEX_SHADER, IDR_SHADER_SAMPLE_VERT);
+		shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_SHADER_SAMPLE_FRAG);
 	}
 	break;
 	default:

@@ -10,7 +10,7 @@ public:
 
 public:
 	void GLCreateProgram();
-	void GLAttachShader(unsigned int nShaderType, std::string strPath);
+	void GLAttachShader(UINT nShaderType, UINT uiResID);
 	void GLLinkShader();
 
 	void GLBind();
@@ -18,7 +18,7 @@ public:
 
 protected:
 	unsigned int m_nProg;
-	std::vector<unsigned int> m_vShader;
+	std::vector<UINT> m_vShader;
 };
 
 #include "HeaderPost.h"
