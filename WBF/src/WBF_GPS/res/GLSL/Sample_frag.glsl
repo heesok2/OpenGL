@@ -1,4 +1,7 @@
 #version 330 core
+
+//in vec4 aOutColor;
+
 out vec4 FragColor;
 
 void main()

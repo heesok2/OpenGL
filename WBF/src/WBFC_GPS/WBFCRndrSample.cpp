@@ -2,6 +2,7 @@
 #include "WBFCRndrSample.h"
 #include "WBFCRndrManager.h"
 #include "WBFCModelManager.h"
+#include "WBFCModelSample.h"
 
 #include "..\WBF_GPS\WBFShaderManager.h"
 
@@ -13,7 +14,7 @@ static char THIS_FILE[] = __FILE__;
 
 IMPLEMENT_RENDERER(CWBFCRndrSample, gps::E_GPS_SAMPLE);
 
-CWBFCRndrSample::CWBFCRndrSample() : CWBFRndrBase()
+CWBFCRndrSample::CWBFCRndrSample()
 {
 }
 
@@ -38,17 +39,15 @@ void CWBFCRndrSample::GLDraw()
 	auto pModel = ((CWBFCModelManager*)m_pModelMgr)->GetModel(GetType());
 	if (pModel == nullptr) return;
 
-	auto Shader = pShaderMgr->GetShader(GetType());
+	auto& Shader = pShaderMgr->GetShader(GetType());
 	Shader.GLBind();
 	{
-		glColor3f(0.f, 0.f, 0.f);
-		glBegin(GL_TRIANGLES);
-
-		glVertex3f(-0.5f, -0.5f, 0.f);
-		glVertex3f(0.5f, -0.5f, 0.f);
-		glVertex3f(0.f, 0.5f, 0.f);
-
-		glEnd();
+		if (pModel->IsValidModel())
+		{
+			pModel->GLBind();
+			pModel->GLDraw();
+			pModel->GLUnbind();
+		}
 	}
 	Shader.GLUnbind();
 }

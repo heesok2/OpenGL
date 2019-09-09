@@ -24,9 +24,9 @@ void CWBFShader::GLCreateProgram()
 	m_nProg = glCreateProgram();
 }
 
-void CWBFShader::GLAttachShader(unsigned int nShaderType, CString strPath)
+void CWBFShader::GLAttachShader(unsigned int nShaderType, std::string strPath)
 {
-	auto lambda_code = [](CString csFilePath, std::string& code)
+	auto lambda_code = [](std::string csFilePath, std::string& code)
 	{
 		std::ifstream ifs;
 		ifs.exceptions(std::ifstream::failbit | std::ifstream::badbit);

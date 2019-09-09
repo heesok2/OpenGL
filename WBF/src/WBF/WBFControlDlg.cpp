@@ -54,6 +54,8 @@ void CWBFControlDlg::OnOK()
 	if (!Dlg2Data())
 		return;
 
+	m_pMyDoc->UpdateAllViews(nullptr);
+
 	//CWBFDialog::OnOK();
 }
 

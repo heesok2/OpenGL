@@ -16,8 +16,13 @@ public:
 	virtual void SetFlag(UINT uiFlag) { m_uiFlag |= uiFlag; }	
 	virtual UINT GetFlag() { return m_uiFlag; }	
 
+	virtual BOOL IsValidModel() = 0;
 	virtual void GLInitialData() = 0;
 	virtual void GLCreateVBO() = 0;
+	virtual void GLBind() = 0;
+	virtual void GLDraw() = 0;
+	virtual void GLUnbind() = 0;
+	virtual void GLDelete() = 0;
 
 protected:
 	UINT m_uiFlag;

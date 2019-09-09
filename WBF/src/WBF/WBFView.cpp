@@ -72,7 +72,7 @@ BOOL CWBFView::PreCreateWindow(CREATESTRUCT& cs)
 
 void CWBFView::OnDraw(CDC* pDC)
 {
-	CGPSView::OnDraw(pDC);
+	//CGPSView::OnDraw(pDC);
 
 	CWBFDoc* pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
@@ -85,7 +85,7 @@ void CWBFView::OnDraw(CDC* pDC)
 	BeginwglCurrent();
 	{
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+		
 		pModelMgr->GLInitialData();
 		pRndrMgr->GLDrawScene();
 

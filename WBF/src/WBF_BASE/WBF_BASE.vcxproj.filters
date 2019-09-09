@@ -19,9 +19,6 @@
     <Filter Include="Base">
       <UniqueIdentifier>{da11dfd0-e1b5-42e7-b5dd-aa834dbd7c6e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="_resource file_\GLSL">
-      <UniqueIdentifier>{9a062ac2-8026-45c1-b8c9-eb5700a48187}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Dialog">
       <UniqueIdentifier>{ebbbc3f9-7c2d-43db-b75d-32d1b88d1180}</UniqueIdentifier>
     </Filter>

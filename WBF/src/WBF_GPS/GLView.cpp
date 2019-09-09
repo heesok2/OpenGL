@@ -159,7 +159,7 @@ int CGLView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	InitializePalette();
 
 	// Default 
-	glClearColor(1.f, 0.f, 0.f, 1.f);
+	glClearColor(0.f, 0.f, 0.f, 1.f);
 	
 	EndwglCurrent();
 

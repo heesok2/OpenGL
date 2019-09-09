@@ -10,7 +10,7 @@ public:
 
 public:
 	void GLCreateProgram();
-	void GLAttachShader(unsigned int nShaderType, CString strPath);
+	void GLAttachShader(unsigned int nShaderType, std::string strPath);
 	void GLLinkShader();
 
 	void GLBind();

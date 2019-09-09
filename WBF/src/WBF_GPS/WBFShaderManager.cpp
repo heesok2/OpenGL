@@ -57,11 +57,11 @@ void CWBFShaderManager::GLCreateShader(UINT uiType)
 	switch (uiType)
 	{
 	case gps::E_GPS_SAMPLE:
-		{
-			shader.GLAttachShader(GL_VERTEX_SHADER, _T("res\\GLSL\\Sample_frag.glsl"));
-			shader.GLAttachShader(GL_FRAGMENT_SHADER, _T("res\\GLSL\\Sample_vert.glsl"));
-		}
-		break;
+	{
+		shader.GLAttachShader(GL_VERTEX_SHADER, std::string("res\\GLSL\\Sample_vert.glsl"));
+		shader.GLAttachShader(GL_FRAGMENT_SHADER, std::string("res\\GLSL\\Sample_frag.glsl"));
+	}
+	break;
 	default:
 		break;
 	}
