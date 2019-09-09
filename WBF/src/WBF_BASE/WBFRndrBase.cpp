@@ -8,6 +8,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 CWBFRndrBase::CWBFRndrBase()
+	: m_pRndrMgr(nullptr), m_pModelMgr(nullptr)
 {
 
 }

@@ -15,8 +15,8 @@ public:
 	virtual void OnDestroy();
 	virtual void OnUpdateAll();
 	virtual void OnUpdateOnly(UINT uiType);
-	virtual void OnDeleteAll();
-	virtual void OnDeleteOnly(UINT uiType);
+
+	virtual void GLInitialData();
 
 };
 

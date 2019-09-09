@@ -12,11 +12,15 @@ public:
 
 public:
 	virtual UINT GetType() { ASSERT(g_warning); return gps::E_GPS_UNKNOWN; }
+	virtual void InitFlag() { m_uiFlag = MODEL_UNKNOWN; }
+	virtual void SetFlag(UINT uiFlag) { m_uiFlag |= uiFlag; }	
+	virtual UINT GetFlag() { return m_uiFlag; }	
 
-	virtual void InitialData() = 0;
-	virtual void CreateData() = 0;
-	virtual void DeleteData() = 0;
-	virtual void ModifyData() = 0;
+	virtual void GLInitialData() = 0;
+	virtual void GLCreateVBO() = 0;
+
+protected:
+	UINT m_uiFlag;
 };
 
 #include "HeaderPost.h"

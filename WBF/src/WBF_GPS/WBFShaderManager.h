@@ -11,8 +11,11 @@ public:
 	virtual ~CWBFShaderManager();
 
 public:
+	BOOL IsValidShader(UINT uiType);
+	CWBFShader& GetShader(UINT uiType);
+
 	void GLShaderVersion();
-	void GLCreateShader(UINT uiType);	
+	void GLCreateShader(UINT uiType);
 
 protected:
 	std::map<unsigned int, CWBFShader> m_mBuildShader;

@@ -13,7 +13,7 @@ public:
 	virtual ~CWBFCRndrSample();
 
 public:
-	virtual void GLInit(CWBFShaderManager* pShaderMgr);
+	virtual void OnInitialData();
 	virtual void GLDraw();
 
 };

@@ -4,8 +4,8 @@
 #define GRAPIC_DEF
 
 #define MODEL_UNKNOWN 0x0000
-#define MODEL_UPDATE_ALL 0x0001
-
+#define MODEL_UPDATE 0x0001
+#define MODEL_DELETE 0x0002
 
 namespace gps
 {

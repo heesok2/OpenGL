@@ -22,14 +22,14 @@
     <Filter Include="Graphic">
       <UniqueIdentifier>{70887ea0-bd14-4d95-a2b6-24a0c4d97daa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic\Manager">
-      <UniqueIdentifier>{54a395dc-f400-4e40-941b-db9d1ef15d61}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Graphic\Model">
       <UniqueIdentifier>{62d8917b-b8ef-491a-ba95-fb24161bd343}</UniqueIdentifier>
     </Filter>
     <Filter Include="Graphic\Renderer">
       <UniqueIdentifier>{57320bae-a434-497c-82d8-39a9b503285f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\Manager">
+      <UniqueIdentifier>{457ee04e-646e-4889-9406-5706d00a12be}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,17 +42,17 @@
     <ClCompile Include="WBFCRndrSample.cpp">
       <Filter>Graphic\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="WBFCRndrManager.cpp">
-      <Filter>Graphic\Manager</Filter>
-    </ClCompile>
     <ClCompile Include="GPSView.cpp">
       <Filter>Base</Filter>
     </ClCompile>
-    <ClCompile Include="WBFCModelManager.cpp">
-      <Filter>Graphic\Manager</Filter>
-    </ClCompile>
     <ClCompile Include="WBFCModelSample.cpp">
       <Filter>Graphic\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFCRndrManager.cpp">
+      <Filter>Graphic\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFCModelManager.cpp">
+      <Filter>Graphic\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,17 +88,17 @@
     <ClInclude Include="WBFCRndrSample.h">
       <Filter>Graphic\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="WBFCRndrManager.h">
-      <Filter>Graphic\Manager</Filter>
-    </ClInclude>
     <ClInclude Include="GPSView.h">
       <Filter>Base</Filter>
     </ClInclude>
-    <ClInclude Include="WBFCModelManager.h">
-      <Filter>Graphic\Manager</Filter>
-    </ClInclude>
     <ClInclude Include="WBFCModelSample.h">
       <Filter>Graphic\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFCRndrManager.h">
+      <Filter>Graphic\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFCModelManager.h">
+      <Filter>Graphic\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

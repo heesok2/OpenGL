@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "WBFCRndrSample.h"
+#include "WBFCRndrManager.h"
+#include "WBFCModelManager.h"
 
 #include "..\WBF_GPS\WBFShaderManager.h"
 
@@ -19,19 +21,34 @@ CWBFCRndrSample::~CWBFCRndrSample()
 {
 }
 
-void CWBFCRndrSample::GLInit(CWBFShaderManager* pShaderMgr)
+void CWBFCRndrSample::OnInitialData()
 {
-	pShaderMgr->GLCreateShader(gps::E_GPS_SAMPLE);
+	auto pShaderMgr = ((CWBFCRndrManager*)m_pRndrMgr)->GetShaderManager();
+	pShaderMgr->GLCreateShader(GetType());
+
+
+
 }
 
 void CWBFCRndrSample::GLDraw()
 {
-	glColor3f(0.f, 0.f, 0.f);
-	glBegin(GL_TRIANGLES);
+	auto pShaderMgr = ((CWBFCRndrManager*)m_pRndrMgr)->GetShaderManager();
+	if (!pShaderMgr->IsValidShader(GetType())) return;
 
-	glVertex3f(-0.5f, -0.5f, 0.f);
-	glVertex3f(0.5f, -0.5f, 0.f);
-	glVertex3f(0.f, 0.5f, 0.f);
+	auto pModel = ((CWBFCModelManager*)m_pModelMgr)->GetModel(GetType());
+	if (pModel == nullptr) return;
 
-	glEnd();
+	auto Shader = pShaderMgr->GetShader(GetType());
+	Shader.GLBind();
+	{
+		glColor3f(0.f, 0.f, 0.f);
+		glBegin(GL_TRIANGLES);
+
+		glVertex3f(-0.5f, -0.5f, 0.f);
+		glVertex3f(0.5f, -0.5f, 0.f);
+		glVertex3f(0.f, 0.5f, 0.f);
+
+		glEnd();
+	}
+	Shader.GLUnbind();
 }

@@ -88,11 +88,11 @@ BOOL CWBFControlDlg::Dlg2Data()
 	if (!CheckData())
 		return FALSE;
 
-	auto pModelMgr = m_pMyDoc->GetModelManager();
-
 	auto item = m_cobxType.GetCurSel();
 	auto dwItemData = m_cobxType.GetItemData(item);
-	pModelMgr->OnUpdateOnly(dwItemData);
+
+	auto pModelMgr = m_pMyDoc->GetModelManager();
+	pModelMgr->OnUpdateOnly((UINT)dwItemData);
 	
 	return TRUE;
 }

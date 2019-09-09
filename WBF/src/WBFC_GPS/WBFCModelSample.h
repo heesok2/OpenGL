@@ -13,10 +13,8 @@ public:
 	virtual ~CWBFCModelSample();
 
 public:
-	virtual void InitialData();
-	virtual void CreateData();
-	virtual void DeleteData();
-	virtual void ModifyData();
+	virtual void GLInitialData();
+	virtual void GLCreateVBO();
 
 };
 

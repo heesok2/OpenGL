@@ -17,6 +17,24 @@ CWBFShaderManager::~CWBFShaderManager()
 {
 }
 
+BOOL CWBFShaderManager::IsValidShader(UINT uiType)
+{
+	auto itr = m_mBuildShader.find(uiType);
+	return itr != m_mBuildShader.end();
+}
+
+CWBFShader & CWBFShaderManager::GetShader(UINT uiType)
+{
+	auto itr = m_mBuildShader.find(uiType);
+	if (itr == m_mBuildShader.end())
+	{
+		ASSERT(g_warning);
+		m_mBuildShader[uiType] = CWBFShader();
+	}
+
+	return m_mBuildShader[uiType];
+}
+
 void CWBFShaderManager::GLShaderVersion()
 {
 	char* strSLVersion = (char*)glGetString(GL_SHADING_LANGUAGE_VERSION);
@@ -49,6 +67,5 @@ void CWBFShaderManager::GLCreateShader(UINT uiType)
 	}
 
 	shader.GLLinkShader();
-
 	m_mBuildShader[uiType] = shader;
 }

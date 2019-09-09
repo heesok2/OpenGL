@@ -44,9 +44,7 @@ void CWBFCModelManager::OnDestroy()
 void CWBFCModelManager::OnUpdateAll()
 {
 	for (auto pObject : m_vObject)
-	{
-		pObject->CreateData();
-	}
+		pObject->SetFlag(MODEL_UPDATE);
 }
 
 void CWBFCModelManager::OnUpdateOnly(UINT uiType)
@@ -54,27 +52,21 @@ void CWBFCModelManager::OnUpdateOnly(UINT uiType)
 	for (auto pObject : m_vObject)
 	{
 		if (pObject->GetType() == uiType)
-		{
-			pObject->CreateData();
-		}
+			pObject->SetFlag(MODEL_UPDATE);
 	}
 }
 
-void CWBFCModelManager::OnDeleteAll()
+void CWBFCModelManager::GLInitialData()
 {
 	for (auto pObject : m_vObject)
 	{
-		pObject->InitialData();
-	}
-}
-
-void CWBFCModelManager::OnDeleteOnly(UINT uiType)
-{
-	for (auto pObject : m_vObject)
-	{
-		if (pObject->GetType() == uiType)
+		auto uiFlag = pObject->GetFlag();
+		if (uiFlag & MODEL_UPDATE)
 		{
-			pObject->InitialData();
+			pObject->GLInitialData();
+			pObject->GLCreateVBO();
 		}
+
+		pObject->InitFlag();
 	}
 }

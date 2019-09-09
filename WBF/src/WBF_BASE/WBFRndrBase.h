@@ -4,7 +4,8 @@
 #include "WBFRndrFactory.h"
 #include "HeaderPre.h"
 
-class CWBFShaderManager;
+class CWBFRndrBaseManager;
+class CWBFModelBaseManager;
 class __MY_EXT_CLASS__ CWBFRndrBase : public CObject
 {
 public:
@@ -12,15 +13,28 @@ public:
 	virtual ~CWBFRndrBase();
 
 public:
-	virtual void GLInit(CWBFShaderManager* pShaderMgr) = 0;
+	virtual UINT GetType() { ASSERT(g_warning); return gps::E_GPS_UNKNOWN; }
+	virtual void SetHelper(CWBFRndrBaseManager* pRndrMgr, CWBFModelBaseManager* pModelMgr)
+	{
+		m_pRndrMgr = pRndrMgr;
+		m_pModelMgr = pModelMgr;
+	}
+	virtual void OnInitialData() {}
 	virtual void GLDraw() = 0;
+
+protected:
+	CWBFRndrBaseManager* m_pRndrMgr;
+	CWBFModelBaseManager* m_pModelMgr;
+
 };
 
 #include "HeaderPost.h"
 
 #define DECLARE_RENDERER(class_name)\
-DECLARE_DYNCREATE(class_name);
+DECLARE_DYNCREATE(class_name);\
+virtual UINT GetType();
 
 #define IMPLEMENT_RENDERER(class_name, type)\
 IMPLEMENT_DYNCREATE(class_name, CWBFRndrBase);\
-BOOL bRegRndr = CWBFRndrFactory::GetInstance().RegisterObject(RUNTIME_CLASS(class_name), type);
+BOOL bRegRndr = CWBFRndrFactory::GetInstance().RegisterObject(RUNTIME_CLASS(class_name), type);\
+UINT class_name::GetType() { return type; }

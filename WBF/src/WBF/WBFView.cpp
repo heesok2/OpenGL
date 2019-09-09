@@ -24,6 +24,7 @@
 #include "WBFControlDlg.h"
 
 #include "..\WBFC_GPS\WBFCRndrManager.h"
+#include "..\WBFC_GPS\WBFCModelManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -78,14 +79,15 @@ void CWBFView::OnDraw(CDC* pDC)
 	if (!pDoc)
 		return;
 
+	auto pModelMgr = (CWBFCModelManager*)pDoc->GetModelManager();
+	auto pRndrMgr = (CWBFCRndrManager*)GetRenderManager();
+
 	BeginwglCurrent();
 	{
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
-
-		m_pRndrMgr->GLDrawScene();
-
+		pModelMgr->GLInitialData();
+		pRndrMgr->GLDrawScene();
 
 		SwapBuffers();
 	}
@@ -127,7 +129,12 @@ void CWBFView::OnInitialUpdate()
 	if (pDoc == nullptr) return;
 
 	m_pRndrMgr = new CWBFCRndrManager(this);
-	m_pRndrMgr->OnInitialUpdate();
+
+	BeginwglCurrent();
+	{
+		m_pRndrMgr->OnInitialUpdate();
+	}
+	EndwglCurrent();
 }
 
 void CWBFView::OnRButtonUp(UINT /* nFlags */, CPoint point)

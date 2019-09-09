@@ -12,12 +12,14 @@ public:
 	virtual ~CWBFModelBaseManager();
 
 public:
+	virtual CWBFModelBase* GetModel(UINT uiType);
+
 	virtual void OnInitialUpdate() = 0;
 	virtual void OnDestroy() = 0;
 	virtual void OnUpdateAll() = 0;
 	virtual void OnUpdateOnly(UINT uiType) = 0;
-	virtual void OnDeleteAll() = 0;
-	virtual void OnDeleteOnly(UINT uiType) = 0;
+
+	virtual void GLInitialData() = 0;	
 	
 protected:
 	CWBFDocBase* m_pDoc;

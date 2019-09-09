@@ -25,12 +25,6 @@
     <Filter Include="Graphic\Shader">
       <UniqueIdentifier>{061f4a4c-1d73-4211-9e46-294f52a90935}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic\VBO">
-      <UniqueIdentifier>{186d1eee-f61d-44c2-88a5-71a2458fc577}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Graphic\Manager">
-      <UniqueIdentifier>{0ffa0422-8b6a-429b-94e0-fe80ab91bcfe}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_GPS.cpp">
@@ -47,15 +41,6 @@
     </ClCompile>
     <ClCompile Include="GLView.cpp">
       <Filter>Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFVBOManager.cpp">
-      <Filter>Graphic\VBO</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFRndr.cpp">
-      <Filter>Graphic\Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFModel.cpp">
-      <Filter>Graphic\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -102,15 +87,6 @@
     </ClInclude>
     <ClInclude Include="GLView.h">
       <Filter>Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFVBOManager.h">
-      <Filter>Graphic\VBO</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFRndr.h">
-      <Filter>Graphic\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFModel.h">
-      <Filter>Graphic\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

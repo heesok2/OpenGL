@@ -17,18 +17,10 @@ CWBFCModelSample::~CWBFCModelSample()
 {
 }
 
-void CWBFCModelSample::InitialData()
+void CWBFCModelSample::GLInitialData()
 {
 }
 
-void CWBFCModelSample::CreateData()
-{
-}
-
-void CWBFCModelSample::DeleteData()
-{
-}
-
-void CWBFCModelSample::ModifyData()
+void CWBFCModelSample::GLCreateVBO()
 {
 }

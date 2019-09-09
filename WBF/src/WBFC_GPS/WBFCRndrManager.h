@@ -16,6 +16,9 @@ public:
 	virtual void GLDrawScene();
 
 public:
+	CWBFShaderManager* GetShaderManager() { return m_pShaderMgr; }
+
+public:
 	CWBFShaderManager* m_pShaderMgr;
 
 };

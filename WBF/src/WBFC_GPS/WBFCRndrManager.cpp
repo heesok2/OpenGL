@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "WBFCRndrManager.h"
 
+#include "..\WBF_BASE\WBFDocBase.h"
+#include "..\WBF_BASE\WBFViewBase.h"
 #include "..\WBF_BASE\WBFRndrFactory.h"
 #include "..\WBF_BASE\WBFRndrBase.h"
 #include "..\WBF_GPS\WBFShaderManager.h"
@@ -23,12 +25,17 @@ CWBFCRndrManager::~CWBFCRndrManager()
 
 void CWBFCRndrManager::OnInitialUpdate()
 {
-	for (long indx = gps::E_GPS_SAMPLE; indx < gps::E_GPS_NUM; ++indx)
+	auto pDocBase = (CWBFDocBase*)m_pView->GetDocument();
+	auto pModelMgr = pDocBase->GetModelManager();
+
+	for (UINT uiType = gps::E_GPS_SAMPLE; uiType < gps::E_GPS_NUM; ++uiType)
 	{
-		auto pObject = CWBFRndrFactory::GetInstance().CreateObject(gps::E_GPS_SAMPLE);
+		auto pObject = CWBFRndrFactory::GetInstance().CreateObject(uiType);
 		if (pObject == nullptr) continue;
 		
-		pObject->GLInit(m_pShaderMgr);
+		pObject->SetHelper(this, pModelMgr);
+		pObject->OnInitialData();
+
 		m_vObject.push_back(pObject);
 	}
 }
@@ -41,12 +48,12 @@ void CWBFCRndrManager::OnDestroy()
 	}
 
 	m_vObject.clear();
+
+	_SAFE_DELETE(m_pShaderMgr);
 }
 
 void CWBFCRndrManager::GLDrawScene()
 {
 	for (auto pObject : m_vObject)
-	{
 		pObject->GLDraw();
-	}
 }
