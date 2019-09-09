@@ -12,22 +12,22 @@ GLfloat g_vertices[] =
 	// 0
 	-0.5f, -0.5f, 0.f,	// vertex
 	1.f, 0.f, 0.f,		// color
-	//0.f, 0.f,			// texture
+	0.f, 0.f,			// texture
 
 	// 1
 	0.5f, -0.5f, 0.f,	// vertex 
 	0.f, 1.f, 0.f,		// color
-	//1.f, 0.f,			// texture
+	1.f, 0.f,			// texture
 
 	// 2
 	0.5f, 0.5f, 0.f,	// vertex
 	0.f, 0.f, 1.f,		// color
-	//1.f, 1.f,			// texture
+	1.f, 1.f,			// texture
 
 	// 3
 	-0.5f, 0.5f, 0.f,	// vertex
 	0.f, 1.f, 0.f,		// color
-	//0.f, 1.f,			// texture
+	0.f, 1.f,			// texture
 };
 
 GLuint g_indexes[] = 
@@ -45,11 +45,6 @@ CWBFCModelSample::CWBFCModelSample()
 
 CWBFCModelSample::~CWBFCModelSample()
 {
-}
-
-BOOL CWBFCModelSample::IsValidModel()
-{
-	return m_uiVAO > 0;
 }
 
 void CWBFCModelSample::GLInitialData()
@@ -72,11 +67,11 @@ void CWBFCModelSample::GLCreateVBO()
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_uiEBO);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(g_indexes), g_indexes, GL_STATIC_DRAW);
 
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 6, (void*)0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 8, (void*)0);
 		glEnableVertexAttribArray(0);
 
-		//glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 6, (void*)(sizeof(GL_FLOAT) * 3));
-		//glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 8, (void*)(sizeof(GL_FLOAT) * 3));
+		glEnableVertexAttribArray(1);
 	}
 
 	glBindVertexArray(0);

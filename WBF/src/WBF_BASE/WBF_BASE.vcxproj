@@ -218,6 +218,7 @@
     <ClCompile Include="WBFModelBase.cpp" />
     <ClCompile Include="WBFModelBaseManager.cpp" />
     <ClCompile Include="WBFModelFactory.cpp" />
+    <ClCompile Include="WBFOption.cpp" />
     <ClCompile Include="WBFRndrBase.cpp" />
     <ClCompile Include="WBFRndrBaseManager.cpp" />
     <ClCompile Include="WBFRndrFactory.cpp" />
@@ -240,6 +241,7 @@
     <ClInclude Include="WBFModelBase.h" />
     <ClInclude Include="WBFModelBaseManager.h" />
     <ClInclude Include="WBFModelFactory.h" />
+    <ClInclude Include="WBFOption.h" />
     <ClInclude Include="WBFRndrBase.h" />
     <ClInclude Include="WBFRndrBaseManager.h" />
     <ClInclude Include="WBFRndrFactory.h" />

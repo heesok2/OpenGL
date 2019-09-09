@@ -39,15 +39,23 @@ void CWBFCRndrSample::GLDraw()
 	auto pModel = ((CWBFCModelManager*)m_pModelMgr)->GetModel(GetType());
 	if (pModel == nullptr) return;
 
-	auto& Shader = pShaderMgr->GetShader(GetType());
-	Shader.GLBind();
+	auto pOption = (CWBFGPSOption*)pModel->GetOption();
+
+	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	{
-		if (pModel->IsValidModel())
+		glPolygonMode(pOption->uiPolygonFace, pOption->uiPolygonMode);
+
+		auto& Shader = pShaderMgr->GetShader(GetType());
+		Shader.GLBind();
 		{
-			pModel->GLBind();
-			pModel->GLDraw();
-			pModel->GLUnbind();
+			if (pModel->IsValidModel())
+			{
+				pModel->GLBind();
+				pModel->GLDraw();
+				pModel->GLUnbind();
+			}
 		}
+		Shader.GLUnbind();
 	}
-	Shader.GLUnbind();
+	glPopAttrib();
 }

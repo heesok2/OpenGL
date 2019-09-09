@@ -12,7 +12,6 @@ CWBFModelBase::CWBFModelBase()
 {
 }
 
-
 CWBFModelBase::~CWBFModelBase()
 {
 }

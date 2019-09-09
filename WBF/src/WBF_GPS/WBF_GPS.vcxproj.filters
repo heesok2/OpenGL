@@ -42,6 +42,9 @@
     <ClCompile Include="GLView.cpp">
       <Filter>Graphic</Filter>
     </ClCompile>
+    <ClCompile Include="WBFGPSOption.cpp">
+      <Filter>_common_</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="WBF_GPS.def">
@@ -87,6 +90,9 @@
     </ClInclude>
     <ClInclude Include="GLView.h">
       <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFGPSOption.h">
+      <Filter>_resource file_</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

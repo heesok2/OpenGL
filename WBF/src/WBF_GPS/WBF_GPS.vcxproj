@@ -213,6 +213,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="WBFGPSOption.cpp" />
     <ClCompile Include="WBFShader.cpp" />
     <ClCompile Include="WBFShaderManager.cpp" />
     <ClCompile Include="GLView.cpp" />
@@ -230,6 +231,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="WBFGPSOption.h" />
     <ClInclude Include="WBFShader.h" />
     <ClInclude Include="WBFShaderManager.h" />
     <ClInclude Include="GLView.h" />

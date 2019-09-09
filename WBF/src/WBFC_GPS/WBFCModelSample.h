@@ -1,6 +1,7 @@
 #pragma once
 
 #include "..\WBF_BASE\WBFModelBase.h"
+#include "..\WBF_GPS\WBFGPSOption.h"
 
 #include "HeaderPre.h"
 
@@ -13,7 +14,8 @@ public:
 	virtual ~CWBFCModelSample();
 
 public:
-	virtual BOOL IsValidModel();
+	virtual CWBFOption* GetOption() { return &m_Option; }
+	virtual BOOL IsValidModel() { return m_uiVAO > 0; }
 
 	virtual void GLInitialData();
 	virtual void GLCreateVBO();
@@ -21,10 +23,10 @@ public:
 	virtual void GLDraw();
 	virtual void GLUnbind();
 	virtual void GLDelete();
-
+	
 protected:
+	CWBFGPSOption m_Option;
 
-protected:
 	UINT m_uiVAO; // Vertex Attribute Object
 	UINT m_uiVBO; // Vertex Buffer Object
 	UINT m_uiEBO; // Element Buffer Object

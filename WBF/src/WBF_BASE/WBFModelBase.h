@@ -4,17 +4,21 @@
 #include "WBFModelFactory.h"
 #include "HeaderPre.h"
 
+class CWBFOption;
 class __MY_EXT_CLASS__ CWBFModelBase : public CObject
 {
 public:
 	CWBFModelBase();
 	virtual ~CWBFModelBase();
 
+public: // Update Flag
+	virtual void InitFlag() { m_uiFlag = MODEL_UNKNOWN; }
+	virtual void SetFlag(UINT uiFlag) { m_uiFlag |= uiFlag; }
+	virtual UINT GetFlag() { return m_uiFlag; }
+
 public:
 	virtual UINT GetType() { ASSERT(g_warning); return gps::E_GPS_UNKNOWN; }
-	virtual void InitFlag() { m_uiFlag = MODEL_UNKNOWN; }
-	virtual void SetFlag(UINT uiFlag) { m_uiFlag |= uiFlag; }	
-	virtual UINT GetFlag() { return m_uiFlag; }	
+	virtual CWBFOption* GetOption() { ASSERT(g_warning); return nullptr; }
 
 	virtual BOOL IsValidModel() = 0;
 	virtual void GLInitialData() = 0;

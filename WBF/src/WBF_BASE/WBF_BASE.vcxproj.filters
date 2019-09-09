@@ -31,6 +31,9 @@
     <Filter Include="Graphic\Renderer">
       <UniqueIdentifier>{69012cf2-ed91-4075-96a3-bf2d0afd94b4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphic\Option">
+      <UniqueIdentifier>{2f06502c-3bfa-486e-8243-26a2a187aca4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_BASE.cpp">
@@ -65,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="WBFModelFactory.cpp">
       <Filter>Graphic\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFOption.cpp">
+      <Filter>Graphic\Option</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +132,9 @@
     </ClInclude>
     <ClInclude Include="WBFModelFactory.h">
       <Filter>Graphic\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFOption.h">
+      <Filter>Graphic\Option</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

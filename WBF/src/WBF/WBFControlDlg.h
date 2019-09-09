@@ -33,6 +33,11 @@ private:
 
 private:
 	CWBFViewBase* m_pView;
+	
 	CComboBox m_cobxType;
+
+	// Polygon Option
+	CComboBox m_cobxPolyFace;
+	CComboBox m_cobxPolyMode;
 
 };
