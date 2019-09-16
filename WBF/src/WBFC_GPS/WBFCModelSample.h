@@ -33,6 +33,8 @@ protected:
 	UINT m_uiEBO; // Element Buffer Object
 
 	UINT m_uiTex;
+	CString m_cstrPNG;
+	CString m_cstrJPG;
 
 };
 

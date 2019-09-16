@@ -24,7 +24,6 @@ public:
 protected:
 	CWBFDocBase* m_pDoc;
 	std::vector<CWBFModelBase*> m_vObject;
-
 };
 
 #include "HeaderPost.h"

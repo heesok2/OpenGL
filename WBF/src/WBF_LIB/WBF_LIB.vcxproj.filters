@@ -19,6 +19,9 @@
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{c6217dcf-3e8b-4f8c-a53c-bcb6d39960ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{1e4ab848-b7e5-4d4c-8f8b-3d20242fa015}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_LIB.cpp">
@@ -26,6 +29,12 @@
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>_common_</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFString.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFImage.cpp">
+      <Filter>Util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +75,15 @@
     </ClInclude>
     <ClInclude Include="WBFGlobalDef.h">
       <Filter>Define</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFString.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFImage.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

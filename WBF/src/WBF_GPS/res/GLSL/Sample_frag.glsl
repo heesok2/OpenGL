@@ -9,5 +9,5 @@ uniform sampler2D ourTexture;
 
 void main()
 {
-	FragColor = Texture(ourTexture, aTexcel) * aColor;
+	FragColor = texture(ourTexture, aTexcel) * aColor;
 }

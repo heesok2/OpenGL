@@ -2,7 +2,7 @@
 #include "resource.h"
 #include "WBFCModelSample.h"
 
-#include "..\WBF_GPS\WBFImage.h"
+#include "..\WBF_LIB\WBFImage.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -45,6 +45,16 @@ CWBFCModelSample::CWBFCModelSample() :
 	m_uiVAO(0), m_uiVBO(0), m_uiEBO(0), 
 	m_uiTex(0)
 {
+	CString strExe;
+
+	TCHAR aPath[MAX_PATH + 1] = { 0 };
+	auto dwSize = GetModuleFileName(nullptr, aPath, MAX_PATH);
+	CString strPath = aPath;
+	auto item = strPath.ReverseFind('\\');
+	if (item != -1) strExe = strPath.Left(item) + _T("\\");
+
+	m_cstrPNG = strExe + _T("\\Image\\awesomeface.png");
+	m_cstrJPG = strExe + _T("\\Image\\container.jpg");
 }
 
 CWBFCModelSample::~CWBFCModelSample()
@@ -81,44 +91,21 @@ void CWBFCModelSample::GLCreateVBO()
 	}
 	glBindVertexArray(0);
 
-	CString strFilePath;
+	glGenTextures(1, &m_uiTex);
+	glBindTexture(GL_TEXTURE_2D, m_uiTex);
 	{
-		TCHAR aPath[MAX_PATH + 1] = { 0 };
-		auto dwSize = GetModuleFileName(nullptr, aPath, MAX_PATH);
-		CString strPath = aPath;
-		auto item = strPath.ReverseFind('\\');
-		if (item != -1)
-		{
-			strFilePath = strPath.Left(item);
-			strFilePath += _T("\\Image\\awesomeface.png");
-		}
+		CWBFImage imgPNG;
+		imgPNG.InitialData(m_cstrPNG);
+	
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgPNG.GetWidth(), imgPNG.GetHeight(), 0, imgPNG.GetBytes() == WBFIMG_RGBA ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgPNG.GetBuffer());
+		glGenerateMipmap(GL_TEXTURE_2D);
 	}
-
-	CWBFImage img;
-	img.InitialData(strFilePath);
-
-
-	//glGenTextures(1, &m_uiTex);
-	//glBindTexture(GL_TEXTURE_2D, m_uiTex);
-	//{
-	//	CWBFImage img;
-	//	img.InitialData(_T("WBFC_GPS"), _T("PNG"), IDB_PNG1);
-
-	//	TCHAR aPath[MAX_PATH + 1] = { 0 };
-	//	auto dwSize = GetModuleFileName(nullptr, aPath, MAX_PATH);
-	//	GetCurrentDirectory(MAX_PATH, aPath);
-
-	//	CImage img;
-	//	auto hRes = img.LoadFromResource(((_T("Image\\awesomeface.png"));
-	//	int width = img.GetWidth();
-	//	int height = img.GetHeight();
-	//	int nrChannels = img.GetBPP() / 4;
-	//	void* data = img.GetBits();
-
-	//	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-	//	glGenerateMipmap(GL_TEXTURE_2D);
-	//}
-	//glBindTexture(GL_TEXTURE_2D, 0);
+	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 void CWBFCModelSample::GLAttachData()
@@ -131,7 +118,7 @@ void CWBFCModelSample::GLAttachData()
 	glUniform4f(ourColor, 0.5f, 0.5f, 0.5f, 1.f);
 
 	//auto ourTexture = glGetUniformLocation(nProg, "ourTexture");
-	//glUniform1i(ourTexture);
+	//glUniform1i(ourTexture, 0);
 }
 
 void CWBFCModelSample::GLBind()

@@ -2,6 +2,9 @@
 
 #include "HeaderPre.h"
 
+#define WBFIMG_RGB 3
+#define WBFIMG_RGBA 4
+
 class __MY_EXT_API__ CWBFImage
 {
 public:
