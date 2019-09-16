@@ -8,11 +8,14 @@ out vec4 aColor;
 out vec2 aTexcel;
 
 uniform vec4 ourColor;
-uniform mat4 transform;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
 
 void main()
 {
-	gl_Position = transform * vec4(attrPos, 1.f);
+	gl_Position = projection * view * model * vec4(attrPos, 1.f);
 	aColor = vec4(attrColor, 1.f) * ourColor;
 	aTexcel = attrTexcel;
 }

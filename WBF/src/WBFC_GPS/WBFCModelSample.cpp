@@ -37,7 +37,7 @@ GLfloat g_vertices[] =
 	0.f, 1.f,			// texture
 };
 
-GLuint g_indexes[] = 
+GLuint g_indexes[] =
 {
 	0, 1, 2,
 	0, 2, 3,
@@ -100,7 +100,7 @@ void CWBFCModelSample::GLCreateVBO()
 	{
 		CWBFImage imgJPG;
 		imgJPG.InitialData(m_cstrJPG);
-	
+
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -130,12 +130,15 @@ void CWBFCModelSample::GLCreateVBO()
 
 void CWBFCModelSample::GLAttachData()
 {
+	///////////////////////////////////////////////////////////////////////////
+	// Data 
+
 	auto pOption = (CWBFGPSOption*)GetOption();
 
 	int nProg;
 	glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
 	if (!glIsProgram(nProg)) return;
-	
+
 	auto ourColor = glGetUniformLocation(nProg, "ourColor");
 	glUniform4f(ourColor, 0.8f, 0.8f, 0.8f, 1.f);
 
@@ -148,12 +151,31 @@ void CWBFCModelSample::GLAttachData()
 	auto ratio = glGetUniformLocation(nProg, "fRatio");
 	glUniform1f(ratio, pOption->fRatio);
 
-	glm::mat4 trans(1.f);
-	trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
-	trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));
+	///////////////////////////////////////////////////////////////////////////
+	// View 
 
-	auto transformLoc = glGetUniformLocation(nProg, "transform");
-	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+	int aViewPort[4] = { 0 };
+	glGetIntegerv(GL_VIEWPORT, aViewPort);
+
+	glm::mat4 model(1.f);
+	model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+
+	glm::mat4 view(1.f);
+	//view = glm::translate(view, glm::vec3(0.f, 0.f, -3.f));
+	view = glm::lookAt(glm::vec3(3.f, 0.f, 3.f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 1.f, 0.f));
+
+	glm::mat4 proj(1.f);
+	glm::ortho(0.f, 800.f, 0.f, 600.f, 0.1f, 100.f); // left, right, bottom, top, near, far
+	proj = glm::perspective(glm::radians(45.f), (float)aViewPort[2] / (float)aViewPort[3], 0.1f, 100.f);
+
+	auto modelLoc = glGetUniformLocation(nProg, "model");
+	glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+	auto viewLoc = glGetUniformLocation(nProg, "view");
+	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+
+	auto projLoc = glGetUniformLocation(nProg, "projection");
+	glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj));
 }
 
 void CWBFCModelSample::GLBind()
@@ -167,7 +189,36 @@ void CWBFCModelSample::GLBind()
 
 void CWBFCModelSample::GLDraw()
 {
-	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+	glm::vec3 cubePositions[] =
+	{
+		glm::vec3(0.0f,  0.0f,  0.0f),
+		glm::vec3(2.0f,  5.0f, -15.0f),
+		glm::vec3(-1.5f, -2.2f, -2.5f),
+		glm::vec3(-3.8f, -2.0f, -12.3f),
+		glm::vec3(2.4f, -0.4f, -3.5f),
+		glm::vec3(-1.7f,  3.0f, -7.5f),
+		glm::vec3(1.3f, -2.0f, -2.5f),
+		glm::vec3(1.5f,  2.0f, -2.5f),
+		glm::vec3(1.5f,  0.2f, -1.5f),
+		glm::vec3(-1.3f,  1.0f, -1.5f)
+	};
+
+	int nProg;
+	glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
+	if (!glIsProgram(nProg)) return;
+
+	for (auto indx = 0; indx < 10; ++indx)
+	{
+		auto modelLoc = glGetUniformLocation(nProg, "model");
+
+		glm::mat4 model(1.f);
+		float angle = 20.0f * indx;
+		model = glm::translate(model, cubePositions[indx]);
+		model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+	}
 }
 
 void CWBFCModelSample::GLUnbind()
@@ -178,9 +229,12 @@ void CWBFCModelSample::GLUnbind()
 
 void CWBFCModelSample::GLDelete()
 {
-	glDeleteVertexArrays(1, &m_uiVAO); 
+	glDeleteVertexArrays(1, &m_uiVAO);
 	glDeleteBuffers(1, &m_uiEBO);
 	glDeleteBuffers(1, &m_uiVBO);
+	glDeleteTextures(1, &m_uiTexJPG);
+	glDeleteTextures(1, &m_uiTexPNG);
 
 	m_uiVAO = m_uiVBO = m_uiEBO = 0;
+	m_uiTexJPG = m_uiTexPNG = 0;
 }

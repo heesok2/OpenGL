@@ -43,6 +43,7 @@ void CWBFCRndrSample::GLDraw()
 
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	{
+		glEnable(GL_DEPTH_TEST);
 		glPolygonMode(pOption->uiPolygonFace, pOption->uiPolygonMode);
 
 		auto& Shader = pShaderMgr->GetShader(GetType());
@@ -58,6 +59,8 @@ void CWBFCRndrSample::GLDraw()
 			}
 		}
 		Shader.GLUnbind();
+
+		glDisable(GL_DEPTH_TEST);
 	}
 	glPopAttrib();
 }
