@@ -40,4 +40,8 @@ private:
 	CComboBox m_cobxPolyFace;
 	CComboBox m_cobxPolyMode;
 
+	// Value
+	CSliderCtrl m_slidRatio;
+
+public:
 };

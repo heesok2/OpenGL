@@ -7,8 +7,9 @@ in vec2 aTexcel;
 
 uniform sampler2D ourTexture1;
 uniform sampler2D ourTexture2;
+uniform float fRatio;
 
 void main()
 {
-	FragColor = mix(texture(ourTexture1, aTexcel), texture(ourTexture2, aTexcel), 0.2) * aColor;
+	FragColor = mix(texture(ourTexture1, aTexcel), texture(ourTexture2, aTexcel), fRatio) * aColor;
 }

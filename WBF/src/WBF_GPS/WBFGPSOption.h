@@ -13,6 +13,8 @@ public:
 	UINT uiPolygonFace;
 	UINT uiPolygonMode;
 
+	float fRatio;
+
 };
 #include "HeaderPost.h"
 

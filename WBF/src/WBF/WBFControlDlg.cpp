@@ -31,6 +31,7 @@ void CWBFControlDlg::DoDataExchange(CDataExchange * pDX)
 	DDX_Control(pDX, IDC_WBF_TYPE_COBX, m_cobxType);
 	DDX_Control(pDX, IDC_WBF_POLY_FACE_COBX, m_cobxPolyFace);
 	DDX_Control(pDX, IDC_WBF_POLY_MODE_COBX, m_cobxPolyMode);
+	DDX_Control(pDX, IDC_WBF_RATIO_SLID, m_slidRatio);
 }
 
 BEGIN_MESSAGE_MAP(CWBFControlDlg, CWBFDialog)
@@ -92,6 +93,14 @@ void CWBFControlDlg::SetControl()
 	CString aPolyModeName[] = { _T("Fill"), _T("Line") };
 	UINT aPolyModeData[] = { GL_FILL, GL_LINE };
 	lambda_cobx(m_cobxPolyMode, sizeof(aPolyModeData) / sizeof(UINT), aPolyModeName, aPolyModeData);
+
+	m_slidRatio.SetRange(0, 100);
+	m_slidRatio.SetRangeMin(0);
+	m_slidRatio.SetRangeMax(100);
+	m_slidRatio.SetPos(50);
+	m_slidRatio.SetTicFreq(10);
+	m_slidRatio.SetLineSize(1);
+	m_slidRatio.SetPageSize(10);
 }
 
 void CWBFControlDlg::Data2Dlg()
@@ -118,6 +127,8 @@ BOOL CWBFControlDlg::Dlg2Data()
 
 	pOption->uiPolygonFace = lambda_cobx(m_cobxPolyFace);
 	pOption->uiPolygonMode = lambda_cobx(m_cobxPolyMode);
+
+	pOption->fRatio = (float)m_slidRatio.GetPos() / 100.f;
 
 	pModelMgr->OnUpdateOnly((UINT)uiType);
 

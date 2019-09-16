@@ -126,6 +126,8 @@ void CWBFCModelSample::GLCreateVBO()
 
 void CWBFCModelSample::GLAttachData()
 {
+	auto pOption = (CWBFGPSOption*)GetOption();
+
 	int nProg;
 	glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
 	if (!glIsProgram(nProg)) return;
@@ -138,6 +140,9 @@ void CWBFCModelSample::GLAttachData()
 
 	auto ourTexture2 = glGetUniformLocation(nProg, "ourTexture2");
 	glUniform1i(ourTexture2, 1);
+
+	auto ratio = glGetUniformLocation(nProg, "fRatio");
+	glUniform1f(ratio, pOption->fRatio);
 }
 
 void CWBFCModelSample::GLBind()
