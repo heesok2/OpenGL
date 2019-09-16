@@ -42,8 +42,8 @@ GLuint g_indexes[] =
 IMPLEMENT_MODEL(CWBFCModelSample, gps::E_GPS_SAMPLE);
 
 CWBFCModelSample::CWBFCModelSample() :
-	m_uiVAO(0), m_uiVBO(0), m_uiEBO(0), 
-	m_uiTex(0)
+	m_uiVAO(0), m_uiVBO(0), m_uiEBO(0),
+	m_uiTexJPG(0), m_uiTexPNG(0)
 {
 	CString strExe;
 
@@ -91,12 +91,28 @@ void CWBFCModelSample::GLCreateVBO()
 	}
 	glBindVertexArray(0);
 
-	glGenTextures(1, &m_uiTex);
-	glBindTexture(GL_TEXTURE_2D, m_uiTex);
+	glGenTextures(1, &m_uiTexJPG);
+	glBindTexture(GL_TEXTURE_2D, m_uiTexJPG);
+	{
+		CWBFImage imgJPG;
+		imgJPG.InitialData(m_cstrJPG);
+	
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgJPG.GetWidth(), imgJPG.GetHeight(), 0, imgJPG.GetBytes() == WBFIMG_RGBA ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgJPG.GetBuffer());
+		glGenerateMipmap(GL_TEXTURE_2D);
+	}
+	glBindTexture(GL_TEXTURE_2D, 0);
+
+	glGenTextures(1, &m_uiTexPNG);
+	glBindTexture(GL_TEXTURE_2D, m_uiTexPNG);
 	{
 		CWBFImage imgPNG;
 		imgPNG.InitialData(m_cstrPNG);
-	
+
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -115,15 +131,21 @@ void CWBFCModelSample::GLAttachData()
 	if (!glIsProgram(nProg)) return;
 	
 	auto ourColor = glGetUniformLocation(nProg, "ourColor");
-	glUniform4f(ourColor, 0.5f, 0.5f, 0.5f, 1.f);
+	glUniform4f(ourColor, 0.8f, 0.8f, 0.8f, 1.f);
 
-	//auto ourTexture = glGetUniformLocation(nProg, "ourTexture");
-	//glUniform1i(ourTexture, 0);
+	auto ourTexture1 = glGetUniformLocation(nProg, "ourTexture1");
+	glUniform1i(ourTexture1, 0);
+
+	auto ourTexture2 = glGetUniformLocation(nProg, "ourTexture2");
+	glUniform1i(ourTexture2, 1);
 }
 
 void CWBFCModelSample::GLBind()
 {
-	glBindTexture(GL_TEXTURE_2D, m_uiTex);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, m_uiTexJPG);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, m_uiTexPNG);
 	glBindVertexArray(m_uiVAO);
 }
 

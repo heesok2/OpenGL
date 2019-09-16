@@ -32,7 +32,8 @@ protected:
 	UINT m_uiVBO; // Vertex Buffer Object
 	UINT m_uiEBO; // Element Buffer Object
 
-	UINT m_uiTex;
+	UINT m_uiTexJPG;
+	UINT m_uiTexPNG;
 	CString m_cstrPNG;
 	CString m_cstrJPG;
 
