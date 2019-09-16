@@ -13,14 +13,14 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Define">
-      <UniqueIdentifier>{4b9808de-251c-494f-9cf4-2166de768793}</UniqueIdentifier>
-    </Filter>
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{c6217dcf-3e8b-4f8c-a53c-bcb6d39960ab}</UniqueIdentifier>
     </Filter>
     <Filter Include="Util">
       <UniqueIdentifier>{1e4ab848-b7e5-4d4c-8f8b-3d20242fa015}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{4b9808de-251c-494f-9cf4-2166de768793}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -59,7 +59,7 @@
       <Filter>_common_</Filter>
     </ClInclude>
     <ClInclude Include="AllProjectInclude.h">
-      <Filter>Define</Filter>
+      <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="HeaderPre.h">
       <Filter>_common_\Linker</Filter>
@@ -71,10 +71,10 @@
       <Filter>_common_\Linker</Filter>
     </ClInclude>
     <ClInclude Include="AllGraphicInclude.h">
-      <Filter>Define</Filter>
+      <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="WBFGlobalDef.h">
-      <Filter>Define</Filter>
+      <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="WBFString.h">
       <Filter>Util</Filter>

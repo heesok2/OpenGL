@@ -8,10 +8,11 @@ out vec4 aColor;
 out vec2 aTexcel;
 
 uniform vec4 ourColor;
+uniform mat4 transform;
 
 void main()
 {
-	gl_Position = vec4(attrPos, 1.f);
+	gl_Position = transform * vec4(attrPos, 1.f);
 	aColor = vec4(attrColor, 1.f) * ourColor;
 	aTexcel = attrTexcel;
 }
