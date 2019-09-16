@@ -19,6 +19,7 @@ public:
 
 	virtual void GLInitialData();
 	virtual void GLCreateVBO();
+	virtual void GLAttachData();
 	virtual void GLBind();
 	virtual void GLDraw();
 	virtual void GLUnbind();
@@ -30,6 +31,8 @@ protected:
 	UINT m_uiVAO; // Vertex Attribute Object
 	UINT m_uiVBO; // Vertex Buffer Object
 	UINT m_uiEBO; // Element Buffer Object
+
+	UINT m_uiTex;
 
 };
 

@@ -25,6 +25,15 @@
     <Filter Include="Graphic\Shader">
       <UniqueIdentifier>{061f4a4c-1d73-4211-9e46-294f52a90935}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphic\Option">
+      <UniqueIdentifier>{09c4f05d-a7bb-4d51-87c1-f5b7796b596e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\Image">
+      <UniqueIdentifier>{b8b76ac2-9aa0-471c-ad7e-a63297ace1ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Library">
+      <UniqueIdentifier>{10d99ba4-7b0d-49f1-aa9d-81fd2c9b99af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_GPS.cpp">
@@ -43,7 +52,10 @@
       <Filter>Graphic</Filter>
     </ClCompile>
     <ClCompile Include="WBFGPSOption.cpp">
-      <Filter>_common_</Filter>
+      <Filter>Graphic\Option</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFImage.cpp">
+      <Filter>Graphic\Image</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,7 +104,13 @@
       <Filter>Graphic</Filter>
     </ClInclude>
     <ClInclude Include="WBFGPSOption.h">
-      <Filter>_resource file_</Filter>
+      <Filter>Graphic\Option</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFImage.h">
+      <Filter>Graphic\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Library</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

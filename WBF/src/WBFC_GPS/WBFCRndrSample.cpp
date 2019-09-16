@@ -50,6 +50,8 @@ void CWBFCRndrSample::GLDraw()
 		{
 			if (pModel->IsValidModel())
 			{
+				pModel->GLAttachData();
+
 				pModel->GLBind();
 				pModel->GLDraw();
 				pModel->GLUnbind();

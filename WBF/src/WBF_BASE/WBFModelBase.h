@@ -23,6 +23,7 @@ public:
 	virtual BOOL IsValidModel() = 0;
 	virtual void GLInitialData() = 0;
 	virtual void GLCreateVBO() = 0;
+	virtual void GLAttachData() = 0;
 	virtual void GLBind() = 0;
 	virtual void GLDraw() = 0;
 	virtual void GLUnbind() = 0;

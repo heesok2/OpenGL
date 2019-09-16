@@ -1,5 +1,8 @@
 #include "stdafx.h"
+#include "resource.h"
 #include "WBFCModelSample.h"
+
+#include "..\WBF_GPS\WBFImage.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -38,8 +41,9 @@ GLuint g_indexes[] =
 
 IMPLEMENT_MODEL(CWBFCModelSample, gps::E_GPS_SAMPLE);
 
-CWBFCModelSample::CWBFCModelSample()
-	: m_uiVAO(0), m_uiVBO(0), m_uiEBO(0)
+CWBFCModelSample::CWBFCModelSample() :
+	m_uiVAO(0), m_uiVBO(0), m_uiEBO(0), 
+	m_uiTex(0)
 {
 }
 
@@ -57,7 +61,6 @@ void CWBFCModelSample::GLCreateVBO()
 {
 	glGenVertexArrays(1, &m_uiVAO);
 	glBindVertexArray(m_uiVAO);
-
 	{
 		glGenBuffers(1, &m_uiVBO);
 		glBindBuffer(GL_ARRAY_BUFFER, m_uiVBO);
@@ -72,13 +75,68 @@ void CWBFCModelSample::GLCreateVBO()
 
 		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 8, (void*)(sizeof(GL_FLOAT) * 3));
 		glEnableVertexAttribArray(1);
+
+		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT) * 8, (void*)(sizeof(GL_FLOAT) * 6));
+		glEnableVertexAttribArray(2);
+	}
+	glBindVertexArray(0);
+
+	CString strFilePath;
+	{
+		TCHAR aPath[MAX_PATH + 1] = { 0 };
+		auto dwSize = GetModuleFileName(nullptr, aPath, MAX_PATH);
+		CString strPath = aPath;
+		auto item = strPath.ReverseFind('\\');
+		if (item != -1)
+		{
+			strFilePath = strPath.Left(item);
+			strFilePath += _T("\\Image\\awesomeface.png");
+		}
 	}
 
-	glBindVertexArray(0);
+	CWBFImage img;
+	img.InitialData(strFilePath);
+
+
+	//glGenTextures(1, &m_uiTex);
+	//glBindTexture(GL_TEXTURE_2D, m_uiTex);
+	//{
+	//	CWBFImage img;
+	//	img.InitialData(_T("WBFC_GPS"), _T("PNG"), IDB_PNG1);
+
+	//	TCHAR aPath[MAX_PATH + 1] = { 0 };
+	//	auto dwSize = GetModuleFileName(nullptr, aPath, MAX_PATH);
+	//	GetCurrentDirectory(MAX_PATH, aPath);
+
+	//	CImage img;
+	//	auto hRes = img.LoadFromResource(((_T("Image\\awesomeface.png"));
+	//	int width = img.GetWidth();
+	//	int height = img.GetHeight();
+	//	int nrChannels = img.GetBPP() / 4;
+	//	void* data = img.GetBits();
+
+	//	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+	//	glGenerateMipmap(GL_TEXTURE_2D);
+	//}
+	//glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+void CWBFCModelSample::GLAttachData()
+{
+	int nProg;
+	glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
+	if (!glIsProgram(nProg)) return;
+	
+	auto ourColor = glGetUniformLocation(nProg, "ourColor");
+	glUniform4f(ourColor, 0.5f, 0.5f, 0.5f, 1.f);
+
+	//auto ourTexture = glGetUniformLocation(nProg, "ourTexture");
+	//glUniform1i(ourTexture);
 }
 
 void CWBFCModelSample::GLBind()
 {
+	glBindTexture(GL_TEXTURE_2D, m_uiTex);
 	glBindVertexArray(m_uiVAO);
 }
 
@@ -90,6 +148,7 @@ void CWBFCModelSample::GLDraw()
 void CWBFCModelSample::GLUnbind()
 {
 	glBindVertexArray(0);
+	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 void CWBFCModelSample::GLDelete()
