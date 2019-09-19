@@ -1,6 +1,10 @@
 #pragma once
 
-#include "WBFGlobalDef.h"
+#include "AllDefine.h"
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 /*
 WBF_LIB : Library

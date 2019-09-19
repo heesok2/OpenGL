@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "GLView.h"
+#include "WBFCamera.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -9,8 +10,8 @@ static char THIS_FILE[] = __FILE__;
 
 CGLView::CGLView()
 {
+	m_Camera = nullptr;
 }
-
 
 CGLView::~CGLView()
 {
@@ -41,6 +42,16 @@ void CGLView::EndwglCurrent()
 void CGLView::SwapBuffers()
 {
 	::SwapBuffers(m_hDC);
+}
+
+BOOL CGLView::GetViewMatrix(glm::mat4 & matView)
+{
+	if (m_Camera == nullptr)
+		return FALSE;
+
+	matView = m_Camera->GetViewMatrix();
+
+	return TRUE;
 }
 
 void CGLView::InitializePalette()
@@ -114,6 +125,16 @@ int CGLView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CWBFViewBase::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
+	IninitialWGL();
+
+	m_Camera = new CWBFCamera();
+	m_Camera->SetCameraPosition(glm::vec3(0.f, 0.f, 3.f));
+
+	return 0;
+}
+
+void CGLView::IninitialWGL()
+{
 	PIXELFORMATDESCRIPTOR pfd =
 	{
 		sizeof(PIXELFORMATDESCRIPTOR),	// Size of this structure
@@ -135,7 +156,6 @@ int CGLView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		0,0,0							// Not used to select mode
 	};
 
-
 	// Get the Device context
 	m_hDC = ::GetDC(m_hWnd);
 
@@ -151,30 +171,36 @@ int CGLView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	// Make the rendering context current, perform initialization, then
 	// deselect it
 	BeginwglCurrent();
-
-	GLenum err = glewInit();
-	if (GLEW_OK != err)
 	{
-		AfxMessageBox(_T("GLEW is not initialized!"));
+
+		GLenum err = glewInit();
+		if (GLEW_OK != err)
+		{
+			AfxMessageBox(_T("GLEW is not initialized!"));
+		}
+
+		// Create the palette if needed
+		InitializePalette();
+
+		// Default 
+		glClearColor(0.f, 0.f, 0.f, 1.f);
 	}
-	
-	// Create the palette if needed
-	InitializePalette();
-
-	// Default 
-	glClearColor(0.f, 0.f, 0.f, 1.f);
-	
 	EndwglCurrent();
-
-	return 0;
 }
 
 void CGLView::OnDestroy()
 {
-	wglDeleteContext(m_hRC);
-	::ReleaseDC(m_hWnd, m_hDC);
+	ReleaseWGL();
+
+	_SAFE_DELETE(m_Camera);
 
 	CWBFViewBase::OnDestroy();
+}
+
+void CGLView::ReleaseWGL()
+{
+	wglDeleteContext(m_hRC);
+	::ReleaseDC(m_hWnd, m_hDC);
 }
 
 void CGLView::OnSize(UINT nType, int cx, int cy)
@@ -182,17 +208,9 @@ void CGLView::OnSize(UINT nType, int cx, int cy)
 	CWBFViewBase::OnSize(nType, cx, cy);
 
 	BeginwglCurrent();
-
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	glViewport(0, 0, cx, cy);
-/*
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-
-	auto dRat = (double)cx / (double)cy;
-	glOrtho(-dRat, dRat, -1, 1, -1, 1);
-*/
+	{
+		glViewport(0, 0, cx, cy);
+	}
 	EndwglCurrent();
 }
 
@@ -250,7 +268,36 @@ BOOL CGLView::OnEraseBkgnd(CDC* pDC)
 
 void CGLView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	// TODO: Add your message handler code here and/or call default
+	float fDelta = 1.f;
+	switch (nChar)
+	{
+	case 'a':
+	case 'A':
+		{
+			m_Camera->OnKeyboardDown(E_CAMERA_LEFT, fDelta);
+		}
+		break;
+	case 's':
+	case 'S':
+		{
+			m_Camera->OnKeyboardDown(E_CAMERA_BACKWARD, fDelta);
+		}
+		break;
+	case 'd':
+	case 'D':
+		{
+			m_Camera->OnKeyboardDown(E_CAMERA_RIGHT, fDelta);
+		}
+		break;
+	case 'w':
+	case 'W':
+		{
+			m_Camera->OnKeyboardDown(E_CAMERA_FORWARD, fDelta);
+		}
+		break;
+	}
+
+	Invalidate();
 
 	CWBFViewBase::OnKeyDown(nChar, nRepCnt, nFlags);
 }

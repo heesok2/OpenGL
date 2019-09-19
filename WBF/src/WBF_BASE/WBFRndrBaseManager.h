@@ -13,11 +13,13 @@ public:
 	virtual ~CWBFRndrBaseManager();
 
 public:
-	virtual CWBFRndrBase* GetRender(UINT uiType);
-
 	virtual void OnInitialUpdate() = 0;
 	virtual void OnDestroy() = 0;
 	virtual void GLDrawScene() = 0;
+
+public:
+	CWBFRndrBase* GetRender(UINT uiType);
+	CWBFViewBase* GetView() { return m_pView; }
 
 protected:
 	CWBFViewBase* m_pView;

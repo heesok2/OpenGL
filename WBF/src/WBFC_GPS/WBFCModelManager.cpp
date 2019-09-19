@@ -27,6 +27,7 @@ void CWBFCModelManager::OnInitialUpdate()
 		auto pObject = CWBFModelFactory::GetInstance().CreateObject(gps::E_GPS_SAMPLE);
 		if (pObject == nullptr) continue;
 		
+		pObject->SetHelper(this);
 		m_vObject.push_back(pObject);
 	}
 }

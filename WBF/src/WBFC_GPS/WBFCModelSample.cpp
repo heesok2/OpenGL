@@ -3,10 +3,10 @@
 #include "WBFCModelSample.h"
 
 #include "..\WBF_LIB\WBFImage.h"
+#include "..\WBF_BASE\WBFDocBase.h"
+#include "..\WBF_BASE\WBFViewBase.h"
+#include "..\WBF_BASE\WBFModelBaseManager.h"
 
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -133,6 +133,10 @@ void CWBFCModelSample::GLAttachData()
 	///////////////////////////////////////////////////////////////////////////
 	// Data 
 
+	auto pDoc = m_pModelMgr->GetDoc();
+	auto pos = pDoc->GetFirstViewPosition();
+	auto pView = (CWBFViewBase*)pDoc->GetNextView(pos);
+
 	auto pOption = (CWBFGPSOption*)GetOption();
 
 	int nProg;
@@ -162,7 +166,8 @@ void CWBFCModelSample::GLAttachData()
 
 	glm::mat4 view(1.f);
 	//view = glm::translate(view, glm::vec3(0.f, 0.f, -3.f));
-	view = glm::lookAt(glm::vec3(3.f, 0.f, 3.f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 1.f, 0.f));
+	//view = glm::lookAt(glm::vec3(3.f, 0.f, 3.f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 1.f, 0.f));
+	pView->GetViewMatrix(view);
 
 	glm::mat4 proj(1.f);
 	glm::ortho(0.f, 800.f, 0.f, 600.f, 0.1f, 100.f); // left, right, bottom, top, near, far

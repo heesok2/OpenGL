@@ -12,8 +12,6 @@ public:
 	virtual ~CWBFModelBaseManager();
 
 public:
-	virtual CWBFModelBase* GetModel(UINT uiType);
-
 	virtual void OnInitialUpdate() = 0;
 	virtual void OnDestroy() = 0;
 	virtual void OnUpdateAll() = 0;
@@ -21,6 +19,10 @@ public:
 
 	virtual void GLInitialData() = 0;	
 	
+public:
+	CWBFModelBase* GetModel(UINT uiType);
+	CWBFDocBase* GetDoc() { return m_pDoc; }
+
 protected:
 	CWBFDocBase* m_pDoc;
 	std::vector<CWBFModelBase*> m_vObject;

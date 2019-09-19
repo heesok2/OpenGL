@@ -1,15 +1,21 @@
 #pragma once
 
+
 #include "..\WBF_BASE\WBFViewBase.h"
 
 #include "HeaderPre.h"
 
+class CWBFCamera;
 class __MY_EXT_CLASS__ CGLView : public CWBFViewBase
 {
 public:
 	CGLView();
 	virtual ~CGLView();
 	
+
+public:
+	virtual BOOL GetViewMatrix(glm::mat4& matView);
+
 public:
 	void BeginwglCurrent();
 	void EndwglCurrent();
@@ -17,6 +23,8 @@ public:
 
 protected:
 	void InitializePalette();
+	void IninitialWGL();
+	void ReleaseWGL();
 
 protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
@@ -37,6 +45,7 @@ protected:
 	HGLRC m_hRC;
 
 	CPalette m_GLPalette;	// Logical Palette
+	CWBFCamera* m_Camera;
 };
 
 #include "HeaderPost.h"

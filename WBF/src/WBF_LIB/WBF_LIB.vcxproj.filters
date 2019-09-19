@@ -73,9 +73,6 @@
     <ClInclude Include="AllGraphicInclude.h">
       <Filter>Include</Filter>
     </ClInclude>
-    <ClInclude Include="WBFGlobalDef.h">
-      <Filter>Include</Filter>
-    </ClInclude>
     <ClInclude Include="WBFString.h">
       <Filter>Util</Filter>
     </ClInclude>
@@ -84,6 +81,9 @@
     </ClInclude>
     <ClInclude Include="stb_image.h">
       <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="AllDefine.h">
+      <Filter>Include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

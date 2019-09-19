@@ -14,13 +14,15 @@ public:
 
 public:
 	virtual UINT GetType() { ASSERT(g_warning); return gps::E_GPS_UNKNOWN; }
-	virtual void SetHelper(CWBFRndrBaseManager* pRndrMgr, CWBFModelBaseManager* pModelMgr)
+	virtual void OnInitialData() {}
+	virtual void GLDraw() = 0;
+
+public:
+	void SetHelper(CWBFRndrBaseManager* pRndrMgr, CWBFModelBaseManager* pModelMgr)
 	{
 		m_pRndrMgr = pRndrMgr;
 		m_pModelMgr = pModelMgr;
 	}
-	virtual void OnInitialData() {}
-	virtual void GLDraw() = 0;
 
 protected:
 	CWBFRndrBaseManager* m_pRndrMgr;

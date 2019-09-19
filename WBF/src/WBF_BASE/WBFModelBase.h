@@ -5,6 +5,7 @@
 #include "HeaderPre.h"
 
 class CWBFOption;
+class CWBFModelBaseManager;
 class __MY_EXT_CLASS__ CWBFModelBase : public CObject
 {
 public:
@@ -29,8 +30,15 @@ public:
 	virtual void GLUnbind() = 0;
 	virtual void GLDelete() = 0;
 
+public:
+	void SetHelper(CWBFModelBaseManager* pModelMgr)
+	{
+		m_pModelMgr = pModelMgr;
+	}
+
 protected:
 	UINT m_uiFlag;
+	CWBFModelBaseManager* m_pModelMgr;
 };
 
 #include "HeaderPost.h"

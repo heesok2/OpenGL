@@ -3,9 +3,6 @@
 #ifndef WBF_CAMERA
 #define WBF_CAMERA
 
-#include <GLM/glm.hpp>
-#include <GLM/gtc/matrix_transform.hpp>
-
 #include "HeaderPre.h"
 
 enum E_CAMERA_MOVEMENT
@@ -25,6 +22,7 @@ public:
 
 public:
 	glm::mat4 GetViewMatrix();
+	void SetCameraPosition(glm::vec3 vPosition);
 	void OnKeyboardDown(E_CAMERA_MOVEMENT eMovement, float deltaTime);
 	void OnMouseMove(float xoffset, float yoffset, BOOL bConstrainPitch = TRUE);
 
@@ -33,8 +31,9 @@ protected:
 
 protected:
 	glm::vec3 m_vPosition;
-	glm::vec3 m_vWorldUp;
 	glm::vec3 m_vFront;
+	glm::vec3 m_vWorldUp;
+
 	glm::vec3 m_vUp;
 	glm::vec3 m_vRight;
 

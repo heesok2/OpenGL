@@ -11,6 +11,7 @@ public:
 
 public:
 	virtual CWBFRndrBaseManager* GetRenderManager() { ASSERT(g_warning); return nullptr; }
+	virtual BOOL GetViewMatrix(glm::mat4& matView) { ASSERT(g_warning); return FALSE; }
 
 };
 
