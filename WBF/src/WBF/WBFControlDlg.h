@@ -17,6 +17,7 @@ public:
 private:
 	virtual void DoDataExchange(CDataExchange* pDX);
 	virtual BOOL OnInitDialog();
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
 	virtual void OnOK();
 	virtual void OnCancel();
 
@@ -42,6 +43,4 @@ private:
 
 	// Value
 	CSliderCtrl m_slidRatio;
-
-public:
 };

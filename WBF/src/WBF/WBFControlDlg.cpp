@@ -54,6 +54,13 @@ BOOL CWBFControlDlg::OnInitDialog()
 	return TRUE;
 }
 
+BOOL CWBFControlDlg::PreTranslateMessage(MSG* pMsg)
+{
+	// TODO: Add your specialized code here and/or call the base class
+
+	return CWBFDialog::PreTranslateMessage(pMsg);
+}
+
 void CWBFControlDlg::OnOK()
 {
 	if (!Dlg2Data())

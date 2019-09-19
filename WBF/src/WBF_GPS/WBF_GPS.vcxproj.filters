@@ -28,6 +28,9 @@
     <Filter Include="Graphic\Option">
       <UniqueIdentifier>{09c4f05d-a7bb-4d51-87c1-f5b7796b596e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphic\Camera">
+      <UniqueIdentifier>{f2b18797-df23-4a2d-ac75-f8e96dfa390e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_GPS.cpp">
@@ -47,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="WBFGPSOption.cpp">
       <Filter>Graphic\Option</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFCamera.cpp">
+      <Filter>Graphic\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +102,9 @@
     </ClInclude>
     <ClInclude Include="WBFGPSOption.h">
       <Filter>Graphic\Option</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFCamera.h">
+      <Filter>Graphic\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

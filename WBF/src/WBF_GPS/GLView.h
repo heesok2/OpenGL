@@ -26,6 +26,10 @@ protected:
 	afx_msg void OnPaletteChanged(CWnd* pFocusWnd);
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 
+	afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
+	afx_msg void OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags);
+	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
+
 	DECLARE_MESSAGE_MAP();
 
 protected:

@@ -23,6 +23,9 @@ BEGIN_MESSAGE_MAP(CGLView, CWBFViewBase)
 	ON_WM_QUERYNEWPALETTE()
 	ON_WM_PALETTECHANGED()
 	ON_WM_ERASEBKGND()
+	ON_WM_KEYDOWN()
+	ON_WM_KEYUP()
+	ON_WM_MOUSEMOVE()
 END_MESSAGE_MAP()
 
 void CGLView::BeginwglCurrent()
@@ -242,4 +245,28 @@ BOOL CGLView::OnEraseBkgnd(CDC* pDC)
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
 	return TRUE;
 	//return CWBFViewBase::OnEraseBkgnd(pDC);
+}
+
+
+void CGLView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
+{
+	// TODO: Add your message handler code here and/or call default
+
+	CWBFViewBase::OnKeyDown(nChar, nRepCnt, nFlags);
+}
+
+
+void CGLView::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
+{
+	// TODO: Add your message handler code here and/or call default
+
+	CWBFViewBase::OnKeyUp(nChar, nRepCnt, nFlags);
+}
+
+
+void CGLView::OnMouseMove(UINT nFlags, CPoint point)
+{
+	// TODO: Add your message handler code here and/or call default
+
+	CWBFViewBase::OnMouseMove(nFlags, point);
 }
