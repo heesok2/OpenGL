@@ -40,6 +40,11 @@ void CWBFCamera::SetCameraPosition(glm::vec3 vPosition)
 	m_vPosition = vPosition;
 }
 
+void CWBFCamera::SetMousePosition(CPoint point)
+{
+	m_MousePoint = point;
+}
+
 void CWBFCamera::OnKeyboardDown(E_CAMERA_MOVEMENT eMovement, float deltaTime)
 {
 	auto fVelocity = m_fMovementSpeed * deltaTime;

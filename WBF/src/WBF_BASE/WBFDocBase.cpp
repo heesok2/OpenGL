@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "WBFDocBase.h"
+#include "WBFViewBase.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -16,5 +17,16 @@ CWBFDocBase::~CWBFDocBase()
 {
 }
 
-BEGIN_MESSAGE_MAP(CWBFDocBase, CDocument)
-END_MESSAGE_MAP()
+CWBFViewBase * CWBFDocBase::GetActiveView()
+{
+	auto pos = GetFirstViewPosition();
+	while (pos != nullptr)
+	{
+		auto pView = GetNextView(pos);
+		if (pView->IsKindOf(RUNTIME_CLASS(CWBFViewBase)))
+			return static_cast<CWBFViewBase*>(pView);
+	}
+
+	ASSERT(g_warning);
+	return nullptr;
+}

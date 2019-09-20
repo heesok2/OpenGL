@@ -2,6 +2,7 @@
 
 #include "HeaderPre.h"
 
+class CWBFViewBase;
 class CWBFModelBaseManager;
 class __MY_EXT_CLASS__ CWBFDocBase : public CDocument
 {
@@ -11,9 +12,7 @@ public:
 
 public:
 	virtual CWBFModelBaseManager* GetModelManager() { ASSERT(g_warning); return nullptr; }
-
-private:
-	DECLARE_MESSAGE_MAP();
+	virtual CWBFViewBase* GetActiveView();
 
 };
 

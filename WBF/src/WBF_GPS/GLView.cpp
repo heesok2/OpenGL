@@ -26,6 +26,8 @@ BEGIN_MESSAGE_MAP(CGLView, CWBFViewBase)
 	ON_WM_ERASEBKGND()
 	ON_WM_KEYDOWN()
 	ON_WM_KEYUP()
+	ON_WM_LBUTTONDOWN()
+	ON_WM_LBUTTONUP()
 	ON_WM_MOUSEMOVE()
 END_MESSAGE_MAP()
 
@@ -313,7 +315,34 @@ void CGLView::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CGLView::OnMouseMove(UINT nFlags, CPoint point)
 {
-	// TODO: Add your message handler code here and/or call default
+	if (nFlags & MK_LBUTTON)
+	{
+
+	}
 
 	CWBFViewBase::OnMouseMove(nFlags, point);
+}
+
+
+void CGLView::OnLButtonDown(UINT nFlags, CPoint point)
+{
+	auto pWnd = SetCapture();
+	if (pWnd == nullptr)
+	{
+		if (m_Camera != nullptr)
+			m_Camera->SetMousePosition(point);
+	}
+
+	CWBFViewBase::OnLButtonDown(nFlags, point);
+}
+
+
+void CGLView::OnLButtonUp(UINT nFlags, CPoint point)
+{
+	if (!ReleaseCapture())
+	{
+		// Unknown
+	}
+
+	CWBFViewBase::OnLButtonUp(nFlags, point);
 }

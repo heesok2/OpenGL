@@ -134,8 +134,7 @@ void CWBFCModelSample::GLAttachData()
 	// Data 
 
 	auto pDoc = m_pModelMgr->GetDoc();
-	auto pos = pDoc->GetFirstViewPosition();
-	auto pView = (CWBFViewBase*)pDoc->GetNextView(pos);
+	auto pView = pDoc->GetActiveView();
 
 	auto pOption = (CWBFGPSOption*)GetOption();
 
