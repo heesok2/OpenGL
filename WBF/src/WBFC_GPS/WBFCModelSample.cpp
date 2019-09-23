@@ -47,7 +47,7 @@ IMPLEMENT_MODEL(CWBFCModelSample, gps::E_GPS_SAMPLE);
 
 CWBFCModelSample::CWBFCModelSample() :
 	m_uiVAO(0), m_uiVBO(0), m_uiEBO(0),
-	m_uiTexJPG(0), m_uiTexPNG(0)
+	m_uiTexJPG(0), m_uiTexPNG(0), m_bOnlyOne(FALSE)
 {
 	CString strExe;
 
@@ -69,6 +69,8 @@ void CWBFCModelSample::GLInitialData()
 {
 	if (IsValidModel())
 		GLDelete();
+
+	m_bOnlyOne = FALSE;
 }
 
 void CWBFCModelSample::GLCreateVBO()
@@ -146,14 +148,18 @@ void CWBFCModelSample::GLAttachData()
 	glUniform4f(ourColor, 0.8f, 0.8f, 0.8f, 1.f);
 
 	auto ourTexture1 = glGetUniformLocation(nProg, "ourTexture1");
-	glUniform1i(ourTexture1, 0);
+	if(!m_bOnlyOne) glUniform1i(ourTexture1, 0);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, ourTexture1);
 
 	auto ourTexture2 = glGetUniformLocation(nProg, "ourTexture2");
-	glUniform1i(ourTexture2, 1);
+	if (!m_bOnlyOne) glUniform1i(ourTexture1, 1); // 최초 한번만 하면 되는 함수
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, ourTexture2);
 
 	auto ratio = glGetUniformLocation(nProg, "fRatio");
 	glUniform1f(ratio, pOption->fRatio);
-
+	
 	///////////////////////////////////////////////////////////////////////////
 	// View 
 
@@ -170,7 +176,7 @@ void CWBFCModelSample::GLAttachData()
 
 	glm::mat4 proj(1.f);
 	glm::ortho(0.f, 800.f, 0.f, 600.f, 0.1f, 100.f); // left, right, bottom, top, near, far
-	proj = glm::perspective(glm::radians(45.f), (float)aViewPort[2] / (float)aViewPort[3], 0.1f, 100.f);
+	proj = glm::perspective(glm::radians(45.f), (float)(aViewPort[2]-aViewPort[0]) / (float)(aViewPort[3]-aViewPort[1]), 0.1f, 100.f);
 
 	auto modelLoc = glGetUniformLocation(nProg, "model");
 	glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -180,6 +186,8 @@ void CWBFCModelSample::GLAttachData()
 
 	auto projLoc = glGetUniformLocation(nProg, "projection");
 	glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj));
+
+	if (!m_bOnlyOne) m_bOnlyOne = TRUE;
 }
 
 void CWBFCModelSample::GLBind()

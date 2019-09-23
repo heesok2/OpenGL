@@ -27,6 +27,7 @@ public:
 	
 protected:
 	CWBFGPSOption m_Option;
+	BOOL m_bOnlyOne;
 
 	UINT m_uiVAO; // Vertex Attribute Object
 	UINT m_uiVBO; // Vertex Buffer Object
