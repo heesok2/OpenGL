@@ -317,7 +317,14 @@ void CGLView::OnMouseMove(UINT nFlags, CPoint point)
 {
 	if (nFlags & MK_LBUTTON)
 	{
+		auto pWnd = GetCapture();
+		if (pWnd == this)
+		{
+			if (m_Camera != nullptr)
+				m_Camera->OnMouseMove(point);
 
+			Invalidate();
+		}
 	}
 
 	CWBFViewBase::OnMouseMove(nFlags, point);
@@ -326,9 +333,10 @@ void CGLView::OnMouseMove(UINT nFlags, CPoint point)
 
 void CGLView::OnLButtonDown(UINT nFlags, CPoint point)
 {
-	auto pWnd = SetCapture();
+	auto pWnd = GetCapture();
 	if (pWnd == nullptr)
 	{
+		auto pCapture = SetCapture();
 		if (m_Camera != nullptr)
 			m_Camera->SetMousePosition(point);
 	}
@@ -339,9 +347,10 @@ void CGLView::OnLButtonDown(UINT nFlags, CPoint point)
 
 void CGLView::OnLButtonUp(UINT nFlags, CPoint point)
 {
-	if (!ReleaseCapture())
+	auto pWnd = GetCapture();
+	if (pWnd == this)
 	{
-		// Unknown
+		ReleaseCapture();
 	}
 
 	CWBFViewBase::OnLButtonUp(nFlags, point);

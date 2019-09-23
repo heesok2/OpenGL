@@ -4,7 +4,7 @@
 // Default camera values
 const float g_YAW = -90.0f;
 const float g_PITCH = 0.0f;
-const float g_SPEED = 2.5f;
+const float g_SPEED = 1.5f;
 const float g_SENSITIVITY = 0.1f;
 const float g_ZOOM = 45.0f;
 
@@ -73,17 +73,35 @@ void CWBFCamera::OnKeyboardDown(E_CAMERA_MOVEMENT eMovement, float deltaTime)
 	}
 }
 
-void CWBFCamera::OnMouseMove(float xoffset, float yoffset, BOOL bConstrainPitch)
+void CWBFCamera::OnMouseMove(CPoint point, BOOL bConstrainPitch)
 {
+	auto MouseOffset = m_MousePoint - point;
+	auto fOffsetX = (float)MouseOffset.cx * m_fMouseSensitivity;
+	auto fOffsetY = (float)MouseOffset.cy * m_fMouseSensitivity;
+
+	m_MousePoint = point;
+
+	m_fYaw += fOffsetX;
+	m_fPitch += -fOffsetY;
+
+	if (bConstrainPitch)
+	{
+		if (m_fPitch > 89.f)
+			m_fPitch = 89.f;
+		if (m_fPitch < -89.f)
+			m_fPitch = -89.f;
+	}
+
+	UpdateCameraVectors();
 }
 
 void CWBFCamera::UpdateCameraVectors()
 {
-	glm::vec3 vFront;
-	//vFront.x = cos(glm::radians(m_fYaw)) * cos(glm::radians(m_fPitch));
-	//vFront.y = sin(glm::radians(m_fPitch));
-	//vFront.z = sin(glm::radians(m_fYaw)) * sin(glm::radians(m_fPitch));
-	//m_vFront = glm::normalize(vFront);
+	glm::vec3 front;
+	front.x = cos(glm::radians(m_fYaw)) * cos(glm::radians(m_fPitch));
+	front.y = sin(glm::radians(m_fPitch));
+	front.z = sin(glm::radians(m_fYaw)) * cos(glm::radians(m_fPitch));
+	m_vFront = glm::normalize(front);
 
 	m_vRight = glm::normalize(glm::cross(m_vFront, m_vWorldUp));
 	m_vUp = glm::normalize(glm::cross(m_vRight, m_vFront));
