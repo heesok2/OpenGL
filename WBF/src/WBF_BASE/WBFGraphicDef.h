@@ -13,6 +13,7 @@ namespace gps
 	{
 		E_GPS_UNKNOWN = -1,
 		E_GPS_SAMPLE = 0,
+		E_GPS_LIGHT,
 
 		E_GPS_NUM
 	};

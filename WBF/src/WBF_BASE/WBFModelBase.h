@@ -49,5 +49,5 @@ virtual UINT GetType();
 
 #define IMPLEMENT_MODEL(class_name, type)\
 IMPLEMENT_DYNCREATE(class_name, CWBFModelBase);\
-BOOL bRegModel = CWBFModelFactory::GetInstance().RegisterObject(RUNTIME_CLASS(class_name), type);\
+BOOL bReg##class_name = CWBFModelFactory::GetInstance().RegisterObject(RUNTIME_CLASS(class_name), type);\
 UINT class_name::GetType() { return type; }

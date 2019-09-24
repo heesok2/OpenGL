@@ -38,5 +38,5 @@ virtual UINT GetType();
 
 #define IMPLEMENT_RENDERER(class_name, type)\
 IMPLEMENT_DYNCREATE(class_name, CWBFRndrBase);\
-BOOL bRegRndr = CWBFRndrFactory::GetInstance().RegisterObject(RUNTIME_CLASS(class_name), type);\
+BOOL bReg##class_name = CWBFRndrFactory::GetInstance().RegisterObject(RUNTIME_CLASS(class_name), type);\
 UINT class_name::GetType() { return type; }

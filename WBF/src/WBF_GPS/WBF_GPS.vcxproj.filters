@@ -68,6 +68,10 @@
     <None Include="res\GLSL\Sample_vert.glsl">
       <Filter>_resource file_\GLSL</Filter>
     </None>
+    <None Include="res\GLSL\Light_vert.glsl">
+      <Filter>_resource file_\GLSL</Filter>
+    </None>
+    <None Include="res\GLSL\Light_frg.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WBF_GPS.h">
