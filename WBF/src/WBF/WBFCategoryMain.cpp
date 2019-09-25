@@ -18,7 +18,7 @@ CWBFCategoryMain::~CWBFCategoryMain()
 {
 }
 
-void CWBFCategoryMain::OnInitialUpdate(CMFCRibbonBar * pRibbonBar)
+void CWBFCategoryMain::OnInitial(CMFCRibbonBar * pRibbonBar)
 {
 	ASSERT(pRibbonBar);
 

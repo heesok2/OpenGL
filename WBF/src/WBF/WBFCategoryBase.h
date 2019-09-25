@@ -6,6 +6,6 @@ public:
 	virtual ~CWBFCategoryBase();
 
 public:
-	virtual void OnInitialUpdate(CMFCRibbonBar* pRibbonBar) = 0;
+	virtual void OnInitial(CMFCRibbonBar* pRibbonBar) = 0;
 };
 

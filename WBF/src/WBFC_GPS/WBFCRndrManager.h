@@ -11,7 +11,7 @@ public:
 	virtual ~CWBFCRndrManager();
 
 public:
-	virtual void OnInitialUpdate();
+	virtual void OnInitial();
 	virtual void OnDestroy();
 	virtual void GLDrawScene();
 

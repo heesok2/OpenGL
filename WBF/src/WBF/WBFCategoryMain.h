@@ -9,7 +9,7 @@ public:
 	virtual ~CWBFCategoryMain();
 
 public:
-	virtual void OnInitialUpdate(CMFCRibbonBar* pRibbonBar);
+	virtual void OnInitial(CMFCRibbonBar* pRibbonBar);
 
 protected:
 	CMFCRibbonBar* m_pRibbonBar;

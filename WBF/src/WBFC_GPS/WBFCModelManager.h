@@ -11,13 +11,12 @@ public:
 	virtual ~CWBFCModelManager();
 
 public:
-	virtual void OnInitialUpdate();
+	virtual void OnInitial();
 	virtual void OnDestroy();
 	virtual void OnUpdateAll();
 	virtual void OnUpdateOnly(UINT uiType);
 
 	virtual void GLInitialData();
-
 };
 
 #include "HeaderPost.h"

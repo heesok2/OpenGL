@@ -23,7 +23,7 @@ CWBFCRndrManager::~CWBFCRndrManager()
 {
 }
 
-void CWBFCRndrManager::OnInitialUpdate()
+void CWBFCRndrManager::OnInitial()
 {
 	auto pDocBase = (CWBFDocBase*)m_pView->GetDocument();
 	auto pModelMgr = pDocBase->GetModelManager();

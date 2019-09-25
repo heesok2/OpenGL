@@ -50,7 +50,7 @@ public:
 	virtual CWBFModelBaseManager* GetModelManager() { return (CWBFModelBaseManager*)m_pModelMgr; }
 
 protected:
-	void OnInitialUpdate();
+	void OnInitial();
 	void OnDestroy();
 
 protected:

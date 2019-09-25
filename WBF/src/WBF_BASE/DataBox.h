@@ -11,7 +11,7 @@ public:
 
 public:
 	virtual const DKEY GetKey() const override { return dbKey; }
-	virtual const DTYPE GetType() const override { return D_TYPE_BOX; }
+	virtual const DTYPE GetType() const override { return E_TYPE_BOX; }
 
 public:
 	DKEY dbKey;

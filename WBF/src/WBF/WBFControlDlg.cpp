@@ -155,15 +155,20 @@ BOOL CWBFControlDlg::Execute()
 	if (!Dlg2Data()) return TRUE;
 
 	auto pPackage = m_pMyDoc->GetDataPackage();
-	auto pModule = (CModuleBox*)pPackage->GetModule(D_TYPE_BOX);
+	auto pModule = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
 
 	CDataBox Data;
 	Data.dbKey = pModule->GetNewKey();
 
+	pPackage->Start();
+
 	if (!pModule->Insert(Data))
 	{
 		ASSERT(g_warning);
+		return pPackage->Rollback();
 	}
+
+	pPackage->Commit();
 
 	return TRUE;
 }

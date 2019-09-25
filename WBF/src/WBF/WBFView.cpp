@@ -132,7 +132,7 @@ void CWBFView::OnInitialUpdate()
 
 	BeginwglCurrent();
 	{
-		m_pRndrMgr->OnInitialUpdate();
+		m_pRndrMgr->OnInitial();
 	}
 	EndwglCurrent();
 }

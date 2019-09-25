@@ -21,8 +21,8 @@ CWBFCategoryManager::~CWBFCategoryManager()
 	}
 }
 
-void CWBFCategoryManager::OnInitialUpdate(CMFCRibbonBar* pRibbonBar)
+void CWBFCategoryManager::OnInitial(CMFCRibbonBar* pRibbonBar)
 {
 	for (long indx = E_CATEGORY_TYPE::E_CAT_MAIN; indx < E_CATEGORY_TYPE::E_CAT_NUM; ++indx)
-		m_mCategory[indx]->OnInitialUpdate(pRibbonBar);
+		m_mCategory[indx]->OnInitial(pRibbonBar);
 }

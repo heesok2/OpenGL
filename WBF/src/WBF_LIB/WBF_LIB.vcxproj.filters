@@ -22,6 +22,9 @@
     <Filter Include="Include">
       <UniqueIdentifier>{4b9808de-251c-494f-9cf4-2166de768793}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Observer">
+      <UniqueIdentifier>{8e9fa143-6989-4040-a73e-4ec15a3b6e1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_LIB.cpp">
@@ -35,6 +38,12 @@
     </ClCompile>
     <ClCompile Include="WBFImage.cpp">
       <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFSubject.cpp">
+      <Filter>Observer</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFObserver.cpp">
+      <Filter>Observer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +93,15 @@
     </ClInclude>
     <ClInclude Include="AllDefine.h">
       <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFSubject.h">
+      <Filter>Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFObserver.h">
+      <Filter>Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFObserverDefine.h">
+      <Filter>Observer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

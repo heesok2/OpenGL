@@ -20,8 +20,10 @@ CWBFCModelManager::~CWBFCModelManager()
 {
 }
 
-void CWBFCModelManager::OnInitialUpdate()
+void CWBFCModelManager::OnInitial()
 {
+	CWBFModelBaseManager::OnInitial();
+
 	for (long indx = gps::E_GPS_SAMPLE; indx < gps::E_GPS_NUM; ++indx)
 	{
 		auto pObject = CWBFModelFactory::GetInstance().CreateObject(gps::E_GPS_SAMPLE);
@@ -40,6 +42,8 @@ void CWBFCModelManager::OnDestroy()
 	}
 
 	m_vObject.clear();
+	
+	CWBFModelBaseManager::OnDestroy();
 }
 
 void CWBFCModelManager::OnUpdateAll()

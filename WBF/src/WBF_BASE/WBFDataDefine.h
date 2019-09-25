@@ -8,11 +8,11 @@
 
 enum E_TYPE_DATA
 {
-	D_TYPE_UNKNOWN = 0,
-	D_TYPE_BOX, 
+	E_TYPE_UNKNOWN = 0,
+	E_TYPE_BOX, 
 	
 
-	D_TYPE_NUM
+	E_TYPE_NUM
 };
 
 #endif // !DATA_DEF

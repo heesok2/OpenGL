@@ -143,7 +143,7 @@ BOOL CWBFDoc::OnNewDocument()
 	if (!CWBFDocBase::OnNewDocument())
 		return FALSE;
 
-	OnInitialUpdate();
+	OnInitial();
 
 	return TRUE;
 }
@@ -153,7 +153,7 @@ BOOL CWBFDoc::OnOpenDocument(LPCTSTR lpszPathName)
 	if (!CWBFDocBase::OnOpenDocument(lpszPathName))
 		return FALSE;
 
-	OnInitialUpdate();
+	OnInitial();
 
 	return TRUE;
 }
@@ -165,13 +165,13 @@ void CWBFDoc::OnCloseDocument()
 	CWBFDocBase::OnCloseDocument();
 }
 
-void CWBFDoc::OnInitialUpdate()
+void CWBFDoc::OnInitial()
 {
 	m_pPackage = new CWBFPackageSystem();
 	m_pPackage->OnInitial();
 
 	m_pModelMgr = new CWBFCModelManager(this);
-	m_pModelMgr->OnInitialUpdate();
+	m_pModelMgr->OnInitial();
 }
 
 void CWBFDoc::OnDestroy()

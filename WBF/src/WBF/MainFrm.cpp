@@ -73,7 +73,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_wndRibbonBar.LoadFromResource(IDR_RIBBON);
 
 	m_pCategoryMgr = new CWBFCategoryManager;
-	m_pCategoryMgr->OnInitialUpdate(&m_wndRibbonBar);
+	m_pCategoryMgr->OnInitial(&m_wndRibbonBar);
 
 	if (!m_wndStatusBar.Create(this))
 	{

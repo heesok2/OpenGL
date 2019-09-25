@@ -13,7 +13,7 @@ public:
 	virtual ~CWBFRndrBaseManager();
 
 public:
-	virtual void OnInitialUpdate() = 0;
+	virtual void OnInitial() = 0;
 	virtual void OnDestroy() = 0;
 	virtual void GLDrawScene() = 0;
 

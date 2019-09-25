@@ -19,7 +19,7 @@ public:
 	virtual ~CWBFCategoryManager();
 
 public:
-	void OnInitialUpdate(CMFCRibbonBar* pRibbonBar);
+	void OnInitial(CMFCRibbonBar* pRibbonBar);
 
 protected:
 	std::map<UINT, CWBFCategoryBase*> m_mCategory;

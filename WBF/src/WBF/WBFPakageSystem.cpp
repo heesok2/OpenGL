@@ -25,7 +25,7 @@ void CWBFPackageSystem::OnInitial()
 		m_mModule[dbType] = datamodule;
 	};
 
-	lambda_module(D_TYPE_BOX, new CModuleBox(D_TYPE_BOX));
+	lambda_module(E_TYPE_BOX, new CModuleBox(E_TYPE_BOX));
 }
 
 void CWBFPackageSystem::OnDestroy()
