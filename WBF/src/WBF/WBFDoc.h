@@ -17,6 +17,7 @@
 
 #include "..\WBF_BASE\WBFDocBase.h"
 
+class CWBFPackageSystem;
 class CWBFCModelManager;
 class CWBFDoc : public CWBFDocBase
 {
@@ -44,6 +45,8 @@ public:
 	virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
 	virtual void OnCloseDocument();
 
+public:
+	virtual CWBFPackageData* GetDataPackage() { return (CWBFPackageData*)m_pPackage; }
 	virtual CWBFModelBaseManager* GetModelManager() { return (CWBFModelBaseManager*)m_pModelMgr; }
 
 protected:
@@ -54,6 +57,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 protected:
+	CWBFPackageSystem* m_pPackage;
 	CWBFCModelManager* m_pModelMgr;
 
 };

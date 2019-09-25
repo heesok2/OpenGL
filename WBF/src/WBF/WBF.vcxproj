@@ -232,6 +232,7 @@
     <ClInclude Include="WBFCategoryMain.h" />
     <ClInclude Include="WBFCategoryManager.h" />
     <ClInclude Include="WBFControlDlg.h" />
+    <ClInclude Include="WBFPakageSystem.h" />
     <ClInclude Include="WBFDoc.h" />
     <ClInclude Include="WBFView.h" />
   </ItemGroup>
@@ -250,6 +251,7 @@
     <ClCompile Include="WBFCategoryMain.cpp" />
     <ClCompile Include="WBFCategoryManager.cpp" />
     <ClCompile Include="WBFControlDlg.cpp" />
+    <ClCompile Include="WBFPakageSystem.cpp" />
     <ClCompile Include="WBFDoc.cpp" />
     <ClCompile Include="WBFView.cpp" />
   </ItemGroup>

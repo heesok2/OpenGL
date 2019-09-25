@@ -214,11 +214,11 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="WBFData.cpp" />
-    <ClCompile Include="WBFDataModule.cpp" />
-    <ClCompile Include="WBFDataPackage.cpp" />
-    <ClCompile Include="WBFDBox.cpp" />
+    <ClCompile Include="WBFModuleBase.cpp" />
+    <ClCompile Include="WBFPackageData.cpp" />
+    <ClCompile Include="DataBox.cpp" />
     <ClCompile Include="WBFDialog.cpp" />
-    <ClCompile Include="WBFDModuleBox.cpp" />
+    <ClCompile Include="ModuleBox.cpp" />
     <ClCompile Include="WBFDocBase.cpp" />
     <ClCompile Include="WBFModelBase.cpp" />
     <ClCompile Include="WBFModelBaseManager.cpp" />
@@ -243,11 +243,12 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="WBFData.h" />
     <ClInclude Include="WBFDataDefine.h" />
-    <ClInclude Include="WBFDataModule.h" />
-    <ClInclude Include="WBFDataPackage.h" />
-    <ClInclude Include="WBFDBox.h" />
+    <ClInclude Include="WBFModuleData.hpp" />
+    <ClInclude Include="WBFModuleBase.h" />
+    <ClInclude Include="WBFPackageData.h" />
+    <ClInclude Include="DataBox.h" />
     <ClInclude Include="WBFDialog.h" />
-    <ClInclude Include="WBFDModuleBox.h" />
+    <ClInclude Include="ModuleBox.h" />
     <ClInclude Include="WBFDocBase.h" />
     <ClInclude Include="WBFGraphicDef.h" />
     <ClInclude Include="WBFModelBase.h" />

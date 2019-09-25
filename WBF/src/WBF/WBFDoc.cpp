@@ -20,6 +20,7 @@
 #endif
 
 #include "WBFDoc.h"
+#include "WBFPakageSystem.h"
 
 #include <propkey.h>
 
@@ -44,7 +45,7 @@ END_MESSAGE_MAP()
 // CWBFDoc 생성/소멸
 
 CWBFDoc::CWBFDoc() noexcept
-	: m_pModelMgr(nullptr)
+	: m_pPackage(nullptr), m_pModelMgr(nullptr)
 {
 	// TODO: 여기에 일회성 생성 코드를 추가합니다.
 
@@ -166,12 +167,20 @@ void CWBFDoc::OnCloseDocument()
 
 void CWBFDoc::OnInitialUpdate()
 {
+	m_pPackage = new CWBFPackageSystem();
+	m_pPackage->OnInitial();
+
 	m_pModelMgr = new CWBFCModelManager(this);
 	m_pModelMgr->OnInitialUpdate();
 }
 
 void CWBFDoc::OnDestroy()
 {
+	if (m_pPackage != nullptr)
+		m_pPackage->OnDestroy();
+
+	_SAFE_DELETE(m_pPackage);
+
 	if (m_pModelMgr != nullptr)
 	{
 		m_pModelMgr->OnDestroy();

@@ -4,6 +4,9 @@
 #include "WBFDoc.h"
 #include "WBFView.h"
 
+#include "..\WBF_BASE\WBFPackageData.h"
+#include "..\WBF_BASE\ModuleBox.h"
+
 #include "..\WBF_BASE\WBFGraphicDef.h"
 #include "..\WBF_BASE\WBFModelBaseManager.h"
 #include "..\WBF_BASE\WBFModelBase.h"
@@ -63,7 +66,7 @@ BOOL CWBFControlDlg::PreTranslateMessage(MSG* pMsg)
 
 void CWBFControlDlg::OnOK()
 {
-	if (!Dlg2Data())
+	if (!Execute())
 		return;
 
 	m_pMyDoc->UpdateAllViews(nullptr);
@@ -144,6 +147,24 @@ BOOL CWBFControlDlg::Dlg2Data()
 
 BOOL CWBFControlDlg::CheckData()
 {
+	return TRUE;
+}
+
+BOOL CWBFControlDlg::Execute()
+{
+	if (!Dlg2Data()) return TRUE;
+
+	auto pPackage = m_pMyDoc->GetDataPackage();
+	auto pModule = (CModuleBox*)pPackage->GetModule(D_TYPE_BOX);
+
+	CDataBox Data;
+	Data.dbKey = pModule->GetNewKey();
+
+	if (!pModule->Insert(Data))
+	{
+		ASSERT(g_warning);
+	}
+
 	return TRUE;
 }
 

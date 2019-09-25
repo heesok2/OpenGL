@@ -26,6 +26,7 @@ private:
 	void Data2Dlg();
 	BOOL Dlg2Data();
 	BOOL CheckData();
+	BOOL Execute();
 
 private:
 	afx_msg void OnDestroy();

@@ -43,9 +43,6 @@
     <Filter Include="DataBase\Interface">
       <UniqueIdentifier>{8d480a1a-a03e-4470-bb6e-2f5eb8a01338}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DataBase\Light">
-      <UniqueIdentifier>{3b4116db-944d-4172-8baf-cf9fbe0022bd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="DataBase\Box %28OpenGL Sample Model%29">
       <UniqueIdentifier>{c6f4b5ff-d1fe-436b-b754-9a710afe1331}</UniqueIdentifier>
     </Filter>
@@ -93,16 +90,16 @@
     <ClCompile Include="WBFData.cpp">
       <Filter>DataBase\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="WBFDataModule.cpp">
+    <ClCompile Include="WBFModuleBase.cpp">
       <Filter>DataBase\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="WBFDataPackage.cpp">
+    <ClCompile Include="WBFPackageData.cpp">
       <Filter>DataBase\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="WBFDBox.cpp">
+    <ClCompile Include="DataBox.cpp">
       <Filter>DataBase\Box %28OpenGL Sample Model%29</Filter>
     </ClCompile>
-    <ClCompile Include="WBFDModuleBox.cpp">
+    <ClCompile Include="ModuleBox.cpp">
       <Filter>DataBase\Box %28OpenGL Sample Model%29</Filter>
     </ClCompile>
   </ItemGroup>
@@ -178,16 +175,19 @@
     <ClInclude Include="WBFData.h">
       <Filter>DataBase\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="WBFDataModule.h">
+    <ClInclude Include="WBFModuleBase.h">
       <Filter>DataBase\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="WBFDataPackage.h">
+    <ClInclude Include="WBFPackageData.h">
       <Filter>DataBase\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="WBFDBox.h">
+    <ClInclude Include="WBFModuleData.hpp">
+      <Filter>DataBase\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBox.h">
       <Filter>DataBase\Box %28OpenGL Sample Model%29</Filter>
     </ClInclude>
-    <ClInclude Include="WBFDModuleBox.h">
+    <ClInclude Include="ModuleBox.h">
       <Filter>DataBase\Box %28OpenGL Sample Model%29</Filter>
     </ClInclude>
   </ItemGroup>
