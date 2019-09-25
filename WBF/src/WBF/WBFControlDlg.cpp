@@ -154,7 +154,7 @@ BOOL CWBFControlDlg::Execute()
 {
 	if (!Dlg2Data()) return TRUE;
 
-	auto pPackage = m_pMyDoc->GetDataPackage();
+	auto pPackage = m_pMyDoc->GetPackage();
 	auto pModule = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
 
 	CDataBox Data;

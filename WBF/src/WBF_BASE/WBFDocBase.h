@@ -14,7 +14,7 @@ public:
 public:
 	virtual CWBFViewBase* GetActiveView();
 
-	virtual CWBFPackageData* GetDataPackage() { ASSERT(g_warning); return nullptr; }
+	virtual CWBFPackageData* GetPackage() { ASSERT(g_warning); return nullptr; }
 	virtual CWBFModelBaseManager* GetModelManager() { ASSERT(g_warning); return nullptr; }
 
 };

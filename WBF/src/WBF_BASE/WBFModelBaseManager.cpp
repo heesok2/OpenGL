@@ -28,12 +28,12 @@ void CWBFModelBaseManager::UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lPar
 
 void CWBFModelBaseManager::OnInitial()
 {
-	m_pMyDoc->GetDataPackage()->Attached(this);
+	m_pMyDoc->GetPackage()->Attached(this);
 }
 
 void CWBFModelBaseManager::OnDestroy()
 {
-	m_pMyDoc->GetDataPackage()->Dettached(this);
+	m_pMyDoc->GetPackage()->Dettached(this);
 }
 
 CWBFModelBase * CWBFModelBaseManager::GetModel(UINT uiType)

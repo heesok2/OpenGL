@@ -46,7 +46,7 @@ public:
 	virtual void OnCloseDocument();
 
 public:
-	virtual CWBFPackageData* GetDataPackage() { return (CWBFPackageData*)m_pPackage; }
+	virtual CWBFPackageData* GetPackage() { return (CWBFPackageData*)m_pPackage; }
 	virtual CWBFModelBaseManager* GetModelManager() { return (CWBFModelBaseManager*)m_pModelMgr; }
 
 protected:
