@@ -16,23 +16,38 @@
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{56fd0cfd-a2ed-4456-9fb0-652694eb5306}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Base">
+    <Filter Include="Option">
+      <UniqueIdentifier>{0737fed2-541a-4a45-ac88-181fe4bb899e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
       <UniqueIdentifier>{da11dfd0-e1b5-42e7-b5dd-aa834dbd7c6e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Dialog">
+    <Filter Include="UI">
+      <UniqueIdentifier>{c275e4a4-498e-48a8-9067-5e70f909895f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Dialog">
       <UniqueIdentifier>{ebbbc3f9-7c2d-43db-b75d-32d1b88d1180}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic">
+    <Filter Include="View">
       <UniqueIdentifier>{7fed498d-db6d-4ba9-b6ff-db21ccb9d9e0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic\Model">
+    <Filter Include="View\Model">
       <UniqueIdentifier>{29075dae-cf4a-4804-946c-d124cf2f2c93}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic\Renderer">
+    <Filter Include="View\Renderer">
       <UniqueIdentifier>{69012cf2-ed91-4075-96a3-bf2d0afd94b4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic\Option">
-      <UniqueIdentifier>{2f06502c-3bfa-486e-8243-26a2a187aca4}</UniqueIdentifier>
+    <Filter Include="DataBase">
+      <UniqueIdentifier>{a8091b9d-612b-4970-8912-b8221043055c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataBase\Interface">
+      <UniqueIdentifier>{8d480a1a-a03e-4470-bb6e-2f5eb8a01338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataBase\Light">
+      <UniqueIdentifier>{3b4116db-944d-4172-8baf-cf9fbe0022bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataBase\Box %28OpenGL Sample Model%29">
+      <UniqueIdentifier>{c6f4b5ff-d1fe-436b-b754-9a710afe1331}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -43,34 +58,52 @@
       <Filter>_common_</Filter>
     </ClCompile>
     <ClCompile Include="WBFViewBase.cpp">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="WBFDocBase.cpp">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="WBFDialog.cpp">
-      <Filter>Dialog</Filter>
+      <Filter>UI\Dialog</Filter>
     </ClCompile>
     <ClCompile Include="WBFRndrBase.cpp">
-      <Filter>Graphic\Renderer</Filter>
+      <Filter>View\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="WBFRndrBaseManager.cpp">
-      <Filter>Graphic\Renderer</Filter>
+      <Filter>View\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="WBFRndrFactory.cpp">
-      <Filter>Graphic\Renderer</Filter>
+      <Filter>View\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="WBFModelBase.cpp">
-      <Filter>Graphic\Model</Filter>
+      <Filter>View\Model</Filter>
     </ClCompile>
     <ClCompile Include="WBFModelBaseManager.cpp">
-      <Filter>Graphic\Model</Filter>
+      <Filter>View\Model</Filter>
     </ClCompile>
     <ClCompile Include="WBFModelFactory.cpp">
-      <Filter>Graphic\Model</Filter>
+      <Filter>View\Model</Filter>
     </ClCompile>
     <ClCompile Include="WBFOption.cpp">
-      <Filter>Graphic\Option</Filter>
+      <Filter>Option</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFModelOption.cpp">
+      <Filter>Option</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFData.cpp">
+      <Filter>DataBase\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFDataModule.cpp">
+      <Filter>DataBase\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFDataPackage.cpp">
+      <Filter>DataBase\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFDBox.cpp">
+      <Filter>DataBase\Box %28OpenGL Sample Model%29</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFDModuleBox.cpp">
+      <Filter>DataBase\Box %28OpenGL Sample Model%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,37 +137,58 @@
       <Filter>_common_\Linker</Filter>
     </ClInclude>
     <ClInclude Include="WBFViewBase.h">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="WBFDocBase.h">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="WBFDialog.h">
-      <Filter>Dialog</Filter>
+      <Filter>UI\Dialog</Filter>
     </ClInclude>
     <ClInclude Include="WBFRndrBase.h">
-      <Filter>Graphic\Renderer</Filter>
+      <Filter>View\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="WBFRndrBaseManager.h">
-      <Filter>Graphic\Renderer</Filter>
+      <Filter>View\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="WBFRndrFactory.h">
-      <Filter>Graphic\Renderer</Filter>
+      <Filter>View\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="WBFModelBaseManager.h">
-      <Filter>Graphic\Model</Filter>
+      <Filter>View\Model</Filter>
     </ClInclude>
     <ClInclude Include="WBFModelBase.h">
-      <Filter>Graphic\Model</Filter>
+      <Filter>View\Model</Filter>
     </ClInclude>
     <ClInclude Include="WBFGraphicDef.h">
-      <Filter>Graphic</Filter>
+      <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="WBFModelFactory.h">
-      <Filter>Graphic\Model</Filter>
+      <Filter>View\Model</Filter>
     </ClInclude>
     <ClInclude Include="WBFOption.h">
-      <Filter>Graphic\Option</Filter>
+      <Filter>Option</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFModelOption.h">
+      <Filter>Option</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFDataDefine.h">
+      <Filter>DataBase\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFData.h">
+      <Filter>DataBase\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFDataModule.h">
+      <Filter>DataBase\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFDataPackage.h">
+      <Filter>DataBase\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFDBox.h">
+      <Filter>DataBase\Box %28OpenGL Sample Model%29</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFDModuleBox.h">
+      <Filter>DataBase\Box %28OpenGL Sample Model%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

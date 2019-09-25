@@ -8,10 +8,6 @@
     <Filter Include="_resource file_">
       <UniqueIdentifier>{0f09a46b-d1e2-493b-a4ca-4c29c7de9e88}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="_common_">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
@@ -28,6 +24,13 @@
     <Filter Include="Dialog">
       <UniqueIdentifier>{972be108-7f14-471d-828f-6892b29839ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Option">
+      <UniqueIdentifier>{31566e16-7781-4bab-b6f5-6dea42236d9e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -37,22 +40,22 @@
       <Filter>_common_</Filter>
     </ClInclude>
     <ClInclude Include="ChildFrm.h">
-      <Filter>Main</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="MainFrm.h">
-      <Filter>Main</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>_resource_</Filter>
     </ClInclude>
     <ClInclude Include="WBFDoc.h">
-      <Filter>Main</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="WBFView.h">
-      <Filter>Main</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="WBF.h">
-      <Filter>Main</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="HeaderPost.h">
       <Filter>_common_\Linker</Filter>
@@ -78,19 +81,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF.cpp">
-      <Filter>Main</Filter>
+      <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="MainFrm.cpp">
-      <Filter>Main</Filter>
+      <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="ChildFrm.cpp">
-      <Filter>Main</Filter>
+      <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="WBFDoc.cpp">
-      <Filter>Main</Filter>
+      <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="WBFView.cpp">
-      <Filter>Main</Filter>
+      <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>_common_</Filter>

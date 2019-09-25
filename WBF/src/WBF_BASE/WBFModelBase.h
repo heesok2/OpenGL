@@ -4,7 +4,11 @@
 #include "WBFModelFactory.h"
 #include "HeaderPre.h"
 
-class CWBFOption;
+namespace opt
+{
+	class IWBFOption;
+}
+
 class CWBFModelBaseManager;
 class __MY_EXT_CLASS__ CWBFModelBase : public CObject
 {
@@ -19,7 +23,7 @@ public: // Update Flag
 
 public:
 	virtual UINT GetType() { ASSERT(g_warning); return gps::E_GPS_UNKNOWN; }
-	virtual CWBFOption* GetOption() { ASSERT(g_warning); return nullptr; }
+	virtual opt::IWBFOption* GetOption() { ASSERT(g_warning); return nullptr; }
 
 	virtual BOOL IsValidModel() = 0;
 	virtual void GLInitialData() = 0;

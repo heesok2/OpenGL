@@ -1,11 +1,12 @@
 #include "stdafx.h"
 #include "WBFOption.h"
 
+using namespace opt;
 
-CWBFOption::CWBFOption()
+IWBFOption::IWBFOption()
 {
 }
 
-CWBFOption::~CWBFOption()
+IWBFOption::~IWBFOption()
 {
 }

@@ -14,7 +14,7 @@ public:
 	virtual ~CWBFCModelSample();
 
 public:
-	virtual CWBFOption* GetOption() { return &m_Option; }
+	virtual opt::IWBFOption* GetOption() { return &m_Option; }
 	virtual BOOL IsValidModel() { return m_uiVAO > 0; }
 
 	virtual void GLInitialData();

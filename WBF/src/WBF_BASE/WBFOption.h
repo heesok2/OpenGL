@@ -1,14 +1,18 @@
 #pragma once
 
 #include "HeaderPre.h"
-
-class __MY_EXT_CLASS__ CWBFOption
+namespace opt
 {
-public:
-	CWBFOption();
-	virtual ~CWBFOption();
+	class __MY_EXT_CLASS__ IWBFOption
+	{
+	public:
+		IWBFOption();
+		virtual ~IWBFOption();
 
-};
+	public:
+		// Unknown
 
+	};
+}
 #include "HeaderPost.h"
 
