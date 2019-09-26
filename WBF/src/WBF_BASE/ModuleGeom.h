@@ -8,7 +8,7 @@
 class __MY_EXT_CLASS__ CModuleGeom : public CWBFModuleData<CEntityGeom>
 {
 public:
-	CModuleGeom();
+	CModuleGeom(CWBFPackageData * pPackage);
 	virtual ~CModuleGeom();
 
 public:

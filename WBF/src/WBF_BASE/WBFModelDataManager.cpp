@@ -42,7 +42,7 @@ CWBFModelData * CWBFModelDataManager::GetModel(UINT uiType)
 			return pObject;
 	}
 
-	ASSERT(g_warning);
+	//ASSERT(g_warning);
 	return nullptr;
 }
 

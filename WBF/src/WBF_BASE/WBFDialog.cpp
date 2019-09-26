@@ -1,6 +1,12 @@
 #include "stdafx.h"
 #include "WBFDialog.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
 CWBFDialog::CWBFDialog(CWBFDocBase * pDoc, CWnd * pParent)
 	: CDialog(), m_pMyDoc(pDoc), m_bModeless(TRUE)
 {

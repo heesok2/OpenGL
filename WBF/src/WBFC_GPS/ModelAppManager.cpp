@@ -57,9 +57,9 @@ void CModelAppManager::OnInitial()
 
 void CModelAppManager::OnDestroy()
 {
-	CWBFModelDataManager::OnDestroy();
-
-	m_pMyDoc->GetPackage()->Dettached(this);
+	auto pPackage = m_pMyDoc->GetPackage();
+	if (pPackage)
+		pPackage->Dettached(this);
 
 	for (auto pObject : m_vObject)
 	{
@@ -67,6 +67,8 @@ void CModelAppManager::OnDestroy()
 	}
 
 	m_vObject.clear();
+
+	CWBFModelDataManager::OnDestroy();
 }
 
 void CModelAppManager::OnUpdateAll()

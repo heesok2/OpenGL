@@ -21,7 +21,7 @@ public:
 	virtual CWBFModuleBase* GetModule(DTYPE dbType) = 0;
 
 public:
-	virtual void Start();
+	virtual BOOL Start();
 	virtual BOOL Commit();
 	virtual BOOL Rollback();
 

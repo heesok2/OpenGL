@@ -8,7 +8,7 @@
 class __MY_EXT_CLASS__ CModuleVertex : public CWBFModuleData<CEntityVertex>
 {
 public:
-	CModuleVertex();
+	CModuleVertex(CWBFPackageData * pPackage);
 	virtual ~CModuleVertex();
 
 public:

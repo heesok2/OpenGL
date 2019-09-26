@@ -14,7 +14,8 @@ template <class TD>
 class __MY_EXT_CLASS__ CWBFModuleData : public CWBFModuleBase
 {
 public:
-	CWBFModuleData(DTYPE _dbType) : dbType(_dbType) {}
+	CWBFModuleData(CWBFPackageData * pPackage, DTYPE _dbType) 
+		: CWBFModuleBase(pPackage), dbType(_dbType) {}
 	virtual ~CWBFModuleData() {}
 
 public:

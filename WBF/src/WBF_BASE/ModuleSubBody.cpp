@@ -1,8 +1,14 @@
 #include "stdafx.h"
 #include "ModuleSubBody.h"
 
-CModuleSubBody::CModuleSubBody()
-	: CWBFModuleData<CEntitySubBody>(E_TYPE_SUBBODY)
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+CModuleSubBody::CModuleSubBody(CWBFPackageData * pPackage)
+	: CWBFModuleData<CEntitySubBody>(pPackage, E_TYPE_SUBBODY)
 {
 }
 

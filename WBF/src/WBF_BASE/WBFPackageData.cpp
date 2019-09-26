@@ -3,6 +3,12 @@
 
 #include "..\WBF_LIB\WBFObserverDefine.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
 CWBFPackageData::CWBFPackageData()
 {
 }
@@ -12,9 +18,9 @@ CWBFPackageData::~CWBFPackageData()
 {
 }
 
-void CWBFPackageData::Start()
+BOOL CWBFPackageData::Start()
 {
-
+	return TRUE;
 }
 
 BOOL CWBFPackageData::Commit()

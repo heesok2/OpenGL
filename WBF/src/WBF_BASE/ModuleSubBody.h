@@ -8,7 +8,7 @@
 class __MY_EXT_CLASS__ CModuleSubBody : public CWBFModuleData<CEntitySubBody>
 {
 public:
-	CModuleSubBody();
+	CModuleSubBody(CWBFPackageData * pPackage);
 	virtual ~CModuleSubBody();
 
 public:

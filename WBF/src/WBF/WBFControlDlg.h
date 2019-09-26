@@ -29,6 +29,7 @@ private:
 	BOOL Execute();
 
 private:
+	afx_msg void OnClickedUpdate();
 	afx_msg void OnDestroy();
 
 	DECLARE_MESSAGE_MAP();

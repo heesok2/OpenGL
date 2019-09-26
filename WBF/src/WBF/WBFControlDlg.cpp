@@ -38,6 +38,7 @@ void CWBFControlDlg::DoDataExchange(CDataExchange * pDX)
 }
 
 BEGIN_MESSAGE_MAP(CWBFControlDlg, CWBFDialog)
+	ON_BN_CLICKED(IDC_UPDATE_BTN, OnClickedUpdate)
 	ON_WM_DESTROY()
 END_MESSAGE_MAP()
 
@@ -66,11 +67,6 @@ BOOL CWBFControlDlg::PreTranslateMessage(MSG* pMsg)
 
 void CWBFControlDlg::OnOK()
 {
-	if (!Execute())
-		return;
-
-	m_pMyDoc->UpdateAllViews(nullptr);
-
 	//CWBFDialog::OnOK();
 }
 
@@ -92,16 +88,16 @@ void CWBFControlDlg::SetControl()
 		cobx.SetCurSel(0);
 	};
 
-	CString aTypeName[] = { _T("Sample") };
-	UINT aTypeData[] = { gps::E_GPS_SAMPLE };
+	CString aTypeName[] = {_T("Sample")};
+	UINT aTypeData[] = {gps::E_GPS_SAMPLE};
 	lambda_cobx(m_cobxType, sizeof(aTypeData) / sizeof(UINT), aTypeName, aTypeData);
 
-	CString aPolyFaceName[] = { _T("Front/Back"), _T("Front"), _T("Back") };
-	UINT aPolyFaceData[] = { GL_FRONT_AND_BACK , GL_FRONT, GL_BACK, };
+	CString aPolyFaceName[] = {_T("Front/Back"), _T("Front"), _T("Back")};
+	UINT aPolyFaceData[] = {GL_FRONT_AND_BACK , GL_FRONT, GL_BACK,};
 	lambda_cobx(m_cobxPolyFace, sizeof(aPolyFaceData) / sizeof(UINT), aPolyFaceName, aPolyFaceData);
 
-	CString aPolyModeName[] = { _T("Fill"), _T("Line") };
-	UINT aPolyModeData[] = { GL_FILL, GL_LINE };
+	CString aPolyModeName[] = {_T("Fill"), _T("Line")};
+	UINT aPolyModeData[] = {GL_FILL, GL_LINE};
 	lambda_cobx(m_cobxPolyMode, sizeof(aPolyModeData) / sizeof(UINT), aPolyModeName, aPolyModeData);
 
 	m_slidRatio.SetRange(0, 100);
@@ -147,6 +143,29 @@ BOOL CWBFControlDlg::Dlg2Data()
 
 BOOL CWBFControlDlg::CheckData()
 {
+	auto lambda_cobx = [](CComboBox& cobx)
+	{
+		auto item = cobx.GetCurSel();
+		return (UINT)cobx.GetItemData(item);
+	};
+
+	auto uiType = lambda_cobx(m_cobxType);
+	switch (uiType)
+	{
+	case gps::E_GPS_SAMPLE:
+		{
+
+		}
+		break;
+	default:
+		{
+			// Unknown
+			return FALSE;
+		}
+		break;
+	}
+
+
 	return TRUE;
 }
 
@@ -154,23 +173,45 @@ BOOL CWBFControlDlg::Execute()
 {
 	if (!Dlg2Data()) return TRUE;
 
-	auto pPackage = m_pMyDoc->GetPackage();
-	auto pModule = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
-
-	CEntityBox Data;
-	Data.dbKey = pModule->GetNewKey();
-
-	pPackage->Start();
-
-	if (!pModule->Insert(Data))
+	auto lambda_cobx = [](CComboBox& cobx)
 	{
-		ASSERT(g_warning);
-		return pPackage->Rollback();
+		auto item = cobx.GetCurSel();
+		return (UINT)cobx.GetItemData(item);
+	};
+
+
+	auto pPackage = m_pMyDoc->GetPackage();
+	if (!pPackage->Start()) return FALSE;
+
+	auto uiType = lambda_cobx(m_cobxType);
+	switch (uiType)
+	{
+	case gps::E_GPS_SAMPLE:
+		{
+			auto pModuleVertex = pPackage->GetModule(E_TYPE_VERTEX);
+			auto pModuleSubBody = pPackage->GetModule(E_TYPE_SUBBODY);
+			auto pModuleBody = pPackage->GetModule(E_TYPE_BODY);
+
+			pModuleVertex->SetDefaultData();
+			pModuleSubBody->SetDefaultData();
+			pModuleBody->SetDefaultData();
+		}
+		break;
+	default:
+		break;
 	}
 
-	pPackage->Commit();
+	return pPackage->Commit();
+}
 
-	return TRUE;
+void CWBFControlDlg::OnClickedUpdate()
+{
+	if (!Execute())
+	{
+		// Unknown
+	}
+
+	m_pMyDoc->UpdateAllViews(NULL);
 }
 
 void CWBFControlDlg::OnDestroy()

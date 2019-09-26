@@ -8,6 +8,12 @@
 
 #include "..\WBF_LIB\WBFObserverDefine.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
 CWBFVBOManager::CWBFVBOManager(CWBFDocBase* pDoc)
 	: m_pMyDoc(pDoc)
 {
@@ -24,12 +30,12 @@ void CWBFVBOManager::UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 
 void CWBFVBOManager::OnInitial()
 {
-	auto pPackage = m_pMyDoc->GetPackage();
-	pPackage->Attached(this);
+	//auto pPackage = m_pMyDoc->GetPackage();
+	//pPackage->Attached(this);
 }
 
 void CWBFVBOManager::OnDestroy()
 {
-	auto pPackage = m_pMyDoc->GetPackage();
-	pPackage->Dettached(this);
+	//auto pPackage = m_pMyDoc->GetPackage();
+	//pPackage->Dettached(this);
 }

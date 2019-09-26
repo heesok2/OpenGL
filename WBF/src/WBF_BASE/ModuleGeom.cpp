@@ -1,8 +1,14 @@
 #include "stdafx.h"
 #include "ModuleGeom.h"
 
-CModuleGeom::CModuleGeom()
-	: CWBFModuleData<CEntityGeom>(E_TYPE_GEOM)
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+CModuleGeom::CModuleGeom(CWBFPackageData * pPackage)
+	: CWBFModuleData<CEntityGeom>(pPackage, E_TYPE_GEOM)
 {
 }
 

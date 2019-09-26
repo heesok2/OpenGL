@@ -123,11 +123,13 @@ void CWBFView::OnInitialUpdate()
 	auto pDoc = static_cast<CWBFDoc*>(GetDocument());
 	if (pDoc == nullptr) return;
 
-	m_pModelMgr = new CModelAppManager(pDoc);
-	m_pRndrMgr = new CRndrAppManager(this);
-
 	BeginwglCurrent();
 	{
+		m_pModelMgr = new CModelAppManager(pDoc);
+		m_pModelMgr->OnInitial();
+
+
+		m_pRndrMgr = new CRndrAppManager(this);
 		m_pRndrMgr->OnInitial();
 	}
 	EndwglCurrent();

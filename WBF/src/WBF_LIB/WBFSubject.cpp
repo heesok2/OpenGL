@@ -2,6 +2,12 @@
 #include "WBFSubject.h"
 #include "WBFObserver.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
 CWBFSubject::CWBFSubject()
 {
 }
@@ -9,10 +15,12 @@ CWBFSubject::CWBFSubject()
 
 CWBFSubject::~CWBFSubject()
 {
+	Clear();
 }
 
 void CWBFSubject::Clear()
 {
+	m_vObserver.clear();
 }
 
 void CWBFSubject::Attached(CWBFObserver * obj)

@@ -1,6 +1,12 @@
 #include "stdafx.h"
 #include "WBFCamera.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
 // Default camera values
 const float g_YAW = -90.0f;
 const float g_PITCH = 0.0f;
