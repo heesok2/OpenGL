@@ -125,7 +125,7 @@ void CWBFView::OnInitialUpdate()
 
 	BeginwglCurrent();
 	{
-		m_pModelMgr = new CModelAppManager(pDoc);
+		m_pModelMgr = new CModelAppManager(this);
 		m_pModelMgr->OnInitial();
 
 

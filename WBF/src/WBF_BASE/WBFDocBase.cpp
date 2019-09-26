@@ -9,7 +9,6 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 CWBFDocBase::CWBFDocBase()
-	: m_pPackage(nullptr)
 {
 }
 

@@ -3,6 +3,8 @@
 #include "WBFModelData.h"
 #include "WBFVBOManager.h"
 
+#include "WBFViewBase.h"
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -10,11 +12,11 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFModelDataManager::CWBFModelDataManager(CWBFDocBase* pDoc)
-	: m_pMyDoc(pDoc), m_pVBOMgr(nullptr)
+CWBFModelDataManager::CWBFModelDataManager(CWBFViewBase* pView)
 {
+	m_pMyDoc = (CWBFDocBase*)pView->GetDocument();
+	m_pView = pView;
 }
-
 
 CWBFModelDataManager::~CWBFModelDataManager()
 {
@@ -22,16 +24,24 @@ CWBFModelDataManager::~CWBFModelDataManager()
 
 void CWBFModelDataManager::OnInitial()
 {
-	m_pVBOMgr = new CWBFVBOManager(m_pMyDoc);
-	m_pVBOMgr->OnInitial();
+	for (long indx = gps::E_GPS_SAMPLE; indx < gps::E_GPS_NUM; ++indx)
+	{
+		auto pObject = CWBFModelFactory::GetInstance().CreateObject(indx);
+		if (pObject == nullptr) continue;
+
+		pObject->SetHelper(this);
+		m_vObject.push_back(pObject);
+	}
 }
 
 void CWBFModelDataManager::OnDestroy()
 {
-	if (m_pVBOMgr != nullptr)
-		m_pVBOMgr->OnDestroy();
+	for (auto pObject : m_vObject)
+	{
+		_SAFE_DELETE(pObject);
+	}
 
-	_SAFE_DELETE(m_pVBOMgr);
+	m_vObject.clear();
 }
 
 CWBFModelData * CWBFModelDataManager::GetModel(UINT uiType)

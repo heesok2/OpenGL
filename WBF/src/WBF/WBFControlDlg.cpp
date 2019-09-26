@@ -165,7 +165,6 @@ BOOL CWBFControlDlg::CheckData()
 		break;
 	}
 
-
 	return TRUE;
 }
 

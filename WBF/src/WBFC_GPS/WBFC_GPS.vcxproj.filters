@@ -48,9 +48,6 @@
     <ClCompile Include="VBOGeom.cpp">
       <Filter>Graphic\VBO</Filter>
     </ClCompile>
-    <ClCompile Include="RndrLight.cpp">
-      <Filter>Graphic\Renderer</Filter>
-    </ClCompile>
     <ClCompile Include="RndrSample.cpp">
       <Filter>Graphic\Renderer</Filter>
     </ClCompile>
@@ -99,9 +96,6 @@
     </ClInclude>
     <ClInclude Include="VBOGeom.h">
       <Filter>Graphic\VBO</Filter>
-    </ClInclude>
-    <ClInclude Include="RndrLight.h">
-      <Filter>Graphic\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="RndrSample.h">
       <Filter>Graphic\Renderer</Filter>

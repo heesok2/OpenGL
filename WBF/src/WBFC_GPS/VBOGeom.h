@@ -4,7 +4,7 @@
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CVBOGeom : CWBFVBOData
+class __MY_EXT_CLASS__ CVBOGeom : public CWBFVBOData
 {
 public:
 	CVBOGeom();
@@ -12,7 +12,7 @@ public:
 
 public:
 	// CWBFDataVBO을(를) 통해 상속됨
-	virtual void ProcessData(CWBFDocBase * pDocBase) override;
+	virtual void ProcessData(CWBFDocBase * pDoc) override;
 
 };
 

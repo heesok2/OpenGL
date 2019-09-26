@@ -24,18 +24,37 @@ CWBFVBOManager::~CWBFVBOManager()
 {
 }
 
+void CWBFVBOManager::SetVBO(CWBFVBOData* pVBO)
+{
+	m_lstVBO.push_back(pVBO);
+}
+
 void CWBFVBOManager::UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 {
+	switch (uiMsg)
+	{
+	case E_UPDATE_DB_CHANGED:
+		{
+			for (auto pVBO : m_lstVBO)
+			{
+				pVBO->ProcessData(m_pMyDoc);
+			}
+		}
+		break;
+	default:
+		break;
+	}
 }
 
 void CWBFVBOManager::OnInitial()
 {
-	//auto pPackage = m_pMyDoc->GetPackage();
-	//pPackage->Attached(this);
+
 }
 
 void CWBFVBOManager::OnDestroy()
 {
-	//auto pPackage = m_pMyDoc->GetPackage();
-	//pPackage->Dettached(this);
+	for (auto pVBO : m_lstVBO)
+	{
+		_SAFE_DELETE(pVBO);
+	}
 }

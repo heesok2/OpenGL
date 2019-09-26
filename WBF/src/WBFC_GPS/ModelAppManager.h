@@ -9,12 +9,12 @@ class CWBFVBOManager;
 class __MY_EXT_CLASS__ CModelAppManager : public CWBFModelDataManager, public CWBFObserver
 {
 public:
-	CModelAppManager(CWBFDocBase* pDoc);
+	CModelAppManager(CWBFViewBase* pView);
 	virtual ~CModelAppManager();
 
 public:
-	// CWBFObserver을(를) 통해 상속됨
 	virtual void UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam) override;
+	virtual CWBFVBOManager* GetVBOManager() { return m_pVBOMgr; }
 
 public:
 	virtual void OnInitial();
@@ -24,6 +24,8 @@ public:
 
 	virtual void GLInitialData();
 
+protected:
+	CWBFVBOManager* m_pVBOMgr;
 
 };
 

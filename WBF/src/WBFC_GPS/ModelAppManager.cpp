@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "ModelAppManager.h"
+#include "VBOGeom.h"
 
 #include "..\WBF_LIB\WBFObserverDefine.h"
 #include "..\WBF_BASE\WBFModelFactory.h"
@@ -15,8 +16,8 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CModelAppManager::CModelAppManager(CWBFDocBase* pDoc)
-	: CWBFModelDataManager(pDoc)
+CModelAppManager::CModelAppManager(CWBFViewBase* pView)
+	: CWBFModelDataManager(pView), m_pVBOMgr(nullptr)
 {
 }
 
@@ -31,7 +32,9 @@ void CModelAppManager::UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 	{
 	case E_UPDATE_DB_CHANGED:
 		{
+			m_pVBOMgr->UpdateObserver(uiMsg, wParam, lParam);
 
+			OnUpdateAll();
 		}
 		break;
 	default:
@@ -43,30 +46,22 @@ void CModelAppManager::OnInitial()
 {
 	CWBFModelDataManager::OnInitial();
 
-	m_pMyDoc->GetPackage()->Attached(this);
-
-	for (long indx = gps::E_GPS_SAMPLE; indx < gps::E_GPS_NUM; ++indx)
-	{
-		auto pObject = CWBFModelFactory::GetInstance().CreateObject(gps::E_GPS_SAMPLE);
-		if (pObject == nullptr) continue;
-		
-		pObject->SetHelper(this);
-		m_vObject.push_back(pObject);
-	}
+	auto pPackage = m_pMyDoc->GetPackage();
+	if (pPackage) pPackage->Attached(this);
+	
+	m_pVBOMgr = new CWBFVBOManager(m_pMyDoc);
+	m_pVBOMgr->SetVBO(new CVBOGeom);
 }
 
 void CModelAppManager::OnDestroy()
 {
 	auto pPackage = m_pMyDoc->GetPackage();
-	if (pPackage)
-		pPackage->Dettached(this);
+	if (pPackage) pPackage->Dettached(this);
 
-	for (auto pObject : m_vObject)
-	{
-		_SAFE_DELETE(pObject);
-	}
+	if (m_pVBOMgr != nullptr)
+		m_pVBOMgr->OnDestroy();
 
-	m_vObject.clear();
+	_SAFE_DELETE(m_pVBOMgr);
 
 	CWBFModelDataManager::OnDestroy();
 }

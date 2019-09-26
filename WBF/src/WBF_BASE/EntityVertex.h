@@ -11,7 +11,9 @@ public:
 
 public:
 	virtual const DKEY GetKey() const override { return dbKey; }
-	virtual const DTYPE GetType() const override { return E_TYPE_VERTEX; }
+
+public:
+	void Init();
 
 public:
 	DKEY dbKey;

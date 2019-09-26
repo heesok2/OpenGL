@@ -38,10 +38,14 @@ public:
 	virtual void Dump(CDumpContext& dc) const;
 #endif
 
+public:
 	virtual void Serialize(CArchive& ar);
 	virtual BOOL OnNewDocument();
 	virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
 	virtual void OnCloseDocument();
+
+public:
+	virtual CWBFPackageData* GetPackage() { ASSERT(m_pPackage); return m_pPackage; }
 
 protected:
 	void OnInitial();
@@ -49,5 +53,8 @@ protected:
 
 protected:
 	DECLARE_MESSAGE_MAP()
+
+protected:
+	CWBFPackageData* m_pPackage;
 
 };

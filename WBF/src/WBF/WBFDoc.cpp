@@ -47,10 +47,12 @@ CWBFDoc::CWBFDoc() noexcept
 {
 	// TODO: 여기에 일회성 생성 코드를 추가합니다.
 
+	m_pPackage = new CWBFPackageSystem();
 }
 
 CWBFDoc::~CWBFDoc()
 {
+	_SAFE_DELETE(m_pPackage);
 }
 
 // CWBFDoc serialization
@@ -165,14 +167,10 @@ void CWBFDoc::OnCloseDocument()
 
 void CWBFDoc::OnInitial()
 {
-	m_pPackage = new CWBFPackageSystem();
 	m_pPackage->OnInitial();
 }
 
 void CWBFDoc::OnDestroy()
 {
-	if (m_pPackage != nullptr)
-		m_pPackage->OnDestroy();
-
-	_SAFE_DELETE(m_pPackage);
+	m_pPackage->OnDestroy();
 }

@@ -5,12 +5,13 @@
 #include "HeaderPre.h"
 
 class CWBFDocBase;
+class CWBFViewBase;
 class CWBFModelData;
 class CWBFVBOManager;
 class __MY_EXT_CLASS__ CWBFModelDataManager
 {
 public:
-	CWBFModelDataManager(CWBFDocBase* pDoc);
+	CWBFModelDataManager(CWBFViewBase* pView);
 	virtual ~CWBFModelDataManager();
 	
 public:
@@ -23,13 +24,13 @@ public:
 	virtual void GLInitialData() = 0;	
 	
 public:
+	virtual CWBFVBOManager* GetVBOManager() = 0;
 	CWBFDocBase* GetDoc() { return m_pMyDoc; }
 	CWBFModelData* GetModel(UINT uiType);
 
 protected:
 	CWBFDocBase* m_pMyDoc;
-	CWBFVBOManager* m_pVBOMgr;
-
+	CWBFViewBase* m_pView;
 	std::vector<CWBFModelData*> m_vObject;
 
 };

@@ -12,10 +12,7 @@ public:
 
 public:
 	virtual CWBFViewBase* GetActiveView();
-	virtual CWBFPackageData* GetPackage() { return m_pPackage; }
-
-public:
-	CWBFPackageData* m_pPackage;
+	virtual CWBFPackageData* GetPackage() = 0;
 
 };
 

@@ -11,7 +11,8 @@ public:
 
 public:
 	virtual const DKEY GetKey() const = 0;
-	virtual const DTYPE GetType() const = 0;
+	virtual const DTYPE GetType() const { ASSERT(g_warning); return E_TYPE_UNKNOWN; }
+	virtual const CString GetName() const { ASSERT(g_warning); return _T(""); }
 
 };
 

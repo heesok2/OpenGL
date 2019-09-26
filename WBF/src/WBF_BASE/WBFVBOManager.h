@@ -7,15 +7,15 @@
 
 class CWBFDocBase;
 class CWBFVBOData;
-class __MY_EXT_CLASS__ CWBFVBOManager : public CWBFObserver
+class __MY_EXT_CLASS__ CWBFVBOManager
 {
 public:
 	CWBFVBOManager(CWBFDocBase* pDoc);
 	virtual ~CWBFVBOManager();
 
 public:
-	// CWBFObserver을(를) 통해 상속됨
-	virtual void UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam) override;
+	void SetVBO(CWBFVBOData* pVBO);
+	void UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam);
 
 public:
 	void OnInitial();

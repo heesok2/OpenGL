@@ -216,7 +216,6 @@
     </ClCompile>
     <ClCompile Include="ModelAppManager.cpp" />
     <ClCompile Include="ModelSample.cpp" />
-    <ClCompile Include="RndrLight.cpp" />
     <ClCompile Include="RndrSample.cpp" />
     <ClCompile Include="WBFC_GPS.cpp" />
     <ClCompile Include="RndrAppManager.cpp" />
@@ -235,7 +234,6 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="ModelAppManager.h" />
     <ClInclude Include="ModelSample.h" />
-    <ClInclude Include="RndrLight.h" />
     <ClInclude Include="RndrSample.h" />
     <ClInclude Include="WBFC_GPS.h" />
     <ClInclude Include="WBFC_GPS_LINK.h" />

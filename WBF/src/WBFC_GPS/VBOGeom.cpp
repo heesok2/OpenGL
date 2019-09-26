@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "VBOGeom.h"
 
+#include "..\WBF_BASE\WBFDocBase.h"
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -17,7 +19,9 @@ CVBOGeom::~CVBOGeom()
 {
 }
 
-void CVBOGeom::ProcessData(CWBFDocBase * pDocBase)
+void CVBOGeom::ProcessData(CWBFDocBase * pDoc)
 {
+	auto pPackage = pDoc->GetPackage();
+
 
 }

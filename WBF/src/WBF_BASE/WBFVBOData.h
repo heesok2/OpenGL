@@ -10,7 +10,7 @@ public:
 	virtual ~CWBFVBOData();
 
 public:
-	virtual void ProcessData(CWBFDocBase* pDocBase) = 0;
+	virtual void ProcessData(CWBFDocBase* pDoc) = 0;
 
 };
 

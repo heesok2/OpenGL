@@ -11,7 +11,6 @@ CWBFEntityData::CWBFEntityData()
 {
 }
 
-
 CWBFEntityData::~CWBFEntityData()
 {
 }
