@@ -1,114 +1,148 @@
 # Auto detect text files and perform LF normalization
-*           text=auto
-# Standard to msysgit
-*.doc       diff=astextplain
-*.DOC       diff=astextplain
-*.docx      diff=astextplain
-*.DOCX      diff=astextplain
-*.dot       diff=astextplain
-*.DOT       diff=astextplain
-*.pdf       diff=astextplain
-*.PDF       diff=astextplain
-*.rtf       diff=astextplain
-*.RTF       diff=astextplain
-# Custom settings
-*.ini       diff=astextplain
-*.dll filter=lfs diff=lfs merge=lfs -text
-*.exe filter=lfs diff=lfs merge=lfs -text
-*.lib filter=lfs diff=lfs merge=lfs -text
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.bmp filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
-*.ico filter=lfs diff=lfs merge=lfs -text
-# Visual Studio
-#*.sln        text eol=crlf
-#*.csproj     text eol=crlf
-#*.vbproj     text eol=crlf
-#*.vcxproj    text eol=crlf
-#*.vcproj     text eol=crlf
-#*.dbproj     text eol=crlf
-#*.fsproj     text eol=crlf
-#*.lsproj     text eol=crlf
-#*.wixproj    text eol=crlf
-#*.modelproj  text eol=crlf
-#*.sqlproj    text eol=crlf
-#*.wmaproj    text eol=crlf
-#*.xproj      text eol=crlf
-#*.props      text eol=crlf
-#*.filters    text eol=crlf
-#*.vcxitems   text eol=crlf
-# Python Settings
-*.pyd filter=lfs diff=lfs merge=lfs -text
-*.pyl filter=lfs diff=lfs merge=lfs -text
-*.pyc filter=lfs diff=lfs merge=lfs -text
-*.pyo filter=lfs diff=lfs merge=lfs -text
-*.db filter=lfs diff=lfs merge=lfs -text
-*.p filter=lfs diff=lfs merge=lfs -text
+*                    text=auto
+ 
+# Standrad Microsoft Files
+# .dot
+*.[dD][oO][tT]       filter=lfs diff=lfs merge=lfs -text
+# .rtf 
+*.[rR][tT][fF]       filter=lfs diff=lfs merge=lfs -text
+# .doc
+*.[dD][oO][cC]       filter=lfs diff=lfs merge=lfs -text
+# .docx 
+*.[dD][oO][cC][xX]   filter=lfs diff=lfs merge=lfs -text
+# .pdf 
+*.[pP][dD][fF]       filter=lfs diff=lfs merge=lfs -text
+# .xls 
+*.[xX][lL][sS]       filter=lfs diff=lfs merge=lfs -text
+# .xlsx
+*.[xX][lL][sS][xX]   filter=lfs diff=lfs merge=lfs -text
+# .xlsm 
+*.[xX][lL][sS][mM]   filter=lfs diff=lfs merge=lfs -text
+# .ppt 
+*.[pP][pP][tT]       filter=lfs diff=lfs merge=lfs -text
+# .pptx 
+*.[pP][pP][tT][xX]   filter=lfs diff=lfs merge=lfs -text
+ 
+# Visual Studio Files
+# .ipch
+*.[iI][pP][cC][hH]   filter=lfs diff=lfs merge=lfs -text
+# .sdf
+*.[sS][dD][fF]       filter=lfs diff=lfs merge=lfs -text
+# .suo
+*.[sS][uU][oO]       filter=lfs diff=lfs merge=lfs -text
+# .db
+*.[dD][bB]           filter=lfs diff=lfs merge=lfs -text
+ 
+# Common Binary Files
+# .tx 
+*.[tT][xX]           filter=lfs diff=lfs merge=lfs -text
+# .dll 
+*.[dD][lL][lL]       filter=lfs diff=lfs merge=lfs -text
+# .exe
+*.[eE][xX][eE]       filter=lfs diff=lfs merge=lfs -text
+# .lib
+*.[lL][iI][bB]       filter=lfs diff=lfs merge=lfs -text
+# .jpg 
+*.[jJ][pP][gG]       filter=lfs diff=lfs merge=lfs -text
+# .jpeg 
+*.[jJ][pP][eE][gG]   filter=lfs diff=lfs merge=lfs -text
+# .bmp
+*.[bB][mM][pP]       filter=lfs diff=lfs merge=lfs -text
+# .png
+*.[pP][nN][gG]       filter=lfs diff=lfs merge=lfs -text
+# .ico
+*.[iI][cC][oO]       filter=lfs diff=lfs merge=lfs -text
+# .sdb
+*.[sS][dD][bB]       filter=lfs diff=lfs merge=lfs -text
+# .gif
+*.[gG][iI][fF]       filter=lfs diff=lfs merge=lfs -text
+# .msi
+*.[mM][sS][iI]       filter=lfs diff=lfs merge=lfs -text
+# .dsdp
+*.[dD][sS][dD][pP]   filter=lfs diff=lfs merge=lfs -text
+# .dbs
+*.[dD][bB][sS]       filter=lfs diff=lfs merge=lfs -text
+# .ocx
+*.[oO][cC][xX]       filter=lfs diff=lfs merge=lfs -text
+# .dwg
+*.[dD][wW][gG]       filter=lfs diff=lfs merge=lfs -text
+# .emf
+*.[eE][mM][fF]       filter=lfs diff=lfs merge=lfs -text
+# .ilk
+*.[iI][lL][kK]       filter=lfs diff=lfs merge=lfs -text
+# .tga
+*.[tT][gG][aA]       filter=lfs diff=lfs merge=lfs -text
+# .avi
+*.[aA][vV][iI]       filter=lfs diff=lfs merge=lfs -text
+# .wmv
+*.[wW][mM][vV]       filter=lfs diff=lfs merge=lfs -text
+# .wav
+*.[wW][aA][vV]       filter=lfs diff=lfs merge=lfs -text
+# .mov
+*.[mM][oO][vV]       filter=lfs diff=lfs merge=lfs -text
+# .mp3
+*.[mM][pP]3          filter=lfs diff=lfs merge=lfs -text
+# .mp4
+*.[mM][pP]4          filter=lfs diff=lfs merge=lfs -text
+# .ogv
+*.[oO][gG][vV]       filter=lfs diff=lfs merge=lfs -text
+# .xll
+*.[xX][lL][lL]       filter=lfs diff=lfs merge=lfs -text
+# .swf
+*.[sS][wW][fF]       filter=lfs diff=lfs merge=lfs -text
+# .drv
+*.[dD][rR][vV]       filter=lfs diff=lfs merge=lfs -text
+# .ps
+*.[pP][sS]           filter=lfs diff=lfs merge=lfs -text
+# .psd
+*.[pP][sS][dD]       filter=lfs diff=lfs merge=lfs -text
+ 
+# Archives
+# .7z
+*.7[zZ]              filter=lfs diff=lfs merge=lfs -text
+# .cab
+*.[cC][aA][bB]       filter=lfs diff=lfs merge=lfs -text
+# .ear
+*.[eE][aA][rR]       filter=lfs diff=lfs merge=lfs -text
+# .gz
+*.[gG][zZ]           filter=lfs diff=lfs merge=lfs -text
+# .jar
+*.[jJ][aA][rR]       filter=lfs diff=lfs merge=lfs -text
+# .rar
+*.[rR][aA][rR]       filter=lfs diff=lfs merge=lfs -text
+# .tar
+*.[tT][aA][rR]       filter=lfs diff=lfs merge=lfs -text
+# .tgz
+*.[tT][gG][zZ]       filter=lfs diff=lfs merge=lfs -text
+# .war
+*.[wW][aA][rR]       filter=lfs diff=lfs merge=lfs -text
+# .zip
+*.[zZ][iI][pP]       filter=lfs diff=lfs merge=lfs -text
+ 
+# Python Files
+# .pyd
+*.[pP][yY][dD]       filter=lfs diff=lfs merge=lfs -text
+# .pyl
+*.[pP][yY][lL]       filter=lfs diff=lfs merge=lfs -text
+# .pyc
+*.[pP][yY][cC]       filter=lfs diff=lfs merge=lfs -text
+# .pyo
+*.[pP][yY][oO]       filter=lfs diff=lfs merge=lfs -text
+# .p
+*.[pP]               filter=lfs diff=lfs merge=lfs -text
+ 
 # Font Files
-*.ttf filter=lfs diff=lfs merge=lfs -text
-*.[dD][oO][tT] filter=lfs diff=lfs merge=lfs -text
-*.[rR][tT][fF] filter=lfs diff=lfs merge=lfs -text
-*.[dD][oO][cC] filter=lfs diff=lfs merge=lfs -text
-*.[dD][oO][cC][xX] filter=lfs diff=lfs merge=lfs -text
-*.[pP][dD][fF] filter=lfs diff=lfs merge=lfs -text
-*.[xX][lL][sS] filter=lfs diff=lfs merge=lfs -text
-*.[xX][lL][sS][xX] filter=lfs diff=lfs merge=lfs -text
-*.[xX][lL][sS][mM] filter=lfs diff=lfs merge=lfs -text
-*.[pP][pP][tT] filter=lfs diff=lfs merge=lfs -text
-*.[pP][pP][tT][xX] filter=lfs diff=lfs merge=lfs -text
-*.[iI][pP][cC][hH] filter=lfs diff=lfs merge=lfs -text
-*.[sS][dD][fF] filter=lfs diff=lfs merge=lfs -text
-*.[sS][uU][oO] filter=lfs diff=lfs merge=lfs -text
-*.[dD][bB] filter=lfs diff=lfs merge=lfs -text
-*.[iI][nN][iI] filter=lfs diff=lfs merge=lfs -text
-*.[tT][xX] filter=lfs diff=lfs merge=lfs -text
-*.[dD][lL][lL] filter=lfs diff=lfs merge=lfs -text
-*.[eE][xX][eE] filter=lfs diff=lfs merge=lfs -text
-*.[lL][iI][bB] filter=lfs diff=lfs merge=lfs -text
-*.[jJ][pP][gG] filter=lfs diff=lfs merge=lfs -text
-*.[jJ][pP][eE][gG] filter=lfs diff=lfs merge=lfs -text
-*.[bB][mM][pP] filter=lfs diff=lfs merge=lfs -text
-*.[pP][nN][gG] filter=lfs diff=lfs merge=lfs -text
-*.[iI][cC][oO] filter=lfs diff=lfs merge=lfs -text
-*.[sS][dD][bB] filter=lfs diff=lfs merge=lfs -text
-*.[gG][iI][fF] filter=lfs diff=lfs merge=lfs -text
-*.[mM][sS][iI] filter=lfs diff=lfs merge=lfs -text
-*.[dD][sS][dD][pP] filter=lfs diff=lfs merge=lfs -text
-*.[dD][bB][sS] filter=lfs diff=lfs merge=lfs -text
-*.[oO][cC][xX] filter=lfs diff=lfs merge=lfs -text
-*.[dD][wW][gG] filter=lfs diff=lfs merge=lfs -text
-*.[eE][mM][fF] filter=lfs diff=lfs merge=lfs -text
-*.[iI][lL][kK] filter=lfs diff=lfs merge=lfs -text
-*.[tT][gG][aA] filter=lfs diff=lfs merge=lfs -text
-*.[aA][vV][iI] filter=lfs diff=lfs merge=lfs -text
-*.[wW][mM][vV] filter=lfs diff=lfs merge=lfs -text
-*.[wW][aA][vV] filter=lfs diff=lfs merge=lfs -text
-*.[mM][oO][vV] filter=lfs diff=lfs merge=lfs -text
-*.[mM][pP]3 filter=lfs diff=lfs merge=lfs -text
-*.[mM][pP]4 filter=lfs diff=lfs merge=lfs -text
-*.[oO][gG][vV] filter=lfs diff=lfs merge=lfs -text
-*.[xX][lL][lL] filter=lfs diff=lfs merge=lfs -text
-*.[sS][wW][fF] filter=lfs diff=lfs merge=lfs -text
-*.[dD][rR][vV] filter=lfs diff=lfs merge=lfs -text
-*.[pP][sS] filter=lfs diff=lfs merge=lfs -text
-*.[pP][sS][dD] filter=lfs diff=lfs merge=lfs -text
-*.7[zZ] filter=lfs diff=lfs merge=lfs -text
-*.[cC][aA][bB] filter=lfs diff=lfs merge=lfs -text
-*.[eE][aA][rR] filter=lfs diff=lfs merge=lfs -text
-*.[gG][zZ] filter=lfs diff=lfs merge=lfs -text
-*.[jJ][aA][rR] filter=lfs diff=lfs merge=lfs -text
-*.[rR][aA][rR] filter=lfs diff=lfs merge=lfs -text
-*.[tT][aA][rR] filter=lfs diff=lfs merge=lfs -text
-*.[tT][gG][zZ] filter=lfs diff=lfs merge=lfs -text
-*.[wW][aA][rR] filter=lfs diff=lfs merge=lfs -text
-*.[zZ][iI][pP] filter=lfs diff=lfs merge=lfs -text
-*.[pP][yY][dD] filter=lfs diff=lfs merge=lfs -text
-*.[pP][yY][lL] filter=lfs diff=lfs merge=lfs -text
-*.[pP][yY][cC] filter=lfs diff=lfs merge=lfs -text
-*.[pP][yY][oO] filter=lfs diff=lfs merge=lfs -text
-*.[pP] filter=lfs diff=lfs merge=lfs -text
-*.[tT][tT][fF] filter=lfs diff=lfs merge=lfs -text
-*.[sS][hH][xX] filter=lfs diff=lfs merge=lfs -text
-*.[fF][nN][tT] filter=lfs diff=lfs merge=lfs -text
-*.[oO][tT][fF] filter=lfs diff=lfs merge=lfs -text
-*.[jJ][mM][eE][bB] filter=lfs diff=lfs merge=lfs -text
+# .ttf
+*.[tT][tT][fF]       filter=lfs diff=lfs merge=lfs -text
+# .shx
+*.[sS][hH][xX]       filter=lfs diff=lfs merge=lfs -text
+# .fnt
+*.[fF][nN][tT]       filter=lfs diff=lfs merge=lfs -text
+# .otf
+*.[oO][tT][fF]       filter=lfs diff=lfs merge=lfs -text
+ 
+# MidasIT Files
+ 
+# Project Dependencies
+# .jmeb
+*.[jJ][mM][eE][bB]   filter=lfs diff=lfs merge=lfs -text
