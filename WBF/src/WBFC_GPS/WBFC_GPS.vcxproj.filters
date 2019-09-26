@@ -31,6 +31,9 @@
     <Filter Include="Graphic\Manager">
       <UniqueIdentifier>{457ee04e-646e-4889-9406-5706d00a12be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphic\VBO">
+      <UniqueIdentifier>{2da9f735-5434-44ed-91b9-963f19b3381a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -39,26 +42,26 @@
     <ClCompile Include="WBFC_GPS.cpp">
       <Filter>_common_</Filter>
     </ClCompile>
-    <ClCompile Include="WBFCRndrSample.cpp">
-      <Filter>Graphic\Renderer</Filter>
-    </ClCompile>
     <ClCompile Include="GPSView.cpp">
       <Filter>Base</Filter>
     </ClCompile>
-    <ClCompile Include="WBFCModelSample.cpp">
-      <Filter>Graphic\Model</Filter>
+    <ClCompile Include="VBOGeom.cpp">
+      <Filter>Graphic\VBO</Filter>
     </ClCompile>
-    <ClCompile Include="WBFCRndrManager.cpp">
-      <Filter>Graphic\Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFCModelManager.cpp">
-      <Filter>Graphic\Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFCRndrLight.cpp">
+    <ClCompile Include="RndrLight.cpp">
       <Filter>Graphic\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="WBFCModelLight.cpp">
+    <ClCompile Include="RndrSample.cpp">
+      <Filter>Graphic\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelSample.cpp">
       <Filter>Graphic\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="RndrAppManager.cpp">
+      <Filter>Graphic\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelAppManager.cpp">
+      <Filter>Graphic\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -91,26 +94,26 @@
     <ClInclude Include="HeaderPost.h">
       <Filter>_common_\Linker</Filter>
     </ClInclude>
-    <ClInclude Include="WBFCRndrSample.h">
-      <Filter>Graphic\Renderer</Filter>
-    </ClInclude>
     <ClInclude Include="GPSView.h">
       <Filter>Base</Filter>
     </ClInclude>
-    <ClInclude Include="WBFCModelSample.h">
-      <Filter>Graphic\Model</Filter>
+    <ClInclude Include="VBOGeom.h">
+      <Filter>Graphic\VBO</Filter>
     </ClInclude>
-    <ClInclude Include="WBFCRndrManager.h">
-      <Filter>Graphic\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFCModelManager.h">
-      <Filter>Graphic\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFCRndrLight.h">
+    <ClInclude Include="RndrLight.h">
       <Filter>Graphic\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="WBFCModelLight.h">
+    <ClInclude Include="RndrSample.h">
+      <Filter>Graphic\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelSample.h">
       <Filter>Graphic\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrAppManager.h">
+      <Filter>Graphic\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelAppManager.h">
+      <Filter>Graphic\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

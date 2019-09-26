@@ -3,7 +3,7 @@
 #include <map>
 #include "HeaderPre.h"
 
-class CWBFRndrBase;
+class CWBFRndrData;
 class __MY_EXT_CLASS__ CWBFRndrFactory
 {
 public:
@@ -13,7 +13,7 @@ public:
 	~CWBFRndrFactory();
 
 public:
-	CWBFRndrBase* CreateObject(UINT uiType);
+	CWBFRndrData* CreateObject(UINT uiType);
 
 	BOOL RegisterObject(CRuntimeClass* pClass, UINT uiType);
 	void UnRegisterObject();

@@ -34,17 +34,26 @@
     <Filter Include="View\Model">
       <UniqueIdentifier>{29075dae-cf4a-4804-946c-d124cf2f2c93}</UniqueIdentifier>
     </Filter>
-    <Filter Include="View\Renderer">
-      <UniqueIdentifier>{69012cf2-ed91-4075-96a3-bf2d0afd94b4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="DataBase">
       <UniqueIdentifier>{a8091b9d-612b-4970-8912-b8221043055c}</UniqueIdentifier>
     </Filter>
     <Filter Include="DataBase\Interface">
       <UniqueIdentifier>{8d480a1a-a03e-4470-bb6e-2f5eb8a01338}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DataBase\Box %28OpenGL Sample Model%29">
+    <Filter Include="View\VBO">
+      <UniqueIdentifier>{17ab6126-1efa-4955-af55-701703062e9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View\VBO\Renderer">
+      <UniqueIdentifier>{69012cf2-ed91-4075-96a3-bf2d0afd94b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataBase\OpenGL Model%28TEST%29">
       <UniqueIdentifier>{c6f4b5ff-d1fe-436b-b754-9a710afe1331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataBase\OpenGL Model%28TEST%29\Geometry">
+      <UniqueIdentifier>{f67b3918-af64-48d7-b0ad-92a522674398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataBase\OpenGL Model%28TEST%29\Box">
+      <UniqueIdentifier>{d2bf6d78-31ac-4f47-b540-40375c2bd5de}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -63,20 +72,8 @@
     <ClCompile Include="WBFDialog.cpp">
       <Filter>UI\Dialog</Filter>
     </ClCompile>
-    <ClCompile Include="WBFRndrBase.cpp">
-      <Filter>View\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFRndrBaseManager.cpp">
-      <Filter>View\Renderer</Filter>
-    </ClCompile>
     <ClCompile Include="WBFRndrFactory.cpp">
-      <Filter>View\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFModelBase.cpp">
-      <Filter>View\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFModelBaseManager.cpp">
-      <Filter>View\Model</Filter>
+      <Filter>View\VBO\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="WBFModelFactory.cpp">
       <Filter>View\Model</Filter>
@@ -87,20 +84,62 @@
     <ClCompile Include="WBFModelOption.cpp">
       <Filter>Option</Filter>
     </ClCompile>
-    <ClCompile Include="WBFData.cpp">
-      <Filter>DataBase\Interface</Filter>
-    </ClCompile>
     <ClCompile Include="WBFModuleBase.cpp">
       <Filter>DataBase\Interface</Filter>
     </ClCompile>
     <ClCompile Include="WBFPackageData.cpp">
       <Filter>DataBase\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="DataBox.cpp">
-      <Filter>DataBase\Box %28OpenGL Sample Model%29</Filter>
+    <ClCompile Include="WBFVBOManager.cpp">
+      <Filter>View\VBO</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFModelData.cpp">
+      <Filter>View\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFModelDataManager.cpp">
+      <Filter>View\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFRndrData.cpp">
+      <Filter>View\VBO\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFRndrDataManager.cpp">
+      <Filter>View\VBO\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFVBOData.cpp">
+      <Filter>View\VBO</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFEntityData.cpp">
+      <Filter>DataBase\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBox.cpp">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Box</Filter>
     </ClCompile>
     <ClCompile Include="ModuleBox.cpp">
-      <Filter>DataBase\Box %28OpenGL Sample Model%29</Filter>
+      <Filter>DataBase\OpenGL Model%28TEST%29\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityGeom.cpp">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleGeom.cpp">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleVertex.cpp">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="EntitySubBody.cpp">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityVertex.cpp">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleSubBody.cpp">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleBody.cpp">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBody.cpp">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -142,20 +181,8 @@
     <ClInclude Include="WBFDialog.h">
       <Filter>UI\Dialog</Filter>
     </ClInclude>
-    <ClInclude Include="WBFRndrBase.h">
-      <Filter>View\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFRndrBaseManager.h">
-      <Filter>View\Renderer</Filter>
-    </ClInclude>
     <ClInclude Include="WBFRndrFactory.h">
-      <Filter>View\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFModelBaseManager.h">
-      <Filter>View\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFModelBase.h">
-      <Filter>View\Model</Filter>
+      <Filter>View\VBO\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="WBFGraphicDef.h">
       <Filter>View</Filter>
@@ -172,9 +199,6 @@
     <ClInclude Include="WBFDataDefine.h">
       <Filter>DataBase\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="WBFData.h">
-      <Filter>DataBase\Interface</Filter>
-    </ClInclude>
     <ClInclude Include="WBFModuleBase.h">
       <Filter>DataBase\Interface</Filter>
     </ClInclude>
@@ -184,11 +208,56 @@
     <ClInclude Include="WBFModuleData.hpp">
       <Filter>DataBase\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="DataBox.h">
-      <Filter>DataBase\Box %28OpenGL Sample Model%29</Filter>
+    <ClInclude Include="WBFVBOManager.h">
+      <Filter>View\VBO</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFModelData.h">
+      <Filter>View\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFModelDataManager.h">
+      <Filter>View\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFRndrData.h">
+      <Filter>View\VBO\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFRndrDataManager.h">
+      <Filter>View\VBO\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFVBOData.h">
+      <Filter>View\VBO</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFEntityData.h">
+      <Filter>DataBase\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBox.h">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Box</Filter>
     </ClInclude>
     <ClInclude Include="ModuleBox.h">
-      <Filter>DataBase\Box %28OpenGL Sample Model%29</Filter>
+      <Filter>DataBase\OpenGL Model%28TEST%29\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityGeom.h">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleGeom.h">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleVertex.h">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="EntitySubBody.h">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityVertex.h">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleSubBody.h">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleBody.h">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBody.h">
+      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

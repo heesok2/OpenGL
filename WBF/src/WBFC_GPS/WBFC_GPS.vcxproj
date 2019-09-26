@@ -214,13 +214,13 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="WBFCModelLight.cpp" />
-    <ClCompile Include="WBFCModelManager.cpp" />
-    <ClCompile Include="WBFCModelSample.cpp" />
-    <ClCompile Include="WBFCRndrLight.cpp" />
-    <ClCompile Include="WBFCRndrSample.cpp" />
+    <ClCompile Include="ModelAppManager.cpp" />
+    <ClCompile Include="ModelSample.cpp" />
+    <ClCompile Include="RndrLight.cpp" />
+    <ClCompile Include="RndrSample.cpp" />
     <ClCompile Include="WBFC_GPS.cpp" />
-    <ClCompile Include="WBFCRndrManager.cpp" />
+    <ClCompile Include="RndrAppManager.cpp" />
+    <ClCompile Include="VBOGeom.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\WBFC_GPS.rc2" />
@@ -233,14 +233,14 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="WBFCModelLight.h" />
-    <ClInclude Include="WBFCModelManager.h" />
-    <ClInclude Include="WBFCModelSample.h" />
-    <ClInclude Include="WBFCRndrLight.h" />
-    <ClInclude Include="WBFCRndrSample.h" />
+    <ClInclude Include="ModelAppManager.h" />
+    <ClInclude Include="ModelSample.h" />
+    <ClInclude Include="RndrLight.h" />
+    <ClInclude Include="RndrSample.h" />
     <ClInclude Include="WBFC_GPS.h" />
     <ClInclude Include="WBFC_GPS_LINK.h" />
-    <ClInclude Include="WBFCRndrManager.h" />
+    <ClInclude Include="RndrAppManager.h" />
+    <ClInclude Include="VBOGeom.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WBFC_GPS.rc" />

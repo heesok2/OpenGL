@@ -207,27 +207,37 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EntityBody.cpp" />
+    <ClCompile Include="EntityGeom.cpp" />
+    <ClCompile Include="EntitySubBody.cpp" />
+    <ClCompile Include="EntityVertex.cpp" />
+    <ClCompile Include="ModuleBody.cpp" />
+    <ClCompile Include="ModuleGeom.cpp" />
+    <ClCompile Include="ModuleSubBody.cpp" />
+    <ClCompile Include="ModuleVertex.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="WBFData.cpp" />
+    <ClCompile Include="WBFEntityData.cpp" />
+    <ClCompile Include="WBFVBOData.cpp" />
     <ClCompile Include="WBFModuleBase.cpp" />
     <ClCompile Include="WBFPackageData.cpp" />
-    <ClCompile Include="DataBox.cpp" />
+    <ClCompile Include="EntityBox.cpp" />
     <ClCompile Include="WBFDialog.cpp" />
     <ClCompile Include="ModuleBox.cpp" />
     <ClCompile Include="WBFDocBase.cpp" />
-    <ClCompile Include="WBFModelBase.cpp" />
-    <ClCompile Include="WBFModelBaseManager.cpp" />
+    <ClCompile Include="WBFModelData.cpp" />
+    <ClCompile Include="WBFModelDataManager.cpp" />
     <ClCompile Include="WBFModelFactory.cpp" />
     <ClCompile Include="WBFModelOption.cpp" />
     <ClCompile Include="WBFOption.cpp" />
-    <ClCompile Include="WBFRndrBase.cpp" />
-    <ClCompile Include="WBFRndrBaseManager.cpp" />
+    <ClCompile Include="WBFRndrData.cpp" />
+    <ClCompile Include="WBFRndrDataManager.cpp" />
     <ClCompile Include="WBFRndrFactory.cpp" />
+    <ClCompile Include="WBFVBOManager.cpp" />
     <ClCompile Include="WBFViewBase.cpp" />
     <ClCompile Include="WBF_BASE.cpp" />
   </ItemGroup>
@@ -236,29 +246,39 @@
     <None Include="WBF_BASE.def" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EntityBody.h" />
+    <ClInclude Include="EntityGeom.h" />
+    <ClInclude Include="EntitySubBody.h" />
+    <ClInclude Include="EntityVertex.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
+    <ClInclude Include="ModuleBody.h" />
+    <ClInclude Include="ModuleGeom.h" />
+    <ClInclude Include="ModuleSubBody.h" />
+    <ClInclude Include="ModuleVertex.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="WBFData.h" />
+    <ClInclude Include="WBFEntityData.h" />
     <ClInclude Include="WBFDataDefine.h" />
+    <ClInclude Include="WBFVBOData.h" />
     <ClInclude Include="WBFModuleData.hpp" />
     <ClInclude Include="WBFModuleBase.h" />
     <ClInclude Include="WBFPackageData.h" />
-    <ClInclude Include="DataBox.h" />
+    <ClInclude Include="EntityBox.h" />
     <ClInclude Include="WBFDialog.h" />
     <ClInclude Include="ModuleBox.h" />
     <ClInclude Include="WBFDocBase.h" />
     <ClInclude Include="WBFGraphicDef.h" />
-    <ClInclude Include="WBFModelBase.h" />
-    <ClInclude Include="WBFModelBaseManager.h" />
+    <ClInclude Include="WBFModelData.h" />
+    <ClInclude Include="WBFModelDataManager.h" />
     <ClInclude Include="WBFModelFactory.h" />
     <ClInclude Include="WBFModelOption.h" />
     <ClInclude Include="WBFOption.h" />
-    <ClInclude Include="WBFRndrBase.h" />
-    <ClInclude Include="WBFRndrBaseManager.h" />
+    <ClInclude Include="WBFRndrData.h" />
+    <ClInclude Include="WBFRndrDataManager.h" />
     <ClInclude Include="WBFRndrFactory.h" />
+    <ClInclude Include="WBFVBOManager.h" />
     <ClInclude Include="WBFViewBase.h" />
     <ClInclude Include="WBF_BASE.h" />
     <ClInclude Include="WBF_BASE_LINK.h" />

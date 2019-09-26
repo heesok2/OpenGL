@@ -24,7 +24,7 @@
 
 #include <propkey.h>
 
-#include "..\WBFC_GPS\WBFCModelManager.h"
+#include "..\WBFC_GPS\ModelAppManager.h"
 
 
 #ifdef _DEBUG
@@ -41,11 +41,9 @@ IMPLEMENT_DYNCREATE(CWBFDoc, CWBFDocBase)
 BEGIN_MESSAGE_MAP(CWBFDoc, CWBFDocBase)
 END_MESSAGE_MAP()
 
-
 // CWBFDoc 생성/소멸
 
 CWBFDoc::CWBFDoc() noexcept
-	: m_pPackage(nullptr), m_pModelMgr(nullptr)
 {
 	// TODO: 여기에 일회성 생성 코드를 추가합니다.
 
@@ -169,9 +167,6 @@ void CWBFDoc::OnInitial()
 {
 	m_pPackage = new CWBFPackageSystem();
 	m_pPackage->OnInitial();
-
-	m_pModelMgr = new CWBFCModelManager(this);
-	m_pModelMgr->OnInitial();
 }
 
 void CWBFDoc::OnDestroy()
@@ -180,10 +175,4 @@ void CWBFDoc::OnDestroy()
 		m_pPackage->OnDestroy();
 
 	_SAFE_DELETE(m_pPackage);
-
-	if (m_pModelMgr != nullptr)
-	{
-		m_pModelMgr->OnDestroy();
-		_SAFE_DELETE(m_pModelMgr);
-	}
 }

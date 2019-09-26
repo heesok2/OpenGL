@@ -3,7 +3,7 @@
 #include <map>
 #include "HeaderPre.h"
 
-class CWBFModelBase;
+class CWBFModelData;
 class __MY_EXT_CLASS__ CWBFModelFactory
 {
 public:
@@ -13,7 +13,7 @@ public:
 	virtual ~CWBFModelFactory();
 
 public:
-	CWBFModelBase* CreateObject(UINT uiType);
+	CWBFModelData* CreateObject(UINT uiType);
 
 	BOOL RegisterObject(CRuntimeClass* pClass, UINT uiType);
 	void UnRegisterObject();

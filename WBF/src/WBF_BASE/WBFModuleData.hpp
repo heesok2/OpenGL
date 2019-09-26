@@ -103,6 +103,12 @@ public: // Data
 		return TRUE;
 	}
 
+public: 
+	virtual void SetDefaultData() 
+	{
+		ASSERT(g_warning);
+	}
+
 protected:
 	DTYPE dbType;
 	std::map<DKEY, TD> m_mData;

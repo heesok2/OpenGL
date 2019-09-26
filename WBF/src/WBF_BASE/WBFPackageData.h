@@ -25,7 +25,6 @@ public:
 	virtual BOOL Commit();
 	virtual BOOL Rollback();
 
-
 protected:
 	std::map<DTYPE, CWBFModuleBase*> m_mModule;
 

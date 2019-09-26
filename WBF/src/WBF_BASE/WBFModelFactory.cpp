@@ -17,7 +17,7 @@ CWBFModelFactory::~CWBFModelFactory()
 	UnRegisterObject();
 }
 
-CWBFModelBase * CWBFModelFactory::CreateObject(UINT uiType)
+CWBFModelData * CWBFModelFactory::CreateObject(UINT uiType)
 {
 	auto itr = m_mObject.find(uiType);
 	if (itr == m_mObject.end())
@@ -26,7 +26,7 @@ CWBFModelBase * CWBFModelFactory::CreateObject(UINT uiType)
 		return nullptr;
 	}
 
-	auto pObject = (CWBFModelBase*)(itr->second->CreateObject());
+	auto pObject = (CWBFModelData*)(itr->second->CreateObject());
 	return pObject;
 }
 

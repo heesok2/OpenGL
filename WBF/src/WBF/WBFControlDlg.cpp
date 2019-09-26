@@ -8,8 +8,8 @@
 #include "..\WBF_BASE\ModuleBox.h"
 
 #include "..\WBF_BASE\WBFGraphicDef.h"
-#include "..\WBF_BASE\WBFModelBaseManager.h"
-#include "..\WBF_BASE\WBFModelBase.h"
+#include "..\WBF_BASE\WBFModelDataManager.h"
+#include "..\WBF_BASE\WBFModelData.h"
 #include "..\WBF_GPS\WBFGPSOption.h"
 
 #ifdef _DEBUG
@@ -131,16 +131,16 @@ BOOL CWBFControlDlg::Dlg2Data()
 
 	auto uiType = lambda_cobx(m_cobxType);
 
-	auto pModelMgr = m_pMyDoc->GetModelManager();
-	auto pModel = pModelMgr->GetModel(uiType);
-	auto pOption = (CWBFGPSOption*)pModel->GetOption();
+	//auto pModelMgr = m_pMyDoc->GetModelManager();
+	//auto pModel = pModelMgr->GetModel(uiType);
+	//auto pOption = (CWBFGPSOption*)pModel->GetOption();
 
-	pOption->uiPolygonFace = lambda_cobx(m_cobxPolyFace);
-	pOption->uiPolygonMode = lambda_cobx(m_cobxPolyMode);
+	//pOption->uiPolygonFace = lambda_cobx(m_cobxPolyFace);
+	//pOption->uiPolygonMode = lambda_cobx(m_cobxPolyMode);
 
-	pOption->fRatio = (float)m_slidRatio.GetPos() / 100.f;
+	//pOption->fRatio = (float)m_slidRatio.GetPos() / 100.f;
 
-	pModelMgr->OnUpdateOnly((UINT)uiType);
+	//pModelMgr->OnUpdateOnly((UINT)uiType);
 
 	return TRUE;
 }
@@ -157,7 +157,7 @@ BOOL CWBFControlDlg::Execute()
 	auto pPackage = m_pMyDoc->GetPackage();
 	auto pModule = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
 
-	CDataBox Data;
+	CEntityBox Data;
 	Data.dbKey = pModule->GetNewKey();
 
 	pPackage->Start();

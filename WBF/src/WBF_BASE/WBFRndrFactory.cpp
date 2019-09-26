@@ -22,7 +22,7 @@ CWBFRndrFactory::~CWBFRndrFactory()
 	UnRegisterObject();
 }
 
-CWBFRndrBase * CWBFRndrFactory::CreateObject(UINT uiType)
+CWBFRndrData * CWBFRndrFactory::CreateObject(UINT uiType)
 {
 	auto itr = m_mObject.find(uiType);
 	if (itr == m_mObject.end())
@@ -31,7 +31,7 @@ CWBFRndrBase * CWBFRndrFactory::CreateObject(UINT uiType)
 		return nullptr;
 	}
 
-	auto pObject = (CWBFRndrBase*)(itr->second->CreateObject());
+	auto pObject = (CWBFRndrData*)(itr->second->CreateObject());
 	return pObject;
 }
 

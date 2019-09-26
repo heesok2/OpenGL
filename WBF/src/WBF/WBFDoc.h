@@ -17,8 +17,6 @@
 
 #include "..\WBF_BASE\WBFDocBase.h"
 
-class CWBFPackageSystem;
-class CWBFCModelManager;
 class CWBFDoc : public CWBFDocBase
 {
 public: // serialization에서만 만들어집니다.
@@ -45,19 +43,11 @@ public:
 	virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
 	virtual void OnCloseDocument();
 
-public:
-	virtual CWBFPackageData* GetPackage() { return (CWBFPackageData*)m_pPackage; }
-	virtual CWBFModelBaseManager* GetModelManager() { return (CWBFModelBaseManager*)m_pModelMgr; }
-
 protected:
 	void OnInitial();
 	void OnDestroy();
 
 protected:
 	DECLARE_MESSAGE_MAP()
-
-protected:
-	CWBFPackageSystem* m_pPackage;
-	CWBFCModelManager* m_pModelMgr;
 
 };

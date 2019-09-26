@@ -17,7 +17,6 @@
 #include "../WBFC_GPS/GPSView.h"
 
 class CWBFDoc;
-class CWBFCRndrManager;
 class CWBFView : public CGPSView
 {
 public: // serialization에서만 만들어집니다.
@@ -37,13 +36,12 @@ public:
 	virtual void Dump(CDumpContext& dc) const;
 #endif
 
-	virtual CWBFRndrBaseManager* GetRenderManager() { return (CWBFRndrBaseManager*)m_pRndrMgr; }
+	virtual CWBFRndrDataManager* GetRenderManager() { return (CWBFRndrDataManager*)m_pRndrMgr; }
 
 	// 재정의입니다.
 public:
 	virtual void OnDraw(CDC* pDC);  // 이 뷰를 그리기 위해 재정의되었습니다.
 	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
-
 
 protected:
 	virtual BOOL OnPreparePrinting(CPrintInfo* pInfo);
@@ -62,9 +60,6 @@ protected:
 	afx_msg void OnCommandUI(CCmdUI* pCmdUI);
 
 	DECLARE_MESSAGE_MAP()
-
-protected:
-	CWBFCRndrManager* m_pRndrMgr;
 
 };
 

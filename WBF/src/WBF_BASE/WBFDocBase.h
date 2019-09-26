@@ -3,7 +3,6 @@
 #include "HeaderPre.h"
 
 class CWBFViewBase;
-class CWBFModelBaseManager;
 class CWBFPackageData;
 class __MY_EXT_CLASS__ CWBFDocBase : public CDocument
 {
@@ -13,9 +12,10 @@ public:
 
 public:
 	virtual CWBFViewBase* GetActiveView();
+	virtual CWBFPackageData* GetPackage() { ASSERT(m_pPackage); return m_pPackage; }
 
-	virtual CWBFPackageData* GetPackage() { ASSERT(g_warning); return nullptr; }
-	virtual CWBFModelBaseManager* GetModelManager() { ASSERT(g_warning); return nullptr; }
+public:
+	CWBFPackageData* m_pPackage;
 
 };
 

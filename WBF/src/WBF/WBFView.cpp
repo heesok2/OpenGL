@@ -23,8 +23,8 @@
 #include "WBFView.h"
 #include "WBFControlDlg.h"
 
-#include "..\WBFC_GPS\WBFCRndrManager.h"
-#include "..\WBFC_GPS\WBFCModelManager.h"
+#include "..\WBFC_GPS\ModelAppManager.h"
+#include "..\WBFC_GPS\RndrAppManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -52,7 +52,6 @@ END_MESSAGE_MAP()
 // CWBFView 생성/소멸
 
 CWBFView::CWBFView() noexcept
-	: m_pRndrMgr(nullptr)
 {
 }
 
@@ -79,21 +78,17 @@ void CWBFView::OnDraw(CDC* pDC)
 	if (!pDoc)
 		return;
 
-	auto pModelMgr = (CWBFCModelManager*)pDoc->GetModelManager();
-	auto pRndrMgr = (CWBFCRndrManager*)GetRenderManager();
-
 	BeginwglCurrent();
 	{
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		
-		pModelMgr->GLInitialData();
-		pRndrMgr->GLDrawScene();
+
+		m_pModelMgr->GLInitialData();
+		m_pRndrMgr->GLDrawScene();
 
 		SwapBuffers();
 	}
 	EndwglCurrent();
 }
-
 
 // CWBFView 인쇄
 
@@ -128,7 +123,8 @@ void CWBFView::OnInitialUpdate()
 	auto pDoc = static_cast<CWBFDoc*>(GetDocument());
 	if (pDoc == nullptr) return;
 
-	m_pRndrMgr = new CWBFCRndrManager(this);
+	m_pModelMgr = new CModelAppManager(pDoc);
+	m_pRndrMgr = new CRndrAppManager(this);
 
 	BeginwglCurrent();
 	{
@@ -209,11 +205,14 @@ int CWBFView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 void CWBFView::OnDestroy()
 {
+	if (m_pModelMgr != nullptr)
+		m_pModelMgr->OnDestroy();
+
 	if (m_pRndrMgr != nullptr)
-	{
 		m_pRndrMgr->OnDestroy();
-		_SAFE_DELETE(m_pRndrMgr);
-	}
+
+	_SAFE_DELETE(m_pModelMgr);
+	_SAFE_DELETE(m_pRndrMgr);
 
 	CGPSView::OnDestroy();
 }
