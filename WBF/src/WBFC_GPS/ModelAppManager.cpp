@@ -50,7 +50,7 @@ void CModelAppManager::OnInitial()
 	if (pPackage) pPackage->Attached(this);
 	
 	m_pVBOMgr = new CWBFVBOManager(m_pMyDoc);
-	m_pVBOMgr->SetVBO(new CVBOGeom);
+	m_pVBOMgr->OnInitial();
 }
 
 void CModelAppManager::OnDestroy()

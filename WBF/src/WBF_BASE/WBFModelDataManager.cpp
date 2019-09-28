@@ -24,7 +24,7 @@ CWBFModelDataManager::~CWBFModelDataManager()
 
 void CWBFModelDataManager::OnInitial()
 {
-	for (long indx = E_MODEL_SAMPLE; indx < E_MODEL_NUM; ++indx)
+	for (long indx = 0; indx < E_MODEL_NUM; ++indx)
 	{
 		auto pObject = (CWBFModelData*)CWBFModelFactory::GetInstance().CreateObject(indx);
 		if (pObject == nullptr) continue;

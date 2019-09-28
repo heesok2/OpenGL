@@ -28,7 +28,7 @@ void CRndrAppManager::OnInitial()
 
 	auto pModelMgr = m_pView->GetModelManager();
 
-	for (UINT uiType = E_RNDR_SAMPLE; uiType < E_RNDR_NUM; ++uiType)
+	for (UINT uiType = 0; uiType < E_RNDR_NUM; ++uiType)
 	{
 		auto pObject = (CWBFRndrData*)CWBFRndrFactory::GetInstance().CreateObject(uiType);
 		if (pObject == nullptr) continue;

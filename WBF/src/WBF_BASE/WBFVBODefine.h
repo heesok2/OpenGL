@@ -5,8 +5,8 @@
 
 enum E_VBO_TYPE
 {
-	E_VBO_UNKNOWN = 0,
-	E_VBO_GEOM,
+	E_VBO_UNKNOWN = -1,
+	E_VBO_GEOM = 0,
 
 	E_VBO_NUM
 };

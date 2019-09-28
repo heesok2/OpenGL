@@ -14,7 +14,6 @@ public:
 	virtual ~CWBFVBOManager();
 
 public:
-	void SetVBO(CWBFVBOData* pVBO);
 	void UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam);
 
 public:

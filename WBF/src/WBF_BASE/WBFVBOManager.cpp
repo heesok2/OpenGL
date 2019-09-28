@@ -24,11 +24,6 @@ CWBFVBOManager::~CWBFVBOManager()
 {
 }
 
-void CWBFVBOManager::SetVBO(CWBFVBOData* pVBO)
-{
-	m_lstVBO.push_back(pVBO);
-}
-
 void CWBFVBOManager::UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uiMsg)
@@ -48,7 +43,13 @@ void CWBFVBOManager::UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 
 void CWBFVBOManager::OnInitial()
 {
+	for (UINT uiType = 0; uiType < E_VBO_NUM; ++uiType)
+	{
+		auto pObject = (CWBFVBOData*)CWBFVBOFactory::GetInstance().CreateObject(uiType);
+		if (pObject == nullptr) continue;
 
+		m_lstVBO.push_back(pObject);
+	}
 }
 
 void CWBFVBOManager::OnDestroy()
