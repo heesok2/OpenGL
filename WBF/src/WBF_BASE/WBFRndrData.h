@@ -1,19 +1,21 @@
 #pragma once
 
-#include "WBFGraphicDef.h"
+#include "..\WBF_LIB\FactoryObjectBase.h"
+
+#include "WBFRndrDefine.h"
 #include "WBFRndrFactory.h"
 #include "HeaderPre.h"
 
 class CWBFRndrDataManager;
 class CWBFModelDataManager;
-class __MY_EXT_CLASS__ CWBFRndrData : public CObject
+class __MY_EXT_CLASS__ CWBFRndrData : public CFactoryObjectBase
 {
 public:
 	CWBFRndrData();
 	virtual ~CWBFRndrData();
 
 public:
-	virtual UINT GetType() { ASSERT(g_warning); return gps::E_GPS_UNKNOWN; }
+	virtual UINT GetType() override { ASSERT(g_warning); return 0; }
 	virtual void OnInitialData() {}
 	virtual void GLDraw() = 0;
 
@@ -34,9 +36,7 @@ protected:
 
 #define DECLARE_RENDERER(class_name)\
 DECLARE_DYNCREATE(class_name);\
-virtual UINT GetType();
 
-#define IMPLEMENT_RENDERER(class_name, type)\
+#define IMPLEMENT_RENDERER(type, class_name)\
 IMPLEMENT_DYNCREATE(class_name, CWBFRndrData);\
-BOOL bReg##class_name = CWBFRndrFactory::GetInstance().RegisterObject(RUNTIME_CLASS(class_name), type);\
-UINT class_name::GetType() { return type; }
+BOOL b##class_name = CWBFRndrFactory::GetInstance().Register(type, RUNTIME_CLASS(class_name));

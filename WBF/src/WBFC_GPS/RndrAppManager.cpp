@@ -28,9 +28,9 @@ void CRndrAppManager::OnInitial()
 
 	auto pModelMgr = m_pView->GetModelManager();
 
-	for (UINT uiType = gps::E_GPS_SAMPLE; uiType < gps::E_GPS_NUM; ++uiType)
+	for (UINT uiType = E_RNDR_SAMPLE; uiType < E_RNDR_NUM; ++uiType)
 	{
-		auto pObject = CWBFRndrFactory::GetInstance().CreateObject(uiType);
+		auto pObject = (CWBFRndrData*)CWBFRndrFactory::GetInstance().CreateObject(uiType);
 		if (pObject == nullptr) continue;
 		
 		pObject->SetHelper(this, pModelMgr);

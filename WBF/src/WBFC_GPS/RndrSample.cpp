@@ -12,7 +12,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-IMPLEMENT_RENDERER(CRndrSample, gps::E_GPS_SAMPLE);
+IMPLEMENT_RENDERER(E_RNDR_SAMPLE, CRndrSample);
 
 CRndrSample::CRndrSample()
 {

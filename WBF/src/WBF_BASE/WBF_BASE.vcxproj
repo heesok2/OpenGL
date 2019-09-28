@@ -237,6 +237,7 @@
     <ClCompile Include="WBFRndrData.cpp" />
     <ClCompile Include="WBFRndrDataManager.cpp" />
     <ClCompile Include="WBFRndrFactory.cpp" />
+    <ClCompile Include="WBFVBOFactory.cpp" />
     <ClCompile Include="WBFVBOManager.cpp" />
     <ClCompile Include="WBFViewBase.cpp" />
     <ClCompile Include="WBF_BASE.cpp" />
@@ -261,6 +262,8 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="WBFEntityData.h" />
     <ClInclude Include="WBFDataDefine.h" />
+    <ClInclude Include="WBFModelDefine.h" />
+    <ClInclude Include="WBFRndrDefine.h" />
     <ClInclude Include="WBFVBOData.h" />
     <ClInclude Include="WBFModuleData.hpp" />
     <ClInclude Include="WBFModuleBase.h" />
@@ -278,6 +281,8 @@
     <ClInclude Include="WBFRndrData.h" />
     <ClInclude Include="WBFRndrDataManager.h" />
     <ClInclude Include="WBFRndrFactory.h" />
+    <ClInclude Include="WBFVBODefine.h" />
+    <ClInclude Include="WBFVBOFactory.h" />
     <ClInclude Include="WBFVBOManager.h" />
     <ClInclude Include="WBFViewBase.h" />
     <ClInclude Include="WBF_BASE.h" />

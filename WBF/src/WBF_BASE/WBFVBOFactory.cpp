@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WBFModelFactory.h"
+#include "WBFVBOFactory.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -7,22 +7,22 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFModelFactory & CWBFModelFactory::GetInstance()
+CWBFVBOFactory& CWBFVBOFactory::GetInstance()
 {
-	static CWBFModelFactory inst;
+	static CWBFVBOFactory inst;
 	return inst;
 }
 
-CWBFModelFactory::CWBFModelFactory()
+CWBFVBOFactory::CWBFVBOFactory()
 {
 }
 
 
-CWBFModelFactory::~CWBFModelFactory()
+CWBFVBOFactory::~CWBFVBOFactory()
 {
 }
 
-BOOL CWBFModelFactory::Register(UINT uiType, CRuntimeClass * pRuntime)
+BOOL CWBFVBOFactory::Register(UINT uiType, CRuntimeClass * pRuntime)
 {
 	auto itr = m_mObject.find(uiType);
 	if (itr != m_mObject.end())
@@ -35,14 +35,14 @@ BOOL CWBFModelFactory::Register(UINT uiType, CRuntimeClass * pRuntime)
 	return TRUE;
 }
 
-void CWBFModelFactory::Unregister(UINT uiType)
+void CWBFVBOFactory::Unregister(UINT uiType)
 {
 	auto itr = m_mObject.find(uiType);
 	if (itr != m_mObject.end())
 		m_mObject.erase(itr);
 }
 
-CFactoryObjectBase * CWBFModelFactory::CreateObject(UINT uiType)
+CFactoryObjectBase * CWBFVBOFactory::CreateObject(UINT uiType)
 {
 	auto itr = m_mObject.find(uiType);
 	if (itr == m_mObject.end())

@@ -1,25 +1,23 @@
 #pragma once
 
-#include <map>
+#include "..\WBF_LIB\FactoryBase.h"
+
 #include "HeaderPre.h"
 
-class CWBFRndrData;
-class __MY_EXT_CLASS__ CWBFRndrFactory
+class __MY_EXT_CLASS__ CWBFRndrFactory : public CFactoryBase
 {
 public:
 	static CWBFRndrFactory& GetInstance();
 
+public:
 	CWBFRndrFactory();
-	~CWBFRndrFactory();
+	virtual ~CWBFRndrFactory();
 
 public:
-	CWBFRndrData* CreateObject(UINT uiType);
+	virtual BOOL Register(UINT uiType, CRuntimeClass * pRuntime) override;
+	virtual void Unregister(UINT uiType) override;
+	virtual CFactoryObjectBase * CreateObject(UINT uiType) override;
 
-	BOOL RegisterObject(CRuntimeClass* pClass, UINT uiType);
-	void UnRegisterObject();
-
-private:
-	std::map<UINT, CRuntimeClass*> m_mObject;
 };
 
 #include "HeaderPost.h"

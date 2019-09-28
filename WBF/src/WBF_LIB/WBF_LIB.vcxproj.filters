@@ -22,8 +22,14 @@
     <Filter Include="Include">
       <UniqueIdentifier>{4b9808de-251c-494f-9cf4-2166de768793}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Observer">
+    <Filter Include="Interface">
+      <UniqueIdentifier>{66109ae3-e329-4cae-a0bc-0611591fdbfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Observer">
       <UniqueIdentifier>{8e9fa143-6989-4040-a73e-4ec15a3b6e1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface\Factory">
+      <UniqueIdentifier>{a0e28839-eb5d-44c4-95f4-d67c8476ca60}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,10 +46,16 @@
       <Filter>Util</Filter>
     </ClCompile>
     <ClCompile Include="WBFSubject.cpp">
-      <Filter>Observer</Filter>
+      <Filter>Interface\Observer</Filter>
     </ClCompile>
     <ClCompile Include="WBFObserver.cpp">
-      <Filter>Observer</Filter>
+      <Filter>Interface\Observer</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryObjectBase.cpp">
+      <Filter>Interface\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryBase.cpp">
+      <Filter>Interface\Factory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,13 +107,19 @@
       <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="WBFSubject.h">
-      <Filter>Observer</Filter>
+      <Filter>Interface\Observer</Filter>
     </ClInclude>
     <ClInclude Include="WBFObserver.h">
-      <Filter>Observer</Filter>
+      <Filter>Interface\Observer</Filter>
     </ClInclude>
     <ClInclude Include="WBFObserverDefine.h">
-      <Filter>Observer</Filter>
+      <Filter>Interface\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryBase.h">
+      <Filter>Interface\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryObjectBase.h">
+      <Filter>Interface\Factory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

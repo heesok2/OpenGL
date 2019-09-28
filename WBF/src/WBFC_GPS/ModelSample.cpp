@@ -43,7 +43,7 @@ GLuint g_indexes[] =
 	0, 2, 3,
 };
 
-IMPLEMENT_MODEL(CModelSample, gps::E_GPS_SAMPLE);
+IMPLEMENT_MODEL(E_MODEL_SAMPLE, CModelSample);
 
 CModelSample::CModelSample() :
 	m_uiVAO(0), m_uiVBO(0), m_uiEBO(0),

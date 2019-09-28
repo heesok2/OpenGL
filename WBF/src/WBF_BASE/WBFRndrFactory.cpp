@@ -9,8 +9,8 @@ static char THIS_FILE[] = __FILE__;
 
 CWBFRndrFactory& CWBFRndrFactory::GetInstance()
 {
-	static CWBFRndrFactory obj;
-	return obj;
+	static CWBFRndrFactory inst;
+	return inst;
 }
 
 CWBFRndrFactory::CWBFRndrFactory()
@@ -19,23 +19,9 @@ CWBFRndrFactory::CWBFRndrFactory()
 
 CWBFRndrFactory::~CWBFRndrFactory()
 {
-	UnRegisterObject();
 }
 
-CWBFRndrData * CWBFRndrFactory::CreateObject(UINT uiType)
-{
-	auto itr = m_mObject.find(uiType);
-	if (itr == m_mObject.end())
-	{
-		ASSERT(g_warning);
-		return nullptr;
-	}
-
-	auto pObject = (CWBFRndrData*)(itr->second->CreateObject());
-	return pObject;
-}
-
-BOOL CWBFRndrFactory::RegisterObject(CRuntimeClass * pRuntime, UINT uiType)
+BOOL CWBFRndrFactory::Register(UINT uiType, CRuntimeClass * pRuntime)
 {
 	auto itr = m_mObject.find(uiType);
 	if (itr != m_mObject.end())
@@ -45,11 +31,25 @@ BOOL CWBFRndrFactory::RegisterObject(CRuntimeClass * pRuntime, UINT uiType)
 	}
 
 	m_mObject[uiType] = pRuntime;
-
 	return TRUE;
 }
 
-void CWBFRndrFactory::UnRegisterObject()
+void CWBFRndrFactory::Unregister(UINT uiType)
 {
-	m_mObject.clear();
+	auto itr = m_mObject.find(uiType);
+	if (itr != m_mObject.end())
+		m_mObject.erase(itr);
+}
+
+CFactoryObjectBase * CWBFRndrFactory::CreateObject(UINT uiType)
+{
+	auto itr = m_mObject.find(uiType);
+	if (itr == m_mObject.end())
+	{
+		ASSERT(g_warning);
+		return nullptr;
+	}
+
+	auto pObject = itr->second->CreateObject();
+	return (CFactoryObjectBase*)pObject;
 }

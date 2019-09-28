@@ -13,9 +13,10 @@ public:
 	virtual ~CRndrSample();
 
 public:
+	virtual UINT GetType() override { return E_RNDR_SAMPLE; }
+
 	virtual void OnInitialData();
 	virtual void GLDraw();
-
 };
 
 #include "HeaderPost.h"

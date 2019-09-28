@@ -14,6 +14,8 @@ public:
 	virtual ~CModelSample();
 
 public:
+	virtual UINT GetType() override { return E_MODEL_SAMPLE; }
+
 	virtual opt::IWBFOption* GetOption() { return &m_Option; }
 	virtual BOOL IsValidModel() { return m_uiVAO > 0; }
 

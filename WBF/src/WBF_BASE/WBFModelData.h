@@ -1,6 +1,9 @@
 #pragma once
 
+#include "..\WBF_LIB\FactoryObjectBase.h"
+
 #include "WBFGraphicDef.h"
+#include "WBFModelDefine.h"
 #include "WBFModelFactory.h"
 #include "HeaderPre.h"
 
@@ -10,19 +13,19 @@ namespace opt
 }
 
 class CWBFModelDataManager;
-class __MY_EXT_CLASS__ CWBFModelData : public CObject
+class __MY_EXT_CLASS__ CWBFModelData : public CFactoryObjectBase
 {
 public:
 	CWBFModelData();
 	virtual ~CWBFModelData();
 
 public: // Update Flag
+	virtual UINT GetType() override { ASSERT(g_warning); return 0; }
 	virtual void InitFlag() { m_uiFlag = MODEL_UNKNOWN; }
 	virtual void SetFlag(UINT uiFlag) { m_uiFlag |= uiFlag; }
 	virtual UINT GetFlag() { return m_uiFlag; }
 
 public:
-	virtual UINT GetType() { ASSERT(g_warning); return gps::E_GPS_UNKNOWN; }
 	virtual opt::IWBFOption* GetOption() { ASSERT(g_warning); return nullptr; }
 
 	virtual BOOL IsValidModel() = 0;
@@ -49,9 +52,7 @@ protected:
 
 #define DECLARE_MODEL(class_name)\
 DECLARE_DYNCREATE(class_name);\
-virtual UINT GetType();
 
-#define IMPLEMENT_MODEL(class_name, type)\
+#define IMPLEMENT_MODEL(type, class_name)\
 IMPLEMENT_DYNCREATE(class_name, CWBFModelData);\
-BOOL bReg##class_name = CWBFModelFactory::GetInstance().RegisterObject(RUNTIME_CLASS(class_name), type);\
-UINT class_name::GetType() { return type; }
+BOOL bReg##class_name = CWBFModelFactory::GetInstance().Register(type, RUNTIME_CLASS(class_name));

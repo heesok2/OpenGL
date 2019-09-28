@@ -10,10 +10,17 @@ public:
 	CVBOGeom();
 	virtual ~CVBOGeom();
 
+	DECLARE_VBO(CVBOGeom);
+
 public:
 	// CWBFDataVBO을(를) 통해 상속됨
 	virtual void ProcessData(CWBFDocBase * pDoc) override;
 
+public:
+	UINT uiVBO;
+	UINT uiEBO;
+
+	UINT uiVertexNum;
 };
 
 #include "HeaderPost.h"

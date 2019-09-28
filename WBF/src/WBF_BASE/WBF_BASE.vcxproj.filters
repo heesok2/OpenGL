@@ -43,9 +43,6 @@
     <Filter Include="View\VBO">
       <UniqueIdentifier>{17ab6126-1efa-4955-af55-701703062e9d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="View\VBO\Renderer">
-      <UniqueIdentifier>{69012cf2-ed91-4075-96a3-bf2d0afd94b4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="DataBase\OpenGL Model%28TEST%29">
       <UniqueIdentifier>{c6f4b5ff-d1fe-436b-b754-9a710afe1331}</UniqueIdentifier>
     </Filter>
@@ -54,6 +51,9 @@
     </Filter>
     <Filter Include="DataBase\OpenGL Model%28TEST%29\Box">
       <UniqueIdentifier>{d2bf6d78-31ac-4f47-b540-40375c2bd5de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View\Renderer">
+      <UniqueIdentifier>{69012cf2-ed91-4075-96a3-bf2d0afd94b4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -73,7 +73,7 @@
       <Filter>UI\Dialog</Filter>
     </ClCompile>
     <ClCompile Include="WBFRndrFactory.cpp">
-      <Filter>View\VBO\Renderer</Filter>
+      <Filter>View\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="WBFModelFactory.cpp">
       <Filter>View\Model</Filter>
@@ -100,10 +100,10 @@
       <Filter>View\Model</Filter>
     </ClCompile>
     <ClCompile Include="WBFRndrData.cpp">
-      <Filter>View\VBO\Renderer</Filter>
+      <Filter>View\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="WBFRndrDataManager.cpp">
-      <Filter>View\VBO\Renderer</Filter>
+      <Filter>View\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="WBFVBOData.cpp">
       <Filter>View\VBO</Filter>
@@ -140,6 +140,9 @@
     </ClCompile>
     <ClCompile Include="EntityBody.cpp">
       <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFVBOFactory.cpp">
+      <Filter>View\VBO</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -182,7 +185,7 @@
       <Filter>UI\Dialog</Filter>
     </ClInclude>
     <ClInclude Include="WBFRndrFactory.h">
-      <Filter>View\VBO\Renderer</Filter>
+      <Filter>View\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="WBFGraphicDef.h">
       <Filter>View</Filter>
@@ -218,10 +221,10 @@
       <Filter>View\Model</Filter>
     </ClInclude>
     <ClInclude Include="WBFRndrData.h">
-      <Filter>View\VBO\Renderer</Filter>
+      <Filter>View\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="WBFRndrDataManager.h">
-      <Filter>View\VBO\Renderer</Filter>
+      <Filter>View\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="WBFVBOData.h">
       <Filter>View\VBO</Filter>
@@ -258,6 +261,18 @@
     </ClInclude>
     <ClInclude Include="EntityBody.h">
       <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFVBOFactory.h">
+      <Filter>View\VBO</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFVBODefine.h">
+      <Filter>View\VBO</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFModelDefine.h">
+      <Filter>View\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFRndrDefine.h">
+      <Filter>View\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
