@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "resource.h"
 #include "WBFShaderManager.h"
-#include "..\WBF_BASE\WBFGraphicDef.h"
+#include "WBFShaderDefine.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -57,12 +57,18 @@ void CWBFShaderManager::GLCreateShader(UINT uiType)
 
 	switch (uiType)
 	{
-	case gps::E_GPS_SAMPLE:
-	{
-		shader.GLAttachShader(GL_VERTEX_SHADER, IDR_SHADER_SAMPLE_VERT);
-		shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_SHADER_SAMPLE_FRAG);
-	}
-	break;
+	case E_SHADER_SAMPLE:
+		{
+			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_SHADER_SAMPLE_VERT);
+			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_SHADER_SAMPLE_FRAG);
+		}
+		break;
+	case E_SHADER_LIGHT:
+		{
+			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_SHADER_LIGHT_VERT);
+			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_SHADER_LIGHT_FRAG);
+		}
+		break;
 	default:
 		break;
 	}

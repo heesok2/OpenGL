@@ -237,6 +237,7 @@
     <ClInclude Include="WBFCamera.h" />
     <ClInclude Include="WBFGPSOption.h" />
     <ClInclude Include="WBFShader.h" />
+    <ClInclude Include="WBFShaderDefine.h" />
     <ClInclude Include="WBFShaderManager.h" />
     <ClInclude Include="GLView.h" />
     <ClInclude Include="WBF_GPS.h" />

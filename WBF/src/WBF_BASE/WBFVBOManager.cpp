@@ -41,6 +41,18 @@ void CWBFVBOManager::UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 	}
 }
 
+CWBFVBOData* CWBFVBOManager::GetVBO(UINT uiType)
+{
+	for (auto pVBO : m_lstVBO)
+	{
+		if (pVBO->GetType() == uiType)
+			return pVBO;
+	}
+
+	ASSERT(g_warning);
+	return nullptr;
+}
+
 void CWBFVBOManager::OnInitial()
 {
 	for (UINT uiType = 0; uiType < E_VBO_NUM; ++uiType)

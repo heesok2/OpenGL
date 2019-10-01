@@ -15,6 +15,7 @@ public:
 public:
 	// CWBFDataVBO을(를) 통해 상속됨
 	virtual void ProcessData(CWBFDocBase * pDoc) override;
+	virtual UINT GetType() override { return E_VBO_GEOM; }
 
 public:
 	UINT uiVBO;

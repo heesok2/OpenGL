@@ -4,6 +4,7 @@
 #include "ModelAppManager.h"
 #include "ModelSample.h"
 
+#include "..\WBF_GPS\WBFShaderDefine.h"
 #include "..\WBF_GPS\WBFShaderManager.h"
 
 #ifdef _DEBUG
@@ -25,10 +26,7 @@ CRndrSample::~CRndrSample()
 void CRndrSample::OnInitialData()
 {
 	auto pShaderMgr = ((CRndrAppManager*)m_pRndrMgr)->GetShaderManager();
-	pShaderMgr->GLCreateShader(GetType());
-
-
-
+	pShaderMgr->GLCreateShader(E_SHADER_SAMPLE);
 }
 
 void CRndrSample::GLDraw()

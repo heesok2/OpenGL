@@ -35,7 +35,7 @@ protected:
 #include "HeaderPost.h"
 
 #define DECLARE_RENDERER(class_name)\
-DECLARE_DYNCREATE(class_name);\
+DECLARE_DYNCREATE(class_name);
 
 #define IMPLEMENT_RENDERER(type, class_name)\
 IMPLEMENT_DYNCREATE(class_name, CWBFRndrData);\

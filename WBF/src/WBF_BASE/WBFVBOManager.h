@@ -15,6 +15,7 @@ public:
 
 public:
 	void UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam);
+	CWBFVBOData* GetVBO(UINT uiType);
 
 public:
 	void OnInitial();
