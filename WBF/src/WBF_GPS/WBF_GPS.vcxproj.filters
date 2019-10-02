@@ -42,12 +42,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>_common_</Filter>
     </ClCompile>
-    <ClCompile Include="WBFShader.cpp">
-      <Filter>Graphic\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFShaderManager.cpp">
-      <Filter>Graphic\Shader</Filter>
-    </ClCompile>
     <ClCompile Include="WBFGPSOption.cpp">
       <Filter>Graphic\Option</Filter>
     </ClCompile>
@@ -56,6 +50,12 @@
     </ClCompile>
     <ClCompile Include="GLView.cpp">
       <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>Graphic\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Graphic\Shader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -100,23 +100,23 @@
     <ClInclude Include="WBF_GPS_LINK.h">
       <Filter>_common_\Linker</Filter>
     </ClInclude>
-    <ClInclude Include="WBFShader.h">
-      <Filter>Graphic\Shader</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFShaderManager.h">
-      <Filter>Graphic\Shader</Filter>
-    </ClInclude>
     <ClInclude Include="WBFGPSOption.h">
       <Filter>Graphic\Option</Filter>
     </ClInclude>
     <ClInclude Include="WBFCamera.h">
       <Filter>Graphic\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="WBFShaderDefine.h">
-      <Filter>Graphic\Shader</Filter>
-    </ClInclude>
     <ClInclude Include="GLView.h">
       <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h">
+      <Filter>Graphic\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Graphic\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderDefine.h">
+      <Filter>Graphic\Shader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

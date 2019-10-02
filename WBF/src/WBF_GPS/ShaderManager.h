@@ -1,24 +1,24 @@
 #pragma once
 
-#include "WBFShader.h"
 #include <map>
+#include "Shader.h"
 
 #include "HeaderPre.h"
-class __MY_EXT_CLASS__ CWBFShaderManager
+class __MY_EXT_CLASS__ CShaderManager
 {
 public:
-	CWBFShaderManager();
-	virtual ~CWBFShaderManager();
+	CShaderManager();
+	virtual ~CShaderManager();
 
 public:
 	BOOL IsValidShader(UINT uiType);
-	CWBFShader& GetShader(UINT uiType);
+	CShader& GetShader(UINT uiType);
 
 	void GLShaderVersion();
 	void GLCreateShader(UINT uiType);
 
 protected:
-	std::map<unsigned int, CWBFShader> m_mBuildShader;
+	std::map<unsigned int, CShader> m_mBuildShader;
 
 };
 #include "HeaderPost.h"

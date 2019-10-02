@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="_common_">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="_resource file_">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="_resource_">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="_common_\Linker">
+      <UniqueIdentifier>{a411fc0a-51a8-43eb-b660-2d55f6436e7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{823ca91a-79de-4ebb-92ee-37174704150b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic">
+      <UniqueIdentifier>{1ca22ed9-4cd2-415f-a010-496a3de411b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\Model">
+      <UniqueIdentifier>{113578aa-e7e8-4374-8ea6-3200c7211aa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\Renderer">
+      <UniqueIdentifier>{9e66ac82-d4f6-46b4-a51f-92161acd9dad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\VBO">
+      <UniqueIdentifier>{3791b211-e0ae-4cd6-9d51-596b3d214d96}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>_common_</Filter>
+    </ClCompile>
+    <ClCompile Include="WAF_GPS.cpp">
+      <Filter>_common_</Filter>
+    </ClCompile>
+    <ClCompile Include="GPSView.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelLight.cpp">
+      <Filter>Graphic\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelSample.cpp">
+      <Filter>Graphic\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFModelManager.cpp">
+      <Filter>Graphic\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="VBOGeom.cpp">
+      <Filter>Graphic\VBO</Filter>
+    </ClCompile>
+    <ClCompile Include="RndrAppManager.cpp">
+      <Filter>Graphic\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="RndrLight.cpp">
+      <Filter>Graphic\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="RndrSample.cpp">
+      <Filter>Graphic\Renderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WAF_GPS.def">
+      <Filter>_common_</Filter>
+    </None>
+    <None Include="res\WAF_GPS.rc2">
+      <Filter>_resource_</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WAF_GPS.h">
+      <Filter>_common_</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>_common_</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>_common_</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>_resource_</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderPost.h">
+      <Filter>_common_\Linker</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderPre.h">
+      <Filter>_common_\Linker</Filter>
+    </ClInclude>
+    <ClInclude Include="WAF_GPS_LINK.h">
+      <Filter>_common_\Linker</Filter>
+    </ClInclude>
+    <ClInclude Include="GPSView.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLight.h">
+      <Filter>Graphic\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelSample.h">
+      <Filter>Graphic\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFModelManager.h">
+      <Filter>Graphic\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="VBOGeom.h">
+      <Filter>Graphic\VBO</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrAppManager.h">
+      <Filter>Graphic\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrLight.h">
+      <Filter>Graphic\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrSample.h">
+      <Filter>Graphic\Renderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WAF_GPS.rc">
+      <Filter>_resource_</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

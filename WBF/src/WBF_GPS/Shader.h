@@ -2,11 +2,11 @@
 
 #include <vector>
 #include "HeaderPre.h"
-class __MY_EXT_CLASS__ CWBFShader
+class __MY_EXT_CLASS__ CShader
 {
 public:
-	CWBFShader();
-	virtual ~CWBFShader();
+	CShader();
+	virtual ~CShader();
 
 public:
 	void GLCreateProgram();

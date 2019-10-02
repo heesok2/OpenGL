@@ -215,8 +215,8 @@
     </ClCompile>
     <ClCompile Include="WBFCamera.cpp" />
     <ClCompile Include="WBFGPSOption.cpp" />
-    <ClCompile Include="WBFShader.cpp" />
-    <ClCompile Include="WBFShaderManager.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="GLView.cpp" />
     <ClCompile Include="WBF_GPS.cpp" />
   </ItemGroup>
@@ -236,9 +236,9 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="WBFCamera.h" />
     <ClInclude Include="WBFGPSOption.h" />
-    <ClInclude Include="WBFShader.h" />
-    <ClInclude Include="WBFShaderDefine.h" />
-    <ClInclude Include="WBFShaderManager.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderDefine.h" />
+    <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="GLView.h" />
     <ClInclude Include="WBF_GPS.h" />
     <ClInclude Include="WBF_GPS_LINK.h" />

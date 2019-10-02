@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "resource.h"
-#include "WBFShaderManager.h"
-#include "WBFShaderDefine.h"
+#include "ShaderManager.h"
+#include "ShaderDefine.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -9,34 +9,34 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFShaderManager::CWBFShaderManager()
+CShaderManager::CShaderManager()
 {
 }
 
 
-CWBFShaderManager::~CWBFShaderManager()
+CShaderManager::~CShaderManager()
 {
 }
 
-BOOL CWBFShaderManager::IsValidShader(UINT uiType)
+BOOL CShaderManager::IsValidShader(UINT uiType)
 {
 	auto itr = m_mBuildShader.find(uiType);
 	return itr != m_mBuildShader.end();
 }
 
-CWBFShader & CWBFShaderManager::GetShader(UINT uiType)
+CShader & CShaderManager::GetShader(UINT uiType)
 {
 	auto itr = m_mBuildShader.find(uiType);
 	if (itr == m_mBuildShader.end())
 	{
 		ASSERT(g_warning);
-		m_mBuildShader[uiType] = CWBFShader();
+		m_mBuildShader[uiType] = CShader();
 	}
 
 	return m_mBuildShader[uiType];
 }
 
-void CWBFShaderManager::GLShaderVersion()
+void CShaderManager::GLShaderVersion()
 {
 	char* strSLVersion = (char*)glGetString(GL_SHADING_LANGUAGE_VERSION);
 	//원격 데스크탑 보안이 강화되면서 그래픽 자원을 윈도우로 부터 할당받는 방법이 바뀐것으로 보인다.
@@ -50,9 +50,9 @@ void CWBFShaderManager::GLShaderVersion()
 	}
 }
 
-void CWBFShaderManager::GLCreateShader(UINT uiType)
+void CShaderManager::GLCreateShader(UINT uiType)
 {
-	CWBFShader shader;
+	CShader shader;
 	shader.GLCreateProgram();
 
 	switch (uiType)

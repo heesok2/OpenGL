@@ -5,7 +5,7 @@
 
 class CWBFViewBase;
 class CWBFRndrData;
-class CWBFShaderManager;
+class CShaderManager;
 class __MY_EXT_CLASS__ CWBFRndrDataManager
 {
 public:

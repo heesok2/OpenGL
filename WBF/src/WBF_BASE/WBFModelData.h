@@ -12,7 +12,7 @@ namespace opt
 	class IWBFOption;
 }
 
-class CWBFShader;
+class CShader;
 class CModelManager;
 class __MY_EXT_CLASS__ CWBFModelData : public CFactoryObjectBase
 {
@@ -23,7 +23,7 @@ public:
 public:
 	virtual void Release() = 0;
 	virtual void Build() = 0;
-	virtual void Draw(CWBFShader* pShader) = 0;
+	virtual void Draw(CShader* pShader) = 0;
 
 
 //

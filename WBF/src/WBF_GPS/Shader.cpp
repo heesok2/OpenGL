@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WBFShader.h"
+#include "Shader.h"
 
 #include <fstream>
 #include <sstream>
@@ -10,21 +10,21 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFShader::CWBFShader()
+CShader::CShader()
 	: m_nProg(0)
 {
 }
 
-CWBFShader::~CWBFShader()
+CShader::~CShader()
 {
 }
 
-void CWBFShader::GLCreateProgram()
+void CShader::GLCreateProgram()
 {
 	m_nProg = glCreateProgram();
 }
 
-void CWBFShader::GLAttachShader(UINT nShaderType, UINT uiResID)
+void CShader::GLAttachShader(UINT nShaderType, UINT uiResID)
 {
 	auto lambda_source = [](UINT uiRes, std::string& strSource)
 	{
@@ -114,7 +114,7 @@ void CWBFShader::GLAttachShader(UINT nShaderType, UINT uiResID)
 	m_vShader.push_back(nShader);
 }
 
-void CWBFShader::GLLinkShader()
+void CShader::GLLinkShader()
 {
 	auto lambda_status = [](unsigned int id, unsigned int type)
 	{
@@ -149,12 +149,12 @@ void CWBFShader::GLLinkShader()
 		glDeleteShader(sh);
 }
 
-void CWBFShader::GLBind()
+void CShader::GLBind()
 {
 	glUseProgram(m_nProg);
 }
 
-void CWBFShader::GLUnbind()
+void CShader::GLUnbind()
 {
 	glUseProgram(0);
 }
