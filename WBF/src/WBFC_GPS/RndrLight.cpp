@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "RndrLight.h"
 #include "RndrAppManager.h"
-#include "ModelAppManager.h"
+#include "WBFModelManager.h"
 #include "ModelLight.h"
 
 #include "..\WBF_BASE\WBFViewBase.h"
@@ -21,7 +21,6 @@ CRndrLight::CRndrLight()
 {
 }
 
-
 CRndrLight::~CRndrLight()
 {
 }
@@ -37,7 +36,7 @@ void CRndrLight::GLDraw()
 	auto pShaderMgr = ((CRndrAppManager*)m_pRndrMgr)->GetShaderManager();
 	if (!pShaderMgr->IsValidShader(GetType())) return;
 
-	auto pModel = ((CModelAppManager*)m_pModelMgr)->GetModel(E_MODEL_LIGHT);
+	auto pModel = ((CWBFModelManager*)m_pModelMgr)->GetModel(E_MODEL_LIGHT);
 	if (pModel == nullptr) return;
 
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
@@ -48,23 +47,28 @@ void CRndrLight::GLDraw()
 		auto& Shader = pShaderMgr->GetShader(E_SHADER_LIGHT);
 		Shader.GLBind();
 		{
+			auto pView = (CWBFViewBase*)m_pRndrMgr->GetView();
+			glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+
 			int nProg;
 			glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
 
-			int aViewPort[4] = {0};
-			glGetIntegerv(GL_VIEWPORT, aViewPort);
-
 			glm::mat4 model(1.f);
+			model = glm::translate(model, lightPos);
 			//model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 
 			glm::mat4 view(1.f);
-			auto pView = (CWBFViewBase*)m_pRndrMgr->GetView();
+			pView->GetViewMatrix(view);
+			//view = glm::lookAt(glm::vec3(0.f, 0.f, 3.f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 1.f, 0.f));
+
 			//view = glm::translate(view, glm::vec3(0.f, 0.f, -3.f));
 			//view = glm::lookAt(glm::vec3(3.f, 0.f, 3.f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 1.f, 0.f));
-			pView->GetViewMatrix(view);
+			//pView->GetViewMatrix(view);
 
 			glm::mat4 proj(1.f);
-			glm::ortho(0.f, 800.f, 0.f, 600.f, 0.1f, 100.f); // left, right, bottom, top, near, far
+
+			int aViewPort[4] = {0};
+			glGetIntegerv(GL_VIEWPORT, aViewPort);
 			proj = glm::perspective(glm::radians(45.f), (float)(aViewPort[2] - aViewPort[0]) / (float)(aViewPort[3] - aViewPort[1]), 0.1f, 100.f);
 
 			auto modelLoc = glGetUniformLocation(nProg, "model");
@@ -75,18 +79,10 @@ void CRndrLight::GLDraw()
 
 			auto projLoc = glGetUniformLocation(nProg, "projection");
 			glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj));
-
-
-			if (pModel->IsValidModel())
-			{
-				pModel->GLAttachData();
-
-				pModel->GLBind();
-				pModel->GLDraw();
-				pModel->GLUnbind();
-			}
 		}
 		Shader.GLUnbind();
+
+		pModel->Draw(&Shader);
 
 		glDisable(GL_DEPTH_TEST);
 	}

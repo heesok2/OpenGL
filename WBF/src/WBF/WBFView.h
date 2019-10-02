@@ -35,9 +35,7 @@ public:
 	virtual void AssertValid() const;
 	virtual void Dump(CDumpContext& dc) const;
 #endif
-
-	virtual CWBFRndrDataManager* GetRenderManager() { return (CWBFRndrDataManager*)m_pRndrMgr; }
-
+	
 	// 재정의입니다.
 public:
 	virtual void OnDraw(CDC* pDC);  // 이 뷰를 그리기 위해 재정의되었습니다.

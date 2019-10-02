@@ -7,7 +7,7 @@
 #include "HeaderPre.h"
 
 class CWBFRndrDataManager;
-class CWBFModelDataManager;
+class CModelManager;
 class __MY_EXT_CLASS__ CWBFRndrData : public CFactoryObjectBase
 {
 public:
@@ -20,7 +20,7 @@ public:
 	virtual void GLDraw() = 0;
 
 public:
-	void SetHelper(CWBFRndrDataManager* pRndrMgr, CWBFModelDataManager* pModelMgr)
+	void SetHelper(CWBFRndrDataManager* pRndrMgr, CModelManager* pModelMgr)
 	{
 		m_pRndrMgr = pRndrMgr;
 		m_pModelMgr = pModelMgr;
@@ -28,7 +28,7 @@ public:
 
 protected:
 	CWBFRndrDataManager* m_pRndrMgr;
-	CWBFModelDataManager* m_pModelMgr;
+	CModelManager* m_pModelMgr;
 
 };
 

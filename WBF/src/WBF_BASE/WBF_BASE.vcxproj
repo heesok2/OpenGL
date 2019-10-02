@@ -207,6 +207,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DocListener.cpp" />
     <ClCompile Include="EntityBody.cpp" />
     <ClCompile Include="EntityGeom.cpp" />
     <ClCompile Include="EntitySubBody.cpp" />
@@ -247,12 +248,14 @@
     <None Include="WBF_BASE.def" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DocListener.h" />
     <ClInclude Include="EntityBody.h" />
     <ClInclude Include="EntityGeom.h" />
     <ClInclude Include="EntitySubBody.h" />
     <ClInclude Include="EntityVertex.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
+    <ClInclude Include="ListenerDefine.h" />
     <ClInclude Include="ModuleBody.h" />
     <ClInclude Include="ModuleGeom.h" />
     <ClInclude Include="ModuleSubBody.h" />

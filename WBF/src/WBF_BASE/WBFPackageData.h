@@ -7,11 +7,12 @@
 
 #include "HeaderPre.h"
 
+class CWBFDocBase;
 class CWBFModuleBase;
 class __MY_EXT_CLASS__ CWBFPackageData : public CWBFSubject
 {
 public:
-	CWBFPackageData();
+	CWBFPackageData(CWBFDocBase* pDoc);
 	virtual ~CWBFPackageData();
 
 public:
@@ -26,6 +27,7 @@ public:
 	virtual BOOL Rollback();
 
 protected:
+	CWBFDocBase* m_pMyDoc;
 	std::map<DTYPE, CWBFModuleBase*> m_mModule;
 
 };

@@ -16,9 +16,6 @@
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{89b1ef96-646f-4356-a8c8-f000dcef7da7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Base">
-      <UniqueIdentifier>{dd31c20d-1876-4eb5-94bf-f48a453d3219}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Graphic">
       <UniqueIdentifier>{70887ea0-bd14-4d95-a2b6-24a0c4d97daa}</UniqueIdentifier>
     </Filter>
@@ -34,6 +31,9 @@
     <Filter Include="Graphic\VBO">
       <UniqueIdentifier>{2da9f735-5434-44ed-91b9-963f19b3381a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{dd31c20d-1876-4eb5-94bf-f48a453d3219}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -43,7 +43,7 @@
       <Filter>_common_</Filter>
     </ClCompile>
     <ClCompile Include="GPSView.cpp">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="VBOGeom.cpp">
       <Filter>Graphic\VBO</Filter>
@@ -57,14 +57,14 @@
     <ClCompile Include="RndrAppManager.cpp">
       <Filter>Graphic\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="ModelAppManager.cpp">
-      <Filter>Graphic\Manager</Filter>
-    </ClCompile>
     <ClCompile Include="RndrLight.cpp">
       <Filter>Graphic\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="ModelLight.cpp">
       <Filter>Graphic\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFModelManager.cpp">
+      <Filter>Graphic\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,7 +98,7 @@
       <Filter>_common_\Linker</Filter>
     </ClInclude>
     <ClInclude Include="GPSView.h">
-      <Filter>Base</Filter>
+      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="VBOGeom.h">
       <Filter>Graphic\VBO</Filter>
@@ -112,14 +112,14 @@
     <ClInclude Include="RndrAppManager.h">
       <Filter>Graphic\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="ModelAppManager.h">
-      <Filter>Graphic\Manager</Filter>
-    </ClInclude>
     <ClInclude Include="RndrLight.h">
       <Filter>Graphic\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="ModelLight.h">
       <Filter>Graphic\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFModelManager.h">
+      <Filter>Graphic\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

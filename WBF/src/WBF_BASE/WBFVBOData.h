@@ -8,23 +8,24 @@
 #include "HeaderPre.h"
 
 class CWBFDocBase;
-class __MY_EXT_CLASS__ CWBFVBOData : public CFactoryObjectBase 
+class __MY_EXT_CLASS__ CVBOData : public CFactoryObjectBase
 {
 public:
-	CWBFVBOData();
-	virtual ~CWBFVBOData();
+	CVBOData();
+	virtual ~CVBOData();
 
 public:
-	virtual UINT GetType() override { ASSERT(g_warning); return 0; }
-	virtual void ProcessData(CWBFDocBase* pDoc) = 0;
-
+	virtual void Release() = 0;
+	virtual void Build(CWBFDocBase* pDoc) = 0;
+	virtual void Draw() = 0;
+	
 };
 
 #include "HeaderPost.h"
 
-#define DECLARE_VBO(class_name)\
+#define DECLARE_DYNAMIC_VBO(class_name)\
 DECLARE_DYNCREATE(class_name);
 
-#define IMPLEMENT_VBO(type, class_name)\
-IMPLEMENT_DYNCREATE(class_name, CWBFVBOData);\
+#define IMPLEMENT_DYNAMIC_VBO(type, class_name)\
+IMPLEMENT_DYNCREATE(class_name, CVBOData);\
 BOOL b##class_name = CWBFVBOFactory::GetInstance().Register(type, RUNTIME_CLASS(class_name));

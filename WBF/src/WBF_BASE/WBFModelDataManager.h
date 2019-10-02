@@ -7,12 +7,12 @@
 class CWBFDocBase;
 class CWBFViewBase;
 class CWBFModelData;
-class CWBFVBOManager;
-class __MY_EXT_CLASS__ CWBFModelDataManager
+class CVBOManager;
+class __MY_EXT_CLASS__ CModelManager
 {
 public:
-	CWBFModelDataManager(CWBFViewBase* pView);
-	virtual ~CWBFModelDataManager();
+	CModelManager(CWBFViewBase* pView);
+	virtual ~CModelManager();
 	
 public:
 	virtual void OnInitial();
@@ -24,7 +24,7 @@ public:
 	virtual void GLInitialData() = 0;	
 	
 public:
-	virtual CWBFVBOManager* GetVBOManager() = 0;
+	virtual CVBOManager* GetVBOManager() = 0;
 	CWBFDocBase* GetDoc() { return m_pMyDoc; }
 	CWBFModelData* GetModel(UINT uiType);
 

@@ -17,9 +17,9 @@ public:
 	virtual BOOL GetViewMatrix(glm::mat4& matView);
 
 public:
-	void BeginwglCurrent();
-	void EndwglCurrent();
-	void SwapBuffers();
+	virtual void BeginwglCurrent() override;
+	virtual void EndwglCurrent() override;
+	virtual void SwapBuffers() override;
 
 protected:
 	void InitializePalette();

@@ -6,7 +6,7 @@
 class __MY_EXT_CLASS__ CWBFPackageSystem : public CWBFPackageData
 {
 public:
-	CWBFPackageSystem();
+	CWBFPackageSystem(CWBFDocBase* pDoc);
 	virtual ~CWBFPackageSystem();
 
 public:

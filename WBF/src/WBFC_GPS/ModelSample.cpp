@@ -250,3 +250,11 @@ void CModelSample::GLDelete()
 	m_uiVAO = m_uiVBO = m_uiEBO = 0;
 	m_uiTexJPG = m_uiTexPNG = 0;
 }
+
+void CModelSample::Release()
+{
+}
+
+void CModelSample::Build()
+{
+}

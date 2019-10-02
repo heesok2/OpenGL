@@ -13,103 +13,145 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-IMPLEMENT_VBO(E_VBO_GEOM, CVBOGeom, CWBFVBOData);
+IMPLEMENT_DYNAMIC_VBO(E_VBO_GEOM, CVBOGeom);
 
 CVBOGeom::CVBOGeom()
 {
-	uiVBO = 0;
-	uiEBO = 0;
 }
 
 CVBOGeom::~CVBOGeom()
 {
 }
 
-void CVBOGeom::ProcessData(CWBFDocBase * pDoc)
+void CVBOGeom::Release()
+{
+	auto itr = m_mVAO.begin();
+	while (itr != m_mVAO.end())
+	{
+		auto& EntVBO = itr->second;
+
+		glDeleteBuffers(1, &EntVBO.VBO);
+		glDeleteBuffers(1, &EntVBO.EBO);
+		glDeleteVertexArrays(1, &EntVBO.VAO);
+
+		itr++;
+	}
+
+	m_mVAO.clear();
+}
+
+void CVBOGeom::Build(CWBFDocBase * pDoc)
 {
 	auto pPackage = pDoc->GetPackage();
 	auto pModuleVertex = (CModuleVertex*)pPackage->GetModule(E_TYPE_VERTEX);
 	auto pModuleSubBody = (CModuleSubBody*)pPackage->GetModule(E_TYPE_SUBBODY);
 	auto pModuleBody = (CModuleBody*)pPackage->GetModule(E_TYPE_BODY);
 
-	auto SZ_POS = 3;
-	auto SZ_NORM = 3;
-	auto SZ_TEX = 2;
-	auto SZ_DATA = SZ_POS + SZ_NORM + SZ_TEX;
+	auto lambda_glm_copy = [](float* pSrc, UINT uiSize, float* pDest)
+	{
+		std::copy(pSrc, pSrc + uiSize, pDest);
+		return uiSize;
+	};
 
-	auto lBufferNum = 0;
+	auto VERTEX_NUM = 3;
+	auto NORMAL_NUM = 3;
+	auto TEXCORD_NUM = 2;
+	auto BUFFER_NUM = VERTEX_NUM + NORMAL_NUM + TEXCORD_NUM;
+
+	std::map<UINT, UINT> mVertexIndex;
+	std::vector<CEntityVertex> lstVertex;
 	std::vector<CEntityBody> lstBody;
 
+	auto lVertexNum = pModuleVertex->GetDataList(lstVertex);
 	auto lBodyNum = pModuleBody->GetDataList(lstBody);
+
+	float* aBuffer = new float[lVertexNum * BUFFER_NUM];
+
+	auto lBufferNum = 0;
+	for (auto lvtx = 0; lvtx < lVertexNum; ++lvtx)
+	{
+		auto& EntVertex = lstVertex[lvtx];
+
+		lBufferNum += lambda_glm_copy(glm::value_ptr(EntVertex.vPos), VERTEX_NUM, &aBuffer[lBufferNum]);
+		lBufferNum += lambda_glm_copy(glm::value_ptr(EntVertex.vNormal), NORMAL_NUM, &aBuffer[lBufferNum]);
+		lBufferNum += lambda_glm_copy(glm::value_ptr(EntVertex.vTexcord), TEXCORD_NUM, &aBuffer[lBufferNum]);
+
+		mVertexIndex[EntVertex.dbKey] = lvtx;
+	}
+
+	UINT VBO;
+	glGenBuffers(1, &VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float)*(lVertexNum*BUFFER_NUM), aBuffer, GL_STATIC_DRAW);
+
 	for (auto lbody = 0; lbody < lBodyNum; ++lbody)
 	{
-		for (auto dbSub : lstBody[lbody].lstSubBody)
+		auto& EntBody = lstBody[lbody];
+
+		auto lIndexNum = 0;
+		for (auto lsub = 0; lsub < EntBody.lstSubBody.size(); ++lsub)
 		{
-			CEntitySubBody entSubBody;
-			if (!pModuleSubBody->Find(dbSub, entSubBody))
+			CEntitySubBody EntSubBody;
+			if (!pModuleSubBody->Find(EntBody.lstSubBody[lsub], EntSubBody))
 				continue;
 
-			lBufferNum += entSubBody.lstVertex.size();
+			lIndexNum += EntSubBody.lstVertex.size();
 		}
-	}
 
-	auto SZ_OFFSET_POS = 0;
-	auto SZ_OFFSET_NORM = lBufferNum * SZ_POS;
-	auto SZ_OFFSET_TEX = lBufferNum * (SZ_POS + SZ_NORM);
-
-	auto lDataNum = 0;
-	float* aBuffer = new float[lBufferNum * SZ_DATA];
-	UINT* aIndex = new UINT[lBufferNum * SZ_DATA];
-
-	for (auto lbody = 0; lbody < lBodyNum; ++lbody)
-	{
-		for (auto dbSub : lstBody[lbody].lstSubBody)
+		auto lBufferIndxNum = 0;
+		UINT* aIndex = new UINT[lIndexNum];
+		for (auto lsub = 0; lsub < EntBody.lstSubBody.size(); ++lsub)
 		{
-			CEntitySubBody entSubBody;
-			if (!pModuleSubBody->Find(dbSub, entSubBody))
+			CEntitySubBody EntSubBody;
+			if (!pModuleSubBody->Find(EntBody.lstSubBody[lsub], EntSubBody))
 				continue;
 
-			for (auto dbVertex : entSubBody.lstVertex)
-			{
-				CEntityVertex entVertex;
-				if (!pModuleVertex->Find(dbVertex, entVertex))
-					continue;
-
-				auto pPos = glm::value_ptr(entVertex.vPos);
-				auto pNorm = glm::value_ptr(entVertex.vNormal);
-				auto pTex = glm::value_ptr(entVertex.vTexcord);
-
-				std::copy(pPos, pPos + SZ_POS, &aBuffer[lBufferNum]); lDataNum += SZ_POS;
-				std::copy(pNorm, pNorm + SZ_NORM, &aBuffer[lBufferNum]); lDataNum += SZ_NORM;
-				std::copy(pTex, pTex + SZ_TEX, &aBuffer[lBufferNum]); lDataNum += SZ_TEX;
-			}
+			for (auto dbKey : EntSubBody.lstVertex)
+				aIndex[lBufferIndxNum++] = mVertexIndex[dbKey];
 		}
+
+		///////////////////////////////////////////////////////////
+
+		UINT EBO, VAO;
+
+		glGenBuffers(1, &EBO);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(UINT)*lBufferIndxNum, aIndex, GL_STATIC_DRAW);
+
+		glGenVertexArrays(1, &VAO);
+		glBindVertexArray(VAO);
+
+		glBindBuffer(GL_ARRAY_BUFFER, VBO);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, VERTEX_NUM, GL_FLOAT, GL_FALSE, sizeof(float)*BUFFER_NUM, 0);
+
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, NORMAL_NUM, GL_FLOAT, GL_FALSE, sizeof(float)*BUFFER_NUM, (void*)(sizeof(float)*(VERTEX_NUM)));
+
+		glEnableVertexAttribArray(2);
+		glVertexAttribPointer(2, TEXCORD_NUM, GL_FLOAT, GL_FALSE, sizeof(float)*BUFFER_NUM, (void*)(sizeof(float)*(VERTEX_NUM + NORMAL_NUM)));
+
+		glBindVertexArray(0);
+
+		m_mVAO[EntBody.dbKey] = TEntityVBO(VBO, EBO, VAO, lBufferIndxNum);
+
+		delete[] aIndex;
 	}
-
-	for (auto indx = 0; indx < lBufferNum; ++indx)
-	{
-		aIndex[indx] = indx;
-	}
-
-	/////////////////////////////////////////////////////
-	// VBO
-
-	uiVertexNum = lBufferNum;
-
-	glGenBuffers(1, &uiVBO);
-	glBindBuffer(GL_ARRAY_BUFFER, uiVBO);
-	{
-		glBufferData(GL_ARRAY_BUFFER, sizeof(float) * lDataNum, aBuffer, GL_STATIC_DRAW);
-	}
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-	glGenBuffers(1, &uiEBO);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, uiEBO);
-	{
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(UINT) * lBufferNum, aIndex, GL_STATIC_DRAW);
-	}
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 	delete[] aBuffer;
-	delete[] aIndex;
+}
+
+void CVBOGeom::Draw()
+{
+	auto itr = m_mVAO.begin();
+	while (itr != m_mVAO.end())
+	{
+		glBindVertexArray(itr->second.VAO);
+		glDrawElements(GL_TRIANGLES, itr->second.DataNum, GL_UNSIGNED_INT, 0);
+		glBindVertexArray(0);
+
+		itr++;
+	}
 }

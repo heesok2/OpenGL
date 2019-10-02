@@ -12,17 +12,17 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFModelDataManager::CWBFModelDataManager(CWBFViewBase* pView)
+CModelManager::CModelManager(CWBFViewBase* pView)
 {
 	m_pMyDoc = (CWBFDocBase*)pView->GetDocument();
 	m_pView = pView;
 }
 
-CWBFModelDataManager::~CWBFModelDataManager()
+CModelManager::~CModelManager()
 {
 }
 
-void CWBFModelDataManager::OnInitial()
+void CModelManager::OnInitial()
 {
 	for (long indx = 0; indx < E_MODEL_NUM; ++indx)
 	{
@@ -34,7 +34,7 @@ void CWBFModelDataManager::OnInitial()
 	}
 }
 
-void CWBFModelDataManager::OnDestroy()
+void CModelManager::OnDestroy()
 {
 	for (auto pObject : m_vObject)
 	{
@@ -44,7 +44,7 @@ void CWBFModelDataManager::OnDestroy()
 	m_vObject.clear();
 }
 
-CWBFModelData * CWBFModelDataManager::GetModel(UINT uiType)
+CWBFModelData * CModelManager::GetModel(UINT uiType)
 {
 	for (auto pObject : m_vObject)
 	{

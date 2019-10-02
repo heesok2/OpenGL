@@ -1,21 +1,21 @@
 #pragma once
 
 #include <vector>
-#include "..\WBF_LIB\WBFObserver.h"
 
 #include "HeaderPre.h"
 
 class CWBFDocBase;
-class CWBFVBOData;
-class __MY_EXT_CLASS__ CWBFVBOManager
+class CVBOData;
+class __MY_EXT_CLASS__ CVBOManager
 {
 public:
-	CWBFVBOManager(CWBFDocBase* pDoc);
-	virtual ~CWBFVBOManager();
+	CVBOManager(CWBFDocBase* pDoc);
+	virtual ~CVBOManager();
 
 public:
-	void UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam);
-	CWBFVBOData* GetVBO(UINT uiType);
+	virtual BOOL Exist(UINT eType);
+	virtual CVBOData* Lookup(UINT eType);
+	virtual void RebuildVBO();
 
 public:
 	void OnInitial();
@@ -23,7 +23,7 @@ public:
 
 protected:
 	CWBFDocBase* m_pMyDoc;
-	std::vector<CWBFVBOData*> m_lstVBO;
+	std::vector<CVBOData*> m_lstVBO;
 };
 
 #include "HeaderPost.h"

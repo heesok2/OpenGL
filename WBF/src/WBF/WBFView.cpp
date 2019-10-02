@@ -23,7 +23,7 @@
 #include "WBFView.h"
 #include "WBFControlDlg.h"
 
-#include "..\WBFC_GPS\ModelAppManager.h"
+#include "..\WBFC_GPS\WBFModelManager.h"
 #include "..\WBFC_GPS\RndrAppManager.h"
 
 #ifdef _DEBUG
@@ -125,7 +125,7 @@ void CWBFView::OnInitialUpdate()
 
 	BeginwglCurrent();
 	{
-		m_pModelMgr = new CModelAppManager(this);
+		m_pModelMgr = new CWBFModelManager(this);
 		m_pModelMgr->OnInitial();
 
 

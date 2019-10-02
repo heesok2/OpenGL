@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "RndrSample.h"
 #include "RndrAppManager.h"
-#include "ModelAppManager.h"
+#include "WBFModelManager.h"
 #include "ModelSample.h"
 
 #include "..\WBF_GPS\WBFShaderDefine.h"
@@ -31,34 +31,34 @@ void CRndrSample::OnInitialData()
 
 void CRndrSample::GLDraw()
 {
-	auto pShaderMgr = ((CRndrAppManager*)m_pRndrMgr)->GetShaderManager();
-	if (!pShaderMgr->IsValidShader(GetType())) return;
+	//auto pShaderMgr = ((CRndrAppManager*)m_pRndrMgr)->GetShaderManager();
+	//if (!pShaderMgr->IsValidShader(GetType())) return;
 
-	auto pModel = ((CModelAppManager*)m_pModelMgr)->GetModel(GetType());
-	if (pModel == nullptr) return;
+	//auto pModel = ((CWBFModelManager*)m_pModelMgr)->GetModel(GetType());
+	//if (pModel == nullptr) return;
 
-	auto pOption = (CWBFGPSOption*)pModel->GetOption();
+	//auto pOption = (CWBFGPSOption*)pModel->GetOption();
 
-	glPushAttrib(GL_ALL_ATTRIB_BITS);
-	{
-		glEnable(GL_DEPTH_TEST);
-		glPolygonMode(pOption->uiPolygonFace, pOption->uiPolygonMode);
+	//glPushAttrib(GL_ALL_ATTRIB_BITS);
+	//{
+	//	glEnable(GL_DEPTH_TEST);
+	//	glPolygonMode(pOption->uiPolygonFace, pOption->uiPolygonMode);
 
-		auto& Shader = pShaderMgr->GetShader(GetType());
-		Shader.GLBind();
-		{
-			if (pModel->IsValidModel())
-			{
-				pModel->GLAttachData();
+	//	auto& Shader = pShaderMgr->GetShader(GetType());
+	//	Shader.GLBind();
+	//	{
+	//		if (pModel->IsValidModel())
+	//		{
+	//			pModel->GLAttachData();
 
-				pModel->GLBind();
-				pModel->GLDraw();
-				pModel->GLUnbind();
-			}
-		}
-		Shader.GLUnbind();
+	//			pModel->GLBind();
+	//			pModel->GLDraw();
+	//			pModel->GLUnbind();
+	//		}
+	//	}
+	//	Shader.GLUnbind();
 
-		glDisable(GL_DEPTH_TEST);
-	}
-	glPopAttrib();
+	//	glDisable(GL_DEPTH_TEST);
+	//}
+	//glPopAttrib();
 }

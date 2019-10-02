@@ -7,11 +7,10 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFVBOData::CWBFVBOData()
+CVBOData::CVBOData()
 {
 }
 
-
-CWBFVBOData::~CWBFVBOData()
+CVBOData::~CVBOData()
 {
 }

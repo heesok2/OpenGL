@@ -40,6 +40,13 @@ protected:
 	CString m_cstrPNG;
 	CString m_cstrJPG;
 
+
+	// CWBFModelData을(를) 통해 상속됨
+	virtual void Release() override;
+
+	virtual void Build() override;
+	virtual void Draw(CWBFShader* pShader) {};
+
 };
 
 #include "HeaderPost.h"

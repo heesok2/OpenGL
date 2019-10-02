@@ -12,40 +12,50 @@ namespace opt
 	class IWBFOption;
 }
 
-class CWBFModelDataManager;
+class CWBFShader;
+class CModelManager;
 class __MY_EXT_CLASS__ CWBFModelData : public CFactoryObjectBase
 {
 public:
 	CWBFModelData();
 	virtual ~CWBFModelData();
 
-public: // Update Flag
-	virtual UINT GetType() override { ASSERT(g_warning); return 0; }
-	virtual void InitFlag() { m_uiFlag = MODEL_UNKNOWN; }
-	virtual void SetFlag(UINT uiFlag) { m_uiFlag |= uiFlag; }
-	virtual UINT GetFlag() { return m_uiFlag; }
+public:
+	virtual void Release() = 0;
+	virtual void Build() = 0;
+	virtual void Draw(CWBFShader* pShader) = 0;
+
+
+//
+//
+//public: // Update Flag
+//	virtual UINT GetType() override { ASSERT(g_warning); return 0; }
+//	virtual void InitFlag() { m_uiFlag = MODEL_UNKNOWN; }
+//	virtual void SetFlag(UINT uiFlag) { m_uiFlag |= uiFlag; }
+//	virtual UINT GetFlag() { return m_uiFlag; }
+//
+//public:
+//	virtual opt::IWBFOption* GetOption() { ASSERT(g_warning); return nullptr; }
+//
+//
+//	virtual BOOL IsValidModel() = 0;
+//	virtual void GLInitialData() = 0;
+//	virtual void GLCreateVBO() = 0;
+//	virtual void GLAttachData() = 0;
+//	virtual void GLBind() = 0;
+//	virtual void GLDraw() = 0;
+//	virtual void GLUnbind() = 0;
+//	virtual void GLDelete() = 0;
 
 public:
-	virtual opt::IWBFOption* GetOption() { ASSERT(g_warning); return nullptr; }
-
-	virtual BOOL IsValidModel() = 0;
-	virtual void GLInitialData() = 0;
-	virtual void GLCreateVBO() = 0;
-	virtual void GLAttachData() = 0;
-	virtual void GLBind() = 0;
-	virtual void GLDraw() = 0;
-	virtual void GLUnbind() = 0;
-	virtual void GLDelete() = 0;
-
-public:
-	void SetHelper(CWBFModelDataManager* pModelMgr)
+	void SetHelper(CModelManager* pModelMgr)
 	{
 		m_pModelMgr = pModelMgr;
 	}
 
 protected:
 	UINT m_uiFlag;
-	CWBFModelDataManager* m_pModelMgr;
+	CModelManager* m_pModelMgr;
 };
 
 #include "HeaderPost.h"

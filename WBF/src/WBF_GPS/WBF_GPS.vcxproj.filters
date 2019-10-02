@@ -31,6 +31,9 @@
     <Filter Include="Graphic\Camera">
       <UniqueIdentifier>{f2b18797-df23-4a2d-ac75-f8e96dfa390e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{376e7025-4518-447d-a648-994d24e9d4b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_GPS.cpp">
@@ -45,14 +48,14 @@
     <ClCompile Include="WBFShaderManager.cpp">
       <Filter>Graphic\Shader</Filter>
     </ClCompile>
-    <ClCompile Include="GLView.cpp">
-      <Filter>Graphic</Filter>
-    </ClCompile>
     <ClCompile Include="WBFGPSOption.cpp">
       <Filter>Graphic\Option</Filter>
     </ClCompile>
     <ClCompile Include="WBFCamera.cpp">
       <Filter>Graphic\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="GLView.cpp">
+      <Filter>Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,9 +106,6 @@
     <ClInclude Include="WBFShaderManager.h">
       <Filter>Graphic\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="GLView.h">
-      <Filter>Graphic</Filter>
-    </ClInclude>
     <ClInclude Include="WBFGPSOption.h">
       <Filter>Graphic\Option</Filter>
     </ClInclude>
@@ -114,6 +114,9 @@
     </ClInclude>
     <ClInclude Include="WBFShaderDefine.h">
       <Filter>Graphic\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="GLView.h">
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -13,7 +13,8 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFPackageSystem::CWBFPackageSystem()
+CWBFPackageSystem::CWBFPackageSystem(CWBFDocBase* pDoc)
+	: CWBFPackageData(pDoc)
 {
 }
 

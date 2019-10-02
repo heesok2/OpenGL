@@ -1,27 +1,27 @@
 #pragma once
 
+#include <map>
 #include "..\WBF_BASE\WBFVBOData.h"
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CVBOGeom : public CWBFVBOData
+class __MY_EXT_CLASS__ CVBOGeom : public CVBOData
 {
 public:
 	CVBOGeom();
 	virtual ~CVBOGeom();
 
-	DECLARE_VBO(CVBOGeom);
+	DECLARE_DYNAMIC_VBO(CVBOGeom);
 
 public:
-	// CWBFDataVBO을(를) 통해 상속됨
-	virtual void ProcessData(CWBFDocBase * pDoc) override;
 	virtual UINT GetType() override { return E_VBO_GEOM; }
+	virtual void Release() override;
+	virtual void Build(CWBFDocBase * pDoc) override;
+	virtual void Draw() override;
 
-public:
-	UINT uiVBO;
-	UINT uiEBO;
+private:
+	std::map<UINT, TEntityVBO> m_mVAO; // Body key to VAO
 
-	UINT uiVertexNum;
 };
 
 #include "HeaderPost.h"

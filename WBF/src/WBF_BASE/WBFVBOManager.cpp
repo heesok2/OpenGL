@@ -6,46 +6,38 @@
 #include "WBFPackageData.h"
 #include "WBFVBOData.h"
 
-#include "..\WBF_LIB\WBFObserverDefine.h"
-
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFVBOManager::CWBFVBOManager(CWBFDocBase* pDoc)
+CVBOManager::CVBOManager(CWBFDocBase* pDoc)
 	: m_pMyDoc(pDoc)
 {
 
 }
 
-CWBFVBOManager::~CWBFVBOManager()
+CVBOManager::~CVBOManager()
 {
 }
 
-void CWBFVBOManager::UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam)
-{
-	switch (uiMsg)
-	{
-	case E_UPDATE_DB_CHANGED:
-		{
-			for (auto pVBO : m_lstVBO)
-			{
-				pVBO->ProcessData(m_pMyDoc);
-			}
-		}
-		break;
-	default:
-		break;
-	}
-}
-
-CWBFVBOData* CWBFVBOManager::GetVBO(UINT uiType)
+BOOL CVBOManager::Exist(UINT eType)
 {
 	for (auto pVBO : m_lstVBO)
 	{
-		if (pVBO->GetType() == uiType)
+		if (pVBO->GetType() == eType)
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+CVBOData* CVBOManager::Lookup(UINT eType)
+{
+	for (auto pVBO : m_lstVBO)
+	{
+		if (pVBO->GetType() == eType)
 			return pVBO;
 	}
 
@@ -53,18 +45,27 @@ CWBFVBOData* CWBFVBOManager::GetVBO(UINT uiType)
 	return nullptr;
 }
 
-void CWBFVBOManager::OnInitial()
+void CVBOManager::RebuildVBO()
+{
+	for (auto pVBO : m_lstVBO)
+	{
+		pVBO->Release();
+		pVBO->Build(m_pMyDoc);
+	}
+}
+
+void CVBOManager::OnInitial()
 {
 	for (UINT uiType = 0; uiType < E_VBO_NUM; ++uiType)
 	{
-		auto pObject = (CWBFVBOData*)CWBFVBOFactory::GetInstance().CreateObject(uiType);
+		auto pObject = (CVBOData*)CWBFVBOFactory::GetInstance().CreateObject(uiType);
 		if (pObject == nullptr) continue;
 
 		m_lstVBO.push_back(pObject);
 	}
 }
 
-void CWBFVBOManager::OnDestroy()
+void CVBOManager::OnDestroy()
 {
 	for (auto pVBO : m_lstVBO)
 	{

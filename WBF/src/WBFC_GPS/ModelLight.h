@@ -14,27 +14,9 @@ public:
 
 public:
 	virtual UINT GetType() override { return E_MODEL_LIGHT; }
-
-
-	// CWBFModelData을(를) 통해 상속됨
-	virtual BOOL IsValidModel() override;
-
-	virtual void GLInitialData() override;
-
-	virtual void GLCreateVBO() override;
-
-	virtual void GLAttachData() override;
-
-	virtual void GLBind() override;
-
-	virtual void GLDraw() override;
-
-	virtual void GLUnbind() override;
-
-	virtual void GLDelete() override;
-
-public:
-	UINT uiVAO;
+	virtual void Release() override;
+	virtual void Build() override;
+	virtual void Draw(CWBFShader* pShader) override;
 
 };
 
