@@ -23,8 +23,8 @@
 #include "WBFView.h"
 #include "WBFControlDlg.h"
 
-#include "..\WBFC_GPS\WBFModelManager.h"
-#include "..\WBFC_GPS\RndrAppManager.h"
+#include "..\WAF_GPS\WBFModelManager.h"
+#include "..\WAF_GPS\RndrAppManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

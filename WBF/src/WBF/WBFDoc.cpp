@@ -24,7 +24,7 @@
 
 #include <propkey.h>
 
-#include "..\WBFC_GPS\WBFModelManager.h"
+#include "..\WAF_GPS\WBFModelManager.h"
 
 
 #ifdef _DEBUG

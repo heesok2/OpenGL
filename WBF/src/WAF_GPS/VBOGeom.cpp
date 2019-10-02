@@ -95,7 +95,7 @@ void CVBOGeom::Build(CWBFDocBase * pDoc)
 			if (!pModuleSubBody->Find(EntBody.lstSubBody[lsub], EntSubBody))
 				continue;
 
-			lIndexNum += EntSubBody.lstVertex.size();
+			lIndexNum += static_cast<int>(EntSubBody.lstVertex.size());
 		}
 
 		auto lBufferIndxNum = 0;

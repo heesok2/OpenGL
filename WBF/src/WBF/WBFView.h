@@ -14,7 +14,7 @@
 
 #pragma once
 
-#include "../WBFC_GPS/GPSView.h"
+#include "../WAF_GPS/GPSView.h"
 
 class CWBFDoc;
 class CWBFView : public CGPSView
