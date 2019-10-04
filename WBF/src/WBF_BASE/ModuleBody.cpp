@@ -11,8 +11,8 @@ int g_sub_index[] = {
 	1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
 };
 
-CModuleBody::CModuleBody(CWBFPackageData * pPackage)
-	: CWBFModuleData<CEntityBody>(pPackage, E_TYPE_BODY)
+CModuleBody::CModuleBody(CPackageData * pPackage)
+	: CModuleData<CEntityBody>(pPackage, E_TYPE_BODY)
 {
 }
 

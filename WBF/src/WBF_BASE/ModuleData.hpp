@@ -6,17 +6,17 @@
 #include <map>
 #include <vector>
 
-#include "WBFModuleBase.h"
+#include "ModuleBase.h"
 
 #include "HeaderPre.h"
 
 template <class TD>
-class __MY_EXT_CLASS__ CWBFModuleData : public CWBFModuleBase
+class __MY_EXT_CLASS__ CModuleData : public CModuleBase
 {
 public:
-	CWBFModuleData(CWBFPackageData * pPackage, DTYPE _dbType) 
-		: CWBFModuleBase(pPackage), dbType(_dbType) {}
-	virtual ~CWBFModuleData() {}
+	CModuleData(CPackageData * pPackage, DTYPE _dbType) 
+		: CModuleBase(pPackage), dbType(_dbType) {}
+	virtual ~CModuleData() {}
 
 public:
 	virtual void Clear() { m_mData.clear(); }

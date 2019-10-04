@@ -1,9 +1,9 @@
 #pragma once
 
-#include "WBFEntityData.h"
+#include "EntityData.h"
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CEntityVertex : public CWBFEntityData
+class __MY_EXT_CLASS__ CEntityVertex : public CEntityData
 {
 public:
 	CEntityVertex();

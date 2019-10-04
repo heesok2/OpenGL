@@ -1,14 +1,14 @@
 #pragma once
 
-#include "WBFModuleData.hpp"
+#include "ModuleData.hpp"
 #include "EntityGeom.h"
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CModuleGeom : public CWBFModuleData<CEntityGeom>
+class __MY_EXT_CLASS__ CModuleGeom : public CModuleData<CEntityGeom>
 {
 public:
-	CModuleGeom(CWBFPackageData * pPackage);
+	CModuleGeom(CPackageData * pPackage);
 	virtual ~CModuleGeom();
 
 public:

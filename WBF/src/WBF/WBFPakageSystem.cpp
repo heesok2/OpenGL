@@ -14,7 +14,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 CWBFPackageSystem::CWBFPackageSystem(CWBFDocBase* pDoc)
-	: CWBFPackageData(pDoc)
+	: CPackageData(pDoc)
 {
 }
 
@@ -24,7 +24,7 @@ CWBFPackageSystem::~CWBFPackageSystem()
 
 void CWBFPackageSystem::OnInitial()
 {
-	auto lambda_module = [&](DTYPE dbType, CWBFModuleBase* datamodule)
+	auto lambda_module = [&](DTYPE dbType, CModuleBase* datamodule)
 	{
 		auto itr = m_mModule.find(dbType);
 		if (itr != m_mModule.end())
@@ -60,7 +60,7 @@ void CWBFPackageSystem::OnDestroy()
 	m_mModule.clear();
 }
 
-CWBFModuleBase * CWBFPackageSystem::GetModule(DTYPE dbType)
+CModuleBase * CWBFPackageSystem::GetModule(DTYPE dbType)
 {
 	auto itr = m_mModule.find(dbType);
 	if (itr == m_mModule.end()) return nullptr;

@@ -1,10 +1,11 @@
 #include "stdafx.h"
 #include "WBFVBOManager.h"
+#include "WBFVBOData.h"
 
 #include "WBFDocBase.h"
 #include "WBFViewBase.h"
-#include "WBFPackageData.h"
-#include "WBFVBOData.h"
+#include "PackageData.h"
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

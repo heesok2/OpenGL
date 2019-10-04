@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WBFEntityData.h"
+#include "EntityData.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -7,10 +7,10 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFEntityData::CWBFEntityData()
+CEntityData::CEntityData()
 {
 }
 
-CWBFEntityData::~CWBFEntityData()
+CEntityData::~CEntityData()
 {
 }

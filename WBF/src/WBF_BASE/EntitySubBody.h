@@ -1,11 +1,11 @@
 #pragma once
 
 #include <vector>
-#include "WBFEntityData.h"
+#include "EntityData.h"
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CEntitySubBody : public CWBFEntityData
+class __MY_EXT_CLASS__ CEntitySubBody : public CEntityData
 {
 public:
 	CEntitySubBody();

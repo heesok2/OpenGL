@@ -90,12 +90,6 @@
     <ClCompile Include="WBFModelOption.cpp">
       <Filter>Option</Filter>
     </ClCompile>
-    <ClCompile Include="WBFModuleBase.cpp">
-      <Filter>DataBase\Interface</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFPackageData.cpp">
-      <Filter>DataBase\Interface</Filter>
-    </ClCompile>
     <ClCompile Include="WBFVBOManager.cpp">
       <Filter>View\VBO</Filter>
     </ClCompile>
@@ -113,9 +107,6 @@
     </ClCompile>
     <ClCompile Include="WBFVBOData.cpp">
       <Filter>View\VBO</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFEntityData.cpp">
-      <Filter>DataBase\Interface</Filter>
     </ClCompile>
     <ClCompile Include="EntityBox.cpp">
       <Filter>DataBase\OpenGL Model%28TEST%29\Box</Filter>
@@ -152,6 +143,15 @@
     </ClCompile>
     <ClCompile Include="DocListener.cpp">
       <Filter>Event\Listener</Filter>
+    </ClCompile>
+    <ClCompile Include="PackageData.cpp">
+      <Filter>DataBase\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleBase.cpp">
+      <Filter>DataBase\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityData.cpp">
+      <Filter>DataBase\Interface</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -208,18 +208,6 @@
     <ClInclude Include="WBFModelOption.h">
       <Filter>Option</Filter>
     </ClInclude>
-    <ClInclude Include="WBFDataDefine.h">
-      <Filter>DataBase\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFModuleBase.h">
-      <Filter>DataBase\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFPackageData.h">
-      <Filter>DataBase\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFModuleData.hpp">
-      <Filter>DataBase\Interface</Filter>
-    </ClInclude>
     <ClInclude Include="WBFVBOManager.h">
       <Filter>View\VBO</Filter>
     </ClInclude>
@@ -237,9 +225,6 @@
     </ClInclude>
     <ClInclude Include="WBFVBOData.h">
       <Filter>View\VBO</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFEntityData.h">
-      <Filter>DataBase\Interface</Filter>
     </ClInclude>
     <ClInclude Include="EntityBox.h">
       <Filter>DataBase\OpenGL Model%28TEST%29\Box</Filter>
@@ -288,6 +273,21 @@
     </ClInclude>
     <ClInclude Include="ListenerDefine.h">
       <Filter>Event\Listener</Filter>
+    </ClInclude>
+    <ClInclude Include="PackageData.h">
+      <Filter>DataBase\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleData.hpp">
+      <Filter>DataBase\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleBase.h">
+      <Filter>DataBase\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityData.h">
+      <Filter>DataBase\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBaseDefine.h">
+      <Filter>DataBase\Interface</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

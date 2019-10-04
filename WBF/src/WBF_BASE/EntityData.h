@@ -1,13 +1,13 @@
 #pragma once
 
-#include "WBFDataDefine.h"
+#include "DataBaseDefine.h"
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CWBFEntityData
+class __MY_EXT_CLASS__ CEntityData
 {
 public:
-	CWBFEntityData();
-	virtual ~CWBFEntityData();
+	CEntityData();
+	virtual ~CEntityData();
 
 public:
 	virtual const DKEY GetKey() const = 0;

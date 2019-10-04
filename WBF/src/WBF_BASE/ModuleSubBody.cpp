@@ -27,8 +27,8 @@ int g_tri_index[] = {
 	1, 34, 35, 36
 };
 
-CModuleSubBody::CModuleSubBody(CWBFPackageData * pPackage)
-	: CWBFModuleData<CEntitySubBody>(pPackage, E_TYPE_SUBBODY)
+CModuleSubBody::CModuleSubBody(CPackageData * pPackage)
+	: CModuleData<CEntitySubBody>(pPackage, E_TYPE_SUBBODY)
 {
 }
 

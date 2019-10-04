@@ -1,25 +1,24 @@
 #pragma once
 
 #include <map>
-#include "WBFDataDefine.h"
 
 #include "..\WBF_LIB\WBFSubject.h"
 
 #include "HeaderPre.h"
 
 class CWBFDocBase;
-class CWBFModuleBase;
-class __MY_EXT_CLASS__ CWBFPackageData : public CWBFSubject
+class CModuleBase;
+class __MY_EXT_CLASS__ CPackageData : public CWBFSubject
 {
 public:
-	CWBFPackageData(CWBFDocBase* pDoc);
-	virtual ~CWBFPackageData();
+	CPackageData(CWBFDocBase* pDoc);
+	virtual ~CPackageData();
 
 public:
 	virtual void OnInitial() = 0;
 	virtual void OnDestroy() = 0;
 
-	virtual CWBFModuleBase* GetModule(DTYPE dbType) = 0;
+	virtual CModuleBase* GetModule(DTYPE dbType) = 0;
 
 public:
 	virtual BOOL Start();
@@ -28,7 +27,7 @@ public:
 
 protected:
 	CWBFDocBase* m_pMyDoc;
-	std::map<DTYPE, CWBFModuleBase*> m_mModule;
+	std::map<DTYPE, CModuleBase*> m_mModule;
 
 };
 

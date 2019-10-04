@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WBFModuleBase.h"
+#include "ModuleBase.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -7,11 +7,11 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFModuleBase::CWBFModuleBase(CWBFPackageData * pPackage)
+CModuleBase::CModuleBase(CPackageData * pPackage)
 	: m_pPackage(pPackage)
 {
 }
 
-CWBFModuleBase::~CWBFModuleBase()
+CModuleBase::~CModuleBase()
 {
 }

@@ -45,7 +45,7 @@ public:
 	virtual void OnCloseDocument();
 
 public:
-	virtual CWBFPackageData* GetPackage() { ASSERT(m_pPackage); return m_pPackage; }
+	virtual CPackageData* GetPackage() { ASSERT(m_pPackage); return m_pPackage; }
 
 protected:
 	void OnInitial();
@@ -55,6 +55,6 @@ protected:
 	DECLARE_MESSAGE_MAP()
 
 protected:
-	CWBFPackageData* m_pPackage;
+	CPackageData* m_pPackage;
 
 };

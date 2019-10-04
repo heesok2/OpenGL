@@ -3,9 +3,6 @@
 #ifndef DATA_DEF
 #define DATA_DEF
 
-#define DTYPE UINT // Data Type
-#define DKEY UINT // Data Key
-
 enum E_TYPE_DATA
 {
 	E_TYPE_UNKNOWN = 0,

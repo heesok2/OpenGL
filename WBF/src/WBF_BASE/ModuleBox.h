@@ -1,14 +1,14 @@
 #pragma once
 
-#include "WBFModuleData.hpp"
+#include "ModuleData.hpp"
 #include "EntityBox.h"
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CModuleBox : public CWBFModuleData<CEntityBox>
+class __MY_EXT_CLASS__ CModuleBox : public CModuleData<CEntityBox>
 {
 public:
-	CModuleBox(CWBFPackageData * pPackage);
+	CModuleBox(CPackageData * pPackage);
 	virtual ~CModuleBox();
 
 

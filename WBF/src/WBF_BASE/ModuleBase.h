@@ -1,14 +1,13 @@
 #pragma once
 
-#include "WBFDataDefine.h"
 #include "HeaderPre.h"
 
-class CWBFPackageData;
-class __MY_EXT_CLASS__ CWBFModuleBase
+class CPackageData;
+class __MY_EXT_CLASS__ CModuleBase
 {
 public:
-	CWBFModuleBase(CWBFPackageData* pPackage);
-	virtual ~CWBFModuleBase();
+	CModuleBase(CPackageData* pPackage);
+	virtual ~CModuleBase();
 
 public:
 	virtual void Clear() = 0;
@@ -19,7 +18,7 @@ public:
 	virtual void SetDefaultData() = 0;
 
 protected:
-	CWBFPackageData* m_pPackage;
+	CPackageData* m_pPackage;
 
 };
 
