@@ -5,9 +5,8 @@
 #include "WBFView.h"
 
 #include "..\WBF_BASE\Package.h"
-#include "..\WBF_BASE\ModuleBox.h"
-
-#include "..\WBF_BASE\WBFGraphicDef.h"
+#include "..\WBF_BASE\ModuleBase.h"
+#include "..\WBF_BASE\DataBaseDefine.h"
 #include "..\WBF_BASE\WBFModelDataManager.h"
 #include "..\WBF_BASE\WBFModelData.h"
 #include "..\WBF_GPS\WBFGPSOption.h"
@@ -190,10 +189,12 @@ BOOL CWBFControlDlg::Execute()
 			auto pModuleVertex = pPackage->GetModule(E_TYPE_VERTEX);
 			auto pModuleSubBody = pPackage->GetModule(E_TYPE_SUBBODY);
 			auto pModuleBody = pPackage->GetModule(E_TYPE_BODY);
+			auto pModuleLight = pPackage->GetModule(E_TYPE_LIGHT);
 
 			pModuleVertex->SetDefaultData();
 			pModuleSubBody->SetDefaultData();
 			pModuleBody->SetDefaultData();
+			pModuleLight->SetDefaultData();
 		}
 		break;
 	default:

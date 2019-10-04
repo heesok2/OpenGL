@@ -39,6 +39,8 @@ void CRndrLight::GLDraw()
 	auto pModel = ((CWBFModelManager*)m_pModelMgr)->GetModel(E_MODEL_LIGHT);
 	if (pModel == nullptr) return;
 
+	auto pView = ((CRndrAppManager*)m_pRndrMgr)->GetView();
+
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	{
 		glEnable(GL_DEPTH_TEST);
@@ -48,31 +50,18 @@ void CRndrLight::GLDraw()
 		Shader.GLBind();
 		{
 			auto pView = (CWBFViewBase*)m_pRndrMgr->GetView();
-			glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
-
-			int nProg;
-			glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
-
-			glm::mat4 model(1.f);
-			model = glm::translate(model, lightPos);
-			//model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 
 			glm::mat4 view(1.f);
 			pView->GetViewMatrix(view);
-			//view = glm::lookAt(glm::vec3(0.f, 0.f, 3.f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 1.f, 0.f));
-
-			//view = glm::translate(view, glm::vec3(0.f, 0.f, -3.f));
-			//view = glm::lookAt(glm::vec3(3.f, 0.f, 3.f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 1.f, 0.f));
-			//pView->GetViewMatrix(view);
-
-			glm::mat4 proj(1.f);
 
 			int aViewPort[4] = {0};
 			glGetIntegerv(GL_VIEWPORT, aViewPort);
+
+			glm::mat4 proj(1.f);
 			proj = glm::perspective(glm::radians(45.f), (float)(aViewPort[2] - aViewPort[0]) / (float)(aViewPort[3] - aViewPort[1]), 0.1f, 100.f);
 
-			auto modelLoc = glGetUniformLocation(nProg, "model");
-			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+			int nProg;
+			glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
 
 			auto viewLoc = glGetUniformLocation(nProg, "view");
 			glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));

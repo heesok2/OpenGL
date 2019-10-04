@@ -19,6 +19,9 @@ public:
 	virtual void Build(CWBFDocBase * pDoc) override;
 	virtual void Draw() override;
 
+public:
+	BOOL GetVBO(DKEY BodyKey, TEntityVBO& tData);
+
 private:
 	std::map<UINT, TEntityVBO> m_mVAO; // Body key to VAO
 

@@ -155,3 +155,13 @@ void CVBOGeom::Draw()
 		itr++;
 	}
 }
+
+BOOL CVBOGeom::GetVBO(DKEY BodyKey, TEntityVBO & tData)
+{
+	auto itr = m_mVAO.find(BodyKey);
+	if (itr == m_mVAO.end())
+		return FALSE;
+
+	tData = itr->second;
+	return TRUE;
+}

@@ -4,8 +4,7 @@
 #include "..\WBF_BASE\ModuleVertex.h"
 #include "..\WBF_BASE\ModuleSubBody.h"
 #include "..\WBF_BASE\ModuleBody.h"
-#include "..\WBF_BASE\ModuleGeom.h"
-#include "..\WBF_BASE\ModuleBox.h"
+#include "..\WBF_BASE\ModuleLight.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -40,8 +39,7 @@ void CWBFPackage::OnInitial()
 	lambda_module(E_TYPE_VERTEX, new CModuleVertex(this));
 	lambda_module(E_TYPE_SUBBODY, new CModuleSubBody(this));
 	lambda_module(E_TYPE_BODY, new CModuleBody(this));
-	lambda_module(E_TYPE_GEOM, new CModuleGeom(this));
-	lambda_module(E_TYPE_BOX, new CModuleBox(this));
+	lambda_module(E_TYPE_LIGHT, new CModuleLight(this));
 }
 
 void CWBFPackage::OnDestroy()

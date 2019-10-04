@@ -18,6 +18,7 @@ public:
 public:
 	virtual CWBFRndrDataManager* GetRenderManager() { ASSERT(g_warning); return nullptr; }
 	virtual BOOL GetViewMatrix(glm::mat4& matView) { ASSERT(g_warning); return FALSE; }
+	virtual BOOL GetProjectionMatrix(glm::mat4& matView) { ASSERT(g_warning); return FALSE; }
 
 public:
 	virtual CModelManager* GetModelManager() { ASSERT(m_pModelMgr); return m_pModelMgr; }

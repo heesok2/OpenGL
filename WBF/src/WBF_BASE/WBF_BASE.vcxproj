@@ -209,11 +209,11 @@
   <ItemGroup>
     <ClCompile Include="DocListener.cpp" />
     <ClCompile Include="EntityBody.cpp" />
-    <ClCompile Include="EntityGeom.cpp" />
+    <ClCompile Include="EntityLight.cpp" />
     <ClCompile Include="EntitySubBody.cpp" />
     <ClCompile Include="EntityVertex.cpp" />
     <ClCompile Include="ModuleBody.cpp" />
-    <ClCompile Include="ModuleGeom.cpp" />
+    <ClCompile Include="ModuleLight.cpp" />
     <ClCompile Include="ModuleSubBody.cpp" />
     <ClCompile Include="ModuleVertex.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -226,9 +226,7 @@
     <ClCompile Include="WBFVBOData.cpp" />
     <ClCompile Include="ModuleBase.cpp" />
     <ClCompile Include="Package.cpp" />
-    <ClCompile Include="EntityBox.cpp" />
     <ClCompile Include="WBFDialog.cpp" />
-    <ClCompile Include="ModuleBox.cpp" />
     <ClCompile Include="WBFDocBase.cpp" />
     <ClCompile Include="WBFModelData.cpp" />
     <ClCompile Include="WBFModelDataManager.cpp" />
@@ -250,14 +248,14 @@
   <ItemGroup>
     <ClInclude Include="DocListener.h" />
     <ClInclude Include="EntityBody.h" />
-    <ClInclude Include="EntityGeom.h" />
+    <ClInclude Include="EntityLight.h" />
     <ClInclude Include="EntitySubBody.h" />
     <ClInclude Include="EntityVertex.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
     <ClInclude Include="ListenerDefine.h" />
     <ClInclude Include="ModuleBody.h" />
-    <ClInclude Include="ModuleGeom.h" />
+    <ClInclude Include="ModuleLight.h" />
     <ClInclude Include="ModuleSubBody.h" />
     <ClInclude Include="ModuleVertex.h" />
     <ClInclude Include="Resource.h" />
@@ -271,9 +269,7 @@
     <ClInclude Include="ModuleData.hpp" />
     <ClInclude Include="ModuleBase.h" />
     <ClInclude Include="Package.h" />
-    <ClInclude Include="EntityBox.h" />
     <ClInclude Include="WBFDialog.h" />
-    <ClInclude Include="ModuleBox.h" />
     <ClInclude Include="WBFDocBase.h" />
     <ClInclude Include="WBFGraphicDef.h" />
     <ClInclude Include="WBFModelData.h" />

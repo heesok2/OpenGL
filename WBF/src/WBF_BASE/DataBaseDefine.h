@@ -6,11 +6,14 @@
 enum E_TYPE_DATA
 {
 	E_TYPE_UNKNOWN = 0,
+	
+	// Geometry
 	E_TYPE_VERTEX,
 	E_TYPE_SUBBODY,
 	E_TYPE_BODY,
-	E_TYPE_GEOM,
-	E_TYPE_BOX, 
+
+	// Light
+	E_TYPE_LIGHT,
 	
 
 	E_TYPE_NUM
