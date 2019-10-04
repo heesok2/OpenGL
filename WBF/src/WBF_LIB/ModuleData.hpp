@@ -8,10 +8,8 @@
 
 #include "ModuleBase.h"
 
-#include "HeaderPre.h"
-
 template <class TD>
-class __MY_EXT_CLASS__ CModuleData : public CModuleBase
+class CModuleData : public CModuleBase
 {
 public:
 	CModuleData(CPackage * pPackage, DTYPE _dbType) 
@@ -114,8 +112,6 @@ protected:
 	DTYPE dbType;
 	std::map<DKEY, TD> m_mData;
 };
-
-#include "HeaderPost.h"
 
 #endif // !MODULEDATA_DEF
 

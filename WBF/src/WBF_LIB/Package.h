@@ -6,12 +6,11 @@
 
 #include "HeaderPre.h"
 
-class CWBFDocBase;
 class CModuleBase;
 class __MY_EXT_CLASS__ CPackage : public CWBFSubject
 {
 public:
-	CPackage(CWBFDocBase* pDoc);
+	CPackage(CDocument* pDoc);
 	virtual ~CPackage();
 
 public:
@@ -26,7 +25,7 @@ public:
 	virtual BOOL Rollback();
 
 protected:
-	CWBFDocBase* m_pMyDoc;
+	CDocument* m_pMyDoc;
 	std::map<DTYPE, CModuleBase*> m_mModule;
 
 };

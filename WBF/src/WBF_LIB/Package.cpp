@@ -11,7 +11,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CPackage::CPackage(CWBFDocBase* pDoc)
+CPackage::CPackage(CDocument* pDoc)
 	: m_pMyDoc(pDoc)
 {
 }
@@ -28,7 +28,7 @@ BOOL CPackage::Start()
 
 BOOL CPackage::Commit()
 {
-	//Notify(E_UPDATE_DB_CHANGED);
+	Notify(E_UPDATE_DB_CHANGED);
 
 	CDocListener::DoNotifyMsg(m_pMyDoc, E_DOC_DB_UPDATE, 0);
 

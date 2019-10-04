@@ -2,7 +2,7 @@
 #include "VBOGeom.h"
 
 #include "..\WBF_BASE\WBFDocBase.h"
-#include "..\WBF_BASE\Package.h"
+#include "..\WBF_LIB\Package.h"
 #include "..\WBF_BASE\ModuleVertex.h"
 #include "..\WBF_BASE\ModuleSubBody.h"
 #include "..\WBF_BASE\ModuleBody.h"

@@ -1,8 +1,10 @@
 #pragma once
 
-#include "..\WBF_BASE\Package.h"
+#include "..\WBF_LIB\Package.h"
 
 #include "HeaderPre.h"
+
+class CWBFDocBase;
 class __MY_EXT_CLASS__ CWBFPackage : public CPackage
 {
 public:
@@ -16,4 +18,5 @@ public:
 	virtual CModuleBase * GetModule(DTYPE dbType) override;
 
 };
+
 #include "HeaderPost.h"

@@ -203,8 +203,12 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DocListener.cpp" />
+    <ClCompile Include="EntityData.cpp" />
     <ClCompile Include="FactoryBase.cpp" />
     <ClCompile Include="FactoryObjectBase.cpp" />
+    <ClCompile Include="ModuleBase.cpp" />
+    <ClCompile Include="Package.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -224,10 +228,16 @@
   <ItemGroup>
     <ClInclude Include="AllGraphicInclude.h" />
     <ClInclude Include="AllProjectInclude.h" />
+    <ClInclude Include="DocListener.h" />
+    <ClInclude Include="EntityData.h" />
     <ClInclude Include="FactoryBase.h" />
     <ClInclude Include="FactoryObjectBase.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
+    <ClInclude Include="ListenerDefine.h" />
+    <ClInclude Include="ModuleBase.h" />
+    <ClInclude Include="ModuleData.hpp" />
+    <ClInclude Include="Package.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stdafx.h" />

@@ -1,6 +1,8 @@
 #pragma once
 
-#include "EntityData.h"
+#include "DataBaseDefine.h"
+#include "..\WBF_LIB\EntityData.h"
+
 #include "HeaderPre.h"
 
 class __MY_EXT_CLASS__ CEntityVertex : public CEntityData

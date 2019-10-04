@@ -1,8 +1,7 @@
 #pragma once
 
-#include "..\WBF_LIB\WBFObserver.h"
+#include "..\WBF_LIB\DocListener.h"
 #include "..\WBF_BASE\WBFModelDataManager.h"
-#include "..\WBF_BASE\DocListener.h"
 
 #include "HeaderPre.h"
 
@@ -14,7 +13,8 @@ public:
 	virtual ~CWBFModelManager();
 
 public:
-	virtual void OnNotifyMsg(CWBFDocBase* pDoc, WPARAM wParam, LPARAM lParam) override;
+	virtual void OnNotifyMsg(CDocument * pDoc, WPARAM wParam, LPARAM lParam) override;
+
 
 protected:
 	void ReleaseModel();

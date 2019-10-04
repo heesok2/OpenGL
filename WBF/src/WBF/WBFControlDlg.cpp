@@ -4,8 +4,8 @@
 #include "WBFDoc.h"
 #include "WBFView.h"
 
-#include "..\WBF_BASE\Package.h"
-#include "..\WBF_BASE\ModuleBase.h"
+#include "..\WBF_LIB\Package.h"
+#include "..\WBF_LIB\ModuleBase.h"
 #include "..\WBF_BASE\DataBaseDefine.h"
 #include "..\WBF_BASE\WBFModelDataManager.h"
 #include "..\WBF_BASE\WBFModelData.h"

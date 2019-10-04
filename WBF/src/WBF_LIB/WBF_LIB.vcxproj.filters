@@ -16,19 +16,25 @@
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{c6217dcf-3e8b-4f8c-a53c-bcb6d39960ab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Util">
-      <UniqueIdentifier>{1e4ab848-b7e5-4d4c-8f8b-3d20242fa015}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Include">
       <UniqueIdentifier>{4b9808de-251c-494f-9cf4-2166de768793}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Interface">
-      <UniqueIdentifier>{66109ae3-e329-4cae-a0bc-0611591fdbfa}</UniqueIdentifier>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{59161f84-05b7-4461-9784-02bf9bcc377c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Interface\Observer">
+    <Filter Include="DataBase">
+      <UniqueIdentifier>{1e4ab848-b7e5-4d4c-8f8b-3d20242fa015}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Notify">
+      <UniqueIdentifier>{a9f7ed4c-affc-4649-8710-f041b36aa3e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Notify\Listener">
+      <UniqueIdentifier>{7ed55aee-4624-4386-b254-9629dc45f015}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Notify\Observer">
       <UniqueIdentifier>{8e9fa143-6989-4040-a73e-4ec15a3b6e1e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Interface\Factory">
+    <Filter Include="Notify\Factory">
       <UniqueIdentifier>{a0e28839-eb5d-44c4-95f4-d67c8476ca60}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -39,23 +45,35 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>_common_</Filter>
     </ClCompile>
-    <ClCompile Include="WBFString.cpp">
-      <Filter>Util</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFImage.cpp">
-      <Filter>Util</Filter>
-    </ClCompile>
     <ClCompile Include="WBFSubject.cpp">
-      <Filter>Interface\Observer</Filter>
+      <Filter>Notify\Observer</Filter>
     </ClCompile>
     <ClCompile Include="WBFObserver.cpp">
-      <Filter>Interface\Observer</Filter>
+      <Filter>Notify\Observer</Filter>
     </ClCompile>
     <ClCompile Include="FactoryObjectBase.cpp">
-      <Filter>Interface\Factory</Filter>
+      <Filter>Notify\Factory</Filter>
     </ClCompile>
     <ClCompile Include="FactoryBase.cpp">
-      <Filter>Interface\Factory</Filter>
+      <Filter>Notify\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFImage.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFString.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityData.cpp">
+      <Filter>DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleBase.cpp">
+      <Filter>DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Package.cpp">
+      <Filter>DataBase</Filter>
+    </ClCompile>
+    <ClCompile Include="DocListener.cpp">
+      <Filter>Notify\Listener</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,32 +112,50 @@
     <ClInclude Include="AllGraphicInclude.h">
       <Filter>Include</Filter>
     </ClInclude>
-    <ClInclude Include="WBFString.h">
-      <Filter>Util</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFImage.h">
-      <Filter>Util</Filter>
-    </ClInclude>
-    <ClInclude Include="stb_image.h">
-      <Filter>Util</Filter>
-    </ClInclude>
     <ClInclude Include="AllDefine.h">
       <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="WBFSubject.h">
-      <Filter>Interface\Observer</Filter>
+      <Filter>Notify\Observer</Filter>
     </ClInclude>
     <ClInclude Include="WBFObserver.h">
-      <Filter>Interface\Observer</Filter>
+      <Filter>Notify\Observer</Filter>
     </ClInclude>
     <ClInclude Include="WBFObserverDefine.h">
-      <Filter>Interface\Observer</Filter>
+      <Filter>Notify\Observer</Filter>
     </ClInclude>
     <ClInclude Include="FactoryBase.h">
-      <Filter>Interface\Factory</Filter>
+      <Filter>Notify\Factory</Filter>
     </ClInclude>
     <ClInclude Include="FactoryObjectBase.h">
-      <Filter>Interface\Factory</Filter>
+      <Filter>Notify\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFImage.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFString.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityData.h">
+      <Filter>DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleBase.h">
+      <Filter>DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleData.hpp">
+      <Filter>DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Package.h">
+      <Filter>DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="DocListener.h">
+      <Filter>Notify\Listener</Filter>
+    </ClInclude>
+    <ClInclude Include="ListenerDefine.h">
+      <Filter>Notify\Listener</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ModuleData.hpp"
+#include "..\WBF_LIB\ModuleData.hpp"
 #include "EntityLight.h"
 
 #include "HeaderPre.h"

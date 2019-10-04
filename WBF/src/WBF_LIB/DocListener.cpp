@@ -9,7 +9,7 @@ static char THIS_FILE[] = __FILE__;
 
 std::vector<CDocListener*> CDocListener::g_lstObject;
 
-void CDocListener::DoNotifyMsg(CWBFDocBase * pDoc, WPARAM wParam, LPARAM lParam)
+void CDocListener::DoNotifyMsg(CDocument * pDoc, WPARAM wParam, LPARAM lParam)
 {
 	for (auto itr : g_lstObject)
 		itr->OnNotifyMsg(pDoc, wParam, lParam);

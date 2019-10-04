@@ -52,12 +52,6 @@
     <Filter Include="View\Renderer">
       <UniqueIdentifier>{69012cf2-ed91-4075-96a3-bf2d0afd94b4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Event">
-      <UniqueIdentifier>{2607070b-0b23-4dff-a741-bc5c7e1facc1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Event\Listener">
-      <UniqueIdentifier>{837d9a5d-cf7c-46a8-b1f2-7d9e3dfbe889}</UniqueIdentifier>
-    </Filter>
     <Filter Include="DataBase\OpenGL Model%28TEST%29\Light">
       <UniqueIdentifier>{4bcab4b0-e9c3-4312-8d49-6913445110dc}</UniqueIdentifier>
     </Filter>
@@ -128,18 +122,6 @@
     </ClCompile>
     <ClCompile Include="WBFVBOFactory.cpp">
       <Filter>View\VBO</Filter>
-    </ClCompile>
-    <ClCompile Include="DocListener.cpp">
-      <Filter>Event\Listener</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleBase.cpp">
-      <Filter>DataBase\Interface</Filter>
-    </ClCompile>
-    <ClCompile Include="EntityData.cpp">
-      <Filter>DataBase\Interface</Filter>
-    </ClCompile>
-    <ClCompile Include="Package.cpp">
-      <Filter>DataBase\Interface</Filter>
     </ClCompile>
     <ClCompile Include="EntityLight.cpp">
       <Filter>DataBase\OpenGL Model%28TEST%29\Light</Filter>
@@ -250,25 +232,7 @@
     <ClInclude Include="WBFRndrDefine.h">
       <Filter>View\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="DocListener.h">
-      <Filter>Event\Listener</Filter>
-    </ClInclude>
-    <ClInclude Include="ListenerDefine.h">
-      <Filter>Event\Listener</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleData.hpp">
-      <Filter>DataBase\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleBase.h">
-      <Filter>DataBase\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="EntityData.h">
-      <Filter>DataBase\Interface</Filter>
-    </ClInclude>
     <ClInclude Include="DataBaseDefine.h">
-      <Filter>DataBase\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="Package.h">
       <Filter>DataBase\Interface</Filter>
     </ClInclude>
     <ClInclude Include="ModuleLight.h">

@@ -4,7 +4,7 @@
 
 #include "..\WBF_BASE\WBFDocBase.h"
 #include "..\WBF_BASE\DataBaseDefine.h"
-#include "..\WBF_BASE\Package.h"
+#include "..\WBF_LIB\Package.h"
 #include "..\WBF_BASE\ModuleBody.h"
 #include "..\WBF_BASE\ModuleLight.h"
 

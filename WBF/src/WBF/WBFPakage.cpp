@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "WBFPakage.h"
 
+#include "..\WBF_BASE\WBFDocBase.h"
 #include "..\WBF_BASE\ModuleVertex.h"
 #include "..\WBF_BASE\ModuleSubBody.h"
 #include "..\WBF_BASE\ModuleBody.h"

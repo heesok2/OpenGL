@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "WBFModelManager.h"
 
-#include "..\WBF_BASE\ListenerDefine.h"
+#include "..\WBF_LIB\ListenerDefine.h"
 #include "..\WBF_BASE\WBFViewBase.h"
 
 #include "VBOGeom.h"
@@ -12,7 +12,7 @@
 #include "..\WBF_BASE\WBFVBOManager.h"
 
 #include "..\WBF_BASE\WBFDocBase.h"
-#include "..\WBF_BASE\Package.h"
+#include "..\WBF_LIB\Package.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -30,7 +30,7 @@ CWBFModelManager::~CWBFModelManager()
 {
 }
 
-void CWBFModelManager::OnNotifyMsg(CWBFDocBase * pDoc, WPARAM wParam, LPARAM lParam)
+void CWBFModelManager::OnNotifyMsg(CDocument * pDoc, WPARAM wParam, LPARAM lParam)
 {
 	if (m_pMyDoc != pDoc) return;
 
