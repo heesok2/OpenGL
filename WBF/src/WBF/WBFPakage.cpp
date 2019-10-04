@@ -2,10 +2,10 @@
 #include "WBFPakage.h"
 
 #include "..\WBF_BASE\WBFDocBase.h"
-#include "..\WBF_BASE\ModuleVertex.h"
-#include "..\WBF_BASE\ModuleSubBody.h"
-#include "..\WBF_BASE\ModuleBody.h"
-#include "..\WBF_BASE\ModuleLight.h"
+#include "..\WBF_DATA\ModuleVertex.h"
+#include "..\WBF_DATA\ModuleSubBody.h"
+#include "..\WBF_DATA\ModuleBody.h"
+#include "..\WBF_DATA\ModuleLight.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

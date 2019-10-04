@@ -207,14 +207,6 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="EntityBody.cpp" />
-    <ClCompile Include="EntityLight.cpp" />
-    <ClCompile Include="EntitySubBody.cpp" />
-    <ClCompile Include="EntityVertex.cpp" />
-    <ClCompile Include="ModuleBody.cpp" />
-    <ClCompile Include="ModuleLight.cpp" />
-    <ClCompile Include="ModuleSubBody.cpp" />
-    <ClCompile Include="ModuleVertex.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -242,20 +234,11 @@
     <None Include="WBF_BASE.def" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EntityBody.h" />
-    <ClInclude Include="EntityLight.h" />
-    <ClInclude Include="EntitySubBody.h" />
-    <ClInclude Include="EntityVertex.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
-    <ClInclude Include="ModuleBody.h" />
-    <ClInclude Include="ModuleLight.h" />
-    <ClInclude Include="ModuleSubBody.h" />
-    <ClInclude Include="ModuleVertex.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="DataBaseDefine.h" />
     <ClInclude Include="WBFModelDefine.h" />
     <ClInclude Include="WBFRndrDefine.h" />
     <ClInclude Include="WBFVBOData.h" />

@@ -16,6 +16,15 @@
     <Filter Include="_common_\Linker">
       <UniqueIdentifier>{1af43332-4e55-4402-a469-dbc5db3df673}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DataBase">
+      <UniqueIdentifier>{9c993110-8033-47b3-b729-ce3d75500f6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataBase\Geometry">
+      <UniqueIdentifier>{83730f3f-1651-4b04-b8d4-ae7355c66e70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataBase\Light">
+      <UniqueIdentifier>{edf87d5c-5895-4c30-ab4f-0ba23ad51f88}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_DATA.cpp">
@@ -23,6 +32,30 @@
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>_common_</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBody.cpp">
+      <Filter>DataBase\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="EntitySubBody.cpp">
+      <Filter>DataBase\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityVertex.cpp">
+      <Filter>DataBase\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleBody.cpp">
+      <Filter>DataBase\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleSubBody.cpp">
+      <Filter>DataBase\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleVertex.cpp">
+      <Filter>DataBase\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityLight.cpp">
+      <Filter>DataBase\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleLight.cpp">
+      <Filter>DataBase\Light</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +87,33 @@
     </ClInclude>
     <ClInclude Include="WBF_DATA_LINK.h">
       <Filter>_common_\Linker</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBaseDefine.h">
+      <Filter>DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBody.h">
+      <Filter>DataBase\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="EntitySubBody.h">
+      <Filter>DataBase\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityVertex.h">
+      <Filter>DataBase\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleBody.h">
+      <Filter>DataBase\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleSubBody.h">
+      <Filter>DataBase\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleVertex.h">
+      <Filter>DataBase\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityLight.h">
+      <Filter>DataBase\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleLight.h">
+      <Filter>DataBase\Light</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

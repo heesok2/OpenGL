@@ -34,26 +34,11 @@
     <Filter Include="View\Model">
       <UniqueIdentifier>{29075dae-cf4a-4804-946c-d124cf2f2c93}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DataBase">
-      <UniqueIdentifier>{a8091b9d-612b-4970-8912-b8221043055c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="DataBase\Interface">
-      <UniqueIdentifier>{8d480a1a-a03e-4470-bb6e-2f5eb8a01338}</UniqueIdentifier>
-    </Filter>
     <Filter Include="View\VBO">
       <UniqueIdentifier>{17ab6126-1efa-4955-af55-701703062e9d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DataBase\OpenGL Model%28TEST%29">
-      <UniqueIdentifier>{c6f4b5ff-d1fe-436b-b754-9a710afe1331}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="DataBase\OpenGL Model%28TEST%29\Geometry">
-      <UniqueIdentifier>{f67b3918-af64-48d7-b0ad-92a522674398}</UniqueIdentifier>
-    </Filter>
     <Filter Include="View\Renderer">
       <UniqueIdentifier>{69012cf2-ed91-4075-96a3-bf2d0afd94b4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="DataBase\OpenGL Model%28TEST%29\Light">
-      <UniqueIdentifier>{4bcab4b0-e9c3-4312-8d49-6913445110dc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -102,32 +87,8 @@
     <ClCompile Include="WBFVBOData.cpp">
       <Filter>View\VBO</Filter>
     </ClCompile>
-    <ClCompile Include="ModuleVertex.cpp">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="EntitySubBody.cpp">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="EntityVertex.cpp">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleSubBody.cpp">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleBody.cpp">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="EntityBody.cpp">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
-    </ClCompile>
     <ClCompile Include="WBFVBOFactory.cpp">
       <Filter>View\VBO</Filter>
-    </ClCompile>
-    <ClCompile Include="EntityLight.cpp">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Light</Filter>
-    </ClCompile>
-    <ClCompile Include="ModuleLight.cpp">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Light</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -202,24 +163,6 @@
     <ClInclude Include="WBFVBOData.h">
       <Filter>View\VBO</Filter>
     </ClInclude>
-    <ClInclude Include="ModuleVertex.h">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="EntitySubBody.h">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="EntityVertex.h">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleSubBody.h">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleBody.h">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="EntityBody.h">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Geometry</Filter>
-    </ClInclude>
     <ClInclude Include="WBFVBOFactory.h">
       <Filter>View\VBO</Filter>
     </ClInclude>
@@ -231,15 +174,6 @@
     </ClInclude>
     <ClInclude Include="WBFRndrDefine.h">
       <Filter>View\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="DataBaseDefine.h">
-      <Filter>DataBase\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="ModuleLight.h">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Light</Filter>
-    </ClInclude>
-    <ClInclude Include="EntityLight.h">
-      <Filter>DataBase\OpenGL Model%28TEST%29\Light</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
