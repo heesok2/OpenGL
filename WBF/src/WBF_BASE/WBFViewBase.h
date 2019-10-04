@@ -11,22 +11,17 @@ public:
 	virtual ~CWBFViewBase();
 
 public:
+	virtual CModelManager* GetModelManager() = 0;
+	virtual CWBFRndrDataManager* GetRndrManager() = 0;
+
+public:
 	virtual void BeginwglCurrent() = 0;
 	virtual void EndwglCurrent() = 0;
 	virtual void SwapBuffers() = 0;
 
 public:
-	virtual CWBFRndrDataManager* GetRenderManager() { ASSERT(g_warning); return nullptr; }
 	virtual BOOL GetViewMatrix(glm::mat4& matView) { ASSERT(g_warning); return FALSE; }
 	virtual BOOL GetProjectionMatrix(glm::mat4& matView) { ASSERT(g_warning); return FALSE; }
-
-public:
-	virtual CModelManager* GetModelManager() { ASSERT(m_pModelMgr); return m_pModelMgr; }
-	virtual CWBFRndrDataManager* GetRndrManager() { ASSERT(m_pRndrMgr); return m_pRndrMgr; }
-
-protected:
-	CModelManager* m_pModelMgr;
-	CWBFRndrDataManager* m_pRndrMgr;
 
 };
 

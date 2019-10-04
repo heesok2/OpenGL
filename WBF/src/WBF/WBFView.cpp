@@ -53,6 +53,8 @@ END_MESSAGE_MAP()
 
 CWBFView::CWBFView() noexcept
 {
+	m_pModelMgr = nullptr;
+	m_pRndrMgr = nullptr;
 }
 
 CWBFView::~CWBFView()

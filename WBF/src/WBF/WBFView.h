@@ -47,6 +47,10 @@ protected:
 	virtual void OnEndPrinting(CDC* pDC, CPrintInfo* pInfo);
 	virtual void OnInitialUpdate(); // called first time after construct
 
+public:
+	virtual CModelManager* GetModelManager() { return m_pModelMgr; }
+	virtual CWBFRndrDataManager* GetRndrManager() { return m_pRndrMgr; }
+
 protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnDestroy();
@@ -58,6 +62,10 @@ protected:
 	afx_msg void OnCommandUI(CCmdUI* pCmdUI);
 
 	DECLARE_MESSAGE_MAP()
+
+protected:
+	CModelManager* m_pModelMgr;
+	CWBFRndrDataManager* m_pRndrMgr;
 
 };
 
