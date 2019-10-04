@@ -17,6 +17,9 @@ public:
 	virtual const DTYPE GetType() const override { return E_TYPE_SUBBODY; }
 
 public:
+	void Init();
+
+public:
 	DKEY dbKey;
 
 	UINT uiSubType;

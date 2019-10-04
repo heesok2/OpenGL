@@ -17,6 +17,9 @@ public:
 	virtual const DTYPE GetType() const override { return E_TYPE_BODY; }
 
 public:
+	void Init();
+
+public:
 	DKEY dbKey;
 	std::vector<DKEY> lstSubBody;
 };

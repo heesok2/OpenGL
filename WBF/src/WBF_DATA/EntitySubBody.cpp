@@ -9,9 +9,17 @@ static char THIS_FILE[] = __FILE__;
 
 CEntitySubBody::CEntitySubBody()
 {
+	Init();
 }
 
 
 CEntitySubBody::~CEntitySubBody()
 {
+}
+
+void CEntitySubBody::Init()
+{
+	dbKey = 0;
+
+	uiSubType = 0;;
 }

@@ -9,9 +9,14 @@ static char THIS_FILE[] = __FILE__;
 
 CEntityBody::CEntityBody()
 {
+	Init();
 }
-
 
 CEntityBody::~CEntityBody()
 {
+}
+
+void CEntityBody::Init()
+{
+	dbKey = 0;
 }

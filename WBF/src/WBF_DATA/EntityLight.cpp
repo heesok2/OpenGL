@@ -20,6 +20,6 @@ void CEntityLight::Init()
 {
 	dbKey = 0;
 
-	uiType = E_ENT_DIRECTIONAL;
+	uiType = E_ENT_POINT;
 	vPos = glm::vec3(0);
 }
