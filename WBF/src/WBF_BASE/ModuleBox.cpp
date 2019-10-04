@@ -7,7 +7,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CModuleBox::CModuleBox(CPackageData * pPackage)
+CModuleBox::CModuleBox(CPackage * pPackage)
 	: CModuleData<CEntityBox>(pPackage, E_TYPE_BOX)
 {
 }

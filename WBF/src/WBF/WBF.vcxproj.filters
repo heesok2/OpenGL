@@ -78,7 +78,7 @@
     <ClInclude Include="WBFControlDlg.h">
       <Filter>UI\Dialog</Filter>
     </ClInclude>
-    <ClInclude Include="WBFPakageSystem.h">
+    <ClInclude Include="WBFPakage.h">
       <Filter>DataBase</Filter>
     </ClInclude>
   </ItemGroup>
@@ -116,7 +116,7 @@
     <ClCompile Include="WBFControlDlg.cpp">
       <Filter>UI\Dialog</Filter>
     </ClCompile>
-    <ClCompile Include="WBFPakageSystem.cpp">
+    <ClCompile Include="WBFPakage.cpp">
       <Filter>DataBase</Filter>
     </ClCompile>
   </ItemGroup>

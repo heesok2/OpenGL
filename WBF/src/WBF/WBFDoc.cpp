@@ -19,10 +19,10 @@
 #include "WBF.h"
 #endif
 
-#include "WBFDoc.h"
-#include "WBFPakageSystem.h"
-
 #include <propkey.h>
+
+#include "WBFDoc.h"
+#include "WBFPakage.h"
 
 #include "..\WAF_GPS\WBFModelManager.h"
 
@@ -47,7 +47,7 @@ CWBFDoc::CWBFDoc() noexcept
 {
 	// TODO: 여기에 일회성 생성 코드를 추가합니다.
 
-	m_pPackage = new CWBFPackageSystem(this);
+	m_pPackage = new CWBFPackage(this);
 }
 
 CWBFDoc::~CWBFDoc()

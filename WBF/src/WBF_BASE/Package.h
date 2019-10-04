@@ -8,11 +8,11 @@
 
 class CWBFDocBase;
 class CModuleBase;
-class __MY_EXT_CLASS__ CPackageData : public CWBFSubject
+class __MY_EXT_CLASS__ CPackage : public CWBFSubject
 {
 public:
-	CPackageData(CWBFDocBase* pDoc);
-	virtual ~CPackageData();
+	CPackage(CWBFDocBase* pDoc);
+	virtual ~CPackage();
 
 public:
 	virtual void OnInitial() = 0;

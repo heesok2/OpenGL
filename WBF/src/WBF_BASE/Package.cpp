@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "PackageData.h"
+#include "Package.h"
 #include "DocListener.h"
 #include "ListenerDefine.h"
 
@@ -11,22 +11,22 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CPackageData::CPackageData(CWBFDocBase* pDoc)
+CPackage::CPackage(CWBFDocBase* pDoc)
 	: m_pMyDoc(pDoc)
 {
 }
 
 
-CPackageData::~CPackageData()
+CPackage::~CPackage()
 {
 }
 
-BOOL CPackageData::Start()
+BOOL CPackage::Start()
 {
 	return TRUE;
 }
 
-BOOL CPackageData::Commit()
+BOOL CPackage::Commit()
 {
 	//Notify(E_UPDATE_DB_CHANGED);
 
@@ -35,7 +35,7 @@ BOOL CPackageData::Commit()
 	return TRUE;
 }
 
-BOOL CPackageData::Rollback()
+BOOL CPackage::Rollback()
 {
 	return  FALSE;
 }

@@ -2,11 +2,11 @@
 
 #include "HeaderPre.h"
 
-class CPackageData;
+class CPackage;
 class __MY_EXT_CLASS__ CModuleBase
 {
 public:
-	CModuleBase(CPackageData* pPackage);
+	CModuleBase(CPackage* pPackage);
 	virtual ~CModuleBase();
 
 public:
@@ -18,7 +18,7 @@ public:
 	virtual void SetDefaultData() = 0;
 
 protected:
-	CPackageData* m_pPackage;
+	CPackage* m_pPackage;
 
 };
 

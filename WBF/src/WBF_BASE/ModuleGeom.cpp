@@ -7,7 +7,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CModuleGeom::CModuleGeom(CPackageData * pPackage)
+CModuleGeom::CModuleGeom(CPackage * pPackage)
 	: CModuleData<CEntityGeom>(pPackage, E_TYPE_GEOM)
 {
 }

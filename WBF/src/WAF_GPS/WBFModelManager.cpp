@@ -12,7 +12,7 @@
 #include "..\WBF_BASE\WBFVBOManager.h"
 
 #include "..\WBF_BASE\WBFDocBase.h"
-#include "..\WBF_BASE\PackageData.h"
+#include "..\WBF_BASE\Package.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

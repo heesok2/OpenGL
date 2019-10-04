@@ -4,7 +4,7 @@
 #include "WBFDoc.h"
 #include "WBFView.h"
 
-#include "..\WBF_BASE\PackageData.h"
+#include "..\WBF_BASE\Package.h"
 #include "..\WBF_BASE\ModuleBox.h"
 
 #include "..\WBF_BASE\WBFGraphicDef.h"

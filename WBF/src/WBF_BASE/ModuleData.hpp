@@ -14,7 +14,7 @@ template <class TD>
 class __MY_EXT_CLASS__ CModuleData : public CModuleBase
 {
 public:
-	CModuleData(CPackageData * pPackage, DTYPE _dbType) 
+	CModuleData(CPackage * pPackage, DTYPE _dbType) 
 		: CModuleBase(pPackage), dbType(_dbType) {}
 	virtual ~CModuleData() {}
 

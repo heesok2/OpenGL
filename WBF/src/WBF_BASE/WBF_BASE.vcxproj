@@ -225,7 +225,7 @@
     <ClCompile Include="EntityData.cpp" />
     <ClCompile Include="WBFVBOData.cpp" />
     <ClCompile Include="ModuleBase.cpp" />
-    <ClCompile Include="PackageData.cpp" />
+    <ClCompile Include="Package.cpp" />
     <ClCompile Include="EntityBox.cpp" />
     <ClCompile Include="WBFDialog.cpp" />
     <ClCompile Include="ModuleBox.cpp" />
@@ -270,7 +270,7 @@
     <ClInclude Include="WBFVBOData.h" />
     <ClInclude Include="ModuleData.hpp" />
     <ClInclude Include="ModuleBase.h" />
-    <ClInclude Include="PackageData.h" />
+    <ClInclude Include="Package.h" />
     <ClInclude Include="EntityBox.h" />
     <ClInclude Include="WBFDialog.h" />
     <ClInclude Include="ModuleBox.h" />

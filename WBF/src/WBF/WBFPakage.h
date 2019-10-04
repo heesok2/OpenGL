@@ -1,13 +1,13 @@
 #pragma once
 
-#include "..\WBF_BASE\PackageData.h"
+#include "..\WBF_BASE\Package.h"
 
 #include "HeaderPre.h"
-class __MY_EXT_CLASS__ CWBFPackageSystem : public CPackageData
+class __MY_EXT_CLASS__ CWBFPackage : public CPackage
 {
 public:
-	CWBFPackageSystem(CWBFDocBase* pDoc);
-	virtual ~CWBFPackageSystem();
+	CWBFPackage(CWBFDocBase* pDoc);
+	virtual ~CWBFPackage();
 
 public:
 	virtual void OnInitial() override;

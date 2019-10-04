@@ -67,7 +67,7 @@ glm::vec3 cubePositions[] =
 	glm::vec3(-1.3f,  1.0f, -1.5f)
 };
 
-CModuleVertex::CModuleVertex(CPackageData * pPackage)
+CModuleVertex::CModuleVertex(CPackage * pPackage)
 	: CModuleData<CEntityVertex>(pPackage, E_TYPE_VERTEX)
 {
 }

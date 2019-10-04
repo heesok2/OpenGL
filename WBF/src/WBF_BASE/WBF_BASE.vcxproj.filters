@@ -144,13 +144,13 @@
     <ClCompile Include="DocListener.cpp">
       <Filter>Event\Listener</Filter>
     </ClCompile>
-    <ClCompile Include="PackageData.cpp">
-      <Filter>DataBase\Interface</Filter>
-    </ClCompile>
     <ClCompile Include="ModuleBase.cpp">
       <Filter>DataBase\Interface</Filter>
     </ClCompile>
     <ClCompile Include="EntityData.cpp">
+      <Filter>DataBase\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Package.cpp">
       <Filter>DataBase\Interface</Filter>
     </ClCompile>
   </ItemGroup>
@@ -274,9 +274,6 @@
     <ClInclude Include="ListenerDefine.h">
       <Filter>Event\Listener</Filter>
     </ClInclude>
-    <ClInclude Include="PackageData.h">
-      <Filter>DataBase\Interface</Filter>
-    </ClInclude>
     <ClInclude Include="ModuleData.hpp">
       <Filter>DataBase\Interface</Filter>
     </ClInclude>
@@ -287,6 +284,9 @@
       <Filter>DataBase\Interface</Filter>
     </ClInclude>
     <ClInclude Include="DataBaseDefine.h">
+      <Filter>DataBase\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Package.h">
       <Filter>DataBase\Interface</Filter>
     </ClInclude>
   </ItemGroup>

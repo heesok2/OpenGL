@@ -4,7 +4,7 @@
 
 #include "WBFDocBase.h"
 #include "WBFViewBase.h"
-#include "PackageData.h"
+#include "Package.h"
 
 
 #ifdef _DEBUG

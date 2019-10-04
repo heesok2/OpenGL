@@ -7,7 +7,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CModuleBase::CModuleBase(CPackageData * pPackage)
+CModuleBase::CModuleBase(CPackage * pPackage)
 	: m_pPackage(pPackage)
 {
 }

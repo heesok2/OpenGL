@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WBFPakageSystem.h"
+#include "WBFPakage.h"
 
 #include "..\WBF_BASE\ModuleVertex.h"
 #include "..\WBF_BASE\ModuleSubBody.h"
@@ -13,16 +13,16 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFPackageSystem::CWBFPackageSystem(CWBFDocBase* pDoc)
-	: CPackageData(pDoc)
+CWBFPackage::CWBFPackage(CWBFDocBase* pDoc)
+	: CPackage(pDoc)
 {
 }
 
-CWBFPackageSystem::~CWBFPackageSystem()
+CWBFPackage::~CWBFPackage()
 {
 }
 
-void CWBFPackageSystem::OnInitial()
+void CWBFPackage::OnInitial()
 {
 	auto lambda_module = [&](DTYPE dbType, CModuleBase* datamodule)
 	{
@@ -44,7 +44,7 @@ void CWBFPackageSystem::OnInitial()
 	lambda_module(E_TYPE_BOX, new CModuleBox(this));
 }
 
-void CWBFPackageSystem::OnDestroy()
+void CWBFPackage::OnDestroy()
 {
 	auto itr = m_mModule.begin();
 	while (itr != m_mModule.end())
@@ -60,7 +60,7 @@ void CWBFPackageSystem::OnDestroy()
 	m_mModule.clear();
 }
 
-CModuleBase * CWBFPackageSystem::GetModule(DTYPE dbType)
+CModuleBase * CWBFPackage::GetModule(DTYPE dbType)
 {
 	auto itr = m_mModule.find(dbType);
 	if (itr == m_mModule.end()) return nullptr;
