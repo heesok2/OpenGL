@@ -16,6 +16,7 @@ public:
 public:
 	virtual BOOL GetViewMatrix(glm::mat4& mat);
 	virtual BOOL GetProjectionMatrix(glm::mat4& mat);
+	virtual BOOL GetCameraPos(glm::vec3& CamPos);// { ASSERT(g_warning); return FALSE; }
 
 public:
 	virtual void BeginwglCurrent() override;

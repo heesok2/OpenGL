@@ -23,6 +23,7 @@ public:
 public:
 	glm::mat4 GetViewMatrix();
 	glm::mat4 GetProjectionMatrix();
+	glm::vec3 GetCameraPos();
 		
 	void SetCameraPosition(glm::vec3& vPosition);
 	void SetMousePosition(CPoint& point);

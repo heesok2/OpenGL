@@ -47,6 +47,11 @@ glm::mat4 CWBFCamera::GetProjectionMatrix()
 	return glm::perspective(glm::radians(45.f), (float)(m_ViewRect.Width()) / (float)(m_ViewRect.Height()), 0.1f, 100.f);
 }
 
+glm::vec3 CWBFCamera::GetCameraPos()
+{
+	return m_vPosition;
+}
+
 void CWBFCamera::SetCameraPosition(glm::vec3& vPosition)
 {
 	m_vPosition = vPosition;

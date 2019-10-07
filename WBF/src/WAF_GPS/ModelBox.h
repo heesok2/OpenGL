@@ -11,6 +11,7 @@ class __MY_EXT_CLASS__ CModelBox : public CModelData
 	{
 		DKEY BodyKey;
 		glm::vec3 ModelPos;
+		glm::vec3 LightPos;
 	};
 
 public:

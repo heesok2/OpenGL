@@ -5,6 +5,8 @@
 #include "..\WBF_LIB\Package.h"
 #include "..\WBF_DATA\DataBaseDefine.h"
 #include "..\WBF_DATA\ModuleBox.h"
+#include "..\WBF_DATA\ModuleLight.h"
+
 #include "..\WBF_BASE\WBFDocBase.h"
 #include "..\WBF_BASE\WBFViewBase.h"
 #include "..\WBF_BASE\ModelManager.h"
@@ -29,21 +31,7 @@ CModelBox::~CModelBox()
 
 void CModelBox::Release()
 {
-	auto pDoc = m_pModelMgr->GetDoc();
-	auto pPackage = pDoc->GetPackage();
-	auto pModuleBox = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
-
-	std::vector<CEntityBox> lstBox;
-	auto lBoxNum = pModuleBox->GetDataList(lstBox);
-
-	for (auto lbox = 0; lbox < lBoxNum; ++lbox)
-	{
-		TModelBox box;
-		box.BodyKey = lstBox[lbox].dbBodyKey;
-		box.ModelPos = lstBox[lbox].vPos;
-
-		m_lstBox.push_back(std::move(box));
-	}
+	m_lstBox.clear();
 }
 
 void CModelBox::Build()
@@ -51,6 +39,15 @@ void CModelBox::Build()
 	auto pDoc = m_pModelMgr->GetDoc();
 	auto pPackage = pDoc->GetPackage();
 	auto pModuleBox = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
+	auto pModuleLight = (CModuleLight*)pPackage->GetModule(E_TYPE_LIGHT);
+
+	std::vector<CEntityLight> lstLight;
+	auto lLightNum = pModuleLight->GetDataList(lstLight);
+
+	glm::vec3 aLightPos;
+	if(lLightNum > 0) aLightPos = lstLight.front().vPos;
+	else aLightPos = glm::vec3(1.f, 1.f, 1.f);
+
 
 	std::vector<CEntityBox> lstBox;
 	auto lBoxNum = pModuleBox->GetDataList(lstBox);
@@ -60,6 +57,7 @@ void CModelBox::Build()
 		TModelBox box;
 		box.BodyKey = lstBox[lbox].dbBodyKey;
 		box.ModelPos = lstBox[lbox].vPos;
+		box.LightPos = aLightPos;
 
 		m_lstBox.push_back(std::move(box));
 	}
@@ -82,6 +80,9 @@ void CModelBox::Draw(CShader * pShader)
 		glm::mat4 proj(1.f);
 		pView->GetProjectionMatrix(proj);
 
+		glm::vec3 CamPos(0.f);
+		pView->GetCameraPos(CamPos);
+
 		for (auto& box : m_lstBox)
 		{
 			TEntityVBO tData;
@@ -101,10 +102,16 @@ void CModelBox::Draw(CShader * pShader)
 			glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj));
 
 			auto modelColor = glGetUniformLocation(nProg, "ourModelColor");
-			glUniform4f(modelColor, 0.8f, 0.8f, 0.8f, 1.f);
+			glUniform3f(modelColor, 0.8f, 0.8f, 0.8f);
 
 			auto lightColor = glGetUniformLocation(nProg, "ourLightColor");
-			glUniform4f(lightColor, 1.f, 1.f, 1.f, 1.f);
+			glUniform3f(lightColor, 1.f, 1.f, 1.f);
+
+			auto CameraPos = glGetUniformLocation(nProg, "ourCameraPos");
+			glUniform3fv(CameraPos, 1, glm::value_ptr(CamPos));
+			
+			auto LightPos = glGetUniformLocation(nProg, "ourLightPos");
+			glUniform3fv(LightPos, 1, glm::value_ptr(box.LightPos));
 
 			glBindVertexArray(tData.VAO);
 			glDrawElements(GL_TRIANGLES, tData.DataNum, GL_UNSIGNED_INT, 0);

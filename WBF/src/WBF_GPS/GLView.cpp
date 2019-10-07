@@ -66,6 +66,16 @@ BOOL CGLView::GetProjectionMatrix(glm::mat4 & mat)
 	return TRUE;
 }
 
+BOOL CGLView::GetCameraPos(glm::vec3 & CamPos)
+{
+	if (m_Camera == nullptr)
+		return FALSE;
+
+	CamPos = m_Camera->GetCameraPos();
+
+	return TRUE;
+}
+
 void CGLView::InitializePalette()
 {
 	PIXELFORMATDESCRIPTOR pfd;	// Pixel Format Descriptor

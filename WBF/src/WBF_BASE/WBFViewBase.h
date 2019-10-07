@@ -22,6 +22,7 @@ public:
 public:
 	virtual BOOL GetViewMatrix(glm::mat4& mat) { ASSERT(g_warning); return FALSE; }
 	virtual BOOL GetProjectionMatrix(glm::mat4& mat) { ASSERT(g_warning); return FALSE; }
+	virtual BOOL GetCameraPos(glm::vec3& CamPos) { ASSERT(g_warning); return FALSE; }
 
 };
 
