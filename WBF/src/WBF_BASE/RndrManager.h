@@ -4,13 +4,13 @@
 #include "HeaderPre.h"
 
 class CWBFViewBase;
-class CWBFRndrData;
+class CRndrData;
 class CShaderManager;
-class __MY_EXT_CLASS__ CWBFRndrDataManager
+class __MY_EXT_CLASS__ CRndrManager
 {
 public:
-	CWBFRndrDataManager(CWBFViewBase* pView);
-	virtual ~CWBFRndrDataManager();
+	CRndrManager(CWBFViewBase* pView);
+	virtual ~CRndrManager();
 
 public:
 	virtual void OnInitial() = 0;
@@ -18,12 +18,12 @@ public:
 	virtual void GLDrawScene() = 0;
 
 public:
-	CWBFRndrData* GetRender(UINT uiType);
+	CRndrData* GetRender(UINT uiType);
 	CWBFViewBase* GetView() { return m_pView; }
 
 protected:
 	CWBFViewBase* m_pView;
-	std::vector<CWBFRndrData*> m_vObject;
+	std::vector<CRndrData*> m_vObject;
 };
 
 #include "HeaderPost.h"

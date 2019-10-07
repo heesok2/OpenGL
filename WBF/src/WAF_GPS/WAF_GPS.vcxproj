@@ -210,7 +210,7 @@
     <ClCompile Include="GPSView.cpp" />
     <ClCompile Include="ModelLight.cpp" />
     <ClCompile Include="ModelSample.cpp" />
-    <ClCompile Include="RndrAppManager.cpp" />
+    <ClCompile Include="WBFRndrManager.cpp" />
     <ClCompile Include="RndrLight.cpp" />
     <ClCompile Include="RndrSample.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -234,7 +234,7 @@
     <ClInclude Include="ModelLight.h" />
     <ClInclude Include="ModelSample.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="RndrAppManager.h" />
+    <ClInclude Include="WBFRndrManager.h" />
     <ClInclude Include="RndrLight.h" />
     <ClInclude Include="RndrSample.h" />
     <ClInclude Include="stdafx.h" />

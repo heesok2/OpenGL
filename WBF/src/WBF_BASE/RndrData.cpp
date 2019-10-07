@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WBFRndrData.h"
+#include "RndrData.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -7,13 +7,13 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFRndrData::CWBFRndrData()
+CRndrData::CRndrData()
 	: m_pRndrMgr(nullptr), m_pModelMgr(nullptr)
 {
 
 }
 
-CWBFRndrData::~CWBFRndrData()
+CRndrData::~CRndrData()
 {
 
 }

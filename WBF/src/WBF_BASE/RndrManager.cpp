@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "WBFRndrDataManager.h"
-#include "WBFRndrData.h"
+#include "RndrManager.h"
+#include "RndrData.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -8,16 +8,16 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFRndrDataManager::CWBFRndrDataManager(CWBFViewBase* pView)
+CRndrManager::CRndrManager(CWBFViewBase* pView)
 	: m_pView(pView)
 {
 }
 
-CWBFRndrDataManager::~CWBFRndrDataManager()
+CRndrManager::~CRndrManager()
 {
 }
 
-CWBFRndrData * CWBFRndrDataManager::GetRender(UINT uiType)
+CRndrData * CRndrManager::GetRender(UINT uiType)
 {
 	for (auto pObject : m_vObject)
 	{

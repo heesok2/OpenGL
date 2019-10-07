@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WBFModelFactory.h"
+#include "RndrFactory.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -7,22 +7,21 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFModelFactory & CWBFModelFactory::GetInstance()
+CRndrFactory& CRndrFactory::GetInstance()
 {
-	static CWBFModelFactory inst;
+	static CRndrFactory inst;
 	return inst;
 }
 
-CWBFModelFactory::CWBFModelFactory()
+CRndrFactory::CRndrFactory()
 {
 }
 
-
-CWBFModelFactory::~CWBFModelFactory()
+CRndrFactory::~CRndrFactory()
 {
 }
 
-BOOL CWBFModelFactory::Register(UINT uiType, CRuntimeClass * pRuntime)
+BOOL CRndrFactory::Register(UINT uiType, CRuntimeClass * pRuntime)
 {
 	auto itr = m_mObject.find(uiType);
 	if (itr != m_mObject.end())
@@ -35,14 +34,14 @@ BOOL CWBFModelFactory::Register(UINT uiType, CRuntimeClass * pRuntime)
 	return TRUE;
 }
 
-void CWBFModelFactory::Unregister(UINT uiType)
+void CRndrFactory::Unregister(UINT uiType)
 {
 	auto itr = m_mObject.find(uiType);
 	if (itr != m_mObject.end())
 		m_mObject.erase(itr);
 }
 
-CFactoryObjectBase * CWBFModelFactory::CreateObject(UINT uiType)
+CFactoryObjectBase * CRndrFactory::CreateObject(UINT uiType)
 {
 	auto itr = m_mObject.find(uiType);
 	if (itr == m_mObject.end())

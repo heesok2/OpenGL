@@ -7,7 +7,7 @@
 #include "VBOGeom.h"
 
 #include "..\WBF_LIB\WBFObserverDefine.h"
-#include "..\WBF_BASE\WBFModelFactory.h"
+#include "..\WBF_BASE\ModelFactory.h"
 #include "..\WBF_BASE\ModelData.h"
 #include "..\WBF_BASE\WBFVBOManager.h"
 

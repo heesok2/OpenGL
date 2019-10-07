@@ -1,10 +1,10 @@
 #include "stdafx.h"
-#include "RndrAppManager.h"
+#include "WBFRndrManager.h"
 
 #include "..\WBF_BASE\WBFDocBase.h"
 #include "..\WBF_BASE\WBFViewBase.h"
-#include "..\WBF_BASE\WBFRndrFactory.h"
-#include "..\WBF_BASE\WBFRndrData.h"
+#include "..\WBF_BASE\RndrFactory.h"
+#include "..\WBF_BASE\RndrData.h"
 #include "..\WBF_GPS\ShaderManager.h"
 
 #ifdef _DEBUG
@@ -13,16 +13,16 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CRndrAppManager::CRndrAppManager(CWBFViewBase* pView)
-	: CWBFRndrDataManager(pView)
+CWBFRndrManager::CWBFRndrManager(CWBFViewBase* pView)
+	: CRndrManager(pView)
 {
 }
 
-CRndrAppManager::~CRndrAppManager()
+CWBFRndrManager::~CWBFRndrManager()
 {
 }
 
-void CRndrAppManager::OnInitial()
+void CWBFRndrManager::OnInitial()
 {
 	m_pShaderManager = new CShaderManager();
 
@@ -30,7 +30,7 @@ void CRndrAppManager::OnInitial()
 
 	for (UINT uiType = 0; uiType < E_RNDR_NUM; ++uiType)
 	{
-		auto pObject = (CWBFRndrData*)CWBFRndrFactory::GetInstance().CreateObject(uiType);
+		auto pObject = (CRndrData*)CRndrFactory::GetInstance().CreateObject(uiType);
 		if (pObject == nullptr) continue;
 		
 		pObject->SetHelper(this, pModelMgr);
@@ -40,7 +40,7 @@ void CRndrAppManager::OnInitial()
 	}
 }
 
-void CRndrAppManager::OnDestroy()
+void CWBFRndrManager::OnDestroy()
 {
 	for (auto pObject : m_vObject)
 	{
@@ -52,7 +52,7 @@ void CRndrAppManager::OnDestroy()
 	_SAFE_DELETE(m_pShaderManager);
 }
 
-void CRndrAppManager::GLDrawScene()
+void CWBFRndrManager::GLDrawScene()
 {
 	for (auto pObject : m_vObject)
 		pObject->GLDraw();

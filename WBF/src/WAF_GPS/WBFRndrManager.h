@@ -1,14 +1,14 @@
 #pragma once
 
-#include "..\WBF_BASE\WBFRndrDataManager.h"
+#include "..\WBF_BASE\RndrManager.h"
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CRndrAppManager : public CWBFRndrDataManager
+class __MY_EXT_CLASS__ CWBFRndrManager : public CRndrManager
 {
 public:
-	CRndrAppManager(CWBFViewBase* pView);
-	virtual ~CRndrAppManager();
+	CWBFRndrManager(CWBFViewBase* pView);
+	virtual ~CWBFRndrManager();
 
 public:
 	virtual void OnInitial();

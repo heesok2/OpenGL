@@ -95,7 +95,6 @@ void CModelLight::Draw(CShader * pShader)
 			glm::mat4 mod(1.f);
 			mod = glm::translate(mod, model.Pos);
 
-
 			auto modelLoc = glGetUniformLocation(nProg, "model");
 			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(mod));
 

@@ -19,17 +19,20 @@
     <Filter Include="Common">
       <UniqueIdentifier>{823ca91a-79de-4ebb-92ee-37174704150b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic">
+    <Filter Include="Renderer">
       <UniqueIdentifier>{1ca22ed9-4cd2-415f-a010-496a3de411b9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic\Model">
-      <UniqueIdentifier>{113578aa-e7e8-4374-8ea6-3200c7211aa5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Graphic\Renderer">
-      <UniqueIdentifier>{9e66ac82-d4f6-46b4-a51f-92161acd9dad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Graphic\VBO">
+    <Filter Include="Renderer\VBO">
       <UniqueIdentifier>{3791b211-e0ae-4cd6-9d51-596b3d214d96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Light">
+      <UniqueIdentifier>{226bfab4-85fd-4144-aba3-5bb1ddea5a4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Box">
+      <UniqueIdentifier>{724043be-adc6-4748-a93e-34615c31c4f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer\Sample">
+      <UniqueIdentifier>{33b5a89e-6618-4896-b129-7acb7b3817b0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,26 +45,26 @@
     <ClCompile Include="GPSView.cpp">
       <Filter>Common</Filter>
     </ClCompile>
+    <ClCompile Include="VBOGeom.cpp">
+      <Filter>Renderer\VBO</Filter>
+    </ClCompile>
     <ClCompile Include="ModelLight.cpp">
-      <Filter>Graphic\Model</Filter>
+      <Filter>Renderer\Light</Filter>
     </ClCompile>
     <ClCompile Include="ModelSample.cpp">
-      <Filter>Graphic\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFModelManager.cpp">
-      <Filter>Graphic\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="VBOGeom.cpp">
-      <Filter>Graphic\VBO</Filter>
-    </ClCompile>
-    <ClCompile Include="RndrAppManager.cpp">
-      <Filter>Graphic\Renderer</Filter>
+      <Filter>Renderer\Sample</Filter>
     </ClCompile>
     <ClCompile Include="RndrLight.cpp">
-      <Filter>Graphic\Renderer</Filter>
+      <Filter>Renderer\Light</Filter>
     </ClCompile>
     <ClCompile Include="RndrSample.cpp">
-      <Filter>Graphic\Renderer</Filter>
+      <Filter>Renderer\Sample</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFModelManager.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="WBFRndrManager.cpp">
+      <Filter>Renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,26 +100,26 @@
     <ClInclude Include="GPSView.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="VBOGeom.h">
+      <Filter>Renderer\VBO</Filter>
+    </ClInclude>
     <ClInclude Include="ModelLight.h">
-      <Filter>Graphic\Model</Filter>
+      <Filter>Renderer\Light</Filter>
     </ClInclude>
     <ClInclude Include="ModelSample.h">
-      <Filter>Graphic\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFModelManager.h">
-      <Filter>Graphic\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="VBOGeom.h">
-      <Filter>Graphic\VBO</Filter>
-    </ClInclude>
-    <ClInclude Include="RndrAppManager.h">
-      <Filter>Graphic\Renderer</Filter>
+      <Filter>Renderer\Sample</Filter>
     </ClInclude>
     <ClInclude Include="RndrLight.h">
-      <Filter>Graphic\Renderer</Filter>
+      <Filter>Renderer\Light</Filter>
     </ClInclude>
     <ClInclude Include="RndrSample.h">
-      <Filter>Graphic\Renderer</Filter>
+      <Filter>Renderer\Sample</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFModelManager.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFRndrManager.h">
+      <Filter>Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

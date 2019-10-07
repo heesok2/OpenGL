@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "RndrSample.h"
-#include "RndrAppManager.h"
-#include "WBFModelManager.h"
 #include "ModelSample.h"
+#include "WBFRndrManager.h"
+#include "WBFModelManager.h"
 
 #include "..\WBF_GPS\ShaderDefine.h"
 #include "..\WBF_GPS\ShaderManager.h"
@@ -25,7 +25,7 @@ CRndrSample::~CRndrSample()
 
 void CRndrSample::OnInitialData()
 {
-	auto pShaderMgr = ((CRndrAppManager*)m_pRndrMgr)->GetShaderManager();
+	auto pShaderMgr = ((CWBFRndrManager*)m_pRndrMgr)->GetShaderManager();
 	pShaderMgr->GLCreateShader(E_SHADER_SAMPLE);
 }
 

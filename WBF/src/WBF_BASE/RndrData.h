@@ -2,17 +2,17 @@
 
 #include "..\WBF_LIB\FactoryObjectBase.h"
 
-#include "WBFRndrDefine.h"
-#include "WBFRndrFactory.h"
+#include "RndrDefine.h"
+#include "RndrFactory.h"
 #include "HeaderPre.h"
 
-class CWBFRndrDataManager;
+class CRndrManager;
 class CModelManager;
-class __MY_EXT_CLASS__ CWBFRndrData : public CFactoryObjectBase
+class __MY_EXT_CLASS__ CRndrData : public CFactoryObjectBase
 {
 public:
-	CWBFRndrData();
-	virtual ~CWBFRndrData();
+	CRndrData();
+	virtual ~CRndrData();
 
 public:
 	virtual UINT GetType() override { ASSERT(g_warning); return 0; }
@@ -20,14 +20,14 @@ public:
 	virtual void GLDraw() = 0;
 
 public:
-	void SetHelper(CWBFRndrDataManager* pRndrMgr, CModelManager* pModelMgr)
+	void SetHelper(CRndrManager* pRndrMgr, CModelManager* pModelMgr)
 	{
 		m_pRndrMgr = pRndrMgr;
 		m_pModelMgr = pModelMgr;
 	}
 
 protected:
-	CWBFRndrDataManager* m_pRndrMgr;
+	CRndrManager* m_pRndrMgr;
 	CModelManager* m_pModelMgr;
 
 };
@@ -38,5 +38,5 @@ protected:
 DECLARE_DYNCREATE(class_name);
 
 #define IMPLEMENT_RENDERER(type, class_name)\
-IMPLEMENT_DYNCREATE(class_name, CWBFRndrData);\
-BOOL b##class_name = CWBFRndrFactory::GetInstance().Register(type, RUNTIME_CLASS(class_name));
+IMPLEMENT_DYNCREATE(class_name, CRndrData);\
+BOOL b##class_name = CRndrFactory::GetInstance().Register(type, RUNTIME_CLASS(class_name));

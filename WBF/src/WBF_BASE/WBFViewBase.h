@@ -3,7 +3,7 @@
 #include "HeaderPre.h"
 
 class CModelManager;
-class CWBFRndrDataManager;
+class CRndrManager;
 class __MY_EXT_CLASS__ CWBFViewBase : public CView
 {
 public:
@@ -12,7 +12,7 @@ public:
 
 public:
 	virtual CModelManager* GetModelManager() = 0;
-	virtual CWBFRndrDataManager* GetRndrManager() = 0;
+	virtual CRndrManager* GetRndrManager() = 0;
 
 public:
 	virtual void BeginwglCurrent() = 0;

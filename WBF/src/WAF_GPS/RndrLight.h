@@ -1,10 +1,10 @@
 #pragma once
 
-#include "..\WBF_BASE\WBFRndrData.h"
+#include "..\WBF_BASE\RndrData.h"
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CRndrLight : public CWBFRndrData
+class __MY_EXT_CLASS__ CRndrLight : public CRndrData
 {
 	DECLARE_RENDERER(CRndrLight);
 

@@ -4,14 +4,14 @@
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CWBFModelFactory : public CFactoryBase
+class __MY_EXT_CLASS__ CRndrFactory : public CFactoryBase
 {
 public:
-	static CWBFModelFactory& GetInstance();
+	static CRndrFactory& GetInstance();
 
 public:
-	CWBFModelFactory();
-	virtual ~CWBFModelFactory();
+	CRndrFactory();
+	virtual ~CRndrFactory();
 
 public:
 	virtual BOOL Register(UINT uiType, CRuntimeClass * pRuntime) override;
@@ -21,4 +21,3 @@ public:
 };
 
 #include "HeaderPost.h"
-

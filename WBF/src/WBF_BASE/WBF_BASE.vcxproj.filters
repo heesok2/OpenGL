@@ -57,12 +57,6 @@
     <ClCompile Include="WBFDialog.cpp">
       <Filter>UI\Dialog</Filter>
     </ClCompile>
-    <ClCompile Include="WBFRndrFactory.cpp">
-      <Filter>View\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFModelFactory.cpp">
-      <Filter>View\Model</Filter>
-    </ClCompile>
     <ClCompile Include="WBFOption.cpp">
       <Filter>Option</Filter>
     </ClCompile>
@@ -71,12 +65,6 @@
     </ClCompile>
     <ClCompile Include="WBFVBOManager.cpp">
       <Filter>View\VBO</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFRndrData.cpp">
-      <Filter>View\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFRndrDataManager.cpp">
-      <Filter>View\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="WBFVBOData.cpp">
       <Filter>View\VBO</Filter>
@@ -89,6 +77,18 @@
     </ClCompile>
     <ClCompile Include="ModelData.cpp">
       <Filter>View\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="RndrManager.cpp">
+      <Filter>View\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="RndrData.cpp">
+      <Filter>View\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelFactory.cpp">
+      <Filter>View\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="RndrFactory.cpp">
+      <Filter>View\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,14 +130,8 @@
     <ClInclude Include="WBFDialog.h">
       <Filter>UI\Dialog</Filter>
     </ClInclude>
-    <ClInclude Include="WBFRndrFactory.h">
-      <Filter>View\Renderer</Filter>
-    </ClInclude>
     <ClInclude Include="WBFGraphicDef.h">
       <Filter>View</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFModelFactory.h">
-      <Filter>View\Model</Filter>
     </ClInclude>
     <ClInclude Include="WBFOption.h">
       <Filter>Option</Filter>
@@ -148,12 +142,6 @@
     <ClInclude Include="WBFVBOManager.h">
       <Filter>View\VBO</Filter>
     </ClInclude>
-    <ClInclude Include="WBFRndrData.h">
-      <Filter>View\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFRndrDataManager.h">
-      <Filter>View\Renderer</Filter>
-    </ClInclude>
     <ClInclude Include="WBFVBOData.h">
       <Filter>View\VBO</Filter>
     </ClInclude>
@@ -163,17 +151,29 @@
     <ClInclude Include="WBFVBODefine.h">
       <Filter>View\VBO</Filter>
     </ClInclude>
-    <ClInclude Include="WBFModelDefine.h">
-      <Filter>View\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFRndrDefine.h">
-      <Filter>View\Renderer</Filter>
-    </ClInclude>
     <ClInclude Include="ModelManager.h">
       <Filter>View\Model</Filter>
     </ClInclude>
     <ClInclude Include="ModelData.h">
       <Filter>View\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrManager.h">
+      <Filter>View\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrData.h">
+      <Filter>View\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelDefine.h">
+      <Filter>View\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrDefine.h">
+      <Filter>View\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelFactory.h">
+      <Filter>View\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrFactory.h">
+      <Filter>View\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -27,7 +27,7 @@ void CModelManager::OnInitial()
 {
 	for (long indx = 0; indx < E_MODEL_NUM; ++indx)
 	{
-		auto pObject = (CModelData*)CWBFModelFactory::GetInstance().CreateObject(indx);
+		auto pObject = (CModelData*)CModelFactory::GetInstance().CreateObject(indx);
 		if (pObject == nullptr) continue;
 
 		pObject->SetHelper(this);

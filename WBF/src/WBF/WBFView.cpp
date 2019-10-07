@@ -23,8 +23,8 @@
 #include "WBFView.h"
 #include "WBFControlDlg.h"
 
+#include "..\WAF_GPS\WBFRndrManager.h"
 #include "..\WAF_GPS\WBFModelManager.h"
-#include "..\WAF_GPS\RndrAppManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -131,7 +131,7 @@ void CWBFView::OnInitialUpdate()
 		m_pModelMgr->OnInitial();
 
 
-		m_pRndrMgr = new CRndrAppManager(this);
+		m_pRndrMgr = new CWBFRndrManager(this);
 		m_pRndrMgr->OnInitial();
 	}
 	EndwglCurrent();

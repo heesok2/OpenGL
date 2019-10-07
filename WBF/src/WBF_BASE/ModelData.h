@@ -3,8 +3,8 @@
 #include "..\WBF_LIB\FactoryObjectBase.h"
 
 #include "WBFGraphicDef.h"
-#include "WBFModelDefine.h"
-#include "WBFModelFactory.h"
+#include "ModelDefine.h"
+#include "ModelFactory.h"
 #include "HeaderPre.h"
 
 namespace opt
@@ -65,4 +65,4 @@ DECLARE_DYNCREATE(class_name);\
 
 #define IMPLEMENT_MODEL(type, class_name)\
 IMPLEMENT_DYNCREATE(class_name, CModelData);\
-BOOL bReg##class_name = CWBFModelFactory::GetInstance().Register(type, RUNTIME_CLASS(class_name));
+BOOL bReg##class_name = CModelFactory::GetInstance().Register(type, RUNTIME_CLASS(class_name));

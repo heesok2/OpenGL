@@ -49,7 +49,7 @@ protected:
 
 public:
 	virtual CModelManager* GetModelManager() { return m_pModelMgr; }
-	virtual CWBFRndrDataManager* GetRndrManager() { return m_pRndrMgr; }
+	virtual CRndrManager* GetRndrManager() { return m_pRndrMgr; }
 
 protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
@@ -65,7 +65,7 @@ protected:
 
 protected:
 	CModelManager* m_pModelMgr;
-	CWBFRndrDataManager* m_pRndrMgr;
+	CRndrManager* m_pRndrMgr;
 
 };
 
