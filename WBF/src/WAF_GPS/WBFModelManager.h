@@ -15,12 +15,6 @@ public:
 public:
 	virtual void OnNotifyMsg(CDocument * pDoc, WPARAM wParam, LPARAM lParam) override;
 
-
-protected:
-	void ReleaseModel();
-	void BuildModel();
-
-
 public:
 	virtual CVBOManager* GetVBOManager() { return m_pVBOMgr; }
 
@@ -31,6 +25,10 @@ public:
 	virtual void OnUpdateOnly(UINT uiType);
 
 	virtual void GLInitialData();
+
+protected:
+	void ReleaseModel();
+	void BuildModel();
 
 protected:
 	CVBOManager* m_pVBOMgr;

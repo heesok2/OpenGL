@@ -66,6 +66,12 @@
     <ClCompile Include="WBFRndrManager.cpp">
       <Filter>Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="ModelBox.cpp">
+      <Filter>Renderer\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="RndrBox.cpp">
+      <Filter>Renderer\Box</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="WAF_GPS.def">
@@ -120,6 +126,12 @@
     </ClInclude>
     <ClInclude Include="WBFRndrManager.h">
       <Filter>Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelBox.h">
+      <Filter>Renderer\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="RndrBox.h">
+      <Filter>Renderer\Box</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

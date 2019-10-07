@@ -25,6 +25,9 @@
     <Filter Include="DataBase\Light">
       <UniqueIdentifier>{edf87d5c-5895-4c30-ab4f-0ba23ad51f88}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DataBase\Box">
+      <UniqueIdentifier>{e805c63a-71ce-4b42-9add-c8da476f5981}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_DATA.cpp">
@@ -56,6 +59,12 @@
     </ClCompile>
     <ClCompile Include="ModuleLight.cpp">
       <Filter>DataBase\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleBox.cpp">
+      <Filter>DataBase\Box</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityBox.cpp">
+      <Filter>DataBase\Box</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +123,12 @@
     </ClInclude>
     <ClInclude Include="ModuleLight.h">
       <Filter>DataBase\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleBox.h">
+      <Filter>DataBase\Box</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityBox.h">
+      <Filter>DataBase\Box</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

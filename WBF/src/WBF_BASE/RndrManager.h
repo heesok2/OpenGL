@@ -18,8 +18,8 @@ public:
 	virtual void GLDrawScene() = 0;
 
 public:
-	CRndrData* GetRender(UINT uiType);
 	CWBFViewBase* GetView() { return m_pView; }
+	CRndrData* GetRender(UINT uiType);
 
 protected:
 	CWBFViewBase* m_pView;

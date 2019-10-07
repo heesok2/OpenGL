@@ -9,9 +9,10 @@ public:
 	virtual ~CEntityData();
 
 public:
+	virtual const DTYPE GetType() const = 0;
 	virtual const DKEY GetKey() const = 0;
-	virtual const DTYPE GetType() const { ASSERT(g_warning); return 0; }
 	virtual const CString GetName() const { ASSERT(g_warning); return _T(""); }
+	virtual void SetDefaultData() { }
 
 };
 

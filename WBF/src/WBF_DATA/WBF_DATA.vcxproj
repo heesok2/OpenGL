@@ -204,10 +204,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="EntityBody.cpp" />
+    <ClCompile Include="EntityBox.cpp" />
     <ClCompile Include="EntityLight.cpp" />
     <ClCompile Include="EntitySubBody.cpp" />
     <ClCompile Include="EntityVertex.cpp" />
     <ClCompile Include="ModuleBody.cpp" />
+    <ClCompile Include="ModuleBox.cpp" />
     <ClCompile Include="ModuleLight.cpp" />
     <ClCompile Include="ModuleSubBody.cpp" />
     <ClCompile Include="ModuleVertex.cpp" />
@@ -226,12 +228,14 @@
   <ItemGroup>
     <ClInclude Include="DataBaseDefine.h" />
     <ClInclude Include="EntityBody.h" />
+    <ClInclude Include="EntityBox.h" />
     <ClInclude Include="EntityLight.h" />
     <ClInclude Include="EntitySubBody.h" />
     <ClInclude Include="EntityVertex.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
     <ClInclude Include="ModuleBody.h" />
+    <ClInclude Include="ModuleBox.h" />
     <ClInclude Include="ModuleLight.h" />
     <ClInclude Include="ModuleSubBody.h" />
     <ClInclude Include="ModuleVertex.h" />

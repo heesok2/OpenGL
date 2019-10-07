@@ -15,8 +15,7 @@ public:
 	virtual ~CRndrData();
 
 public:
-	virtual UINT GetType() override { ASSERT(g_warning); return 0; }
-	virtual void OnInitialData() {}
+	virtual void OnInitialData() = 0;
 	virtual void GLDraw() = 0;
 
 public:

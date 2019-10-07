@@ -12,7 +12,7 @@ public:
 	virtual ~CModuleLight();
 
 public:
-	virtual void SetDefaultData();
+	virtual void SetDefaultData() override;
 };
 
 #include "HeaderPost.h"

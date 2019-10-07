@@ -12,6 +12,7 @@ public:
 	virtual ~CEntityVertex();
 
 public:
+	virtual const DTYPE GetType() const override { return E_TYPE_VERTEX; }
 	virtual const DKEY GetKey() const override { return dbKey; }
 
 public:

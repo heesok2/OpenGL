@@ -22,8 +22,8 @@ public:
 	virtual ~CEntityLight();
 
 public:
-	virtual const DKEY GetKey() const override { return dbKey; }
 	virtual const DTYPE GetType() const override { return E_TYPE_LIGHT; }
+	virtual const DKEY GetKey() const override { return dbKey; }
 
 public:
 	void Init();

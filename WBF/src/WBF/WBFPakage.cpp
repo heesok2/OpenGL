@@ -6,6 +6,7 @@
 #include "..\WBF_DATA\ModuleSubBody.h"
 #include "..\WBF_DATA\ModuleBody.h"
 #include "..\WBF_DATA\ModuleLight.h"
+#include "..\WBF_DATA\ModuleBox.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -41,6 +42,7 @@ void CWBFPackage::OnInitial()
 	lambda_module(E_TYPE_SUBBODY, new CModuleSubBody(this));
 	lambda_module(E_TYPE_BODY, new CModuleBody(this));
 	lambda_module(E_TYPE_LIGHT, new CModuleLight(this));
+	lambda_module(E_TYPE_BOX, new CModuleBox(this));
 }
 
 void CWBFPackage::OnDestroy()
