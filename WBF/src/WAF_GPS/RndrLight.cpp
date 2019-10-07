@@ -39,12 +39,9 @@ void CRndrLight::GLDraw()
 	auto pModel = ((CWBFModelManager*)m_pModelMgr)->GetModel(E_MODEL_LIGHT);
 	if (pModel == nullptr) return;
 
-	auto pView = ((CWBFRndrManager*)m_pRndrMgr)->GetView();
-
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	{
 		glEnable(GL_DEPTH_TEST);
-		//glPolygonMode(pOption->uiPolygonFace, pOption->uiPolygonMode);
 
 		auto& Shader = pShaderMgr->GetShader(E_SHADER_LIGHT);
 		pModel->Draw(&Shader);

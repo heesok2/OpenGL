@@ -1,11 +1,18 @@
 #pragma once
 
+#include <vector>
 #include "..\WBF_BASE\ModelData.h"
 
 #include "HeaderPre.h"
 
 class __MY_EXT_CLASS__ CModelBox : public CModelData
 {
+	struct TModelBox
+	{
+		DKEY BodyKey;
+		glm::vec3 ModelPos;
+	};
+
 public:
 	CModelBox();
 	virtual ~CModelBox();
@@ -17,6 +24,9 @@ public:
 	virtual void Release() override;
 	virtual void Build() override;
 	virtual void Draw(CShader * pShader) override;
+
+protected:
+	std::vector<TModelBox> m_lstBox;
 };
 
 #include "HeaderPost.h"

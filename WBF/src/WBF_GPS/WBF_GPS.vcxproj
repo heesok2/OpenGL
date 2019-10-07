@@ -221,7 +221,9 @@
     <ClCompile Include="WBF_GPS.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\GLSL\Light_frg.glsl" />
+    <None Include="res\GLSL\Box_frag.glsl" />
+    <None Include="res\GLSL\Box_vert.glsl" />
+    <None Include="res\GLSL\Light_frag.glsl" />
     <None Include="res\GLSL\Light_vert.glsl" />
     <None Include="res\GLSL\Sample_frag.glsl" />
     <None Include="res\GLSL\Sample_vert.glsl" />

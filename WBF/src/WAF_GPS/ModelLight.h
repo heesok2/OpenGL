@@ -26,7 +26,7 @@ public:
 	virtual void Draw(CShader* pShader) override;
 
 protected:
-	std::vector<TModelLight> m_lstModel;
+	std::vector<TModelLight> m_lstLight;
 
 };
 

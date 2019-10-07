@@ -5,9 +5,8 @@
 #include "..\WBF_BASE\WBFDocBase.h"
 #include "..\WBF_BASE\WBFViewBase.h"
 
-#include "..\WBF_BASE\DataBaseDefine.h"
 #include "..\WBF_LIB\Package.h"
-#include "..\WBF_DATA\ModuleBody.h"
+#include "..\WBF_DATA\DataBaseDefine.h"
 #include "..\WBF_DATA\ModuleLight.h"
 
 #include "..\WBF_BASE\ModelManager.h"
@@ -41,14 +40,7 @@ void CModelLight::Build()
 	auto pDoc = m_pModelMgr->GetDoc();
 	auto pPackage = pDoc->GetPackage(); 
 
-	auto pModuleBody = (CModuleBody*)pPackage->GetModule(E_TYPE_BODY);
 	auto pModuleLight = (CModuleLight*)pPackage->GetModule(E_TYPE_LIGHT);
-
-
-	// Default Box
-	CEntityBody EntBody;
-	if (!pModuleBody->Find(1, EntBody))
-		return;
 
 	std::vector<CEntityLight> lstEntLight;
 	auto lLightNum = pModuleLight->GetDataList(lstEntLight);
@@ -62,7 +54,7 @@ void CModelLight::Build()
 		model.BodyKey = EntLight.dbBodyKey;
 		model.Pos = EntLight.vPos;
 
-		m_lstModel.push_back(std::move(model));
+		m_lstLight.push_back(std::move(model));
 	}
 }
 
@@ -86,7 +78,7 @@ void CModelLight::Draw(CShader * pShader)
 		glm::mat4 proj(1.f);
 		pView->GetProjectionMatrix(proj);
 
-		for (auto& model : m_lstModel)
+		for (auto& model : m_lstLight)
 		{
 			TEntityVBO tData;
 			if(!pGeom->GetVBO(model.BodyKey, tData))

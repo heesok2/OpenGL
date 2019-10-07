@@ -74,7 +74,13 @@
     <None Include="res\GLSL\Light_vert.glsl">
       <Filter>_resource file_\GLSL</Filter>
     </None>
-    <None Include="res\GLSL\Light_frg.glsl">
+    <None Include="res\GLSL\Light_frag.glsl">
+      <Filter>_resource file_\GLSL</Filter>
+    </None>
+    <None Include="res\GLSL\Box_vert.glsl">
+      <Filter>_resource file_\GLSL</Filter>
+    </None>
+    <None Include="res\GLSL\Box_frag.glsl">
       <Filter>_resource file_\GLSL</Filter>
     </None>
   </ItemGroup>
