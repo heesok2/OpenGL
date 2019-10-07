@@ -2,7 +2,10 @@
 
 out vec4 FragColor;
 
+uniform vec4 ourModelColor;
+uniform vec4 ourLightColor;
+
 void main()
 {
-	FragColor = vec4(1.f);
+	FragColor = ourModelColor * ourLightColor;
 }

@@ -63,10 +63,7 @@ void CModelLight::Draw(CShader * pShader)
 	auto pView = m_pModelMgr->GetView();
 	auto pManager = m_pModelMgr->GetVBOManager();
 	auto pGeom = (CVBOGeom*)pManager->Lookup(E_VBO_GEOM);
-
-	int nProg;
-	glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
-	   	 
+ 
 	pShader->GLBind();
 	{
 		int nProg;

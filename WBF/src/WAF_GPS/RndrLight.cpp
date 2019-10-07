@@ -34,7 +34,7 @@ void CRndrLight::OnInitialData()
 void CRndrLight::GLDraw()
 {
 	auto pShaderMgr = ((CWBFRndrManager*)m_pRndrMgr)->GetShaderManager();
-	if (!pShaderMgr->IsValidShader(GetType())) return;
+	if (!pShaderMgr->IsValidShader(E_SHADER_LIGHT)) return;
 
 	auto pModel = ((CWBFModelManager*)m_pModelMgr)->GetModel(E_MODEL_LIGHT);
 	if (pModel == nullptr) return;

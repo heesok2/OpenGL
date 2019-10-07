@@ -71,9 +71,6 @@ void CModelBox::Draw(CShader * pShader)
 	auto pManager = m_pModelMgr->GetVBOManager();
 	auto pGeom = (CVBOGeom*)pManager->Lookup(E_VBO_GEOM);
 
-	int nProg;
-	glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
-
 	pShader->GLBind();
 	{
 		int nProg;
@@ -102,6 +99,12 @@ void CModelBox::Draw(CShader * pShader)
 
 			auto projLoc = glGetUniformLocation(nProg, "projection");
 			glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj));
+
+			auto modelColor = glGetUniformLocation(nProg, "ourModelColor");
+			glUniform4f(modelColor, 0.8f, 0.8f, 0.8f, 1.f);
+
+			auto lightColor = glGetUniformLocation(nProg, "ourLightColor");
+			glUniform4f(lightColor, 1.f, 1.f, 1.f, 1.f);
 
 			glBindVertexArray(tData.VAO);
 			glDrawElements(GL_TRIANGLES, tData.DataNum, GL_UNSIGNED_INT, 0);
