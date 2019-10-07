@@ -86,7 +86,7 @@ void CModuleVertex::SetDefaultData()
 	auto SZ_DATA = (SZ_POS + SZ_NORMAL + SZ_TEXCORD);
 
 	auto szNum = sizeof(g_vertices) / SZ_DATA;
-	for (auto indx = 0; indx < szNum; ++indx)
+	for (auto indx = 0; indx < static_cast<int>(szNum); ++indx)
 	{
 		CEntityVertex Data;
 		Data.dbKey = GetNewKey();

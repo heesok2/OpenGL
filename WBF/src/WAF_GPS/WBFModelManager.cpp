@@ -8,7 +8,7 @@
 
 #include "..\WBF_LIB\WBFObserverDefine.h"
 #include "..\WBF_BASE\WBFModelFactory.h"
-#include "..\WBF_BASE\WBFModelData.h"
+#include "..\WBF_BASE\ModelData.h"
 #include "..\WBF_BASE\WBFVBOManager.h"
 
 #include "..\WBF_BASE\WBFDocBase.h"

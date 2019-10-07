@@ -14,7 +14,8 @@ public:
 	
 
 public:
-	virtual BOOL GetViewMatrix(glm::mat4& matView);
+	virtual BOOL GetViewMatrix(glm::mat4& mat);
+	virtual BOOL GetProjectionMatrix(glm::mat4& mat);
 
 public:
 	virtual void BeginwglCurrent() override;

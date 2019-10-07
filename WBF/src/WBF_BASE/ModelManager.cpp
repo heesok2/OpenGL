@@ -1,6 +1,7 @@
 #include "stdafx.h"
-#include "WBFModelDataManager.h"
-#include "WBFModelData.h"
+#include "ModelManager.h"
+#include "ModelData.h"
+
 #include "WBFVBOManager.h"
 
 #include "WBFViewBase.h"
@@ -26,7 +27,7 @@ void CModelManager::OnInitial()
 {
 	for (long indx = 0; indx < E_MODEL_NUM; ++indx)
 	{
-		auto pObject = (CWBFModelData*)CWBFModelFactory::GetInstance().CreateObject(indx);
+		auto pObject = (CModelData*)CWBFModelFactory::GetInstance().CreateObject(indx);
 		if (pObject == nullptr) continue;
 
 		pObject->SetHelper(this);
@@ -44,7 +45,7 @@ void CModelManager::OnDestroy()
 	m_vObject.clear();
 }
 
-CWBFModelData * CModelManager::GetModel(UINT uiType)
+CModelData * CModelManager::GetModel(UINT uiType)
 {
 	for (auto pObject : m_vObject)
 	{

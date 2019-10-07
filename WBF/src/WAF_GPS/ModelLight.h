@@ -1,11 +1,11 @@
 #pragma once
 
 #include <vector>
-#include "..\WBF_BASE\WBFModelData.h"
+#include "..\WBF_BASE\ModelData.h"
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CModelLight : public CWBFModelData
+class __MY_EXT_CLASS__ CModelLight : public CModelData
 {
 	struct TModelLight
 	{

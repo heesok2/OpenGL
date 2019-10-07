@@ -47,30 +47,6 @@ void CRndrLight::GLDraw()
 		//glPolygonMode(pOption->uiPolygonFace, pOption->uiPolygonMode);
 
 		auto& Shader = pShaderMgr->GetShader(E_SHADER_LIGHT);
-		Shader.GLBind();
-		{
-			auto pView = (CWBFViewBase*)m_pRndrMgr->GetView();
-
-			glm::mat4 view(1.f);
-			pView->GetViewMatrix(view);
-
-			int aViewPort[4] = {0};
-			glGetIntegerv(GL_VIEWPORT, aViewPort);
-
-			glm::mat4 proj(1.f);
-			proj = glm::perspective(glm::radians(45.f), (float)(aViewPort[2] - aViewPort[0]) / (float)(aViewPort[3] - aViewPort[1]), 0.1f, 100.f);
-
-			int nProg;
-			glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
-
-			auto viewLoc = glGetUniformLocation(nProg, "view");
-			glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-
-			auto projLoc = glGetUniformLocation(nProg, "projection");
-			glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj));
-		}
-		Shader.GLUnbind();
-
 		pModel->Draw(&Shader);
 
 		glDisable(GL_DEPTH_TEST);

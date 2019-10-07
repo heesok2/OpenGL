@@ -14,11 +14,11 @@ namespace opt
 
 class CShader;
 class CModelManager;
-class __MY_EXT_CLASS__ CWBFModelData : public CFactoryObjectBase
+class __MY_EXT_CLASS__ CModelData : public CFactoryObjectBase
 {
 public:
-	CWBFModelData();
-	virtual ~CWBFModelData();
+	CModelData();
+	virtual ~CModelData();
 
 public:
 	virtual void Release() = 0;
@@ -64,5 +64,5 @@ protected:
 DECLARE_DYNCREATE(class_name);\
 
 #define IMPLEMENT_MODEL(type, class_name)\
-IMPLEMENT_DYNCREATE(class_name, CWBFModelData);\
+IMPLEMENT_DYNCREATE(class_name, CModelData);\
 BOOL bReg##class_name = CWBFModelFactory::GetInstance().Register(type, RUNTIME_CLASS(class_name));

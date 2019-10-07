@@ -42,7 +42,7 @@ void CModuleSubBody::SetDefaultData()
 
 	auto SZ_DATA = sizeof(int) * 4;
 	auto szNum = sizeof(g_tri_index) / SZ_DATA;
-	for (auto indx = 0; indx < szNum; ++indx)
+	for (auto indx = 0; indx < static_cast<int>(szNum); ++indx)
 	{
 		CEntitySubBody Data;
 		Data.dbKey = GetNewKey();

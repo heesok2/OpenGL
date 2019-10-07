@@ -41,14 +41,25 @@ glm::mat4 CWBFCamera::GetViewMatrix()
 	return glm::lookAt(m_vPosition, m_vPosition + m_vFront, m_vUp);
 }
 
-void CWBFCamera::SetCameraPosition(glm::vec3 vPosition)
+glm::mat4 CWBFCamera::GetProjectionMatrix()
+{
+	glm::mat4 proj(1.f);
+	return glm::perspective(glm::radians(45.f), (float)(m_ViewRect.Width()) / (float)(m_ViewRect.Height()), 0.1f, 100.f);
+}
+
+void CWBFCamera::SetCameraPosition(glm::vec3& vPosition)
 {
 	m_vPosition = vPosition;
 }
 
-void CWBFCamera::SetMousePosition(CPoint point)
+void CWBFCamera::SetMousePosition(CPoint& point)
 {
 	m_MousePoint = point;
+}
+
+void CWBFCamera::SetViewSize(CRect& rect)
+{
+	m_ViewRect = rect;
 }
 
 void CWBFCamera::OnKeyboardDown(E_CAMERA_MOVEMENT eMovement, float deltaTime)

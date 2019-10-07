@@ -1,7 +1,7 @@
 #pragma once
 
 #include "..\WBF_LIB\DocListener.h"
-#include "..\WBF_BASE\WBFModelDataManager.h"
+#include "..\WBF_BASE\ModelManager.h"
 
 #include "HeaderPre.h"
 

@@ -72,12 +72,6 @@
     <ClCompile Include="WBFVBOManager.cpp">
       <Filter>View\VBO</Filter>
     </ClCompile>
-    <ClCompile Include="WBFModelData.cpp">
-      <Filter>View\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFModelDataManager.cpp">
-      <Filter>View\Model</Filter>
-    </ClCompile>
     <ClCompile Include="WBFRndrData.cpp">
       <Filter>View\Renderer</Filter>
     </ClCompile>
@@ -89,6 +83,12 @@
     </ClCompile>
     <ClCompile Include="WBFVBOFactory.cpp">
       <Filter>View\VBO</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelManager.cpp">
+      <Filter>View\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelData.cpp">
+      <Filter>View\Model</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -148,12 +148,6 @@
     <ClInclude Include="WBFVBOManager.h">
       <Filter>View\VBO</Filter>
     </ClInclude>
-    <ClInclude Include="WBFModelData.h">
-      <Filter>View\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFModelDataManager.h">
-      <Filter>View\Model</Filter>
-    </ClInclude>
     <ClInclude Include="WBFRndrData.h">
       <Filter>View\Renderer</Filter>
     </ClInclude>
@@ -174,6 +168,12 @@
     </ClInclude>
     <ClInclude Include="WBFRndrDefine.h">
       <Filter>View\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelManager.h">
+      <Filter>View\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelData.h">
+      <Filter>View\Model</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

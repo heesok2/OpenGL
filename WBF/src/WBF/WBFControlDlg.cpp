@@ -7,8 +7,8 @@
 #include "..\WBF_LIB\Package.h"
 #include "..\WBF_LIB\ModuleBase.h"
 #include "..\WBF_BASE\DataBaseDefine.h"
-#include "..\WBF_BASE\WBFModelDataManager.h"
-#include "..\WBF_BASE\WBFModelData.h"
+#include "..\WBF_BASE\ModelManager.h"
+#include "..\WBF_BASE\ModelData.h"
 #include "..\WBF_GPS\WBFGPSOption.h"
 
 #ifdef _DEBUG

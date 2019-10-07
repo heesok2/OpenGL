@@ -1,11 +1,11 @@
 #pragma once
 
-#include "..\WBF_BASE\WBFModelData.h"
+#include "..\WBF_BASE\ModelData.h"
 #include "..\WBF_GPS\WBFGPSOption.h"
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CModelSample : public CWBFModelData
+class __MY_EXT_CLASS__ CModelSample : public CModelData
 {
 	DECLARE_MODEL(CModelSample);
 

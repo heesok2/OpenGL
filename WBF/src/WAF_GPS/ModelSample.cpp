@@ -5,7 +5,7 @@
 #include "..\WBF_LIB\WBFImage.h"
 #include "..\WBF_BASE\WBFDocBase.h"
 #include "..\WBF_BASE\WBFViewBase.h"
-#include "..\WBF_BASE\WBFModelDataManager.h"
+#include "..\WBF_BASE\ModelManager.h"
 
 
 #ifdef _DEBUG

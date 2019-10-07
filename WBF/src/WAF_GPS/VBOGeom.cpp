@@ -89,7 +89,7 @@ void CVBOGeom::Build(CWBFDocBase * pDoc)
 		auto& EntBody = lstBody[lbody];
 
 		auto lIndexNum = 0;
-		for (auto lsub = 0; lsub < EntBody.lstSubBody.size(); ++lsub)
+		for (auto lsub = 0; lsub < static_cast<int>(EntBody.lstSubBody.size()); ++lsub)
 		{
 			CEntitySubBody EntSubBody;
 			if (!pModuleSubBody->Find(EntBody.lstSubBody[lsub], EntSubBody))
@@ -100,7 +100,7 @@ void CVBOGeom::Build(CWBFDocBase * pDoc)
 
 		auto lBufferIndxNum = 0;
 		UINT* aIndex = new UINT[lIndexNum];
-		for (auto lsub = 0; lsub < EntBody.lstSubBody.size(); ++lsub)
+		for (auto lsub = 0; lsub < static_cast<int>(EntBody.lstSubBody.size()); ++lsub)
 		{
 			CEntitySubBody EntSubBody;
 			if (!pModuleSubBody->Find(EntBody.lstSubBody[lsub], EntSubBody))

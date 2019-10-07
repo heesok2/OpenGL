@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WBFModelData.h"
+#include "ModelData.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -7,11 +7,11 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFModelData::CWBFModelData()
+CModelData::CModelData()
 	: m_uiFlag(MODEL_UNKNOWN)
 {
 }
 
-CWBFModelData::~CWBFModelData()
+CModelData::~CModelData()
 {
 }

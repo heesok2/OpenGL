@@ -6,7 +6,7 @@
 
 class CWBFDocBase;
 class CWBFViewBase;
-class CWBFModelData;
+class CModelData;
 class CVBOManager;
 class __MY_EXT_CLASS__ CModelManager
 {
@@ -25,13 +25,15 @@ public:
 	
 public:
 	virtual CVBOManager* GetVBOManager() = 0;
+
 	CWBFDocBase* GetDoc() { return m_pMyDoc; }
-	CWBFModelData* GetModel(UINT uiType);
+	CWBFViewBase* GetView() { return m_pView; }
+	CModelData* GetModel(UINT uiType);
 
 protected:
 	CWBFDocBase* m_pMyDoc;
 	CWBFViewBase* m_pView;
-	std::vector<CWBFModelData*> m_vObject;
+	std::vector<CModelData*> m_vObject;
 
 };
 

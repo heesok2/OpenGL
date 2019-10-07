@@ -46,12 +46,22 @@ void CGLView::SwapBuffers()
 	::SwapBuffers(m_hDC);
 }
 
-BOOL CGLView::GetViewMatrix(glm::mat4 & matView)
+BOOL CGLView::GetViewMatrix(glm::mat4 & mat)
 {
 	if (m_Camera == nullptr)
 		return FALSE;
 
-	matView = m_Camera->GetViewMatrix();
+	mat = m_Camera->GetViewMatrix();
+
+	return TRUE;
+}
+
+BOOL CGLView::GetProjectionMatrix(glm::mat4 & mat)
+{
+	if (m_Camera == nullptr)
+		return FALSE;
+
+	mat = m_Camera->GetProjectionMatrix();
 
 	return TRUE;
 }
@@ -208,12 +218,22 @@ void CGLView::ReleaseWGL()
 void CGLView::OnSize(UINT nType, int cx, int cy)
 {
 	CWBFViewBase::OnSize(nType, cx, cy);
-
+	
 	BeginwglCurrent();
 	{
 		glViewport(0, 0, cx, cy);
 	}
 	EndwglCurrent();
+
+	if (m_Camera != nullptr)
+	{
+		CRect rect;
+		rect.left = rect.bottom = 0;
+		rect.right = cx;
+		rect.top = cy;
+
+		m_Camera->SetViewSize(rect);
+	}
 }
 
 BOOL CGLView::OnQueryNewPalette()

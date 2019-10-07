@@ -22,9 +22,11 @@ public:
 
 public:
 	glm::mat4 GetViewMatrix();
-	
-	void SetCameraPosition(glm::vec3 vPosition);
-	void SetMousePosition(CPoint point);
+	glm::mat4 GetProjectionMatrix();
+		
+	void SetCameraPosition(glm::vec3& vPosition);
+	void SetMousePosition(CPoint& point);
+	void SetViewSize(CRect& rect);
 
 	void OnKeyboardDown(E_CAMERA_MOVEMENT eMovement, float deltaTime);
 	void OnMouseMove(CPoint point, BOOL bConstrainPitch = TRUE);
@@ -33,6 +35,7 @@ protected:
 	void UpdateCameraVectors();
 
 protected:
+	CRect m_ViewRect; 
 	CPoint m_MousePoint; // Mouse Move
 
 	glm::vec3 m_vPosition;

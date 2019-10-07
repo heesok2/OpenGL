@@ -216,8 +216,8 @@
     <ClCompile Include="WBFVBOData.cpp" />
     <ClCompile Include="WBFDialog.cpp" />
     <ClCompile Include="WBFDocBase.cpp" />
-    <ClCompile Include="WBFModelData.cpp" />
-    <ClCompile Include="WBFModelDataManager.cpp" />
+    <ClCompile Include="ModelData.cpp" />
+    <ClCompile Include="ModelManager.cpp" />
     <ClCompile Include="WBFModelFactory.cpp" />
     <ClCompile Include="WBFModelOption.cpp" />
     <ClCompile Include="WBFOption.cpp" />
@@ -245,8 +245,8 @@
     <ClInclude Include="WBFDialog.h" />
     <ClInclude Include="WBFDocBase.h" />
     <ClInclude Include="WBFGraphicDef.h" />
-    <ClInclude Include="WBFModelData.h" />
-    <ClInclude Include="WBFModelDataManager.h" />
+    <ClInclude Include="ModelData.h" />
+    <ClInclude Include="ModelManager.h" />
     <ClInclude Include="WBFModelFactory.h" />
     <ClInclude Include="WBFModelOption.h" />
     <ClInclude Include="WBFOption.h" />
