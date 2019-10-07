@@ -11,10 +11,8 @@ enum E_TYPE_DATA
 	E_TYPE_VERTEX,
 	E_TYPE_SUBBODY,
 	E_TYPE_BODY,
-
-	// Light
 	E_TYPE_LIGHT,
-	
+	E_TYPE_BOX,	
 
 	E_TYPE_NUM
 };
