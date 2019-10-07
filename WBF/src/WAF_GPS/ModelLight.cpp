@@ -59,7 +59,7 @@ void CModelLight::Build()
 		if (EntLight.uiType != E_ENT_POINT) continue;
 
 		TModelLight model;
-		model.BodyKey = EntBody.dbKey;
+		model.BodyKey = EntLight.dbBodyKey;
 		model.Pos = EntLight.vPos;
 
 		m_lstModel.push_back(std::move(model));

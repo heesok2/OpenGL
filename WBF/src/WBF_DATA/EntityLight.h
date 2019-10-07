@@ -24,14 +24,12 @@ public:
 public:
 	virtual const DTYPE GetType() const override { return E_TYPE_LIGHT; }
 	virtual const DKEY GetKey() const override { return dbKey; }
-
-public:
-	void Init();
+	virtual void SetDefaultData() override;
 
 public:
 	DKEY dbKey;
-
 	UINT uiType;
+	DKEY dbBodyKey;
 	glm::vec3 vPos;
 
 };
