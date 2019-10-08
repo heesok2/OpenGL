@@ -22,9 +22,6 @@
     <Filter Include="Renderer">
       <UniqueIdentifier>{1ca22ed9-4cd2-415f-a010-496a3de411b9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Renderer\VBO">
-      <UniqueIdentifier>{3791b211-e0ae-4cd6-9d51-596b3d214d96}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Renderer\Light">
       <UniqueIdentifier>{226bfab4-85fd-4144-aba3-5bb1ddea5a4c}</UniqueIdentifier>
     </Filter>
@@ -44,9 +41,6 @@
     </ClCompile>
     <ClCompile Include="GPSView.cpp">
       <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="VBOGeom.cpp">
-      <Filter>Renderer\VBO</Filter>
     </ClCompile>
     <ClCompile Include="ModelLight.cpp">
       <Filter>Renderer\Light</Filter>
@@ -105,9 +99,6 @@
     </ClInclude>
     <ClInclude Include="GPSView.h">
       <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="VBOGeom.h">
-      <Filter>Renderer\VBO</Filter>
     </ClInclude>
     <ClInclude Include="ModelLight.h">
       <Filter>Renderer\Light</Filter>

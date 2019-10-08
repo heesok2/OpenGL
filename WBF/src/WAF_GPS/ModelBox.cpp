@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "ModelBox.h"
-#include "VBOGeom.h"
 
 #include "..\WBF_LIB\Package.h"
 #include "..\WBF_DATA\DataBaseDefine.h"
@@ -11,6 +10,7 @@
 #include "..\WBF_BASE\WBFViewBase.h"
 #include "..\WBF_BASE\ModelManager.h"
 #include "..\WBF_BASE\WBFVBOManager.h"
+#include "..\WBF_GPS\VBOGeom.h"
 #include "..\WBF_GPS\Shader.h"
 
 #ifdef _DEBUG

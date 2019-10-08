@@ -34,6 +34,9 @@
     <Filter Include="Common">
       <UniqueIdentifier>{376e7025-4518-447d-a648-994d24e9d4b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphic\VBO">
+      <UniqueIdentifier>{7808e427-c9ec-4b04-881a-da3b71f5e025}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF_GPS.cpp">
@@ -56,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="Shader.cpp">
       <Filter>Graphic\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="VBOGeom.cpp">
+      <Filter>Graphic\VBO</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +129,9 @@
     </ClInclude>
     <ClInclude Include="ShaderDefine.h">
       <Filter>Graphic\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="VBOGeom.h">
+      <Filter>Graphic\VBO</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
