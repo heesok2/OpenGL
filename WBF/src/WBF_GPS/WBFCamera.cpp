@@ -15,14 +15,14 @@ const float g_SENSITIVITY = 0.1f;
 const float g_ZOOM = 45.0f;
 
 
-CWBFCamera::CWBFCamera()
+CCamera::CCamera()
 {
-	m_vPosition = glm::vec3(-3.f, 3.f, 3.f);
-	m_vFront = glm::vec3(0.f, 0.f, -1.f);
-	m_vWorldUp = glm::vec3(0.f, 1.f, 0.f);
+	m_aCameraPos = glm::vec3(0.f, 0.f, 3.f);
+	m_aCameraDir = glm::vec3(0.f, 0.f, -1.f);
+	m_aWorldUp = glm::vec3(0.f, 1.f, 0.f);
 
-	m_vUp = glm::vec3(0.f, 0.f, 0.f);
-	m_vRight = glm::vec3(0.f, 0.f, 0.f);
+	m_aCameraUp = glm::vec3(0.f, 0.f, 0.f);
+	m_aCameraRight = glm::vec3(0.f, 0.f, 0.f);
 
 	m_fYaw = g_YAW;
 	m_fPitch = g_PITCH;
@@ -32,99 +32,125 @@ CWBFCamera::CWBFCamera()
 	UpdateCameraVectors();
 }
 
-CWBFCamera::~CWBFCamera()
+CCamera::~CCamera()
 {
 }
 
-glm::mat4 CWBFCamera::GetViewMatrix()
+glm::mat4 CCamera::GetViewMatrix()
 {
-	return glm::lookAt(m_vPosition, m_vPosition + m_vFront, m_vUp);
+	return glm::lookAt(m_aCameraPos - m_aCameraDir, m_aCameraPos, m_aCameraUp);
 }
 
-glm::mat4 CWBFCamera::GetProjectionMatrix()
+glm::mat4 CCamera::GetProjectionMatrix()
 {
 	glm::mat4 proj(1.f);
-	return glm::perspective(glm::radians(45.f), (float)(m_ViewRect.Width()) / (float)(m_ViewRect.Height()), 0.1f, 100.f);
+	return glm::perspective(glm::radians(45.f), (float)(m_Viewport.Width()) / (float)(m_Viewport.Height()), 0.1f, 100.f);
 }
 
-glm::vec3 CWBFCamera::GetCameraPos()
+glm::vec3 CCamera::GetCameraPos()
 {
-	return m_vPosition;
+	return m_aCameraPos;
 }
 
-void CWBFCamera::SetCameraPosition(glm::vec3& vPosition)
+void CCamera::SetCameraPosition(glm::vec3& vPosition)
 {
-	m_vPosition = vPosition;
+	m_aCameraPos = vPosition;
 }
 
-void CWBFCamera::SetMousePosition(CPoint& point)
+void CCamera::SetMousePosition(CPoint& point)
 {
 	m_MousePoint = point;
 }
 
-void CWBFCamera::SetViewSize(CRect& rect)
+void CCamera::SetViewSize(CRect& rect)
 {
-	m_ViewRect = rect;
+	m_Viewport = rect;
 }
 
-void CWBFCamera::OnKeyboardDown(E_CAMERA_MOVEMENT eMovement, float deltaTime)
+void CCamera::OnKeyboardDown(E_CAMERA_MOVEMENT eMovement, float deltaTime)
 {
 	auto fVelocity = m_fMovementSpeed * deltaTime;
 	switch (eMovement)
 	{
 	case E_CAMERA_FORWARD:
 		{
-			m_vPosition += m_vFront * fVelocity;
+			m_aCameraPos += m_aCameraDir * fVelocity;
 		}
 		break;
 	case E_CAMERA_BACKWARD:
 		{
-			m_vPosition -= m_vFront * fVelocity;
+			m_aCameraPos -= m_aCameraDir * fVelocity;
 		}
 		break;
 	case E_CAMERA_LEFT:
 		{
-			m_vPosition -= m_vRight * fVelocity;
+			m_aCameraPos -= m_aCameraRight * fVelocity;
 		}
 		break;
 	case E_CAMERA_RIGHT:
 		{
-			m_vPosition += m_vRight * fVelocity;
+			m_aCameraPos += m_aCameraRight * fVelocity;
+		}
+		break;
+	case E_CAMERA_BOTTOM:
+		{
+			m_aCameraPos -= m_aCameraUp * fVelocity;
+		}
+		break;
+	case E_CAMERA_TOP:
+		{
+			m_aCameraPos += m_aCameraUp * fVelocity;
 		}
 		break;
 	}
 }
 
-void CWBFCamera::OnMouseMove(CPoint point, BOOL bConstrainPitch)
+void CCamera::OnMouseMove(CPoint point, BOOL bConstrainPitch)
 {
-	auto MouseOffset = m_MousePoint - point;
-	auto fOffsetX = (float)MouseOffset.cx * m_fMouseSensitivity;
-	auto fOffsetY = (float)MouseOffset.cy * m_fMouseSensitivity;
-
-	m_MousePoint = point;
-
-	m_fYaw += fOffsetX;
-	m_fPitch += -fOffsetY;
-
-	if (bConstrainPitch)
+	//if (bConstrainPitch)
 	{
-		if (m_fPitch > 89.f)
-			m_fPitch = 89.f;
-		if (m_fPitch < -89.f)
-			m_fPitch = -89.f;
-	}
+		auto MouseOffset = m_MousePoint - point;
+		auto fOffsetX = (float)MouseOffset.cx * m_fMouseSensitivity;
+		auto fOffsetY = (float)MouseOffset.cy * m_fMouseSensitivity;
 
-	UpdateCameraVectors();
+		m_MousePoint = point;
+
+		m_fYaw += fOffsetX;
+		m_fPitch += -fOffsetY;
+
+		UpdateCameraVectors();
+	}
+	//else
+	//{
+	//	auto MouseOffset = m_MousePoint - point;
+	//	auto fOffsetX = (float)MouseOffset.cx * m_fMouseSensitivity;// *0.001f;
+	//	auto fOffsetY = (float)MouseOffset.cy * m_fMouseSensitivity;// * 0.001f;
+
+	//	auto width = m_Viewport.Width();
+	//	auto height = m_Viewport.Height();
+
+	//	float fHalf = 100.f * glm::tan(glm::radians(45.f * 0.5f));
+	//	float fRat = (float)MouseOffset.cy / (float)height;
+	//	float fUp = fRat * fHalf / 0.5f;
+
+	//	{
+	//		m_aCameraPos += m_aCameraUp * (fUp);
+	//	}
+	//	{
+	//		//m_aCameraPos += m_aCameraRight * (-fOffsetX);
+
+	//	}
+	//}
 }
 
-void CWBFCamera::UpdateCameraVectors()
+void CCamera::UpdateCameraVectors()
 {
-	glm::vec3 front;
-	front.x = cos(glm::radians(m_fYaw)) * cos(glm::radians(m_fPitch));
-	front.y = sin(glm::radians(m_fPitch));
-	front.z = sin(glm::radians(m_fYaw)) * cos(glm::radians(m_fPitch));
-	m_vFront = glm::normalize(front);
+	glm::vec3 aDirection;
+	aDirection.x = cos(glm::radians(m_fPitch)) * cos(glm::radians(m_fYaw));
+	aDirection.y = sin(glm::radians(m_fPitch));
+	aDirection.z = cos(glm::radians(m_fPitch)) * sin(glm::radians(m_fYaw));
 
-	m_vRight = glm::normalize(glm::cross(m_vFront, m_vWorldUp));
-	m_vUp = glm::normalize(glm::cross(m_vRight, m_vFront));
+	m_aCameraDir = aDirection;
+	m_aCameraRight = glm::normalize(glm::cross(m_aCameraDir, m_aWorldUp));
+	m_aCameraUp = glm::normalize(glm::cross(m_aCameraRight, m_aCameraDir));
 }

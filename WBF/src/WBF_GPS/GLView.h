@@ -5,7 +5,7 @@
 
 #include "HeaderPre.h"
 
-class CWBFCamera;
+class CCamera;
 class __MY_EXT_CLASS__ CGLView : public CViewBase
 {
 public:
@@ -49,7 +49,7 @@ protected:
 	HGLRC m_hRC;
 
 	CPalette m_GLPalette;	// Logical Palette
-	CWBFCamera* m_Camera;
+	CCamera* m_Camera;
 };
 
 #include "HeaderPost.h"

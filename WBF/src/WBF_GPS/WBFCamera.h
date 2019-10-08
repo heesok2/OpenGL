@@ -11,20 +11,23 @@ enum E_CAMERA_MOVEMENT
 	E_CAMERA_BACKWARD,
 	E_CAMERA_LEFT,
 	E_CAMERA_RIGHT,
+	E_CAMERA_BOTTOM,
+	E_CAMERA_TOP,
 	E_CAMERA_NUM
 };
 
-class __MY_EXT_CLASS__ CWBFCamera
+class __MY_EXT_CLASS__ CCamera
 {
 public:
-	CWBFCamera();
-	virtual ~CWBFCamera();
+	CCamera();
+	virtual ~CCamera();
 
 public:
 	glm::mat4 GetViewMatrix();
 	glm::mat4 GetProjectionMatrix();
 	glm::vec3 GetCameraPos();
-		
+
+public:
 	void SetCameraPosition(glm::vec3& vPosition);
 	void SetMousePosition(CPoint& point);
 	void SetViewSize(CRect& rect);
@@ -36,15 +39,14 @@ protected:
 	void UpdateCameraVectors();
 
 protected:
-	CRect m_ViewRect; 
+	CRect m_Viewport;
 	CPoint m_MousePoint; // Mouse Move
 
-	glm::vec3 m_vPosition;
-	glm::vec3 m_vFront;
-	glm::vec3 m_vWorldUp;
-
-	glm::vec3 m_vUp;
-	glm::vec3 m_vRight;
+	glm::vec3 m_aCameraPos;
+	glm::vec3 m_aCameraDir;
+	glm::vec3 m_aCameraUp;
+	glm::vec3 m_aCameraRight;
+	glm::vec3 m_aWorldUp;
 
 	float m_fYaw;
 	float m_fPitch;

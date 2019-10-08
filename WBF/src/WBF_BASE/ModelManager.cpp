@@ -1,11 +1,8 @@
 #include "stdafx.h"
 #include "ModelManager.h"
 #include "ModelData.h"
-
 #include "WBFVBOManager.h"
-
-#include "WBFViewBase.h"
-
+#include "ViewBase.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

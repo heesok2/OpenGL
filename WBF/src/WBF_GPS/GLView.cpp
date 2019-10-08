@@ -149,7 +149,7 @@ int CGLView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	IninitialWGL();
 
-	m_Camera = new CWBFCamera();
+	m_Camera = new CCamera();
 	//m_Camera->SetCameraPosition(glm::vec3(0.f, 0.f, 3.f));
 
 	return 0;
@@ -312,7 +312,7 @@ void CGLView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	case 's':
 	case 'S':
 		{
-			m_Camera->OnKeyboardDown(E_CAMERA_BACKWARD, fDelta);
+			m_Camera->OnKeyboardDown(E_CAMERA_BOTTOM, fDelta);
 		}
 		break;
 	case 'd':
@@ -323,6 +323,19 @@ void CGLView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		break;
 	case 'w':
 	case 'W':
+		{
+			m_Camera->OnKeyboardDown(E_CAMERA_TOP, fDelta);
+		}
+		break;
+	case 'q':
+	case 'Q':
+		{
+			m_Camera->OnKeyboardDown(E_CAMERA_BACKWARD, fDelta);
+		}
+		break;
+
+	case 'e':
+	case 'E':
 		{
 			m_Camera->OnKeyboardDown(E_CAMERA_FORWARD, fDelta);
 		}
