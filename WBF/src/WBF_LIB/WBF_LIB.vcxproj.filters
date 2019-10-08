@@ -157,6 +157,12 @@
     <ClInclude Include="ListenerDefine.h">
       <Filter>Notify\Listener</Filter>
     </ClInclude>
+    <ClInclude Include="EntityDictionary.hpp">
+      <Filter>DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="DataBaseDefine.h">
+      <Filter>DataBase</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WBF_LIB.rc">

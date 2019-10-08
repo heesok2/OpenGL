@@ -5,7 +5,7 @@
 #include "..\WBF_BASE\WBFViewBase.h"
 
 #include "..\WBF_LIB\Package.h"
-#include "..\WBF_DATA\DataBaseDefine.h"
+#include "..\WBF_DATA\EntityDefine.h"
 #include "..\WBF_DATA\ModuleLight.h"
 
 #include "..\WBF_BASE\ModelManager.h"

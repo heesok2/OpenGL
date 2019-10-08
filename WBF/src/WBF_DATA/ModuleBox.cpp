@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "ModuleBox.h"
 #include "ModuleBody.h"
-#include "DataBaseDefine.h"
+#include "EntityDefine.h"
 
 #include "..\WBF_LIB\Package.h"
 
@@ -50,6 +50,6 @@ void CModuleBox::SetDefaultData()
 		EntBox.dbBodyKey = EntBody.dbKey;
 		EntBox.vPos = cubePositions[lcube];
 
-		Insert(EntBox);
+		InsertNU(EntBox);
 	}
 }

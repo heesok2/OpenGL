@@ -26,5 +26,5 @@ void CModuleLight::SetDefaultData()
 	Data.dbBodyKey = 1;
 	Data.vPos = glm::vec3(1.2f, 1.0f, 2.0f);
 
-	Insert(Data);
+	InsertNU(Data);
 }

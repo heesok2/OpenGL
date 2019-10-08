@@ -226,7 +226,7 @@
     <None Include="WBF_DATA.def" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DataBaseDefine.h" />
+    <ClInclude Include="EntityDefine.h" />
     <ClInclude Include="EntityBody.h" />
     <ClInclude Include="EntityBox.h" />
     <ClInclude Include="EntityLight.h" />

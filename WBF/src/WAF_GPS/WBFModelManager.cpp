@@ -1,18 +1,15 @@
 #include "stdafx.h"
 #include "WBFModelManager.h"
 
-#include "..\WBF_LIB\ListenerDefine.h"
-#include "..\WBF_BASE\WBFViewBase.h"
-
-#include "VBOGeom.h"
-
 #include "..\WBF_LIB\WBFObserverDefine.h"
+#include "..\WBF_LIB\ListenerDefine.h"
+#include "..\WBF_LIB\Package.h"
+#include "..\WBF_BASE\WBFViewBase.h"
+#include "..\WBF_BASE\WBFDocBase.h"
 #include "..\WBF_BASE\ModelFactory.h"
 #include "..\WBF_BASE\ModelData.h"
 #include "..\WBF_BASE\WBFVBOManager.h"
-
-#include "..\WBF_BASE\WBFDocBase.h"
-#include "..\WBF_LIB\Package.h"
+#include "..\WBF_GPS\VBOGeom.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

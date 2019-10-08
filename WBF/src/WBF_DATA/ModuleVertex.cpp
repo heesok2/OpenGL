@@ -79,6 +79,6 @@ void CModuleVertex::SetDefaultData()
 		Data.vNormal = glm::vec3(g_vertices[indx * 8 + 3], g_vertices[indx * 8 + 4], g_vertices[indx * 8 + 5]);
 		Data.vTexcord = glm::vec2(g_vertices[indx * 8 + 6], g_vertices[indx * 8 + 7]);
 
-		Insert(Data);
+		InsertNU(Data);
 	}
 }

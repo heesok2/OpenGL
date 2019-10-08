@@ -228,8 +228,10 @@
   <ItemGroup>
     <ClInclude Include="AllGraphicInclude.h" />
     <ClInclude Include="AllProjectInclude.h" />
+    <ClInclude Include="DataBaseDefine.h" />
     <ClInclude Include="DocListener.h" />
     <ClInclude Include="EntityData.h" />
+    <ClInclude Include="EntityDictionary.hpp" />
     <ClInclude Include="FactoryBase.h" />
     <ClInclude Include="FactoryObjectBase.h" />
     <ClInclude Include="HeaderPost.h" />

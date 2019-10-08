@@ -8,7 +8,7 @@ static char THIS_FILE[] = __FILE__;
 #endif
 
 CModuleBase::CModuleBase(CPackage * pPackage)
-	: m_pPackage(pPackage)
+	: m_uiFlag(FLAG_MODULE_UNKNOWN), m_pPackage(pPackage)
 {
 }
 

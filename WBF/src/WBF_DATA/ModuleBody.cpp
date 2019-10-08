@@ -32,5 +32,5 @@ void CModuleBody::SetDefaultData()
 	Data.lstSubBody.resize(szNum);
 	std::copy(&g_sub_index[0], &g_sub_index[0] + szNum, Data.lstSubBody.begin());
 
-	Insert(Data);
+	InsertNU(Data);
 }

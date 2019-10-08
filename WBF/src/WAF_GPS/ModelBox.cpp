@@ -2,7 +2,7 @@
 #include "ModelBox.h"
 
 #include "..\WBF_LIB\Package.h"
-#include "..\WBF_DATA\DataBaseDefine.h"
+#include "..\WBF_DATA\EntityDefine.h"
 #include "..\WBF_DATA\ModuleBox.h"
 #include "..\WBF_DATA\ModuleLight.h"
 

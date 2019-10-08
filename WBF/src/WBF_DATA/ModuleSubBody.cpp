@@ -50,6 +50,6 @@ void CModuleSubBody::SetDefaultData()
 		Data.lstVertex.resize(3);
 		std::copy(&g_tri_index[indx * 4 + 1], &g_tri_index[indx * 4 + 4], Data.lstVertex.begin());
 
-		Insert(Data);
+		InsertNU(Data);
 	}
 }

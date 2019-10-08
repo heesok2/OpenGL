@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef DATA_DEF
-#define DATA_DEF
+#ifndef DEFINE_TYPE
+#define DEFINE_TYPE
 
 enum E_TYPE_DATA
 {
@@ -20,4 +20,4 @@ enum E_TYPE_DATA
 	E_TYPE_NUM
 };
 
-#endif // !DATA_DEF
+#endif // !DEFINE_TYPE

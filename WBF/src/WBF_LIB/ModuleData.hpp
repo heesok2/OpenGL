@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "ModuleBase.h"
+#include "EntityDictionary.hpp"
 
 template <class TD>
 class CModuleData : public CModuleBase
@@ -17,89 +18,72 @@ public:
 	virtual ~CModuleData() {}
 
 public:
-	virtual void Clear() { m_mData.clear(); }
-	virtual DKEY GetNewKey()
-	{
-		if (Empty()) return 1;
-
-		auto itr = m_mData.rbegin();
-		return itr->first + 1;
-	}
 	virtual DTYPE GetDataType() { return dbType; }
 
 public: // Data 
+	virtual void Clear() 
+	{ 
+		m_Dictionary.Clear(); 
+	}
+
 	virtual BOOL Empty()
 	{
-		return m_mData.empty();
+		return m_Dictionary.IsEmpty();
 	}
 
 	virtual BOOL Exist(DKEY key)
 	{
-		auto itr = m_mData.find(key);
-		return itr != m_mData.end();
+		auto itr = m_Dictionary.Find(key);
+		return ITR_IS_VALID(itr);
+	}
+
+	virtual DITER Find(DKEY key)
+	{
+		return m_Dictionary.Find(key);
 	}
 
 	virtual BOOL Find(DKEY key, TD& data)
 	{
-		auto itr = m_mData.find(key);
-		if (itr != m_mData.end())
-			data = itr->second;
+		auto itr = m_Dictionary.Find(key);
+		if (!ITR_IS_VALID(itr)) return FALSE;
 
-		return itr != m_mData.end();
+		data = m_Dictionary.GetAtNU(itr);
+		return TRUE;
+	}
+
+	virtual DITER InsertNU(const TD& data)
+	{
+		return m_Dictionary.InsertNU(data);
+	}
+
+	virtual BOOL SetAtNU(DITER itr, const TD& data)
+	{
+		return m_Dictionary.SetAtNU(itr, data);
+	}
+
+	virtual BOOL Remove(DITER itr)
+	{
+		return m_Dictionary.Remove(itr);
+	}
+
+	virtual const TD& GetAtNU(DITER itr) const
+	{
+		return m_Dictionary.GetAtNU(itr);
+	}
+
+	virtual long GetIterList(std::vector<DITER>& lstIter)
+	{
+		return m_Dictionary.GetList(lstIter);
 	}
 
 	virtual long GetDataList(std::vector<TD>& lstData)
 	{
-		auto szData = m_mData.size();
-		if (szData > 0)
-		{
-			lstData.resize(szData);
-
-			auto lCount = 0;
-			auto itr = m_mData.begin();
-			while (itr != m_mData.end())
-			{
-				lstData[lCount++] = itr->second;
-				itr++;
-			}
-		}
-
-		return static_cast<long>(szData);
+		return m_Dictionary.GetListData(lstData);
 	}
 
-	virtual BOOL Insert(const TD& data)
+	virtual DKEY GetNewKey()
 	{
-		if (Exist(data.GetKey()))
-		{
-			ASSERT(g_warning);
-			return FALSE;
-		}
-
-		m_mData[data.GetKey()] = data;
-
-		return TRUE;
-	}
-
-	virtual BOOL SetAt(DKEY key, const TD& data)
-	{
-		if (!Erase(key)) return FALSE;
-		if (!Insert(data)) return FALSE;
-
-		return TRUE;
-	}
-
-	virtual BOOL Erase(DKEY key)
-	{
-		auto itr = m_mData.find(key);
-		if (itr == m_mData.end())
-		{
-			ASSERT(g_warning);
-			return FALSE;
-		}
-
-		m_mData.erase(itr);
-
-		return TRUE;
+		return m_Dictionary.GetNewKey();
 	}
 
 public: 
@@ -110,7 +94,7 @@ public:
 
 protected:
 	DTYPE dbType;
-	std::map<DKEY, TD> m_mData;
+	CEntityDictionary<TD> m_Dictionary;
 };
 
 #endif // !MODULEDATA_DEF

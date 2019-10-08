@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "DataBaseDefine.h"
+#include "EntityDefine.h"
 #include "..\WBF_LIB\EntityData.h"
 
 #include "HeaderPre.h"
