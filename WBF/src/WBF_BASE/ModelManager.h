@@ -2,14 +2,14 @@
 
 #include "HeaderPre.h"
 
-class CWBFDocBase;
-class CWBFViewBase;
+class CDocBase;
+class CViewBase;
 class CModelData;
 class CVBOManager;
 class __MY_EXT_CLASS__ CModelManager
 {
 public:
-	CModelManager(CWBFViewBase* pView);
+	CModelManager(CViewBase* pView);
 	virtual ~CModelManager();
 
 public:
@@ -24,13 +24,13 @@ public:
 	virtual void GLInitialData() = 0;
 
 public:
-	CWBFDocBase* GetDoc() { return m_pMyDoc; }
-	CWBFViewBase* GetView() { return m_pView; }
+	CDocBase* GetDoc() { return m_pMyDoc; }
+	CViewBase* GetView() { return m_pView; }
 	CModelData* GetModel(UINT uiType);
 
 protected:
-	CWBFDocBase* m_pMyDoc;
-	CWBFViewBase* m_pView;
+	CDocBase* m_pMyDoc;
+	CViewBase* m_pView;
 	std::vector<CModelData*> m_vObject;
 
 };

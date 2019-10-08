@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "ModelLight.h"
 
-#include "..\WBF_BASE\WBFDocBase.h"
-#include "..\WBF_BASE\WBFViewBase.h"
+#include "..\WBF_BASE\DocBase.h"
+#include "..\WBF_BASE\ViewBase.h"
 
 #include "..\WBF_LIB\Package.h"
 #include "..\WBF_DATA\EntityDefine.h"

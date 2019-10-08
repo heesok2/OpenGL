@@ -15,9 +15,9 @@
 
 #pragma once
 
-#include "..\WBF_BASE\WBFDocBase.h"
+#include "..\WBF_BASE\DocBase.h"
 
-class CWBFDoc : public CWBFDocBase
+class CWBFDoc : public CDocBase
 {
 public: // serialization에서만 만들어집니다.
 	CWBFDoc() noexcept;

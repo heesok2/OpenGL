@@ -17,7 +17,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFControlDlg::CWBFControlDlg(CWBFDocBase * pDoc, CWBFViewBase * pView, CWnd * pParent)
+CWBFControlDlg::CWBFControlDlg(CDocBase * pDoc, CViewBase * pView, CWnd * pParent)
 	: CWBFDialog(CWBFControlDlg::IDD, pDoc, pParent), m_pView(pView)
 {
 }

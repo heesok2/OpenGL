@@ -4,11 +4,11 @@
 
 class CModelManager;
 class CRndrManager;
-class __MY_EXT_CLASS__ CWBFViewBase : public CView
+class __MY_EXT_CLASS__ CViewBase : public CView
 {
 public:
-	CWBFViewBase();
-	virtual ~CWBFViewBase();
+	CViewBase();
+	virtual ~CViewBase();
 
 public:
 	virtual CModelManager* GetModelManager() = 0;

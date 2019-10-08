@@ -15,7 +15,7 @@ public:
 public:
 	virtual UINT GetType() override { return E_VBO_GEOM; }
 	virtual void Release() override;
-	virtual void Build(CWBFDocBase * pDoc) override;
+	virtual void Build(CDocBase * pDoc) override;
 	virtual void Draw() override;
 
 public:

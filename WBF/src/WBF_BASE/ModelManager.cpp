@@ -13,9 +13,9 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CModelManager::CModelManager(CWBFViewBase* pView)
+CModelManager::CModelManager(CViewBase* pView)
 {
-	m_pMyDoc = (CWBFDocBase*)pView->GetDocument();
+	m_pMyDoc = (CDocBase*)pView->GetDocument();
 	m_pView = pView;
 }
 

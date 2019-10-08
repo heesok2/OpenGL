@@ -3,8 +3,8 @@
 #include "ModelSample.h"
 
 #include "..\WBF_LIB\WBFImage.h"
-#include "..\WBF_BASE\WBFDocBase.h"
-#include "..\WBF_BASE\WBFViewBase.h"
+#include "..\WBF_BASE\DocBase.h"
+#include "..\WBF_BASE\ViewBase.h"
 #include "..\WBF_BASE\ModelManager.h"
 
 

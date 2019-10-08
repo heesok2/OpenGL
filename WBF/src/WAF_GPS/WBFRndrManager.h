@@ -7,7 +7,7 @@
 class __MY_EXT_CLASS__ CWBFRndrManager : public CRndrManager
 {
 public:
-	CWBFRndrManager(CWBFViewBase* pView);
+	CWBFRndrManager(CViewBase* pView);
 	virtual ~CWBFRndrManager();
 
 public:

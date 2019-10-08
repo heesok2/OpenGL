@@ -2,13 +2,13 @@
 
 #include "HeaderPre.h"
 
-class CWBFViewBase;
+class CViewBase;
 class CRndrData;
 class CShaderManager;
 class __MY_EXT_CLASS__ CRndrManager
 {
 public:
-	CRndrManager(CWBFViewBase* pView);
+	CRndrManager(CViewBase* pView);
 	virtual ~CRndrManager();
 
 public:
@@ -17,11 +17,11 @@ public:
 	virtual void GLDrawScene() = 0;
 
 public:
-	CWBFViewBase* GetView() { return m_pView; }
+	CViewBase* GetView() { return m_pView; }
 	CRndrData* GetRender(UINT uiType);
 
 protected:
-	CWBFViewBase* m_pView;
+	CViewBase* m_pView;
 	std::vector<CRndrData*> m_vObject;
 };
 

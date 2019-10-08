@@ -1,12 +1,12 @@
 #pragma once
 
 
-#include "..\WBF_BASE\WBFViewBase.h"
+#include "..\WBF_BASE\ViewBase.h"
 
 #include "HeaderPre.h"
 
 class CWBFCamera;
-class __MY_EXT_CLASS__ CGLView : public CWBFViewBase
+class __MY_EXT_CLASS__ CGLView : public CViewBase
 {
 public:
 	CGLView();

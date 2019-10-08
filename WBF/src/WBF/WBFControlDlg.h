@@ -2,11 +2,11 @@
 
 #include "..\WBF_BASE\WBFDialog.h"
 
-class CWBFViewBase;
+class CViewBase;
 class CWBFControlDlg : public CWBFDialog
 {
 public:
-	CWBFControlDlg(CWBFDocBase* pDoc, CWBFViewBase* pView, CWnd* pParent = nullptr);
+	CWBFControlDlg(CDocBase* pDoc, CViewBase* pView, CWnd* pParent = nullptr);
 	virtual ~CWBFControlDlg();
 
 	enum { IDD = IDD_WBF_CONTROL_DLG };
@@ -35,7 +35,7 @@ private:
 	DECLARE_MESSAGE_MAP();
 
 private:
-	CWBFViewBase* m_pView;
+	CViewBase* m_pView;
 	
 	CComboBox m_cobxType;
 

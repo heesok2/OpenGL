@@ -152,7 +152,7 @@ void CWBFView::OnContextMenu(CWnd* /* pWnd */, CPoint point)
 
 void CWBFView::OnClickedButton()
 {
-	auto pDocBase = static_cast<CWBFDocBase*>(GetDocument());
+	auto pDocBase = static_cast<CDocBase*>(GetDocument());
 	auto pViewBase = this;
 
 	CWBFControlDlg* pDlg = new CWBFControlDlg(pDocBase, pViewBase);

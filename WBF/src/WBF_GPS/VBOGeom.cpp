@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "VBOGeom.h"
 
-#include "..\WBF_BASE\WBFDocBase.h"
+#include "..\WBF_BASE\DocBase.h"
 #include "..\WBF_LIB\Package.h"
 #include "..\WBF_DATA\ModuleVertex.h"
 #include "..\WBF_DATA\ModuleSubBody.h"
@@ -40,7 +40,7 @@ void CVBOGeom::Release()
 	m_mVAO.clear();
 }
 
-void CVBOGeom::Build(CWBFDocBase * pDoc)
+void CVBOGeom::Build(CDocBase * pDoc)
 {
 	auto pPackage = pDoc->GetPackage();
 	auto pModuleVertex = (CModuleVertex*)pPackage->GetModule(E_TYPE_VERTEX);

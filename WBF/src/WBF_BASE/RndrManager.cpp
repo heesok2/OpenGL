@@ -8,7 +8,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CRndrManager::CRndrManager(CWBFViewBase* pView)
+CRndrManager::CRndrManager(CViewBase* pView)
 	: m_pView(pView)
 {
 }

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "WBFPakage.h"
 
-#include "..\WBF_BASE\WBFDocBase.h"
+#include "..\WBF_BASE\DocBase.h"
 #include "..\WBF_DATA\ModuleVertex.h"
 #include "..\WBF_DATA\ModuleSubBody.h"
 #include "..\WBF_DATA\ModuleBody.h"
@@ -14,7 +14,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFPackage::CWBFPackage(CWBFDocBase* pDoc)
+CWBFPackage::CWBFPackage(CDocBase* pDoc)
 	: CPackage(pDoc)
 {
 }

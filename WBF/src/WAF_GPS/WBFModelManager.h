@@ -9,7 +9,7 @@ class CVBOManager;
 class __MY_EXT_CLASS__ CWBFModelManager : public CModelManager, public CDocListener
 {
 public:
-	CWBFModelManager(CWBFViewBase* pView);
+	CWBFModelManager(CViewBase* pView);
 	virtual ~CWBFModelManager();
 
 public:

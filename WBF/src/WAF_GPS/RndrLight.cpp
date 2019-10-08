@@ -4,7 +4,7 @@
 #include "WBFRndrManager.h"
 #include "WBFModelManager.h"
 
-#include "..\WBF_BASE\WBFViewBase.h"
+#include "..\WBF_BASE\ViewBase.h"
 #include "..\WBF_BASE\ModelDefine.h"
 #include "..\WBF_GPS\ShaderDefine.h"
 #include "..\WBF_GPS\ShaderManager.h"

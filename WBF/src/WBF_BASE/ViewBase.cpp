@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WBFViewBase.h"
+#include "ViewBase.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -7,10 +7,10 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFViewBase::CWBFViewBase()
+CViewBase::CViewBase()
 {
 }
 
-CWBFViewBase::~CWBFViewBase()
+CViewBase::~CViewBase()
 {
 }

@@ -2,12 +2,12 @@
 
 #include "HeaderPre.h"
 
-class CWBFDocBase;
+class CDocBase;
 class CVBOData;
 class __MY_EXT_CLASS__ CVBOManager
 {
 public:
-	CVBOManager(CWBFDocBase* pDoc);
+	CVBOManager(CDocBase* pDoc);
 	virtual ~CVBOManager();
 
 public:
@@ -20,7 +20,7 @@ public:
 	void OnDestroy();
 
 protected:
-	CWBFDocBase* m_pMyDoc;
+	CDocBase* m_pMyDoc;
 	std::vector<CVBOData*> m_lstVBO;
 };
 

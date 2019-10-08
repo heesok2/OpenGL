@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "WBFRndrManager.h"
 
-#include "..\WBF_BASE\WBFDocBase.h"
-#include "..\WBF_BASE\WBFViewBase.h"
+#include "..\WBF_BASE\DocBase.h"
+#include "..\WBF_BASE\ViewBase.h"
 #include "..\WBF_BASE\RndrFactory.h"
 #include "..\WBF_BASE\RndrData.h"
 #include "..\WBF_GPS\ShaderManager.h"
@@ -13,7 +13,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFRndrManager::CWBFRndrManager(CWBFViewBase* pView)
+CWBFRndrManager::CWBFRndrManager(CViewBase* pView)
 	: CRndrManager(pView)
 {
 }

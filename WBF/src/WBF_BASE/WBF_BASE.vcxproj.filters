@@ -48,12 +48,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>_common_</Filter>
     </ClCompile>
-    <ClCompile Include="WBFViewBase.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFDocBase.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
     <ClCompile Include="WBFDialog.cpp">
       <Filter>UI\Dialog</Filter>
     </ClCompile>
@@ -90,6 +84,12 @@
     <ClCompile Include="RndrFactory.cpp">
       <Filter>View\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="ViewBase.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="DocBase.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="WBF_BASE.def">
@@ -120,12 +120,6 @@
     </ClInclude>
     <ClInclude Include="WBF_BASE_LINK.h">
       <Filter>_common_\Linker</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFViewBase.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFDocBase.h">
-      <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="WBFDialog.h">
       <Filter>UI\Dialog</Filter>
@@ -174,6 +168,12 @@
     </ClInclude>
     <ClInclude Include="RndrFactory.h">
       <Filter>View\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewBase.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="DocBase.h">
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "WBFVBOManager.h"
 #include "WBFVBOData.h"
+#include "ViewBase.h"
+#include "DocBase.h"
 
-#include "WBFDocBase.h"
-#include "WBFViewBase.h"
 #include "..\WBF_LIB\Package.h"
 
 
@@ -13,7 +13,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CVBOManager::CVBOManager(CWBFDocBase* pDoc)
+CVBOManager::CVBOManager(CDocBase* pDoc)
 	: m_pMyDoc(pDoc)
 {
 

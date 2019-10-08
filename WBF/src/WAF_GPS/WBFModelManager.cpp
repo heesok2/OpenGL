@@ -4,8 +4,8 @@
 #include "..\WBF_LIB\WBFObserverDefine.h"
 #include "..\WBF_LIB\ListenerDefine.h"
 #include "..\WBF_LIB\Package.h"
-#include "..\WBF_BASE\WBFViewBase.h"
-#include "..\WBF_BASE\WBFDocBase.h"
+#include "..\WBF_BASE\ViewBase.h"
+#include "..\WBF_BASE\DocBase.h"
 #include "..\WBF_BASE\ModelFactory.h"
 #include "..\WBF_BASE\ModelData.h"
 #include "..\WBF_BASE\WBFVBOManager.h"
@@ -17,7 +17,7 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFModelManager::CWBFModelManager(CWBFViewBase* pView)
+CWBFModelManager::CWBFModelManager(CViewBase* pView)
 	: CModelManager(pView), m_pVBOMgr(nullptr)
 {
 }

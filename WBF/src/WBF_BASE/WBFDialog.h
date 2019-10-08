@@ -2,12 +2,12 @@
 
 #include "HeaderPre.h"
 
-class CWBFDocBase;
+class CDocBase;
 class __MY_EXT_CLASS__ CWBFDialog : public CDialog
 {
 public:
-	CWBFDialog(CWBFDocBase* pDoc, CWnd* pParent = nullptr);
-	CWBFDialog(UINT uiResID, CWBFDocBase* pDoc, CWnd* pParent = nullptr);
+	CWBFDialog(CDocBase* pDoc, CWnd* pParent = nullptr);
+	CWBFDialog(UINT uiResID, CDocBase* pDoc, CWnd* pParent = nullptr);
 	virtual ~CWBFDialog();
 
 public:
@@ -20,7 +20,7 @@ protected:
 
 protected:
 	BOOL m_bModeless; // default true
-	CWBFDocBase* m_pMyDoc;
+	CDocBase* m_pMyDoc;
 };
 
 #include "HeaderPost.h"

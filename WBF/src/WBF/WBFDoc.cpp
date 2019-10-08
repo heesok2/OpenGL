@@ -36,9 +36,9 @@ static char THIS_FILE[] = __FILE__;
 
 // CWBFDoc
 
-IMPLEMENT_DYNCREATE(CWBFDoc, CWBFDocBase)
+IMPLEMENT_DYNCREATE(CWBFDoc, CDocBase)
 
-BEGIN_MESSAGE_MAP(CWBFDoc, CWBFDocBase)
+BEGIN_MESSAGE_MAP(CWBFDoc, CDocBase)
 END_MESSAGE_MAP()
 
 // CWBFDoc 생성/소멸
@@ -128,19 +128,19 @@ void CWBFDoc::SetSearchContent(const CString& value)
 #ifdef _DEBUG
 void CWBFDoc::AssertValid() const
 {
-	CWBFDocBase::AssertValid();
+	CDocBase::AssertValid();
 }
 
 void CWBFDoc::Dump(CDumpContext& dc) const
 {
-	CWBFDocBase::Dump(dc);
+	CDocBase::Dump(dc);
 }
 
 #endif //_DEBUG
 
 BOOL CWBFDoc::OnNewDocument()
 {
-	if (!CWBFDocBase::OnNewDocument())
+	if (!CDocBase::OnNewDocument())
 		return FALSE;
 
 	OnInitial();
@@ -150,7 +150,7 @@ BOOL CWBFDoc::OnNewDocument()
 
 BOOL CWBFDoc::OnOpenDocument(LPCTSTR lpszPathName)
 {
-	if (!CWBFDocBase::OnOpenDocument(lpszPathName))
+	if (!CDocBase::OnOpenDocument(lpszPathName))
 		return FALSE;
 
 	OnInitial();
@@ -162,7 +162,7 @@ void CWBFDoc::OnCloseDocument()
 {
 	OnDestroy();
 
-	CWBFDocBase::OnCloseDocument();
+	CDocBase::OnCloseDocument();
 }
 
 void CWBFDoc::OnInitial()

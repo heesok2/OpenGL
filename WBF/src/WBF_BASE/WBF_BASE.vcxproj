@@ -215,7 +215,7 @@
     </ClCompile>
     <ClCompile Include="WBFVBOData.cpp" />
     <ClCompile Include="WBFDialog.cpp" />
-    <ClCompile Include="WBFDocBase.cpp" />
+    <ClCompile Include="DocBase.cpp" />
     <ClCompile Include="ModelData.cpp" />
     <ClCompile Include="ModelManager.cpp" />
     <ClCompile Include="ModelFactory.cpp" />
@@ -226,7 +226,7 @@
     <ClCompile Include="RndrFactory.cpp" />
     <ClCompile Include="WBFVBOFactory.cpp" />
     <ClCompile Include="WBFVBOManager.cpp" />
-    <ClCompile Include="WBFViewBase.cpp" />
+    <ClCompile Include="ViewBase.cpp" />
     <ClCompile Include="WBF_BASE.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -243,7 +243,7 @@
     <ClInclude Include="RndrDefine.h" />
     <ClInclude Include="WBFVBOData.h" />
     <ClInclude Include="WBFDialog.h" />
-    <ClInclude Include="WBFDocBase.h" />
+    <ClInclude Include="DocBase.h" />
     <ClInclude Include="WBFGraphicDef.h" />
     <ClInclude Include="ModelData.h" />
     <ClInclude Include="ModelManager.h" />
@@ -256,7 +256,7 @@
     <ClInclude Include="WBFVBODefine.h" />
     <ClInclude Include="WBFVBOFactory.h" />
     <ClInclude Include="WBFVBOManager.h" />
-    <ClInclude Include="WBFViewBase.h" />
+    <ClInclude Include="ViewBase.h" />
     <ClInclude Include="WBF_BASE.h" />
     <ClInclude Include="WBF_BASE_LINK.h" />
   </ItemGroup>

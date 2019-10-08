@@ -7,7 +7,7 @@
 
 #include "HeaderPre.h"
 
-class CWBFDocBase;
+class CDocBase;
 class __MY_EXT_CLASS__ CVBOData : public CFactoryObjectBase
 {
 public:
@@ -16,7 +16,7 @@ public:
 
 public:
 	virtual void Release() = 0;
-	virtual void Build(CWBFDocBase* pDoc) = 0;
+	virtual void Build(CDocBase* pDoc) = 0;
 	virtual void Draw() = 0;
 	
 };

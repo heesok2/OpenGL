@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "WBFDocBase.h"
-#include "WBFViewBase.h"
+#include "DocBase.h"
+#include "ViewBase.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -8,22 +8,22 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFDocBase::CWBFDocBase()
+CDocBase::CDocBase()
 {
 }
 
-CWBFDocBase::~CWBFDocBase()
+CDocBase::~CDocBase()
 {
 }
 
-CWBFViewBase * CWBFDocBase::GetActiveView()
+CViewBase * CDocBase::GetActiveView()
 {
 	auto pos = GetFirstViewPosition();
 	while (pos != nullptr)
 	{
 		auto pView = GetNextView(pos);
-		if (pView->IsKindOf(RUNTIME_CLASS(CWBFViewBase)))
-			return static_cast<CWBFViewBase*>(pView);
+		if (pView->IsKindOf(RUNTIME_CLASS(CViewBase)))
+			return static_cast<CViewBase*>(pView);
 	}
 
 	ASSERT(g_warning);

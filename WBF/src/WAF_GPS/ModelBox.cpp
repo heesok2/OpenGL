@@ -6,8 +6,8 @@
 #include "..\WBF_DATA\ModuleBox.h"
 #include "..\WBF_DATA\ModuleLight.h"
 
-#include "..\WBF_BASE\WBFDocBase.h"
-#include "..\WBF_BASE\WBFViewBase.h"
+#include "..\WBF_BASE\DocBase.h"
+#include "..\WBF_BASE\ViewBase.h"
 #include "..\WBF_BASE\ModelManager.h"
 #include "..\WBF_BASE\WBFVBOManager.h"
 #include "..\WBF_GPS\VBOGeom.h"

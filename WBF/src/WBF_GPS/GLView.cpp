@@ -17,7 +17,7 @@ CGLView::~CGLView()
 {
 }
 
-BEGIN_MESSAGE_MAP(CGLView, CWBFViewBase)
+BEGIN_MESSAGE_MAP(CGLView, CViewBase)
 	ON_WM_CREATE()
 	ON_WM_DESTROY()
 	ON_WM_SIZE()
@@ -144,7 +144,7 @@ void CGLView::InitializePalette()
 
 int CGLView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
-	if (CWBFViewBase::OnCreate(lpCreateStruct) == -1)
+	if (CViewBase::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
 	IninitialWGL();
@@ -216,7 +216,7 @@ void CGLView::OnDestroy()
 
 	_SAFE_DELETE(m_Camera);
 
-	CWBFViewBase::OnDestroy();
+	CViewBase::OnDestroy();
 }
 
 void CGLView::ReleaseWGL()
@@ -227,7 +227,7 @@ void CGLView::ReleaseWGL()
 
 void CGLView::OnSize(UINT nType, int cx, int cy)
 {
-	CWBFViewBase::OnSize(nType, cx, cy);
+	CViewBase::OnSize(nType, cx, cy);
 	
 	BeginwglCurrent();
 	{
@@ -267,7 +267,7 @@ BOOL CGLView::OnQueryNewPalette()
 		return nRet;
 	}
 
-	return CWBFViewBase::OnQueryNewPalette();
+	return CViewBase::OnQueryNewPalette();
 }
 
 
@@ -286,7 +286,7 @@ void CGLView::OnPaletteChanged(CWnd* pFocusWnd)
 		return;
 	}
 
-	CWBFViewBase::OnPaletteChanged(pFocusWnd);
+	CViewBase::OnPaletteChanged(pFocusWnd);
 }
 
 
@@ -331,7 +331,7 @@ void CGLView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 	Invalidate();
 
-	CWBFViewBase::OnKeyDown(nChar, nRepCnt, nFlags);
+	CViewBase::OnKeyDown(nChar, nRepCnt, nFlags);
 }
 
 
@@ -339,7 +339,7 @@ void CGLView::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	// TODO: Add your message handler code here and/or call default
 
-	CWBFViewBase::OnKeyUp(nChar, nRepCnt, nFlags);
+	CViewBase::OnKeyUp(nChar, nRepCnt, nFlags);
 }
 
 
@@ -357,7 +357,7 @@ void CGLView::OnMouseMove(UINT nFlags, CPoint point)
 		}
 	}
 
-	CWBFViewBase::OnMouseMove(nFlags, point);
+	CViewBase::OnMouseMove(nFlags, point);
 }
 
 
@@ -371,7 +371,7 @@ void CGLView::OnLButtonDown(UINT nFlags, CPoint point)
 			m_Camera->SetMousePosition(point);
 	}
 
-	CWBFViewBase::OnLButtonDown(nFlags, point);
+	CViewBase::OnLButtonDown(nFlags, point);
 }
 
 
@@ -383,5 +383,5 @@ void CGLView::OnLButtonUp(UINT nFlags, CPoint point)
 		ReleaseCapture();
 	}
 
-	CWBFViewBase::OnLButtonUp(nFlags, point);
+	CViewBase::OnLButtonUp(nFlags, point);
 }

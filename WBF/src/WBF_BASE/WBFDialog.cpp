@@ -7,12 +7,12 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CWBFDialog::CWBFDialog(CWBFDocBase * pDoc, CWnd * pParent)
+CWBFDialog::CWBFDialog(CDocBase * pDoc, CWnd * pParent)
 	: CDialog(), m_pMyDoc(pDoc), m_bModeless(TRUE)
 {
 }
 
-CWBFDialog::CWBFDialog(UINT uiResID, CWBFDocBase * pDoc, CWnd * pParent)
+CWBFDialog::CWBFDialog(UINT uiResID, CDocBase * pDoc, CWnd * pParent)
 	: CDialog(uiResID, pParent), m_pMyDoc(pDoc), m_bModeless(TRUE)
 {
 }

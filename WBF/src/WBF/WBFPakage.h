@@ -4,11 +4,11 @@
 
 #include "HeaderPre.h"
 
-class CWBFDocBase;
+class CDocBase;
 class __MY_EXT_CLASS__ CWBFPackage : public CPackage
 {
 public:
-	CWBFPackage(CWBFDocBase* pDoc);
+	CWBFPackage(CDocBase* pDoc);
 	virtual ~CWBFPackage();
 
 public:
