@@ -89,25 +89,34 @@ void CVBOGeom::Build(CWBFDocBase * pDoc)
 		auto& EntBody = lstBody[lbody];
 
 		auto lIndexNum = 0;
-		for (auto lsub = 0; lsub < static_cast<int>(EntBody.lstSubBody.size()); ++lsub)
+		for (auto lsub = 0; lsub < static_cast<int>(EntBody.aItrSubBody.size()); ++lsub)
 		{
+			auto itr = EntBody.aItrSubBody[lsub];
+			auto key = ITR_TO_KEY(itr);
+
 			CEntitySubBody EntSubBody;
-			if (!pModuleSubBody->Find(EntBody.lstSubBody[lsub], EntSubBody))
+			if (!pModuleSubBody->Find(key, EntSubBody))
 				continue;
 
-			lIndexNum += static_cast<int>(EntSubBody.lstVertex.size());
+			lIndexNum += static_cast<int>(EntSubBody.aItrVertex.size());
 		}
 
 		auto lBufferIndxNum = 0;
 		UINT* aIndex = new UINT[lIndexNum];
-		for (auto lsub = 0; lsub < static_cast<int>(EntBody.lstSubBody.size()); ++lsub)
+		for (auto lsub = 0; lsub < static_cast<int>(EntBody.aItrSubBody.size()); ++lsub)
 		{
+			auto itr = EntBody.aItrSubBody[lsub];
+			auto key = ITR_TO_KEY(itr);
+
 			CEntitySubBody EntSubBody;
-			if (!pModuleSubBody->Find(EntBody.lstSubBody[lsub], EntSubBody))
+			if (!pModuleSubBody->Find(key, EntSubBody))
 				continue;
 
-			for (auto dbKey : EntSubBody.lstVertex)
+			for (auto itrVertex : EntSubBody.aItrVertex)
+			{
+				auto dbKey = ITR_TO_KEY(itrVertex);
 				aIndex[lBufferIndxNum++] = mVertexIndex[dbKey];
+			}
 		}
 
 		///////////////////////////////////////////////////////////

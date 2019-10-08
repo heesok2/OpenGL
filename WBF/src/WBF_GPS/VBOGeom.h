@@ -1,6 +1,5 @@
 #pragma once
 
-#include <map>
 #include "..\WBF_BASE\WBFVBOData.h"
 
 #include "HeaderPre.h"

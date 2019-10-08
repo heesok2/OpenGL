@@ -10,7 +10,7 @@ static char THIS_FILE[] = __FILE__;
 CEntityBox::CEntityBox()
 {
 	dbKey = 0;
-	dbBodyKey = 0;
+	itrBody	= 0;
 	vPos = glm::vec3(0);
 }
 

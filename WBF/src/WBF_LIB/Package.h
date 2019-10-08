@@ -1,7 +1,5 @@
 #pragma once
 
-#include <map>
-
 #include "..\WBF_LIB\WBFSubject.h"
 
 #include "HeaderPre.h"

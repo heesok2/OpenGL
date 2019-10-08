@@ -18,7 +18,7 @@ public:
 public:
 	DKEY dbKey;
 
-	DKEY dbBodyKey;
+	DITER itrBody;
 	glm::vec3 vPos;
 
 };

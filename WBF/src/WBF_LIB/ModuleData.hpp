@@ -3,9 +3,6 @@
 #ifndef MODULEDATA_DEF
 #define MODULEDATA_DEF
 
-#include <map>
-#include <vector>
-
 #include "ModuleBase.h"
 #include "EntityDictionary.hpp"
 

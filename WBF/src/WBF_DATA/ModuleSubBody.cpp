@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "ModuleSubBody.h"
+#include "ModuleVertex.h"
+
+#include "..\WBF_LIB\Package.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -40,6 +43,8 @@ void CModuleSubBody::SetDefaultData()
 {
 	if (!Empty()) return;
 
+	auto pModuleVertex = (CModuleVertex*)m_pPackage->GetModule(E_TYPE_VERTEX);
+
 	auto SZ_DATA = sizeof(int) * 4;
 	auto szNum = sizeof(g_tri_index) / SZ_DATA;
 	for (auto indx = 0; indx < static_cast<int>(szNum); ++indx)
@@ -47,8 +52,18 @@ void CModuleSubBody::SetDefaultData()
 		CEntitySubBody Data;
 		Data.dbKey = GetNewKey();
 		Data.uiSubType = g_tri_index[indx * 4 + 0];
-		Data.lstVertex.resize(3);
-		std::copy(&g_tri_index[indx * 4 + 1], &g_tri_index[indx * 4 + 4], Data.lstVertex.begin());
+		
+		Data.aItrVertex.resize(3);
+		for (auto lvtx = 0; lvtx < 3; ++lvtx)
+		{
+			auto key = g_tri_index[indx * 4 + 1 + lvtx];
+			auto itr = pModuleVertex->Find(key);
+
+			if (ITR_IS_VALID(itr))
+				Data.aItrVertex[lvtx] = itr;
+			else
+				ASSERT(g_warning);
+		}
 
 		InsertNU(Data);
 	}

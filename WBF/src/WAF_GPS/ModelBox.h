@@ -1,6 +1,5 @@
 #pragma once
 
-#include <vector>
 #include "..\WBF_BASE\ModelData.h"
 
 #include "HeaderPre.h"

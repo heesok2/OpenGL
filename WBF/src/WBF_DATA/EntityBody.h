@@ -1,9 +1,7 @@
 #pragma once
 
-#include <vector>
-#include "EntityDefine.h"
 #include "..\WBF_LIB\EntityData.h"
-
+#include "EntityDefine.h"
 #include "HeaderPre.h"
 
 class __MY_EXT_CLASS__ CEntityBody : public CEntityData
@@ -21,7 +19,7 @@ public:
 
 public:
 	DKEY dbKey;
-	std::vector<DKEY> lstSubBody;
+	std::vector<DITER> aItrSubBody;
 };
 
 

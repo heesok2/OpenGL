@@ -17,6 +17,7 @@ typedef struct tagEntObjectParam
 #define D_HASH_INDEX(key, hash_size) ((key) % (hash_size))
 
 #define ITR_TO_DATA(T, x) ((const T*)((CEntityDictionary<T>::TEntity*)(x))->Data)
+#define ITR_TO_KEY(x) (*((DKEY*)(((BYTE*)(x)) + sizeof(TEntObjectParam) + VFPTR_SIZE)))
 
 #endif // !DEFINE_DB
 

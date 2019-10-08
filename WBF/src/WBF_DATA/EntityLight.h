@@ -29,7 +29,7 @@ public:
 public:
 	DKEY dbKey;
 	UINT uiType;
-	DKEY dbBodyKey;
+	DITER itrBody;
 	glm::vec3 vPos;
 
 };

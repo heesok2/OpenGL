@@ -11,7 +11,7 @@ CEntityLight::CEntityLight()
 {
 	dbKey = 0;
 	uiType = E_ENT_POINT;
-	dbBodyKey = 0;
+	itrBody = 0;
 	vPos = glm::vec3(0);
 }
 
@@ -23,6 +23,6 @@ void CEntityLight::SetDefaultData()
 {
 	dbKey = 0;
 	uiType = E_ENT_POINT;
-	dbBodyKey = 0;
+	itrBody = 0;
 	vPos = glm::vec3(0);
 }

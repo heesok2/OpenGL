@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "EntityDefine.h"
 #include "ModuleVertex.h"
 
 #ifdef _DEBUG

@@ -50,8 +50,11 @@ void CModelLight::Build()
 		auto& EntLight = lstEntLight[lcaster];
 		if (EntLight.uiType != E_ENT_POINT) continue;
 
+		auto itr = EntLight.itrBody;
+		auto key = ITR_TO_KEY(itr);
+
 		TModelLight model;
-		model.BodyKey = EntLight.dbBodyKey;
+		model.BodyKey = key;
 		model.Pos = EntLight.vPos;
 
 		m_lstLight.push_back(std::move(model));

@@ -1,6 +1,5 @@
 #pragma once
 
-#include <vector>
 #include "HeaderPre.h"
 
 class CWBFViewBase;

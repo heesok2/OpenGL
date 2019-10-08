@@ -1,9 +1,9 @@
 #pragma once
 
-#include <map>
 #include "Shader.h"
 
 #include "HeaderPre.h"
+
 class __MY_EXT_CLASS__ CShaderManager
 {
 public:
@@ -21,4 +21,5 @@ protected:
 	std::map<unsigned int, CShader> m_mBuildShader;
 
 };
+
 #include "HeaderPost.h"

@@ -112,9 +112,6 @@
     <ClInclude Include="AllGraphicInclude.h">
       <Filter>Include</Filter>
     </ClInclude>
-    <ClInclude Include="AllDefine.h">
-      <Filter>Include</Filter>
-    </ClInclude>
     <ClInclude Include="WBFSubject.h">
       <Filter>Notify\Observer</Filter>
     </ClInclude>

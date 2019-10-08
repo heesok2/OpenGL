@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "ModuleBody.h"
+#include "ModuleSubBody.h"
+
+#include "..\WBF_LIB\Package.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -24,13 +27,24 @@ void CModuleBody::SetDefaultData()
 {
 	if (!Empty()) return;
 
+	auto pModuleSubBody = (CModuleSubBody*)m_pPackage->GetModule(E_TYPE_SUBBODY);
+
 	auto SZ_DATA = sizeof(int);
 	auto szNum = sizeof(g_sub_index) / SZ_DATA;
 
 	CEntityBody Data;
 	Data.dbKey = GetNewKey();
-	Data.lstSubBody.resize(szNum);
-	std::copy(&g_sub_index[0], &g_sub_index[0] + szNum, Data.lstSubBody.begin());
+	Data.aItrSubBody.resize(szNum);
+
+	for (auto lsub = 0; lsub < szNum; ++lsub)
+	{
+		auto key = g_sub_index[lsub];
+		auto itr = pModuleSubBody->Find(key);
+		if (ITR_IS_VALID(itr))
+			Data.aItrSubBody[lsub] = itr;
+		else
+			ASSERT(g_warning);
+	}
 
 	InsertNU(Data);
 }

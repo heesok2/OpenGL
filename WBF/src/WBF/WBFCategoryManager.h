@@ -1,7 +1,5 @@
 #pragma once
 
-#include <map>
-
 enum E_CATEGORY_TYPE
 {
 	E_CAT_UNKNOWN = 0,

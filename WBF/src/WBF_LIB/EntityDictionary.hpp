@@ -3,8 +3,6 @@
 #ifndef DEFINE_DICT
 #define DEFINE_DICT
 
-#include <vector>
-#include "AllDefine.h"
 #include "DataBaseDefine.h"
 
 template <class ENTITY_DATA>

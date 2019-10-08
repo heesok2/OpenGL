@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "ModuleBox.h"
 #include "ModuleBody.h"
-#include "EntityDefine.h"
 
 #include "..\WBF_LIB\Package.h"
 
@@ -39,15 +38,13 @@ void CModuleBox::SetDefaultData()
 	if (!Empty()) return;
 
 	auto pModuleBody = static_cast<CModuleBody*>(m_pPackage->GetModule(E_TYPE_BODY));
-
-	CEntityBody EntBody;
-	if (!pModuleBody->Find(1, EntBody)) return;
+	auto itr = pModuleBody->Find(1);
 
 	for (auto lcube = 0; lcube < 10; ++lcube)
 	{
 		CEntityBox EntBox;
 		EntBox.dbKey = GetNewKey();
-		EntBox.dbBodyKey = EntBody.dbKey;
+		EntBox.itrBody = itr;
 		EntBox.vPos = cubePositions[lcube];
 
 		InsertNU(EntBox);

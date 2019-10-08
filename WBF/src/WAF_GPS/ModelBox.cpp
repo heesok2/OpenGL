@@ -54,8 +54,11 @@ void CModelBox::Build()
 
 	for (auto lbox = 0; lbox < lBoxNum; ++lbox)
 	{
+		auto itr = lstBox[lbox].itrBody;
+		auto key = ITR_TO_KEY(itr);
+
 		TModelBox box;
-		box.BodyKey = lstBox[lbox].dbBodyKey;
+		box.BodyKey = key;
 		box.ModelPos = lstBox[lbox].vPos;
 		box.LightPos = aLightPos;
 
