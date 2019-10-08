@@ -17,7 +17,7 @@ const float g_ZOOM = 45.0f;
 
 CWBFCamera::CWBFCamera()
 {
-	m_vPosition = glm::vec3(0.f, 0.f, 0.f);
+	m_vPosition = glm::vec3(-3.f, 3.f, 3.f);
 	m_vFront = glm::vec3(0.f, 0.f, -1.f);
 	m_vWorldUp = glm::vec3(0.f, 1.f, 0.f);
 

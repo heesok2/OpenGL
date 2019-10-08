@@ -3,21 +3,23 @@
 #ifndef DEFINE_DB
 #define DEFINE_DB
 
-typedef struct tagEntObjectParam
+typedef struct tagEntityParam
 {
 	UINT idx;
 	UINT flag;
 
-	tagEntObjectParam() : idx(0), flag(0)
+	tagEntityParam() : idx(0), flag(0)
 	{}
 
-} TEntObjectParam, *LPEntObjectParam;
+} TEntityParam, *LPEntityParam;
 
-#define D_DEFAULT_HASH_NUM 10000
-#define D_HASH_INDEX(key, hash_size) ((key) % (hash_size))
+#define FLAG_DB_UNKNOWN 0x0000
+#define FLAG_DB_INSERT	0x0001
+#define FLAG_DB_REMOVE	0x0002
+#define FLAG_DB_CHANGE	0x0004
 
 #define ITR_TO_DATA(T, x) ((const T*)((CEntityDictionary<T>::TEntity*)(x))->Data)
-#define ITR_TO_KEY(x) (*((DKEY*)(((BYTE*)(x)) + sizeof(TEntObjectParam) + VFPTR_SIZE)))
+#define ITR_TO_KEY(x) (((CEntityData*)(((BYTE*)(x)) + sizeof(TEntityParam)))->GetKey())
 
 #endif // !DEFINE_DB
 

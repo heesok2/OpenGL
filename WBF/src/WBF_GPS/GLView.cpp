@@ -150,7 +150,7 @@ int CGLView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	IninitialWGL();
 
 	m_Camera = new CWBFCamera();
-	m_Camera->SetCameraPosition(glm::vec3(0.f, 0.f, 3.f));
+	//m_Camera->SetCameraPosition(glm::vec3(0.f, 0.f, 3.f));
 
 	return 0;
 }

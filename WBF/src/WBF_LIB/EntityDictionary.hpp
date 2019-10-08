@@ -5,13 +5,16 @@
 
 #include "DataBaseDefine.h"
 
+#define D_DEFAULT_HASH_NUM 10000
+#define D_HASH_INDEX(key, hash_size) ((key) % (hash_size))
+
 template <class ENTITY_DATA>
 class CEntityDictionary
 {
 public:
 	typedef struct tagEntity
 	{
-		TEntObjectParam Param;
+		TEntityParam Param;
 		ENTITY_DATA Data;
 
 		// Linked List
