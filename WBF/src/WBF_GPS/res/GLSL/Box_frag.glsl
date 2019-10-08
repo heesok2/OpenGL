@@ -2,13 +2,13 @@
 
 out vec4 FragColor;
 
+in vec3 FragPos;
+in vec3 Normal;
+
 uniform vec3 ourCameraPos;
 uniform vec3 ourLightPos;
 uniform vec3 ourModelColor;
 uniform vec3 ourLightColor;
-
-in vec3 FragPos;
-in vec3 Normal;
 
 void main()
 {
@@ -20,7 +20,7 @@ void main()
 	float diff = max(dot(norm, lightDir), 0.f);
 	vec3 aDiffuse = diff * ourLightColor;
 
-	float specular = 0.5f;
+	float specular = 0.3f;
 	vec3 viewDir = normalize(ourCameraPos - FragPos);
 	vec3 refDir = reflect(-lightDir, norm);
 	float spec = pow(max(dot(viewDir, refDir), 0.f), 32);

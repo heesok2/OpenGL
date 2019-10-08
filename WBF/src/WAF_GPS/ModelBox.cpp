@@ -36,10 +36,16 @@ void CModelBox::Release()
 
 void CModelBox::Build()
 {
+
+	auto pView = m_pModelMgr->GetView();
+
 	auto pDoc = m_pModelMgr->GetDoc();
 	auto pPackage = pDoc->GetPackage();
 	auto pModuleBox = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
 	auto pModuleLight = (CModuleLight*)pPackage->GetModule(E_TYPE_LIGHT);
+
+	auto pManager = m_pModelMgr->GetVBOManager();
+	auto pGeom = (CVBOGeom*)pManager->Lookup(E_VBO_GEOM);
 
 	std::vector<CEntityLight> lstLight;
 	auto lLightNum = pModuleLight->GetDataList(lstLight);
@@ -57,8 +63,13 @@ void CModelBox::Build()
 		auto itr = lstBox[lbox].itrBody;
 		auto key = ITR_TO_KEY(itr);
 
+		TEntityVBO tVBO;
+		if(!pGeom->GetVBO(key, tVBO))
+			continue;
+
 		TModelBox box;
-		box.BodyKey = key;
+		box.uiVAO = tVBO.VAO;
+		box.uiDataNum = tVBO.DataNum;
 		box.ModelPos = lstBox[lbox].vPos;
 		box.LightPos = aLightPos;
 
@@ -69,8 +80,6 @@ void CModelBox::Build()
 void CModelBox::Draw(CShader * pShader)
 {
 	auto pView = m_pModelMgr->GetView();
-	auto pManager = m_pModelMgr->GetVBOManager();
-	auto pGeom = (CVBOGeom*)pManager->Lookup(E_VBO_GEOM);
 
 	pShader->GLBind();
 	{
@@ -88,10 +97,6 @@ void CModelBox::Draw(CShader * pShader)
 
 		for (auto& box : m_lstBox)
 		{
-			TEntityVBO tData;
-			if (!pGeom->GetVBO(box.BodyKey, tData))
-				continue;
-
 			glm::mat4 mod(1.f);
 			mod = glm::translate(mod, box.ModelPos);
 
@@ -116,8 +121,8 @@ void CModelBox::Draw(CShader * pShader)
 			auto LightPos = glGetUniformLocation(nProg, "ourLightPos");
 			glUniform3fv(LightPos, 1, glm::value_ptr(box.LightPos));
 
-			glBindVertexArray(tData.VAO);
-			glDrawElements(GL_TRIANGLES, tData.DataNum, GL_UNSIGNED_INT, 0);
+			glBindVertexArray(box.uiVAO);
+			glDrawElements(GL_TRIANGLES, box.uiDataNum, GL_UNSIGNED_INT, 0);
 			glBindVertexArray(0);
 		}
 	}

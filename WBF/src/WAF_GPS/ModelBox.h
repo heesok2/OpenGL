@@ -8,7 +8,8 @@ class __MY_EXT_CLASS__ CModelBox : public CModelData
 {
 	struct TModelBox
 	{
-		DKEY BodyKey;
+		UINT uiVAO;
+		UINT uiDataNum;
 		glm::vec3 ModelPos;
 		glm::vec3 LightPos;
 	};
