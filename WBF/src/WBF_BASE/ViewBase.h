@@ -11,18 +11,17 @@ public:
 	virtual ~CViewBase();
 
 public:
-	virtual CModelManager* GetModelManager() = 0;
-	virtual CRndrManager* GetRndrManager() = 0;
-
-public:
 	virtual void BeginwglCurrent() = 0;
 	virtual void EndwglCurrent() = 0;
 	virtual void SwapBuffers() = 0;
 
+	virtual BOOL GetEyePosition(glm::vec3& CamPos) = 0;
+	virtual BOOL GetViewMatrix(glm::mat4& mat) = 0;
+	virtual BOOL GetProjectionMatrix(glm::mat4& mat) = 0;
+
 public:
-	virtual BOOL GetViewMatrix(glm::mat4& mat) { ASSERT(g_warning); return FALSE; }
-	virtual BOOL GetProjectionMatrix(glm::mat4& mat) { ASSERT(g_warning); return FALSE; }
-	virtual BOOL GetCameraPos(glm::vec3& CamPos) { ASSERT(g_warning); return FALSE; }
+	virtual CModelManager* GetModelManager() = 0;
+	virtual CRndrManager* GetRndrManager() = 0;
 
 };
 

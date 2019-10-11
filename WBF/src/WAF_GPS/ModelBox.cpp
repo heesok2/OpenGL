@@ -36,7 +36,6 @@ void CModelBox::Release()
 
 void CModelBox::Build()
 {
-
 	auto pView = m_pModelMgr->GetView();
 
 	auto pDoc = m_pModelMgr->GetDoc();
@@ -93,7 +92,7 @@ void CModelBox::Draw(CShader * pShader)
 		pView->GetProjectionMatrix(proj);
 
 		glm::vec3 CamPos(0.f);
-		pView->GetCameraPos(CamPos);
+		pView->GetEyePosition(CamPos);
 
 		for (auto& box : m_lstBox)
 		{

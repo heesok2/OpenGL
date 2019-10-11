@@ -48,9 +48,6 @@
     <ClCompile Include="WBFGPSOption.cpp">
       <Filter>Graphic\Option</Filter>
     </ClCompile>
-    <ClCompile Include="WBFCamera.cpp">
-      <Filter>Graphic\Camera</Filter>
-    </ClCompile>
     <ClCompile Include="GLView.cpp">
       <Filter>Common</Filter>
     </ClCompile>
@@ -62,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="VBOGeom.cpp">
       <Filter>Graphic\VBO</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Graphic\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,9 +115,6 @@
     <ClInclude Include="WBFGPSOption.h">
       <Filter>Graphic\Option</Filter>
     </ClInclude>
-    <ClInclude Include="WBFCamera.h">
-      <Filter>Graphic\Camera</Filter>
-    </ClInclude>
     <ClInclude Include="GLView.h">
       <Filter>Common</Filter>
     </ClInclude>
@@ -132,6 +129,9 @@
     </ClInclude>
     <ClInclude Include="VBOGeom.h">
       <Filter>Graphic\VBO</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Graphic\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

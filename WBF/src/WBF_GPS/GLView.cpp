@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "GLView.h"
-#include "WBFCamera.h"
+#include "Camera.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -46,6 +46,16 @@ void CGLView::SwapBuffers()
 	::SwapBuffers(m_hDC);
 }
 
+BOOL CGLView::GetEyePosition(glm::vec3 & CamPos)
+{
+	if (m_Camera == nullptr)
+		return FALSE;
+
+	CamPos = m_Camera->GetEyePos();
+
+	return TRUE;
+}
+
 BOOL CGLView::GetViewMatrix(glm::mat4 & mat)
 {
 	if (m_Camera == nullptr)
@@ -66,17 +76,68 @@ BOOL CGLView::GetProjectionMatrix(glm::mat4 & mat)
 	return TRUE;
 }
 
-BOOL CGLView::GetCameraPos(glm::vec3 & CamPos)
+void CGLView::CreateWGL()
 {
-	if (m_Camera == nullptr)
-		return FALSE;
+	PIXELFORMATDESCRIPTOR pfd =
+	{
+		sizeof(PIXELFORMATDESCRIPTOR),	// Size of this structure
+		1,								// Version of this structure	
+		PFD_DRAW_TO_WINDOW |			// Draw to Window (not to bitmap)
+		PFD_SUPPORT_OPENGL |			// Support OpenGL calls in window
+		PFD_SWAP_EXCHANGE |
+		PFD_DOUBLEBUFFER,				// Double buffered mode
+		PFD_TYPE_RGBA,					// RGBA Color mode
+		24,								// Want 24bit color 
+		0,0,0,0,0,0,					// Not used to select mode
+		0,0,							// Not used to select mode
+		0,0,0,0,0,						// Not used to select mode
+		32,								// Size of depth buffer
+		1,								// Not used to select mode
+		0,								// Not used to select mode
+		PFD_MAIN_PLANE,					// Draw in main plane
+		0,								// Not used to select mode
+		0,0,0							// Not used to select mode
+	};
 
-	CamPos = m_Camera->GetCameraPos();
+	// Get the Device context
+	m_hDC = ::GetDC(m_hWnd);
 
-	return TRUE;
+	// Choose a pixel format that best matches that described in pfd
+	int nPixelFormat = ChoosePixelFormat(m_hDC, &pfd);
+
+	// Set the pixel format for the device context
+	VERIFY(SetPixelFormat(m_hDC, nPixelFormat, &pfd));
+
+	// Create the rendering context
+	m_hRC = wglCreateContext(m_hDC);
+
+	// Make the rendering context current, perform initialization, then
+	// deselect it
+	BeginwglCurrent();
+	{
+
+		GLenum err = glewInit();
+		if (GLEW_OK != err)
+		{
+			AfxMessageBox(_T("GLEW is not initialized!"));
+		}
+
+		// Create the palette if needed
+		InitialPalette();
+
+		// Default 
+		glClearColor(0.f, 0.f, 0.f, 1.f);
+	}
+	EndwglCurrent();
 }
 
-void CGLView::InitializePalette()
+void CGLView::ReleaseWGL()
+{
+	wglDeleteContext(m_hRC);
+	::ReleaseDC(m_hWnd, m_hDC);
+}
+
+void CGLView::InitialPalette()
 {
 	PIXELFORMATDESCRIPTOR pfd;	// Pixel Format Descriptor
 	LOGPALETTE *pPal;			// Pointer to memory for logical palette
@@ -147,67 +208,12 @@ int CGLView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CViewBase::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
-	IninitialWGL();
+	CreateWGL();
 
 	m_Camera = new CCamera();
 	//m_Camera->SetCameraPosition(glm::vec3(0.f, 0.f, 3.f));
 
 	return 0;
-}
-
-void CGLView::IninitialWGL()
-{
-	PIXELFORMATDESCRIPTOR pfd =
-	{
-		sizeof(PIXELFORMATDESCRIPTOR),	// Size of this structure
-		1,								// Version of this structure	
-		PFD_DRAW_TO_WINDOW |			// Draw to Window (not to bitmap)
-		PFD_SUPPORT_OPENGL |			// Support OpenGL calls in window
-		PFD_SWAP_EXCHANGE |
-		PFD_DOUBLEBUFFER,				// Double buffered mode
-		PFD_TYPE_RGBA,					// RGBA Color mode
-		24,								// Want 24bit color 
-		0,0,0,0,0,0,					// Not used to select mode
-		0,0,							// Not used to select mode
-		0,0,0,0,0,						// Not used to select mode
-		32,								// Size of depth buffer
-		1,								// Not used to select mode
-		0,								// Not used to select mode
-		PFD_MAIN_PLANE,					// Draw in main plane
-		0,								// Not used to select mode
-		0,0,0							// Not used to select mode
-	};
-
-	// Get the Device context
-	m_hDC = ::GetDC(m_hWnd);
-
-	// Choose a pixel format that best matches that described in pfd
-	int nPixelFormat = ChoosePixelFormat(m_hDC, &pfd);
-
-	// Set the pixel format for the device context
-	VERIFY(SetPixelFormat(m_hDC, nPixelFormat, &pfd));
-
-	// Create the rendering context
-	m_hRC = wglCreateContext(m_hDC);
-
-	// Make the rendering context current, perform initialization, then
-	// deselect it
-	BeginwglCurrent();
-	{
-
-		GLenum err = glewInit();
-		if (GLEW_OK != err)
-		{
-			AfxMessageBox(_T("GLEW is not initialized!"));
-		}
-
-		// Create the palette if needed
-		InitializePalette();
-
-		// Default 
-		glClearColor(0.f, 0.f, 0.f, 1.f);
-	}
-	EndwglCurrent();
 }
 
 void CGLView::OnDestroy()
@@ -219,16 +225,10 @@ void CGLView::OnDestroy()
 	CViewBase::OnDestroy();
 }
 
-void CGLView::ReleaseWGL()
-{
-	wglDeleteContext(m_hRC);
-	::ReleaseDC(m_hWnd, m_hDC);
-}
-
 void CGLView::OnSize(UINT nType, int cx, int cy)
 {
 	CViewBase::OnSize(nType, cx, cy);
-	
+
 	BeginwglCurrent();
 	{
 		glViewport(0, 0, cx, cy);
@@ -270,7 +270,6 @@ BOOL CGLView::OnQueryNewPalette()
 	return CViewBase::OnQueryNewPalette();
 }
 
-
 void CGLView::OnPaletteChanged(CWnd* pFocusWnd)
 {
 	if (((HPALETTE)m_GLPalette != NULL) && (pFocusWnd != this))
@@ -289,14 +288,12 @@ void CGLView::OnPaletteChanged(CWnd* pFocusWnd)
 	CViewBase::OnPaletteChanged(pFocusWnd);
 }
 
-
 BOOL CGLView::OnEraseBkgnd(CDC* pDC)
 {
 	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
 	return TRUE;
 	//return CWBFViewBase::OnEraseBkgnd(pDC);
 }
-
 
 void CGLView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
@@ -347,14 +344,12 @@ void CGLView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	CViewBase::OnKeyDown(nChar, nRepCnt, nFlags);
 }
 
-
 void CGLView::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	// TODO: Add your message handler code here and/or call default
 
 	CViewBase::OnKeyUp(nChar, nRepCnt, nFlags);
 }
-
 
 void CGLView::OnMouseMove(UINT nFlags, CPoint point)
 {
@@ -373,7 +368,6 @@ void CGLView::OnMouseMove(UINT nFlags, CPoint point)
 	CViewBase::OnMouseMove(nFlags, point);
 }
 
-
 void CGLView::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	auto pWnd = GetCapture();
@@ -386,7 +380,6 @@ void CGLView::OnLButtonDown(UINT nFlags, CPoint point)
 
 	CViewBase::OnLButtonDown(nFlags, point);
 }
-
 
 void CGLView::OnLButtonUp(UINT nFlags, CPoint point)
 {

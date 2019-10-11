@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "WBFCamera.h"
+#include "Camera.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -13,7 +13,6 @@ const float g_PITCH = 0.0f;
 const float g_SPEED = 1.5f;
 const float g_SENSITIVITY = 0.1f;
 const float g_ZOOM = 45.0f;
-
 
 CCamera::CCamera()
 {
@@ -45,11 +44,6 @@ glm::mat4 CCamera::GetProjectionMatrix()
 {
 	glm::mat4 proj(1.f);
 	return glm::perspective(glm::radians(45.f), (float)(m_Viewport.Width()) / (float)(m_Viewport.Height()), 0.1f, 100.f);
-}
-
-glm::vec3 CCamera::GetCameraPos()
-{
-	return m_aCameraPos;
 }
 
 void CCamera::SetCameraPosition(glm::vec3& vPosition)

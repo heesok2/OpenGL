@@ -23,9 +23,12 @@ public:
 	virtual ~CCamera();
 
 public:
+	glm::vec3 GetEyePos() { return m_aCameraPos; }
+	glm::vec3 GetEyeDir() { return m_aCameraDir; }
+	glm::vec3 GetEyeUp() { return m_aCameraUp; }
+	glm::vec3 GetEyeRight() { return m_aCameraRight; }
 	glm::mat4 GetViewMatrix();
 	glm::mat4 GetProjectionMatrix();
-	glm::vec3 GetCameraPos();
 
 public:
 	void SetCameraPosition(glm::vec3& vPosition);

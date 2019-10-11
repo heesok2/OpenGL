@@ -11,22 +11,20 @@ class __MY_EXT_CLASS__ CGLView : public CViewBase
 public:
 	CGLView();
 	virtual ~CGLView();
-	
-
-public:
-	virtual BOOL GetViewMatrix(glm::mat4& mat);
-	virtual BOOL GetProjectionMatrix(glm::mat4& mat);
-	virtual BOOL GetCameraPos(glm::vec3& CamPos);// { ASSERT(g_warning); return FALSE; }
 
 public:
 	virtual void BeginwglCurrent() override;
 	virtual void EndwglCurrent() override;
 	virtual void SwapBuffers() override;
 
+	virtual BOOL GetEyePosition(glm::vec3& CamPos) override;
+	virtual BOOL GetViewMatrix(glm::mat4& mat) override;
+	virtual BOOL GetProjectionMatrix(glm::mat4& mat) override;
+
 protected:
-	void InitializePalette();
-	void IninitialWGL();
+	void CreateWGL();
 	void ReleaseWGL();
+	void InitialPalette();
 
 protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
@@ -47,8 +45,7 @@ protected:
 protected:
 	HDC m_hDC;
 	HGLRC m_hRC;
-
-	CPalette m_GLPalette;	// Logical Palette
+	CPalette m_GLPalette;
 	CCamera* m_Camera;
 };
 
