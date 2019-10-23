@@ -24,6 +24,9 @@ public:
 protected:
 	void CreateWGL();
 	void ReleaseWGL();
+	void CreateFBO();
+	void ReleaseFBO();
+
 	void InitialPalette();
 
 protected:
@@ -43,8 +46,8 @@ protected:
 	DECLARE_MESSAGE_MAP();
 
 protected:
-	HDC m_hDC;
-	HGLRC m_hRC;
+	HDC m_hDC; // m_hWnd ÀÇ DC
+	HGLRC m_hRC; // m_hDC ÀÇ RC
 	CPalette m_GLPalette;
 	CCamera* m_Camera;
 };

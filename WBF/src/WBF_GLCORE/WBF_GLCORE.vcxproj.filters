@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="_common_">
+      <UniqueIdentifier>{67bab38d-677f-4212-9aa3-1d402f75d241}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_resource_">
+      <UniqueIdentifier>{d0725061-d02d-442c-b4a1-426b90ba79f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_common_\Linker">
+      <UniqueIdentifier>{f1737fc0-7cea-4987-a313-61c33bbb274a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>_common_</Filter>
+    </ClCompile>
+    <ClCompile Include="WBF_GLCORE.cpp">
+      <Filter>_common_</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\WBF_GLCORE.rc2">
+      <Filter>_resource_</Filter>
+    </None>
+    <None Include="WBF_GLCORE.def">
+      <Filter>_common_</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>_resource_</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>_common_</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>_common_</Filter>
+    </ClInclude>
+    <ClInclude Include="WBF_GLCORE.h">
+      <Filter>_common_</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderPost.h">
+      <Filter>_common_\Linker</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderPre.h">
+      <Filter>_common_\Linker</Filter>
+    </ClInclude>
+    <ClInclude Include="WBF_GLCORE_LINK.h">
+      <Filter>_common_\Linker</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WBF_GLCORE.rc">
+      <Filter>_resource_</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

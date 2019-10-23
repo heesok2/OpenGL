@@ -137,6 +137,14 @@ void CGLView::ReleaseWGL()
 	::ReleaseDC(m_hWnd, m_hDC);
 }
 
+void CGLView::CreateFBO()
+{
+}
+
+void CGLView::ReleaseFBO()
+{
+}
+
 void CGLView::InitialPalette()
 {
 	PIXELFORMATDESCRIPTOR pfd;	// Pixel Format Descriptor
@@ -209,6 +217,8 @@ int CGLView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;
 
 	CreateWGL();
+
+	CreateFBO();
 
 	m_Camera = new CCamera();
 	//m_Camera->SetCameraPosition(glm::vec3(0.f, 0.f, 3.f));
