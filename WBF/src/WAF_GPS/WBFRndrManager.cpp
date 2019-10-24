@@ -5,7 +5,7 @@
 #include "..\WBF_BASE\ViewBase.h"
 #include "..\WBF_BASE\RndrFactory.h"
 #include "..\WBF_BASE\RndrData.h"
-#include "..\WBF_GPS\ShaderManager.h"
+#include "..\WBF_GLCORE\ShaderManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

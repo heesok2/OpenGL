@@ -3,15 +3,9 @@
 // WBF_GPS.rc에서 사용되고 있습니다.
 //
 #define IDR_GLSL1                       1000
-#define IDR_SHADER_SAMPLE_VERT          1000
 #define IDR_GLSL2                       1001
-#define IDR_SHADER_SAMPLE_FRAG          1001
-#define IDR_SHADER_LIGHT_VERT           1002
 #define IDR_GLSL3                       1003
-#define IDR_SHADER_LIGHT_FRAG           1003
 #define IDR_GLSL4                       1004
-#define IDR_SHADER_BOX_VERT             1004
-#define IDR_SHADER_BOX_FRAG             1005
 
 // Next default values for new objects
 // 

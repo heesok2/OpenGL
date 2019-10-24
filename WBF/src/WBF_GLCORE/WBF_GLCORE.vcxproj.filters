@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="BUFFER">
-      <UniqueIdentifier>{8b970f71-3770-4fad-8d36-5c7d5d7e6b9a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="VIEW">
       <UniqueIdentifier>{d1fb041c-c6d6-42bf-82fb-3b2bdeb339a9}</UniqueIdentifier>
     </Filter>
@@ -24,6 +21,12 @@
     </Filter>
     <Filter Include="__RESOURCE__\file">
       <UniqueIdentifier>{1e24335f-e868-4352-81e2-852338db8ab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SHADER">
+      <UniqueIdentifier>{837ea97b-741a-4ee5-8c0c-cc746f3578be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BUFFER">
+      <UniqueIdentifier>{8b970f71-3770-4fad-8d36-5c7d5d7e6b9a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +51,12 @@
     <ClCompile Include="WBF_GLCORE.cpp">
       <Filter>__GENERAL__</Filter>
     </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>SHADER</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>SHADER</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="WBF_GLCORE.def">
@@ -55,6 +64,30 @@
     </None>
     <None Include="res\WBF_GLCORE.rc2">
       <Filter>__RESOURCE__</Filter>
+    </None>
+    <None Include="res\GLSL\Box_frag.glsl">
+      <Filter>__RESOURCE__\file</Filter>
+    </None>
+    <None Include="res\GLSL\Box_vert.glsl">
+      <Filter>__RESOURCE__\file</Filter>
+    </None>
+    <None Include="res\GLSL\Light_frag.glsl">
+      <Filter>__RESOURCE__\file</Filter>
+    </None>
+    <None Include="res\GLSL\Light_vert.glsl">
+      <Filter>__RESOURCE__\file</Filter>
+    </None>
+    <None Include="res\GLSL\Sample_frag.glsl">
+      <Filter>__RESOURCE__\file</Filter>
+    </None>
+    <None Include="res\GLSL\Sample_vert.glsl">
+      <Filter>__RESOURCE__\file</Filter>
+    </None>
+    <None Include="res\GLSL\Screen_frag.glsl">
+      <Filter>__RESOURCE__\file</Filter>
+    </None>
+    <None Include="res\GLSL\Screen_vert.glsl">
+      <Filter>__RESOURCE__\file</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +126,15 @@
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>__RESOURCE__</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>SHADER</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderDefine.h">
+      <Filter>SHADER</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h">
+      <Filter>SHADER</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

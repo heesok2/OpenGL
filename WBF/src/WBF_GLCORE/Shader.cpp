@@ -28,7 +28,7 @@ void CShader::GLAttachShader(UINT nShaderType, UINT uiResID)
 {
 	auto lambda_source = [](UINT uiRes, std::string& strSource)
 	{
-		auto hHandle = GetModuleHandle(_T("WBF_GPS.dll"));
+		auto hHandle = GetModuleHandle(_T("WBF_GLCORE.dll"));
 		auto hRes = FindResource(hHandle, MAKEINTRESOURCE(uiRes), _T("GLSL"));
 		if (hRes == nullptr)
 			return FALSE;

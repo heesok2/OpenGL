@@ -6,8 +6,8 @@
 
 #include "..\WBF_BASE\ViewBase.h"
 #include "..\WBF_BASE\ModelDefine.h"
-#include "..\WBF_GPS\ShaderDefine.h"
-#include "..\WBF_GPS\ShaderManager.h"
+#include "..\WBF_GLCORE\ShaderDefine.h"
+#include "..\WBF_GLCORE\ShaderManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

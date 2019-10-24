@@ -215,17 +215,9 @@
     </ClCompile>
     <ClCompile Include="VBOGeom.cpp" />
     <ClCompile Include="WBFGPSOption.cpp" />
-    <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="WBF_GPS.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\GLSL\Box_frag.glsl" />
-    <None Include="res\GLSL\Box_vert.glsl" />
-    <None Include="res\GLSL\Light_frag.glsl" />
-    <None Include="res\GLSL\Light_vert.glsl" />
-    <None Include="res\GLSL\Sample_frag.glsl" />
-    <None Include="res\GLSL\Sample_vert.glsl" />
     <None Include="res\WBF_GPS.rc2" />
     <None Include="WBF_GPS.def" />
   </ItemGroup>
@@ -237,9 +229,6 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="VBOGeom.h" />
     <ClInclude Include="WBFGPSOption.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="ShaderDefine.h" />
-    <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="WBF_GPS.h" />
     <ClInclude Include="WBF_GPS_LINK.h" />
   </ItemGroup>

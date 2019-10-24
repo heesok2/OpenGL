@@ -1,124 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="_resource_">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="__GENERAL__">
+      <UniqueIdentifier>{0b84b7fd-6850-49f9-9dce-564fd4427fc9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="_resource file_">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="_common_">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="_common_\Linker">
+    <Filter Include="__GENERAL__\Linker">
       <UniqueIdentifier>{d866b534-6418-4f69-bb17-4e5aa8326108}</UniqueIdentifier>
     </Filter>
-    <Filter Include="_resource file_\GLSL">
-      <UniqueIdentifier>{b7ecbc98-8bf2-4463-8414-591eee42f869}</UniqueIdentifier>
+    <Filter Include="__RESOURCE__">
+      <UniqueIdentifier>{85166ae4-8c79-4f45-a8ea-26be491b1d4f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic">
-      <UniqueIdentifier>{ea121fa2-4f47-4fe8-a015-73b1e8e43d38}</UniqueIdentifier>
+    <Filter Include="__RESOURCE__\file">
+      <UniqueIdentifier>{269d1a45-ad1c-4300-b262-a4cea95d604a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic\Shader">
-      <UniqueIdentifier>{061f4a4c-1d73-4211-9e46-294f52a90935}</UniqueIdentifier>
+    <Filter Include="OPTION">
+      <UniqueIdentifier>{d54e9047-8dc9-4a8b-9d67-80d529a9a14a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic\Option">
-      <UniqueIdentifier>{09c4f05d-a7bb-4d51-87c1-f5b7796b596e}</UniqueIdentifier>
+    <Filter Include="VBO">
+      <UniqueIdentifier>{67bd5172-6385-490f-ac59-6abbdc26ce9f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic\VBO">
+    <Filter Include="VBO\Geometry">
       <UniqueIdentifier>{7808e427-c9ec-4b04-881a-da3b71f5e025}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WBF_GPS.cpp">
-      <Filter>_common_</Filter>
+    <ClCompile Include="VBOGeom.cpp">
+      <Filter>VBO\Geometry</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
-      <Filter>_common_</Filter>
+      <Filter>__GENERAL__</Filter>
+    </ClCompile>
+    <ClCompile Include="WBF_GPS.cpp">
+      <Filter>__GENERAL__</Filter>
     </ClCompile>
     <ClCompile Include="WBFGPSOption.cpp">
-      <Filter>Graphic\Option</Filter>
-    </ClCompile>
-    <ClCompile Include="ShaderManager.cpp">
-      <Filter>Graphic\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>Graphic\Shader</Filter>
-    </ClCompile>
-    <ClCompile Include="VBOGeom.cpp">
-      <Filter>Graphic\VBO</Filter>
+      <Filter>OPTION</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="WBF_GPS.def">
-      <Filter>_common_</Filter>
+      <Filter>__GENERAL__</Filter>
     </None>
     <None Include="res\WBF_GPS.rc2">
-      <Filter>_resource_</Filter>
-    </None>
-    <None Include="res\GLSL\Sample_frag.glsl">
-      <Filter>_resource file_\GLSL</Filter>
-    </None>
-    <None Include="res\GLSL\Sample_vert.glsl">
-      <Filter>_resource file_\GLSL</Filter>
-    </None>
-    <None Include="res\GLSL\Light_vert.glsl">
-      <Filter>_resource file_\GLSL</Filter>
-    </None>
-    <None Include="res\GLSL\Light_frag.glsl">
-      <Filter>_resource file_\GLSL</Filter>
-    </None>
-    <None Include="res\GLSL\Box_vert.glsl">
-      <Filter>_resource file_\GLSL</Filter>
-    </None>
-    <None Include="res\GLSL\Box_frag.glsl">
-      <Filter>_resource file_\GLSL</Filter>
+      <Filter>__RESOURCE__</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WBF_GPS.h">
-      <Filter>_common_</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>_common_</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>_common_</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>_resource_</Filter>
-    </ClInclude>
     <ClInclude Include="HeaderPre.h">
-      <Filter>_common_\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="HeaderPost.h">
-      <Filter>_common_\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="WBF_GPS_LINK.h">
-      <Filter>_common_\Linker</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFGPSOption.h">
-      <Filter>Graphic\Option</Filter>
-    </ClInclude>
-    <ClInclude Include="ShaderManager.h">
-      <Filter>Graphic\Shader</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Graphic\Shader</Filter>
-    </ClInclude>
-    <ClInclude Include="ShaderDefine.h">
-      <Filter>Graphic\Shader</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="VBOGeom.h">
-      <Filter>Graphic\VBO</Filter>
+      <Filter>VBO\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="WBF_GPS.h">
+      <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>__RESOURCE__</Filter>
+    </ClInclude>
+    <ClInclude Include="WBFGPSOption.h">
+      <Filter>OPTION</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WBF_GPS.rc">
-      <Filter>_resource_</Filter>
+      <Filter>__RESOURCE__</Filter>
     </ResourceCompile>
   </ItemGroup>
 </Project>

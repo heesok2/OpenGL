@@ -12,7 +12,7 @@
 #include "..\WBF_BASE\WBFVBOManager.h"
 #include "..\WBF_BASE\WBFVBOData.h"
 #include "..\WBF_GPS\VBOGeom.h"
-#include "..\WBF_GPS\Shader.h"
+#include "..\WBF_GLCORE\Shader.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

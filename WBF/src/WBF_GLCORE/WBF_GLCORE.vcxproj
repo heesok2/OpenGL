@@ -212,6 +212,8 @@
     <ClCompile Include="FrameBuffer.cpp" />
     <ClCompile Include="FrameBufferManager.cpp" />
     <ClCompile Include="GLView.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -221,6 +223,14 @@
     <ClCompile Include="WBF_GLCORE.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\GLSL\Box_frag.glsl" />
+    <None Include="res\GLSL\Box_vert.glsl" />
+    <None Include="res\GLSL\Light_frag.glsl" />
+    <None Include="res\GLSL\Light_vert.glsl" />
+    <None Include="res\GLSL\Sample_frag.glsl" />
+    <None Include="res\GLSL\Sample_vert.glsl" />
+    <None Include="res\GLSL\Screen_frag.glsl" />
+    <None Include="res\GLSL\Screen_vert.glsl" />
     <None Include="res\WBF_GLCORE.rc2" />
     <None Include="WBF_GLCORE.def" />
   </ItemGroup>
@@ -233,6 +243,9 @@
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderDefine.h" />
+    <ClInclude Include="ShaderManager.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="WBF_GLCORE.h" />

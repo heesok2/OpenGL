@@ -59,20 +59,20 @@ void CShaderManager::GLCreateShader(UINT uiType)
 	{
 	case E_SHADER_SAMPLE:
 		{
-			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_SHADER_SAMPLE_VERT);
-			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_SHADER_SAMPLE_FRAG);
+			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_GLSL_SAMPLE_VERT);
+			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_GLSL_SAMPLE_FRAG);
 		}
 		break;
 	case E_SHADER_LIGHT:
 		{
-			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_SHADER_LIGHT_VERT);
-			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_SHADER_LIGHT_FRAG);
+			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_GLSL_LIGHT_VERT);
+			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_GLSL_LIGHT_FRAG);
 		}
 		break;
 	case E_SHADER_BOX:
 		{
-			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_SHADER_BOX_VERT);
-			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_SHADER_BOX_FRAG);
+			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_GLSL_BOX_VERT);
+			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_GLSL_BOX_FRAG);
 		}
 		break;
 	default:
