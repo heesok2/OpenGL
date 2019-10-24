@@ -1,58 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="_common_">
-      <UniqueIdentifier>{67bab38d-677f-4212-9aa3-1d402f75d241}</UniqueIdentifier>
+    <Filter Include="BUFFER">
+      <UniqueIdentifier>{8b970f71-3770-4fad-8d36-5c7d5d7e6b9a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="_resource_">
-      <UniqueIdentifier>{d0725061-d02d-442c-b4a1-426b90ba79f6}</UniqueIdentifier>
+    <Filter Include="VIEW">
+      <UniqueIdentifier>{d1fb041c-c6d6-42bf-82fb-3b2bdeb339a9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="_common_\Linker">
+    <Filter Include="CONTROL">
+      <UniqueIdentifier>{3b4d6e1a-55a5-45ca-9cd5-9a13eecd206c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CONTROL\Camera">
+      <UniqueIdentifier>{c2042210-3c68-4c67-91d2-cc8be22b0792}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__GENERAL__">
+      <UniqueIdentifier>{4e963e18-9ef3-40e7-baaa-7da4f6e245f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__GENERAL__\Linker">
       <UniqueIdentifier>{f1737fc0-7cea-4987-a313-61c33bbb274a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="__RESOURCE__">
+      <UniqueIdentifier>{6a116ac8-3bdc-4409-a58a-bef6496ea577}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__RESOURCE__\file">
+      <UniqueIdentifier>{1e24335f-e868-4352-81e2-852338db8ab5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FrameBuffer.cpp">
+      <Filter>BUFFER</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameBufferManager.cpp">
+      <Filter>BUFFER</Filter>
+    </ClCompile>
+    <ClCompile Include="GLView.cpp">
+      <Filter>VIEW</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>CONTROL\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="GLCtrlView.cpp">
+      <Filter>VIEW</Filter>
+    </ClCompile>
     <ClCompile Include="stdafx.cpp">
-      <Filter>_common_</Filter>
+      <Filter>__GENERAL__</Filter>
     </ClCompile>
     <ClCompile Include="WBF_GLCORE.cpp">
-      <Filter>_common_</Filter>
+      <Filter>__GENERAL__</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\WBF_GLCORE.rc2">
-      <Filter>_resource_</Filter>
-    </None>
     <None Include="WBF_GLCORE.def">
-      <Filter>_common_</Filter>
+      <Filter>__GENERAL__</Filter>
+    </None>
+    <None Include="res\WBF_GLCORE.rc2">
+      <Filter>__RESOURCE__</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Resource.h">
-      <Filter>_resource_</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>_common_</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>_common_</Filter>
-    </ClInclude>
-    <ClInclude Include="WBF_GLCORE.h">
-      <Filter>_common_</Filter>
-    </ClInclude>
     <ClInclude Include="HeaderPost.h">
-      <Filter>_common_\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="HeaderPre.h">
-      <Filter>_common_\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="WBF_GLCORE_LINK.h">
-      <Filter>_common_\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameBuffer.h">
+      <Filter>BUFFER</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameBufferManager.h">
+      <Filter>BUFFER</Filter>
+    </ClInclude>
+    <ClInclude Include="GLView.h">
+      <Filter>VIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>CONTROL\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="GLCtrlView.h">
+      <Filter>VIEW</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="WBF_GLCORE.h">
+      <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>__RESOURCE__</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WBF_GLCORE.rc">
-      <Filter>_resource_</Filter>
+      <Filter>__RESOURCE__</Filter>
     </ResourceCompile>
   </ItemGroup>
 </Project>

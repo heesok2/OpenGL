@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef WBF_CAMERA
-#define WBF_CAMERA
+#ifndef DEF_CAMERA
+#define DEF_CAMERA
 
 #include "HeaderPre.h"
 
@@ -59,4 +59,4 @@ protected:
 
 #include "HeaderPost.h"
 
-#endif // !WBF_CAMERA
+#endif // !DEF_CAMERA

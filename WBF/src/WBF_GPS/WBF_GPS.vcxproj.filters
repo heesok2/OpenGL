@@ -28,12 +28,6 @@
     <Filter Include="Graphic\Option">
       <UniqueIdentifier>{09c4f05d-a7bb-4d51-87c1-f5b7796b596e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Graphic\Camera">
-      <UniqueIdentifier>{f2b18797-df23-4a2d-ac75-f8e96dfa390e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Common">
-      <UniqueIdentifier>{376e7025-4518-447d-a648-994d24e9d4b5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Graphic\VBO">
       <UniqueIdentifier>{7808e427-c9ec-4b04-881a-da3b71f5e025}</UniqueIdentifier>
     </Filter>
@@ -48,9 +42,6 @@
     <ClCompile Include="WBFGPSOption.cpp">
       <Filter>Graphic\Option</Filter>
     </ClCompile>
-    <ClCompile Include="GLView.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
     <ClCompile Include="ShaderManager.cpp">
       <Filter>Graphic\Shader</Filter>
     </ClCompile>
@@ -59,9 +50,6 @@
     </ClCompile>
     <ClCompile Include="VBOGeom.cpp">
       <Filter>Graphic\VBO</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Graphic\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,9 +103,6 @@
     <ClInclude Include="WBFGPSOption.h">
       <Filter>Graphic\Option</Filter>
     </ClInclude>
-    <ClInclude Include="GLView.h">
-      <Filter>Common</Filter>
-    </ClInclude>
     <ClInclude Include="ShaderManager.h">
       <Filter>Graphic\Shader</Filter>
     </ClInclude>
@@ -129,9 +114,6 @@
     </ClInclude>
     <ClInclude Include="VBOGeom.h">
       <Filter>Graphic\VBO</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Graphic\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

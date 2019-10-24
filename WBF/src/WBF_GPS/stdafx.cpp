@@ -5,5 +5,6 @@
 #include "stdafx.h"
 
 #include "../WBF_LIB/WBF_LIB_LINK.h"
+#include "../WBF_GLCORE/WBF_GLCORE_LINK.h"
 #include "../WBF_DATA/WBF_DATA_LINK.h"
 #include "../WBF_BASE/WBF_BASE_LINK.h"

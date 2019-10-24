@@ -169,10 +169,9 @@ void CModelSample::GLAttachData()
 	glm::mat4 model(1.f);
 	model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 
-	glm::mat4 view(1.f);
+	glm::mat4 view = pView->GetViewMatrix();
 	//view = glm::translate(view, glm::vec3(0.f, 0.f, -3.f));
 	//view = glm::lookAt(glm::vec3(3.f, 0.f, 3.f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 1.f, 0.f));
-	pView->GetViewMatrix(view);
 
 	glm::mat4 proj(1.f);
 	glm::ortho(0.f, 800.f, 0.f, 600.f, 0.1f, 100.f); // left, right, bottom, top, near, far

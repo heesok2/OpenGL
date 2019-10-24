@@ -72,11 +72,8 @@ void CModelLight::Draw(CShader * pShader)
 		int nProg;
 		glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
 		
-		glm::mat4 view(1.f);
-		pView->GetViewMatrix(view);
-
-		glm::mat4 proj(1.f);
-		pView->GetProjectionMatrix(proj);
+		glm::mat4 view = pView->GetViewMatrix();
+		glm::mat4 proj = pView->GetProjectionMatrix();
 
 		for (auto& model : m_lstLight)
 		{

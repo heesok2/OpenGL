@@ -1,34 +1,23 @@
 #include "stdafx.h"
 #include "GLView.h"
-#include "Camera.h"
 
-#ifdef _DEBUG
-#define new DEBUG_NEW
-#undef THIS_FILE
-static char THIS_FILE[] = __FILE__;
-#endif
 
 CGLView::CGLView()
 {
-	m_Camera = nullptr;
 }
+
 
 CGLView::~CGLView()
 {
 }
 
-BEGIN_MESSAGE_MAP(CGLView, CViewBase)
+BEGIN_MESSAGE_MAP(CGLView, CView)
 	ON_WM_CREATE()
 	ON_WM_DESTROY()
 	ON_WM_SIZE()
+	ON_WM_ERASEBKGND()
 	ON_WM_QUERYNEWPALETTE()
 	ON_WM_PALETTECHANGED()
-	ON_WM_ERASEBKGND()
-	ON_WM_KEYDOWN()
-	ON_WM_KEYUP()
-	ON_WM_LBUTTONDOWN()
-	ON_WM_LBUTTONUP()
-	ON_WM_MOUSEMOVE()
 END_MESSAGE_MAP()
 
 void CGLView::BeginwglCurrent()
@@ -44,36 +33,6 @@ void CGLView::EndwglCurrent()
 void CGLView::SwapBuffers()
 {
 	::SwapBuffers(m_hDC);
-}
-
-BOOL CGLView::GetEyePosition(glm::vec3 & CamPos)
-{
-	if (m_Camera == nullptr)
-		return FALSE;
-
-	CamPos = m_Camera->GetEyePos();
-
-	return TRUE;
-}
-
-BOOL CGLView::GetViewMatrix(glm::mat4 & mat)
-{
-	if (m_Camera == nullptr)
-		return FALSE;
-
-	mat = m_Camera->GetViewMatrix();
-
-	return TRUE;
-}
-
-BOOL CGLView::GetProjectionMatrix(glm::mat4 & mat)
-{
-	if (m_Camera == nullptr)
-		return FALSE;
-
-	mat = m_Camera->GetProjectionMatrix();
-
-	return TRUE;
 }
 
 void CGLView::CreateWGL()
@@ -110,42 +69,30 @@ void CGLView::CreateWGL()
 
 	// Create the rendering context
 	m_hRC = wglCreateContext(m_hDC);
-
-	// Make the rendering context current, perform initialization, then
-	// deselect it
-	BeginwglCurrent();
-	{
-
-		GLenum err = glewInit();
-		if (GLEW_OK != err)
-		{
-			AfxMessageBox(_T("GLEW is not initialized!"));
-		}
-
-		// Create the palette if needed
-		InitialPalette();
-
-		// Default 
-		glClearColor(0.f, 0.f, 0.f, 1.f);
-	}
-	EndwglCurrent();
 }
 
-void CGLView::ReleaseWGL()
+void CGLView::DeleteWGL()
 {
 	wglDeleteContext(m_hRC);
 	::ReleaseDC(m_hWnd, m_hDC);
 }
 
-void CGLView::CreateFBO()
+void CGLView::GLInitial()
 {
+	GLenum err = glewInit();
+	if (GLEW_OK != err)
+	{
+		AfxMessageBox(_T("GLEW is not initialized!"));
+	}
+
+	// Create the palette if needed
+	GLInitialPalette();
+
+	// Default 
+	glClearColor(0.f, 0.f, 0.f, 1.f);
 }
 
-void CGLView::ReleaseFBO()
-{
-}
-
-void CGLView::InitialPalette()
+void CGLView::GLInitialPalette()
 {
 	PIXELFORMATDESCRIPTOR pfd;	// Pixel Format Descriptor
 	LOGPALETTE *pPal;			// Pointer to memory for logical palette
@@ -201,10 +148,10 @@ void CGLView::InitialPalette()
 	}
 
 	// Create the palette
-	m_GLPalette.CreatePalette(pPal);
+	m_Palette.CreatePalette(pPal);
 
 	// Go ahead and select and realize the palette for this device context
-	SelectPalette(m_hDC, (HPALETTE)m_GLPalette, FALSE);
+	SelectPalette(m_hDC, (HPALETTE)m_Palette, FALSE);
 	RealizePalette(m_hDC);
 
 	// Free the memory used for the logical palette structure
@@ -213,58 +160,51 @@ void CGLView::InitialPalette()
 
 int CGLView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
-	if (CViewBase::OnCreate(lpCreateStruct) == -1)
+	if (CView::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
 	CreateWGL();
 
-	CreateFBO();
-
-	m_Camera = new CCamera();
-	//m_Camera->SetCameraPosition(glm::vec3(0.f, 0.f, 3.f));
+	BeginwglCurrent();
+	{
+		GLInitial();
+	}
+	EndwglCurrent();
 
 	return 0;
 }
 
 void CGLView::OnDestroy()
 {
-	ReleaseWGL();
+	DeleteWGL();
 
-	_SAFE_DELETE(m_Camera);
-
-	CViewBase::OnDestroy();
+	CView::OnDestroy();
 }
 
 void CGLView::OnSize(UINT nType, int cx, int cy)
 {
-	CViewBase::OnSize(nType, cx, cy);
+	CView::OnSize(nType, cx, cy);
 
 	BeginwglCurrent();
 	{
 		glViewport(0, 0, cx, cy);
 	}
 	EndwglCurrent();
+}
 
-	if (m_Camera != nullptr)
-	{
-		CRect rect;
-		rect.left = rect.bottom = 0;
-		rect.right = cx;
-		rect.top = cy;
-
-		m_Camera->SetViewSize(rect);
-	}
+BOOL CGLView::OnEraseBkgnd(CDC* pDC)
+{
+	return TRUE; // return CView::OnEraseBkgnd(pDC);
 }
 
 BOOL CGLView::OnQueryNewPalette()
 {
-	// If the palette was created.
-	if ((HPALETTE)m_GLPalette)
+	if ((HPALETTE)m_Palette)
 	{
 		int nRet;
 
 		// Selects the palette into the current device context
-		SelectPalette(m_hDC, (HPALETTE)m_GLPalette, FALSE);
+		SelectPalette(m_hDC, (HPALETTE)m_Palette, FALSE);
 
 		// Map entries from the currently selected palette to
 		// the system palette.  The return value is the number 
@@ -277,15 +217,15 @@ BOOL CGLView::OnQueryNewPalette()
 		return nRet;
 	}
 
-	return CViewBase::OnQueryNewPalette();
+	return CView::OnQueryNewPalette();
 }
 
 void CGLView::OnPaletteChanged(CWnd* pFocusWnd)
 {
-	if (((HPALETTE)m_GLPalette != NULL) && (pFocusWnd != this))
+	if (((HPALETTE)m_Palette != NULL) && (pFocusWnd != this))
 	{
 		// Select the palette into the device context
-		SelectPalette(m_hDC, (HPALETTE)m_GLPalette, FALSE);
+		SelectPalette(m_hDC, (HPALETTE)m_Palette, FALSE);
 
 		// Map entries to system palette
 		RealizePalette(m_hDC);
@@ -295,109 +235,5 @@ void CGLView::OnPaletteChanged(CWnd* pFocusWnd)
 		return;
 	}
 
-	CViewBase::OnPaletteChanged(pFocusWnd);
-}
-
-BOOL CGLView::OnEraseBkgnd(CDC* pDC)
-{
-	// TODO: 여기에 메시지 처리기 코드를 추가 및/또는 기본값을 호출합니다.
-	return TRUE;
-	//return CWBFViewBase::OnEraseBkgnd(pDC);
-}
-
-void CGLView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
-{
-	float fDelta = 1.f;
-	switch (nChar)
-	{
-	case 'a':
-	case 'A':
-		{
-			m_Camera->OnKeyboardDown(E_CAMERA_LEFT, fDelta);
-		}
-		break;
-	case 's':
-	case 'S':
-		{
-			m_Camera->OnKeyboardDown(E_CAMERA_BOTTOM, fDelta);
-		}
-		break;
-	case 'd':
-	case 'D':
-		{
-			m_Camera->OnKeyboardDown(E_CAMERA_RIGHT, fDelta);
-		}
-		break;
-	case 'w':
-	case 'W':
-		{
-			m_Camera->OnKeyboardDown(E_CAMERA_TOP, fDelta);
-		}
-		break;
-	case 'q':
-	case 'Q':
-		{
-			m_Camera->OnKeyboardDown(E_CAMERA_BACKWARD, fDelta);
-		}
-		break;
-
-	case 'e':
-	case 'E':
-		{
-			m_Camera->OnKeyboardDown(E_CAMERA_FORWARD, fDelta);
-		}
-		break;
-	}
-
-	Invalidate();
-
-	CViewBase::OnKeyDown(nChar, nRepCnt, nFlags);
-}
-
-void CGLView::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
-{
-	// TODO: Add your message handler code here and/or call default
-
-	CViewBase::OnKeyUp(nChar, nRepCnt, nFlags);
-}
-
-void CGLView::OnMouseMove(UINT nFlags, CPoint point)
-{
-	if (nFlags & MK_LBUTTON)
-	{
-		auto pWnd = GetCapture();
-		if (pWnd == this)
-		{
-			if (m_Camera != nullptr)
-				m_Camera->OnMouseMove(point);
-
-			Invalidate();
-		}
-	}
-
-	CViewBase::OnMouseMove(nFlags, point);
-}
-
-void CGLView::OnLButtonDown(UINT nFlags, CPoint point)
-{
-	auto pWnd = GetCapture();
-	if (pWnd == nullptr)
-	{
-		auto pCapture = SetCapture();
-		if (m_Camera != nullptr)
-			m_Camera->SetMousePosition(point);
-	}
-
-	CViewBase::OnLButtonDown(nFlags, point);
-}
-
-void CGLView::OnLButtonUp(UINT nFlags, CPoint point)
-{
-	auto pWnd = GetCapture();
-	if (pWnd == this)
-	{
-		ReleaseCapture();
-	}
-
-	CViewBase::OnLButtonUp(nFlags, point);
+	CView::OnPaletteChanged(pFocusWnd);
 }
