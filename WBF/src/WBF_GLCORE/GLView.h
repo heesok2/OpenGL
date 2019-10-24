@@ -33,6 +33,7 @@ protected:
 	HDC m_hDC; // m_hWnd ÀÇ DC
 	HGLRC m_hRC; // m_hDC ÀÇ RC
 	CPalette m_Palette;
+
 };
 
 #include "HeaderPost.h"

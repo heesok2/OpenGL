@@ -82,14 +82,20 @@ void CWBFView::OnDraw(CDC* pDC)
 
 	BeginwglCurrent();
 	{
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glPushAttrib(GL_ALL_ATTRIB_BITS);
+		GLBindFrameBuffer(E_FBO_SCREEN);
+		{
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		m_pModelMgr->GLInitialData();
-		m_pRndrMgr->GLDrawScene();
-
-		SwapBuffers();
+			m_pModelMgr->GLInitialData();
+			m_pRndrMgr->GLDrawScene();
+		}
+		GLUnbindFrameBuffer(E_FBO_SCREEN);
+		glPopAttrib();
 	}
 	EndwglCurrent();
+
+	CGPSView::OnDraw(pDC);
 }
 
 // CWBFView 인쇄

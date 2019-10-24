@@ -16,9 +16,11 @@ public:
 	BOOL IsValidFrameBuffer();
 
 	BOOL GLAttachColorTexture2D(UINT uiAttachment, int x, int y);
+	void GLResizeColorTexture2D(int x, int y);
 	void GLDeleteColorTexture2D();
 	BOOL GLAttachDepthStencilRender(int x, int y);
-	void GLDeleteDepthStencilRender();	
+	void GLResizeDepthStencilRender(int x, int y);
+	void GLDeleteDepthStencilRender();
 
 protected:
 	UINT GLCreateTexture2D(UINT uiInternalFormat, UINT uiFormat, UINT uiType, int x, int y);
@@ -28,9 +30,12 @@ protected:
 	void GLAttachRenderBuffer(UINT uiRenderBuffer, UINT uiAttachment);
 
 protected:
+	UINT m_uiPrevFBO;
 	UINT m_uiFBO;
 	UINT m_uiColorTex2D;
 	UINT m_uiDepthStencilTex2D;
 	UINT m_uiDepthStencilRender;
+
+	UINT m_uiScreenFullSize[2];
 };
 #include "HeaderPost.h"

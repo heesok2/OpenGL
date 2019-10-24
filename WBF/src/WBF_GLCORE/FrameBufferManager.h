@@ -17,10 +17,11 @@ public:
 	virtual ~CFrameBufferManager();
 
 public:
-	void GLCreateBuffer(UINT uiType);
+	void GLCreateBuffer();
 	void GLDeleteBuffer();
-	void GLBindBuffer(UINT uiType = E_FBO_SCREEN);
-	void GLUnbindBuffer(UINT uiType = E_FBO_SCREEN);
+	void GLResizeBuffer(int x, int y);
+	void GLBindBuffer(UINT uiType);
+	void GLUnbindBuffer(UINT uiType);
 
 protected:
 	CFrameBuffer* m_aFBO[E_FBO_NUM];

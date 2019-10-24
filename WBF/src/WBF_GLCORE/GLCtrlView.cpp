@@ -1,14 +1,54 @@
 #include "stdafx.h"
 #include "GLCtrlView.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
 
 CGLCtrlView::CGLCtrlView()
 {
 }
 
-
 CGLCtrlView::~CGLCtrlView()
 {
+}
+
+BEGIN_MESSAGE_MAP(CGLCtrlView, CGLView)
+	ON_WM_KEYDOWN()
+	ON_WM_KEYUP()
+	ON_WM_LBUTTONDOWN()
+	ON_WM_LBUTTONUP()
+	ON_WM_MOUSEMOVE()
+	ON_WM_SIZE()
+	ON_WM_CREATE()
+	ON_WM_DESTROY()
+END_MESSAGE_MAP()
+
+void CGLCtrlView::OnDraw(CDC* pDC)
+{
+	// Model FrameBuffer 에 그림을 화면 ScreenBuffer에 그린다.
+	BeginwglCurrent();
+	{
+		//glPushAttrib(GL_ALL_ATTRIB_BITS);
+		//m_FrameBufferManager.GLBindBuffer(E_FBO_SCREEN);
+		//{
+		//	glDisable(GL_DEPTH_TEST);
+		//	glClear(GL_COLOR_BUFFER_BIT);
+
+		//	// Shader bind
+		//	{
+
+		//	}
+		//	// Shader unbind
+		//}
+		//m_FrameBufferManager.GLUnbindBuffer(E_FBO_SCREEN);
+		//glPopAttrib();
+
+		SwapBuffers();
+	}
+	EndwglCurrent();
 }
 
 glm::vec3 CGLCtrlView::GetEyePosition()
@@ -26,14 +66,57 @@ glm::mat4 CGLCtrlView::GetProjectionMatrix()
 	return m_Camera.GetProjectionMatrix();
 }
 
-BEGIN_MESSAGE_MAP(CGLCtrlView, CGLView)
-	ON_WM_KEYDOWN()
-	ON_WM_KEYUP()
-	ON_WM_LBUTTONDOWN()
-	ON_WM_LBUTTONUP()
-	ON_WM_MOUSEMOVE()
-	ON_WM_SIZE()
-END_MESSAGE_MAP()
+void CGLCtrlView::GLBindFrameBuffer(UINT uiType)
+{
+	m_FrameBufferManager.GLBindBuffer(uiType);
+}
+
+void CGLCtrlView::GLUnbindFrameBuffer(UINT uiType)
+{
+	m_FrameBufferManager.GLUnbindBuffer(uiType);
+}
+
+int CGLCtrlView::OnCreate(LPCREATESTRUCT lpCreateStruct)
+{
+	if (CGLView::OnCreate(lpCreateStruct) == -1)
+		return -1;
+
+	BeginwglCurrent();
+	{
+		m_FrameBufferManager.GLCreateBuffer();
+	}
+	EndwglCurrent();
+
+	return 0;
+}
+
+void CGLCtrlView::OnDestroy()
+{
+	BeginwglCurrent();
+	{
+		m_FrameBufferManager.GLDeleteBuffer();
+	}
+	EndwglCurrent();
+
+	CGLView::OnDestroy();
+}
+
+void CGLCtrlView::OnSize(UINT nType, int cx, int cy)
+{
+	CGLView::OnSize(nType, cx, cy);
+
+	CRect rect;
+	rect.left = rect.bottom = 0;
+	rect.right = cx;
+	rect.top = cy;
+	m_Camera.SetViewSize(rect);
+
+	BeginwglCurrent();
+	{
+		m_FrameBufferManager.GLResizeBuffer(cx, cy);
+	}
+	EndwglCurrent();
+}
 
 void CGLCtrlView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
@@ -127,16 +210,4 @@ void CGLCtrlView::OnMouseMove(UINT nFlags, CPoint point)
 	}
 
 	CGLView::OnMouseMove(nFlags, point);
-}
-
-void CGLCtrlView::OnSize(UINT nType, int cx, int cy)
-{
-	CGLView::OnSize(nType, cx, cy);
-
-	CRect rect;
-	rect.left = rect.bottom = 0;
-	rect.right = cx;
-	rect.top = cy;
-
-	m_Camera.SetViewSize(rect);
 }
