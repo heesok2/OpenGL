@@ -14,6 +14,10 @@ public:
 
 	void GLBind();
 	void GLUnbind();
+	void GLSetInt(CString strName, int nData);
+	void GLSetBoolean(CString strName, bool bData);
+	void GLSetfloat(CString strName, float fData);
+	void GLSetDouble(CString strName, double dData);
 
 protected:
 	unsigned int m_nProg;

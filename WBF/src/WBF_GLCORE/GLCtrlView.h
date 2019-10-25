@@ -46,6 +46,8 @@ protected:
 
 	CFrameBufferManager m_FrameBufferManager;
 	CShaderManager m_ShaderManager;
+	UINT m_uiScreenVAO;
+	UINT m_uiScreenVBO;
 };
 
 #include "HeaderPost.h"

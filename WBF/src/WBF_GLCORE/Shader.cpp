@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Shader.h"
+#include "..\WBF_LIB\WBFString.h"
 
 #include <fstream>
 #include <sstream>
@@ -157,4 +158,23 @@ void CShader::GLBind()
 void CShader::GLUnbind()
 {
 	glUseProgram(0);
+}
+
+void CShader::GLSetInt(CString strName, int nData)
+{
+
+
+	//glUniform1i(glGetUniformLocation(m_nProg, strName.GetBuffer()), (int)value);
+}
+
+void CShader::GLSetBoolean(CString strName, bool bData)
+{
+}
+
+void CShader::GLSetfloat(CString strName, float fData)
+{
+}
+
+void CShader::GLSetDouble(CString strName, double dData)
+{
 }

@@ -10,6 +10,8 @@ static char THIS_FILE[] = __FILE__;
 
 CGLCtrlView::CGLCtrlView()
 {
+	m_uiScreenVAO = 0;
+	m_uiScreenVBO = 0;
 }
 
 CGLCtrlView::~CGLCtrlView()
@@ -43,7 +45,8 @@ void CGLCtrlView::OnDraw(CDC* pDC)
 			Shader.GLBind();
 			m_FrameBufferManager.GLBindColorTex2D(E_FBO_MODEL);
 			{
-				
+				glBindVertexArray(m_uiScreenVAO);
+				glDrawArrays(GL_TRIANGLES, 0, 6);				
 			}
 			m_FrameBufferManager.GLUnbindColorTex2D(E_FBO_MODEL);
 			Shader.GLUnbind();
@@ -83,20 +86,34 @@ void CGLCtrlView::GLUnbindFrameBuffer(UINT uiType)
 
 void CGLCtrlView::GLCreateScreen()
 {
+	float quadVertices[] = { // vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
+   // positions   // texCoords
+   -1.0f,  1.0f,  0.0f, 1.0f,
+   -1.0f, -1.0f,  0.0f, 0.0f,
+	1.0f, -1.0f,  1.0f, 0.0f,
+
+   -1.0f,  1.0f,  0.0f, 1.0f,
+	1.0f, -1.0f,  1.0f, 0.0f,
+	1.0f,  1.0f,  1.0f, 1.0f
+	};
+
 	m_ShaderManager.GLCreateShader(E_SHADER_SCREEN);
+	auto ShaderScreen = m_ShaderManager.GetShader(E_SHADER_SCREEN);
+	
+	glGenVertexArrays(1, &m_uiScreenVAO);
+	glGenBuffers(1, &m_uiScreenVBO);
 
-	UINT uiVAO, uiVBO;
-
-	glGenVertexArrays(1, &uiVAO);
-	glGenBuffers(1, &uiVBO);
-
-	glBindVertexArray(uiVAO);
-	glBindBuffer(GL_ARRAY_BUFFER, uiVBO);
+	glBindVertexArray(m_uiScreenVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, m_uiScreenVBO);
 	{
-
+		glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), quadVertices, GL_STATIC_DRAW);
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 4, nullptr);
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 4, (void*)(sizeof(float) * 2));
 	}
-	glBindVertexArray(uiVAO);
-	glBindBuffer(GL_ARRAY_BUFFER, uiVBO);
+	glBindVertexArray(m_uiScreenVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, m_uiScreenVBO);
 }
 
 int CGLCtrlView::OnCreate(LPCREATESTRUCT lpCreateStruct)
@@ -120,6 +137,9 @@ void CGLCtrlView::OnDestroy()
 	BeginwglCurrent();
 	{
 		m_FrameBufferManager.GLDeleteBuffer();
+
+		glDeleteBuffers(1, &m_uiScreenVBO);
+		glDeleteVertexArrays(1, &m_uiScreenVAO);
 	}
 	EndwglCurrent();
 
