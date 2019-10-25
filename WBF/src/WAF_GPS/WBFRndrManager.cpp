@@ -24,8 +24,6 @@ CWBFRndrManager::~CWBFRndrManager()
 
 void CWBFRndrManager::OnInitial()
 {
-	m_pShaderManager = new CShaderManager();
-
 	auto pModelMgr = m_pView->GetModelManager();
 
 	for (UINT uiType = E_RNDR_SAMPLE; uiType < E_RNDR_NUM; ++uiType)
@@ -48,12 +46,15 @@ void CWBFRndrManager::OnDestroy()
 	}
 
 	m_vObject.clear();
-
-	_SAFE_DELETE(m_pShaderManager);
 }
 
 void CWBFRndrManager::GLDrawScene()
 {
 	for (auto pObject : m_vObject)
 		pObject->GLDraw();
+}
+
+CShaderManager* CWBFRndrManager::GetShaderManager()
+{
+	return m_pView->GetShaderManager();
 }

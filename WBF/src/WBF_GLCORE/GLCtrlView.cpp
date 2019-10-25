@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "GLCtrlView.h"
+#include "ShaderDefine.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -31,20 +32,24 @@ void CGLCtrlView::OnDraw(CDC* pDC)
 	// Model FrameBuffer 에 그림을 화면 ScreenBuffer에 그린다.
 	BeginwglCurrent();
 	{
-		//glPushAttrib(GL_ALL_ATTRIB_BITS);
-		//m_FrameBufferManager.GLBindBuffer(E_FBO_SCREEN);
-		//{
-		//	glDisable(GL_DEPTH_TEST);
-		//	glClear(GL_COLOR_BUFFER_BIT);
+		glPushAttrib(GL_ALL_ATTRIB_BITS);
+		m_FrameBufferManager.GLBindBuffer(E_FBO_SCREEN);
+		{
+			auto Shader = m_ShaderManager.GetShader(E_SHADER_SCREEN);
 
-		//	// Shader bind
-		//	{
+			glDisable(GL_DEPTH_TEST);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		//	}
-		//	// Shader unbind
-		//}
-		//m_FrameBufferManager.GLUnbindBuffer(E_FBO_SCREEN);
-		//glPopAttrib();
+			Shader.GLBind();
+			m_FrameBufferManager.GLBindColorTex2D(E_FBO_MODEL);
+			{
+				
+			}
+			m_FrameBufferManager.GLUnbindColorTex2D(E_FBO_MODEL);
+			Shader.GLUnbind();
+		}
+		m_FrameBufferManager.GLUnbindBuffer(E_FBO_SCREEN);
+		glPopAttrib();
 
 		SwapBuffers();
 	}
@@ -76,6 +81,24 @@ void CGLCtrlView::GLUnbindFrameBuffer(UINT uiType)
 	m_FrameBufferManager.GLUnbindBuffer(uiType);
 }
 
+void CGLCtrlView::GLCreateScreen()
+{
+	m_ShaderManager.GLCreateShader(E_SHADER_SCREEN);
+
+	UINT uiVAO, uiVBO;
+
+	glGenVertexArrays(1, &uiVAO);
+	glGenBuffers(1, &uiVBO);
+
+	glBindVertexArray(uiVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, uiVBO);
+	{
+
+	}
+	glBindVertexArray(uiVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, uiVBO);
+}
+
 int CGLCtrlView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
 	if (CGLView::OnCreate(lpCreateStruct) == -1)
@@ -84,6 +107,8 @@ int CGLCtrlView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	BeginwglCurrent();
 	{
 		m_FrameBufferManager.GLCreateBuffer();
+
+		GLCreateScreen();
 	}
 	EndwglCurrent();
 

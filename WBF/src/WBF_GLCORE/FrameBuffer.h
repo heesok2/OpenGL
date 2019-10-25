@@ -10,6 +10,8 @@ public:
 public:
 	void GLBind();
 	void GLUnbind();
+	void GLBindColorTex2D();
+	void GLUnbindColorTex2D();
 
 	void GLGeneralFrameBuffer();
 	void GLDeleteFrameBuffer();

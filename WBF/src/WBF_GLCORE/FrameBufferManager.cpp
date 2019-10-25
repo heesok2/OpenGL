@@ -88,3 +88,13 @@ void CFrameBufferManager::GLUnbindBuffer(UINT uiType)
 {
 	m_aFBO[uiType]->GLUnbind();
 }
+
+void CFrameBufferManager::GLBindColorTex2D(UINT uiType)
+{
+	m_aFBO[uiType]->GLBindColorTex2D();
+}
+
+void CFrameBufferManager::GLUnbindColorTex2D(UINT uiType)
+{
+	m_aFBO[uiType]->GLUnbindColorTex2D();
+}

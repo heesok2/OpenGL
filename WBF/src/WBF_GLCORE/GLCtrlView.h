@@ -3,6 +3,7 @@
 #include "GLView.h"
 #include "Camera.h"
 #include "FrameBufferManager.h"
+#include "ShaderManager.h"
 
 #include "HeaderPre.h"
 
@@ -16,6 +17,9 @@ public:
 	virtual void OnDraw(CDC* /*pDC*/);
 
 public:
+	CShaderManager* GetShaderManager() { return &m_ShaderManager; }
+	CFrameBufferManager* GetFrameBufferManager() { return &m_FrameBufferManager; }
+
 	glm::vec3 GetEyePosition();
 	glm::mat4 GetViewMatrix();
 	glm::mat4 GetProjectionMatrix();
@@ -23,6 +27,7 @@ public:
 protected:
 	void GLBindFrameBuffer(UINT uiType);
 	void GLUnbindFrameBuffer(UINT uiType);
+	void GLCreateScreen();
 
 protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
@@ -37,9 +42,10 @@ protected:
 	DECLARE_MESSAGE_MAP();
 
 protected:
-	CFrameBufferManager m_FrameBufferManager;
 	CCamera m_Camera;
 
+	CFrameBufferManager m_FrameBufferManager;
+	CShaderManager m_ShaderManager;
 };
 
 #include "HeaderPost.h"

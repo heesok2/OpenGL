@@ -6,11 +6,11 @@
 
 class __MY_EXT_CLASS__ CRndrSample : public CRndrData
 {
-	DECLARE_RENDERER(CRndrSample);
-
 public:
 	CRndrSample();
 	virtual ~CRndrSample();
+
+	DECLARE_RENDERER(CRndrSample);
 
 public:
 	virtual UINT GetType() override { return E_RNDR_SAMPLE; }

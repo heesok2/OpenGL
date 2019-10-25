@@ -22,6 +22,8 @@ public:
 	void GLResizeBuffer(int x, int y);
 	void GLBindBuffer(UINT uiType);
 	void GLUnbindBuffer(UINT uiType);
+	void GLBindColorTex2D(UINT uiType);
+	void GLUnbindColorTex2D(UINT uiType);
 
 protected:
 	CFrameBuffer* m_aFBO[E_FBO_NUM];

@@ -43,6 +43,16 @@ void CFrameBuffer::GLUnbind()
 	}
 }
 
+void CFrameBuffer::GLBindColorTex2D()
+{
+	glBindTexture(GL_TEXTURE_2D, m_uiColorTex2D);
+}
+
+void CFrameBuffer::GLUnbindColorTex2D()
+{
+	glBindTexture(GL_TEXTURE_2D, 0);
+}
+
 void CFrameBuffer::GLGeneralFrameBuffer()
 {
 	glGenFramebuffers(1, &m_uiFBO);

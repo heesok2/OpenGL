@@ -16,11 +16,8 @@ public:
 	virtual void GLDrawScene();
 
 public:
-	CShaderManager* GetShaderManager() { return m_pShaderManager; }
-
-protected:
-	CShaderManager* m_pShaderManager;
-
+	CShaderManager* GetShaderManager();
+	
 };
 
 #include "HeaderPost.h"
