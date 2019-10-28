@@ -12,7 +12,7 @@ public:
 	virtual ~CDataRenderer();
 
 public:
-	virtual void GLBuild() = 0;
+	virtual void GLBuild(CDocument * pDoc, UINT uiFlag) = 0;
 	virtual void GLDraw() = 0;
 
 };

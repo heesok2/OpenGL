@@ -6,6 +6,7 @@
 
 #include "..\WBF_LIB\Package.h"
 #include "..\WBF_LIB\ModuleBase.h"
+#include "..\WBF_LIB\DataBaseDefine.h"
 #include "..\WBF_DATA\EntityDefine.h"
 #include "..\WBF_BASE\ModelManager.h"
 #include "..\WBF_BASE\ModelData.h"
@@ -213,7 +214,7 @@ void CWBFControlDlg::OnClickedUpdate()
 		// Unknown
 	}
 
-	m_pMyDoc->UpdateAllViews(NULL);
+	m_pMyDoc->UpdateAllViews(NULL, E_DB_CHANGED);
 }
 
 void CWBFControlDlg::OnDestroy()

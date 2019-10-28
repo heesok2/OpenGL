@@ -13,15 +13,8 @@ public:
 	DECLARE_DYNAMIC_RENDERER(CBoxRenderer);
 
 public:
-
-
-	// CDataRenderer을(를) 통해 상속됨
+	virtual void GLBuild(CDocument * pDoc, UINT uiFlag) override;
 	virtual void GLDraw() override;
-
-
-	// CDataRenderer을(를) 통해 상속됨
-	virtual void GLBuild() override;
-
 };
 
 #include "HeaderPost.h"

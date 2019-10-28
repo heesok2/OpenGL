@@ -2,6 +2,8 @@
 #include "GLCtrlView.h"
 #include "ShaderDefine.h"
 
+#include "..\WBF_LIB\DataBaseDefine.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -59,6 +61,28 @@ void CGLCtrlView::OnDraw(CDC* pDC)
 		SwapBuffers();
 	}
 	EndwglCurrent();
+}
+
+void CGLCtrlView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
+{
+	if (pSender == this) return;
+
+	auto eNotify = lHint;
+	switch (eNotify)
+	{
+	case E_DB_CHANGED:
+		{
+			BeginwglCurrent();
+			{
+				//m_ObjectBufferManager.GLBuildObjectBuffer();
+				//m_
+			}
+			EndwglCurrent();
+		}
+		break;
+	}
+
+	CGLView::OnUpdate(pSender, lHint, pHint);
 }
 
 glm::vec3 CGLCtrlView::GetEyePosition()
@@ -267,3 +291,4 @@ void CGLCtrlView::OnMouseMove(UINT nFlags, CPoint point)
 
 	CGLView::OnMouseMove(nFlags, point);
 }
+

@@ -2,6 +2,7 @@
 
 #include "HeaderPre.h"
 
+class CDataRenderer;
 class __MY_EXT_CLASS__ CRendererManager
 {
 public:
@@ -12,6 +13,11 @@ public:
 	void InitialData(CView* pView);
 	void CreateRenderer();
 
+	void GLBuildRenderer(UINT uiFlag);
+
+protected:
+	CView* m_pView;
+	std::map<UINT, CDataRenderer*> m_mRenderer;
 };
 
 #include "HeaderPost.h"

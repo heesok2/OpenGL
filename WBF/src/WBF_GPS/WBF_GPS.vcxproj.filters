@@ -31,6 +31,9 @@
     <Filter Include="RENDER\Renderer">
       <UniqueIdentifier>{e6bb637e-09c3-42b2-9100-24e809bf2008}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RENDER\Define">
+      <UniqueIdentifier>{3e3bb72e-3827-492c-8d44-1c1abb54cb23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VBOGeom.cpp">
@@ -91,14 +94,14 @@
     <ClInclude Include="GeometryBuffer.h">
       <Filter>RENDER\Object Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="BufferType.h">
-      <Filter>RENDER\Object Buffer</Filter>
-    </ClInclude>
     <ClInclude Include="BoxRenderer.h">
       <Filter>RENDER\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="BufferType.h">
+      <Filter>RENDER\Define</Filter>
+    </ClInclude>
     <ClInclude Include="RendererType.h">
-      <Filter>RENDER\Renderer</Filter>
+      <Filter>RENDER\Define</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

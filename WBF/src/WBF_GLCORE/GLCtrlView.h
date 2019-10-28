@@ -17,6 +17,7 @@ public:
 
 public:
 	virtual void OnDraw(CDC* /*pDC*/);
+	virtual void OnUpdate(CView* /*pSender*/, LPARAM /*lHint*/, CObject* /*pHint*/);
 
 public:
 	CFrameBufferManager* GetFrameBufferManager() { return &m_FrameBufferManager; }

@@ -35,11 +35,11 @@ public:
 
 #include "HeaderPost.h"
 
-#define DECLARE_DYNAMIC_OBJECT_BUFFER(class_name)\
+#define DECLARE_DYNAMIC_BUFFER(class_name)\
 DECLARE_DYNCREATE(class_name);\
 virtual UINT GetType() override;
 
-#define IMPLEMENT_DYNAMIC_OBJECT_BUFFER(class_name, type)\
+#define IMPLEMENT_DYNAMIC_BUFFER(class_name, type)\
 IMPLEMENT_DYNCREATE(class_name, CObjectBuffer);\
 UINT class_name::GetType() { return type; }\
 BOOL b##class_name = CObjectBufferFactory::GetInstance().Register(type, RUNTIME_CLASS(class_name));

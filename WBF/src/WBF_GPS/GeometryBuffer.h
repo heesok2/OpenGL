@@ -10,7 +10,7 @@ public:
 	CGeometryBuffer();
 	virtual ~CGeometryBuffer();
 
-	DECLARE_DYNAMIC_OBJECT_BUFFER(CGeometryBuffer);
+	DECLARE_DYNAMIC_BUFFER(CGeometryBuffer);
 
 public:
 	virtual void GLRelease() override;

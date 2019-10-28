@@ -13,6 +13,13 @@ typedef struct tagEntityParam
 
 } TEntityParam, *LPEntityParam;
 
+enum E_DB_NOTIFY
+{
+	E_DB_UNKNOWN = 0,
+	E_DB_CHANGED,
+	E_DB_NUM
+};
+
 #define FLAG_DB_UNKNOWN 0x0000
 #define FLAG_DB_INSERT	0x0001
 #define FLAG_DB_REMOVE	0x0002

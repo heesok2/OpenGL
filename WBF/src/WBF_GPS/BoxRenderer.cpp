@@ -12,10 +12,10 @@ CBoxRenderer::~CBoxRenderer()
 {
 }
 
-void CBoxRenderer::GLDraw()
+void CBoxRenderer::GLBuild(CDocument * pDoc, UINT uiFlag)
 {
 }
 
-void CBoxRenderer::GLBuild()
+void CBoxRenderer::GLDraw()
 {
 }
