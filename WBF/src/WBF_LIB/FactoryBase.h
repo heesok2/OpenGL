@@ -13,13 +13,15 @@ public:
 	virtual ~CFactoryBase();
 
 public:
-	virtual BOOL Register(UINT uiType, CRuntimeClass* pRuntime) = 0;
-	virtual void Unregister(UINT uiType) = 0;
-	virtual CFactoryObjectBase* CreateObject(UINT uiType) = 0;
+	virtual BOOL Register(UINT uiType, CRuntimeClass* pRuntime);
+	virtual void Unregister(UINT uiType);
+	virtual CFactoryObjectBase* CreateObject(UINT uiType);
+
+	virtual long GetTypeList(std::vector<UINT>& lstType);
 
 protected:
 	MAP_OBJECT m_mObject;
+
 };
 
 #include "HeaderPost.h"
-

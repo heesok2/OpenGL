@@ -1,20 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="_resource_">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="_resource file_">
-      <UniqueIdentifier>{0f09a46b-d1e2-493b-a4ca-4c29c7de9e88}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="_common_">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="_common_\Linker">
-      <UniqueIdentifier>{5841765e-3c15-4884-865c-91ef509d67fe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Common">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
@@ -31,22 +17,25 @@
     <Filter Include="UI\Dialog">
       <UniqueIdentifier>{972be108-7f14-471d-828f-6892b29839ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="__GENERAL__">
+      <UniqueIdentifier>{33bcaba6-aa3a-4c8c-8e2b-b4fd9576b6e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__RESOURCE__">
+      <UniqueIdentifier>{1f7c864c-15de-42c7-84c4-acef02e918e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__GENERAL__\Linker">
+      <UniqueIdentifier>{5841765e-3c15-4884-865c-91ef509d67fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__RESOURCE__\file">
+      <UniqueIdentifier>{ed78344e-67ea-4cb2-9189-e42bb8855af0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>_common_</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>_common_</Filter>
-    </ClInclude>
     <ClInclude Include="ChildFrm.h">
       <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="MainFrm.h">
       <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>_resource_</Filter>
     </ClInclude>
     <ClInclude Include="WBFDoc.h">
       <Filter>Common</Filter>
@@ -58,10 +47,10 @@
       <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="HeaderPost.h">
-      <Filter>_common_\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="HeaderPre.h">
-      <Filter>_common_\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="calendarbar.h">
       <Filter>UI</Filter>
@@ -81,6 +70,15 @@
     <ClInclude Include="WBFPakage.h">
       <Filter>DataBase</Filter>
     </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>__RESOURCE__</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBF.cpp">
@@ -97,9 +95,6 @@
     </ClCompile>
     <ClCompile Include="WBFView.cpp">
       <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>_common_</Filter>
     </ClCompile>
     <ClCompile Include="calendarbar.cpp">
       <Filter>UI</Filter>
@@ -119,74 +114,77 @@
     <ClCompile Include="WBFPakage.cpp">
       <Filter>DataBase</Filter>
     </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>__GENERAL__</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\ribbon.mfcribbon-ms">
-      <Filter>_resource file_</Filter>
+    <None Include="WBF.reg">
+      <Filter>__GENERAL__</Filter>
     </None>
     <None Include="res\WBF.rc2">
-      <Filter>_resource_</Filter>
+      <Filter>__RESOURCE__</Filter>
     </None>
-    <None Include="WBF.reg">
-      <Filter>_common_</Filter>
+    <None Include="res\ribbon.mfcribbon-ms">
+      <Filter>__RESOURCE__\file</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\buttons.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\filelarge.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\filesmall.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\info.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\main.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\nav_large.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\nav_large_hc.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\pages.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\pages_hc.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\pages_small.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\pages_small_hc.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\Toolbar.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\Toolbar256.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\WBF.ico">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\WBFDoc.ico">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\writelarge.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
     <Image Include="res\writesmall.bmp">
-      <Filter>_resource file_</Filter>
+      <Filter>__RESOURCE__\file</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WBF.rc">
-      <Filter>_resource_</Filter>
+      <Filter>__RESOURCE__</Filter>
     </ResourceCompile>
   </ItemGroup>
 </Project>

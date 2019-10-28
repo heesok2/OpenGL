@@ -3,6 +3,8 @@
 #include "GLView.h"
 #include "Camera.h"
 #include "FrameBufferManager.h"
+#include "ObjectBufferManager.h"
+#include "RendererManager.h"
 #include "ShaderManager.h"
 
 #include "HeaderPre.h"
@@ -17,8 +19,10 @@ public:
 	virtual void OnDraw(CDC* /*pDC*/);
 
 public:
-	CShaderManager* GetShaderManager() { return &m_ShaderManager; }
 	CFrameBufferManager* GetFrameBufferManager() { return &m_FrameBufferManager; }
+	CObjectBufferManager* GetObjectBufferManager() { return &m_ObjectBufferManager; }
+	CRendererManager* GetRendererManager() { return &m_RendererManager; }
+	CShaderManager* GetShaderManager() { return &m_ShaderManager; }
 
 	glm::vec3 GetEyePosition();
 	glm::mat4 GetViewMatrix();
@@ -43,9 +47,12 @@ protected:
 
 protected:
 	CCamera m_Camera;
-
+	
+	CRendererManager m_RendererManager;
+	CObjectBufferManager m_ObjectBufferManager;
 	CFrameBufferManager m_FrameBufferManager;
 	CShaderManager m_ShaderManager;
+
 	UINT m_uiScreenVAO;
 	UINT m_uiScreenVBO;
 };

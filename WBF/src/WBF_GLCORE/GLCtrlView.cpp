@@ -125,8 +125,15 @@ int CGLCtrlView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	if (CGLView::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
+	m_ObjectBufferManager.InitialData(this);
+	m_ObjectBufferManager.CreateObjectBuffer();
+
+	m_RendererManager.InitialData(this);
+	m_RendererManager.CreateRenderer();
+
 	BeginwglCurrent();
 	{
+		//m_ShaderManager.GLCreateShader();
 		m_FrameBufferManager.GLCreateBuffer();
 
 		GLCreateScreen();

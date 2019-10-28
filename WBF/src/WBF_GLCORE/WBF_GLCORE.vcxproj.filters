@@ -22,19 +22,28 @@
     <Filter Include="__RESOURCE__\file">
       <UniqueIdentifier>{1e24335f-e868-4352-81e2-852338db8ab5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SHADER">
+    <Filter Include="RENDER">
+      <UniqueIdentifier>{d26d4e6e-298d-4138-bf92-a5fe2a82b72a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RENDER\Shader">
       <UniqueIdentifier>{837ea97b-741a-4ee5-8c0c-cc746f3578be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="BUFFER">
+    <Filter Include="RENDER\Object Buffer">
+      <UniqueIdentifier>{e102204d-e7aa-46d8-aa8e-fffb037c6278}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RENDER\Frame Buffer">
       <UniqueIdentifier>{8b970f71-3770-4fad-8d36-5c7d5d7e6b9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RENDER\Renderer">
+      <UniqueIdentifier>{cede0396-c797-41ce-adb3-6f121bc0b1de}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FrameBuffer.cpp">
-      <Filter>BUFFER</Filter>
+      <Filter>RENDER\Frame Buffer</Filter>
     </ClCompile>
     <ClCompile Include="FrameBufferManager.cpp">
-      <Filter>BUFFER</Filter>
+      <Filter>RENDER\Frame Buffer</Filter>
     </ClCompile>
     <ClCompile Include="GLView.cpp">
       <Filter>VIEW</Filter>
@@ -52,10 +61,28 @@
       <Filter>__GENERAL__</Filter>
     </ClCompile>
     <ClCompile Include="Shader.cpp">
-      <Filter>SHADER</Filter>
+      <Filter>RENDER\Shader</Filter>
     </ClCompile>
     <ClCompile Include="ShaderManager.cpp">
-      <Filter>SHADER</Filter>
+      <Filter>RENDER\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectBufferManager.cpp">
+      <Filter>RENDER\Object Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="RendererManager.cpp">
+      <Filter>RENDER\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="RendererFactory.cpp">
+      <Filter>RENDER\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectBufferFactory.cpp">
+      <Filter>RENDER\Object Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectBuffer.cpp">
+      <Filter>RENDER\Object Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="DataRenderer.cpp">
+      <Filter>RENDER\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,10 +128,10 @@
       <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="FrameBuffer.h">
-      <Filter>BUFFER</Filter>
+      <Filter>RENDER\Frame Buffer</Filter>
     </ClInclude>
     <ClInclude Include="FrameBufferManager.h">
-      <Filter>BUFFER</Filter>
+      <Filter>RENDER\Frame Buffer</Filter>
     </ClInclude>
     <ClInclude Include="GLView.h">
       <Filter>VIEW</Filter>
@@ -128,13 +155,31 @@
       <Filter>__RESOURCE__</Filter>
     </ClInclude>
     <ClInclude Include="Shader.h">
-      <Filter>SHADER</Filter>
+      <Filter>RENDER\Shader</Filter>
     </ClInclude>
     <ClInclude Include="ShaderDefine.h">
-      <Filter>SHADER</Filter>
+      <Filter>RENDER\Shader</Filter>
     </ClInclude>
     <ClInclude Include="ShaderManager.h">
-      <Filter>SHADER</Filter>
+      <Filter>RENDER\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBufferManager.h">
+      <Filter>RENDER\Object Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="RendererManager.h">
+      <Filter>RENDER\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="RendererFactory.h">
+      <Filter>RENDER\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBufferFactory.h">
+      <Filter>RENDER\Object Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBuffer.h">
+      <Filter>RENDER\Object Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="DataRenderer.h">
+      <Filter>RENDER\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

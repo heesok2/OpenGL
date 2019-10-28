@@ -1,64 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="_common_">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="__GENERAL__">
+      <UniqueIdentifier>{a7ecc689-09fc-4621-a8eb-75d520a52105}</UniqueIdentifier>
     </Filter>
-    <Filter Include="_resource file_">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="__RESOURCE__">
+      <UniqueIdentifier>{8bb77b93-4ba2-46dc-bc4d-d25c6f575bf4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="_resource_">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="__RESOURCE__\file">
+      <UniqueIdentifier>{cecfe866-dcfe-421e-ba80-b2f1fa4be101}</UniqueIdentifier>
     </Filter>
-    <Filter Include="_common_\Linker">
+    <Filter Include="__GENERAL__\Linker">
       <UniqueIdentifier>{c683b2e9-75c0-41ad-a126-b359433df904}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
-      <Filter>_common_</Filter>
+      <Filter>__GENERAL__</Filter>
     </ClCompile>
     <ClCompile Include="WAF_DATA.cpp">
-      <Filter>_common_</Filter>
+      <Filter>__GENERAL__</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="WAF_DATA.def">
-      <Filter>_common_</Filter>
-    </None>
     <None Include="res\WAF_DATA.rc2">
-      <Filter>_resource_</Filter>
+      <Filter>__RESOURCE__</Filter>
+    </None>
+    <None Include="WAF_DATA.def">
+      <Filter>__GENERAL__</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Resource.h">
-      <Filter>_resource_</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>_common_</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>_common_</Filter>
-    </ClInclude>
-    <ClInclude Include="WAF_DATA.h">
-      <Filter>_common_</Filter>
-    </ClInclude>
     <ClInclude Include="HeaderPost.h">
-      <Filter>_common_\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="HeaderPre.h">
-      <Filter>_common_\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="WAF_DATA_LINK.h">
-      <Filter>_common_\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>__RESOURCE__</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="WAF_DATA.h">
+      <Filter>__GENERAL__</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WAF_DATA.rc">
-      <Filter>_resource_</Filter>
+      <Filter>__RESOURCE__</Filter>
     </ResourceCompile>
   </ItemGroup>
 </Project>

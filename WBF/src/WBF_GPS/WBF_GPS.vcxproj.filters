@@ -22,6 +22,15 @@
     <Filter Include="VBO\Geometry">
       <UniqueIdentifier>{7808e427-c9ec-4b04-881a-da3b71f5e025}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RENDER">
+      <UniqueIdentifier>{ffd279ef-94f6-4fd4-800a-5f782c0366bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RENDER\Object Buffer">
+      <UniqueIdentifier>{5c098499-e86b-4215-92c1-cf939ff1a8bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RENDER\Renderer">
+      <UniqueIdentifier>{e6bb637e-09c3-42b2-9100-24e809bf2008}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VBOGeom.cpp">
@@ -35,6 +44,12 @@
     </ClCompile>
     <ClCompile Include="WBFGPSOption.cpp">
       <Filter>OPTION</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryBuffer.cpp">
+      <Filter>RENDER\Object Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxRenderer.cpp">
+      <Filter>RENDER\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +87,18 @@
     </ClInclude>
     <ClInclude Include="WBFGPSOption.h">
       <Filter>OPTION</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryBuffer.h">
+      <Filter>RENDER\Object Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferType.h">
+      <Filter>RENDER\Object Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxRenderer.h">
+      <Filter>RENDER\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="RendererType.h">
+      <Filter>RENDER\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

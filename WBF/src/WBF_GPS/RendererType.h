@@ -1,0 +1,13 @@
+#pragma once
+
+#ifndef DEF_RENDERER_TYPE
+
+enum E_RENDERER_TYPE
+{
+	E_RENDERER_UNKNOWN = -1,
+	E_RENDERER_BOX,
+
+	E_RENDERER_NUM
+};
+
+#endif // !DEF_RENDERER_TYPE
