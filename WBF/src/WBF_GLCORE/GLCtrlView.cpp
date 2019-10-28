@@ -40,13 +40,15 @@ void CGLCtrlView::OnDraw(CDC* pDC)
 			auto Shader = m_ShaderManager.GetShader(E_SHADER_SCREEN);
 
 			glDisable(GL_DEPTH_TEST);
+			glClearColor(0.f, 0.f, 0.f, 1.f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			Shader.GLBind();
 			m_FrameBufferManager.GLBindColorTex2D(E_FBO_MODEL);
 			{
 				glBindVertexArray(m_uiScreenVAO);
-				glDrawArrays(GL_TRIANGLES, 0, 6);				
+				glDrawArrays(GL_TRIANGLES, 0, 6);
+				glBindVertexArray(0);
 			}
 			m_FrameBufferManager.GLUnbindColorTex2D(E_FBO_MODEL);
 			Shader.GLUnbind();
@@ -111,9 +113,11 @@ void CGLCtrlView::GLCreateScreen()
 		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 4, nullptr);
 		glEnableVertexAttribArray(1);
 		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 4, (void*)(sizeof(float) * 2));
+		
+		ShaderScreen.GLSetInt("ScreenTex2D", 0);
 	}
-	glBindVertexArray(m_uiScreenVAO);
-	glBindBuffer(GL_ARRAY_BUFFER, m_uiScreenVBO);
+	glBindVertexArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
 int CGLCtrlView::OnCreate(LPCREATESTRUCT lpCreateStruct)

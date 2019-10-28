@@ -14,10 +14,10 @@ public:
 
 	void GLBind();
 	void GLUnbind();
-	void GLSetInt(CString strName, int nData);
-	void GLSetBoolean(CString strName, bool bData);
-	void GLSetfloat(CString strName, float fData);
-	void GLSetDouble(CString strName, double dData);
+	BOOL GLSetInt(const char* aName, int nData);
+	BOOL GLSetBoolean(const char* aName, bool bData);
+	BOOL GLSetfloat(const char* aName, float fData);
+	BOOL GLSetDouble(const char* aName, double dData);
 
 protected:
 	unsigned int m_nProg;

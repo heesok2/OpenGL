@@ -2,11 +2,11 @@
 
 in vec2 aTexCoordinate;
 
-out vec4 FragColor;
+uniform sampler2D ScreenTex2D;
 
-uniform Sampler2D screen;
+out vec4 FragColor;
 
 void main()
 {
-	FragColor = vec4(texture(screen, aTexCoordinate).rgb, 1.f);
+	FragColor = vec4(texture(ScreenTex2D, aTexCoordinate).rgb, 1.f);
 }

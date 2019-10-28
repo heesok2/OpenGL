@@ -57,6 +57,12 @@ void CShaderManager::GLCreateShader(UINT uiType)
 
 	switch (uiType)
 	{
+	case E_SHADER_SCREEN:
+		{
+			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_GLSL_SCREEN_VERT);
+			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_GLSL_SCREEN_FRAG);
+		}
+		break;
 	case E_SHADER_SAMPLE:
 		{
 			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_GLSL_SAMPLE_VERT);
@@ -76,6 +82,9 @@ void CShaderManager::GLCreateShader(UINT uiType)
 		}
 		break;
 	default:
+		{
+			ASSERT(g_warning);
+		}
 		break;
 	}
 

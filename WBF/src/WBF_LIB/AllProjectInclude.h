@@ -20,6 +20,6 @@ static BOOL g_warning = FALSE;
 #define KEY_IS_VALID(x) ((x) > 0)
 
 #define _SAFE_DELETE(x) {if(x){delete (x);(x)=NULL;}}
-#define _SAFE_DELETE_ARRAY(x) { if(x){delete[] (x); (x)=NULL;}}
+#define _SAFE_DELETE_ARRAY(x) { if(x){delete[] (x); (x)=NULL;} }
 
 #endif // !GLOBAL_DEF

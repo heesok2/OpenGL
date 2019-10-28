@@ -25,14 +25,14 @@
     <Filter Include="__GENERAL__">
       <UniqueIdentifier>{3fec9720-7f37-4d53-999c-518768da5397}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Include\Linker">
-      <UniqueIdentifier>{c6217dcf-3e8b-4f8c-a53c-bcb6d39960ab}</UniqueIdentifier>
-    </Filter>
     <Filter Include="__RESOURCE__">
       <UniqueIdentifier>{5a1af636-c5ea-49cb-b83a-a52b7bc9b04c}</UniqueIdentifier>
     </Filter>
     <Filter Include="__RESOURCE__\file">
       <UniqueIdentifier>{187132cc-21ce-4908-9a95-4c6a61593fd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="__GENERAL__\Linker">
+      <UniqueIdentifier>{c6217dcf-3e8b-4f8c-a53c-bcb6d39960ab}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -67,18 +67,18 @@
       <Filter>Notify\Listener</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
-      <Filter>Include</Filter>
+      <Filter>__GENERAL__</Filter>
     </ClCompile>
     <ClCompile Include="WBF_LIB.cpp">
-      <Filter>Include</Filter>
+      <Filter>__GENERAL__</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="WBF_LIB.def">
-      <Filter>Include</Filter>
-    </None>
     <None Include="res\WBF_LIB.rc2">
       <Filter>__RESOURCE__</Filter>
+    </None>
+    <None Include="WBF_LIB.def">
+      <Filter>__GENERAL__</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -86,13 +86,13 @@
       <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="HeaderPre.h">
-      <Filter>Include\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="HeaderPost.h">
-      <Filter>Include\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="WBF_LIB_LINK.h">
-      <Filter>Include\Linker</Filter>
+      <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
     <ClInclude Include="AllGraphicInclude.h">
       <Filter>Include</Filter>
@@ -145,17 +145,17 @@
     <ClInclude Include="DataBaseDefine.h">
       <Filter>DataBase</Filter>
     </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Include</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Include</Filter>
-    </ClInclude>
-    <ClInclude Include="WBF_LIB.h">
-      <Filter>Include</Filter>
-    </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>__RESOURCE__</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="WBF_LIB.h">
+      <Filter>__GENERAL__</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

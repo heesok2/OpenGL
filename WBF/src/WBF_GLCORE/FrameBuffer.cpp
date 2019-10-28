@@ -32,6 +32,10 @@ void CFrameBuffer::GLBind()
 		glBindFramebuffer(GL_FRAMEBUFFER, m_uiFBO);
 		m_uiPrevFBO = uiFBO;
 	}
+	else
+	{
+		glBindFramebuffer(GL_FRAMEBUFFER, m_uiFBO);
+	}
 }
 
 void CFrameBuffer::GLUnbind()

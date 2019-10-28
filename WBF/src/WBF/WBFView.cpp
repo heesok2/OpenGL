@@ -85,6 +85,7 @@ void CWBFView::OnDraw(CDC* pDC)
 		glPushAttrib(GL_ALL_ATTRIB_BITS);
 		GLBindFrameBuffer(E_FBO_MODEL);
 		{
+			glClearColor(0.f, 0.f, 0.f, 1.f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			m_pModelMgr->GLInitialData();
@@ -211,7 +212,6 @@ int CWBFView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	return 0;
 }
-
 
 void CWBFView::OnDestroy()
 {

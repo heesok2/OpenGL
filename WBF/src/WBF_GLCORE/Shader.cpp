@@ -160,21 +160,38 @@ void CShader::GLUnbind()
 	glUseProgram(0);
 }
 
-void CShader::GLSetInt(CString strName, int nData)
+BOOL CShader::GLSetInt(const char * aName, int nData)
 {
-
-
-	//glUniform1i(glGetUniformLocation(m_nProg, strName.GetBuffer()), (int)value);
+	auto nID = glGetUniformLocation(m_nProg, aName);
+	if (nID == -1) return FALSE;
+	
+	glUniform1i(nID, nData);
+	return TRUE;
 }
 
-void CShader::GLSetBoolean(CString strName, bool bData)
+BOOL CShader::GLSetBoolean(const char * aName, bool bData)
 {
+	auto nID = glGetUniformLocation(m_nProg, aName);
+	if (nID == -1) return FALSE;
+	
+	glUniform1i(nID, bData);
+	return TRUE;
 }
 
-void CShader::GLSetfloat(CString strName, float fData)
+BOOL CShader::GLSetfloat(const char * aName, float fData)
 {
+	auto nID = glGetUniformLocation(m_nProg, aName);
+	if (nID == -1) return FALSE; 
+	
+	glUniform1f(nID, fData);
+	return TRUE;
 }
 
-void CShader::GLSetDouble(CString strName, double dData)
+BOOL CShader::GLSetDouble(const char * aName, double dData)
 {
+	auto nID = glGetUniformLocation(m_nProg, aName);
+	if (nID == -1) return FALSE; 
+	
+	glUniform1d(nID, dData);
+	return TRUE;
 }
