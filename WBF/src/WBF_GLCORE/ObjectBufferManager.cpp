@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "ObjectBufferManager.h"
 #include "ObjectBuffer.h"
+#include "ViewHelper.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -68,6 +69,9 @@ CObjectBuffer * CObjectBufferManager::LookUp(UINT uiType)
 
 void CObjectBufferManager::GLBuildObjectBuffer(UINT uiFlag)
 {
+	CViewHelper tHelper;
+	tHelper.InitialData(m_pView);
+
 	auto pDoc = m_pView->GetDocument();
 
 	auto itr = m_mObjectBuffer.begin();
@@ -75,7 +79,10 @@ void CObjectBufferManager::GLBuildObjectBuffer(UINT uiFlag)
 	{
 		auto pObject = itr->second;
 		if (pObject != nullptr)
-			pObject->GLBuild(pDoc, uiFlag);
+		{
+			pObject->GLRelease();
+			pObject->GLBuild(&tHelper, uiFlag);
+		}
 
 		itr++;
 	}

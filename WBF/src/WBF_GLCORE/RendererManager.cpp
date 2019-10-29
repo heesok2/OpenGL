@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "RendererManager.h"
 #include "DataRenderer.h"
+#include "ViewHelper.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -50,14 +51,17 @@ void CRendererManager::CreateRenderer()
 
 void CRendererManager::GLBuildRenderer(UINT uiFlag)
 {
-	auto pDoc = m_pView->GetDocument();
+	CViewHelper tHelper;
+	tHelper.InitialData(m_pView);
 
 	auto itr = m_mRenderer.begin();
 	while (itr != m_mRenderer.end())
 	{
 		auto pObject = itr->second;
 		if (pObject != nullptr)
-			pObject->GLBuild(pDoc, uiFlag);
+		{
+			pObject->GLBuild(&tHelper, uiFlag);
+		}
 
 		itr++;
 	}

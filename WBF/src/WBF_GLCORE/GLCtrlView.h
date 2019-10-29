@@ -33,6 +33,7 @@ protected:
 	void GLBindFrameBuffer(UINT uiType);
 	void GLUnbindFrameBuffer(UINT uiType);
 	void GLCreateScreen();
+	void GLPrepareScene();
 
 protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);

@@ -16,6 +16,7 @@ public:
 
 	void GLShaderVersion();
 	void GLCreateShader(UINT uiType);
+	void GLCreateAllShader();
 
 protected:
 	std::map<unsigned int, CShader> m_mBuildShader;

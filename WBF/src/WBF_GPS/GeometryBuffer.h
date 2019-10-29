@@ -4,6 +4,7 @@
 
 #include "HeaderPre.h"
 
+class CViewHelper;
 class __MY_EXT_CLASS__ CGeometryBuffer : public CObjectBuffer
 {
 public:
@@ -14,7 +15,7 @@ public:
 
 public:
 	virtual void GLRelease() override;
-	virtual void GLBuild(CDocument * pDoc, UINT uiFlag) override;
+	virtual void GLBuild(CViewHelper* pHelper, UINT uiFlag) override;
 	virtual long GetObjectBuffer(std::vector<TObjectBuffer>& lstObjectBuffer) override;
 
 protected:

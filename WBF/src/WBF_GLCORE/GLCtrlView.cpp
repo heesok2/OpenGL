@@ -2,7 +2,7 @@
 #include "GLCtrlView.h"
 #include "ShaderDefine.h"
 
-#include "..\WBF_LIB\DataBaseDefine.h"
+#include "..\WBF_LIB\NotifyDefine.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -70,12 +70,12 @@ void CGLCtrlView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 	auto eNotify = lHint;
 	switch (eNotify)
 	{
-	case E_DB_CHANGED:
+	case E_DOC_DB_UPDATE:
 		{
 			BeginwglCurrent();
 			{
-				//m_ObjectBufferManager.GLBuildObjectBuffer();
-				//m_
+				//m_ObjectBufferManager.GLBuildObjectBuffer(0);
+				//m_RendererManager.GLBuildRenderer(0);
 			}
 			EndwglCurrent();
 		}
@@ -144,6 +144,16 @@ void CGLCtrlView::GLCreateScreen()
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
+void CGLCtrlView::GLPrepareScene()
+{
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glMultMatrixf((float*)&m_Camera.GetProjectionMatrix());
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glMultMatrixf((float*)&m_Camera.GetViewMatrix());
+}
+
 int CGLCtrlView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
 	if (CGLView::OnCreate(lpCreateStruct) == -1)
@@ -157,7 +167,7 @@ int CGLCtrlView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	BeginwglCurrent();
 	{
-		//m_ShaderManager.GLCreateShader();
+		m_ShaderManager.GLCreateAllShader();
 		m_FrameBufferManager.GLCreateBuffer();
 
 		GLCreateScreen();

@@ -4,6 +4,7 @@
 
 #include "..\WBF_LIB\Package.h"
 #include "..\WBF_BASE\DocBase.h"
+#include "..\WBF_GLCORE\ViewHelper.h"
 #include "..\WBF_DATA\ModuleVertex.h"
 #include "..\WBF_DATA\ModuleSubBody.h"
 #include "..\WBF_DATA\ModuleBody.h"
@@ -37,9 +38,9 @@ void CGeometryBuffer::GLRelease()
 	m_lstObjectBuffer.clear();
 }
 
-void CGeometryBuffer::GLBuild(CDocument * pDoc, UINT uiFlag)
+void CGeometryBuffer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 {
-	auto pDocBase = (CDocBase*)pDoc;
+	auto pDocBase = (CDocBase*)pHelper->GetDocument();
 	auto pPackage = pDocBase->GetPackage();
 	auto pModuleVertex = (CModuleVertex*)pPackage->GetModule(E_TYPE_VERTEX);
 	auto pModuleSubBody = (CModuleSubBody*)pPackage->GetModule(E_TYPE_SUBBODY);
@@ -147,7 +148,7 @@ void CGeometryBuffer::GLBuild(CDocument * pDoc, UINT uiFlag)
 		tBuffer.uiVAO = VAO;
 		tBuffer.uiVBO = VBO;
 		tBuffer.uiEBO = EBO;
-		tBuffer.uiDataSize = lBufferIndxNum;
+		tBuffer.uiSize = lBufferIndxNum;
 
 		m_lstObjectBuffer.push_back(std::move(tBuffer));
 

@@ -200,6 +200,7 @@ void CModelSample::GLBind()
 
 void CModelSample::GLDraw()
 {
+	return;
 	glm::vec3 cubePositions[] =
 	{
 		glm::vec3(0.0f,  0.0f,  0.0f),

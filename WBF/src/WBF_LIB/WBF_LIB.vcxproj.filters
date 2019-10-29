@@ -37,6 +37,12 @@
     <Filter Include="INCLUDE">
       <UniqueIdentifier>{d1234725-8e25-4f32-a1a6-ae5a73524699}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UTILITY\Notify">
+      <UniqueIdentifier>{eaea628e-13d6-4ce7-8b70-c66e291bb89f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NOTIFY">
+      <UniqueIdentifier>{007e0903-b04f-4109-a1ac-bc8835419edf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBFSubject.cpp">
@@ -159,6 +165,9 @@
     </ClInclude>
     <ClInclude Include="AllGraphicInclude.h">
       <Filter>INCLUDE</Filter>
+    </ClInclude>
+    <ClInclude Include="NotifyDefine.h">
+      <Filter>NOTIFY</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

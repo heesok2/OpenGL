@@ -82,17 +82,25 @@ void CWBFView::OnDraw(CDC* pDC)
 
 	BeginwglCurrent();
 	{
-		glPushAttrib(GL_ALL_ATTRIB_BITS);
 		GLBindFrameBuffer(E_FBO_MODEL);
+
+		glPushMatrix();
+		glPushAttrib(GL_ALL_ATTRIB_BITS);
 		{
 			glClearColor(0.f, 0.f, 0.f, 1.f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+			GLPrepareScene();
+
 			m_pModelMgr->GLInitialData();
 			m_pRndrMgr->GLDrawScene();
 		}
-		GLUnbindFrameBuffer(E_FBO_MODEL);
+
 		glPopAttrib();
+		glPopMatrix();
+
+		GLUnbindFrameBuffer(E_FBO_MODEL);
+		
 	}
 	EndwglCurrent();
 

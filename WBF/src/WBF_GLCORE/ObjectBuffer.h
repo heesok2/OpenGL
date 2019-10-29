@@ -12,14 +12,15 @@ typedef struct tagObjectBuffer
 	UINT uiVAO;
 	UINT uiVBO;
 	UINT uiEBO;
-	UINT uiDataSize;
+	UINT uiSize;
 
 	tagObjectBuffer(UINT _uiVAO = 0, UINT _uiVBO = 0, UINT _uiEBO = 0, UINT _uiDataSize = 0)
-		: uiKey(0), uiVAO(_uiVAO), uiVBO(_uiVBO), uiEBO(_uiEBO), uiDataSize(_uiDataSize)
+		: uiKey(0), uiVAO(_uiVAO), uiVBO(_uiVBO), uiEBO(_uiEBO), uiSize(_uiDataSize)
 	{}
 
 } TObjectBuffer, *LPObjectBuffer;
 
+class CViewHelper;
 class __MY_EXT_CLASS__ CObjectBuffer : public CFactoryObjectBase
 {
 public:
@@ -28,7 +29,7 @@ public:
 
 public:
 	virtual void GLRelease() = 0;
-	virtual void GLBuild(CDocument* pDoc, UINT uiFlag) = 0;
+	virtual void GLBuild(CViewHelper * pHelper, UINT uiFlag) = 0;
 	virtual long GetObjectBuffer(std::vector<TObjectBuffer>& lstObjectBuffer) = 0;
 	
 };

@@ -239,6 +239,7 @@
     <ClInclude Include="ListenerDefine.h" />
     <ClInclude Include="ModuleBase.h" />
     <ClInclude Include="ModuleData.hpp" />
+    <ClInclude Include="NotifyDefine.h" />
     <ClInclude Include="Package.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stb_image.h" />

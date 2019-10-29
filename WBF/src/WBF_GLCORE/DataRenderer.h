@@ -5,6 +5,7 @@
 
 #include "HeaderPre.h"
 
+class CViewHelper;
 class __MY_EXT_CLASS__ CDataRenderer : public CFactoryObjectBase
 {
 public:
@@ -12,7 +13,7 @@ public:
 	virtual ~CDataRenderer();
 
 public:
-	virtual void GLBuild(CDocument * pDoc, UINT uiFlag) = 0;
+	virtual void GLBuild(CViewHelper * pHelper, UINT uiFlag) = 0;
 	virtual void GLDraw() = 0;
 
 };

@@ -13,7 +13,7 @@ public:
 	DECLARE_DYNAMIC_RENDERER(CBoxRenderer);
 
 public:
-	virtual void GLBuild(CDocument * pDoc, UINT uiFlag) override;
+	virtual void GLBuild(CViewHelper * pHelper, UINT uiFlag) override;
 	virtual void GLDraw() override;
 };
 

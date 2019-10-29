@@ -91,3 +91,9 @@ void CShaderManager::GLCreateShader(UINT uiType)
 	shader.GLLinkShader();
 	m_mBuildShader[uiType] = shader;
 }
+
+void CShaderManager::GLCreateAllShader()
+{
+	for (auto indx = 0; indx < E_SHADER_NUM; ++indx)
+		GLCreateShader(indx);
+}
