@@ -238,6 +238,8 @@
     <None Include="res\GLSL\Sample_vert.glsl" />
     <None Include="res\GLSL\Screen_frag.glsl" />
     <None Include="res\GLSL\Screen_vert.glsl" />
+    <None Include="res\GLSL\ContainerBox_frag.glsl" />
+    <None Include="res\GLSL\ContainerBox_vert.glsl" />
     <None Include="res\WBF_GLCORE.rc2" />
     <None Include="WBF_GLCORE.def" />
   </ItemGroup>

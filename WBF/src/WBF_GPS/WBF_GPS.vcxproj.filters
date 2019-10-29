@@ -51,7 +51,7 @@
     <ClCompile Include="GeometryBuffer.cpp">
       <Filter>RENDER\Object Buffer</Filter>
     </ClCompile>
-    <ClCompile Include="BoxRenderer.cpp">
+    <ClCompile Include="ContainerBoxRenderer.cpp">
       <Filter>RENDER\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
@@ -94,14 +94,14 @@
     <ClInclude Include="GeometryBuffer.h">
       <Filter>RENDER\Object Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="BoxRenderer.h">
-      <Filter>RENDER\Renderer</Filter>
-    </ClInclude>
     <ClInclude Include="BufferType.h">
       <Filter>RENDER\Define</Filter>
     </ClInclude>
     <ClInclude Include="RendererType.h">
       <Filter>RENDER\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="ContainerBoxRenderer.h">
+      <Filter>RENDER\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

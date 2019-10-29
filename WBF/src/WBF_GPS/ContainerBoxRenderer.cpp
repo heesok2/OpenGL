@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "BoxRenderer.h"
+#include "ContainerBoxRenderer.h"
 #include "RendererType.h"
 #include "BufferType.h"
 #include "GeometryBuffer.h"
@@ -11,18 +11,19 @@
 #include "..\WBF_GLCORE\ViewHelper.h"
 #include "..\WBF_GLCORE\ObjectBufferManager.h"
 
-IMPLEMENT_DYNAMIC_RENDERER(CBoxRenderer, E_RENDERER_BOX);
+IMPLEMENT_DYNAMIC_RENDERER(CContainerBoxRenderer, E_RENDERER_CONTAINER_BOX);
 
-CBoxRenderer::CBoxRenderer()
+CContainerBoxRenderer::CContainerBoxRenderer()
 {
 }
 
-CBoxRenderer::~CBoxRenderer()
+
+CContainerBoxRenderer::~CContainerBoxRenderer()
 {
 }
 
-void CBoxRenderer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
-{\
+void CContainerBoxRenderer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
+{
 	auto pDoc = (CDocBase*)pHelper->GetDocument();
 	auto pPackage = pDoc->GetPackage();
 	auto pModuleBox = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
@@ -38,44 +39,44 @@ void CBoxRenderer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 
 	for (auto& obj : lstObjectBuffer)
 	{
-		
+
 
 	}
 
 
-/*
-	auto pManager = m_pModelMgr->GetVBOManager();
-	auto pGeom = (CVBOGeom*)pManager->Lookup(E_VBO_GEOM);
+	/*
+		auto pManager = m_pModelMgr->GetVBOManager();
+		auto pGeom = (CVBOGeom*)pManager->Lookup(E_VBO_GEOM);
 
-	std::vector<CEntityLight> lstLight;
-	auto lLightNum = pModuleLight->GetDataList(lstLight);
+		std::vector<CEntityLight> lstLight;
+		auto lLightNum = pModuleLight->GetDataList(lstLight);
 
-	glm::vec3 aLightPos;
-	if (lLightNum > 0) aLightPos = lstLight.front().vPos;
-	else aLightPos = glm::vec3(1.f, 1.f, 1.f);
+		glm::vec3 aLightPos;
+		if (lLightNum > 0) aLightPos = lstLight.front().vPos;
+		else aLightPos = glm::vec3(1.f, 1.f, 1.f);
 
 
-	std::vector<CEntityBox> lstBox;
-	auto lBoxNum = pModuleBox->GetDataList(lstBox);
+		std::vector<CEntityBox> lstBox;
+		auto lBoxNum = pModuleBox->GetDataList(lstBox);
 
-	for (auto lbox = 0; lbox < lBoxNum; ++lbox)
-	{
-		auto itr = lstBox[lbox].itrBody;
-		auto key = ITR_TO_KEY(itr);
+		for (auto lbox = 0; lbox < lBoxNum; ++lbox)
+		{
+			auto itr = lstBox[lbox].itrBody;
+			auto key = ITR_TO_KEY(itr);
 
-		TEntityVBO tVBO;
-		if (!pGeom->GetVBO(key, tVBO))
-			continue;
+			TEntityVBO tVBO;
+			if (!pGeom->GetVBO(key, tVBO))
+				continue;
 
-		TModelBox box;
-		box.uiVAO = tVBO.VAO;
-		box.uiDataNum = tVBO.DataNum;
-		box.ModelPos = lstBox[lbox].vPos;
-		box.LightPos = aLightPos;
+			TModelBox box;
+			box.uiVAO = tVBO.VAO;
+			box.uiDataNum = tVBO.DataNum;
+			box.ModelPos = lstBox[lbox].vPos;
+			box.LightPos = aLightPos;
 
-		m_lstBox.push_back(std::move(box));
-	}
-*/
+			m_lstBox.push_back(std::move(box));
+		}
+	*/
 
 
 	//auto pDocBase = (CDocBase*)pDoc;
@@ -118,6 +119,6 @@ void CBoxRenderer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 	}*/
 }
 
-void CBoxRenderer::GLDraw()
+void CContainerBoxRenderer::GLDraw()
 {
 }

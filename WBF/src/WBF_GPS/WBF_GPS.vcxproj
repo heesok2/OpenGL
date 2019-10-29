@@ -207,7 +207,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BoxRenderer.cpp" />
+    <ClCompile Include="ContainerBoxRenderer.cpp" />
     <ClCompile Include="GeometryBuffer.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -224,7 +224,7 @@
     <None Include="WBF_GPS.def" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BoxRenderer.h" />
+    <ClInclude Include="ContainerBoxRenderer.h" />
     <ClInclude Include="GeometryBuffer.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />

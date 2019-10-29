@@ -97,10 +97,10 @@ void CModelBox::Draw(CShader * pShader)
 			auto modelLoc = glGetUniformLocation(nProg, "model");
 			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(mod));
 
-			auto viewLoc = glGetUniformLocation(nProg, "view");
+			auto viewLoc = glGetUniformLocation(nProg, "view");  // glsl build-in uniforms 에서 제외되서 직접 추가해주어야 한다.
 			glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
 
-			auto projLoc = glGetUniformLocation(nProg, "projection");
+			auto projLoc = glGetUniformLocation(nProg, "projection"); // glsl build-in uniforms 에서 제외되서 직접 추가해주어야 한다.
 			glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj));
 
 			auto modelColor = glGetUniformLocation(nProg, "ourModelColor");

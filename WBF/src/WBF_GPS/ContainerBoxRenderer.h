@@ -4,13 +4,13 @@
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CBoxRenderer : public CDataRenderer
+class __MY_EXT_CLASS__ CContainerBoxRenderer : public CDataRenderer
 {
 public:
-	CBoxRenderer();
-	virtual ~CBoxRenderer();
+	CContainerBoxRenderer();
+	virtual ~CContainerBoxRenderer();
 
-	DECLARE_DYNAMIC_RENDERER(CBoxRenderer);
+	DECLARE_DYNAMIC_RENDERER(CContainerBoxRenderer);
 
 public:
 	virtual void GLBuild(CViewHelper * pHelper, UINT uiFlag) override;
