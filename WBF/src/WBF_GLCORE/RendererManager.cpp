@@ -71,3 +71,19 @@ void CRendererManager::GLDeleteRenderer()
 
 	m_mRenderer.clear();
 }
+
+void CRendererManager::GLDrawScene()
+{
+	CViewHelper tHelper;
+	tHelper.InitialData(m_pView);
+
+	auto itr = m_mRenderer.begin();
+	while (itr != m_mRenderer.end())
+	{
+		auto pObject = itr->second;
+		if (pObject != nullptr)
+			pObject->GLDraw(&tHelper);
+
+		itr++;
+	}
+}

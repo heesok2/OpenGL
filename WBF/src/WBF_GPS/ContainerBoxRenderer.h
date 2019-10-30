@@ -8,10 +8,10 @@ class __MY_EXT_CLASS__ CContainerBoxRenderer : public CDataRenderer
 {
 	typedef struct tagContainerBox
 	{
-		glm::mat4 glModelViewProjectionMatrix; // Position translation
 		glm::mat4 glModelMatrix;
+		glm::mat4 glModelViewProjectionMatrix; // Position translation
 
-		glm::vec3 CameraPos;
+		glm::vec3 EyePos;
 		glm::vec3 LightPos;
 
 		glm::vec3 glModelColor;
@@ -30,10 +30,10 @@ public:
 
 public:
 	virtual void GLBuild(CViewHelper * pHelper, UINT uiFlag) override;
-	virtual void GLDraw() override;
+	virtual void GLDraw(CViewHelper * pHelper) override;
 
 public:
-	std::vector<TContainerBox> m_lstData;
+	std::vector<TContainerBox> m_aData;
 };
 
 #include "HeaderPost.h"

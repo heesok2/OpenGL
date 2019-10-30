@@ -11,6 +11,7 @@
 #include "..\WBF_DATA\ModuleBox.h"
 #include "..\WBF_DATA\ModuleLight.h"
 #include "..\WBF_GLCORE\ViewHelper.h"
+#include "..\WBF_GLCORE\ShaderDefine.h"
 #include "..\WBF_GLCORE\ObjectBufferManager.h"
 
 #ifdef _DEBUG
@@ -32,10 +33,12 @@ CContainerBoxRenderer::~CContainerBoxRenderer()
 
 void CContainerBoxRenderer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 {
+	m_aData.clear();
+
 	auto pDoc = (CDocBase*)pHelper->GetDocument();
 	auto pPackage = pDoc->GetPackage();
-	auto pModuleBody = (CModuleBody*)pPackage->GetModule(E_TYPE_BODY);
 	auto pModuleBox = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
+	auto pModuleBody = (CModuleBody*)pPackage->GetModule(E_TYPE_BODY);
 	auto pModuleLight = (CModuleLight*)pPackage->GetModule(E_TYPE_LIGHT);
 
 	auto pView = (CViewBase*)pHelper->GetView();
@@ -46,104 +49,66 @@ void CContainerBoxRenderer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 	auto szObjectBufferNum = pGeomBuffer->GetObjectBuffer(mObjectBuffer);
 	if (szObjectBufferNum == 0) return;
 
+	auto itrLight = pModuleLight->GetDefaultLight();
+	if (!ITR_IS_VALID(itrLight)) return;
+
+	auto tLight = pModuleLight->GetAtNU(itrLight);
+
+	auto LightPos = tLight.vPos;
+	auto EyePos = pView->GetEyePosition();
+	glm::vec3 glLightColor(1.f, 1.f, 1.f);
+	glm::vec3 glModelColor(0.8f, 0.8f, 0.8f);
 	auto glModelViewProjectionMatrix = pView->GetModelViewProjectionMatrix();
 
 	std::vector<DITER> aItrBox;
 	auto szBoxNum = pModuleBox->GetIterList(aItrBox);
 	for (auto indx = 0; indx < szBoxNum; ++indx)
 	{
-		//auto& tBox = pModuleBox->GetAtNU(aItrBox[indx]);
-		//auto BodyKey = ITR_TO_KEY(tBox.itrBody);
+		auto& tContainer = pModuleBox->GetAtNU(aItrBox[indx]);
+		auto BodyKey = ITR_TO_KEY(tContainer.itrBody);
 
-		//auto itrFind = mObjectBuffer.find(BodyKey);
-		//if (itrFind == mObjectBuffer.end()) continue;
+		auto itrFind = mObjectBuffer.find(BodyKey);
+		if (itrFind == mObjectBuffer.end()) continue;
 
-		//TContainerBox tData;
-		//tData.glModelViewProjectionMatrix = glModelViewProjectionMatrix;
-		//tData.glModelMatrix = 
-		////tData.glModelMatrix = bo;
+		TContainerBox tData;
+		
+		glm::mat4 ModelMatrix(1.f);
+		ModelMatrix = glm::translate(ModelMatrix, tContainer.vPos);
+		tData.glModelMatrix = ModelMatrix;
+		tData.glModelViewProjectionMatrix = glModelViewProjectionMatrix * ModelMatrix;
+		tData.EyePos = EyePos;
+		tData.LightPos = LightPos;
+		tData.glModelColor = glModelColor;
+		tData.glLightColor = glLightColor;
+		tData.uiVAO = itrFind->second.uiVAO;
+		tData.uiSize = itrFind->second.uiSize;
 
-
+		m_aData.push_back(std::move(tData));
 	}
-
-	
-
-
-	/*
-		auto pManager = m_pModelMgr->GetVBOManager();
-		auto pGeom = (CVBOGeom*)pManager->Lookup(E_VBO_GEOM);
-
-		std::vector<CEntityLight> lstLight;
-		auto lLightNum = pModuleLight->GetDataList(lstLight);
-
-		glm::vec3 aLightPos;
-		if (lLightNum > 0) aLightPos = lstLight.front().vPos;
-		else aLightPos = glm::vec3(1.f, 1.f, 1.f);
-
-
-		std::vector<CEntityBox> lstBox;
-		auto lBoxNum = pModuleBox->GetDataList(lstBox);
-
-		for (auto lbox = 0; lbox < lBoxNum; ++lbox)
-		{
-			auto itr = lstBox[lbox].itrBody;
-			auto key = ITR_TO_KEY(itr);
-
-			TEntityVBO tVBO;
-			if (!pGeom->GetVBO(key, tVBO))
-				continue;
-
-			TModelBox box;
-			box.uiVAO = tVBO.VAO;
-			box.uiDataNum = tVBO.DataNum;
-			box.ModelPos = lstBox[lbox].vPos;
-			box.LightPos = aLightPos;
-
-			m_lstBox.push_back(std::move(box));
-		}
-	*/
-
-
-	//auto pDocBase = (CDocBase*)pDoc;
-	//auto pPackage = pDocBase->GetPackage();
-	//auto pModuleBox = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
-	//auto pModuleLight = (CModuleLight*)pPackage->GetModule(E_TYPE_LIGHT);
-/*
-	auto p
-
-	auto pManager = m_pModelMgr->GetVBOManager();
-	auto pGeom = (CVBOGeom*)pManager->Lookup(E_VBO_GEOM);
-
-	std::vector<CEntityLight> lstLight;
-	auto lLightNum = pModuleLight->GetDataList(lstLight);
-
-	glm::vec3 aLightPos;
-	if (lLightNum > 0) aLightPos = lstLight.front().vPos;
-	else aLightPos = glm::vec3(1.f, 1.f, 1.f);
-
-
-	std::vector<CEntityBox> lstBox;
-	auto lBoxNum = pModuleBox->GetDataList(lstBox);
-
-	for (auto lbox = 0; lbox < lBoxNum; ++lbox)
-	{
-		auto itr = lstBox[lbox].itrBody;
-		auto key = ITR_TO_KEY(itr);
-
-		TEntityVBO tVBO;
-		if (!pGeom->GetVBO(key, tVBO))
-			continue;
-
-		TModelBox box;
-		box.uiVAO = tVBO.VAO;
-		box.uiDataNum = tVBO.DataNum;
-		box.ModelPos = lstBox[lbox].vPos;
-		box.LightPos = aLightPos;
-
-		m_lstBox.push_back(std::move(box));
-	}*/
 }
 
-void CContainerBoxRenderer::GLDraw()
+void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 {
+	if (m_aData.empty()) return;
+
+	auto pShaderManager = pHelper->GetShaderManager();
+	auto& Shader = pShaderManager->GetShader(E_SHADER_CONTAINER_BOX);
+	Shader.GLBind();
+	{
+		for (auto& tData : m_aData)
+		{
+			Shader.GLSetMatrix4("matModel", tData.glModelMatrix);
+			Shader.GLSetMatrix4("matModelViewProjection", tData.glModelViewProjectionMatrix);
+
+			Shader.GLSetVector3("aEyePos", tData.EyePos);
+			Shader.GLSetVector3("aLightPos", tData.LightPos);
+			Shader.GLSetVector3("aModelColor", tData.glModelColor);
+			Shader.GLSetVector3("aLightColor", tData.glLightColor);
+
+			glBindVertexArray(tData.uiVAO);
+			glDrawElements(GL_TRIANGLES, tData.uiSize, GL_UNSIGNED_INT, 0);
+			glBindVertexArray(0);
+		}
+	}
+	Shader.GLUnbind();
 }

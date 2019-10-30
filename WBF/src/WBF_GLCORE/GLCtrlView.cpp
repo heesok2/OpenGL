@@ -35,7 +35,7 @@ void CGLCtrlView::OnDraw(CDC* pDC)
 	// Model FrameBuffer 에 그림을 화면 ScreenBuffer에 그린다.
 	BeginwglCurrent();
 	{
-		if (glIsVertexArray(m_uiScreenVAO) == true)
+		if (glIsVertexArray(m_uiScreenVAO))
 		{
 			glPushAttrib(GL_ALL_ATTRIB_BITS);
 			m_FrameBufferManager.GLBindBuffer(E_FBO_SCREEN);

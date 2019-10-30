@@ -13,6 +13,13 @@ public:
 
 public:
 	virtual void SetDefaultData() override;
+
+public:
+	DITER GetDefaultLight();
+
+protected:
+	DKEY m_dbDefaultKey;
+
 };
 
 #include "HeaderPost.h"

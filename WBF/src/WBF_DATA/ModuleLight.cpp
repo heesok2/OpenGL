@@ -13,6 +13,7 @@ static char THIS_FILE[] = __FILE__;
 CModuleLight::CModuleLight(CPackage * pPackage)
 	: CModuleData<CEntityLight>(pPackage, E_TYPE_LIGHT)
 {
+	m_dbDefaultKey = 1;
 }
 
 CModuleLight::~CModuleLight()
@@ -27,10 +28,19 @@ void CModuleLight::SetDefaultData()
 	auto itr = pModuleBody->Find(1);
 
 	CEntityLight Data;
-	Data.dbKey = GetNewKey();
+	Data.dbKey = m_dbDefaultKey;
 	Data.uiType = E_ENT_POINT;
 	Data.itrBody = itr;
 	Data.vPos = glm::vec3(1.2f, 1.0f, 2.0f);
 
 	InsertNU(Data);
+}
+
+DITER CModuleLight::GetDefaultLight()
+{
+	auto itrLight = Find(m_dbDefaultKey);
+	if (!ITR_IS_VALID(itrLight))
+		ASSERT(g_warning);
+
+	return itrLight;
 }

@@ -94,6 +94,8 @@ void CWBFView::OnDraw(CDC* pDC)
 
 			m_pModelMgr->GLInitialData();
 			m_pRndrMgr->GLDrawScene();
+
+			m_RendererManager.GLDrawScene();
 		}
 
 		glPopAttrib();

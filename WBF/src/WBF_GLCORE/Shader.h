@@ -18,6 +18,8 @@ public:
 	BOOL GLSetBoolean(const char* aName, bool bData);
 	BOOL GLSetfloat(const char* aName, float fData);
 	BOOL GLSetDouble(const char* aName, double dData);
+	BOOL GLSetVector3(const char* aName, glm::vec3& vec3);
+	BOOL GLSetMatrix4(const char* aName, glm::mat4& mat4);
 
 protected:
 	unsigned int m_nProg;

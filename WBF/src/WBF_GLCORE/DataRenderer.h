@@ -14,7 +14,7 @@ public:
 
 public:
 	virtual void GLBuild(CViewHelper * pHelper, UINT uiFlag) = 0;
-	virtual void GLDraw() = 0;
+	virtual void GLDraw(CViewHelper * pHelper) = 0;
 
 };
 
