@@ -38,14 +38,14 @@ void CRndrBox::GLDraw()
 	auto pModel = ((CWBFModelManager*)m_pModelMgr)->GetModel(E_MODEL_BOX);
 	if (pModel == nullptr) return;
 
-	glPushAttrib(GL_ALL_ATTRIB_BITS);
+	//glPushAttrib(GL_ALL_ATTRIB_BITS);
 	{
-		glEnable(GL_DEPTH_TEST);
+		//glEnable(GL_DEPTH_TEST);
 
 		auto& Shader = pShaderMgr->GetShader(E_SHADER_BOX);
 		pModel->Draw(&Shader);
 
-		glDisable(GL_DEPTH_TEST);
+		//glDisable(GL_DEPTH_TEST);
 	}
-	glPopAttrib();
+	//glPopAttrib();
 }

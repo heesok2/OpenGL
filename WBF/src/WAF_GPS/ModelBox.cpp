@@ -78,7 +78,6 @@ void CModelBox::Build()
 
 void CModelBox::Draw(CShader * pShader)
 {
-	return;
 	auto pView = m_pModelMgr->GetView();
 
 	pShader->GLBind();

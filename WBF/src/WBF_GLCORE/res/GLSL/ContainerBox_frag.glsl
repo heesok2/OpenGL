@@ -12,7 +12,7 @@ uniform vec3 aLightColor;
 
 void main()
 {
-	float fAmbient = 0.1;
+	float fAmbient = 0.3;
 	vec3 aAmbientColor = fAmbient * aLightColor;
 
 	vec3 aNormal = normalize(aFragNormal);

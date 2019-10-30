@@ -90,10 +90,12 @@ void CWBFView::OnDraw(CDC* pDC)
 			glClearColor(0.f, 0.f, 0.f, 1.f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+			glEnable(GL_DEPTH_TEST);
+
 			GLPrepareScene();
 
-			m_pModelMgr->GLInitialData();
-			m_pRndrMgr->GLDrawScene();
+			//m_pModelMgr->GLInitialData();
+			//m_pRndrMgr->GLDrawScene();
 
 			m_RendererManager.GLDrawScene();
 		}
