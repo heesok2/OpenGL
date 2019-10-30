@@ -28,6 +28,7 @@ public:
 	glm::vec3 GetEyePosition();
 	glm::mat4 GetViewMatrix();
 	glm::mat4 GetProjectionMatrix();
+	glm::mat4 GetModelViewProjectionMatrix();
 
 protected:
 	void GLBindFrameBuffer(UINT uiType);

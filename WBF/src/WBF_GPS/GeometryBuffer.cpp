@@ -27,15 +27,19 @@ CGeometryBuffer::~CGeometryBuffer()
 
 void CGeometryBuffer::GLRelease()
 {
-	auto szObjectBuffer = m_lstObjectBuffer.size();
-	for (auto indx = 0; indx < szObjectBuffer; ++indx)
+	auto itr = m_mObjectBuffer.begin();
+	while (itr != m_mObjectBuffer.end())
 	{
-		glDeleteVertexArrays(1, &m_lstObjectBuffer[indx].uiVAO);
-		glDeleteBuffers(1, &m_lstObjectBuffer[indx].uiVBO);
-		glDeleteBuffers(1, &m_lstObjectBuffer[indx].uiEBO);
+		auto& tObjectBuffer = itr->second;
+
+		glDeleteVertexArrays(1, &tObjectBuffer.uiVAO);
+		glDeleteBuffers(1, &tObjectBuffer.uiVBO);
+		glDeleteBuffers(1, &tObjectBuffer.uiEBO);
+
+		itr++;
 	}
 
-	m_lstObjectBuffer.clear();
+	m_mObjectBuffer.clear();
 }
 
 void CGeometryBuffer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
@@ -143,14 +147,13 @@ void CGeometryBuffer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 
 		glBindVertexArray(0);
 
-		TObjectBuffer tBuffer;
-		tBuffer.uiKey = EntBody.dbKey;
-		tBuffer.uiVAO = VAO;
-		tBuffer.uiVBO = VBO;
-		tBuffer.uiEBO = EBO;
-		tBuffer.uiSize = lBufferIndxNum;
+		TObjectBuffer tObjectBuffer;
+		tObjectBuffer.uiVAO = VAO;
+		tObjectBuffer.uiVBO = VBO;
+		tObjectBuffer.uiEBO = EBO;
+		tObjectBuffer.uiSize = lBufferIndxNum;
 
-		m_lstObjectBuffer.push_back(std::move(tBuffer));
+		m_mObjectBuffer[EntBody.dbKey] = tObjectBuffer;
 
 		_SAFE_DELETE_ARRAY(aIndex);
 	}
@@ -158,14 +161,9 @@ void CGeometryBuffer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 	_SAFE_DELETE_ARRAY(aBuffer);
 }
 
-long CGeometryBuffer::GetObjectBuffer(std::vector<TObjectBuffer>& lstObjectBuffer)
+long CGeometryBuffer::GetObjectBuffer(std::map<UINT, TObjectBuffer>& mObjectBuffer)
 {
-	auto szData = (long)m_lstObjectBuffer.size();
-	if (szData > 0)
-	{
-		lstObjectBuffer.resize(szData);
-		std::copy(m_lstObjectBuffer.begin(), m_lstObjectBuffer.end(), lstObjectBuffer.begin());
-	}
+	mObjectBuffer.insert(m_mObjectBuffer.begin(), m_mObjectBuffer.end());
 
-	return szData;
+	return (long)mObjectBuffer.size();
 }

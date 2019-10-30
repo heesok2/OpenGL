@@ -116,6 +116,11 @@ glm::mat4 CGLCtrlView::GetProjectionMatrix()
 	return m_Camera.GetProjectionMatrix();
 }
 
+glm::mat4 CGLCtrlView::GetModelViewProjectionMatrix()
+{
+	return m_Camera.GetProjectionMatrix() * m_Camera.GetViewMatrix();
+}
+
 void CGLCtrlView::GLBindFrameBuffer(UINT uiType)
 {
 	m_FrameBufferManager.GLBindBuffer(uiType);

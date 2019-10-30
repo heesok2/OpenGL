@@ -16,10 +16,11 @@ public:
 public:
 	virtual void GLRelease() override;
 	virtual void GLBuild(CViewHelper* pHelper, UINT uiFlag) override;
-	virtual long GetObjectBuffer(std::vector<TObjectBuffer>& lstObjectBuffer) override;
+	virtual long GetObjectBuffer(std::map<UINT, TObjectBuffer>& mObjectBuffer) override;
 
 protected:
-	std::vector<TObjectBuffer> m_lstObjectBuffer;
+	std::map<UINT, TObjectBuffer> m_mObjectBuffer;
+
 };
 
 #include "HeaderPost.h"

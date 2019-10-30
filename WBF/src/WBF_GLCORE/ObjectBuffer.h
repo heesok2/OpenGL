@@ -7,15 +7,13 @@
 
 typedef struct tagObjectBuffer
 {
-	UINT uiKey; // Primary key
-
 	UINT uiVAO;
 	UINT uiVBO;
 	UINT uiEBO;
 	UINT uiSize;
 
 	tagObjectBuffer(UINT _uiVAO = 0, UINT _uiVBO = 0, UINT _uiEBO = 0, UINT _uiDataSize = 0)
-		: uiKey(0), uiVAO(_uiVAO), uiVBO(_uiVBO), uiEBO(_uiEBO), uiSize(_uiDataSize)
+		: uiVAO(_uiVAO), uiVBO(_uiVBO), uiEBO(_uiEBO), uiSize(_uiDataSize)
 	{}
 
 } TObjectBuffer, *LPObjectBuffer;
@@ -30,7 +28,7 @@ public:
 public:
 	virtual void GLRelease() = 0;
 	virtual void GLBuild(CViewHelper * pHelper, UINT uiFlag) = 0;
-	virtual long GetObjectBuffer(std::vector<TObjectBuffer>& lstObjectBuffer) = 0;
+	virtual long GetObjectBuffer(std::map<UINT, TObjectBuffer>& mObjectBuffer) = 0;
 	
 };
 
