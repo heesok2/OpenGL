@@ -16,15 +16,7 @@ CObjectBufferManager::CObjectBufferManager()
 
 CObjectBufferManager::~CObjectBufferManager()
 {
-	auto itr = m_mObjectBuffer.begin();
-	while (itr != m_mObjectBuffer.end())
-	{
-		_SAFE_DELETE(itr->second);
 
-		itr++;
-	}
-	
-	m_mObjectBuffer.clear();
 }
 
 void CObjectBufferManager::InitialData(CView * pView)
@@ -86,4 +78,21 @@ void CObjectBufferManager::GLBuildObjectBuffer(UINT uiFlag)
 
 		itr++;
 	}
+}
+
+void CObjectBufferManager::GLDeleteObjectBuffer()
+{
+	auto itr = m_mObjectBuffer.begin();
+	while (itr != m_mObjectBuffer.end())
+	{
+		auto pObjectBuffer = itr->second;
+		if (pObjectBuffer != nullptr)
+			pObjectBuffer->GLRelease();
+
+		_SAFE_DELETE(pObjectBuffer);
+
+		itr++;
+	}
+
+	m_mObjectBuffer.clear();
 }

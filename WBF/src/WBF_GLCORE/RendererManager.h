@@ -14,6 +14,7 @@ public:
 	void CreateRenderer();
 
 	void GLBuildRenderer(UINT uiFlag);
+	void GLDeleteRenderer();
 
 protected:
 	CView* m_pView;

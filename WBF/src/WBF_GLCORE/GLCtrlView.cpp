@@ -28,7 +28,6 @@ BEGIN_MESSAGE_MAP(CGLCtrlView, CGLView)
 	ON_WM_MOUSEMOVE()
 	ON_WM_SIZE()
 	ON_WM_CREATE()
-	ON_WM_DESTROY()
 END_MESSAGE_MAP()
 
 void CGLCtrlView::OnDraw(CDC* pDC)
@@ -36,29 +35,32 @@ void CGLCtrlView::OnDraw(CDC* pDC)
 	// Model FrameBuffer 에 그림을 화면 ScreenBuffer에 그린다.
 	BeginwglCurrent();
 	{
-		glPushAttrib(GL_ALL_ATTRIB_BITS);
-		m_FrameBufferManager.GLBindBuffer(E_FBO_SCREEN);
+		if (glIsVertexArray(m_uiScreenVAO) == true)
 		{
-			auto Shader = m_ShaderManager.GetShader(E_SHADER_SCREEN);
-
-			glDisable(GL_DEPTH_TEST);
-			glClearColor(0.f, 0.f, 0.f, 1.f);
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-			Shader.GLBind();
-			m_FrameBufferManager.GLBindColorTex2D(E_FBO_MODEL);
+			glPushAttrib(GL_ALL_ATTRIB_BITS);
+			m_FrameBufferManager.GLBindBuffer(E_FBO_SCREEN);
 			{
-				glBindVertexArray(m_uiScreenVAO);
-				glDrawArrays(GL_TRIANGLES, 0, 6);
-				glBindVertexArray(0);
-			}
-			m_FrameBufferManager.GLUnbindColorTex2D(E_FBO_MODEL);
-			Shader.GLUnbind();
-		}
-		m_FrameBufferManager.GLUnbindBuffer(E_FBO_SCREEN);
-		glPopAttrib();
+				auto Shader = m_ShaderManager.GetShader(E_SHADER_SCREEN);
 
-		SwapBuffers();
+				glDisable(GL_DEPTH_TEST);
+				glClearColor(0.f, 0.f, 0.f, 1.f);
+				glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+				Shader.GLBind();
+				m_FrameBufferManager.GLBindColorTex2D(E_FBO_MODEL);
+				{
+					glBindVertexArray(m_uiScreenVAO);
+					glDrawArrays(GL_TRIANGLES, 0, 6);
+					glBindVertexArray(0);
+				}
+				m_FrameBufferManager.GLUnbindColorTex2D(E_FBO_MODEL);
+				Shader.GLUnbind();
+			}
+			m_FrameBufferManager.GLUnbindBuffer(E_FBO_SCREEN);
+			glPopAttrib();
+
+			SwapBuffers();
+		}
 	}
 	EndwglCurrent();
 }
@@ -70,12 +72,26 @@ void CGLCtrlView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 	auto eNotify = lHint;
 	switch (eNotify)
 	{
-	case E_DOC_DB_UPDATE:
+	case E_DOCUMENT_DB_UPDATE:
 		{
 			BeginwglCurrent();
 			{
-				//m_ObjectBufferManager.GLBuildObjectBuffer(0);
-				//m_RendererManager.GLBuildRenderer(0);
+				m_ObjectBufferManager.GLBuildObjectBuffer(0);
+				m_RendererManager.GLBuildRenderer(0);
+			}
+			EndwglCurrent();
+		}
+		break;
+	case E_DOCUMENT_CLOSE:
+		{
+			BeginwglCurrent();
+			{
+				m_ObjectBufferManager.GLDeleteObjectBuffer();
+				m_RendererManager.GLDeleteRenderer();
+				m_FrameBufferManager.GLDeleteBuffer();
+
+				glDeleteBuffers(1, &m_uiScreenVBO);
+				glDeleteVertexArrays(1, &m_uiScreenVAO);
 			}
 			EndwglCurrent();
 		}
@@ -175,20 +191,6 @@ int CGLCtrlView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	EndwglCurrent();
 
 	return 0;
-}
-
-void CGLCtrlView::OnDestroy()
-{
-	BeginwglCurrent();
-	{
-		m_FrameBufferManager.GLDeleteBuffer();
-
-		glDeleteBuffers(1, &m_uiScreenVBO);
-		glDeleteVertexArrays(1, &m_uiScreenVAO);
-	}
-	EndwglCurrent();
-
-	CGLView::OnDestroy();
 }
 
 void CGLCtrlView::OnSize(UINT nType, int cx, int cy)

@@ -17,6 +17,7 @@ public:
 	CObjectBuffer* LookUp(UINT uiType);
 	
 	void GLBuildObjectBuffer(UINT uiFlag);	
+	void GLDeleteObjectBuffer();
 
 protected:
 	CView* m_pView;

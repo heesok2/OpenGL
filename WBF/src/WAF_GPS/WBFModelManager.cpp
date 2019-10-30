@@ -33,7 +33,7 @@ void CWBFModelManager::OnNotifyMsg(CDocument * pDoc, WPARAM wParam, LPARAM lPara
 
 	switch (wParam)
 	{
-	case E_DOC_DB_UPDATE:
+	case E_DOCUMENT_DB_UPDATE:
 		{
 			m_pView->BeginwglCurrent();
 			{

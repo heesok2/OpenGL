@@ -24,6 +24,7 @@
 #include "WBFDoc.h"
 #include "WBFPakage.h"
 
+#include "..\WBF_LIB\NotifyDefine.h"
 #include "..\WAF_GPS\WBFModelManager.h"
 
 
@@ -172,5 +173,7 @@ void CWBFDoc::OnInitial()
 
 void CWBFDoc::OnDestroy()
 {
+	UpdateAllViews(nullptr, E_DOCUMENT_CLOSE);
+
 	m_pPackage->OnDestroy();
 }

@@ -16,15 +16,7 @@ CRendererManager::CRendererManager()
 
 CRendererManager::~CRendererManager()
 {
-	auto itr = m_mRenderer.begin();
-	while (itr != m_mRenderer.end())
-	{
-		_SAFE_DELETE(itr->second);
 
-		itr++;
-	}
-
-	m_mRenderer.clear();
 }
 
 void CRendererManager::InitialData(CView * pView)
@@ -65,4 +57,17 @@ void CRendererManager::GLBuildRenderer(UINT uiFlag)
 
 		itr++;
 	}
+}
+
+void CRendererManager::GLDeleteRenderer()
+{
+	auto itr = m_mRenderer.begin();
+	while (itr != m_mRenderer.end())
+	{
+		_SAFE_DELETE(itr->second);
+
+		itr++;
+	}
+
+	m_mRenderer.clear();
 }

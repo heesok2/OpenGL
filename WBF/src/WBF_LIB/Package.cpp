@@ -30,7 +30,7 @@ BOOL CPackage::Commit()
 {
 	Notify(E_UPDATE_DB_CHANGED);
 
-	CDocListener::DoNotifyMsg(m_pMyDoc, E_DOC_DB_UPDATE, 0);
+	CDocListener::DoNotifyMsg(m_pMyDoc, E_DOCUMENT_DB_UPDATE, 0);
 
 	return TRUE;
 }
