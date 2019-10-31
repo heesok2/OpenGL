@@ -5,9 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="DataBase">
-      <UniqueIdentifier>{4189f9d1-a99e-4719-83f4-03acfc5beffe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="UI">
       <UniqueIdentifier>{c9b8d1b8-843d-4a29-92e8-e74160018c6b}</UniqueIdentifier>
     </Filter>
@@ -28,6 +25,9 @@
     </Filter>
     <Filter Include="__RESOURCE__\file">
       <UniqueIdentifier>{ed78344e-67ea-4cb2-9189-e42bb8855af0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\DataBase">
+      <UniqueIdentifier>{4189f9d1-a99e-4719-83f4-03acfc5beffe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -68,7 +68,7 @@
       <Filter>UI\Dialog</Filter>
     </ClInclude>
     <ClInclude Include="WBFPakage.h">
-      <Filter>DataBase</Filter>
+      <Filter>Common\DataBase</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>__GENERAL__</Filter>
@@ -112,7 +112,7 @@
       <Filter>UI\Dialog</Filter>
     </ClCompile>
     <ClCompile Include="WBFPakage.cpp">
-      <Filter>DataBase</Filter>
+      <Filter>Common\DataBase</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>__GENERAL__</Filter>

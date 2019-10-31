@@ -16,9 +16,6 @@
     <Filter Include="RENDER">
       <UniqueIdentifier>{249fef5d-e045-4906-80c6-c02f082199ad}</UniqueIdentifier>
     </Filter>
-    <Filter Include="RENDER\Box">
-      <UniqueIdentifier>{724043be-adc6-4748-a93e-34615c31c4f7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="RENDER\Light">
       <UniqueIdentifier>{226bfab4-85fd-4144-aba3-5bb1ddea5a4c}</UniqueIdentifier>
     </Filter>
@@ -41,12 +38,6 @@
     </ClCompile>
     <ClCompile Include="RndrSample.cpp">
       <Filter>RENDER\Sample</Filter>
-    </ClCompile>
-    <ClCompile Include="ModelBox.cpp">
-      <Filter>RENDER\Box</Filter>
-    </ClCompile>
-    <ClCompile Include="RndrBox.cpp">
-      <Filter>RENDER\Box</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>__GENERAL__</Filter>
@@ -93,12 +84,6 @@
     </ClInclude>
     <ClInclude Include="RndrSample.h">
       <Filter>RENDER\Sample</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelBox.h">
-      <Filter>RENDER\Box</Filter>
-    </ClInclude>
-    <ClInclude Include="RndrBox.h">
-      <Filter>RENDER\Box</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>__RESOURCE__</Filter>

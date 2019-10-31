@@ -2,8 +2,6 @@
 // Microsoft Visual C++에서 생성한 포함 파일입니다.
 // WBF_GLCORE.rc에서 사용되고 있습니다.
 //
-#define IDR_GLSL_BOX_FRAG               1002
-#define IDR_GLSL_BOX_VERT               1003
 #define IDR_GLSL_LIGHT_FRAG             1004
 #define IDR_GLSL_LIGHT_VERT             1005
 #define IDR_GLSL_SAMPLE_FRAG            1006

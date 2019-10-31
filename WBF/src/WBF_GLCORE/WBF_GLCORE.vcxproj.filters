@@ -98,12 +98,6 @@
     <None Include="res\WBF_GLCORE.rc2">
       <Filter>__RESOURCE__</Filter>
     </None>
-    <None Include="res\GLSL\Box_frag.glsl">
-      <Filter>__RESOURCE__\file</Filter>
-    </None>
-    <None Include="res\GLSL\Box_vert.glsl">
-      <Filter>__RESOURCE__\file</Filter>
-    </None>
     <None Include="res\GLSL\Light_frag.glsl">
       <Filter>__RESOURCE__\file</Filter>
     </None>

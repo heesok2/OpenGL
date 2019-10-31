@@ -208,10 +208,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GPSView.cpp" />
-    <ClCompile Include="ModelBox.cpp" />
     <ClCompile Include="ModelLight.cpp" />
     <ClCompile Include="ModelSample.cpp" />
-    <ClCompile Include="RndrBox.cpp" />
     <ClCompile Include="WBFRndrManager.cpp" />
     <ClCompile Include="RndrLight.cpp" />
     <ClCompile Include="RndrSample.cpp" />
@@ -232,11 +230,9 @@
     <ClInclude Include="GPSView.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
-    <ClInclude Include="ModelBox.h" />
     <ClInclude Include="ModelLight.h" />
     <ClInclude Include="ModelSample.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="RndrBox.h" />
     <ClInclude Include="WBFRndrManager.h" />
     <ClInclude Include="RndrLight.h" />
     <ClInclude Include="RndrSample.h" />
