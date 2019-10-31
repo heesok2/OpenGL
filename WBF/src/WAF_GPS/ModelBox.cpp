@@ -94,25 +94,25 @@ void CModelBox::Draw(CShader * pShader)
 			glm::mat4 mod(1.f);
 			mod = glm::translate(mod, box.ModelPos);
 
-			auto modelLoc = glGetUniformLocation(nProg, "model");
-			glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(mod));
+			glm::mat4 glModelMatrix = mod;
+			glm::mat4 glModelViewProjectionMatrix = proj * view * mod;
 
-			auto viewLoc = glGetUniformLocation(nProg, "view");  // glsl build-in uniforms 에서 제외되서 직접 추가해주어야 한다.
-			glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+			auto nModel = glGetUniformLocation(nProg, "matModel");
+			glUniformMatrix4fv(nModel, 1, GL_FALSE, glm::value_ptr(glModelMatrix));
 
-			auto projLoc = glGetUniformLocation(nProg, "projection"); // glsl build-in uniforms 에서 제외되서 직접 추가해주어야 한다.
-			glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(proj));
+			auto nModelViewProjection = glGetUniformLocation(nProg, "matModelViewProjection");
+			glUniformMatrix4fv(nModelViewProjection, 1, GL_FALSE, glm::value_ptr(glModelViewProjectionMatrix));
 
-			auto modelColor = glGetUniformLocation(nProg, "ourModelColor");
+			auto modelColor = glGetUniformLocation(nProg, "aModelColor");
 			glUniform3f(modelColor, 0.8f, 0.8f, 0.8f);
 
-			auto lightColor = glGetUniformLocation(nProg, "ourLightColor");
+			auto lightColor = glGetUniformLocation(nProg, "aLightColor");
 			glUniform3f(lightColor, 1.f, 1.f, 1.f);
 
-			auto CameraPos = glGetUniformLocation(nProg, "ourCameraPos");
+			auto CameraPos = glGetUniformLocation(nProg, "aEyePos");
 			glUniform3fv(CameraPos, 1, glm::value_ptr(CamPos));
 			
-			auto LightPos = glGetUniformLocation(nProg, "ourLightPos");
+			auto LightPos = glGetUniformLocation(nProg, "aLightPos");
 			glUniform3fv(LightPos, 1, glm::value_ptr(box.LightPos));
 
 			glBindVertexArray(box.uiVAO);

@@ -2,30 +2,30 @@
 
 out vec4 FragColor;
 
-in vec3 FragPos;
-in vec3 Normal;
+in vec3 aFragPos;
+in vec3 aFragNormal;
 
-uniform vec3 ourCameraPos;
-uniform vec3 ourLightPos;
-uniform vec3 ourModelColor;
-uniform vec3 ourLightColor;
+uniform vec3 aEyePos;
+uniform vec3 aLightPos;
+uniform vec3 aModelColor;
+uniform vec3 aLightColor;
 
 void main()
 {
 	float fAmbient = 0.1;
-	vec3 aAmbientColor = fAmbient * ourLightColor;
+	vec3 aAmbientColor = fAmbient * aLightColor;
 
-	vec3 norm = normalize(Normal);
-	vec3 lightDir = normalize(ourLightPos-FragPos);
-	float diff = max(dot(norm, lightDir), 0.f);
-	vec3 aDiffuse = diff * ourLightColor;
+	vec3 aNormal = normalize(aFragNormal);
+	vec3 aLightDir = normalize(aLightPos-aFragPos);
+	float fDiffuse = max(dot(aNormal, aLightDir), 0.f);
+	vec3 aDiffuse = fDiffuse * aLightColor;
 
-	float specular = 0.3f;
-	vec3 viewDir = normalize(ourCameraPos - FragPos);
-	vec3 refDir = reflect(-lightDir, norm);
-	float spec = pow(max(dot(viewDir, refDir), 0.f), 32);
-	vec3 aSpecular = specular * spec * ourLightColor;
+	float fSpecRatio = 0.3f;
+	vec3 aViewDir = normalize(aEyePos - aFragPos);
+	vec3 aReflectDir = reflect(-aLightDir, aNormal);
+	float fSpecular = pow(max(dot(aViewDir, aReflectDir), 0.f), 32);
+	vec3 aSpecular = fSpecRatio * fSpecular * aLightColor;
 
-	vec3 result = (aAmbientColor + aDiffuse + aSpecular) * ourModelColor;
+	vec3 result = (aAmbientColor + aDiffuse + aSpecular) * aModelColor;
 	FragColor = vec4(result, 1.f);
 }

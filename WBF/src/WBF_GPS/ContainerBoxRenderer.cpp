@@ -51,10 +51,9 @@ void CContainerBoxRenderer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 
 	auto itrLight = pModuleLight->GetDefaultLight();
 	if (!ITR_IS_VALID(itrLight)) return;
-
 	auto tLight = pModuleLight->GetAtNU(itrLight);
+	m_aLightPos = tLight.vPos;
 
-	auto LightPos = tLight.vPos;
 	auto EyePos = pView->GetEyePosition();
 	glm::vec3 glLightColor(1.f, 1.f, 1.f);
 	glm::vec3 glModelColor(0.8f, 0.8f, 0.8f);
@@ -74,14 +73,10 @@ void CContainerBoxRenderer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 		
 		glm::mat4 ModelMatrix(1.f);
 		ModelMatrix = glm::translate(ModelMatrix, tContainer.vPos);
-		tData.glModelMatrix = ModelMatrix;
-		tData.glModelViewProjectionMatrix = glModelViewProjectionMatrix * ModelMatrix;
-		tData.EyePos = EyePos;
-		tData.LightPos = LightPos;
-		tData.glModelColor = glModelColor;
-		tData.glLightColor = glLightColor;
 		tData.uiVAO = itrFind->second.uiVAO;
 		tData.uiSize = itrFind->second.uiSize;
+		tData.glModelMatrix = ModelMatrix;
+		tData.glModelColor = glModelColor;		
 
 		m_aData.push_back(std::move(tData));
 	}
@@ -95,15 +90,23 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 	auto& Shader = pShaderManager->GetShader(E_SHADER_CONTAINER_BOX);
 	Shader.GLBind();
 	{
+		int nProg;
+		glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
+
+		auto pView = (CViewBase*)pHelper->GetView();
+		auto aEyePos = pView->GetEyePosition();
+		glm::vec3 glLightColor(1.f, 1.f, 1.f);
+		glm::vec3 glModelColor(0.8f, 0.8f, 0.8f);
+		auto glModelViewProjectionMatrix = pView->GetModelViewProjectionMatrix();
+
 		for (auto& tData : m_aData)
 		{
-			Shader.GLSetMatrix4("matModel", tData.glModelMatrix);
-			Shader.GLSetMatrix4("matModelViewProjection", tData.glModelViewProjectionMatrix);
-
-			Shader.GLSetVector3("aEyePos", tData.EyePos);
-			Shader.GLSetVector3("aLightPos", tData.LightPos);
+			Shader.GLSetVector3("aEyePos", aEyePos);
+			Shader.GLSetVector3("aLightPos", m_aLightPos);
+			Shader.GLSetVector3("aLightColor", glLightColor);
 			Shader.GLSetVector3("aModelColor", tData.glModelColor);
-			Shader.GLSetVector3("aLightColor", tData.glLightColor);
+			Shader.GLSetMatrix4("matModel", tData.glModelMatrix);
+			Shader.GLSetMatrix4("matModelViewProjection", glModelViewProjectionMatrix * tData.glModelMatrix);
 
 			glBindVertexArray(tData.uiVAO);
 			glDrawElements(GL_TRIANGLES, tData.uiSize, GL_UNSIGNED_INT, 0);

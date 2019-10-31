@@ -8,17 +8,10 @@ class __MY_EXT_CLASS__ CContainerBoxRenderer : public CDataRenderer
 {
 	typedef struct tagContainerBox
 	{
-		glm::mat4 glModelMatrix;
-		glm::mat4 glModelViewProjectionMatrix; // Position translation
-
-		glm::vec3 EyePos;
-		glm::vec3 LightPos;
-
-		glm::vec3 glModelColor;
-		glm::vec3 glLightColor;
-
 		UINT uiVAO;
 		UINT uiSize;
+		glm::mat4 glModelMatrix;
+		glm::vec3 glModelColor;
 
 	} TContainerBox, *LPTContainerBox;
 
@@ -33,6 +26,7 @@ public:
 	virtual void GLDraw(CViewHelper * pHelper) override;
 
 public:
+	glm::vec3 m_aLightPos;
 	std::vector<TContainerBox> m_aData;
 };
 

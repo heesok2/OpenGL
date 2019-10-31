@@ -201,7 +201,7 @@ BOOL CShader::GLSetVector3(const char * aName, glm::vec3 & vec3)
 	auto nID = glGetUniformLocation(m_nProg, aName);
 	if (nID == -1) return FALSE;
 
-	glUniformMatrix4fv(nID, 1, GL_FALSE, glm::value_ptr(vec3));
+	glUniform3fv(nID, 1, glm::value_ptr(vec3));
 	return TRUE;
 }
 

@@ -20,11 +20,11 @@ void main()
 	float fDiffuse = max(dot(aNormal, aLightDir), 0.f);
 	vec3 aDiffuse = fDiffuse * aLightColor;
 
-	float fSpecularRatio = 0.3f;
+	float fSpecRatio = 0.3f;
 	vec3 aViewDir = normalize(aEyePos - aFragPos);
-	vec3 aRefDir = reflect(-aLightDir, aNormal);
-	float fSpecular = pow(max(dot(aViewDir, aRefDir), 0.f), 32);
-	vec3 aSpecular = fSpecularRatio * fSpecular * aLightColor;
+	vec3 aReflectDir = reflect(-aLightDir, aNormal);
+	float fSpecular = pow(max(dot(aViewDir, aReflectDir), 0.f), 32);
+	vec3 aSpecular = fSpecRatio * fSpecular * aLightColor;
 
 	vec3 result = (aAmbientColor + aDiffuse + aSpecular) * aModelColor;
 	FragColor = vec4(result, 1.f);
