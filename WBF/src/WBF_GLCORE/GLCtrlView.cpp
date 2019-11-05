@@ -40,7 +40,7 @@ void CGLCtrlView::OnDraw(CDC* pDC)
 			glPushAttrib(GL_ALL_ATTRIB_BITS);
 			m_FrameBufferManager.GLBindBuffer(E_FBO_SCREEN);
 			{
-				auto Shader = m_ShaderManager.GetShader(E_SHADER_SCREEN);
+				auto Shader = m_ShaderManager.GetAt(E_SHADER_SCREEN);
 
 				glDisable(GL_DEPTH_TEST);
 				glClearColor(0.f, 0.f, 0.f, 1.f);
@@ -144,8 +144,8 @@ void CGLCtrlView::GLCreateScreen()
 	1.0f,  1.0f,  1.0f, 1.0f
 	};
 
-	m_ShaderManager.GLCreateShader(E_SHADER_SCREEN);
-	auto ShaderScreen = m_ShaderManager.GetShader(E_SHADER_SCREEN);
+	m_ShaderManager.GLCreate(E_SHADER_SCREEN);
+	auto ShaderScreen = m_ShaderManager.GetAt(E_SHADER_SCREEN);
 	
 	glGenVertexArrays(1, &m_uiScreenVAO);
 	glGenBuffers(1, &m_uiScreenVBO);
@@ -188,7 +188,7 @@ int CGLCtrlView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 	BeginwglCurrent();
 	{
-		m_ShaderManager.GLCreateAllShader();
+		m_ShaderManager.GLCreateAll();
 		m_FrameBufferManager.GLCreateBuffer();
 
 		GLCreateScreen();

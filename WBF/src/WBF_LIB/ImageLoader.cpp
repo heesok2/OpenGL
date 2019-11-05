@@ -1,28 +1,34 @@
 #include "stdafx.h"
-#include "WBFImage.h"
-#include "WBFString.h"
+#include "ImageLoader.h"
+#include "StringConverter.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-CWBFImage::CWBFImage()
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+CImageLoader::CImageLoader()
 {
 	m_strFilePath = _T("");
 	m_pBuffer = nullptr;
 	m_nWidth = m_nHeight = m_nBytes = 0;
 }
 
-CWBFImage::~CWBFImage()
+CImageLoader::~CImageLoader()
 {
 	_SAFE_DELETE_ARRAY(m_pBuffer);
 }
 
-void CWBFImage::InitialData(CString strFilePath)
+void CImageLoader::InitialData(CString strFilePath)
 {
 	m_strFilePath = strFilePath;
 
 	std::string conv;
-	CWBFString::CSTR2STR(strFilePath, conv);
+	CStringConverter::CSTR2STR(strFilePath, conv);
 
 	stbi_set_flip_vertically_on_load(true);
 	BYTE* data = stbi_load(conv.c_str(), &m_nWidth, &m_nHeight, &m_nBytes, 0);

@@ -2,11 +2,11 @@
 
 #include <string>
 
-class CWBFString
+class CStringConverter
 {
 public:
-	CWBFString();
-	virtual ~CWBFString();
+	CStringConverter();
+	virtual ~CStringConverter();
 
 public:
 	static void CSTR2STR(IN CString& cstr, OUT std::string& str);

@@ -87,7 +87,7 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 	if (m_aData.empty()) return;
 
 	auto pShaderManager = pHelper->GetShaderManager();
-	auto& Shader = pShaderManager->GetShader(E_SHADER_CONTAINER_BOX);
+	auto& Shader = pShaderManager->GetAt(E_SHADER_CONTAINER_BOX);
 	Shader.GLBind();
 	{
 		int nProg;

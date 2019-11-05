@@ -215,9 +215,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="WBFImage.cpp" />
+    <ClCompile Include="ImageLoader.cpp" />
     <ClCompile Include="WBFObserver.cpp" />
-    <ClCompile Include="WBFString.cpp" />
+    <ClCompile Include="StringConverter.cpp" />
     <ClCompile Include="WBFSubject.cpp" />
     <ClCompile Include="WBF_LIB.cpp" />
   </ItemGroup>
@@ -245,10 +245,10 @@
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="WBFImage.h" />
+    <ClInclude Include="ImageLoader.h" />
     <ClInclude Include="WBFObserver.h" />
     <ClInclude Include="WBFObserverDefine.h" />
-    <ClInclude Include="WBFString.h" />
+    <ClInclude Include="StringConverter.h" />
     <ClInclude Include="WBFSubject.h" />
     <ClInclude Include="WBF_LIB.h" />
     <ClInclude Include="WBF_LIB_LINK.h" />

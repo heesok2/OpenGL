@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Shader.h"
-#include "..\WBF_LIB\WBFString.h"
+
+#include "..\WBF_LIB\StringConverter.h"
 
 #include <fstream>
 #include <sstream>
@@ -99,7 +100,7 @@ void CShader::GLAttachShader(UINT nShaderType, UINT uiResID)
 
 		return TRUE;
 	};
-	
+
 	std::string strSource;
 	lambda_source(uiResID, strSource);
 
@@ -139,7 +140,7 @@ void CShader::GLLinkShader()
 
 		return TRUE;
 	};
-	
+
 	glLinkProgram(m_nProg);
 	if (!lambda_status(m_nProg, GL_LINK_STATUS))
 	{
@@ -164,8 +165,9 @@ BOOL CShader::GLSetInt(const char * aName, int nData)
 {
 	auto nID = glGetUniformLocation(m_nProg, aName);
 	if (nID == -1) return FALSE;
-	
+
 	glUniform1i(nID, nData);
+
 	return TRUE;
 }
 
@@ -173,26 +175,29 @@ BOOL CShader::GLSetBoolean(const char * aName, bool bData)
 {
 	auto nID = glGetUniformLocation(m_nProg, aName);
 	if (nID == -1) return FALSE;
-	
+
 	glUniform1i(nID, bData);
+
 	return TRUE;
 }
 
 BOOL CShader::GLSetfloat(const char * aName, float fData)
 {
 	auto nID = glGetUniformLocation(m_nProg, aName);
-	if (nID == -1) return FALSE; 
-	
+	if (nID == -1) return FALSE;
+
 	glUniform1f(nID, fData);
+
 	return TRUE;
 }
 
 BOOL CShader::GLSetDouble(const char * aName, double dData)
 {
 	auto nID = glGetUniformLocation(m_nProg, aName);
-	if (nID == -1) return FALSE; 
-	
+	if (nID == -1) return FALSE;
+
 	glUniform1d(nID, dData);
+
 	return TRUE;
 }
 
@@ -202,6 +207,7 @@ BOOL CShader::GLSetVector3(const char * aName, glm::vec3 & vec3)
 	if (nID == -1) return FALSE;
 
 	glUniform3fv(nID, 1, glm::value_ptr(vec3));
+
 	return TRUE;
 }
 
@@ -211,5 +217,6 @@ BOOL CShader::GLSetMatrix4(const char * aName, glm::mat4 & mat4)
 	if (nID == -1) return FALSE;
 
 	glUniformMatrix4fv(nID, 1, GL_FALSE, glm::value_ptr(mat4));
+
 	return TRUE;
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "HeaderPre.h"
+
 class __MY_EXT_CLASS__ CShader
 {
 public:

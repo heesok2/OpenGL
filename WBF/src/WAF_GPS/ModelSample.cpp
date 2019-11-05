@@ -2,7 +2,7 @@
 #include "resource.h"
 #include "ModelSample.h"
 
-#include "..\WBF_LIB\WBFImage.h"
+#include "..\WBF_LIB\ImageLoader.h"
 #include "..\WBF_BASE\DocBase.h"
 #include "..\WBF_BASE\ViewBase.h"
 #include "..\WBF_BASE\ModelManager.h"
@@ -100,7 +100,7 @@ void CModelSample::GLCreateVBO()
 	glGenTextures(1, &m_uiTexJPG);
 	glBindTexture(GL_TEXTURE_2D, m_uiTexJPG);
 	{
-		CWBFImage imgJPG;
+		CImageLoader imgJPG;
 		imgJPG.InitialData(m_cstrJPG);
 
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -116,7 +116,7 @@ void CModelSample::GLCreateVBO()
 	glGenTextures(1, &m_uiTexPNG);
 	glBindTexture(GL_TEXTURE_2D, m_uiTexPNG);
 	{
-		CWBFImage imgPNG;
+		CImageLoader imgPNG;
 		imgPNG.InitialData(m_cstrPNG);
 
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);

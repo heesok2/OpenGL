@@ -18,25 +18,25 @@ CShaderManager::~CShaderManager()
 {
 }
 
-BOOL CShaderManager::IsValidShader(UINT uiType)
+BOOL CShaderManager::IsValid(UINT uiType)
 {
-	auto itr = m_mBuildShader.find(uiType);
-	return itr != m_mBuildShader.end();
+	auto itr = m_mBuild.find(uiType);
+	return itr != m_mBuild.end();
 }
 
-CShader & CShaderManager::GetShader(UINT uiType)
+CShader & CShaderManager::GetAt(UINT uiType)
 {
-	auto itr = m_mBuildShader.find(uiType);
-	if (itr == m_mBuildShader.end())
+	auto itr = m_mBuild.find(uiType);
+	if (itr == m_mBuild.end())
 	{
 		ASSERT(g_warning);
-		m_mBuildShader[uiType] = CShader();
+		m_mBuild[uiType] = CShader();
 	}
 
-	return m_mBuildShader[uiType];
+	return m_mBuild[uiType];
 }
 
-void CShaderManager::GLShaderVersion()
+void CShaderManager::GLVersion()
 {
 	char* strSLVersion = (char*)glGetString(GL_SHADING_LANGUAGE_VERSION);
 	//원격 데스크탑 보안이 강화되면서 그래픽 자원을 윈도우로 부터 할당받는 방법이 바뀐것으로 보인다.
@@ -50,8 +50,11 @@ void CShaderManager::GLShaderVersion()
 	}
 }
 
-void CShaderManager::GLCreateShader(UINT uiType)
+void CShaderManager::GLCreate(UINT uiType)
 {
+	auto itrFind = m_mBuild.find(uiType);
+	if (m_mBuild.end() != itrFind) return;
+
 	CShader shader;
 	shader.GLCreateProgram();
 
@@ -89,11 +92,11 @@ void CShaderManager::GLCreateShader(UINT uiType)
 	}
 
 	shader.GLLinkShader();
-	m_mBuildShader[uiType] = shader;
+	m_mBuild[uiType] = shader;
 }
 
-void CShaderManager::GLCreateAllShader()
+void CShaderManager::GLCreateAll()
 {
 	for (auto indx = 0; indx < E_SHADER_NUM; ++indx)
-		GLCreateShader(indx);
+		GLCreate(indx);
 }

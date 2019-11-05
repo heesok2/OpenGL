@@ -26,7 +26,7 @@ CRndrSample::~CRndrSample()
 void CRndrSample::OnInitialData()
 {
 	auto pShaderMgr = ((CWBFRndrManager*)m_pRndrMgr)->GetShaderManager();
-	pShaderMgr->GLCreateShader(E_SHADER_SAMPLE);
+	pShaderMgr->GLCreate(E_SHADER_SAMPLE);
 }
 
 void CRndrSample::GLDraw()

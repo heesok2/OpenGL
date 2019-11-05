@@ -11,15 +11,15 @@ public:
 	virtual ~CShaderManager();
 
 public:
-	BOOL IsValidShader(UINT uiType);
-	CShader& GetShader(UINT uiType);
+	BOOL IsValid(UINT uiType);
+	CShader& GetAt(UINT uiType);
 
-	void GLShaderVersion();
-	void GLCreateShader(UINT uiType);
-	void GLCreateAllShader();
+	void GLVersion();
+	void GLCreateAll();
+	void GLCreate(UINT uiType);
 
 protected:
-	std::map<unsigned int, CShader> m_mBuildShader;
+	std::map<UINT, CShader> m_mBuild;
 
 };
 

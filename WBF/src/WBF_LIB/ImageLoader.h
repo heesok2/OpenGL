@@ -5,11 +5,11 @@
 #define WBFIMG_RGB 3
 #define WBFIMG_RGBA 4
 
-class __MY_EXT_API__ CWBFImage
+class __MY_EXT_API__ CImageLoader
 {
 public:
-	CWBFImage();
-	virtual ~CWBFImage();
+	CImageLoader();
+	virtual ~CImageLoader();
 
 public:
 	void InitialData(CString strFilePath);

@@ -19,12 +19,6 @@
     <Filter Include="UTILITY">
       <UniqueIdentifier>{59161f84-05b7-4461-9784-02bf9bcc377c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="UTILITY\Image">
-      <UniqueIdentifier>{cc3cf74a-05e9-46ff-a4dd-6d9dbb661136}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="UTILITY\Convert String">
-      <UniqueIdentifier>{e77ba7d0-15b6-4f40-82e3-756809b4a916}</UniqueIdentifier>
-    </Filter>
     <Filter Include="UTILITY\Factory">
       <UniqueIdentifier>{b6e06680-3303-43fd-ae3a-a9088dc609f4}</UniqueIdentifier>
     </Filter>
@@ -37,11 +31,14 @@
     <Filter Include="INCLUDE">
       <UniqueIdentifier>{d1234725-8e25-4f32-a1a6-ae5a73524699}</UniqueIdentifier>
     </Filter>
-    <Filter Include="UTILITY\Notify">
-      <UniqueIdentifier>{eaea628e-13d6-4ce7-8b70-c66e291bb89f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="NOTIFY">
       <UniqueIdentifier>{007e0903-b04f-4109-a1ac-bc8835419edf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTILITY\String Converter">
+      <UniqueIdentifier>{e77ba7d0-15b6-4f40-82e3-756809b4a916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UTILITY\Image Loader">
+      <UniqueIdentifier>{cc3cf74a-05e9-46ff-a4dd-6d9dbb661136}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -75,11 +72,11 @@
     <ClCompile Include="FactoryObjectBase.cpp">
       <Filter>UTILITY\Factory</Filter>
     </ClCompile>
-    <ClCompile Include="WBFImage.cpp">
-      <Filter>UTILITY\Image</Filter>
+    <ClCompile Include="ImageLoader.cpp">
+      <Filter>UTILITY\Image Loader</Filter>
     </ClCompile>
-    <ClCompile Include="WBFString.cpp">
-      <Filter>UTILITY\Convert String</Filter>
+    <ClCompile Include="StringConverter.cpp">
+      <Filter>UTILITY\String Converter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,14 +148,8 @@
     <ClInclude Include="FactoryBase.h">
       <Filter>UTILITY\Factory</Filter>
     </ClInclude>
-    <ClInclude Include="WBFImage.h">
-      <Filter>UTILITY\Image</Filter>
-    </ClInclude>
     <ClInclude Include="stb_image.h">
-      <Filter>UTILITY\Image</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFString.h">
-      <Filter>UTILITY\Convert String</Filter>
+      <Filter>UTILITY\Image Loader</Filter>
     </ClInclude>
     <ClInclude Include="AllProjectInclude.h">
       <Filter>INCLUDE</Filter>
@@ -168,6 +159,12 @@
     </ClInclude>
     <ClInclude Include="NotifyDefine.h">
       <Filter>NOTIFY</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageLoader.h">
+      <Filter>UTILITY\Image Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="StringConverter.h">
+      <Filter>UTILITY\String Converter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -28,13 +28,13 @@ CRndrLight::~CRndrLight()
 void CRndrLight::OnInitialData()
 {
 	auto pShaderMgr = ((CWBFRndrManager*)m_pRndrMgr)->GetShaderManager();
-	pShaderMgr->GLCreateShader(E_SHADER_LIGHT);
+	pShaderMgr->GLCreate(E_SHADER_LIGHT);
 }
 
 void CRndrLight::GLDraw()
 {
 	auto pShaderMgr = ((CWBFRndrManager*)m_pRndrMgr)->GetShaderManager();
-	if (!pShaderMgr->IsValidShader(E_SHADER_LIGHT)) return;
+	if (!pShaderMgr->IsValid(E_SHADER_LIGHT)) return;
 
 	auto pModel = ((CWBFModelManager*)m_pModelMgr)->GetModel(E_MODEL_LIGHT);
 	if (pModel == nullptr) return;
@@ -43,7 +43,7 @@ void CRndrLight::GLDraw()
 	{
 		glEnable(GL_DEPTH_TEST);
 
-		auto& Shader = pShaderMgr->GetShader(E_SHADER_LIGHT);
+		auto& Shader = pShaderMgr->GetAt(E_SHADER_LIGHT);
 		pModel->Draw(&Shader);
 
 		glDisable(GL_DEPTH_TEST);
