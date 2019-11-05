@@ -108,7 +108,7 @@ void CModelSample::GLCreateVBO()
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgJPG.GetWidth(), imgJPG.GetHeight(), 0, imgJPG.GetBytes() == WBFIMG_RGBA ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgJPG.GetBuffer());
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgJPG.GetWidth(), imgJPG.GetHeight(), 0, imgJPG.GetByte() == WBFIMG_RGBA ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgJPG.GetBuffer());
 		glGenerateMipmap(GL_TEXTURE_2D);
 	}
 	glBindTexture(GL_TEXTURE_2D, 0);
@@ -124,7 +124,7 @@ void CModelSample::GLCreateVBO()
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgPNG.GetWidth(), imgPNG.GetHeight(), 0, imgPNG.GetBytes() == WBFIMG_RGBA ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgPNG.GetBuffer());
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgPNG.GetWidth(), imgPNG.GetHeight(), 0, imgPNG.GetByte() == WBFIMG_RGBA ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgPNG.GetBuffer());
 		glGenerateMipmap(GL_TEXTURE_2D);
 	}
 	glBindTexture(GL_TEXTURE_2D, 0);

@@ -9,7 +9,8 @@ public:
 	virtual ~CShader();
 
 public:
-	void GLCreateProgram();
+	void GLCreate();
+	void GLDelete();
 	void GLAttachShader(UINT nShaderType, UINT uiResID);
 	void GLLinkShader();
 

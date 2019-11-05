@@ -50,13 +50,21 @@ void CShaderManager::GLVersion()
 	}
 }
 
+void CShaderManager::GLCreate()
+{
+	for (auto indx = 0; indx < E_SHADER_NUM; ++indx)
+	{
+		GLCreate(indx);
+	}
+}
+
 void CShaderManager::GLCreate(UINT uiType)
 {
 	auto itrFind = m_mBuild.find(uiType);
 	if (m_mBuild.end() != itrFind) return;
 
 	CShader shader;
-	shader.GLCreateProgram();
+	shader.GLCreate();
 
 	switch (uiType)
 	{
@@ -95,8 +103,12 @@ void CShaderManager::GLCreate(UINT uiType)
 	m_mBuild[uiType] = shader;
 }
 
-void CShaderManager::GLCreateAll()
+void CShaderManager::GLDelete()
 {
-	for (auto indx = 0; indx < E_SHADER_NUM; ++indx)
-		GLCreate(indx);
+	auto itr = m_mBuild.begin();
+	while (itr == m_mBuild.end())
+	{
+		itr->second.GLDelete();
+		itr++;
+	}
 }

@@ -24,7 +24,7 @@ void CObjectBufferManager::InitialData(CView * pView)
 	m_pView = pView;
 }
 
-void CObjectBufferManager::CreateObjectBuffer()
+void CObjectBufferManager::Create()
 {
 	auto& fact = CObjectBufferFactory::GetInstance();
 
@@ -59,7 +59,7 @@ CObjectBuffer * CObjectBufferManager::LookUp(UINT uiType)
 	return itr->second;
 }
 
-void CObjectBufferManager::GLBuildObjectBuffer(UINT uiFlag)
+void CObjectBufferManager::GLBuild(UINT uiFlag)
 {
 	CViewHelper tHelper;
 	tHelper.InitialData(m_pView);
@@ -80,7 +80,7 @@ void CObjectBufferManager::GLBuildObjectBuffer(UINT uiFlag)
 	}
 }
 
-void CObjectBufferManager::GLDeleteObjectBuffer()
+void CObjectBufferManager::GLDelete()
 {
 	auto itr = m_mObjectBuffer.begin();
 	while (itr != m_mObjectBuffer.end())

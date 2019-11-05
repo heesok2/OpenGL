@@ -1,8 +1,13 @@
 #pragma once
 
+#ifndef DEF_STR_CONVERTER
+#define DEF_STR_CONVERTER
+
 #include <string>
 
-class CStringConverter
+#include "HeaderPre.h"
+
+class __MY_EXT_CLASS__ CStringConverter
 {
 public:
 	CStringConverter();
@@ -17,3 +22,6 @@ public:
 	static void WSTR2STR(IN std::wstring wstr, OUT std::string& str);
 };
 
+#include "HeaderPost.h"
+
+#endif // !DEF_STR_CONVERTER

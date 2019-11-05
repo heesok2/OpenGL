@@ -50,10 +50,10 @@ protected:
 protected:
 	CCamera m_Camera;
 	
+	CShaderManager m_ShaderManager;
 	CRendererManager m_RendererManager;
 	CObjectBufferManager m_ObjectBufferManager;
-	CFrameBufferManager m_FrameBufferManager;
-	CShaderManager m_ShaderManager;
+	CFrameBufferManager m_FrameBufferManager;	
 
 	UINT m_uiScreenVAO;
 	UINT m_uiScreenVBO;

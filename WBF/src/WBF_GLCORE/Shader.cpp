@@ -21,9 +21,17 @@ CShader::~CShader()
 {
 }
 
-void CShader::GLCreateProgram()
+void CShader::GLCreate()
 {
 	m_nProg = glCreateProgram();
+}
+
+void CShader::GLDelete()
+{
+	if (!glIsProgram(m_nProg))
+		return;
+
+	glDeleteProgram(m_nProg);
 }
 
 void CShader::GLAttachShader(UINT nShaderType, UINT uiResID)

@@ -13,9 +13,9 @@ public:
 	virtual ~CDataRenderer();
 
 public:
+	virtual void GLRelease() {}
 	virtual void GLBuild(CViewHelper * pHelper, UINT uiFlag) = 0;
 	virtual void GLDraw(CViewHelper * pHelper) = 0;
-
 };
 
 #include "HeaderPost.h"

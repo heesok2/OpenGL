@@ -4,11 +4,13 @@ out vec4 FragColor;
 
 in vec3 aFragPos;
 in vec3 aFragNormal;
+in vec2 aFragTexcel;
 
 uniform vec3 aEyePos;
 uniform vec3 aLightPos;
-uniform vec3 aModelColor;
 uniform vec3 aLightColor;
+
+uniform sampler2D aContainerTex2D;
 
 void main()
 {
@@ -26,6 +28,6 @@ void main()
 	float fSpecular = pow(max(dot(aViewDir, aReflectDir), 0.f), 32);
 	vec3 aSpecular = fSpecRatio * fSpecular * aLightColor;
 
-	vec3 result = (aAmbientColor + aDiffuse + aSpecular) * aModelColor;
+	vec3 result = (aAmbientColor + aDiffuse + aSpecular) * texture(aContainerTex2D, aFragTexcel).rgb;
 	FragColor = vec4(result, 1.f);
 }

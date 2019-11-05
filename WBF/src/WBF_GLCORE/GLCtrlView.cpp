@@ -38,7 +38,7 @@ void CGLCtrlView::OnDraw(CDC* pDC)
 		if (glIsVertexArray(m_uiScreenVAO))
 		{
 			glPushAttrib(GL_ALL_ATTRIB_BITS);
-			m_FrameBufferManager.GLBindBuffer(E_FBO_SCREEN);
+			m_FrameBufferManager.GLBind(E_FBO_SCREEN);
 			{
 				auto Shader = m_ShaderManager.GetAt(E_SHADER_SCREEN);
 
@@ -56,7 +56,7 @@ void CGLCtrlView::OnDraw(CDC* pDC)
 				m_FrameBufferManager.GLUnbindColorTex2D(E_FBO_MODEL);
 				Shader.GLUnbind();
 			}
-			m_FrameBufferManager.GLUnbindBuffer(E_FBO_SCREEN);
+			m_FrameBufferManager.GLUnbind(E_FBO_SCREEN);
 			glPopAttrib();
 
 			SwapBuffers();
@@ -76,8 +76,8 @@ void CGLCtrlView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 		{
 			BeginwglCurrent();
 			{
-				m_ObjectBufferManager.GLBuildObjectBuffer(0);
-				m_RendererManager.GLBuildRenderer(0);
+				m_ObjectBufferManager.GLBuild(0);
+				m_RendererManager.GLBuild(0);
 			}
 			EndwglCurrent();
 		}
@@ -86,9 +86,10 @@ void CGLCtrlView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 		{
 			BeginwglCurrent();
 			{
-				m_ObjectBufferManager.GLDeleteObjectBuffer();
-				m_RendererManager.GLDeleteRenderer();
-				m_FrameBufferManager.GLDeleteBuffer();
+				m_FrameBufferManager.GLDelete();
+				m_ObjectBufferManager.GLDelete();
+				m_RendererManager.GLDelete();
+				m_ShaderManager.GLDelete();
 
 				glDeleteBuffers(1, &m_uiScreenVBO);
 				glDeleteVertexArrays(1, &m_uiScreenVAO);
@@ -123,12 +124,12 @@ glm::mat4 CGLCtrlView::GetModelViewProjectionMatrix()
 
 void CGLCtrlView::GLBindFrameBuffer(UINT uiType)
 {
-	m_FrameBufferManager.GLBindBuffer(uiType);
+	m_FrameBufferManager.GLBind(uiType);
 }
 
 void CGLCtrlView::GLUnbindFrameBuffer(UINT uiType)
 {
-	m_FrameBufferManager.GLUnbindBuffer(uiType);
+	m_FrameBufferManager.GLUnbind(uiType);
 }
 
 void CGLCtrlView::GLCreateScreen()
@@ -181,15 +182,15 @@ int CGLCtrlView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;
 
 	m_ObjectBufferManager.InitialData(this);
-	m_ObjectBufferManager.CreateObjectBuffer();
+	m_ObjectBufferManager.Create();
 
 	m_RendererManager.InitialData(this);
 	m_RendererManager.CreateRenderer();
 
 	BeginwglCurrent();
 	{
-		m_ShaderManager.GLCreateAll();
-		m_FrameBufferManager.GLCreateBuffer();
+		m_ShaderManager.GLCreate();
+		m_FrameBufferManager.GLCreate();
 
 		GLCreateScreen();
 	}
@@ -210,7 +211,7 @@ void CGLCtrlView::OnSize(UINT nType, int cx, int cy)
 
 	BeginwglCurrent();
 	{
-		m_FrameBufferManager.GLResizeBuffer(cx, cy);
+		m_FrameBufferManager.GLResize(cx, cy);
 	}
 	EndwglCurrent();
 }

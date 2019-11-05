@@ -41,7 +41,7 @@ void CRendererManager::CreateRenderer()
 	}
 }
 
-void CRendererManager::GLBuildRenderer(UINT uiFlag)
+void CRendererManager::GLBuild(UINT uiFlag)
 {
 	CViewHelper tHelper;
 	tHelper.InitialData(m_pView);
@@ -52,6 +52,7 @@ void CRendererManager::GLBuildRenderer(UINT uiFlag)
 		auto pObject = itr->second;
 		if (pObject != nullptr)
 		{
+			pObject->GLRelease();
 			pObject->GLBuild(&tHelper, uiFlag);
 		}
 
@@ -59,11 +60,15 @@ void CRendererManager::GLBuildRenderer(UINT uiFlag)
 	}
 }
 
-void CRendererManager::GLDeleteRenderer()
+void CRendererManager::GLDelete()
 {
 	auto itr = m_mRenderer.begin();
 	while (itr != m_mRenderer.end())
 	{
+		auto pObject = itr->second;
+		if (pObject != nullptr)
+			pObject->GLRelease();
+
 		_SAFE_DELETE(itr->second);
 
 		itr++;

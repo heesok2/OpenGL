@@ -15,8 +15,9 @@ public:
 	CShader& GetAt(UINT uiType);
 
 	void GLVersion();
-	void GLCreateAll();
+	void GLCreate();
 	void GLCreate(UINT uiType);
+	void GLDelete();
 
 protected:
 	std::map<UINT, CShader> m_mBuild;

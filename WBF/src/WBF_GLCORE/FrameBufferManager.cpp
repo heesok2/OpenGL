@@ -17,7 +17,7 @@ CFrameBufferManager::~CFrameBufferManager()
 {
 }
 
-void CFrameBufferManager::GLCreateBuffer()
+void CFrameBufferManager::GLCreate()
 {
 	for (UINT uiType = E_FBO_SCREEN; uiType < E_FBO_NUM; ++uiType)
 	{
@@ -53,7 +53,7 @@ void CFrameBufferManager::GLCreateBuffer()
 	}
 }
 
-void CFrameBufferManager::GLDeleteBuffer()
+void CFrameBufferManager::GLDelete()
 {
 	for (UINT uiType = 0; uiType < E_FBO_NUM; ++uiType)
 	{
@@ -65,7 +65,7 @@ void CFrameBufferManager::GLDeleteBuffer()
 	}
 }
 
-void CFrameBufferManager::GLResizeBuffer(int x, int y)
+void CFrameBufferManager::GLResize(int x, int y)
 {
 	for (UINT uiType = E_FBO_SCREEN; uiType < E_FBO_NUM; ++uiType)
 	{
@@ -79,12 +79,12 @@ void CFrameBufferManager::GLResizeBuffer(int x, int y)
 	}
 }
 
-void CFrameBufferManager::GLBindBuffer(UINT uiType)
+void CFrameBufferManager::GLBind(UINT uiType)
 {
 	m_aFBO[uiType]->GLBind();
 }
 
-void CFrameBufferManager::GLUnbindBuffer(UINT uiType)
+void CFrameBufferManager::GLUnbind(UINT uiType)
 {
 	m_aFBO[uiType]->GLUnbind();
 }

@@ -17,11 +17,11 @@ public:
 	virtual ~CFrameBufferManager();
 
 public:
-	void GLCreateBuffer();
-	void GLDeleteBuffer();
-	void GLResizeBuffer(int x, int y);
-	void GLBindBuffer(UINT uiType);
-	void GLUnbindBuffer(UINT uiType);
+	void GLCreate();
+	void GLDelete();
+	void GLResize(int x, int y);
+	void GLBind(UINT uiType);
+	void GLUnbind(UINT uiType);
 	void GLBindColorTex2D(UINT uiType);
 	void GLUnbindColorTex2D(UINT uiType);
 

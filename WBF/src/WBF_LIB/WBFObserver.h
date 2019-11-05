@@ -8,7 +8,7 @@ public:
 	virtual ~CWBFObserver();
 
 public:
-	virtual void UpdateObserver(UINT uiMsg, WPARAM wParam, LPARAM lParam) = 0;
+	virtual void NotifyMessage(UINT uiMsg, WPARAM wParam, LPARAM lParam) = 0;
 
 };
 

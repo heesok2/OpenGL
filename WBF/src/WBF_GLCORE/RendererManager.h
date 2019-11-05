@@ -13,8 +13,8 @@ public:
 	void InitialData(CView* pView);
 	void CreateRenderer();
 
-	void GLBuildRenderer(UINT uiFlag);
-	void GLDeleteRenderer();
+	void GLBuild(UINT uiFlag);
+	void GLDelete();
 	void GLDrawScene();
 
 protected:

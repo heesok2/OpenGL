@@ -11,13 +11,13 @@ public:
 
 public:
 	void InitialData(CView* pView);
-	void CreateObjectBuffer();
+	void Create();
 
 	BOOL Exist(UINT uiType);
 	CObjectBuffer* LookUp(UINT uiType);
 	
-	void GLBuildObjectBuffer(UINT uiFlag);	
-	void GLDeleteObjectBuffer();
+	void GLBuild(UINT uiFlag);	
+	void GLDelete();
 
 protected:
 	CView* m_pView;

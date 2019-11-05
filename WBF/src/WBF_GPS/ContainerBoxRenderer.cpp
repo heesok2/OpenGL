@@ -5,6 +5,7 @@
 #include "GeometryBuffer.h"
 
 #include "..\WBF_LIB\Package.h"
+#include "..\WBF_LIB\ImageLoader.h"
 #include "..\WBF_BASE\DocBase.h"
 #include "..\WBF_BASE\ViewBase.h"
 #include "..\WBF_DATA\ModuleBody.h"
@@ -24,62 +25,34 @@ IMPLEMENT_DYNAMIC_RENDERER(CContainerBoxRenderer, E_RENDERER_CONTAINER_BOX);
 
 CContainerBoxRenderer::CContainerBoxRenderer()
 {
+	m_uiSmaileTex2D = 0;
+	m_uiContainerTex2D = 0;
+	m_aLightPos = glm::vec3(0);
+	m_aData.clear();
 }
-
 
 CContainerBoxRenderer::~CContainerBoxRenderer()
 {
 }
 
+void CContainerBoxRenderer::GLRelease()
+{
+	glDeleteTextures(1, &m_uiSmaileTex2D);
+	glDeleteTextures(1, &m_uiContainerTex2D);
+
+	m_uiSmaileTex2D = 0;
+	m_uiContainerTex2D = 0;
+	m_aLightPos = glm::vec3(0);
+	m_aData.clear();
+}
+
 void CContainerBoxRenderer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 {
-	m_aData.clear();
+	SetLightData(pHelper);
 
-	auto pDoc = (CDocBase*)pHelper->GetDocument();
-	auto pPackage = pDoc->GetPackage();
-	auto pModuleBox = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
-	auto pModuleBody = (CModuleBody*)pPackage->GetModule(E_TYPE_BODY);
-	auto pModuleLight = (CModuleLight*)pPackage->GetModule(E_TYPE_LIGHT);
+	SetContainerData(pHelper);
 
-	auto pView = (CViewBase*)pHelper->GetView();
-	auto pObjectBufferManager = pHelper->GetObjectBufferManager();
-	auto pGeomBuffer = pObjectBufferManager->LookUp(E_BUFFER_GEOMETRY);
-
-	std::map<UINT, TObjectBuffer> mObjectBuffer;
-	auto szObjectBufferNum = pGeomBuffer->GetObjectBuffer(mObjectBuffer);
-	if (szObjectBufferNum == 0) return;
-
-	auto itrLight = pModuleLight->GetDefaultLight();
-	if (!ITR_IS_VALID(itrLight)) return;
-	auto tLight = pModuleLight->GetAtNU(itrLight);
-	m_aLightPos = tLight.vPos;
-
-	auto EyePos = pView->GetEyePosition();
-	glm::vec3 glLightColor(1.f, 1.f, 1.f);
-	glm::vec3 glModelColor(0.8f, 0.8f, 0.8f);
-	auto glModelViewProjectionMatrix = pView->GetModelViewProjectionMatrix();
-
-	std::vector<DITER> aItrBox;
-	auto szBoxNum = pModuleBox->GetIterList(aItrBox);
-	for (auto indx = 0; indx < szBoxNum; ++indx)
-	{
-		auto& tContainer = pModuleBox->GetAtNU(aItrBox[indx]);
-		auto BodyKey = ITR_TO_KEY(tContainer.itrBody);
-
-		auto itrFind = mObjectBuffer.find(BodyKey);
-		if (itrFind == mObjectBuffer.end()) continue;
-
-		TContainerBox tData;
-		
-		glm::mat4 ModelMatrix(1.f);
-		ModelMatrix = glm::translate(ModelMatrix, tContainer.vPos);
-		tData.uiVAO = itrFind->second.uiVAO;
-		tData.uiSize = itrFind->second.uiSize;
-		tData.glModelMatrix = ModelMatrix;
-		tData.glModelColor = glModelColor;		
-
-		m_aData.push_back(std::move(tData));
-	}
+	GLSetContainerTexture(pHelper);
 }
 
 void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
@@ -104,14 +77,122 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 			Shader.GLSetVector3("aEyePos", aEyePos);
 			Shader.GLSetVector3("aLightPos", m_aLightPos);
 			Shader.GLSetVector3("aLightColor", glLightColor);
-			Shader.GLSetVector3("aModelColor", tData.glModelColor);
 			Shader.GLSetMatrix4("matModel", tData.glModelMatrix);
 			Shader.GLSetMatrix4("matModelViewProjection", glModelViewProjectionMatrix * tData.glModelMatrix);
+
+			glActiveTexture(GL_TEXTURE0);
+			glBindTexture(GL_TEXTURE_2D, m_uiContainerTex2D);
 
 			glBindVertexArray(tData.uiVAO);
 			glDrawElements(GL_TRIANGLES, tData.uiSize, GL_UNSIGNED_INT, 0);
 			glBindVertexArray(0);
 		}
+	}
+	Shader.GLUnbind();
+}
+
+void CContainerBoxRenderer::SetLightData(CViewHelper * pHelper)
+{
+	auto pDoc = (CDocBase*)pHelper->GetDocument();
+	auto pPackage = pDoc->GetPackage();
+
+	auto pModuleLight = (CModuleLight*)pPackage->GetModule(E_TYPE_LIGHT);
+	auto itrLight = pModuleLight->GetDefaultLight();
+	if (!ITR_IS_VALID(itrLight)) return;
+
+	auto tLight = pModuleLight->GetAtNU(itrLight);
+	m_aLightPos = tLight.vPos;
+}
+
+void CContainerBoxRenderer::SetContainerData(CViewHelper * pHelper)
+{
+	auto pDoc = (CDocBase*)pHelper->GetDocument();
+	auto pPackage = pDoc->GetPackage();
+	auto pModuleBox = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
+
+	auto pView = (CViewBase*)pHelper->GetView();
+	auto pObjectBufferManager = pHelper->GetObjectBufferManager();
+	auto pGeomBuffer = pObjectBufferManager->LookUp(E_BUFFER_GEOMETRY);
+
+	std::map<UINT, TObjectBuffer> mObjectBuffer;
+	auto szObjectBufferNum = pGeomBuffer->GetObjectBuffer(mObjectBuffer);
+	if (szObjectBufferNum == 0) return;
+
+	auto EyePos = pView->GetEyePosition();
+	glm::vec3 glLightColor(1.f, 1.f, 1.f);
+	glm::vec3 glModelColor(0.8f, 0.8f, 0.8f);
+	auto glModelViewProjectionMatrix = pView->GetModelViewProjectionMatrix();
+
+	std::vector<DITER> aItrBox;
+	auto szBoxNum = pModuleBox->GetIterList(aItrBox);
+	for (auto indx = 0; indx < szBoxNum; ++indx)
+	{
+		auto& tContainer = pModuleBox->GetAtNU(aItrBox[indx]);
+		auto BodyKey = ITR_TO_KEY(tContainer.itrBody);
+
+		auto itrFind = mObjectBuffer.find(BodyKey);
+		if (itrFind == mObjectBuffer.end()) continue;
+
+		TContainerBox tData;
+
+		glm::mat4 ModelMatrix(1.f);
+		ModelMatrix = glm::translate(ModelMatrix, tContainer.vPos);
+		tData.uiVAO = itrFind->second.uiVAO;
+		tData.uiSize = itrFind->second.uiSize;
+		tData.glModelMatrix = ModelMatrix;
+
+		m_aData.push_back(std::move(tData));
+	}
+}
+
+void CContainerBoxRenderer::GLSetContainerTexture(CViewHelper * pHelper)
+{
+	TCHAR aPath[MAX_PATH + 1] = {0};
+	auto dwSize = GetModuleFileName(nullptr, aPath, MAX_PATH);
+
+	CString strExe;
+	CString strPath = aPath;
+	auto item = strPath.ReverseFind('\\');
+	if (item != -1) strExe = strPath.Left(item) + _T("\\");
+
+	m_csSmaile = strExe + _T("\\Image\\awesomeface.png");
+	m_csContainer = strExe + _T("\\Image\\container.jpg");
+
+	CImageLoader imgSmaile;
+	imgSmaile.InitialData(m_csSmaile);
+
+	glGenTextures(1, &m_uiSmaileTex2D);
+	glBindTexture(GL_TEXTURE_2D, m_uiSmaileTex2D);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgSmaile.GetWidth(), imgSmaile.GetHeight(), 0, imgSmaile.GetByte() == WBFIMG_RGBA ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgSmaile.GetBuffer());
+	glGenerateMipmap(GL_TEXTURE_2D);
+
+	glBindTexture(GL_TEXTURE_2D, 0);
+
+	CImageLoader imgContainer;
+	imgContainer.InitialData(m_csContainer);
+
+	glGenTextures(1, &m_uiContainerTex2D);
+	glBindTexture(GL_TEXTURE_2D, m_uiContainerTex2D);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgContainer.GetWidth(), imgContainer.GetHeight(), 0, imgContainer.GetByte() == WBFIMG_RGBA ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgContainer.GetBuffer());
+	glGenerateMipmap(GL_TEXTURE_2D);
+
+	glBindTexture(GL_TEXTURE_2D, 0);
+
+	auto pShaderManager = pHelper->GetShaderManager();
+	auto& Shader = pShaderManager->GetAt(E_SHADER_CONTAINER_BOX);
+	Shader.GLBind();
+	{
+		Shader.GLSetInt("aContainerTex2D", 0); // Texture Unit Index(GL_TEXTURE0 + 0)
 	}
 	Shader.GLUnbind();
 }

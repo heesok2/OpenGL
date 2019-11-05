@@ -48,6 +48,6 @@ void CWBFSubject::Notify(UINT uiMsg, WPARAM wParam, LPARAM lParam)
 {
 	for (auto obj : m_vObserver)
 	{
-		obj->UpdateObserver(uiMsg, wParam, lParam);
+		obj->NotifyMessage(uiMsg, wParam, lParam);
 	}
 }

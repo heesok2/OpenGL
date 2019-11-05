@@ -11,7 +11,6 @@ class __MY_EXT_CLASS__ CContainerBoxRenderer : public CDataRenderer
 		UINT uiVAO;
 		UINT uiSize;
 		glm::mat4 glModelMatrix;
-		glm::vec3 glModelColor;
 
 	} TContainerBox, *LPTContainerBox;
 
@@ -22,12 +21,24 @@ public:
 	DECLARE_DYNAMIC_RENDERER(CContainerBoxRenderer);
 
 public:
+	virtual void GLRelease() override;
 	virtual void GLBuild(CViewHelper * pHelper, UINT uiFlag) override;
 	virtual void GLDraw(CViewHelper * pHelper) override;
 
-public:
+protected:
+	void SetLightData(CViewHelper * pHelper);
+	void SetContainerData(CViewHelper * pHelper);
+	void GLSetContainerTexture(CViewHelper * pHelper);
+
+protected:
+	CString m_csSmaile;
+	CString m_csContainer;
+	
+	UINT m_uiSmaileTex2D;
+	UINT m_uiContainerTex2D;		
 	glm::vec3 m_aLightPos;
 	std::vector<TContainerBox> m_aData;
+
 };
 
 #include "HeaderPost.h"
