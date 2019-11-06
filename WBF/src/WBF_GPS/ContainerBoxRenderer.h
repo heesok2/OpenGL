@@ -30,10 +30,7 @@ protected:
 	void SetContainerData(CViewHelper * pHelper);
 	void GLSetContainerTexture(CViewHelper * pHelper);
 
-protected:
-	CString m_csSmaile;
-	CString m_csContainer;
-	
+protected:	
 	UINT m_uiSmaileTex2D;
 	UINT m_uiContainerTex2D;		
 	glm::vec3 m_aLightPos;

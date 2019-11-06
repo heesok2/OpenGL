@@ -155,11 +155,11 @@ void CContainerBoxRenderer::GLSetContainerTexture(CViewHelper * pHelper)
 	auto item = strPath.ReverseFind('\\');
 	if (item != -1) strExe = strPath.Left(item) + _T("\\");
 
-	m_csSmaile = strExe + _T("\\Image\\awesomeface.png");
-	m_csContainer = strExe + _T("\\Image\\container.jpg");
+	CString csSmaile = strExe + _T("\\Image\\awesomeface.png");
+	CString csContainer = strExe + _T("\\Image\\container.jpg");
 
 	CImageLoader imgSmaile;
-	imgSmaile.InitialData(m_csSmaile);
+	imgSmaile.InitialData(csSmaile);
 
 	glGenTextures(1, &m_uiSmaileTex2D);
 	glBindTexture(GL_TEXTURE_2D, m_uiSmaileTex2D);
@@ -174,7 +174,7 @@ void CContainerBoxRenderer::GLSetContainerTexture(CViewHelper * pHelper)
 	glBindTexture(GL_TEXTURE_2D, 0);
 
 	CImageLoader imgContainer;
-	imgContainer.InitialData(m_csContainer);
+	imgContainer.InitialData(csContainer);
 
 	glGenTextures(1, &m_uiContainerTex2D);
 	glBindTexture(GL_TEXTURE_2D, m_uiContainerTex2D);

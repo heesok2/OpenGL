@@ -15,20 +15,21 @@ const float g_SENSITIVITY = 0.1f;
 const float g_ZOOM = 45.0f;
 
 CCamera::CCamera()
+	: m_eMode(E_MODE_MODELER)
 {
 	m_aCameraPos = glm::vec3(0.f, 0.f, 3.f);
 	m_aCameraDir = glm::vec3(0.f, 0.f, -1.f);
+	m_aCameraUp = glm::vec3(0.f, 1.f, 0.f);
+	m_aCameraRight = glm::vec3(1.f, 0.f, 0.f);
 	m_aWorldUp = glm::vec3(0.f, 1.f, 0.f);
-
-	m_aCameraUp = glm::vec3(0.f, 0.f, 0.f);
-	m_aCameraRight = glm::vec3(0.f, 0.f, 0.f);
+	m_aWorldCenter = glm::vec3(0.f, 0.f, 0.f);
 
 	m_fYaw = g_YAW;
 	m_fPitch = g_PITCH;
 	m_fMovementSpeed = g_SPEED;
 	m_fMouseSensitivity = g_SENSITIVITY;
 
-	UpdateCameraVectors();
+	UpdateCameraVectors(0.f, 0.f);
 }
 
 CCamera::~CCamera()
@@ -37,13 +38,32 @@ CCamera::~CCamera()
 
 glm::mat4 CCamera::GetViewMatrix()
 {
+	switch (m_eMode)
+	{
+	case E_MODE_FPS:
+		return glm::lookAt(m_aCameraPos - m_aCameraDir, m_aCameraPos, m_aCameraUp);
+	case E_MODE_MODELER:
+		return glm::lookAt(m_aCameraPos, m_aCameraPos + m_aCameraDir, m_aCameraUp);
+	}
+
+	ASSERT(g_warning);
 	return glm::lookAt(m_aCameraPos - m_aCameraDir, m_aCameraPos, m_aCameraUp);
 }
 
 glm::mat4 CCamera::GetProjectionMatrix()
 {
 	glm::mat4 proj(1.f);
-	return glm::perspective(glm::radians(45.f), (float)(m_Viewport.Width()) / (float)(m_Viewport.Height()), 0.1f, 100.f);
+	return glm::perspective(glm::radians(45.f), (float)(m_Viewport.Width()) / (float)(m_Viewport.Height()), 0.0001f, 100.f);
+}
+
+void CCamera::SetViewSize(CRect& rect)
+{
+	m_Viewport = rect;
+}
+
+void CCamera::SetViewCenter(glm::vec3 & vPosition)
+{
+	m_aWorldCenter = vPosition;
 }
 
 void CCamera::SetCameraPosition(glm::vec3& vPosition)
@@ -54,11 +74,6 @@ void CCamera::SetCameraPosition(glm::vec3& vPosition)
 void CCamera::SetMousePosition(CPoint& point)
 {
 	m_MousePoint = point;
-}
-
-void CCamera::SetViewSize(CRect& rect)
-{
-	m_Viewport = rect;
 }
 
 void CCamera::OnKeyboardDown(E_CAMERA_MOVEMENT eMovement, float deltaTime)
@@ -101,50 +116,91 @@ void CCamera::OnKeyboardDown(E_CAMERA_MOVEMENT eMovement, float deltaTime)
 
 void CCamera::OnMouseMove(CPoint point, BOOL bConstrainPitch)
 {
-	//if (bConstrainPitch)
-	{
-		auto MouseOffset = m_MousePoint - point;
-		auto fOffsetX = (float)MouseOffset.cx * m_fMouseSensitivity;
-		auto fOffsetY = (float)MouseOffset.cy * m_fMouseSensitivity;
 
-		m_MousePoint = point;
+	auto MouseOffset = m_MousePoint - point;
+	auto fOffsetX = (float)MouseOffset.cx * m_fMouseSensitivity;
+	auto fOffsetY = (float)MouseOffset.cy * m_fMouseSensitivity;
+	m_MousePoint = point;
 
-		m_fYaw += fOffsetX;
-		m_fPitch += -fOffsetY;
-
-		UpdateCameraVectors();
-	}
-	//else
-	//{
-	//	auto MouseOffset = m_MousePoint - point;
-	//	auto fOffsetX = (float)MouseOffset.cx * m_fMouseSensitivity;// *0.001f;
-	//	auto fOffsetY = (float)MouseOffset.cy * m_fMouseSensitivity;// * 0.001f;
-
-	//	auto width = m_Viewport.Width();
-	//	auto height = m_Viewport.Height();
-
-	//	float fHalf = 100.f * glm::tan(glm::radians(45.f * 0.5f));
-	//	float fRat = (float)MouseOffset.cy / (float)height;
-	//	float fUp = fRat * fHalf / 0.5f;
-
-	//	{
-	//		m_aCameraPos += m_aCameraUp * (fUp);
-	//	}
-	//	{
-	//		//m_aCameraPos += m_aCameraRight * (-fOffsetX);
-
-	//	}
-	//}
+	UpdateCameraVectors(fOffsetX, fOffsetY);
 }
 
-void CCamera::UpdateCameraVectors()
+void CCamera::UpdateCameraVectors(float fOffsetX, float fOffsetY)
 {
-	glm::vec3 aDirection;
-	aDirection.x = cos(glm::radians(m_fPitch)) * cos(glm::radians(m_fYaw));
-	aDirection.y = sin(glm::radians(m_fPitch));
-	aDirection.z = cos(glm::radians(m_fPitch)) * sin(glm::radians(m_fYaw));
+	switch (m_eMode)
+	{
+	case E_MODE_FPS:
+		{
+			m_fYaw += fOffsetX;
+			m_fPitch += -fOffsetY;
 
-	m_aCameraDir = aDirection;
-	m_aCameraRight = glm::normalize(glm::cross(m_aCameraDir, m_aWorldUp));
-	m_aCameraUp = glm::normalize(glm::cross(m_aCameraRight, m_aCameraDir));
+			glm::vec3 aDirection;
+			aDirection.x = cos(glm::radians(m_fPitch)) * cos(glm::radians(m_fYaw));
+			aDirection.y = sin(glm::radians(m_fPitch));
+			aDirection.z = cos(glm::radians(m_fPitch)) * sin(glm::radians(m_fYaw));
+
+			m_aCameraDir = aDirection;
+			m_aCameraRight = glm::normalize(glm::cross(m_aCameraDir, m_aWorldUp));
+			m_aCameraUp = glm::normalize(glm::cross(m_aCameraRight, m_aCameraDir));
+		}
+		break;
+	case E_MODE_MODELER:
+		{
+			// Rotate Yaw
+			{
+				glm::vec3 aUp = m_aCameraUp;
+				glm::vec3 aTargetPos = m_aCameraPos;
+				glm::vec3 aTargetDir = m_aCameraPos + m_aCameraDir;
+				glm::vec3 aCenter = m_aWorldCenter;
+
+				glm::mat4 matRotate(1.f);
+				matRotate = glm::rotate(matRotate, glm::radians(-fOffsetX), aUp);
+				matRotate = glm::translate(matRotate, -aCenter);
+
+				aTargetPos = matRotate * glm::vec4(aTargetPos, 1.f);
+				aTargetDir = matRotate * glm::vec4(aTargetDir, 1.f);
+
+				glm::mat4 matTranslate(1.f);
+				matTranslate = glm::translate(matTranslate, aCenter);
+
+				aTargetPos = matTranslate * glm::vec4(aTargetPos, 1.f);
+				aTargetDir = matTranslate * glm::vec4(aTargetDir, 1.f);
+
+				m_aCameraPos = aTargetPos;
+				m_aCameraDir = glm::normalize(aTargetDir - aTargetPos);
+				m_aCameraRight = glm::normalize(glm::cross(m_aCameraDir, m_aCameraUp));
+			}
+
+			// Rotate Pitch
+			{
+				glm::vec3 aUp = m_aCameraRight;
+				glm::vec3 aTargetPos = m_aCameraPos;
+				glm::vec3 aTargetDir = m_aCameraPos + m_aCameraDir;
+				glm::vec3 aCenter = m_aWorldCenter;
+
+				glm::mat4 matRotate(1.f);
+				matRotate = glm::rotate(matRotate, glm::radians(fOffsetY), aUp);
+				matRotate = glm::translate(matRotate, -aCenter);
+
+				aTargetPos = matRotate * glm::vec4(aTargetPos, 1.f);
+				aTargetDir = matRotate * glm::vec4(aTargetDir, 1.f);
+
+				glm::mat4 matTranslate(1.f);
+				matTranslate = glm::translate(matTranslate, aCenter);
+
+				aTargetPos = matTranslate * glm::vec4(aTargetPos, 1.f);
+				aTargetDir = matTranslate * glm::vec4(aTargetDir, 1.f);
+
+				m_aCameraPos = aTargetPos;
+				m_aCameraDir = glm::normalize(aTargetDir - aTargetPos);
+				m_aCameraUp = glm::normalize(glm::cross(m_aCameraRight, m_aCameraDir));
+			}
+		}
+		break;
+	default:
+		{
+			ASSERT(g_warning);
+		}
+		break;
+	}
 }
