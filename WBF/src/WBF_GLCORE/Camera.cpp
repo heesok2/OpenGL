@@ -114,7 +114,7 @@ void CCamera::OnKeyboardDown(E_CAMERA_MOVEMENT eMovement, float deltaTime)
 	}
 }
 
-void CCamera::OnMouseMove(CPoint point, BOOL bConstrainPitch)
+void CCamera::OnMouseMove(CPoint point)
 {
 
 	auto MouseOffset = m_MousePoint - point;

@@ -44,7 +44,7 @@ public:
 	void SetMousePosition(CPoint& point);	
 
 	void OnKeyboardDown(E_CAMERA_MOVEMENT eMovement, float deltaTime);
-	void OnMouseMove(CPoint point, BOOL bConstrainPitch = TRUE);
+	void OnMouseMove(CPoint point);
 
 protected:
 	void UpdateCameraVectors(float fOffsetX, float fOffsetY);

@@ -45,7 +45,7 @@ protected:
 	virtual void Release() override;
 
 	virtual void Build() override;
-	virtual void Draw(CShader* pShader) {};
+	virtual void Draw(CShader*) {};
 
 };
 

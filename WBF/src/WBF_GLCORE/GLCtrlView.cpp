@@ -30,7 +30,7 @@ BEGIN_MESSAGE_MAP(CGLCtrlView, CGLView)
 	ON_WM_CREATE()
 END_MESSAGE_MAP()
 
-void CGLCtrlView::OnDraw(CDC* pDC)
+void CGLCtrlView::OnDraw(CDC*)
 {
 	// Model FrameBuffer 에 그림을 화면 ScreenBuffer에 그린다.
 	BeginwglCurrent();
@@ -148,7 +148,7 @@ void CGLCtrlView::GLCreateScreen()
 
 	m_ShaderManager.GLCreate(E_SHADER_SCREEN);
 	auto ShaderScreen = m_ShaderManager.GetAt(E_SHADER_SCREEN);
-	
+
 	glGenVertexArrays(1, &m_uiScreenVAO);
 	glGenBuffers(1, &m_uiScreenVBO);
 
@@ -160,7 +160,7 @@ void CGLCtrlView::GLCreateScreen()
 		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 4, nullptr);
 		glEnableVertexAttribArray(1);
 		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 4, (void*)(sizeof(float) * 2));
-		
+
 		ShaderScreen.GLSetInt("ScreenTex2D", 0);
 	}
 	glBindVertexArray(0);
@@ -169,12 +169,15 @@ void CGLCtrlView::GLCreateScreen()
 
 void CGLCtrlView::GLPrepareScene()
 {
+	auto glProjectionMatrix = m_Camera.GetProjectionMatrix();
+	auto glViewMatrix = m_Camera.GetViewMatrix();
+
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glMultMatrixf((float*)&m_Camera.GetProjectionMatrix());
+	glMultMatrixf((float*)&glProjectionMatrix);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	glMultMatrixf((float*)&m_Camera.GetViewMatrix());
+	glMultMatrixf((float*)&glViewMatrix);
 }
 
 int CGLCtrlView::OnCreate(LPCREATESTRUCT lpCreateStruct)
@@ -278,7 +281,7 @@ void CGLCtrlView::OnLButtonDown(UINT nFlags, CPoint point)
 	auto pWnd = GetCapture();
 	if (pWnd == nullptr)
 	{
-		auto pCapture = SetCapture();
+		SetCapture();
 		m_Camera.SetMousePosition(point);
 	}
 

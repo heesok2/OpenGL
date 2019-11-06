@@ -123,7 +123,7 @@ void CGLView::GLInitialPalette()
 
 	// Fill in palette header 
 	pPal->palVersion = 0x300;		// Windows 3.0
-	pPal->palNumEntries = nColors; // table size
+	pPal->palNumEntries = (WORD)nColors; // table size
 
 	// Build mask of all 1's.  This creates a number represented by having
 	// the low order x bits set, where x = pfd.cRedBits, pfd.cGreenBits, and
@@ -196,7 +196,7 @@ void CGLView::OnSize(UINT nType, int cx, int cy)
 	EndwglCurrent();
 }
 
-BOOL CGLView::OnEraseBkgnd(CDC* pDC)
+BOOL CGLView::OnEraseBkgnd(CDC*)
 {
 	return TRUE; // return CView::OnEraseBkgnd(pDC);
 }

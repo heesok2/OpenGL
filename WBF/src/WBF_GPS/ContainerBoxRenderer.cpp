@@ -48,11 +48,14 @@ void CContainerBoxRenderer::GLRelease()
 
 void CContainerBoxRenderer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 {
-	SetLightData(pHelper);
+	if(uiFlag == 0)
+	{
+		SetLightData(pHelper);
 
-	SetContainerData(pHelper);
+		SetContainerData(pHelper);
 
-	GLSetContainerTexture(pHelper);
+		GLSetContainerTexture(pHelper);
+	}
 }
 
 void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
@@ -74,11 +77,13 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 
 		for (auto& tData : m_aData)
 		{
+			auto glAllMatrix = glModelViewProjectionMatrix * tData.glModelMatrix;
+
 			Shader.GLSetVector3("aEyePos", aEyePos);
 			Shader.GLSetVector3("aLightPos", m_aLightPos);
 			Shader.GLSetVector3("aLightColor", glLightColor);
 			Shader.GLSetMatrix4("matModel", tData.glModelMatrix);
-			Shader.GLSetMatrix4("matModelViewProjection", glModelViewProjectionMatrix * tData.glModelMatrix);
+			Shader.GLSetMatrix4("matModelViewProjection", glAllMatrix);
 
 			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_2D, m_uiContainerTex2D);
@@ -148,7 +153,7 @@ void CContainerBoxRenderer::SetContainerData(CViewHelper * pHelper)
 void CContainerBoxRenderer::GLSetContainerTexture(CViewHelper * pHelper)
 {
 	TCHAR aPath[MAX_PATH + 1] = {0};
-	auto dwSize = GetModuleFileName(nullptr, aPath, MAX_PATH);
+	GetModuleFileName(nullptr, aPath, MAX_PATH);
 
 	CString strExe;
 	CString strPath = aPath;

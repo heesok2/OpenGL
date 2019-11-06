@@ -27,7 +27,7 @@ CWBFModelManager::~CWBFModelManager()
 {
 }
 
-void CWBFModelManager::OnNotifyMsg(CDocument * pDoc, WPARAM wParam, LPARAM lParam)
+void CWBFModelManager::OnNotifyMsg(CDocument * pDoc, WPARAM wParam, LPARAM)
 {
 	if (m_pMyDoc != pDoc) return;
 
@@ -88,7 +88,7 @@ void CWBFModelManager::OnUpdateAll()
 		pObject->SetFlag(MODEL_UPDATE);*/
 }
 
-void CWBFModelManager::OnUpdateOnly(UINT uiType)
+void CWBFModelManager::OnUpdateOnly(UINT )
 {
 	//for (auto pObject : m_vObject)
 	//{

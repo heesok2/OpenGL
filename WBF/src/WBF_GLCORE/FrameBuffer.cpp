@@ -27,7 +27,7 @@ void CFrameBuffer::GLBind()
 {
 	GLint uiFBO;
 	glGetIntegerv(GL_FRAMEBUFFER_BINDING, &uiFBO);
-	if (uiFBO != m_uiFBO)
+	if ((UINT)uiFBO != m_uiFBO)
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, m_uiFBO);
 		m_uiPrevFBO = uiFBO;

@@ -52,7 +52,8 @@ CModelSample::CModelSample() :
 	CString strExe;
 
 	TCHAR aPath[MAX_PATH + 1] = { 0 };
-	auto dwSize = GetModuleFileName(nullptr, aPath, MAX_PATH);
+	GetModuleFileName(nullptr, aPath, MAX_PATH);
+
 	CString strPath = aPath;
 	auto item = strPath.ReverseFind('\\');
 	if (item != -1) strExe = strPath.Left(item) + _T("\\");
@@ -201,7 +202,7 @@ void CModelSample::GLBind()
 void CModelSample::GLDraw()
 {
 	return;
-	glm::vec3 cubePositions[] =
+	/*glm::vec3 cubePositions[] =
 	{
 		glm::vec3(0.0f,  0.0f,  0.0f),
 		glm::vec3(2.0f,  5.0f, -15.0f),
@@ -230,7 +231,7 @@ void CModelSample::GLDraw()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-	}
+	}*/
 }
 
 void CModelSample::GLUnbind()

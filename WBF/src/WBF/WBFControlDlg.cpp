@@ -125,7 +125,7 @@ BOOL CWBFControlDlg::Dlg2Data()
 		return (UINT)cobx.GetItemData(item);
 	};
 
-	auto uiType = lambda_cobx(m_cobxType);
+	lambda_cobx(m_cobxType);
 
 	//auto pModelMgr = m_pMyDoc->GetModelManager();
 	//auto pModel = pModelMgr->GetModel(uiType);

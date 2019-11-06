@@ -6,7 +6,7 @@ class CDocBase;
 class __MY_EXT_CLASS__ CWBFDialog : public CDialog
 {
 public:
-	CWBFDialog(CDocBase* pDoc, CWnd* pParent = nullptr);
+	CWBFDialog(CDocBase* pDoc);
 	CWBFDialog(UINT uiResID, CDocBase* pDoc, CWnd* pParent = nullptr);
 	virtual ~CWBFDialog();
 

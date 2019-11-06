@@ -63,9 +63,7 @@ void CObjectBufferManager::GLBuild(UINT uiFlag)
 {
 	CViewHelper tHelper;
 	tHelper.InitialData(m_pView);
-
-	auto pDoc = m_pView->GetDocument();
-
+	
 	auto itr = m_mObjectBuffer.begin();
 	while (itr != m_mObjectBuffer.end())
 	{

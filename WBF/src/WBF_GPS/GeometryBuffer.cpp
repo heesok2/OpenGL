@@ -42,7 +42,7 @@ void CGeometryBuffer::GLRelease()
 	m_mObjectBuffer.clear();
 }
 
-void CGeometryBuffer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
+void CGeometryBuffer::GLBuild(CViewHelper * pHelper, UINT)
 {
 	auto pDocBase = (CDocBase*)pHelper->GetDocument();
 	auto pPackage = pDocBase->GetPackage();

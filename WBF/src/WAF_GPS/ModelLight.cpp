@@ -61,10 +61,10 @@ void CModelLight::Build()
 	}
 }
 
-void CModelLight::Draw(CShader * pShader)
+void CModelLight::Draw(CShader *)
 {
 	return;
-
+/*
 	auto pView = m_pModelMgr->GetView();
 	auto pManager = m_pModelMgr->GetVBOManager();
 	auto pGeom = (CVBOGeom*)pManager->Lookup(E_VBO_GEOM);
@@ -100,5 +100,5 @@ void CModelLight::Draw(CShader * pShader)
 			glBindVertexArray(0);
 		}
 	}
-	pShader->GLUnbind();
+	pShader->GLUnbind();*/
 }
