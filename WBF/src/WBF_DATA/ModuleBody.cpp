@@ -29,14 +29,14 @@ void CModuleBody::SetDefaultData()
 
 	auto pModuleSubBody = (CModuleSubBody*)m_pPackage->GetModule(E_TYPE_SUBBODY);
 
-	auto SZ_DATA = sizeof(int);
-	auto szNum = sizeof(g_sub_index) / SZ_DATA;
+	UINT SZ_DATA = sizeof(int);
+	UINT szNum = sizeof(g_sub_index) / SZ_DATA;
 
 	CEntityBody Data;
 	Data.dbKey = GetNewKey();
 	Data.aItrSubBody.resize(szNum);
 
-	for (auto lsub = 0; lsub < szNum; ++lsub)
+	for (UINT lsub = 0; lsub < szNum; ++lsub)
 	{
 		auto key = g_sub_index[lsub];
 		auto itr = pModuleSubBody->Find(key);
