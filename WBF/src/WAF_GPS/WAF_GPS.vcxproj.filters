@@ -16,9 +16,6 @@
     <Filter Include="RENDER">
       <UniqueIdentifier>{249fef5d-e045-4906-80c6-c02f082199ad}</UniqueIdentifier>
     </Filter>
-    <Filter Include="RENDER\Light">
-      <UniqueIdentifier>{226bfab4-85fd-4144-aba3-5bb1ddea5a4c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="RENDER\Sample">
       <UniqueIdentifier>{33b5a89e-6618-4896-b129-7acb7b3817b0}</UniqueIdentifier>
     </Filter>
@@ -27,14 +24,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ModelLight.cpp">
-      <Filter>RENDER\Light</Filter>
-    </ClCompile>
     <ClCompile Include="ModelSample.cpp">
       <Filter>RENDER\Sample</Filter>
-    </ClCompile>
-    <ClCompile Include="RndrLight.cpp">
-      <Filter>RENDER\Light</Filter>
     </ClCompile>
     <ClCompile Include="RndrSample.cpp">
       <Filter>RENDER\Sample</Filter>
@@ -73,14 +64,8 @@
     <ClInclude Include="WAF_GPS_LINK.h">
       <Filter>__GENERAL__\Linker</Filter>
     </ClInclude>
-    <ClInclude Include="ModelLight.h">
-      <Filter>RENDER\Light</Filter>
-    </ClInclude>
     <ClInclude Include="ModelSample.h">
       <Filter>RENDER\Sample</Filter>
-    </ClInclude>
-    <ClInclude Include="RndrLight.h">
-      <Filter>RENDER\Light</Filter>
     </ClInclude>
     <ClInclude Include="RndrSample.h">
       <Filter>RENDER\Sample</Filter>

@@ -54,6 +54,9 @@
     <ClCompile Include="ContainerBoxRenderer.cpp">
       <Filter>RENDER\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="LightRenderer.cpp">
+      <Filter>RENDER\Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="WBF_GPS.def">
@@ -101,6 +104,9 @@
       <Filter>RENDER\Define</Filter>
     </ClInclude>
     <ClInclude Include="ContainerBoxRenderer.h">
+      <Filter>RENDER\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="LightRenderer.h">
       <Filter>RENDER\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
