@@ -9,7 +9,6 @@
 #include "..\WBF_BASE\ModelFactory.h"
 #include "..\WBF_BASE\ModelData.h"
 #include "..\WBF_BASE\WBFVBOManager.h"
-#include "..\WBF_GPS\VBOGeom.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

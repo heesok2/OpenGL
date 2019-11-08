@@ -6,8 +6,6 @@
 enum E_RNDR_TYPE
 {
 	E_RNDR_UNKNOWN = -1,
-	E_RNDR_SCREEN = 0,
-	E_RNDR_SAMPLE,
 
 	E_RNDR_NUM
 };

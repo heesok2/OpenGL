@@ -24,18 +24,7 @@ CWBFRndrManager::~CWBFRndrManager()
 
 void CWBFRndrManager::OnInitial()
 {
-	auto pModelMgr = m_pView->GetModelManager();
 
-	for (UINT uiType = E_RNDR_SAMPLE; uiType < E_RNDR_NUM; ++uiType)
-	{
-		auto pObject = (CRndrData*)CRndrFactory::GetInstance().CreateObject(uiType);
-		if (pObject == nullptr) continue;
-		
-		pObject->SetHelper(this, pModelMgr);
-		pObject->OnInitialData();
-
-		m_vObject.push_back(pObject);
-	}
 }
 
 void CWBFRndrManager::OnDestroy()

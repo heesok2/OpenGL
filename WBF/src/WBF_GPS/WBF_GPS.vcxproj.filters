@@ -16,12 +16,6 @@
     <Filter Include="OPTION">
       <UniqueIdentifier>{d54e9047-8dc9-4a8b-9d67-80d529a9a14a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="VBO">
-      <UniqueIdentifier>{67bd5172-6385-490f-ac59-6abbdc26ce9f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="VBO\Geometry">
-      <UniqueIdentifier>{7808e427-c9ec-4b04-881a-da3b71f5e025}</UniqueIdentifier>
-    </Filter>
     <Filter Include="RENDER">
       <UniqueIdentifier>{ffd279ef-94f6-4fd4-800a-5f782c0366bc}</UniqueIdentifier>
     </Filter>
@@ -36,9 +30,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="VBOGeom.cpp">
-      <Filter>VBO\Geometry</Filter>
-    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>__GENERAL__</Filter>
     </ClCompile>
@@ -75,9 +66,6 @@
     </ClInclude>
     <ClInclude Include="WBF_GPS_LINK.h">
       <Filter>__GENERAL__\Linker</Filter>
-    </ClInclude>
-    <ClInclude Include="VBOGeom.h">
-      <Filter>VBO\Geometry</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>__GENERAL__</Filter>
