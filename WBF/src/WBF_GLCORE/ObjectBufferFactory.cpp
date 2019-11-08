@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "ObjectBufferFactory.h"
 
-
 CObjectBufferFactory & CObjectBufferFactory::GetInstance()
 {
 	static CObjectBufferFactory inst;

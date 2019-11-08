@@ -23,6 +23,7 @@
 #include "WBFView.h"
 #include "WBFControlDlg.h"
 
+#include "..\WBF_GPS\WBFGPSOption.h"
 #include "..\WAF_GPS\WBFRndrManager.h"
 #include "..\WAF_GPS\WBFModelManager.h"
 
