@@ -37,8 +37,10 @@ CContainerBoxRenderer::~CContainerBoxRenderer()
 
 void CContainerBoxRenderer::GLRelease()
 {
-	glDeleteTextures(1, &m_uiSmaileTex2D);
-	glDeleteTextures(1, &m_uiContainerTex2D);
+	if(glIsTexture(m_uiSmaileTex2D))
+		glDeleteTextures(1, &m_uiSmaileTex2D);
+	if(glIsTexture(m_uiContainerTex2D))
+		glDeleteTextures(1, &m_uiContainerTex2D);
 
 	m_uiSmaileTex2D = 0;
 	m_uiContainerTex2D = 0;
@@ -60,7 +62,8 @@ void CContainerBoxRenderer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 
 void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 {
-	if (m_aData.empty()) return;
+	if (m_aData.empty())
+		return;
 
 	auto pShaderManager = pHelper->GetShaderManager();
 	auto& Shader = pShaderManager->GetAt(E_SHADER_CONTAINER_BOX);
@@ -102,7 +105,7 @@ void CContainerBoxRenderer::SetLightData(CViewHelper * pHelper)
 	auto pPackage = pDoc->GetPackage();
 
 	auto pModuleLight = (CModuleLight*)pPackage->GetModule(E_TYPE_LIGHT);
-	auto itrLight = pModuleLight->GetDefaultLight();
+	auto itrLight = pModuleLight->GetDefaultData();
 	if (!ITR_IS_VALID(itrLight)) return;
 
 	auto tLight = pModuleLight->GetAtNU(itrLight);

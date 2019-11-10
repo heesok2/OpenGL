@@ -14,6 +14,7 @@ enum E_TYPE_DATA
 
 	// Custom
 	E_TYPE_LIGHT,
+	E_TYPE_GROUND,
 	E_TYPE_BOX,
 	
 

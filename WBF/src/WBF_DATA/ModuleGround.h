@@ -1,15 +1,15 @@
 #pragma once
 
 #include "..\WBF_LIB\ModuleData.hpp"
-#include "EntityLight.h"
+#include "EntityGround.h"
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CModuleLight : public CModuleData<CEntityLight>
+class __MY_EXT_CLASS__ CModuleGround : public CModuleData<CEntityGround>
 {
 public:
-	CModuleLight(CPackage * pPackage);
-	virtual ~CModuleLight();
+	CModuleGround(CPackage * pPackage);
+	virtual ~CModuleGround();
 
 public:
 	virtual DITER GetDefaultData() override;
@@ -17,7 +17,7 @@ public:
 
 protected:
 	DKEY m_dbDefaultKey;
-
 };
 
 #include "HeaderPost.h"
+

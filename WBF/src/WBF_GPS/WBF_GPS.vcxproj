@@ -209,6 +209,7 @@
   <ItemGroup>
     <ClCompile Include="ContainerBoxRenderer.cpp" />
     <ClCompile Include="GeometryBuffer.cpp" />
+    <ClCompile Include="GroundRenderer.cpp" />
     <ClCompile Include="LightRenderer.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -226,6 +227,7 @@
   <ItemGroup>
     <ClInclude Include="ContainerBoxRenderer.h" />
     <ClInclude Include="GeometryBuffer.h" />
+    <ClInclude Include="GroundRenderer.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
     <ClInclude Include="BufferType.h" />

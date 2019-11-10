@@ -20,6 +20,15 @@ CModuleLight::~CModuleLight()
 {
 }
 
+DITER CModuleLight::GetDefaultData()
+{
+	auto itrLight = Find(m_dbDefaultKey);
+	if (!ITR_IS_VALID(itrLight))
+		ASSERT(g_warning);
+
+	return itrLight;
+}
+
 void CModuleLight::SetDefaultData()
 {
 	if (!Empty()) return;
@@ -34,13 +43,4 @@ void CModuleLight::SetDefaultData()
 	Data.vPos = glm::vec3(1.2f, 1.0f, 2.0f);
 
 	InsertNU(Data);
-}
-
-DITER CModuleLight::GetDefaultLight()
-{
-	auto itrLight = Find(m_dbDefaultKey);
-	if (!ITR_IS_VALID(itrLight))
-		ASSERT(g_warning);
-
-	return itrLight;
 }

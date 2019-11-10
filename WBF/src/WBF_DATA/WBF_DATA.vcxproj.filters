@@ -25,6 +25,9 @@
     <Filter Include="__GENERAL__\Linker">
       <UniqueIdentifier>{1af43332-4e55-4402-a469-dbc5db3df673}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DATABASE\Ground">
+      <UniqueIdentifier>{8d55aac1-8944-4bad-8e3c-76d0fc1360a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntityBody.cpp">
@@ -62,6 +65,12 @@
     </ClCompile>
     <ClCompile Include="WBF_DATA.cpp">
       <Filter>__GENERAL__</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityGround.cpp">
+      <Filter>DATABASE\Ground</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleGround.cpp">
+      <Filter>DATABASE\Ground</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +135,12 @@
     </ClInclude>
     <ClInclude Include="WBF_DATA.h">
       <Filter>__GENERAL__</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleGround.h">
+      <Filter>DATABASE\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityGround.h">
+      <Filter>DATABASE\Ground</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

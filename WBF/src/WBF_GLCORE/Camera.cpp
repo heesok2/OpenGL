@@ -17,7 +17,7 @@ const float g_ZOOM = 45.0f;
 CCamera::CCamera()
 	: m_eMode(E_MODE_MODELER)
 {
-	m_aCameraPos = glm::vec3(0.f, 0.f, 3.f);
+	m_aCameraPos = glm::vec3(0.f, 0.f, 5.f);
 	m_aCameraDir = glm::vec3(0.f, 0.f, -1.f);
 	m_aCameraUp = glm::vec3(0.f, 1.f, 0.f);
 	m_aCameraRight = glm::vec3(1.f, 0.f, 0.f);

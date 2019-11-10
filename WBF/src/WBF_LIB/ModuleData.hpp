@@ -83,7 +83,13 @@ public: // Data
 		return m_Dictionary.GetNewKey();
 	}
 
-public: 
+public:
+	virtual DITER GetDefaultData()
+	{
+		ASSERT(g_warning);
+		return (DITER)nullptr;
+	}
+
 	virtual void SetDefaultData() 
 	{
 		ASSERT(g_warning);

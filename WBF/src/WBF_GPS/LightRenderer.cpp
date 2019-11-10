@@ -83,7 +83,7 @@ void CLightRenderer::SetLightData(CViewHelper * pHelper)
 	if (szObjectBufferNum == 0) 
 		return;
 
-	auto itrLight = pModuleLight->GetDefaultLight();
+	auto itrLight = pModuleLight->GetDefaultData();
 	if (ITR_IS_VALID(itrLight))
 	{
 		auto tLight = pModuleLight->GetAtNU(itrLight);
@@ -95,6 +95,7 @@ void CLightRenderer::SetLightData(CViewHelper * pHelper)
 
 		glm::mat4 ModelMatrix(1.f);
 		ModelMatrix = glm::translate(ModelMatrix, tLight.vPos);
+		ModelMatrix = glm::scale(ModelMatrix, glm::vec3(0.5f));
 
 		TLight tData;
 
