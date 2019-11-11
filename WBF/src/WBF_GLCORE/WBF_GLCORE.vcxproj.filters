@@ -122,6 +122,12 @@
     <None Include="res\GLSL\ContainerBox_frag.glsl">
       <Filter>__RESOURCE__\file</Filter>
     </None>
+    <None Include="res\GLSL\Ground_frag.glsl">
+      <Filter>__RESOURCE__\file</Filter>
+    </None>
+    <None Include="res\GLSL\Ground_vert.glsl">
+      <Filter>__RESOURCE__\file</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeaderPost.h">

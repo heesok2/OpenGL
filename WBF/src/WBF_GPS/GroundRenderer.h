@@ -25,12 +25,12 @@ public:
 	virtual void GLDraw(CViewHelper * pHelper) override;
 
 protected:
+	void SetGroundData(CViewHelper* pHelper);
+
+protected:
 	UINT m_uiVAO;
 	UINT m_uiVBO;
-	UINT m_uiEBO;
-
-	TGround m_tData;
-
+	UINT m_uiSize;
 };
 
 #include "HeaderPost.h"

@@ -31,7 +31,7 @@ void CModuleGround::SetDefaultData()
 {
 	if (!Empty()) return;
 
-	const float fRange = 2.f;
+	const float fRange = 4.f;
 
 	CEntityGround Data;
 	Data.dbKey = m_dbDefaultKey;

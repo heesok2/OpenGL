@@ -6,6 +6,7 @@
 #include "..\WBF_DATA\ModuleSubBody.h"
 #include "..\WBF_DATA\ModuleBody.h"
 #include "..\WBF_DATA\ModuleLight.h"
+#include "..\WBF_DATA\ModuleGround.h"
 #include "..\WBF_DATA\ModuleBox.h"
 
 #ifdef _DEBUG
@@ -42,6 +43,7 @@ void CWBFPackage::OnInitial()
 	lambda_module(E_TYPE_SUBBODY, new CModuleSubBody(this));
 	lambda_module(E_TYPE_BODY, new CModuleBody(this));
 	lambda_module(E_TYPE_LIGHT, new CModuleLight(this));
+	lambda_module(E_TYPE_GROUND, new CModuleGround(this));
 	lambda_module(E_TYPE_BOX, new CModuleBox(this));
 }
 
@@ -64,7 +66,11 @@ void CWBFPackage::OnDestroy()
 CModuleBase * CWBFPackage::GetModule(DTYPE dbType)
 {
 	auto itr = m_mModule.find(dbType);
-	if (itr == m_mModule.end()) return nullptr;
+	if (itr == m_mModule.end())
+	{
+		ASSERT(g_warning);
+		return nullptr;
+	}
 
 	return itr->second;
 }

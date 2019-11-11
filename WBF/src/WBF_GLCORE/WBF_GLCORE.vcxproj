@@ -230,6 +230,8 @@
     <ClCompile Include="WBF_GLCORE.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\GLSL\Ground_frag.glsl" />
+    <None Include="res\GLSL\Ground_vert.glsl" />
     <None Include="res\GLSL\Light_frag.glsl" />
     <None Include="res\GLSL\Light_vert.glsl" />
     <None Include="res\GLSL\Sample_frag.glsl" />

@@ -7,19 +7,19 @@
 #define IDR_GLSL_SAMPLE_FRAG            1006
 #define IDR_GLSL_SAMPLE_VERT            1008
 #define IDR_GLSL_SCREEN_FRAG            1009
-#define IDR_GLSL2                       1010
 #define IDR_GLSL_SCREEN_VERT            1010
 #define IDR_GLSL_SIMPLEBOX_VERT         1011
 #define IDR_GLSL_CONTAINER_BOX_VERT     1011
-#define IDR_GLSL3                       1012
 #define IDR_GLSL_SIMPLEBOX_FRAG         1012
 #define IDR_GLSL_CONTAINER_BOX_FRAG     1012
+#define IDR_GLSL_GROUND_VERT            1013
+#define IDR_GLSL_GROUND_FRAG            1014
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        1013
+#define _APS_NEXT_RESOURCE_VALUE        1015
 #define _APS_NEXT_COMMAND_VALUE         32772
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           1000

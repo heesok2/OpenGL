@@ -191,12 +191,14 @@ BOOL CWBFControlDlg::Execute()
 			auto pModuleSubBody = pPackage->GetModule(E_TYPE_SUBBODY);
 			auto pModuleBody = pPackage->GetModule(E_TYPE_BODY);
 			auto pModuleLight = pPackage->GetModule(E_TYPE_LIGHT);
+			auto pModuleGround = pPackage->GetModule(E_TYPE_GROUND);
 			auto pModuleBox = pPackage->GetModule(E_TYPE_BOX);
 
 			pModuleVertex->SetDefaultData();
 			pModuleSubBody->SetDefaultData();
 			pModuleBody->SetDefaultData();
 			pModuleLight->SetDefaultData();
+			pModuleGround->SetDefaultData();
 			pModuleBox->SetDefaultData();
 		}
 		break;

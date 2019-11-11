@@ -86,6 +86,12 @@ void CShaderManager::GLCreate(UINT uiType)
 			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_GLSL_LIGHT_FRAG);
 		}
 		break;
+	case E_SHADER_GROUND:
+		{
+			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_GLSL_GROUND_VERT);
+			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_GLSL_GROUND_FRAG);
+		}
+		break;
 	case E_SHADER_CONTAINER_BOX:
 		{
 			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_GLSL_CONTAINER_BOX_VERT);
