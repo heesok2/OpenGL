@@ -69,24 +69,28 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 	auto& Shader = pShaderManager->GetAt(E_SHADER_CONTAINER_BOX);
 	Shader.GLBind();
 	{
+		auto pView = (CViewBase*)pHelper->GetView();
+		auto matViewMatrix = pView->GetViewMatrix();
+		auto matProjectionMatrix = pView->GetProjectionMatrix();
+		
+
+		glm::vec3 aLightPos = glm::vec3(matViewMatrix * glm::vec4(m_aLightPos, 1.f));
+		glm::vec3 aLightColor(1.f, 1.f, 1.f);
+		glm::vec3 glModelColor(0.8f, 0.8f, 0.8f);
+
 		int nProg;
 		glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
 
-		auto pView = (CViewBase*)pHelper->GetView();
-		auto aEyePos = pView->GetEyePosition();
-		glm::vec3 glLightColor(1.f, 1.f, 1.f);
-		glm::vec3 glModelColor(0.8f, 0.8f, 0.8f);
-		auto glModelViewProjectionMatrix = pView->GetModelViewProjectionMatrix();
-
 		for (auto& tData : m_aData)
 		{
-			auto glAllMatrix = glModelViewProjectionMatrix * tData.glModelMatrix;
+			glm::mat4 matNormalMatrix = glm::transpose(glm::inverse(matViewMatrix * tData.matModelMatrix));
 
-			Shader.GLSetVector3("aEyePos", aEyePos);
-			Shader.GLSetVector3("aLightPos", m_aLightPos);
-			Shader.GLSetVector3("aLightColor", glLightColor);
-			Shader.GLSetMatrix4("matModel", tData.glModelMatrix);
-			Shader.GLSetMatrix4("matModelViewProjection", glAllMatrix);
+			Shader.GLSetMatrix4("tMatrix.matModel", tData.matModelMatrix);
+			Shader.GLSetMatrix4("tMatrix.matView", matViewMatrix);
+			Shader.GLSetMatrix4("tMatrix.matProjection", matProjectionMatrix);
+			Shader.GLSetMatrix4("tMatrix.matNormal", matNormalMatrix);
+			Shader.GLSetVector3("tLight.aLightPos", aLightPos);
+			Shader.GLSetVector3("tLight.aLightColor", aLightColor);
 
 			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_2D, m_uiContainerTex2D);
@@ -147,7 +151,7 @@ void CContainerBoxRenderer::SetContainerData(CViewHelper * pHelper)
 		ModelMatrix = glm::translate(ModelMatrix, tContainer.vPos);
 		tData.uiVAO = itrFind->second.uiVAO;
 		tData.uiSize = itrFind->second.uiSize;
-		tData.glModelMatrix = ModelMatrix;
+		tData.matModelMatrix = ModelMatrix;
 
 		m_aData.push_back(std::move(tData));
 	}

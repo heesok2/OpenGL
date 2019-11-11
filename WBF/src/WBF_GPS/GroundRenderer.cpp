@@ -81,13 +81,13 @@ void CGroundRenderer::SetGroundData(CViewHelper * pHelper)
 	auto itrGround = pModuleGround->GetDefaultData();
 	if (ITR_IS_VALID(itrGround))
 	{
-		float aBuffer[12] = {0};
-
 		auto tGround = pModuleGround->GetAtNU(itrGround);
-		std::copy(&tGround.aPos[0].x, &tGround.aPos[0].x + 3, &aBuffer[0]);
-		std::copy(&tGround.aPos[1].x, &tGround.aPos[1].x + 3, &aBuffer[3]);
-		std::copy(&tGround.aPos[2].x, &tGround.aPos[2].x + 3, &aBuffer[6]);
-		std::copy(&tGround.aPos[3].x, &tGround.aPos[3].x + 3, &aBuffer[9]);
+
+		float aBuffer[12] = {0};
+		std::copy(glm::value_ptr(tGround.aPos[0]), glm::value_ptr(tGround.aPos[0]) + 3, &aBuffer[0]);
+		std::copy(glm::value_ptr(tGround.aPos[1]), glm::value_ptr(tGround.aPos[1]) + 3, &aBuffer[3]);
+		std::copy(glm::value_ptr(tGround.aPos[2]), glm::value_ptr(tGround.aPos[2]) + 3, &aBuffer[6]);
+		std::copy(glm::value_ptr(tGround.aPos[3]), glm::value_ptr(tGround.aPos[3]) + 3, &aBuffer[9]);
 
 		glGenVertexArrays(1, &m_uiVAO);
 		glGenBuffers(1, &m_uiVBO);

@@ -10,7 +10,7 @@ class __MY_EXT_CLASS__ CContainerBoxRenderer : public CDataRenderer
 	{
 		UINT uiVAO;
 		UINT uiSize;
-		glm::mat4 glModelMatrix;
+		glm::mat4 matModelMatrix;
 
 	} TContainerBox, *LPTContainerBox;
 
