@@ -72,14 +72,9 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 		auto pView = (CViewBase*)pHelper->GetView();
 		auto matViewMatrix = pView->GetViewMatrix();
 		auto matProjectionMatrix = pView->GetProjectionMatrix();
-		
 
 		glm::vec3 aLightPos = glm::vec3(matViewMatrix * glm::vec4(m_aLightPos, 1.f));
 		glm::vec3 aLightColor(1.f, 1.f, 1.f);
-		glm::vec3 glModelColor(0.8f, 0.8f, 0.8f);
-
-		int nProg;
-		glGetIntegerv(GL_CURRENT_PROGRAM, &nProg);
 
 		for (auto& tData : m_aData)
 		{
@@ -129,11 +124,6 @@ void CContainerBoxRenderer::SetContainerData(CViewHelper * pHelper)
 	std::map<UINT, TObjectBuffer> mObjectBuffer;
 	auto szObjectBufferNum = pGeomBuffer->GetObjectBuffer(mObjectBuffer);
 	if (szObjectBufferNum == 0) return;
-
-	auto EyePos = pView->GetEyePosition();
-	glm::vec3 glLightColor(1.f, 1.f, 1.f);
-	glm::vec3 glModelColor(0.8f, 0.8f, 0.8f);
-	auto glModelViewProjectionMatrix = pView->GetModelViewProjectionMatrix();
 
 	std::vector<DITER> aItrBox;
 	auto szBoxNum = pModuleBox->GetIterList(aItrBox);
