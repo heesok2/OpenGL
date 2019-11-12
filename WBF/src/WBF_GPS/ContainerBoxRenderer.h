@@ -30,9 +30,12 @@ protected:
 	void SetContainerData(CViewHelper * pHelper);
 	void GLSetContainerTexture(CViewHelper * pHelper);
 
-protected:	
+protected:
 	UINT m_uiSmaileTex2D;
-	UINT m_uiContainerTex2D;		
+	UINT m_uiContainerTex2D;
+	UINT m_uiContainer2Tex2D;
+	UINT m_uiContainer2SpecularTex2D;
+
 	glm::vec3 m_aLightPos;
 	std::vector<TContainerBox> m_aData;
 

@@ -27,6 +27,9 @@ CContainerBoxRenderer::CContainerBoxRenderer()
 {
 	m_uiSmaileTex2D = 0;
 	m_uiContainerTex2D = 0;
+	m_uiContainer2Tex2D = 0;
+	m_uiContainer2SpecularTex2D = 0;
+
 	m_aLightPos = glm::vec3(0);
 	m_aData.clear();
 }
@@ -37,20 +40,27 @@ CContainerBoxRenderer::~CContainerBoxRenderer()
 
 void CContainerBoxRenderer::GLRelease()
 {
-	if(glIsTexture(m_uiSmaileTex2D))
+	if (glIsTexture(m_uiSmaileTex2D))
 		glDeleteTextures(1, &m_uiSmaileTex2D);
-	if(glIsTexture(m_uiContainerTex2D))
+	if (glIsTexture(m_uiContainerTex2D))
 		glDeleteTextures(1, &m_uiContainerTex2D);
+	if (glIsTexture(m_uiContainer2Tex2D))
+		glDeleteTextures(1, &m_uiContainer2Tex2D);
+	if (glIsTexture(m_uiContainer2SpecularTex2D))
+		glDeleteTextures(1, &m_uiContainer2SpecularTex2D);
 
 	m_uiSmaileTex2D = 0;
 	m_uiContainerTex2D = 0;
+	m_uiContainer2Tex2D = 0;
+	m_uiContainer2SpecularTex2D = 0;
+
 	m_aLightPos = glm::vec3(0);
 	m_aData.clear();
 }
 
 void CContainerBoxRenderer::GLBuild(CViewHelper * pHelper, UINT uiFlag)
 {
-	if(uiFlag == 0)
+	if (uiFlag == 0)
 	{
 		SetLightData(pHelper);
 
@@ -64,7 +74,7 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 {
 	if (m_aData.empty())
 		return;
-	
+
 	auto pShaderManager = pHelper->GetShaderManager();
 	auto& Shader = pShaderManager->GetAt(E_SHADER_CONTAINER_BOX);
 	Shader.GLBind();
@@ -74,7 +84,13 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 		auto matProjectionMatrix = pView->GetProjectionMatrix();
 
 		glm::vec3 aLightPos = glm::vec3(matViewMatrix * glm::vec4(m_aLightPos, 1.f));
-		glm::vec3 aLightColor(1.f, 1.f, 1.f);
+		glm::vec3 aLightAmbient(0.2f);
+		glm::vec3 aLightDiffuse(0.5f);
+		glm::vec3 aLightSpecular(1.f);
+		glm::vec3 aMaterialAmbient(1.f);
+		glm::vec3 aMaterialDiffuse(1.f);
+		glm::vec3 aMaterialSpecular(1.f);
+		float fMaterialShininess = 32.f;
 
 		for (auto& tData : m_aData)
 		{
@@ -85,10 +101,19 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 			Shader.GLSetMatrix4("tMatrix.matProjection", matProjectionMatrix);
 			Shader.GLSetMatrix4("tMatrix.matNormal", matNormalMatrix);
 			Shader.GLSetVector3("tLight.aLightPos", aLightPos);
-			Shader.GLSetVector3("tLight.aLightColor", aLightColor);
+			Shader.GLSetVector3("tLight.aAmbient", aLightAmbient);
+			Shader.GLSetVector3("tLight.aDiffuse", aLightDiffuse);
+			Shader.GLSetVector3("tLight.aSpecular", aLightSpecular);
+			Shader.GLSetVector3("tMaterial.aAmbient", aMaterialAmbient);
+			Shader.GLSetVector3("tMaterial.aDiffuse", aMaterialDiffuse);
+			Shader.GLSetVector3("tMaterial.aSpecular", aMaterialSpecular);
+			Shader.GLSetfloat("tMaterial.fShininess", fMaterialShininess);
 
 			glActiveTexture(GL_TEXTURE0);
-			glBindTexture(GL_TEXTURE_2D, m_uiContainerTex2D);
+			glBindTexture(GL_TEXTURE_2D, m_uiContainer2Tex2D);
+
+			glActiveTexture(GL_TEXTURE0 + 1); // GL_TEXTURE1
+			glBindTexture(GL_TEXTURE_2D, m_uiContainer2SpecularTex2D);
 
 			glBindVertexArray(tData.uiVAO);
 			glDrawElements(GL_TRIANGLES, tData.uiSize, GL_UNSIGNED_INT, 0);
@@ -159,42 +184,38 @@ void CContainerBoxRenderer::GLSetContainerTexture(CViewHelper * pHelper)
 
 	CString csSmaile = strExe + _T("\\Image\\awesomeface.png");
 	CString csContainer = strExe + _T("\\Image\\container.jpg");
+	CString csContainer2 = strExe + _T("\\Image\\container2.png");
+	CString csContainer2_Specular = strExe + _T("\\Image\\container2_specular.png");
 
-	CImageLoader imgSmaile;
-	imgSmaile.InitialData(csSmaile);
+	auto lambda_tex2D = [](CString& csPath, UINT& uiTex2D)
+	{
+		CImageLoader imgLoader;
+		imgLoader.InitialData(csPath);
 
-	glGenTextures(1, &m_uiSmaileTex2D);
-	glBindTexture(GL_TEXTURE_2D, m_uiSmaileTex2D);
+		glGenTextures(1, &uiTex2D);
+		glBindTexture(GL_TEXTURE_2D, uiTex2D);
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgSmaile.GetWidth(), imgSmaile.GetHeight(), 0, imgSmaile.GetByte() == WBFIMG_RGBA ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgSmaile.GetBuffer());
-	glGenerateMipmap(GL_TEXTURE_2D);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgLoader.GetWidth(), imgLoader.GetHeight(), 0, imgLoader.GetByte() == WBFIMG_RGBA ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgLoader.GetBuffer());
+		glGenerateMipmap(GL_TEXTURE_2D);
 
-	glBindTexture(GL_TEXTURE_2D, 0);
+		glBindTexture(GL_TEXTURE_2D, 0);
+	};
 
-	CImageLoader imgContainer;
-	imgContainer.InitialData(csContainer);
-
-	glGenTextures(1, &m_uiContainerTex2D);
-	glBindTexture(GL_TEXTURE_2D, m_uiContainerTex2D);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgContainer.GetWidth(), imgContainer.GetHeight(), 0, imgContainer.GetByte() == WBFIMG_RGBA ? GL_RGBA : GL_RGB, GL_UNSIGNED_BYTE, imgContainer.GetBuffer());
-	glGenerateMipmap(GL_TEXTURE_2D);
-
-	glBindTexture(GL_TEXTURE_2D, 0);
+	lambda_tex2D(csSmaile, m_uiSmaileTex2D);
+	lambda_tex2D(csContainer, m_uiContainerTex2D);
+	lambda_tex2D(csContainer2, m_uiContainer2Tex2D);
+	lambda_tex2D(csContainer2_Specular, m_uiContainer2SpecularTex2D);
 
 	auto pShaderManager = pHelper->GetShaderManager();
 	auto& Shader = pShaderManager->GetAt(E_SHADER_CONTAINER_BOX);
 	Shader.GLBind();
 	{
-		Shader.GLSetInt("aContainerTex2D", 0); // Texture Unit Index(GL_TEXTURE0 + 0)
+		Shader.GLSetInt("tMaterial.DiffuseTex2D", 0); // Texture Unit Index(GL_TEXTURE0 + 0)
+		Shader.GLSetInt("tMaterial.SpecularTex2D", 1); // Texture Unit Index(GL_TEXTURE0 + 1)
 	}
 	Shader.GLUnbind();
 }
