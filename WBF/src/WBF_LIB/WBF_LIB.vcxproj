@@ -108,6 +108,7 @@
       <ModuleDefinitionFile>.\WBF_LIB.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc141-mtd.lib</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -133,6 +134,7 @@
       <ModuleDefinitionFile>.\WBF_LIB.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc141-mtd.lib</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -162,6 +164,7 @@
       <ModuleDefinitionFile>.\WBF_LIB.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc141-mt.lib</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -191,6 +194,7 @@
       <ModuleDefinitionFile>.\WBF_LIB.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc141-mt.lib</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
