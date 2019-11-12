@@ -107,7 +107,7 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 			Shader.GLSetVector3("tMaterial.aAmbient", aMaterialAmbient);
 			Shader.GLSetVector3("tMaterial.aDiffuse", aMaterialDiffuse);
 			Shader.GLSetVector3("tMaterial.aSpecular", aMaterialSpecular);
-			Shader.GLSetfloat("tMaterial.fShininess", fMaterialShininess);
+			Shader.GLSetFloat("tMaterial.fShininess", fMaterialShininess);
 
 			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_2D, m_uiContainer2Tex2D);

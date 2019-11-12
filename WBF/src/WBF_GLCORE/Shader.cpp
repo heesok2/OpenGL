@@ -189,7 +189,7 @@ BOOL CShader::GLSetBoolean(const char * aName, bool bData)
 	return TRUE;
 }
 
-BOOL CShader::GLSetfloat(const char * aName, float fData)
+BOOL CShader::GLSetFloat(const char * aName, float fData)
 {
 	auto nID = glGetUniformLocation(m_nProg, aName);
 	if (nID == -1) return FALSE;
