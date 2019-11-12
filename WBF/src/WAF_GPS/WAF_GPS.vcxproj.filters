@@ -13,9 +13,6 @@
     <Filter Include="__GENERAL__\Linker">
       <UniqueIdentifier>{a411fc0a-51a8-43eb-b660-2d55f6436e7a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="RENDER">
-      <UniqueIdentifier>{249fef5d-e045-4906-80c6-c02f082199ad}</UniqueIdentifier>
-    </Filter>
     <Filter Include="VIEW">
       <UniqueIdentifier>{b28c7bd1-c6ba-491e-9e68-4b217a9541ab}</UniqueIdentifier>
     </Filter>
@@ -26,12 +23,6 @@
     </ClCompile>
     <ClCompile Include="WAF_GPS.cpp">
       <Filter>__GENERAL__</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFModelManager.cpp">
-      <Filter>RENDER</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFRndrManager.cpp">
-      <Filter>RENDER</Filter>
     </ClCompile>
     <ClCompile Include="GPSView.cpp">
       <Filter>VIEW</Filter>
@@ -66,12 +57,6 @@
     </ClInclude>
     <ClInclude Include="WAF_GPS.h">
       <Filter>__GENERAL__</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFModelManager.h">
-      <Filter>RENDER</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFRndrManager.h">
-      <Filter>RENDER</Filter>
     </ClInclude>
     <ClInclude Include="GPSView.h">
       <Filter>VIEW</Filter>

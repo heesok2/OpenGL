@@ -213,19 +213,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="WBFVBOData.cpp" />
     <ClCompile Include="WBFDialog.cpp" />
     <ClCompile Include="DocBase.cpp" />
-    <ClCompile Include="ModelData.cpp" />
-    <ClCompile Include="ModelManager.cpp" />
-    <ClCompile Include="ModelFactory.cpp" />
     <ClCompile Include="WBFModelOption.cpp" />
     <ClCompile Include="WBFOption.cpp" />
-    <ClCompile Include="RndrData.cpp" />
-    <ClCompile Include="RndrManager.cpp" />
-    <ClCompile Include="RndrFactory.cpp" />
-    <ClCompile Include="WBFVBOFactory.cpp" />
-    <ClCompile Include="WBFVBOManager.cpp" />
     <ClCompile Include="ViewBase.cpp" />
     <ClCompile Include="WBF_BASE.cpp" />
   </ItemGroup>
@@ -239,23 +230,10 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="ModelDefine.h" />
-    <ClInclude Include="RndrDefine.h" />
-    <ClInclude Include="WBFVBOData.h" />
     <ClInclude Include="WBFDialog.h" />
     <ClInclude Include="DocBase.h" />
-    <ClInclude Include="WBFGraphicDef.h" />
-    <ClInclude Include="ModelData.h" />
-    <ClInclude Include="ModelManager.h" />
-    <ClInclude Include="ModelFactory.h" />
     <ClInclude Include="WBFModelOption.h" />
     <ClInclude Include="WBFOption.h" />
-    <ClInclude Include="RndrData.h" />
-    <ClInclude Include="RndrManager.h" />
-    <ClInclude Include="RndrFactory.h" />
-    <ClInclude Include="WBFVBODefine.h" />
-    <ClInclude Include="WBFVBOFactory.h" />
-    <ClInclude Include="WBFVBOManager.h" />
     <ClInclude Include="ViewBase.h" />
     <ClInclude Include="WBF_BASE.h" />
     <ClInclude Include="WBF_BASE_LINK.h" />

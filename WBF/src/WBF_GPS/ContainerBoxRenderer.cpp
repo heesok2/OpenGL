@@ -145,7 +145,6 @@ void CContainerBoxRenderer::SetContainerData(CViewHelper * pHelper)
 	auto pPackage = pDoc->GetPackage();
 	auto pModuleBox = (CModuleBox*)pPackage->GetModule(E_TYPE_BOX);
 
-	auto pView = (CViewBase*)pHelper->GetView();
 	auto pObjectBufferManager = pHelper->GetObjectBufferManager();
 	auto pGeomBuffer = pObjectBufferManager->LookUp(E_BUFFER_GEOMETRY);
 

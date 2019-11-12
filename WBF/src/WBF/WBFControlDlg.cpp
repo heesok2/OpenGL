@@ -8,8 +8,6 @@
 #include "..\WBF_LIB\ModuleBase.h"
 #include "..\WBF_LIB\DataBaseDefine.h"
 #include "..\WBF_DATA\EntityDefine.h"
-#include "..\WBF_BASE\ModelManager.h"
-#include "..\WBF_BASE\ModelData.h"
 #include "..\WBF_GPS\WBFGPSOption.h"
 
 #ifdef _DEBUG
@@ -17,6 +15,14 @@
 #undef THIS_FILE
 static char THIS_FILE[] = __FILE__;
 #endif
+
+enum E_CONTROL_TYPE
+{
+	E_CTRL_CONTAINER = 0,
+
+	E_CTRL_NUM
+};
+
 
 CWBFControlDlg::CWBFControlDlg(CDocBase * pDoc, CViewBase * pView, CWnd * pParent)
 	: CWBFDialog(CWBFControlDlg::IDD, pDoc, pParent), m_pView(pView)
@@ -88,8 +94,8 @@ void CWBFControlDlg::SetControl()
 		cobx.SetCurSel(0);
 	};
 
-	CString aTypeName[] = {_T("Sample")};
-	UINT aTypeData[] = {gps::E_GPS_SAMPLE};
+	CString aTypeName[] = {_T("ContainerBox")};
+	UINT aTypeData[] = {E_CTRL_CONTAINER};
 	lambda_cobx(m_cobxType, sizeof(aTypeData) / sizeof(UINT), aTypeName, aTypeData);
 
 	CString aPolyFaceName[] = {_T("Front/Back"), _T("Front"), _T("Back")};
@@ -152,7 +158,7 @@ BOOL CWBFControlDlg::CheckData()
 	auto uiType = lambda_cobx(m_cobxType);
 	switch (uiType)
 	{
-	case gps::E_GPS_SAMPLE:
+	case E_CTRL_CONTAINER:
 		{
 
 		}
@@ -185,7 +191,7 @@ BOOL CWBFControlDlg::Execute()
 	auto uiType = lambda_cobx(m_cobxType);
 	switch (uiType)
 	{
-	case gps::E_GPS_SAMPLE:
+	case E_CTRL_CONTAINER:
 		{
 			auto pModuleVertex = pPackage->GetModule(E_TYPE_VERTEX);
 			auto pModuleSubBody = pPackage->GetModule(E_TYPE_SUBBODY);

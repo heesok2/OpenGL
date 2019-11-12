@@ -24,8 +24,6 @@
 #include "WBFControlDlg.h"
 
 #include "..\WBF_GPS\WBFGPSOption.h"
-#include "..\WAF_GPS\WBFRndrManager.h"
-#include "..\WAF_GPS\WBFModelManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -54,8 +52,6 @@ END_MESSAGE_MAP()
 
 CWBFView::CWBFView() noexcept
 {
-	m_pModelMgr = nullptr;
-	m_pRndrMgr = nullptr;
 }
 
 CWBFView::~CWBFView()
@@ -94,9 +90,6 @@ void CWBFView::OnDraw(CDC* pDC)
 			glEnable(GL_DEPTH_TEST);
 
 			GLPrepareScene();
-
-			//m_pModelMgr->GLInitialData();
-			//m_pRndrMgr->GLDrawScene();
 
 			m_RendererManager.GLDrawScene();
 		}
@@ -145,16 +138,6 @@ void CWBFView::OnInitialUpdate()
 	auto pDoc = static_cast<CWBFDoc*>(GetDocument());
 	if (pDoc == nullptr) return;
 
-	BeginwglCurrent();
-	{
-		m_pModelMgr = new CWBFModelManager(this);
-		m_pModelMgr->OnInitial();
-
-
-		m_pRndrMgr = new CWBFRndrManager(this);
-		m_pRndrMgr->OnInitial();
-	}
-	EndwglCurrent();
 }
 
 void CWBFView::OnRButtonUp(UINT /* nFlags */, CPoint point)
@@ -228,14 +211,5 @@ int CWBFView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 
 void CWBFView::OnDestroy()
 {
-	if (m_pModelMgr != nullptr)
-		m_pModelMgr->OnDestroy();
-
-	if (m_pRndrMgr != nullptr)
-		m_pRndrMgr->OnDestroy();
-
-	_SAFE_DELETE(m_pModelMgr);
-	_SAFE_DELETE(m_pRndrMgr);
-
 	CGPSView::OnDestroy();
 }

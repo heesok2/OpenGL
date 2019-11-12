@@ -25,7 +25,6 @@
 #include "WBFPakage.h"
 
 #include "..\WBF_LIB\NotifyDefine.h"
-#include "..\WAF_GPS\WBFModelManager.h"
 
 
 #ifdef _DEBUG

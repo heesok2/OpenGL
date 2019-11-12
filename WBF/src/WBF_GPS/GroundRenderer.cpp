@@ -77,7 +77,7 @@ void CGroundRenderer::SetGroundData(CViewHelper * pHelper)
 	auto pDocBase = (CDocBase*)pHelper->GetDocument();
 	auto pPackage = pDocBase->GetPackage();
 	auto pModuleGround = (CModuleGround*)pPackage->GetModule(E_TYPE_GROUND);
-	
+
 	auto itrGround = pModuleGround->GetDefaultData();
 	if (ITR_IS_VALID(itrGround))
 	{
@@ -100,7 +100,7 @@ void CGroundRenderer::SetGroundData(CViewHelper * pHelper)
 			glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, nullptr);
 		}
 		glBindVertexArray(0);
-		glBindBuffer(GL_ARRAY_BUFFER, 0);		
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 		m_uiSize = 4; // Quard
 	}

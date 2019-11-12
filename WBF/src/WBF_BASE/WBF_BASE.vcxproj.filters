@@ -14,18 +14,6 @@
     <Filter Include="__GENERAL__\Linker">
       <UniqueIdentifier>{56fd0cfd-a2ed-4456-9fb0-652694eb5306}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GRAPHIC">
-      <UniqueIdentifier>{8f76857c-bb32-4118-8518-b77fa99c2f0b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GRAPHIC\VBO">
-      <UniqueIdentifier>{17ab6126-1efa-4955-af55-701703062e9d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GRAPHIC\Renderer">
-      <UniqueIdentifier>{69012cf2-ed91-4075-96a3-bf2d0afd94b4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GRAPHIC\Model">
-      <UniqueIdentifier>{29075dae-cf4a-4804-946c-d124cf2f2c93}</UniqueIdentifier>
-    </Filter>
     <Filter Include="OPTION">
       <UniqueIdentifier>{0737fed2-541a-4a45-ac88-181fe4bb899e}</UniqueIdentifier>
     </Filter>
@@ -48,33 +36,6 @@
     </ClCompile>
     <ClCompile Include="WBFModelOption.cpp">
       <Filter>OPTION</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFVBOManager.cpp">
-      <Filter>GRAPHIC\VBO</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFVBOData.cpp">
-      <Filter>GRAPHIC\VBO</Filter>
-    </ClCompile>
-    <ClCompile Include="WBFVBOFactory.cpp">
-      <Filter>GRAPHIC\VBO</Filter>
-    </ClCompile>
-    <ClCompile Include="ModelManager.cpp">
-      <Filter>GRAPHIC\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="ModelData.cpp">
-      <Filter>GRAPHIC\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="RndrManager.cpp">
-      <Filter>GRAPHIC\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="RndrData.cpp">
-      <Filter>GRAPHIC\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="ModelFactory.cpp">
-      <Filter>GRAPHIC\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="RndrFactory.cpp">
-      <Filter>GRAPHIC\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>__GENERAL__</Filter>
@@ -107,42 +68,6 @@
     <ClInclude Include="WBFModelOption.h">
       <Filter>OPTION</Filter>
     </ClInclude>
-    <ClInclude Include="WBFVBOManager.h">
-      <Filter>GRAPHIC\VBO</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFVBOData.h">
-      <Filter>GRAPHIC\VBO</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFVBOFactory.h">
-      <Filter>GRAPHIC\VBO</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFVBODefine.h">
-      <Filter>GRAPHIC\VBO</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelManager.h">
-      <Filter>GRAPHIC\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelData.h">
-      <Filter>GRAPHIC\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="RndrManager.h">
-      <Filter>GRAPHIC\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="RndrData.h">
-      <Filter>GRAPHIC\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelDefine.h">
-      <Filter>GRAPHIC\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="RndrDefine.h">
-      <Filter>GRAPHIC\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="ModelFactory.h">
-      <Filter>GRAPHIC\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="RndrFactory.h">
-      <Filter>GRAPHIC\Renderer</Filter>
-    </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>__RESOURCE__</Filter>
     </ClInclude>
@@ -163,9 +88,6 @@
     </ClInclude>
     <ClInclude Include="WBF_BASE.h">
       <Filter>__GENERAL__</Filter>
-    </ClInclude>
-    <ClInclude Include="WBFGraphicDef.h">
-      <Filter>GRAPHIC</Filter>
     </ClInclude>
     <ClInclude Include="DocBase.h">
       <Filter>BASE</Filter>
