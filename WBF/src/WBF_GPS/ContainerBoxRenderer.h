@@ -35,6 +35,8 @@ protected:
 	UINT m_uiContainerTex2D;
 	UINT m_uiContainer2Tex2D;
 	UINT m_uiContainer2SpecularTex2D;
+	UINT m_uiContainer2SpecularColorTex2D;
+	UINT m_uiEmissionTex2D;
 
 	glm::vec3 m_aLightPos;
 	std::vector<TContainerBox> m_aData;

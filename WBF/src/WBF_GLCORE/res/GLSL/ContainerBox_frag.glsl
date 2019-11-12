@@ -17,6 +17,7 @@ struct TMaterial
 
 	sampler2D DiffuseTex2D;
 	sampler2D SpecularTex2D;
+	sampler2D EmissionTex2D;
 };
 
 out vec4 FragColor;
@@ -42,6 +43,8 @@ void main()
 	float fSpecular = pow(max(dot(aViewDir, aReflectDir), 0.f), tMaterial.fShininess);
 	vec3 aSpecularColor = tLight.aSpecular * fSpecular * tMaterial.aSpecular * texture(tMaterial.SpecularTex2D, aFragTexcel).rgb;
 
-	vec3 result = aAmbientColor + aDiffuseColor + aSpecularColor;
+	vec3 aEmissionColor = texture(tMaterial.EmissionTex2D, aFragTexcel).rgb;
+
+	vec3 result = aAmbientColor + aDiffuseColor + aSpecularColor + aEmissionColor;
 	FragColor = vec4(result, 1.f);
 }

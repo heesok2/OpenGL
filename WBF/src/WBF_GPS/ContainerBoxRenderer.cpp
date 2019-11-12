@@ -115,6 +115,9 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 			glActiveTexture(GL_TEXTURE0 + 1); // GL_TEXTURE1
 			glBindTexture(GL_TEXTURE_2D, m_uiContainer2SpecularTex2D);
 
+			glActiveTexture(GL_TEXTURE0 + 2); // GL_TEXTURE2
+			glBindTexture(GL_TEXTURE_2D, m_uiEmissionTex2D);
+
 			glBindVertexArray(tData.uiVAO);
 			glDrawElements(GL_TRIANGLES, tData.uiSize, GL_UNSIGNED_INT, 0);
 			glBindVertexArray(0);
@@ -186,6 +189,8 @@ void CContainerBoxRenderer::GLSetContainerTexture(CViewHelper * pHelper)
 	CString csContainer = strExe + _T("\\Image\\container.jpg");
 	CString csContainer2 = strExe + _T("\\Image\\container2.png");
 	CString csContainer2_Specular = strExe + _T("\\Image\\container2_specular.png");
+	CString csContainer2SpecularColorTex2D = strExe + _T("\\Image\\lighting_maps_specular_color.png");
+	CString csEmissionTex2D = strExe + _T("\\Image\\matrix.jpg");
 
 	auto lambda_tex2D = [](CString& csPath, UINT& uiTex2D)
 	{
@@ -209,6 +214,8 @@ void CContainerBoxRenderer::GLSetContainerTexture(CViewHelper * pHelper)
 	lambda_tex2D(csContainer, m_uiContainerTex2D);
 	lambda_tex2D(csContainer2, m_uiContainer2Tex2D);
 	lambda_tex2D(csContainer2_Specular, m_uiContainer2SpecularTex2D);
+	lambda_tex2D(csContainer2SpecularColorTex2D, m_uiContainer2SpecularColorTex2D);
+	lambda_tex2D(csEmissionTex2D, m_uiEmissionTex2D);
 
 	auto pShaderManager = pHelper->GetShaderManager();
 	auto& Shader = pShaderManager->GetAt(E_SHADER_CONTAINER_BOX);
@@ -216,6 +223,7 @@ void CContainerBoxRenderer::GLSetContainerTexture(CViewHelper * pHelper)
 	{
 		Shader.GLSetInt("tMaterial.DiffuseTex2D", 0); // Texture Unit Index(GL_TEXTURE0 + 0)
 		Shader.GLSetInt("tMaterial.SpecularTex2D", 1); // Texture Unit Index(GL_TEXTURE0 + 1)
+		Shader.GLSetInt("tMaterial.EmissionTex2D", 2); // Texture Unit Index(GL_TEXTURE0 + 2)
 	}
 	Shader.GLUnbind();
 }
