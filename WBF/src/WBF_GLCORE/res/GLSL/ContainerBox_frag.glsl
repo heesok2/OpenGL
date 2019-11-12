@@ -111,7 +111,7 @@ vec3 GetSpotLight()
 	float fSpecular = pow(max(dot(aViewDir, aReflectDir), 0.f), tMaterial.fShininess);
 	vec3 aSpecularColor = tLight.aSpecular * fSpecular * tMaterial.aSpecular * texture(tMaterial.SpecularTex2D, aFragTexcel).rgb;
 	
-	float fTheta = dot(aLightDir, aNo rmal);
+	float fTheta = dot(aLightDir, aNormal);
 	float fEpsilon = tLight.fCutOff - tLight.fCutOffOuter;
 	float fIntensity = clamp((fTheta - tLight.fCutOffOuter) / fEpsilon, 0.f, 1.f);
 
