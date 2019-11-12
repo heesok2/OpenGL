@@ -207,6 +207,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AssimpLoader.cpp" />
     <ClCompile Include="DocListener.cpp" />
     <ClCompile Include="EntityData.cpp" />
     <ClCompile Include="FactoryBase.cpp" />
@@ -232,6 +233,7 @@
   <ItemGroup>
     <ClInclude Include="AllGraphicInclude.h" />
     <ClInclude Include="AllProjectInclude.h" />
+    <ClInclude Include="AssimpLoader.h" />
     <ClInclude Include="DataBaseDefine.h" />
     <ClInclude Include="DocListener.h" />
     <ClInclude Include="EntityData.h" />

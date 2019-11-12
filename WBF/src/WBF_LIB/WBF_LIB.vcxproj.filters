@@ -40,6 +40,9 @@
     <Filter Include="UTILITY\Image Loader">
       <UniqueIdentifier>{cc3cf74a-05e9-46ff-a4dd-6d9dbb661136}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UTILITY\File Loader">
+      <UniqueIdentifier>{f8772082-ccd2-4315-ba92-cfadb2a59810}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WBFSubject.cpp">
@@ -77,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="StringConverter.cpp">
       <Filter>UTILITY\String Converter</Filter>
+    </ClCompile>
+    <ClCompile Include="AssimpLoader.cpp">
+      <Filter>UTILITY\File Loader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +171,9 @@
     </ClInclude>
     <ClInclude Include="StringConverter.h">
       <Filter>UTILITY\String Converter</Filter>
+    </ClInclude>
+    <ClInclude Include="AssimpLoader.h">
+      <Filter>UTILITY\File Loader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
