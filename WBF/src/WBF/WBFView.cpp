@@ -98,7 +98,7 @@ void CWBFView::OnDraw(CDC* pDC)
 		glPopMatrix();
 
 		GLUnbindFrameBuffer(E_FBO_MODEL);
-		
+
 	}
 	EndwglCurrent();
 

@@ -82,11 +82,19 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 		auto pView = (CViewBase*)pHelper->GetView();
 		auto matViewMatrix = pView->GetViewMatrix();
 		auto matProjectionMatrix = pView->GetProjectionMatrix();
+		glm::mat4 matInverseMatrix = glm::transpose(glm::inverse(matViewMatrix));
 
+		enum E_LIGHT_TYPE { E_LIGHT_DIRECTIONAL = 0, E_LIGHT_POINT, E_LIGHT_POINT_ATTENUATION, E_SPOTLIGHT, E_LIGHT_NUM };
+
+		int nLightType = E_SPOTLIGHT;
+		glm::vec3 aLightDir = glm::vec3(matInverseMatrix  * glm::vec4(0.f, 0.f, -1.f, 0.f));// -0.2f, -1.f, -0.3f, 0.f));
 		glm::vec3 aLightPos = glm::vec3(matViewMatrix * glm::vec4(m_aLightPos, 1.f));
+		glm::vec3 aAttenuation = glm::vec3(1.f, 0.14f, 0.07f);
 		glm::vec3 aLightAmbient(0.2f);
 		glm::vec3 aLightDiffuse(0.5f);
 		glm::vec3 aLightSpecular(1.f);
+		float fCutOff = 12.5f;
+		float fCutOffOuter = 17.5f;
 		glm::vec3 aMaterialAmbient(1.f);
 		glm::vec3 aMaterialDiffuse(1.f);
 		glm::vec3 aMaterialSpecular(1.f);
@@ -100,7 +108,12 @@ void CContainerBoxRenderer::GLDraw(CViewHelper * pHelper)
 			Shader.GLSetMatrix4("tMatrix.matView", matViewMatrix);
 			Shader.GLSetMatrix4("tMatrix.matProjection", matProjectionMatrix);
 			Shader.GLSetMatrix4("tMatrix.matNormal", matNormalMatrix);
+			Shader.GLSetInt("tLight.nLightType", nLightType);
+			Shader.GLSetVector3("tLight.aLightDir", aLightDir);
 			Shader.GLSetVector3("tLight.aLightPos", aLightPos);
+			Shader.GLSetVector3("tLight.aAttenuation", aAttenuation);
+			Shader.GLSetFloat("tLight.fCutOff", glm::cos(glm::radians(fCutOff)));
+			Shader.GLSetFloat("tLight.fCutOffOuter", glm::cos(glm::radians(fCutOffOuter)));
 			Shader.GLSetVector3("tLight.aAmbient", aLightAmbient);
 			Shader.GLSetVector3("tLight.aDiffuse", aLightDiffuse);
 			Shader.GLSetVector3("tLight.aSpecular", aLightSpecular);
