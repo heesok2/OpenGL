@@ -7,10 +7,6 @@
     <Filter Include="__GENERAL__">
       <UniqueIdentifier>{54343e53-538e-42fe-86f9-da55a1b69a94}</UniqueIdentifier>
     </Filter>
-    <Filter Include="__RESOURCE__\file">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="__GENERAL__\Linker">
       <UniqueIdentifier>{56fd0cfd-a2ed-4456-9fb0-652694eb5306}</UniqueIdentifier>
     </Filter>
@@ -25,6 +21,12 @@
     </Filter>
     <Filter Include="CONTROL\Dialog">
       <UniqueIdentifier>{ebbbc3f9-7c2d-43db-b75d-32d1b88d1180}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IMPORT">
+      <UniqueIdentifier>{3d539c08-e207-432e-bdb7-84a51445f04d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IMPORT\Assimp">
+      <UniqueIdentifier>{ace492c0-8c22-4388-8e86-b02fa2659593}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="ViewBase.cpp">
       <Filter>BASE</Filter>
+    </ClCompile>
+    <ClCompile Include="AssimpFile.cpp">
+      <Filter>IMPORT\Assimp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +99,9 @@
     </ClInclude>
     <ClInclude Include="ViewBase.h">
       <Filter>BASE</Filter>
+    </ClInclude>
+    <ClInclude Include="AssimpFile.h">
+      <Filter>IMPORT\Assimp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

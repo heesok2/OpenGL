@@ -205,15 +205,23 @@
   <ItemGroup>
     <ClCompile Include="EntityBody.cpp" />
     <ClCompile Include="EntityBox.cpp" />
+    <ClCompile Include="EntityElement.cpp" />
     <ClCompile Include="EntityGround.cpp" />
     <ClCompile Include="EntityLight.cpp" />
+    <ClCompile Include="EntityMesh.cpp" />
+    <ClCompile Include="EntityNode.cpp" />
     <ClCompile Include="EntitySubBody.cpp" />
+    <ClCompile Include="EntityTexture.cpp" />
     <ClCompile Include="EntityVertex.cpp" />
     <ClCompile Include="ModuleBody.cpp" />
     <ClCompile Include="ModuleBox.cpp" />
+    <ClCompile Include="ModuleElement.cpp" />
     <ClCompile Include="ModuleGround.cpp" />
     <ClCompile Include="ModuleLight.cpp" />
+    <ClCompile Include="ModuleMesh.cpp" />
+    <ClCompile Include="ModuleNode.cpp" />
     <ClCompile Include="ModuleSubBody.cpp" />
+    <ClCompile Include="ModuleTexture.cpp" />
     <ClCompile Include="ModuleVertex.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -228,20 +236,29 @@
     <None Include="WBF_DATA.def" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ElementType.h" />
     <ClInclude Include="EntityDefine.h" />
     <ClInclude Include="EntityBody.h" />
     <ClInclude Include="EntityBox.h" />
+    <ClInclude Include="EntityElement.h" />
     <ClInclude Include="EntityGround.h" />
     <ClInclude Include="EntityLight.h" />
+    <ClInclude Include="EntityMesh.h" />
+    <ClInclude Include="EntityNode.h" />
     <ClInclude Include="EntitySubBody.h" />
+    <ClInclude Include="EntityTexture.h" />
     <ClInclude Include="EntityVertex.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
     <ClInclude Include="ModuleBody.h" />
     <ClInclude Include="ModuleBox.h" />
+    <ClInclude Include="ModuleElement.h" />
     <ClInclude Include="ModuleGround.h" />
     <ClInclude Include="ModuleLight.h" />
+    <ClInclude Include="ModuleMesh.h" />
+    <ClInclude Include="ModuleNode.h" />
     <ClInclude Include="ModuleSubBody.h" />
+    <ClInclude Include="ModuleTexture.h" />
     <ClInclude Include="ModuleVertex.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />

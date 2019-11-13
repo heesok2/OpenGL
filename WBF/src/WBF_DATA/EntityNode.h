@@ -4,11 +4,11 @@
 
 #include "HeaderPre.h"
 
-class __MY_EXT_CLASS__ CEntityVertex : public CEntityData
+class __MY_EXT_CLASS__ CEntityNode : public CEntityData
 {
 public:
-	CEntityVertex();
-	virtual ~CEntityVertex();
+	CEntityNode();
+	virtual ~CEntityNode();
 
 public:
 	virtual const DTYPE GetType() const override;
@@ -17,9 +17,12 @@ public:
 public:
 	DKEY dbKey;
 
-	glm::vec3 vPos;
-	glm::vec3 vNormal;
-	glm::vec2 vTexcord;
+	glm::vec3 aVertex;
+	glm::vec3 aNormal;
+	glm::vec3 aTexCoord;
+	glm::vec3 aTangent;
+	glm::vec3 aBitangent;
+
 };
 
 #include "HeaderPost.h"

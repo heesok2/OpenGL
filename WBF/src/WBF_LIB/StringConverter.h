@@ -20,6 +20,13 @@ public:
 	static void STR2WSTR(IN std::string& str, OUT std::wstring wstr);
 	static void WSTR2CSTR(IN std::wstring& wstr, OUT CString& cstr);
 	static void WSTR2STR(IN std::wstring wstr, OUT std::string& str);
+	
+	static std::string CSTR2STR(IN CString& cstr);
+	static std::wstring CSTR2WSTR(IN CString& cstr);
+	static CString STR2CSTR(IN std::string& str);
+	static std::wstring STR2WSTR(IN std::string& str);
+	static CString WSTR2CSTR(IN std::wstring& wstr);
+	static std::string WSTR2STR(IN std::wstring wstr);
 };
 
 #include "HeaderPost.h"

@@ -233,6 +233,7 @@
   <ItemGroup>
     <ClInclude Include="AllGraphicInclude.h" />
     <ClInclude Include="AllProjectInclude.h" />
+    <ClInclude Include="AssimpDefine.h" />
     <ClInclude Include="AssimpLoader.h" />
     <ClInclude Include="DataBaseDefine.h" />
     <ClInclude Include="DocListener.h" />

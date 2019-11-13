@@ -207,7 +207,7 @@ void CContainerBoxRenderer::GLSetContainerTexture(CViewHelper * pHelper)
 	auto lambda_tex2D = [](CString& csPath, UINT& uiTex2D)
 	{
 		CImageLoader imgLoader;
-		imgLoader.InitialData(csPath);
+		imgLoader.Import(csPath);
 
 		glGenTextures(1, &uiTex2D);
 		glBindTexture(GL_TEXTURE_2D, uiTex2D);

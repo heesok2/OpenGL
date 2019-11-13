@@ -172,6 +172,9 @@
     <ClInclude Include="StringConverter.h">
       <Filter>UTILITY\String Converter</Filter>
     </ClInclude>
+    <ClInclude Include="AssimpDefine.h">
+      <Filter>UTILITY\File Loader</Filter>
+    </ClInclude>
     <ClInclude Include="AssimpLoader.h">
       <Filter>UTILITY\File Loader</Filter>
     </ClInclude>

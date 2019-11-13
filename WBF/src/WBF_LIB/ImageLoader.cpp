@@ -23,7 +23,7 @@ CImageLoader::~CImageLoader()
 	_SAFE_DELETE_ARRAY(m_pBuffer);
 }
 
-void CImageLoader::InitialData(CString strFilePath)
+void CImageLoader::Import(CString strFilePath)
 {
 	m_strFilePath = strFilePath;
 

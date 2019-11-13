@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "EntityVertex.h"
+#include "EntityDefine.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -9,18 +10,23 @@ static char THIS_FILE[] = __FILE__;
 
 CEntityVertex::CEntityVertex() 
 {
-	Init();
+	dbKey = 0;
+
+	vPos = glm::vec3(0);
+	vNormal = glm::vec3(0);
+	vTexcord = glm::vec2(0);
 }
 
 CEntityVertex::~CEntityVertex()
 {
 }
 
-void CEntityVertex::Init()
+const DTYPE CEntityVertex::GetType() const
 {
-	dbKey = 0;
+	return E_TYPE_VERTEX;
+}
 
-	vPos = glm::vec3(0);
-	vNormal = glm::vec3(0);
-	vTexcord = glm::vec2(0);
+const DKEY CEntityVertex::GetKey() const
+{
+	return dbKey;
 }

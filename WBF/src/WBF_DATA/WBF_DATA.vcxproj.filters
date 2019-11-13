@@ -28,6 +28,9 @@
     <Filter Include="DATABASE\Ground">
       <UniqueIdentifier>{8d55aac1-8944-4bad-8e3c-76d0fc1360a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DATABASE\Mesh">
+      <UniqueIdentifier>{caceb888-38e3-4787-8a47-9fa63581ff2d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EntityBody.cpp">
@@ -71,6 +74,30 @@
     </ClCompile>
     <ClCompile Include="ModuleGround.cpp">
       <Filter>DATABASE\Ground</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityMesh.cpp">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityNode.cpp">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleMesh.cpp">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleNode.cpp">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityElement.cpp">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleElement.cpp">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleTexture.cpp">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityTexture.cpp">
+      <Filter>DATABASE\Mesh</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +168,33 @@
     </ClInclude>
     <ClInclude Include="EntityGround.h">
       <Filter>DATABASE\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityMesh.h">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityNode.h">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleMesh.h">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleNode.h">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityElement.h">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleElement.h">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="ElementType.h">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleTexture.h">
+      <Filter>DATABASE\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityTexture.h">
+      <Filter>DATABASE\Mesh</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
