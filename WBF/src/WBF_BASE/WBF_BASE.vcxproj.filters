@@ -22,11 +22,8 @@
     <Filter Include="CONTROL\Dialog">
       <UniqueIdentifier>{ebbbc3f9-7c2d-43db-b75d-32d1b88d1180}</UniqueIdentifier>
     </Filter>
-    <Filter Include="IMPORT">
-      <UniqueIdentifier>{3d539c08-e207-432e-bdb7-84a51445f04d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="IMPORT\Assimp">
-      <UniqueIdentifier>{ace492c0-8c22-4388-8e86-b02fa2659593}</UniqueIdentifier>
+    <Filter Include="FILE">
+      <UniqueIdentifier>{3e71bd7b-7038-4d54-92d9-9acf5dc1b16e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,8 +48,14 @@
     <ClCompile Include="ViewBase.cpp">
       <Filter>BASE</Filter>
     </ClCompile>
+    <ClCompile Include="FileCtrlManager.cpp">
+      <Filter>FILE</Filter>
+    </ClCompile>
+    <ClCompile Include="AssimpManager.cpp">
+      <Filter>FILE</Filter>
+    </ClCompile>
     <ClCompile Include="AssimpFile.cpp">
-      <Filter>IMPORT\Assimp</Filter>
+      <Filter>FILE</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -100,8 +103,14 @@
     <ClInclude Include="ViewBase.h">
       <Filter>BASE</Filter>
     </ClInclude>
+    <ClInclude Include="FileCtrlManager.h">
+      <Filter>FILE</Filter>
+    </ClInclude>
+    <ClInclude Include="AssimpManager.h">
+      <Filter>FILE</Filter>
+    </ClInclude>
     <ClInclude Include="AssimpFile.h">
-      <Filter>IMPORT\Assimp</Filter>
+      <Filter>FILE</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

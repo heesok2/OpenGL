@@ -1,21 +1,20 @@
 #pragma once
 
-#include "..\WBF_LIB\AssimpLoader.h"
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
 
-#include "HeaderPre.h"
-
-class __MY_EXT_API__ CAssimpFile
+class CAssimpFile
 {
 public:
 	CAssimpFile();
 	virtual ~CAssimpFile();
 
 public:
-	void Scan(CString strFilePath);
-
+	void Import(const CString& csFilePath);
+	   
 protected:
-	CAssimpLoader m_tLoader;
+	CString m_csFilePath;
 
 };
 
-#include "HeaderPost.h"

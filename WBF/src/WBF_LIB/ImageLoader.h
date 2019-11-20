@@ -15,7 +15,7 @@ public:
 	virtual ~CImageLoader();
 
 public:
-	void Import(CString strFilePath);
+	void Import(const CString& strFilePath);
 
 	const BYTE* GetBuffer() { return m_pBuffer; }
 	const int GetWidth() { return m_nWidth; }

@@ -108,7 +108,8 @@
       <ModuleDefinitionFile>.\WBF_LIB.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>assimp-vc141-mtd.lib</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -134,7 +135,8 @@
       <ModuleDefinitionFile>.\WBF_LIB.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>assimp-vc141-mtd.lib</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -164,7 +166,8 @@
       <ModuleDefinitionFile>.\WBF_LIB.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>assimp-vc141-mt.lib</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -194,7 +197,8 @@
       <ModuleDefinitionFile>.\WBF_LIB.def</ModuleDefinitionFile>
       <ImportLibrary>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget)/$(TargetName).lib</ImportLibrary>
       <AdditionalLibraryDirectories>../../lib/$(PlatformToolset)/$(Configuration)/$(PlatformTarget);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>assimp-vc141-mt.lib</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -207,11 +211,11 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AssimpLoader.cpp" />
     <ClCompile Include="DocListener.cpp" />
     <ClCompile Include="EntityData.cpp" />
     <ClCompile Include="FactoryBase.cpp" />
     <ClCompile Include="FactoryObjectBase.cpp" />
+    <ClCompile Include="FileCtrl.cpp" />
     <ClCompile Include="ModuleBase.cpp" />
     <ClCompile Include="Package.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -233,14 +237,13 @@
   <ItemGroup>
     <ClInclude Include="AllGraphicInclude.h" />
     <ClInclude Include="AllProjectInclude.h" />
-    <ClInclude Include="AssimpDefine.h" />
-    <ClInclude Include="AssimpLoader.h" />
     <ClInclude Include="DataBaseDefine.h" />
     <ClInclude Include="DocListener.h" />
     <ClInclude Include="EntityData.h" />
     <ClInclude Include="EntityDictionary.hpp" />
     <ClInclude Include="FactoryBase.h" />
     <ClInclude Include="FactoryObjectBase.h" />
+    <ClInclude Include="FileCtrl.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
     <ClInclude Include="ListenerDefine.h" />

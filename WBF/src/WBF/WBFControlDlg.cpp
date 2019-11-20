@@ -7,6 +7,7 @@
 #include "..\WBF_LIB\Package.h"
 #include "..\WBF_LIB\ModuleBase.h"
 #include "..\WBF_LIB\DataBaseDefine.h"
+#include "..\WBF_LIB\FileCtrl.h"
 #include "..\WBF_DATA\EntityDefine.h"
 #include "..\WBF_GPS\WBFGPSOption.h"
 
@@ -19,6 +20,7 @@ static char THIS_FILE[] = __FILE__;
 enum E_CONTROL_TYPE
 {
 	E_CTRL_CONTAINER = 0,
+	
 
 	E_CTRL_NUM
 };
@@ -117,7 +119,6 @@ void CWBFControlDlg::SetControl()
 
 void CWBFControlDlg::Data2Dlg()
 {
-
 }
 
 BOOL CWBFControlDlg::Dlg2Data()

@@ -40,8 +40,8 @@
     <Filter Include="UTILITY\Image Loader">
       <UniqueIdentifier>{cc3cf74a-05e9-46ff-a4dd-6d9dbb661136}</UniqueIdentifier>
     </Filter>
-    <Filter Include="UTILITY\File Loader">
-      <UniqueIdentifier>{f8772082-ccd2-4315-ba92-cfadb2a59810}</UniqueIdentifier>
+    <Filter Include="UTILITY\File Control">
+      <UniqueIdentifier>{9d28d257-3f68-49a8-bb17-a6fcc90144e5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -81,8 +81,8 @@
     <ClCompile Include="StringConverter.cpp">
       <Filter>UTILITY\String Converter</Filter>
     </ClCompile>
-    <ClCompile Include="AssimpLoader.cpp">
-      <Filter>UTILITY\File Loader</Filter>
+    <ClCompile Include="FileCtrl.cpp">
+      <Filter>UTILITY\File Control</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -172,11 +172,8 @@
     <ClInclude Include="StringConverter.h">
       <Filter>UTILITY\String Converter</Filter>
     </ClInclude>
-    <ClInclude Include="AssimpDefine.h">
-      <Filter>UTILITY\File Loader</Filter>
-    </ClInclude>
-    <ClInclude Include="AssimpLoader.h">
-      <Filter>UTILITY\File Loader</Filter>
+    <ClInclude Include="FileCtrl.h">
+      <Filter>UTILITY\File Control</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
