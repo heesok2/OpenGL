@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "FileCtrl.h"
 
+#define D_EMPTY _T("")
+#define D_BACKSLASH _T("\\")
+#define D_CURRENT _T(".\\")
+#define D_PARENT _T("..\\")
 
 CFileCtrl::CFileCtrl()
 {
@@ -17,74 +21,81 @@ BOOL CFileCtrl::Exist(const CString csFilePath)
 	return CFile::GetStatus(csFilePath, FileStatus);
 }
 
-CString CFileCtrl::AbsolutePath2RelativePath(const CString & src, const CString & trg)
+CString CFileCtrl::Absolute2Relative(const CString & src, const CString & trg)
 {
-	if (src.CompareNoCase(trg) == 0)
-		return _T(".\\");
+	if (src.IsEmpty() || trg.IsEmpty())
+	{
+		ASSERT(g_warning);
+		return D_CURRENT;
+	}
+	else if (src.CompareNoCase(trg) == 0)
+		return D_CURRENT;
 
-	CString strSrcUpper = src;
-	CString strTrgUpper = trg;
-
-	strSrcUpper.MakeUpper();
-	strTrgUpper.MakeUpper();
-
+	std::vector<CString> aSrcSplit;
 	std::vector<CString> aTrgSplit;
+
+	auto lambda_split = [](const CString& strPath, std::vector<CString>& aSplit)
 	{
 		int nSub = 0;
-		CString strSub(_T(""));
-		while (AfxExtractSubString(strSub, strTrgUpper, nSub++, '\\'))
-			aTrgSplit.push_back(strSub);
-	}
+		CString strSub = D_EMPTY;
+		while (AfxExtractSubString(strSub, strPath, nSub++, '\\'))
+		{
+			if (!strSub.IsEmpty())
+				aSplit.push_back(strSub);
+		}
+	};
+	lambda_split(src, aSrcSplit);
+	lambda_split(trg, aTrgSplit);
 
-	CString strSame(_T(""));
+	CString strSame = D_EMPTY;
+
+	CString strSrcUpper = src;
+	strSrcUpper.MakeUpper();
 	for (auto strSplit : aTrgSplit)
 	{
+		strSplit.MakeUpper();
+
 		auto strDiff = strSame + strSplit;
 		auto item = strSrcUpper.Find(strDiff);
-
 		if (item != 0)
 			break;
 
-		strSame += strSplit;
+		strSame += strSplit + D_BACKSLASH;
 	}
 
-	CString strRelative(_T(""));
+	if (strSame.IsEmpty()) // Different Directory 
 	{
-		auto revItem = trg.ReverseFind('\\');
-		auto strTrgPath = trg.Left(revItem);
-		auto strTrgName = trg.Right(trg.GetLength() - revItem);
-
-		int nSub = 0;
-		CString strSub(_T(""));
-		CString strCompare(_T(""));
-		while (AfxExtractSubString(strSub, strTrgPath, nSub++, '\\'))
-		{
-			auto strDiff = strCompare + strSub;
-			auto item = strSame.CompareNoCase(strDiff);
-
-			if (item != 0)
-				strRelative += _T("..\\");
-
-			strCompare += strSub;
-		}
+		ASSERT(g_warning);
+		return src;
 	}
 
+	CString strRelative = D_EMPTY;
+
+	CString strCompTrg = D_EMPTY;
+	for (auto strSplit : aTrgSplit)
 	{
-		auto strSrcPath = src;
+		auto strUpper = strSplit;
+		strUpper.MakeUpper();
 
-		int nSub = 0;
-		CString strSub(_T(""));
-		CString strCompare(_T(""));
-		while (AfxExtractSubString(strSub, strSrcPath, nSub++, '\\'))
-		{
-			auto strDiff = strCompare + strSub;
-			auto item = strSame.CompareNoCase(strDiff);
+		auto strDiff = strCompTrg + strUpper;
+		auto item = strSame.Find(strDiff);
+		if (item != 0)
+			strRelative += D_PARENT;
 
-			if (item != 0)
-				strRelative += strSub + _T("\\");
+		strCompTrg += strUpper + D_BACKSLASH;
+	}
+	CString strCompSrc = D_EMPTY;
+	for (auto strSplit : aSrcSplit)
+	{
+		auto strUpper = strSplit;
+		strUpper.MakeUpper();
 
-			strCompare += strSub;
-		}
+		auto strDiff = strCompSrc + strUpper;
+		auto item = strSame.Find(strDiff);
+		if (item != 0)
+			strRelative += strSplit + D_BACKSLASH;
+
+		strCompSrc += strUpper + D_BACKSLASH;
 	}
 
 	return strRelative;

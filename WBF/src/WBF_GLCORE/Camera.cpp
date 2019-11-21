@@ -17,7 +17,7 @@ const float g_ZOOM = 45.0f;
 CCamera::CCamera()
 	: m_eMode(E_MODE_MODELER)
 {
-	m_aCameraPos = glm::vec3(0.f, 0.f, 5.f);
+	m_aCameraPos = glm::vec3(0.f, 0.f, 10.f);
 	m_aCameraDir = glm::vec3(0.f, 0.f, -1.f);
 	m_aCameraUp = glm::vec3(0.f, 1.f, 0.f);
 	m_aCameraRight = glm::vec3(1.f, 0.f, 0.f);
@@ -53,7 +53,7 @@ glm::mat4 CCamera::GetViewMatrix()
 glm::mat4 CCamera::GetProjectionMatrix()
 {
 	glm::mat4 proj(1.f);
-	return glm::perspective(glm::radians(45.f), (float)(m_Viewport.Width()) / (float)(m_Viewport.Height()), 0.0001f, 100.f);
+	return glm::perspective(glm::radians(30.f), (float)(m_Viewport.Width()) / (float)(m_Viewport.Height()), 0.0001f, 1000.f);
 }
 
 void CCamera::SetViewSize(CRect& rect)

@@ -10,7 +10,7 @@ public:
 
 public:
 	static BOOL Exist(const CString csFilePath);
-	static CString AbsolutePath2RelativePath(const CString& src, const CString& trg);
+	static CString Absolute2Relative(const CString& src, const CString& trg);
 
 };
 
