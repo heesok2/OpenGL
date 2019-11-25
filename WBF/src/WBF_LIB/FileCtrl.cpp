@@ -20,9 +20,15 @@ CFileCtrl::~CFileCtrl()
 {
 }
 
-void CFileCtrl::SetFilePath(const CString & strFilePath)
+void CFileCtrl::SetFilePath(const CString & strFullPath)
 {
-	m_strFullPath = strFilePath;
+	if (strFullPath.IsEmpty())
+	{
+		ASSERT(g_warning);
+		return;
+	}
+
+	m_strFullPath = strFullPath;
 }
 
 BOOL CFileCtrl::Exist()
