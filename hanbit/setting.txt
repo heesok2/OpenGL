@@ -1,2 +1,0 @@
-../../include/$(PlatformToolset)
-../../lib/$(PlatformToolset)/$(configuration)/$(PlatformTarget)
