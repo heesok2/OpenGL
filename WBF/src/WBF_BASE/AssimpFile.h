@@ -11,10 +11,10 @@ public:
 	virtual ~CAssimpFile();
 
 public:
-	void Import(const CString& csFilePath);
+	BOOL Import(const CString& strFullPath);
 	   
 protected:
-	CString m_csFilePath;
+	CString m_strFullPath;
 
 };
 

@@ -119,6 +119,13 @@ void CWBFControlDlg::SetControl()
 
 void CWBFControlDlg::Data2Dlg()
 {
+	CString strFullPath = _T("D:\\Cloud\\Git\\GraphicLibrary\\WBF\\file\\crysis-nano-suit-2.zip");
+	CString strBasePath = _T("D:\\Cloud\\Git\\GraphicLibrary\\WBF\\bin\\v141\\Debug\\x64\\");
+
+	CFileCtrl fCtrl;
+	fCtrl.SetFilePath(strFullPath);
+	
+	CString strRelative = CFileCtrl::Absolute2Relative(strBasePath, strFullPath);
 }
 
 BOOL CWBFControlDlg::Dlg2Data()

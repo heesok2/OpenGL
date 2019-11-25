@@ -12,11 +12,11 @@ public:
 public:
 	void SetFilePath(const CString& strFilePath);
 	BOOL Exist();
-	CString GetPathNameExt();
-	CString GetPathName();
-	CString GetPath();
-	CString GetName();
-	CString GetExt();
+	CString GetFilePathNameExt();
+	CString GetFilePathName();
+	CString GetFilePath();
+	CString GetFileName();
+	CString GetFileExt();
 
 public:
 	static BOOL Exist(const CString& strFullPath);

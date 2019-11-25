@@ -60,27 +60,27 @@ BOOL CFileCtrl::Exist()
 	return CFile::GetStatus(m_strFullPath, FileStatus);
 }
 
-CString CFileCtrl::GetPathNameExt()
+CString CFileCtrl::GetFilePathNameExt()
 {
 	return m_strFullPath;
 }
 
-CString CFileCtrl::GetPathName()
+CString CFileCtrl::GetFilePathName()
 {
 	return m_strPath + m_strName;
 }
 
-CString CFileCtrl::GetPath()
+CString CFileCtrl::GetFilePath()
 {
 	return m_strPath;
 }
 
-CString CFileCtrl::GetName()
+CString CFileCtrl::GetFileName()
 {
 	return m_strName;
 }
 
-CString CFileCtrl::GetExt()
+CString CFileCtrl::GetFileExt()
 {
 	return m_strExt;
 }
@@ -120,9 +120,9 @@ CString CFileCtrl::Absolute2Relative(const CString & src, const CString & trg)
 		CString strSub = D_EMPTY;
 		while (AfxExtractSubString(strSub, strPath, nSub++, '\\'))
 		{
-			if (strSub.IsEmpty())
+			if (strSub.IsEmpty()) 
 				continue;
-
+			
 			aSplit.push_back(strSub);
 		}
 	};

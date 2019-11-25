@@ -5,39 +5,30 @@
 
 CAssimpFile::CAssimpFile()
 {
+	m_strFullPath = _T("");
 }
-
 
 CAssimpFile::~CAssimpFile()
 {
 }
 
-void CAssimpFile::Import(const CString & csFilePath)
+BOOL CAssimpFile::Import(const CString & strFullPath)
 {
-	auto strFilePath = CStringConverter::CSTR2STR(csFilePath);
+	m_strFullPath = strFullPath;
 
-	
+	Assimp::Importer importer;
+	auto strFilePath = CStringConverter::CSTR2STR(strFullPath);
+	const aiScene* scene = importer.ReadFile(strFilePath, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
+	if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) // if is Not Zero
+	{
+		TRACE(importer.GetErrorString());
+		return FALSE; 
+	}
 
-
-
+	for (auto lmesh = 0; lmesh < scene->mNumMeshes; ++lmesh)
+	{
+		auto pMesh = scene->mMeshes[lmesh];
+		pMesh->mNumVertices;
+		pMesh->mNumFaces;
+	}
 }
-//
-//void CAssimpFile::Import(CString csFilePath)
-//{
-//
-//
-//	// read file via ASSIMP
-//	Assimp::Importer importer;
-//	const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
-//	// check for errors
-//	if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) // if is Not Zero
-//	{
-//		cout << "ERROR::ASSIMP:: " << importer.GetErrorString() << endl;
-//		return;
-//	}
-//	// retrieve the directory path of the filepath
-//	directory = path.substr(0, path.find_last_of('/'));
-//
-//	// process ASSIMP's root node recursively
-//	processNode(scene->mRootNode, scene);
-//}
