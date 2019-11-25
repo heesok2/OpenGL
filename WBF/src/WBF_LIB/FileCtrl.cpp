@@ -8,17 +8,33 @@
 
 CFileCtrl::CFileCtrl()
 {
+	m_strFullPath = _T("");
 }
 
+CFileCtrl::CFileCtrl(const CString & strFilePath)
+{
+	m_strFullPath = strFilePath;
+}
 
 CFileCtrl::~CFileCtrl()
 {
 }
 
-BOOL CFileCtrl::Exist(const CString csFilePath)
+void CFileCtrl::SetFilePath(const CString & strFilePath)
+{
+	m_strFullPath = strFilePath;
+}
+
+BOOL CFileCtrl::Exist()
 {
 	CFileStatus FileStatus;
-	return CFile::GetStatus(csFilePath, FileStatus);
+	return CFile::GetStatus(m_strFullPath, FileStatus);
+}
+
+BOOL CFileCtrl::Exist(const CString& strFullPath)
+{
+	CFileStatus FileStatus;
+	return CFile::GetStatus(strFullPath, FileStatus);
 }
 
 CString CFileCtrl::Absolute2Relative(const CString & src, const CString & trg)
