@@ -4,6 +4,7 @@
 
 class CPackage;
 class CViewBase;
+class CFileCtrlManager;
 class __MY_EXT_CLASS__ CDocBase : public CDocument
 {
 public:
@@ -15,6 +16,10 @@ public:
 
 public:
 	virtual CViewBase* GetActiveView();
+	virtual CFileCtrlManager* GetFileCtrlManager();
+
+protected:
+	CFileCtrlManager* m_pFileCtrlManager;
 
 };
 

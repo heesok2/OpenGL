@@ -8,6 +8,7 @@
 #include "..\WBF_LIB\ModuleBase.h"
 #include "..\WBF_LIB\DataBaseDefine.h"
 #include "..\WBF_LIB\FileCtrl.h"
+#include "..\WBF_BASE\FileCtrlManager.h"
 #include "..\WBF_DATA\EntityDefine.h"
 #include "..\WBF_GPS\WBFGPSOption.h"
 
@@ -20,7 +21,7 @@ static char THIS_FILE[] = __FILE__;
 enum E_CONTROL_TYPE
 {
 	E_CTRL_CONTAINER = 0,
-	
+	E_CTRL_ASSIMP,
 
 	E_CTRL_NUM
 };
@@ -96,8 +97,8 @@ void CWBFControlDlg::SetControl()
 		cobx.SetCurSel(0);
 	};
 
-	CString aTypeName[] = {_T("ContainerBox")};
-	UINT aTypeData[] = {E_CTRL_CONTAINER};
+	CString aTypeName[] = {_T("ContainerBox"), _T("Assimp")};
+	UINT aTypeData[] = {E_CTRL_CONTAINER, E_CTRL_ASSIMP};
 	lambda_cobx(m_cobxType, sizeof(aTypeData) / sizeof(UINT), aTypeName, aTypeData);
 
 	CString aPolyFaceName[] = {_T("Front/Back"), _T("Front"), _T("Back")};
@@ -124,7 +125,7 @@ void CWBFControlDlg::Data2Dlg()
 
 	CFileCtrl fCtrl;
 	fCtrl.SetFilePath(strFullPath);
-	
+
 	CString strRelative = CFileCtrl::Absolute2Relative(strBasePath, strFullPath);
 }
 
@@ -171,10 +172,14 @@ BOOL CWBFControlDlg::CheckData()
 
 		}
 		break;
+	case E_CTRL_ASSIMP:
+		{
+
+		}
+		break;
 	default:
 		{
-			// Unknown
-			return FALSE;
+			ASSERT(g_warning);
 		}
 		break;
 	}
@@ -184,7 +189,8 @@ BOOL CWBFControlDlg::CheckData()
 
 BOOL CWBFControlDlg::Execute()
 {
-	if (!Dlg2Data()) return TRUE;
+	if (!Dlg2Data())
+		return TRUE;
 
 	auto lambda_cobx = [](CComboBox& cobx)
 	{
@@ -194,7 +200,8 @@ BOOL CWBFControlDlg::Execute()
 
 
 	auto pPackage = m_pMyDoc->GetPackage();
-	if (!pPackage->Start()) return FALSE;
+	if (!pPackage->Start())
+		return FALSE;
 
 	auto uiType = lambda_cobx(m_cobxType);
 	switch (uiType)
@@ -216,7 +223,18 @@ BOOL CWBFControlDlg::Execute()
 			pModuleBox->SetDefaultData();
 		}
 		break;
+	case E_CTRL_ASSIMP:
+		{
+			auto pFileCtrlManager = m_pMyDoc->GetFileCtrlManager();
+			auto pFileManager = pFileCtrlManager->GetFileManager();
+
+			pFileManager->ImportFile(_T(""));
+		}
+		break;
 	default:
+		{
+			ASSERT(g_warning);
+		}
 		break;
 	}
 

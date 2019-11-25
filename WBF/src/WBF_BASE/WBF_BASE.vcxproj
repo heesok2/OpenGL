@@ -210,6 +210,8 @@
     <ClCompile Include="AssimpFile.cpp" />
     <ClCompile Include="AssimpManager.cpp" />
     <ClCompile Include="FileCtrlManager.cpp" />
+    <ClCompile Include="IFileLoader.cpp" />
+    <ClCompile Include="IFileManager.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -233,6 +235,8 @@
     <ClInclude Include="FileCtrlManager.h" />
     <ClInclude Include="HeaderPost.h" />
     <ClInclude Include="HeaderPre.h" />
+    <ClInclude Include="IFileLoader.h" />
+    <ClInclude Include="IFileManager.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />

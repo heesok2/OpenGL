@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "DocBase.h"
 #include "ViewBase.h"
+#include "FileCtrlManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -10,10 +11,12 @@ static char THIS_FILE[] = __FILE__;
 
 CDocBase::CDocBase()
 {
+	m_pFileCtrlManager = new CFileCtrlManager(this);
 }
 
 CDocBase::~CDocBase()
 {
+	_SAFE_DELETE(m_pFileCtrlManager);
 }
 
 CViewBase * CDocBase::GetActiveView()
@@ -27,5 +30,10 @@ CViewBase * CDocBase::GetActiveView()
 	}
 
 	ASSERT(g_warning);
+	return nullptr;
+}
+
+CFileCtrlManager * CDocBase::GetFileCtrlManager()
+{
 	return nullptr;
 }

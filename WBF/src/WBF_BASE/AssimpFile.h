@@ -4,17 +4,18 @@
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
-class CAssimpFile
+#include "IFileLoader.h"
+
+class CAssimpFile : public IFileLoader
 {
 public:
 	CAssimpFile();
 	virtual ~CAssimpFile();
 
 public:
-	BOOL Import(const CString& strFullPath);
-	   
+	virtual BOOL Import(const CString& strFullPath) override;
+
 protected:
 	CString m_strFullPath;
 
 };
-
