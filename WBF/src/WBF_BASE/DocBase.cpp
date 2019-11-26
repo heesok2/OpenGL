@@ -35,5 +35,5 @@ CViewBase * CDocBase::GetActiveView()
 
 CFileCtrlManager * CDocBase::GetFileCtrlManager()
 {
-	return nullptr;
+	return m_pFileCtrlManager;
 }

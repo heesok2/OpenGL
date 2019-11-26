@@ -3,6 +3,12 @@
 
 #include "..\WBF_LIB\StringConverter.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
 CAssimpFile::CAssimpFile()
 {
 	m_strFullPath = _T("");

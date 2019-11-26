@@ -16,6 +16,7 @@ public:
 
 protected:
 	CDocBase* m_pDoc;
+
 	IFileManager* m_pFileManager;
 
 };

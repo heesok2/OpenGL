@@ -225,10 +225,16 @@ BOOL CWBFControlDlg::Execute()
 		break;
 	case E_CTRL_ASSIMP:
 		{
-			auto pFileCtrlManager = m_pMyDoc->GetFileCtrlManager();
-			auto pFileManager = pFileCtrlManager->GetFileManager();
+			CString strFilter = _T("All files(*.*)|*.*||");
+			CFileDialog FileDlg(TRUE, NULL, NULL, OFN_HIDEREADONLY, strFilter);
+			if (FileDlg.DoModal() == IDOK)
+			{
+				CString strFullPath = FileDlg.GetPathName();
 
-			pFileManager->ImportFile(_T(""));
+				auto pFileCtrlManager = m_pMyDoc->GetFileCtrlManager();
+				auto pFileManager = pFileCtrlManager->GetFileManager();
+				pFileManager->ImportFile(strFullPath);
+			}
 		}
 		break;
 	default:
