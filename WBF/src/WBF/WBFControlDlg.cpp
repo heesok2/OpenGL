@@ -127,6 +127,10 @@ void CWBFControlDlg::Data2Dlg()
 	fCtrl.SetFilePath(strFullPath);
 
 	CString strRelative = CFileCtrl::Absolute2Relative(strBasePath, strFullPath);
+	
+	////////////////////////////////////////////////
+
+	m_cobxType.SetCurSel(E_CTRL_ASSIMP); // TEST Default ComboBox
 }
 
 BOOL CWBFControlDlg::Dlg2Data()

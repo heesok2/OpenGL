@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "EntityDefine.h"
 #include "ModuleVertex.h"
+#include "EntityDefine.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

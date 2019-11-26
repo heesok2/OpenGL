@@ -10,8 +10,12 @@ static char THIS_FILE[] = __FILE__;
 
 CEntityTexture::CEntityTexture()
 {
-}
+	dbKey = 0;
 
+	uiType = 0;
+	strPath = _T("");
+	strTexture = _T("");
+}
 
 CEntityTexture::~CEntityTexture()
 {

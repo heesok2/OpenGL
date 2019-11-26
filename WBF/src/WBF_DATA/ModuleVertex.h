@@ -1,6 +1,7 @@
 #pragma once
 
 #include "..\WBF_LIB\ModuleData.hpp"
+
 #include "EntityVertex.h"
 
 #include "HeaderPre.h"

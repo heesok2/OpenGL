@@ -14,8 +14,11 @@ public:
 
 public:
 	virtual BOOL Import(const CString& strFullPath) override;
+	virtual BOOL MakeDB(CDocBase* pDoc) override;
 
 protected:
 	CString m_strFullPath;
+
+	Assimp::Importer m_Importer;
 
 };

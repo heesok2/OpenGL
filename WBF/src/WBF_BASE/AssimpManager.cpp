@@ -8,7 +8,8 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CAssimpManager::CAssimpManager()
+CAssimpManager::CAssimpManager(CDocBase* pDoc)
+	: m_pDoc(pDoc)
 {
 	m_aFileLoader.clear();
 }
@@ -26,7 +27,8 @@ CAssimpManager::~CAssimpManager()
 BOOL CAssimpManager::ImportFile(const CString & strFullPath)
 {
 	auto pFileLoader = new CAssimpFile();
-	if (!pFileLoader->Import(strFullPath))
+	if (!pFileLoader->Import(strFullPath) ||
+		!pFileLoader->MakeDB(m_pDoc))
 	{
 		ASSERT(g_warning);
 		_SAFE_DELETE(pFileLoader);

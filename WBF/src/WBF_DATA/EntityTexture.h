@@ -4,19 +4,22 @@
 
 #include "HeaderPre.h"
 
-class CEntityTexture : public CEntityData
+class __MY_EXT_CLASS__ CEntityTexture : public CEntityData
 {
 public:
 	CEntityTexture();
 	virtual ~CEntityTexture();
 
-	// CEntityData을(를) 통해 상속됨
+public:
 	virtual const DTYPE GetType() const override;
 	virtual const DKEY GetKey() const override;
 
 public:
 	DKEY dbKey;
 
+	UINT uiType; // aiTextureType
+	CString strPath;
+	CString strTexture;
 };
 
 #include "HeaderPost.h"

@@ -51,6 +51,9 @@
     <ClCompile Include="GroundRenderer.cpp">
       <Filter>RENDER\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="MeshBuffer.cpp">
+      <Filter>RENDER\Object Buffer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="WBF_GPS.def">
@@ -102,6 +105,9 @@
     </ClInclude>
     <ClInclude Include="GroundRenderer.h">
       <Filter>RENDER\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshBuffer.h">
+      <Filter>RENDER\Object Buffer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

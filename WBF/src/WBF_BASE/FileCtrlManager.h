@@ -8,7 +8,7 @@ class CDocBase;
 class __MY_EXT_CLASS__ CFileCtrlManager
 {
 public:
-	CFileCtrlManager(CDocBase* pDocBase);
+	CFileCtrlManager(CDocBase* pDoc);
 	virtual ~CFileCtrlManager();
 
 public:

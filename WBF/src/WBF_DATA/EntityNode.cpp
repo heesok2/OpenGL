@@ -10,6 +10,13 @@ static char THIS_FILE[] = __FILE__;
 
 CEntityNode::CEntityNode()
 {
+	dbKey = 0;
+
+	aVertex = glm::vec3(0);
+	aNormal = glm::vec3(0);
+	aTexCoord = glm::vec2(0);
+	aTangent = glm::vec3(0);
+	aBitangent = glm::vec3(0);
 }
 
 CEntityNode::~CEntityNode()

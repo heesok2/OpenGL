@@ -339,3 +339,4 @@ bin/vc140/Release/x64/temp/resource/
 # Plugins
 bin/vc140/Debug/x64/plugins/
 bin/vc140/Release/x64/plugins/
+/Temp

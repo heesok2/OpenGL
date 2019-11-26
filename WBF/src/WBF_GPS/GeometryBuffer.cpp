@@ -3,11 +3,11 @@
 #include "BufferType.h"
 
 #include "..\WBF_LIB\Package.h"
-#include "..\WBF_BASE\DocBase.h"
 #include "..\WBF_GLCORE\ViewHelper.h"
 #include "..\WBF_DATA\ModuleVertex.h"
 #include "..\WBF_DATA\ModuleSubBody.h"
 #include "..\WBF_DATA\ModuleBody.h"
+#include "..\WBF_BASE\DocBase.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -44,8 +44,8 @@ void CGeometryBuffer::GLRelease()
 
 void CGeometryBuffer::GLBuild(CViewHelper * pHelper, UINT)
 {
-	auto pDocBase = (CDocBase*)pHelper->GetDocument();
-	auto pPackage = pDocBase->GetPackage();
+	auto pDoc = (CDocBase*)pHelper->GetDocument();
+	auto pPackage = pDoc->GetPackage();
 	auto pModuleVertex = (CModuleVertex*)pPackage->GetModule(E_TYPE_VERTEX);
 	auto pModuleSubBody = (CModuleSubBody*)pPackage->GetModule(E_TYPE_SUBBODY);
 	auto pModuleBody = (CModuleBody*)pPackage->GetModule(E_TYPE_BODY);
@@ -61,7 +61,7 @@ void CGeometryBuffer::GLBuild(CViewHelper * pHelper, UINT)
 	auto TEXCORD_NUM = 2;
 	auto BUFFER_NUM = VERTEX_NUM + NORMAL_NUM + TEXCORD_NUM;
 
-	std::map<UINT, UINT> mVertexIndex;
+	std::map<DKEY, UINT> mVertexIndex;
 	std::vector<CEntityVertex> lstVertex;
 	std::vector<CEntityBody> lstBody;
 
@@ -86,6 +86,8 @@ void CGeometryBuffer::GLBuild(CViewHelper * pHelper, UINT)
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(float)*(lVertexNum*BUFFER_NUM), aBuffer, GL_STATIC_DRAW);
+
+	_SAFE_DELETE_ARRAY(aBuffer);
 
 	for (auto lbody = 0; lbody < lBodyNum; ++lbody)
 	{
@@ -158,7 +160,6 @@ void CGeometryBuffer::GLBuild(CViewHelper * pHelper, UINT)
 		_SAFE_DELETE_ARRAY(aIndex);
 	}
 
-	_SAFE_DELETE_ARRAY(aBuffer);
 }
 
 long CGeometryBuffer::GetObjectBuffer(std::map<UINT, TObjectBuffer>& mObjectBuffer)

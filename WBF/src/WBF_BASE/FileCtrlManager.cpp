@@ -8,10 +8,10 @@
 static char THIS_FILE[] = __FILE__;
 #endif
 
-CFileCtrlManager::CFileCtrlManager(CDocBase* pDocBase)
-	: m_pDoc(pDocBase)
+CFileCtrlManager::CFileCtrlManager(CDocBase* pDoc)
+	: m_pDoc(pDoc)
 {
-	m_pFileManager = new CAssimpManager;
+	m_pFileManager = new CAssimpManager(pDoc);
 }
 
 CFileCtrlManager::~CFileCtrlManager()

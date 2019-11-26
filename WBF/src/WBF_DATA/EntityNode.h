@@ -16,10 +16,10 @@ public:
 
 public:
 	DKEY dbKey;
-
+	
 	glm::vec3 aVertex;
 	glm::vec3 aNormal;
-	glm::vec3 aTexCoord;
+	glm::vec2 aTexCoord;
 	glm::vec3 aTangent;
 	glm::vec3 aBitangent;
 
