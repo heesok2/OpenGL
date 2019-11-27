@@ -98,6 +98,12 @@ void CShaderManager::GLCreate(UINT uiType)
 			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_GLSL_CONTAINER_BOX_FRAG);
 		}
 		break;
+	case E_SHADER_MESH:
+		{
+			shader.GLAttachShader(GL_VERTEX_SHADER, IDR_GLSL_MESH_VERT);
+			shader.GLAttachShader(GL_FRAGMENT_SHADER, IDR_GLSL_MESH_FRAG);
+		}
+		break;
 	default:
 		{
 			ASSERT(g_warning);

@@ -212,6 +212,7 @@
     <ClCompile Include="GroundRenderer.cpp" />
     <ClCompile Include="LightRenderer.cpp" />
     <ClCompile Include="MeshBuffer.cpp" />
+    <ClCompile Include="MeshRenderer.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -234,6 +235,7 @@
     <ClInclude Include="BufferType.h" />
     <ClInclude Include="LightRenderer.h" />
     <ClInclude Include="MeshBuffer.h" />
+    <ClInclude Include="MeshRenderer.h" />
     <ClInclude Include="RendererType.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />

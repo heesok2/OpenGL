@@ -24,7 +24,7 @@ DITER CModuleLight::GetDefaultData()
 {
 	auto itrLight = Find(m_dbDefaultKey);
 	if (!ITR_IS_VALID(itrLight))
-		ASSERT(g_warning);
+		return NULL; //  ASSERT(g_warning);
 
 	return itrLight;
 }

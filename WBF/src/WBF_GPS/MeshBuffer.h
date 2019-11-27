@@ -20,8 +20,9 @@ public:
 	virtual long GetObjectBuffer(std::map<UINT, TObjectBuffer>& mObjectBuffer) override;
 
 protected:
-	UINT GLCreateBuffer(CViewHelper * pHelper, DITER itrMesh, std::map<DKEY, UINT>& mNodeIndx);
-	UINT GLCreateIndex(CViewHelper * pHelper, DITER itrMesh, std::map<DKEY, UINT>& mNodeIndx);
+	BOOL GLCreateVAO(TObjectBuffer& tObjectBuffer);
+	BOOL GLCreateVBO(CViewHelper * pHelper, DITER itrMesh, OUT std::map<DKEY, UINT>& mNodeIndx, OUT TObjectBuffer& tObjectBuffer);
+	BOOL GLCreateEBO(CViewHelper * pHelper, DITER itrMesh, IN std::map<DKEY, UINT>& mNodeIndx, OUT TObjectBuffer& tObjectBuffer);
 
 protected:
 	std::map<UINT, TObjectBuffer> m_mObjectBuffer;

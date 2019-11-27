@@ -3,6 +3,7 @@
 #ifndef DEF_IMG_LOADER
 #define DEF_IMG_LOADER
 
+#define WBFIMG_RED 1
 #define WBFIMG_RGB 3
 #define WBFIMG_RGBA 4
 

@@ -31,7 +31,7 @@ BOOL CAssimpFile::Import(const CString & strFullPath)
 {
 	m_strFullPath = strFullPath;
 
-	auto strFilePath = CStringConverter::CSTR2STR(strFullPath);
+	auto strFilePath = CStringConverter::CSTR2STR(strFullPath, CP_UTF8);
 	const aiScene* pScene = m_Importer.ReadFile(strFilePath, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);
 	if (!pScene || pScene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !pScene->mRootNode) // if is Not Zero
 	{
@@ -65,6 +65,59 @@ BOOL CAssimpFile::MakeDB(CDocBase * pDoc)
 
 	auto lambda_material = [&](aiMaterial* pMaterial, aiTextureType uiType, OUT std::vector<DITER>& aItr)
 	{
+		auto lambda_type = [](aiTextureType uiType)
+		{
+			UINT uiTexType = E_TEX_UNKNOWN;
+			switch (uiType)
+			{
+			case aiTextureType_NONE:
+				break;
+			case aiTextureType_DIFFUSE:
+				uiTexType = E_TEX_DIFFUSE;
+				break;
+			case aiTextureType_SPECULAR:
+				break;
+			case aiTextureType_AMBIENT:
+				break;
+			case aiTextureType_EMISSIVE:
+				break;
+			case aiTextureType_HEIGHT:
+				break;
+			case aiTextureType_NORMALS:
+				break;
+			case aiTextureType_SHININESS:
+				break;
+			case aiTextureType_OPACITY:
+				break;
+			case aiTextureType_DISPLACEMENT:
+				break;
+			case aiTextureType_LIGHTMAP:
+				break;
+			case aiTextureType_REFLECTION:
+				break;
+			case aiTextureType_BASE_COLOR:
+				break;
+			case aiTextureType_NORMAL_CAMERA:
+				break;
+			case aiTextureType_EMISSION_COLOR:
+				break;
+			case aiTextureType_METALNESS:
+				break;
+			case aiTextureType_DIFFUSE_ROUGHNESS:
+				break;
+			case aiTextureType_AMBIENT_OCCLUSION:
+				break;
+			case aiTextureType_UNKNOWN:
+				break;
+			case _aiTextureType_Force32Bit:
+				break;
+			default:
+				break;
+			}
+
+			return uiTexType;
+		};
+
 		auto lCount = pMaterial->GetTextureCount(uiType);
 		for (unsigned int ltex = 0; ltex < lCount; ++ltex)
 		{
@@ -72,11 +125,17 @@ BOOL CAssimpFile::MakeDB(CDocBase * pDoc)
 			pMaterial->GetTexture(uiType, ltex, &aiPath);
 			std::string strPath = aiPath.C_Str();
 
+			UINT uiTexType = lambda_type(uiType);
+			CString strTex = CStringConverter::STR2CSTR(strPath);
+
+			if (pModuleTexture->ExistTexture(uiTexType, (strFilePath + strTex)))
+				continue;
+
 			CEntityTexture tTexture;
 			tTexture.dbKey = pModuleTexture->GetNewKey();
-			tTexture.uiType = uiType;
+			tTexture.uiType = uiTexType;
 			tTexture.strPath = strFilePath;
-			tTexture.strTexture = CStringConverter::STR2CSTR(strPath);
+			tTexture.strTexture = strTex;
 
 			auto itrTexture = pModuleTexture->InsertNU(tTexture);
 			if (!ITR_IS_VALID(itrTexture))
@@ -143,7 +202,7 @@ BOOL CAssimpFile::MakeDB(CDocBase * pDoc)
 			{
 				if (!ITR_IS_VALID(aItrNode[tFace.mIndices[indx + 0]])
 					|| !ITR_IS_VALID(aItrNode[tFace.mIndices[indx + 1]])
-					|| ITR_IS_VALID(aItrNode[tFace.mIndices[indx + 2]]))
+					|| !ITR_IS_VALID(aItrNode[tFace.mIndices[indx + 2]]))
 					continue;
 
 				CEntityElement tElem;

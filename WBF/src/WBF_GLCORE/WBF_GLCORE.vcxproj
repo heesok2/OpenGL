@@ -234,6 +234,8 @@
     <None Include="res\GLSL\Ground_vert.glsl" />
     <None Include="res\GLSL\Light_frag.glsl" />
     <None Include="res\GLSL\Light_vert.glsl" />
+    <None Include="res\GLSL\Mesh_frag.glsl" />
+    <None Include="res\GLSL\Mesh_vert.glsl" />
     <None Include="res\GLSL\Sample_frag.glsl" />
     <None Include="res\GLSL\Sample_vert.glsl" />
     <None Include="res\GLSL\Screen_frag.glsl" />

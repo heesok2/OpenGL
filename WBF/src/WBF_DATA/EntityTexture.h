@@ -4,6 +4,14 @@
 
 #include "HeaderPre.h"
 
+enum E_TEX_TYPE
+{
+	E_TEX_DIFFUSE = 0,
+
+	E_TEX_NUM,
+	E_TEX_UNKNOWN
+};
+
 class __MY_EXT_CLASS__ CEntityTexture : public CEntityData
 {
 public:
@@ -17,7 +25,7 @@ public:
 public:
 	DKEY dbKey;
 
-	UINT uiType; // aiTextureType
+	UINT uiType; // E_TEX_TYPE
 	CString strPath;
 	CString strTexture;
 };

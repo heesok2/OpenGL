@@ -14,12 +14,16 @@
 #define IDR_GLSL_CONTAINER_BOX_FRAG     1012
 #define IDR_GLSL_GROUND_VERT            1013
 #define IDR_GLSL_GROUND_FRAG            1014
+#define IDR_GLSL1                       1015
+#define IDR_GLSL_MESH_VERT              1015
+#define IDR_GLSL2                       1016
+#define IDR_GLSL_MESH_FRAG              1016
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        1015
+#define _APS_NEXT_RESOURCE_VALUE        1017
 #define _APS_NEXT_COMMAND_VALUE         32772
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           1000
