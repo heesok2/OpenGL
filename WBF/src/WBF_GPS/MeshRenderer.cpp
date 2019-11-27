@@ -48,6 +48,7 @@ void CMeshRenderer::GLDraw(CViewHelper * pHelper)
 	if (m_aData.empty())
 		return;
 
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	auto pShaderManager = pHelper->GetShaderManager();
 	auto& Shader = pShaderManager->GetAt(E_SHADER_MESH);
 	Shader.GLBind();
@@ -76,6 +77,8 @@ void CMeshRenderer::GLDraw(CViewHelper * pHelper)
 		}
 	}
 	Shader.GLUnbind();
+
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
 
 void CMeshRenderer::SetMeshData(CViewHelper * pHelper)
@@ -147,8 +150,8 @@ void CMeshRenderer::GLSetTexture(CViewHelper * pHelper)
 		glGenTextures(1, &uiTex2D);
 		glBindTexture(GL_TEXTURE_2D, uiTex2D);
 
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgLoader.GetWidth(), imgLoader.GetHeight(), 0, nFormat, GL_UNSIGNED_BYTE, imgLoader.GetBuffer());

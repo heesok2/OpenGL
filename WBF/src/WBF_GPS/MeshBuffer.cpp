@@ -134,8 +134,8 @@ BOOL CMeshBuffer::GLCreateVAO(TObjectBuffer & tObjectBuffer)
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, VERTEX_NUM, GL_FLOAT, GL_FALSE, sizeof(float)*BUFFER_NUM, 0);
 
-	//glEnableVertexAttribArray(1);
-	//glVertexAttribPointer(1, NORMAL_NUM, GL_FLOAT, GL_FALSE, sizeof(float)*BUFFER_NUM, (void*)(sizeof(float)*(VERTEX_NUM)));
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, NORMAL_NUM, GL_FLOAT, GL_FALSE, sizeof(float)*BUFFER_NUM, (void*)(sizeof(float)*(VERTEX_NUM)));
 
 	glEnableVertexAttribArray(2);
 	glVertexAttribPointer(2, TEXCORD_NUM, GL_FLOAT, GL_FALSE, sizeof(float)*BUFFER_NUM, (void*)(sizeof(float)*(VERTEX_NUM + NORMAL_NUM)));

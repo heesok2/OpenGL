@@ -172,7 +172,11 @@ BOOL CAssimpFile::MakeDB(CDocBase * pDoc)
 			{
 				tNode.aTexCoord.x = pMesh->mTextureCoords[0][lvtx].x;
 				tNode.aTexCoord.y = pMesh->mTextureCoords[0][lvtx].y;
-			};
+			}
+			else
+			{
+				ASSERT(g_warning);
+			}
 
 			auto& tTangent = pMesh->mTangents[lvtx];
 			tNode.aTangent.x = tTangent.x;
