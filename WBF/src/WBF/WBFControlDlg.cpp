@@ -4,6 +4,8 @@
 #include "WBFDoc.h"
 #include "WBFView.h"
 
+#include <gtest\gtest.h>
+
 #include "..\WBF_LIB\Package.h"
 #include "..\WBF_LIB\ModuleBase.h"
 #include "..\WBF_LIB\DataBaseDefine.h"
@@ -20,20 +22,31 @@ static char THIS_FILE[] = __FILE__;
 
 enum E_CONTROL_TYPE
 {
-	E_CTRL_CONTAINER = 0,
+	E_CTRL_GTEST = 0,
+	E_CTRL_CONTAINER,
 	E_CTRL_ASSIMP,
 
 	E_CTRL_NUM
 };
 
-
 CWBFControlDlg::CWBFControlDlg(CDocBase * pDoc, CViewBase * pView, CWnd * pParent)
 	: CWBFDialog(CWBFControlDlg::IDD, pDoc, pParent), m_pView(pView)
 {
+	m_bInitGTest = FALSE;
 }
 
 CWBFControlDlg::~CWBFControlDlg()
 {
+	if(m_bInitGTest)
+	{
+		if (m_pConsoleStream != nullptr)
+		{
+			fclose(m_pConsoleStream);
+			m_pConsoleStream = nullptr;
+
+			FreeConsole();
+		}
+	}
 }
 
 void CWBFControlDlg::DoDataExchange(CDataExchange * pDX)
@@ -86,28 +99,27 @@ void CWBFControlDlg::OnCancel()
 
 void CWBFControlDlg::SetControl()
 {
-	auto lambda_cobx = [](CComboBox& cobx, long uiNum, CString aName[], UINT aData[])
+	auto lambda_cobx = [](CComboBox& cobx, long uiNum, CString aName[])
 	{
 		cobx.ResetContent();
 		for (auto indx = 0; indx < uiNum; ++indx)
 		{
 			auto item = cobx.AddString(aName[indx]);
-			cobx.SetItemData(item, aData[indx]);
+			cobx.SetItemData(item, indx);
 		}
 		cobx.SetCurSel(0);
 	};
 
-	CString aTypeName[] = {_T("ContainerBox"), _T("Assimp")};
-	UINT aTypeData[] = {E_CTRL_CONTAINER, E_CTRL_ASSIMP};
-	lambda_cobx(m_cobxType, sizeof(aTypeData) / sizeof(UINT), aTypeName, aTypeData);
+	CString aTypeName[] = {_T("gTest"), _T("ContainerBox"), _T("Assimp")};
+	lambda_cobx(m_cobxType, E_CTRL_NUM, aTypeName);
 
-	CString aPolyFaceName[] = {_T("Front/Back"), _T("Front"), _T("Back")};
-	UINT aPolyFaceData[] = {GL_FRONT_AND_BACK , GL_FRONT, GL_BACK,};
-	lambda_cobx(m_cobxPolyFace, sizeof(aPolyFaceData) / sizeof(UINT), aPolyFaceName, aPolyFaceData);
+	//CString aPolyFaceName[] = {_T("Front/Back"), _T("Front"), _T("Back")};
+	//UINT aPolyFaceData[] = {GL_FRONT_AND_BACK , GL_FRONT, GL_BACK,};
+	//lambda_cobx(m_cobxPolyFace, sizeof(aPolyFaceData) / sizeof(UINT), aPolyFaceName, aPolyFaceData);
 
-	CString aPolyModeName[] = {_T("Fill"), _T("Line")};
-	UINT aPolyModeData[] = {GL_FILL, GL_LINE};
-	lambda_cobx(m_cobxPolyMode, sizeof(aPolyModeData) / sizeof(UINT), aPolyModeName, aPolyModeData);
+	//CString aPolyModeName[] = {_T("Fill"), _T("Line")};
+	//UINT aPolyModeData[] = {GL_FILL, GL_LINE};
+	//lambda_cobx(m_cobxPolyMode, sizeof(aPolyModeData) / sizeof(UINT), aPolyModeName, aPolyModeData);
 
 	m_slidRatio.SetRange(0, 100);
 	m_slidRatio.SetRangeMin(0);
@@ -171,11 +183,8 @@ BOOL CWBFControlDlg::CheckData()
 	auto uiType = lambda_cobx(m_cobxType);
 	switch (uiType)
 	{
+	case E_CTRL_GTEST:
 	case E_CTRL_CONTAINER:
-		{
-
-		}
-		break;
 	case E_CTRL_ASSIMP:
 		{
 
@@ -210,6 +219,38 @@ BOOL CWBFControlDlg::Execute()
 	auto uiType = lambda_cobx(m_cobxType);
 	switch (uiType)
 	{
+	case E_CTRL_GTEST:
+		{
+			if (!m_bInitGTest)
+			{
+				if (!AllocConsole())
+				{
+					ASSERT(g_warning);
+				}
+				else
+				{
+					freopen_s(&m_pConsoleStream, "CONOUT$", "wt", stdout);
+					m_bInitGTest = TRUE;
+					
+					::testing::InitGoogleTest();
+
+					RUN_ALL_TESTS();
+				}
+			}
+			else
+			{
+				if (m_pConsoleStream != nullptr)
+				{
+					fclose(m_pConsoleStream);
+					m_pConsoleStream = nullptr;
+
+					FreeConsole();
+				}
+
+				m_bInitGTest = FALSE;
+			}
+		}
+		break;
 	case E_CTRL_CONTAINER:
 		{
 			auto pModuleVertex = pPackage->GetModule(E_TYPE_VERTEX);

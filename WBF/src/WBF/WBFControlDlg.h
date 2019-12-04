@@ -5,6 +5,7 @@
 class CViewBase;
 class CWBFControlDlg : public CWBFDialog
 {
+
 public:
 	CWBFControlDlg(CDocBase* pDoc, CViewBase* pView, CWnd* pParent = nullptr);
 	virtual ~CWBFControlDlg();
@@ -45,4 +46,8 @@ private:
 
 	// Value
 	CSliderCtrl m_slidRatio;
+
+protected:
+	BOOL m_bInitGTest;
+	FILE* m_pConsoleStream;
 };

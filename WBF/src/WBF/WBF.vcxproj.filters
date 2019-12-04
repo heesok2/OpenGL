@@ -29,6 +29,9 @@
     <Filter Include="Common\DataBase">
       <UniqueIdentifier>{4189f9d1-a99e-4719-83f4-03acfc5beffe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TEST">
+      <UniqueIdentifier>{e96c7e76-c0a0-40f6-9d0f-88dc06fb9468}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChildFrm.h">
@@ -116,6 +119,9 @@
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>__GENERAL__</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest.cpp">
+      <Filter>TEST</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
